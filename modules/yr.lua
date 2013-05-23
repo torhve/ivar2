@@ -117,7 +117,7 @@ return {
 			local inputISO = utf2iso:iconv(input)
 
 			local db = sql.open("cache/places-norway.sql")
-			local selectStmt = db:prepare("SELECT place, url FROM places WHERE place LIKE ? OR place LIKE ?")
+			local selectStmt = db:prepare("SELECT name, url FROM places WHERE name LIKE ? OR name LIKE ?")
 			selectStmt:bind_values(input, inputISO)
 
 			local iter, vm = selectStmt:nrows()
