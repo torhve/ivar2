@@ -183,7 +183,7 @@ return {
 						if(city.adminName1 == "") then city.adminName1 = "Other" end
 
 						simplehttp(
-							("http://yr.no/place/%s/%s/%s/forecast.xml"):format(
+							("http://yr.no/place/%s/%s/%s/varsel.xml"):format(
 								urlEncode(city.countryName),
 								urlEncode(city.adminName1),
 								urlEncode(city.toponymName)
