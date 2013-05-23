@@ -1,6 +1,7 @@
 local simplehttp = require'simplehttp'
 local sql = require'lsqlite3'
 local iconv = require'iconv'
+local json = require'json'
 
 local utf2iso = iconv.new('iso-8859-15', 'utf-8')
 
@@ -37,6 +38,9 @@ end
 
 local handleOutput = function(source, destination, data)
 	local location = data:match("<location>(.-)</location>")
+	if(not location) then
+		return ivar2:Msg('privmsg', destination, source, "haste should probably fix this...")
+	end
 	local name = location:match("<name>([^<]+)</name>")
 	local country = location:match("<country>([^<]+)</country>")
 
@@ -96,24 +100,87 @@ local handleOutput = function(source, destination, data)
 	ivar2:Msg('privmsg', destination, source, table.concat(out, " - "))
 end
 
+local urlBase = "http://api.geonames.org/hierarchyJSON?geonameId=%d&username=haste"
 return {
 	PRIVMSG = {
 		['^!yr (.+)$'] = function(self, source, destination, input)
-			input = trim(input:gsub("^%l", string.upper))
-
+			input = trim(input)
 			local inputISO = utf2iso:iconv(input)
-			local db = sql.open("cache/places")
+
+			local db = sql.open("cache/places-norway.sql")
 			local selectStmt = db:prepare("SELECT place, url FROM places WHERE place LIKE ? OR place LIKE ?")
 			selectStmt:bind_values(input, inputISO)
 
 			local iter, vm = selectStmt:nrows()
 			local place = iter(vm)
 
+			db:close()
+
 			if(place) then
 				simplehttp(
 					place.url,
 					function(data)
 						handleOutput(source, destination, data)
+					end
+				)
+				return
+			end
+
+			local country
+			if(input:find(',', 1, true)) then
+				input, country = input:match('([^,]+),(.+)')
+				country = trim(country)
+				inputISO, _ = input:match('([^,]+),(.+)')
+			end
+
+			local db = sql.open("cache/places.sql")
+			local selectStmt
+			if(country) then
+				selectStmt = db:prepare([[
+				SELECT
+					geonameid, name,countryCode, population
+				FROM places
+				WHERE
+					(name LIKE ? OR name LIKE ?)
+				AND countryCode LIKE ?
+				ORDER BY
+				population DESC
+				]])
+				selectStmt:bind_values(input, inputISO, country)
+			else
+				selectStmt = db:prepare([[
+				SELECT
+					geonameid, name,countryCode, population
+				FROM places
+				WHERE
+					(name LIKE ? OR name LIKE ?)
+				ORDER BY
+				population DESC
+				]])
+				selectStmt:bind_values(input, inputISO)
+			end
+
+			local iter, vm = selectStmt:nrows()
+			local place = iter(vm)
+
+			db:close()
+
+			if(place) then
+				simplehttp(
+					urlBase:format(place.geonameid),
+					function(data)
+						data = json.decode(data)
+						local city = data.geonames[#data.geonames]
+						if(city.adminName1 == "") then city.adminName1 = "Other" end
+
+						simplehttp(
+							("http://yr.no/place/%s/%s/%s/forecast.xml"):format(
+								city.countryName, city.adminName1, city.toponymName
+							),
+							function(data)
+								handleOutput(source, destination, data)
+							end
+						)
 					end
 				)
 			else
