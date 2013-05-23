@@ -5,6 +5,15 @@ local json = require'json'
 
 local utf2iso = iconv.new('iso-8859-15', 'utf-8')
 
+local urlEncode = function(str)
+	return str:gsub(
+		'([^%w ])',
+		function (c)
+			return string.format ("%%%02X", string.byte(c))
+		end
+	):gsub(' ', '+')
+end
+
 local trim = function(s)
 	return s:match('^%s*(.-)%s*$')
 end
@@ -175,7 +184,9 @@ return {
 
 						simplehttp(
 							("http://yr.no/place/%s/%s/%s/forecast.xml"):format(
-								city.countryName, city.adminName1, city.toponymName
+								urlEncode(city.countryName),
+								urlEncode(city.adminName1),
+								urlEncode(city.toponymName)
 							),
 							function(data)
 								handleOutput(source, destination, data)
