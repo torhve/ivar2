@@ -113,11 +113,18 @@ local urlBase = "http://api.geonames.org/hierarchyJSON?geonameId=%d&username=has
 return {
 	PRIVMSG = {
 		['^!yr (.+)$'] = function(self, source, destination, input)
-			input = trim(input)
+			input = trim(input):lower()
 			local inputISO = utf2iso:iconv(input)
 
+			local country
+			if(input:find(',', 1, true)) then
+				input, country = input:match('([^,]+),(.+)')
+				country = trim(country):upper()
+				inputISO, _ = input:match('([^,]+),(.+)')
+			end
+
 			local db = sql.open("cache/places-norway.sql")
-			local selectStmt = db:prepare("SELECT name, url FROM places WHERE name LIKE ? OR name LIKE ?")
+			local selectStmt = db:prepare("SELECT name, url FROM places WHERE name = ? OR name = ?")
 			selectStmt:bind_values(input, inputISO)
 
 			local iter, vm = selectStmt:nrows()
@@ -135,13 +142,6 @@ return {
 				return
 			end
 
-			local country
-			if(input:find(',', 1, true)) then
-				input, country = input:match('([^,]+),(.+)')
-				country = trim(country)
-				inputISO, _ = input:match('([^,]+),(.+)')
-			end
-
 			local db = sql.open("cache/places.sql")
 			local selectStmt
 			if(country) then
@@ -150,8 +150,8 @@ return {
 					geonameid, name,countryCode, population
 				FROM places
 				WHERE
-					(name LIKE ? OR name LIKE ?)
-				AND countryCode LIKE ?
+					(name = ? OR name = ?)
+					AND countryCode = ?
 				ORDER BY
 				population DESC
 				]])
@@ -162,7 +162,7 @@ return {
 					geonameid, name,countryCode, population
 				FROM places
 				WHERE
-					(name LIKE ? OR name LIKE ?)
+					(name = ? OR name = ?)
 				ORDER BY
 				population DESC
 				]])
