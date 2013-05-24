@@ -50,7 +50,7 @@ local handleOutput = function(source, destination, data)
 	if(not location) then
 		return ivar2:Msg('privmsg', destination, source, "haste should probably fix this...")
 	end
-	local name = location:match("<name>([^<]+)</name>")
+	local name = location:match("<name>([^<]+)</name>"):lower():gsub("^%l", string.upper)
 	local country = location:match("<country>([^<]+)</country>")
 
 	local periods = {}
