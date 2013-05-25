@@ -27,27 +27,7 @@ local nsfw = {
 	['gonewild'] = true,
 }
 
-local function handleOutput(queue, hash, data, withURL)
-	data = utify8(data)
-	data = json.decode(data)
-	local gallery = data.data
-
-	if(data.status == 404) then
-		local url = ('https://api.imgur.com/3/image/%s.json'):format(hash)
-		return simplehttp(
-			{
-				url = url,
-				headers = headers
-			},
-
-			function(data)
-				return handleOutput(queue, hash, data, withURL)
-			end,
-			true,
-			DL_LIMIT
-		)
-	end
-
+local generateTitle = function(gallery, withURL)
 	local out = {}
 
 	if(withURL) then
@@ -79,20 +59,59 @@ local function handleOutput(queue, hash, data, withURL)
 
 	table.insert(out, string.format("[%s]", table.concat(tags, ", ")))
 
-	queue:done(table.concat(out, " "))
+	return table.concat(out, " ")
+end
+
+local function handleOutput(queue, hash, data, withURL, try)
+	data = utify8(data)
+	data = json.decode(data)
+	local gallery = data.data
+
+	if(data.status == 404) then
+		local url = ('https://api.imgur.com/3/image/%s.json'):format(hash)
+		return simplehttp(
+			{
+				url = url,
+				headers = headers
+			},
+
+			function(data)
+				return handleOutput(queue, hash, data, withURL, true)
+			end,
+			true,
+			DL_LIMIT
+		)
+	elseif(try and type(gallery.title) == 'function' and gallery.section) then
+		local section = gallery.section
+		local url = ('https://api.imgur.com/3/gallery/r/%s/%s.json'):format(section, hash)
+		return simplehttp(
+			{
+				url = url,
+				headers = headers
+			},
+
+			function(data)
+				return handleOutput(queue, hash, data, withURL)
+			end,
+			true,
+			DL_LIMIT
+		)
+	end
+
+	queue:done(generateTitle(gallery, withURL))
 end
 
 customHosts['^imgur%.com'] = function(queue, info)
 	if(not info.path) then return end
 
-	local type, hash = info.path:match('/(r?/?%w+)/([^.]+)$')
+	local section, hash = info.path:match('/(r?/?%w+)/([^.]+)$')
 	if(not hash) then return end
 
-	if(type:sub(1, 2) == "r/") then
-		type = "gallery/" .. type
+	if(section:sub(1, 2) == "r/") then
+		section = "gallery/" .. section
 	end
 
-	local url = ('https://api.imgur.com/3/%s/%s.json'):format(type, hash)
+	local url = ('https://api.imgur.com/3/%s/%s.json'):format(section, hash)
 	simplehttp(
 		{
 			url = url,
