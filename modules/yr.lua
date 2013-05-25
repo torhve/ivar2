@@ -3,6 +3,12 @@ local sql = require'lsqlite3'
 local iconv = require'iconv'
 local json = require'json'
 
+local rewrite = {
+	country = {
+		['United States'] = 'USA',
+	},
+}
+
 local utf2iso = iconv.new('iso-8859-15', 'utf-8')
 
 local urlEncode = function(str)
@@ -45,11 +51,22 @@ local handleData = function(type, line)
 	return out
 end
 
-local handleOutput = function(source, destination, data)
+local handleOutput = function(source, destination, data, city, try)
 	local location = data:match("<location>(.-)</location>")
-	if(not location) then
-		return ivar2:Msg('privmsg', destination, source, "haste should probably fix this...")
+	if(not location and not try) then
+		simplehttp(
+			("http://yr.no/place/%s/%s/%s~%s/varsel.xml"):format(
+				urlEncode(city.countryName),
+				urlEncode(city.adminName1),
+				urlEncode(city.toponymName),
+				city.geonameId
+			),
+			function(data)
+				handleOutput(source, destination, data, city, true)
+			end
+		)
 	end
+
 	local name = location:match("<name>([^<]+)</name>"):lower():gsub("^%l", string.upper)
 	local country = location:match("<country>([^<]+)</country>")
 
@@ -184,12 +201,12 @@ return {
 
 						simplehttp(
 							("http://yr.no/place/%s/%s/%s/varsel.xml"):format(
-								urlEncode(city.countryName),
+								urlEncode(rewrite.country[city.countryName] or city.countryName),
 								urlEncode(city.adminName1),
 								urlEncode(city.toponymName)
 							),
 							function(data)
-								handleOutput(source, destination, data)
+								handleOutput(source, destination, data, city)
 							end
 						)
 					end
