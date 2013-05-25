@@ -3,12 +3,6 @@ local sql = require'lsqlite3'
 local iconv = require'iconv'
 local json = require'json'
 
-local rewrite = {
-	country = {
-		['United States'] = 'USA',
-	},
-}
-
 local utf2iso = iconv.new('iso-8859-15', 'utf-8')
 
 local urlEncode = function(str)
@@ -205,7 +199,7 @@ return {
 
 						simplehttp(
 							("http://yr.no/place/%s/%s/%s/varsel.xml"):format(
-								urlEncode(rewrite.country[city.countryName] or city.countryName),
+								urlEncode(city.countryName),
 								urlEncode(city.adminName1),
 								urlEncode(city.toponymName)
 							),
