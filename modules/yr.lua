@@ -70,6 +70,8 @@ local handleOutput = function(source, destination, data, city, try)
 	local name = location:match("<name>([^<]+)</name>"):lower():gsub("^%l", string.upper)
 	local country = location:match("<country>([^<]+)</country>")
 
+	local overview = data:match('<link id="overview" url="([^"]+)" />')
+
 	local periods = {}
 	local tabular = data:match("<tabular>(.*)</tabular>")
 	for from, to, period, data in tabular:gmatch([[<time from="([^"]+)" to="([^"]+)" period="([^"]+)">(.-)</time>]]) do
@@ -122,6 +124,8 @@ local handleOutput = function(source, destination, data, city, try)
 	if(tomorrow) then
 		table.insert(out, string.format("Tomorrow: %s", formatPeriod(tomorrow)))
 	end
+
+	table.insert(out, overview)
 
 	ivar2:Msg('privmsg', destination, source, table.concat(out, " - "))
 end
