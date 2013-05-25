@@ -17,7 +17,7 @@ local urlEncode = function(str)
 		function (c)
 			return string.format ("%%%02X", string.byte(c))
 		end
-	):gsub(' ', '+')
+	):gsub(' ', '_')
 end
 
 local trim = function(s)
