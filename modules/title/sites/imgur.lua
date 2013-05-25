@@ -43,7 +43,7 @@ local generateTitle = function(gallery, withURL)
 	end
 
 	local tags = {}
-	if(gallery.with and gallery.height) then
+	if(gallery.width and gallery.height) then
 		table.insert(tags, string.format("%dx%d", gallery.width, gallery.height))
 	end
 
