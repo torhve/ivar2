@@ -43,7 +43,9 @@ local generateTitle = function(gallery, withURL)
 	end
 
 	local tags = {}
-	table.insert(tags, string.format("%dx%d", gallery.width, gallery.height))
+	if(gallery.with and gallery.height) then
+		table.insert(tags, string.format("%dx%d", gallery.width, gallery.height))
+	end
 
 	if(gallery.ups and gallery.downs) then
 		table.insert(tags, string.format("+%d/-%d", gallery.ups, gallery.downs))
@@ -55,6 +57,14 @@ local generateTitle = function(gallery, withURL)
 
 	if(gallery.animated) then
 		table.insert(tags, "gif")
+	end
+
+	if(gallery.images_count) then
+		table.insert(tags, string.format("%d images", gallery.images_count))
+	end
+
+	if(gallery.views) then
+		table.insert(tags, string.format("%d views", gallery.views))
 	end
 
 	table.insert(out, string.format("[%s]", table.concat(tags, ", ")))
@@ -111,7 +121,13 @@ customHosts['^imgur%.com'] = function(queue, info)
 		section = "gallery/" .. section
 	end
 
-	local url = ('https://api.imgur.com/3/%s/%s.json'):format(section, hash)
+	local url
+	if(section == 'a') then
+		url = ('https://api.imgur.com/3/album/%s'):format(hash)
+	else
+		url = ('https://api.imgur.com/3/%s/%s.json'):format(section, hash)
+	end
+
 	simplehttp(
 		{
 			url = url,
