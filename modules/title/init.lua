@@ -241,7 +241,7 @@ local fetchInformation = function(queue)
 
 		function(data, _, response)
 			local message = handleData(response.headers, data)
-			if(#queue.url > 140 and message) then
+			if(#queue.url > 110 and message) then
 				x0.lookup(queue.url, function(short)
 					queue:done(string.format('Downgraded URL: %s - %s', short, message))
 				end)
