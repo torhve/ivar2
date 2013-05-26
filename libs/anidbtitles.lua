@@ -13348,7 +13348,7 @@ return {
    },
   ["syn"] = {
    [1] = "Idol Defense Force Hummingbird",
-   [2] = "Музикални отбранителни сили \"Колибри\"",
+   [2] = "Звездни сили за самоотбрана \"Колибри\"",
    },
   },
  [841] = {
@@ -49573,16 +49573,18 @@ return {
    },
   },
  [4165] = {
-  ["main"] = "Kidou Senshi Gundam SEED Special Edition Kanketsuhen: Meidou no Sora",
+  ["main"] = "Kidou Senshi Gundam SEED: Meidou no Sora",
   ["official"] = {
    [1] = "Mobile Suit Gundam SEED: Movie III - The Rumbling Sky",
-   [2] = "動戦士ガンダムSEED スペシャルエディション完結編 鳴動の宇宙",
+   [2] = "機動戦士ガンダムSEED -鳴動の宇宙[そら]-",
    },
   ["short"] = {
    [1] = "GS SE III",
    [2] = "GS Special Edition III",
    },
   ["syn"] = {
+   [1] = "Kidou Senshi Gundam SEED Special Edition Kanketsuhen: Meidou no Sora",
+   [2] = "機動戦士ガンダムSEED スペシャルエディション完結編 鳴動の宇宙",
    },
   },
  [4166] = {
@@ -49623,23 +49625,25 @@ return {
    },
   },
  [4168] = {
-  ["main"] = "Kidou Senshi Gundam SEED Special Edition II: Harukanaru Akatsuki",
+  ["main"] = "Kidou Senshi Gundam SEED: Harukanaru Akatsuki",
   ["official"] = {
    [1] = "Mobile Suit Gundam SEED: Movie II - The Far-Away Dawn",
-   [2] = "機動戦士ガンダムSEED スペシャルエディションII 遥かなる暁",
+   [2] = "機動戦士ガンダムSEED -遥かなる暁-",
    },
   ["short"] = {
    [1] = "GS SE II",
    [2] = "GS Special Edition II",
    },
   ["syn"] = {
+   [1] = "Kidou Senshi Gundam SEED Special Edition II: Harukanaru Akatsuki",
+   [2] = "機動戦士ガンダムSEED スペシャルエディションII 遥かなる暁",
    },
   },
  [4169] = {
-  ["main"] = "Kidou Senshi Gundam SEED Special Edition I: Kokuu no Senjou",
+  ["main"] = "Kidou Senshi Gundam SEED: Kokuu no Senjou",
   ["official"] = {
    [1] = "Mobile Suit Gundam SEED: Movie I - The Empty Battlefield",
-   [2] = "機動戦士ガンダムSEED スペシャルエディション 虚空の戦場",
+   [2] = "機動戦士ガンダムSEED -虚空の戦場-",
    },
   ["short"] = {
    [1] = "GS SE I",
@@ -49647,7 +49651,8 @@ return {
    },
   ["syn"] = {
    [1] = "Gundam SEED - Das leere Schlachtfeld",
-   [2] = "機動戦士ガンダムSEED スペシャルエディション-虚空の戦場-",
+   [2] = "Kidou Senshi Gundam SEED Special Edition I: Kokuu no Senjou",
+   [3] = "機動戦士ガンダムSEED スペシャルエディション 虚空の戦場",
    },
   },
  [4170] = {
@@ -53733,7 +53738,8 @@ return {
   ["main"] = "Fortune Dogs",
   ["official"] = {
    [1] = "Cãezinhos de Sorte",
-   [2] = "ふぉうちゅんドッグす",
+   [2] = "Perros Afortunados",
+   [3] = "ふぉうちゅんドッグす",
    },
   ["short"] = {
    },
@@ -68741,7 +68747,8 @@ return {
   ["official"] = {
    [1] = "Pokemon: Arceus and the Jewel of Life",
    [2] = "Pokémon 12 - Arceus und das Juwel des Lebens",
-   [3] = "劇場版 ポケットモンスター ダイヤモンド&パール アルセウス 超克の時空へ",
+   [3] = "Pokémon: Arcéus e a Jóia da Vida",
+   [4] = "劇場版 ポケットモンスター ダイヤモンド&パール アルセウス 超克の時空へ",
    },
   ["short"] = {
    },
@@ -77636,7 +77643,8 @@ return {
   ["official"] = {
    [1] = "Pokemon - Zoroark: Master of Illusions",
    [2] = "Pokémon: Zoroark - Meister der Illusionen",
-   [3] = "劇場版ポケットモンスター ダイヤモンド&パール 幻影の覇者 ゾロアーク",
+   [3] = "Pokémon: Zoroark - Mestre de Ilusões",
+   [4] = "劇場版ポケットモンスター ダイヤモンド&パール 幻影の覇者 ゾロアーク",
    },
   ["short"] = {
    },
@@ -77888,7 +77896,7 @@ return {
    },
   },
  [7279] = {
-  ["main"] = "Soukou Kihei Votoms: Gen-ei Hen",
+  ["main"] = "Soukou Kihei Votoms: Gen`ei Hen",
   ["official"] = {
    [1] = "装甲騎兵ボトムズ 幻影篇",
    },
@@ -80594,7 +80602,8 @@ return {
   ["main"] = "Evangelion Shin Gekijouban: Q",
   ["official"] = {
    [1] = "Evangelion 3.33: You can (not) redo",
-   [2] = "ヱヴァンゲリヲン新劇場版: Q",
+   [2] = "Evangelion: 3.0 You Can (Not) Redo",
+   [3] = "ヱヴァンゲリヲン新劇場版: Q",
    },
   ["short"] = {
    [1] = "Євангеліон 3.0",
@@ -86679,12 +86688,12 @@ return {
  [8182] = {
   ["main"] = "DD Hokuto no Ken",
   ["official"] = {
-   [1] = "DD Fist of the North Star",
-   [2] = "DD北斗之拳",
+   [1] = "DD北斗之拳",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "DD Fist of the North Star",
    },
   },
  [8184] = {
@@ -91427,7 +91436,7 @@ return {
  [8699] = {
   ["main"] = "009 Re:Cyborg",
   ["official"] = {
-   [1] = "009 Re:Cyborg",
+   [1] = "009 RE:CYBORG",
    },
   ["short"] = {
    },
@@ -98069,7 +98078,7 @@ return {
   ["main"] = "Puchimas! Petit Idolmaster",
   ["official"] = {
    [1] = "Puchim@s",
-   [2] = "ぷちます! プチ・アイドルマスタ",
+   [2] = "ぷちます! プチ・アイドルマスター",
    },
   ["short"] = {
    [1] = "puchimas",
@@ -98163,7 +98172,8 @@ return {
  [9453] = {
   ["main"] = "Nekomonogatari (Kuro)",
   ["official"] = {
-   [1] = "猫物語(黒)",
+   [1] = "Nekomonogatari Noir",
+   [2] = "猫物語(黒)",
    },
   ["short"] = {
    [1] = "nkmg",
@@ -100279,13 +100289,15 @@ return {
    },
   },
  [9682] = {
-  ["main"] = "Garden The Animation",
+  ["main"] = "Garden",
   ["official"] = {
-   [1] = "ガーデン THE ANIMATION",
+   [1] = "ガーデン",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Garden The Animation",
+   [2] = "ガーデン THE ANIMATION",
    },
   },
  [9683] = {
@@ -100720,7 +100732,8 @@ return {
  [9741] = {
   ["main"] = "Zettai Bouei Leviathan",
   ["official"] = {
-   [1] = "絶対防衛レヴィアタン",
+   [1] = "Zettai Boei Leviatan",
+   [2] = "絶対防衛レヴィアタン",
    },
   ["short"] = {
    },
@@ -101590,9 +101603,9 @@ return {
    },
   },
  [9854] = {
-  ["main"] = "Gifuu Doudou!! Naoe Kanetsugu: Maeda Keiji Sakegatari",
+  ["main"] = "Gifuu Doudou!! Kanetsugu to Keiji",
   ["official"] = {
-   [1] = "義風堂々!! 直江兼続 -前田慶次 酒語り-",
+   [1] = "義風堂々!! 兼続と慶次",
    },
   ["short"] = {
    },
@@ -101600,9 +101613,9 @@ return {
    },
   },
  [9855] = {
-  ["main"] = "Outbreak Company: Moeru Shinryakusha",
+  ["main"] = "Outbreak Company",
   ["official"] = {
-   [1] = "アウトブレイク・カンパニー ~萌える侵略者~",
+   [1] = "アウトブレイク・カンパニー",
    },
   ["short"] = {
    },
@@ -101697,6 +101710,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Inazuma Eleven GO 3",
    },
   },
  [9868] = {
@@ -101820,13 +101834,14 @@ return {
    },
   },
  [9881] = {
-  ["main"] = "Daiya no Ace",
+  ["main"] = "Dia no Ace",
   ["official"] = {
    [1] = "ダイヤのA[エース]",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Daiya no Ace",
    },
   },
  [9882] = {
@@ -101920,9 +101935,9 @@ return {
    },
   },
  [9893] = {
-  ["main"] = "BlazBlue: Calamity Trigger",
+  ["main"] = "BlazBlue: Alter Memory",
   ["official"] = {
-   [1] = "BLAZBLUE -Calamity Trigger-",
+   [1] = "BLAZBLUE ALTER MEMORY",
    },
   ["short"] = {
    },
@@ -101933,6 +101948,76 @@ return {
   ["main"] = "Shou Hu Zhe Sen Lin",
   ["official"] = {
    [1] = "Jungle Master",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9895] = {
+  ["main"] = "Puchimas! Petit Idolmaster (2013)",
+  ["official"] = {
+   [1] = "ぷちます! プチ・アイドルマスター (2013)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9896] = {
+  ["main"] = "The Midnight Animals",
+  ["official"] = {
+   [1] = "ザ・ミッドナイト★アニマル",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9897] = {
+  ["main"] = "Mesu Saga: Persona",
+  ["official"] = {
+   [1] = "牝性 －ペルソナ－",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9898] = {
+  ["main"] = "Imouto Paradise! 2",
+  ["official"] = {
+   [1] = "妹ぱらだいす! 2",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9899] = {
+  ["main"] = "Ninja Hattori-kun (2012)",
+  ["official"] = {
+   [1] = "忍者ハットリくん （2012年版）",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9900] = {
+  ["main"] = "Fate/Kaleid Liner Prisma Illya (2014)",
+  ["official"] = {
+   [1] = "Fate/kaleid liner プリズマ☆イリヤ (2014)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9901] = {
+  ["main"] = "Puchitto Gargantia",
+  ["official"] = {
+   [1] = "ぷちっとがるがんていあ",
    },
   ["short"] = {
    },
