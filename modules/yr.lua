@@ -31,7 +31,24 @@ local parseDate = function(datestr)
 end
 
 local formatPeriod = function(period)
-	return string.format("%s, %s°C", period.symbol.name, period.temperature.value)
+	local out = {}
+
+	table.insert(out, string.format("%s, %s°C", period.symbol.name, period.temperature.value))
+
+	if(period.precipitation.value ~= "0") then
+		table.insert(out, string.format("%s mm", period.precipitation.value))
+	end
+
+	table.insert(out,
+		string.format(
+			"%s, %s %s mps",
+			period.windSpeed.name,
+			period.windDirection.name,
+			period.windSpeed.mps
+		)
+	)
+
+	return table.concat(out, ", ")
 end
 
 local handleData = function(type, line)
