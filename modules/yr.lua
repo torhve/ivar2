@@ -5,6 +5,8 @@ local json = require'json'
 
 local utf2iso = iconv.new('iso-8859-15', 'utf-8')
 
+local days = { "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" }
+
 local urlEncode = function(str)
 	return str:gsub(
 		'([^%w ])',
@@ -51,6 +53,16 @@ local formatPeriod = function(period)
 	return table.concat(out, ", ")
 end
 
+local formatShortPeriod = function(period)
+	local wday = os.date('*t', period.from)['wday']
+	return string.format(
+		"\002%s\002: %s, %s°C",
+		days[wday],
+		period.symbol.name,
+		period.temperature.value
+	)
+end
+
 local handleData = function(type, line)
 	local out = {}
 	local data = line:match(string.format("<%s (.-) />", type))
@@ -62,7 +74,7 @@ local handleData = function(type, line)
 	return out
 end
 
-local handleOutput = function(source, destination, data, city, try)
+local handleOutput = function(source, destination, seven, data, city, try)
 	local location = data:match("<location>(.-)</location>")
 	if(not location and not try) then
 		simplehttp(
@@ -73,7 +85,7 @@ local handleOutput = function(source, destination, data, city, try)
 				city.geonameId
 			),
 			function(data)
-				handleOutput(source, destination, data, city, true)
+				handleOutput(source, destination, seven, data, city, true)
 			end
 		)
 	end
@@ -82,6 +94,7 @@ local handleOutput = function(source, destination, data, city, try)
 	local country = location:match("<country>([^<]+)</country>")
 
 	local overview = data:match('<link id="overview" url="([^"]+)" />')
+	local longterm = data:match('<link id="longTermForecast" url="([^"]+)" />')
 
 	local periods = {}
 	local tabular = data:match("<tabular>(.*)</tabular>")
@@ -108,35 +121,54 @@ local handleOutput = function(source, destination, data, city, try)
 	time.min = 0
 	time.sec = 0
 	local nextDay = os.time(time)
-	local now = periods[1]
-	local later = periods[2]
-
-	if(later.from >= nextDay) then
-		later = nil
-	end
-
-	local tomorrow
-	for i=3, #periods do
-		local period = periods[i]
-		if(period.from > nextDay and period.period == "2") then
-			tomorrow = period
-
-			break
-		end
-	end
-
 	local out = {}
-	table.insert(out, string.format("Current weather in %s (%s): %s", name, country, formatPeriod(now)))
+	if(seven) then
+		for i=1, #periods do
+			local period = periods[i]
+			if(period.from > nextDay and period.period == "2") then
+				table.insert(out, period)
+			end
 
-	if(later) then
-		table.insert(out, string.format("Tonight: %s", formatPeriod(later)))
+			if(#out == 7) then
+				break
+			end
+		end
+
+		for i=1, #out do
+			out[i] = formatShortPeriod(out[i])
+		end
+
+		table.insert(out, longterm .. '.html')
+	else
+		local now = periods[1]
+		local later = periods[2]
+
+		if(later.from >= nextDay) then
+			later = nil
+		end
+
+		local tomorrow
+		for i=3, #periods do
+			local period = periods[i]
+			if(period.from > nextDay and period.period == "2") then
+				tomorrow = period
+
+				break
+			end
+		end
+
+		table.insert(out, string.format("Current weather in %s (%s): %s", name, country, formatPeriod(now)))
+
+		if(later) then
+			table.insert(out, string.format("Tonight: %s", formatPeriod(later)))
+		end
+
+		if(tomorrow) then
+			table.insert(out, string.format("Tomorrow: %s", formatPeriod(tomorrow)))
+		end
+
+		table.insert(out, overview)
 	end
-
-	if(tomorrow) then
-		table.insert(out, string.format("Tomorrow: %s", formatPeriod(tomorrow)))
-	end
-
-	table.insert(out, overview)
 
 	ivar2:Msg('privmsg', destination, source, table.concat(out, " - "))
 end
@@ -144,7 +176,7 @@ end
 local urlBase = "http://api.geonames.org/hierarchyJSON?geonameId=%d&username=haste"
 return {
 	PRIVMSG = {
-		['^!yr (.+)$'] = function(self, source, destination, input)
+		['^!yr(7?) (.+)$'] = function(self, source, destination, seven, input)
 			input = trim(input):lower()
 			local inputISO = utf2iso:iconv(input)
 
@@ -168,7 +200,7 @@ return {
 				simplehttp(
 					place.url,
 					function(data)
-						handleOutput(source, destination, data)
+						handleOutput(source, destination, seven == '7', data)
 					end
 				)
 				return
@@ -221,7 +253,7 @@ return {
 								urlEncode(city.toponymName)
 							),
 							function(data)
-								handleOutput(source, destination, data, city)
+								handleOutput(source, destination, seven == '7', data, city)
 							end
 						)
 					end
