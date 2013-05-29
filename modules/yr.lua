@@ -158,14 +158,14 @@ local handleOutput = function(source, destination, seven, data, city, try)
 			end
 		end
 
-		table.insert(out, string.format("Current weather in %s (%s): %s", name, country, formatPeriod(now)))
+		table.insert(out, string.format("Current weather in \002%s\002 (%s): %s", name, country, formatPeriod(now)))
 
 		if(later) then
-			table.insert(out, string.format("Tonight: %s", formatPeriod(later)))
+			table.insert(out, string.format("\002Tonight\002: %s", formatPeriod(later)))
 		end
 
 		if(tomorrow) then
-			table.insert(out, string.format("Tomorrow: %s", formatPeriod(tomorrow)))
+			table.insert(out, string.format("\002Tomorrow\002: %s", formatPeriod(tomorrow)))
 		end
 
 		table.insert(out, overview)
