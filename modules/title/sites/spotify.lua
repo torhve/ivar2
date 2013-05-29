@@ -12,7 +12,7 @@ customHosts['open.spotify.com'] = function(queue, info)
 				local title = html2unicode(data:match'<title>(.-) on Spotify</title>')
 				local uri = data:match('property="og:audio" content="([^"]+)"')
 
-				queue:done(string.format('%s: %s', title, uri))
+				queue:done(string.format('%s: %s | http://play.spotify.com/%s', title, uri, info.path))
 			end
 		)
 
