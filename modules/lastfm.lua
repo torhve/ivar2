@@ -123,5 +123,19 @@ return {
 				end
 			)
 		end,
+
+		['^!np%s*$'] = function(self, source, destination)
+			simplehttp(
+				buildQuery{
+					method = 'user.getRecentTracks',
+					limit = '1',
+					user = source.nick,
+				},
+
+				function(data)
+					parseRecentTracks(source, destination, data)
+				end
+			)
+		end,
 	},
 }
