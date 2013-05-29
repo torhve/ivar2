@@ -91,7 +91,7 @@ local function handleOutput(queue, hash, data, withURL, try)
 			true,
 			DL_LIMIT
 		)
-	elseif(try and type(gallery.title) == 'function' and gallery.section) then
+	elseif(try and type(gallery.title) == 'function' and gallery.section and type(gallery.section) ~= "function") then
 		local section = gallery.section
 		local url = ('https://api.imgur.com/3/gallery/r/%s/%s.json'):format(section, hash)
 		return simplehttp(
