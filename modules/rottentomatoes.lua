@@ -31,7 +31,6 @@ local trim = function(s)
 end
 
 local parseData = function(source, destination, data, search)
-	print(data)
 	data = utify8(data)
 	data = json.decode(data)
 
