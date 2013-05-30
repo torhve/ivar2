@@ -63,7 +63,7 @@ local generateTitle = function(gallery, withURL)
 		table.insert(tags, string.format("%d images", gallery.images_count))
 	end
 
-	if(gallery.views) then
+	if(gallery.views and gallery.views ~= 0) then
 		table.insert(tags, string.format("%d views", gallery.views))
 	end
 
