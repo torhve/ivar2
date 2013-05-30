@@ -31,6 +31,7 @@ local trim = function(s)
 end
 
 local parseData = function(source, destination, data, search)
+	print(data)
 	data = utify8(data)
 	data = json.decode(data)
 
@@ -49,15 +50,35 @@ local parseData = function(source, destination, data, search)
 	end
 
 	local movie = data.movies[found] or data.movies[1]
-	local out = string.format(
-		"\002%s\002 (%d) %s/%d min - Critics: %d%% (%s) Audience: %d%% (%s) - %s",
-		movie['title'], movie['year'], movie['mpaa_rating'], movie['runtime'],
-		movie['ratings']['critics_score'], movie['ratings']['critics_rating'],
-		movie['ratings']['audience_score'], movie['ratings']['audience_rating'],
-		movie['critics_consensus']
+	local out = {}
+	local ins = function(fmt, ...)
+		for i=1, select('#', ...) do
+			local val = select(i, ...)
+			if(type(val) == 'nil' or val == -1) then
+				return
+			end
+		end
+
+		table.insert(
+			out,
+			string.format(fmt, ...)
+		)
+	end
+
+	ins(
+		"\002%s\002 (%d) %s/%d min",
+		movie['title'], movie['year'], movie['mpaa_rating'], movie['runtime']
 	)
 
-	ivar2:Msg('privmsg', destination, source, out)
+	ins("- Critics: %d%%", movie['ratings']['critics_score'])
+	ins("(%s)", movie['ratings']['critics_rating'])
+
+	ins("- Audience: %d%%", movie['ratings']['audience_score'])
+	ins("(%s)", movie['ratings']['audience_rating'])
+
+	ins("- %s", movie['critics_consensus'])
+
+	ivar2:Msg('privmsg', destination, source, table.concat(out, " "))
 end
 
 local urlFormat = 'http://api.rottentomatoes.com/api/public/v1.0/movies.json?page_limit=5&apikey=%s&q=%s'
