@@ -24,7 +24,7 @@ return {
 			self:Msg('privmsg', destination, source, "Disable module: %s", module)
 		end,
 
-		['irc> (%S+) (.+)$"'] = function(self, source, destination, command, argument)
+		['irc> (%S+) (.+)$'] = function(self, source, destination, command, argument)
 			if(not verifyOwner(source)) then return end
 
 			command = command:lower()
