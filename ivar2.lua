@@ -335,7 +335,6 @@ function ivar2:Connect(config)
 
 	self:Log('info', 'Connecting to %s:%s.', config.host, config.port)
 	self.socket = connection.tcp(loop, self, config.host, config.port, bindHost, bindPort)
-
 	self:DisableAllModules()
 	self:LoadModules()
 end

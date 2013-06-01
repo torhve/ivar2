@@ -146,7 +146,7 @@ end
 
 return {
 	PRIVMSG = {
-		['^!dokpro (.+)$'] = handleInput,
-		['^!ordbok (.+)$'] = handleInput,
+		['^.dokpro (.+)$'] = handleInput,
+		['^.ordbok (.+)$'] = handleInput,
 	},
 }

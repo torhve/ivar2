@@ -128,7 +128,7 @@ end
 
 return {
 	PRIVMSG = {
-		['^!alarm (.*)$'] = alarm,
-		['^!timer (.*)$'] = alarm,
+		['^.alarm (.*)$'] = alarm,
+		['^.timer (.*)$'] = alarm,
 	},
 }
