@@ -1,6 +1,6 @@
 return {
 	PRIVMSG = {
-		['^lua>(.+)$'] = function(self, source, destination, lua)
+		['^>(.+)$'] = function(self, source, destination, lua)
 			local inputFile = os.tmpname()
 			local outputFile = os.tmpname()
 

@@ -42,7 +42,7 @@ end
 
 return {
 	PRIVMSG = {
-		['^!changelog%s*(.*)$'] = function(self, source, destination, num)
+		['^\.changelog%s*(.*)$'] = function(self, source, destination, num)
 			local cl = readGitLog()
 			if(#num > 0) then
 				local total = #cl

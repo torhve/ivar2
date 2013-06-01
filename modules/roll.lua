@@ -7,7 +7,7 @@ end
 
 return {
 	PRIVMSG = {
-		['^!roll (.+)$'] = function(self, source, destination, input)
+		['^.roll (.+)$'] = function(self, source, destination, input)
 			local a,b = input:match('([-%d]+)%s*([-%d]*)')
 			a, b = tonumber(a), tonumber(b)
 
