@@ -16437,11 +16437,13 @@ return {
   ["official"] = {
    [1] = "F-ZERO ファルコン伝説",
    [2] = "F-Zero",
+   [3] = "F-Zero: GP Legend",
    },
   ["short"] = {
    [1] = "fzero",
    },
   ["syn"] = {
+   [1] = "F-Zero: Legend of Falcon",
    },
   },
  [1059] = {
@@ -16501,8 +16503,9 @@ return {
    [10] = "Yeşilin Kızı Anne",
    [11] = "Άννα, το Κορίτσι της Χαράς",
    [12] = "האסופית",
-   [13] = "شما في البراري الخضراء",
-   [14] = "赤毛のアン",
+   [13] = "حنا دختری در مزرعه",
+   [14] = "شما في البراري الخضراء",
+   [15] = "赤毛のアン",
    },
   ["short"] = {
    },
@@ -22575,9 +22578,10 @@ return {
    [2] = "Monstras",
    [3] = "Monstro",
    [4] = "Monstrul",
-   [5] = "Монстр",
-   [6] = "Чудовище",
-   [7] = "الوحش",
+   [5] = "Naoki Urasawa`s MONSTER",
+   [6] = "Монстр",
+   [7] = "Чудовище",
+   [8] = "الوحش",
    },
   },
  [1540] = {
@@ -27831,8 +27835,9 @@ return {
    [10] = "Tajemniczy Opiekun",
    [11] = "Táta Sekáč",
    [12] = "Длинноногий дядюшка",
-   [13] = "صاحب الظل الطويل",
-   [14] = "私のあしながおじさん",
+   [13] = "بابا لنگ دراز",
+   [14] = "صاحب الظل الطويل",
+   [15] = "私のあしながおじさん",
    },
   ["short"] = {
    },
@@ -31943,8 +31948,9 @@ return {
    [5] = "Pikku naisia",
    [6] = "Una per tutte, tutte per una",
    [7] = "נשים קטנות",
-   [8] = "نساء صغيرات",
-   [9] = "愛の若草物語",
+   [8] = "زنان کوچک",
+   [9] = "نساء صغيرات",
+   [10] = "愛の若草物語",
    },
   ["short"] = {
    },
@@ -36545,7 +36551,7 @@ return {
    },
   },
  [2694] = {
-  ["main"] = "Legend of DUO",
+  ["main"] = "Legend of Duo",
   ["official"] = {
    [1] = "Legend of DUO",
    [2] = "Legenda DUO",
@@ -43048,12 +43054,13 @@ return {
    [3] = "Gin-iro no Kami no Agito",
    [4] = "Giniro no Kami no Agito",
    [5] = "Origini - Spirite ale trecutului",
-   [6] = "Spirit of the Past",
-   [7] = "Серебряновласый Агито",
-   [8] = "Серебряноволосый Агито",
-   [9] = "Срібноволосий Аґіто",
-   [10] = "الأصل: أرواح الماضي",
-   [11] = "银发的阿基多",
+   [6] = "Silver-Haired Agito",
+   [7] = "Spirit of the Past",
+   [8] = "Серебряновласый Агито",
+   [9] = "Серебряноволосый Агито",
+   [10] = "Срібноволосий Аґіто",
+   [11] = "الأصل: أرواح الماضي",
+   [12] = "银发的阿基多",
    },
   },
  [3386] = {
@@ -58367,8 +58374,9 @@ return {
   ["main"] = "Gekijouban Pocket Monsters Diamond & Pearl: Dialga vs. Palkia vs. Darkrai",
   ["official"] = {
    [1] = "Pokemon: The Rise of Darkrai",
-   [2] = "Pokémon: Der Aufstieg von Darkrai",
-   [3] = "劇場版 ポケットモンスター ダイヤモンド&パール ディアルガvsパルキアvsダークライ",
+   [2] = "Pokémon - A Ascenção do Darkrai",
+   [3] = "Pokémon: Der Aufstieg von Darkrai",
+   [4] = "劇場版 ポケットモンスター ダイヤモンド&パール ディアルガvsパルキアvsダークライ",
    },
   ["short"] = {
    },
@@ -64299,11 +64307,12 @@ return {
   ["main"] = "Gekijouban Pocket Monsters Diamond & Pearl: Giratina to Sora no Hanataba Shaymin",
   ["official"] = {
    [1] = "Pokemon: Giratina & the Sky Warrior",
-   [2] = "Pokémon - Giratina És Az Égi Harcos",
-   [3] = "Pokémon: Giratina i strażnik nieba",
-   [4] = "Pokémon: Giratina und der Himmelsritter",
-   [5] = "Покемон: Джиратина и Небесният Воин",
-   [6] = "劇場版 ポケットモンスター ダイヤモンド&パール ギラティナと氷空の花束 シェイミ",
+   [2] = "Pokémon - Giratina e o Guerreiro Celeste",
+   [3] = "Pokémon - Giratina És Az Égi Harcos",
+   [4] = "Pokémon: Giratina i strażnik nieba",
+   [5] = "Pokémon: Giratina und der Himmelsritter",
+   [6] = "Покемон: Джиратина и Небесният Воин",
+   [7] = "劇場版 ポケットモンスター ダイヤモンド&パール ギラティナと氷空の花束 シェイミ",
    },
   ["short"] = {
    },
@@ -67114,6 +67123,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Saimin Jutsu 2",
    },
   },
  [6120] = {
@@ -69254,7 +69264,8 @@ return {
  [6384] = {
   ["main"] = "Ristorante Paradiso",
   ["official"] = {
-   [1] = "リストランテ・パラディーゾ",
+   [1] = "Ristorante Paradiso",
+   [2] = "リストランテ・パラディーゾ",
    },
   ["short"] = {
    },
@@ -77642,8 +77653,8 @@ return {
   ["main"] = "Gekijouban Pocket Monsters Diamond & Pearl: Gen`ei no Hasha Zoroark",
   ["official"] = {
    [1] = "Pokemon - Zoroark: Master of Illusions",
-   [2] = "Pokémon: Zoroark - Meister der Illusionen",
-   [3] = "Pokémon: Zoroark - Mestre de Ilusões",
+   [2] = "Pokémon - Zoroark: Mestre de Ilusões",
+   [3] = "Pokémon: Zoroark - Meister der Illusionen",
    [4] = "劇場版ポケットモンスター ダイヤモンド&パール 幻影の覇者 ゾロアーク",
    },
   ["short"] = {
@@ -84928,7 +84939,8 @@ return {
   ["official"] = {
    [1] = "Pokemon The Movie: White - Victini and Zekrom",
    [2] = "Pokémon - Der Film: Weiß - Victini und Zekrom",
-   [3] = "劇場版 ポケットモンスター ベストウイッシュ ビクティニと黒き英雄 ゼクロム",
+   [3] = "Pokémon o Filme: Branco - Victini e Zekrom",
+   [4] = "劇場版 ポケットモンスター ベストウイッシュ ビクティニと黒き英雄 ゼクロム",
    },
   ["short"] = {
    },
@@ -87464,7 +87476,8 @@ return {
   ["official"] = {
    [1] = "Pokemon The Movie: Black - Victini and Reshiram",
    [2] = "Pokémon - Der Film: Schwarz - Victini und Reshiram",
-   [3] = "劇場版 ポケットモンスター ベストウイッシュ ビクティニと白き英雄 レシラム",
+   [3] = "Pokémon o Filme: Preto - Victini e Reshiram",
+   [4] = "劇場版 ポケットモンスター ベストウイッシュ ビクティニと白き英雄 レシラム",
    },
   ["short"] = {
    },
@@ -90073,7 +90086,8 @@ return {
  [8552] = {
   ["main"] = "Kill Me Baby",
   ["official"] = {
-   [1] = "キルミーベイベー",
+   [1] = "Kill Me Baby",
+   [2] = "キルミーベイベー",
    },
   ["short"] = {
    [1] = "kmb",
@@ -90954,6 +90968,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Squirting Mermaid",
    },
   },
  [8650] = {
@@ -96057,6 +96072,7 @@ return {
    [1] = "探検ドリランド",
    },
   ["short"] = {
+   [1] = "driland",
    },
   ["syn"] = {
    },
@@ -97749,7 +97765,8 @@ return {
  [9403] = {
   ["main"] = "Kono Danshi, Ningyo Hiroimashita.",
   ["official"] = {
-   [1] = "この男子, 人魚ひろいました.",
+   [1] = "This Boy Caught a Merman",
+   [2] = "この男子, 人魚ひろいました.",
    },
   ["short"] = {
    },
@@ -98479,7 +98496,8 @@ return {
   ["main"] = "Toaru Kagaku no Railgun S",
   ["official"] = {
    [1] = "A Certain Scientific Railgun S",
-   [2] = "とある科学の超電磁砲[レールガン]S",
+   [2] = "یک ریلگان علمی خاص اس",
+   [3] = "とある科学の超電磁砲[レールガン]S",
    },
   ["short"] = {
    [1] = "toaru s",
@@ -99072,14 +99090,17 @@ return {
    [1] = "Attack on Titan",
    [2] = "L`attaque des Titans",
    [3] = "Атака на титанів",
-   [4] = "进击的巨人",
-   [5] = "進撃の巨人",
-   [6] = "進擊的巨人",
-   [7] = "진격의 거인",
+   [4] = "الهجوم على العملاقة",
+   [5] = "حمله به تایتان",
+   [6] = "进击的巨人",
+   [7] = "進撃の巨人",
+   [8] = "進擊的巨人",
+   [9] = "진격의 거인",
    },
   ["short"] = {
    [1] = "AoT",
-   [2] = "shingeki",
+   [2] = "SnK",
+   [3] = "shingeki",
    },
   ["syn"] = {
    [1] = "Атака Титанів",
@@ -99175,14 +99196,14 @@ return {
  [9556] = {
   ["main"] = "Suisei no Gargantia",
   ["official"] = {
-   [1] = "翠星のガルガンティア",
+   [1] = "Gargantia on the Verdurous Planet",
+   [2] = "翠星のガルガンティア",
    },
   ["short"] = {
    [1] = "Sunoga",
    [2] = "gargantia",
    },
   ["syn"] = {
-   [1] = "Gargantia on the Verdurous Planet",
    },
   },
  [9557] = {
@@ -99461,7 +99482,8 @@ return {
  [9589] = {
   ["main"] = "Kotonoha no Niwa",
   ["official"] = {
-   [1] = "言の葉の庭",
+   [1] = "Сад слів",
+   [2] = "言の葉の庭",
    },
   ["short"] = {
    },
@@ -100732,12 +100754,13 @@ return {
  [9741] = {
   ["main"] = "Zettai Bouei Leviathan",
   ["official"] = {
-   [1] = "Zettai Boei Leviatan",
+   [1] = "Leviathan: The Last Defense",
    [2] = "絶対防衛レヴィアタン",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Zettai Boei Leviatan",
    },
   },
  [9743] = {
@@ -101036,8 +101059,10 @@ return {
    [1] = "探検ドリランド－1000年の真宝－",
    },
   ["short"] = {
+   [1] = "driland2",
    },
   ["syn"] = {
+   [1] = "Tanken Driland: Sennen no Mahou",
    },
   },
  [9785] = {
@@ -102014,10 +102039,101 @@ return {
   ["syn"] = {
    },
   },
- [9901] = {
-  ["main"] = "Puchitto Gargantia",
+ [9903] = {
+  ["main"] = "Nisekoi",
   ["official"] = {
-   [1] = "ぷちっとがるがんていあ",
+   [1] = "ニセコイ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9904] = {
+  ["main"] = "Natsume Yuujinchou (2013)",
+  ["official"] = {
+   [1] = "夏目友人帳 (2013)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9905] = {
+  ["main"] = "Aoki Hagane no Arpeggio",
+  ["official"] = {
+   [1] = "蒼き鋼のアルペジオ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Arpeggio of Blue Steel",
+   },
+  },
+ [9906] = {
+  ["main"] = "Love Stage!!",
+  ["official"] = {
+   [1] = "LOVE STAGE!!",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9907] = {
+  ["main"] = "Fate/Zero Cafe",
+  ["official"] = {
+   [1] = "Fate/ゼロカフェ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9908] = {
+  ["main"] = "Joshikousei nobunagachan!!",
+  ["official"] = {
+   [1] = "女子高生信長ちゃん!!",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9909] = {
+  ["main"] = "Waisetsu Missile The Animation",
+  ["official"] = {
+   [1] = "猥褻ミサイル THE ANIMATION",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9910] = {
+  ["main"] = "Ikemen Kyuugo-tai Nurse Angels",
+  ["official"] = {
+   [1] = "イケメン救護隊 ナースエンジェルス",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9911] = {
+  ["main"] = "Hitotsubu ni Kawaranu Ai o Komete",
+  ["official"] = {
+   [1] = "一粒に変わらぬ愛をこめて",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9912] = {
+  ["main"] = "Code Geass: Soubou no Oz Picture Drama",
+  ["official"] = {
+   [1] = "コードギアス 双貌のオズ ピクチャードマラ",
    },
   ["short"] = {
    },
