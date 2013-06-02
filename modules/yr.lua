@@ -78,7 +78,7 @@ local handleOutput = function(source, destination, seven, data, city, try)
 	local location = data:match("<location>(.-)</location>")
 	if(not location and not try) then
 		simplehttp(
-			("http://yr.no/place/%s/%s/%s~%s/varsel.xml"):format(
+			("http://yr.no/stad/%s/%s/%s~%s/varsel.xml"):format(
 				urlEncode(city.countryName),
 				urlEncode(city.adminName1),
 				urlEncode(city.toponymName),
@@ -158,7 +158,7 @@ local handleOutput = function(source, destination, seven, data, city, try)
 			end
 		end
 
-		table.insert(out, string.format("Current weather in \002%s\002 (%s): %s", name, country, formatPeriod(now)))
+		table.insert(out, string.format("\002%s\002 (%s): %s", name, country, formatPeriod(now)))
 
 		if(later) then
 			table.insert(out, string.format("\002Tonight\002: %s", formatPeriod(later)))
@@ -248,7 +248,7 @@ return {
 						if(city.adminName1 == "") then city.adminName1 = "Other" end
 
 						simplehttp(
-							("http://yr.no/place/%s/%s/%s/varsel.xml"):format(
+							("http://yr.no/stad/%s/%s/%s/varsel.xml"):format(
 								urlEncode(city.countryName),
 								urlEncode(city.adminName1),
 								urlEncode(city.toponymName)
