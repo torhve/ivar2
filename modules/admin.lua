@@ -1,6 +1,6 @@
 local verifyOwner = function(src)
 	for _, mask in next, ivar2.config.owners do
-		if(mask == src.mask) then
+		if(src.mask:match(mask)) then
 			return true
 		end
 	end
@@ -24,7 +24,7 @@ return {
 			self:Msg('privmsg', destination, source, "Disable module: %s", module)
 		end,
 
-		['irc> (%S+) (.+)$"'] = function(self, source, destination, command, argument)
+		['irc> (%S+) (.+)$'] = function(self, source, destination, command, argument)
 			if(not verifyOwner(source)) then return end
 
 			command = command:lower()

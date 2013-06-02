@@ -38,7 +38,7 @@ local formatPeriod = function(period)
 	table.insert(out, string.format("%s, %s°C", period.symbol.name, period.temperature.value))
 
 	if(period.precipitation.value ~= "0") then
-		table.insert(out, string.format("%s mm", period.precipitation.value))
+		table.insert(out, string.format("%s-%s mm", period.precipitation.minvalue, period.precipitation.maxvalue))
 	end
 
 	table.insert(out,
