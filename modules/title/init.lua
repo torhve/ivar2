@@ -11,6 +11,7 @@ local DL_LIMIT = 2^17
 local patterns = {
 	-- X://Y url
 	"^(https?://%S+)",
+    "^<(https?://%S+)>",
 	"%f[%S](https?://%S+)",
 	-- www.X.Y url
 	"^(www%.[%w_-%%]+%.%S+)",
