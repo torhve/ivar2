@@ -1,5 +1,20 @@
 local sql = require'lsqlite3'
 
+local function outputKarma(self, source, destination, item)
+	local db = sql.open("cache/karma.sql")
+	local selectStmt  = db:prepare('SELECT SUM(change) AS sum FROM karma WHERE LOWER(item) = LOWER(?)')
+	selectStmt:bind_values(item)
+
+	local iter, vm = selectStmt:nrows()
+	local karma = iter(vm)
+
+	db:close()
+
+	if(karma) then
+		self:Msg('privmsg', destination, source, "\002%s\002 karma is %s", item, karma.sum)
+	end
+end
+
 local function handleKarma(self, source, destination, item, sign, change) 
 
 	local value = 0
@@ -24,18 +39,11 @@ local function handleKarma(self, source, destination, item, sign, change)
 		  code = insStmt:step()
 		  code = insStmt:finalize()
 
-	local selectStmt  = db:prepare('SELECT SUM(change) AS sum FROM karma WHERE LOWER(item) = LOWER(?)')
-	selectStmt:bind_values(item)
-
-	local iter, vm = selectStmt:nrows()
-	local karma = iter(vm)
-
 	db:close()
 
-	if(karma) then
-		self:Msg('privmsg', destination, source, "\002%s\002 karma is now %s", item, karma.sum)
-	end
+    outputKarma(self, source, destination, item)
 end
+
 
 return {
 	PRIVMSG = {
@@ -43,5 +51,7 @@ return {
 		['^([%w -_%.]+)(%-%-)$'] = handleKarma,
 		['^([%w -_%.]]+)(%+=)%s?(%d+)$'] = handleKarma,
 		['^([%w -_%.]+)(-=)%s?(%d+)$'] = handleKarma,
+		['^%pkarma ([%w -_%.]+)$'] = outputKarma,
+        
 	}
 }
