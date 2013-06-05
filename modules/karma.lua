@@ -44,14 +44,40 @@ local function handleKarma(self, source, destination, item, sign, change)
     outputKarma(self, source, destination, item)
 end
 
+local getKarma = function(self, source, destination, dir, text)
+	local db = sql.open("cache/karma.sql")
+
+	local out = {}
+
+	for row in db:nrows('SELECT item, SUM(change) AS sum FROM karma GROUP BY item ORDER BY sum '..dir..' limit 5') do
+		table.insert(out, string.format('\002%s\002:%s', row.item, row.sum))
+	end
+
+	db:close()
+
+	self:Msg('privmsg', destination, source, "%s karma: %s", text, table.concat(out, ', '))
+    
+end
+
+local botKarma = function(self, source, destination, inp)
+	getKarma(self, source, destination, 'ASC', 'Lowest')
+end
+
+local topKarma = function(self, source, destination, inp)
+	getKarma(self, source, destination, 'DESC', 'Top')
+end
 
 return {
 	PRIVMSG = {
 		['^([%w -_%.]+)(%+%+)$'] = handleKarma,
 		['^([%w -_%.]+)(%-%-)$'] = handleKarma,
-		['^([%w -_%.]]+)(%+=)%s?(%d+)$'] = handleKarma,
+		['^([%w -_%.]+)(%+=)%s?(%d+)$'] = handleKarma,
 		['^([%w -_%.]+)(-=)%s?(%d+)$'] = handleKarma,
 		['^%pkarma ([%w -_%.]+)$'] = outputKarma,
+		['^%pkarma$'] = topKarma,
+		['^%pkarmatop$'] = topKarma,
+		['^%pkarmabot$'] = botKarma,
+		['^%pkarmabottom$'] = botKarma,
         
 	}
 }
