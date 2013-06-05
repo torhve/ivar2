@@ -264,6 +264,7 @@ return {
 							url = 'http://' .. url
 						end
 
+						self.event:Fire('url', self, source, destination, argument, url)
 						url = smartEscape(url)
 
 						if(not tmp[url]) then
