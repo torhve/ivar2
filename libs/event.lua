@@ -41,4 +41,8 @@ return {
 			end
 		end
 	end,
+
+	ClearAll = function(self)
+		self.__register = {}
+	end,
 }
