@@ -14,6 +14,7 @@ package.cpath = table.concat({
 local connection = require'handler.connection'
 local nixio = require'nixio'
 local ev = require'ev'
+local event = require 'event'
 require'logging.console'
 
 local log = logging.console()
@@ -22,6 +23,7 @@ local loop = ev.Loop.default
 local ivar2 = {
 	ignores = {},
 	Loop = loop,
+	event = event,
 
 	timeoutFunc = function(ivar2)
 		return function(loop, timer, revents)
@@ -367,6 +369,9 @@ function ivar2:Reload()
 		message.config = self.config
 		message.timers = self.timers
 		message.Loop = self.Loop
+		message.event = self.event
+		-- Clear the registered events
+		message.event:ClearAll()
 
 		message:LoadModules()
 		message.updated = true
