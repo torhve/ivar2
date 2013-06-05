@@ -99,46 +99,12 @@ local handleUrl = function(self, source, destination, msg, url)
     --local ok = dbh:close()
 end
 
+ivar2.event:Register('url', handleUrl)
+
 return {
 	PRIVMSG = {
 		function(self, source, destination, argument)
-			-- We don't want to pick up URLs from commands.
-			if(argument:sub(1,1) == '!') then return end
-
-			local tmp = {}
-			local tmpOrder = {}
-			local index = 1
-			for split in argument:gmatch('%S+') do
-				for i=1, #patterns do
-					local _, count = split:gsub(patterns[i], function(url)
-						if(url:sub(1,4) ~= 'http') then
-							url = 'http://' .. url
-						end
-
-						url = smartEscape(url)
-
-						if(not tmp[url]) then
-							table.insert(tmpOrder, url)
-							tmp[url] = index
-						else
-							tmp[url] = string.format('%s+%d', tmp[url], index)
-						end
-					end)
-
-					if(count > 0) then
-						index = index + 1
-						break
-					end
-				end
-			end
-
-			if(#tmpOrder > 0) then
-
-				for i=1, #tmpOrder do
-					local url = tmpOrder[i]
-                    handleUrl(self, source, destination, argument, url)
-				end
-			end
+            return
         end,
     }
 }
