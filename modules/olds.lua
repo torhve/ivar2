@@ -96,14 +96,18 @@ local handleUrl = function(self, source, destination, msg, url)
 
     checkOlds(self, dbh, destination, source, url)
 
+    -- Fire the oldsdone event for sqllogger
+    ivar2.event:Fire('olds', self, source, destination, msg, url)
+
     --local ok = dbh:close()
 end
 
 ivar2.event:Register('url', handleUrl)
 
 return {
-	PRIVMSG = {
-		function(self, source, destination, argument)
+	-- Dummy event
+	['9999'] = {
+		function(...)
             return
         end,
     }
