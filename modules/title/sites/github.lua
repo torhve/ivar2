@@ -29,10 +29,7 @@ customHosts['github%.com'] = function(queue, info)
 				if forks == json.util.null then forks = 0 end
 				if lang == json.util.null then lang = 'Unknown' end
 
-				local out = {}
-				table.insert(out, string.format('\002@%s/%s\002 %s Lang: %s %s watchers %s followers', owner, name, description, lang, watchers, forks))
-
-				queue:done(table.concat(out, ' '))
+				queue:done(string.format('\002@%s/%s\002 %s Lang: %s %s watchers %s followers', owner, name, description, lang, watchers, forks))
 			end
 		)
 
