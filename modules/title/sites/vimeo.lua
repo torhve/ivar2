@@ -50,8 +50,8 @@ customHosts['vimeo%.com'] = function(queue, info)
 	local path = info.path
 	local vid
 
-	if(path and path:match('/(%d+)')) then
-		vid = path:match('/(%d+)')
+	if(path and path:match('^/(%d+)')) then
+		vid = path:match('^/(%d+)')
 	end
 
 	if(vid) then
