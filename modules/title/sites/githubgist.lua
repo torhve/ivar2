@@ -19,20 +19,20 @@ customHosts['gist%.github%.com'] = function(queue, info)
 			function(data)
 				local info = json.decode(data)
 				local name = info.user
-                if name == json.util.null then 
-                    name = 'Anonymous' 
-                else
-                    name = info.user.login
-                end
+				if name == json.util.null then
+					name = 'Anonymous'
+				else
+					name = info.user.login
+				end
 				local files = ''
-                for file,_ in pairs(info.files) do
-                    files = files..file..' ' 
-                end
+				for file,_ in pairs(info.files) do
+					files = files..file..' '
+				end
 
-                local time = info.updated_at
+				local time = info.updated_at
 
 				local out = {}
-                table.insert(out, string.format('\002@%s\002 %s %s', name, time, files))
+				table.insert(out, string.format('\002@%s\002 %s %s', name, time, files))
 
 				queue:done(table.concat(out, ' '))
 			end
