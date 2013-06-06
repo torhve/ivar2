@@ -31,10 +31,7 @@ customHosts['gist%.github%.com'] = function(queue, info)
 
 				local time = info.updated_at
 
-				local out = {}
-				table.insert(out, string.format('\002@%s\002 %s %s', name, time, files))
-
-				queue:done(table.concat(out, ' '))
+				queue:done(table.concat(string.format('\002@%s\002 %s %s', name, time, files))
 			end
 		)
 
