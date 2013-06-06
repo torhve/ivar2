@@ -69,11 +69,11 @@ end
 
 return {
 	PRIVMSG = {
-		['^([%w -_%.]+)(%+%+)$'] = handleKarma,
-		['^([%w -_%.]+)(%-%-)$'] = handleKarma,
-		['^([%w -_%.]+)(%+=)%s?(%d+)$'] = handleKarma,
-		['^([%w -_%.]+)(-=)%s?(%d+)$'] = handleKarma,
-		['^%pkarma ([%w -_%.]+)$'] = outputKarma,
+		['^([%w %-_]+)(%+%+)$'] = handleKarma,
+		['^([%w %-_]+)(%-%-)$'] = handleKarma,
+		['^([%w %-_]+)(%+=)%s?(%d+)$'] = handleKarma,
+		['^([%w %-_]+)(-=)%s?(%d+)$'] = handleKarma,
+		['^%pkarma ([%w -_]+)$'] = outputKarma,
 		['^%pkarma$'] = topKarma,
 		['^%pkarmatop$'] = topKarma,
 		['^%pkarmabot$'] = botKarma,
