@@ -6,7 +6,7 @@ return {
 	PRIVMSG = {
 		['^.btc$'] = function(self, source, destination, input)
 			simplehttp(APIBase, function(data)
-					local result = parseJSON(data)
+					local result = json.decode(data)
 
 					if(result) then
 						self:Msg('privmsg', destination, source, string.format('1BTC is worth %s€ (~15m)', source.nick, result.EUR.15min))
