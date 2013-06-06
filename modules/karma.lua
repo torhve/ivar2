@@ -56,7 +56,6 @@ local getKarma = function(self, source, destination, dir, text)
 	db:close()
 
 	self:Msg('privmsg', destination, source, "%s karma: %s", text, table.concat(out, ', '))
-    
 end
 
 local botKarma = function(self, source, destination, inp)
@@ -78,6 +77,5 @@ return {
 		['^%pkarmatop$'] = topKarma,
 		['^%pkarmabot$'] = botKarma,
 		['^%pkarmabottom$'] = botKarma,
-        
 	}
 }
