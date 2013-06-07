@@ -9,7 +9,7 @@ return {
 					local result = json.decode(data)
 
 					if(result) then
-						self:Msg('privmsg', destination, source, string.format('\0021\002 BTC is worth \002%s\002 € (~15m)', result["EUR"]["15m"]))
+						self:Msg('privmsg', destination, source, '\0021\002 BTC is worth \002%s\002 € (~15m)', result["EUR"]["15m"])
 					end
 				end
 			)
