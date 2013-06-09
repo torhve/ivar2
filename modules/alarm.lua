@@ -44,7 +44,7 @@ local timeMatches = {
 	{'^(%d+)d$', function(d) return d * 60 * 60 * 24 end},
 	{'^(%d+)[ht]$', function(h) return h * 60 * 60 end},
 	{'^(%d+)m$', function(m) return m * 60 end},
-	{'^(%d+)[^%p%w]*$', function(m) return m * 60 end},
+	{'^(%d+)[^%p%w]*$', function(m) return m * 60 end, true},
 	{'^(%d+)s$', function(s) return s end},
 }
 
@@ -56,9 +56,9 @@ local parseTime = function(input)
 		local found
 		local str = input[i]
 		for j=1, #timeMatches do
-			local pattern, func = unpack(timeMatches[j])
+			local pattern, func, skipIfFound = unpack(timeMatches[j])
 			local a1, a2, a3 = str:match(pattern)
-			if(a1) then
+			if(a1 and not (skipIfFound and duration > 0)) then
 				found = true
 				duration = duration + func(a1, a2, a3)
 			end
