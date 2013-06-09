@@ -315,6 +315,7 @@ function ivar2:EnableModule(moduleName, moduleTable)
 end
 
 function ivar2:DisableModule(moduleName)
+	if(moduleName == 'core') then return end
 	for command, modules in next, events do
 		if(modules[moduleName]) then
 			self:Log('info', 'Disabling module: %s', moduleName)
