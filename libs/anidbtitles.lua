@@ -322,8 +322,8 @@ return {
  [18] = {
   ["main"] = "Musekinin Kanchou Tylor",
   ["official"] = {
-   [1] = "Irresponsible Captain Tylor",
-   [2] = "L`irresponsabile Capitano Tylor",
+   [1] = "L`irresponsabile Capitano Tylor",
+   [2] = "The Irresponsible Captain Tylor",
    [3] = "Tylor - The irresponsible captain",
    [4] = "無責任艦長タイラー",
    },
@@ -440,6 +440,7 @@ return {
    [6] = "Ковбой Бибоп ТВ",
    [7] = "Ковбой Бібоп ТБ",
    [8] = "راعي البقر بيبوب",
+   [9] = "کابوی بیباپ",
    },
   },
  [24] = {
@@ -557,8 +558,9 @@ return {
    [1] = "Akira",
    [2] = "Акира",
    [3] = "אקירה",
-   [4] = "อากิระ คนไม่ใช่คน",
-   [5] = "アキラ",
+   [4] = "آکیرا",
+   [5] = "อากิระ คนไม่ใช่คน",
+   [6] = "アキラ",
    },
   ["short"] = {
    },
@@ -1142,7 +1144,7 @@ return {
    },
   },
  [66] = {
-  ["main"] = "Vampire Hunter D - Bloodlust",
+  ["main"] = "Vampire Hunter D (2001)",
   ["official"] = {
    [1] = "D, a Vámpírvadász: Vérszomj",
    [2] = "D: Жажда крови",
@@ -1295,8 +1297,9 @@ return {
    [2] = "Kenshin OVA",
    [3] = "RK OAV",
    [4] = "RK OVA",
-   [5] = "kenshin ova 1",
-   [6] = "reminiscence",
+   [5] = "RuroKen OVA 1",
+   [6] = "kenshin ova 1",
+   [7] = "reminiscence",
    },
   ["syn"] = {
    [1] = "Rurouni Kenshin - Tsuiokuhen OVA",
@@ -2171,8 +2174,9 @@ return {
   ["main"] = "Furi Kuri",
   ["official"] = {
    [1] = "FLCL",
-   [2] = "フリクリ",
-   [3] = "프리크리",
+   [2] = "باحال و احمقانه",
+   [3] = "フリクリ",
+   [4] = "프리크리",
    },
   ["short"] = {
    },
@@ -2183,6 +2187,7 @@ return {
    [4] = "Furi Curi",
    [5] = "Фури Кури",
    [6] = "Фурі Курі",
+   [7] = "فولی کولی",
    },
   },
  [118] = {
@@ -2591,9 +2596,10 @@ return {
    [3] = "Inuyasha",
    [4] = "אינויאשה",
    [5] = "إينوياشا",
-   [6] = "อินุยาฉะ เทพอสูร จิ้งจอกเงิน",
-   [7] = "犬夜叉",
-   [8] = "이누야샤",
+   [6] = "اینویاشا",
+   [7] = "อินุยาฉะ เทพอสูร จิ้งจอกเงิน",
+   [8] = "犬夜叉",
+   [9] = "이누야샤",
    },
   ["short"] = {
    [1] = "IY",
@@ -3170,9 +3176,8 @@ return {
  [180] = {
   ["main"] = "Kidou Senkan Nadesico",
   ["official"] = {
-   [1] = "Martian Successor NADESICO",
-   [2] = "Martian Successor Nadesico",
-   [3] = "機動戦艦ナデシコ",
+   [1] = "Martian Successor Nadesico",
+   [2] = "機動戦艦ナデシコ",
    },
   ["short"] = {
    [1] = "Nadesico",
@@ -3190,7 +3195,7 @@ return {
    [1] = "A Rosa de Versalhes",
    [2] = "Lady Oscar",
    [3] = "Lady Oscar - Die Rose von Versailles",
-   [4] = "Rose of Versailles",
+   [4] = "The Rose of Versailles",
    [5] = "Versay`ın Gülü",
    [6] = "ليدي أوسكار",
    [7] = "ベルサイユのばら",
@@ -3208,8 +3213,8 @@ return {
    [1] = "La rose de Versailles",
    [2] = "Lady Oscar",
    [3] = "Lady Oskar",
-   [4] = "Róża Wersalu",
-   [5] = "The Rose of Versailles",
+   [4] = "Rose of Versailles",
+   [5] = "Róża Wersalu",
    [6] = "Роза Версаля",
    },
   },
@@ -3426,8 +3431,9 @@ return {
    },
   ["short"] = {
    [1] = "Kenshin Reflection",
-   [2] = "Seisouhen",
-   [3] = "kenshin ova 2",
+   [2] = "RuroKen OVA 2",
+   [3] = "Seisouhen",
+   [4] = "kenshin ova 2",
    },
   ["syn"] = {
    [1] = "Rurouni Kenshin - Meiji Kenkaku Roumandan - Seisouhen",
@@ -3599,11 +3605,11 @@ return {
   ["official"] = {
    [1] = "D, chasseur de vampires",
    [2] = "D: Охотник на вампиров",
-   [3] = "Vampiirikütt D",
-   [4] = "Vampire Hunter D",
-   [5] = "Vampire Hunter D - The Movie",
-   [6] = "צייד הערפדים",
-   [7] = "吸血鬼(バンパイア)ハンターD",
+   [3] = "VAMPIRE HUNTER D",
+   [4] = "Vampiirikütt D",
+   [5] = "Vampire Hunter D",
+   [6] = "Vampire Hunter D - The Movie",
+   [7] = "צייד הערפדים",
    },
   ["short"] = {
    [1] = "vhd",
@@ -3612,7 +3618,8 @@ return {
    [1] = "Vampir Avcısı D",
    [2] = "Ловец на вампири",
    [3] = "Мисливець на вампірів D",
-   [4] = "吸血鬼ハンターD",
+   [4] = "吸血鬼[バンパイア]ハンターD",
+   [5] = "吸血鬼ハンターD",
    },
   },
  [205] = {
@@ -4128,8 +4135,9 @@ return {
    [7] = "Os Digimon",
    [8] = "דיג`ימון",
    [9] = "أبطال الديجيتال الجزء الأول",
-   [10] = "デジモンアドベンチャー",
-   [11] = "디지몬 어드벤쳐",
+   [10] = "ماجراهای دیجیمون",
+   [11] = "デジモンアドベンチャー",
+   [12] = "디지몬 어드벤쳐",
    },
   ["short"] = {
    [1] = "Digimon",
@@ -4173,6 +4181,7 @@ return {
    [5] = "Красавица-воин Сейлор Мун",
    [6] = "Сейлормун – Луна в матроске",
    [7] = "بحار القمر",
+   [8] = "جنگنده زیبا، سیلرمون",
    },
   },
  [236] = {
@@ -4728,7 +4737,8 @@ return {
    [4] = "Haibane Renmei - Ailes Grises",
    [5] = "Haibane renmei: Stowarzyszenie szaropiórych",
    [6] = "Союз Серокрылых",
-   [7] = "灰羽連盟",
+   [7] = "بال گچی ها",
+   [8] = "灰羽連盟",
    },
   ["short"] = {
    [1] = "HR",
@@ -4746,11 +4756,12 @@ return {
    [9] = "Союз сірокрилих",
    [10] = "Съюзът на Среброкрилите",
    [11] = "Товариство сірокрилих",
-   [12] = "灰羽聯盟",
-   [13] = "灰羽連盟",
-   [14] = "잿빛 날개의 연맹",
-   [15] = "하이바네 연맹",
-   [16] = "회색 날개의 연맹",
+   [12] = "هایبانه رنمی",
+   [13] = "灰羽聯盟",
+   [14] = "灰羽連盟",
+   [15] = "잿빛 날개의 연맹",
+   [16] = "하이바네 연맹",
+   [17] = "회색 날개의 연맹",
    },
   },
  [272] = {
@@ -6928,7 +6939,8 @@ return {
   ["main"] = "Dirty Pair",
   ["official"] = {
    [1] = "Dan et Danny",
-   [2] = "ダーティペア",
+   [2] = "Dirty Pair",
+   [3] = "ダーティペア",
    },
   ["short"] = {
    },
@@ -6940,7 +6952,8 @@ return {
  [402] = {
   ["main"] = "Dirty Pair Flash",
   ["official"] = {
-   [1] = "ダーティペアFLASH",
+   [1] = "Dirty Pair Flash",
+   [2] = "ダーティペアFLASH",
    },
   ["short"] = {
    [1] = "DPF",
@@ -7252,6 +7265,7 @@ return {
   ["short"] = {
    [1] = "RK Movie",
    [2] = "RK: ISnR",
+   [3] = "RuroKen Movie",
    },
   ["syn"] = {
    [1] = "Kenshin - Samurai X",
@@ -7824,7 +7838,8 @@ return {
    [1] = "She and Her Cat",
    [2] = "Девушка и кот",
    [3] = "Тэр ба түүний муур",
-   [4] = "彼女と彼女の猫",
+   [4] = "زن و گربه اش",
+   [5] = "彼女と彼女の猫",
    },
   ["short"] = {
    [1] = "ktknn",
@@ -8044,8 +8059,8 @@ return {
  [475] = {
   ["main"] = "Super GALS! Kotobuki Ran",
   ["official"] = {
-   [1] = "Super Gals",
-   [2] = "Super Gals !",
+   [1] = "Super Gals !",
+   [2] = "Super Gals!",
    [3] = "Super Gals! Tre Ragazze alla Moda",
    [4] = "Superklinke",
    [5] = "Superpunce",
@@ -8475,8 +8490,9 @@ return {
    [10] = "Super Campeões",
    [11] = "Tsubasa Kapitány",
    [12] = "Капитан Цубаса",
-   [13] = "كابتن ماجد",
-   [14] = "キャプテン翼",
+   [13] = "فوتبالیست ها",
+   [14] = "كابتن ماجد",
+   [15] = "キャプテン翼",
    },
   ["short"] = {
    [1] = "CT",
@@ -9554,7 +9570,8 @@ return {
    [3] = "Kinos resa",
    [4] = "L`Odyssée de Kino",
    [5] = "המסע של קינו",
-   [6] = "キノの旅 -the Beautiful World-",
+   [6] = "سفرهای کینو: دنیای زیبا",
+   [7] = "キノの旅 -the Beautiful World-",
    },
   ["short"] = {
    [1] = "Kino no tabi",
@@ -9686,8 +9703,9 @@ return {
    [2] = "Heldensagen vom Kosmosinsel 銀河英雄伝説",
    [3] = "La leyenda de los héroes de la galaxia",
    [4] = "Les héros de la galaxie",
-   [5] = "حرب الكواكب",
-   [6] = "은하영웅전설",
+   [5] = "افسانه قهرمانان کهکشانی",
+   [6] = "حرب الكواكب",
+   [7] = "은하영웅전설",
    },
   ["short"] = {
    [1] = "GED",
@@ -14009,6 +14027,7 @@ return {
    [8] = "Дух в оболонці: Невинність",
    [9] = "Призрак в доспехах: Невинность",
    [10] = "Призрак в черупка 2 : Невинност",
+   [11] = "معصومیت",
    },
   },
  [891] = {
@@ -14965,10 +14984,11 @@ return {
    },
   ["short"] = {
    [1] = "FMP:F",
-   [2] = "FMP? F",
-   [3] = "FMPF",
-   [4] = "Fumoffu",
-   [5] = "fmp fumoffu",
+   [2] = "FMP?",
+   [3] = "FMP? F",
+   [4] = "FMPF",
+   [5] = "Fumoffu",
+   [6] = "fmp fumoffu",
    },
   ["syn"] = {
    [1] = "Full Metal Panic Fumoffu",
@@ -18366,9 +18386,10 @@ return {
    [8] = "Реална фантазия: Деца на второто пришествие",
    [9] = "פיינל פנטסי 7",
    [10] = "فاينل فانتزي : مجيء الأطفال",
-   [11] = "ไฟน่อล แฟนตาซี 7: สงครามเทพจุติ",
-   [12] = "ファイナルファンタジーVII アドベントチルドレン",
-   [13] = "最终幻想VII - 降临之子",
+   [11] = "فاینال فانتزی 7 فرزندان ظهور",
+   [12] = "ไฟน่อล แฟนตาซี 7: สงครามเทพจุติ",
+   [13] = "ファイナルファンタジーVII アドベントチルドレン",
+   [14] = "最终幻想VII - 降临之子",
    },
   ["short"] = {
    [1] = "AC",
@@ -18381,7 +18402,8 @@ return {
   ["syn"] = {
    [1] = "Final Fantasy 7 Advent Children",
    [2] = "Final Fantasy VII: Діти Пришестя",
-   [3] = "最终幻想7 降世圣童",
+   [3] = "فاینال فانتزی 7 نجات کودکان",
+   [4] = "最终幻想7 降世圣童",
    },
   },
  [1209] = {
@@ -18533,8 +18555,9 @@ return {
    [22] = "Το Κινούμενο Κάστρο",
    [23] = "Ходячий замок",
    [24] = "הטירה הנעה",
-   [25] = "ハウルの動く城",
-   [26] = "哈爾移動城堡",
+   [25] = "قلعه متحرک هاول",
+   [26] = "ハウルの動く城",
+   [27] = "哈爾移動城堡",
    },
   ["short"] = {
    [1] = "HMC",
@@ -20135,7 +20158,7 @@ return {
    },
   },
  [1351] = {
-  ["main"] = "Mitsubachi Maya no Bouken",
+  ["main"] = "Mitsubachi Maaya no Bouken",
   ["official"] = {
    [1] = "A Abelha Maia",
    [2] = "Bitė Maja",
@@ -22666,8 +22689,9 @@ return {
    [1] = "Elfen Lied",
    [2] = "Elfia pieseň",
    [3] = "Эльфийская песнь",
-   [4] = "エルフェンリート",
-   [5] = "엘펜리트",
+   [4] = "آواز اِلف",
+   [5] = "エルフェンリート",
+   [6] = "엘펜리트",
    },
   ["short"] = {
    },
@@ -22683,7 +22707,8 @@ return {
    [9] = "Елфска песен",
    [10] = "Ельфійська пісня",
    [11] = "إلفن ليد",
-   [12] = "妖精的旋律",
+   [12] = "الفن لیت",
+   [13] = "妖精的旋律",
    },
   },
  [1545] = {
@@ -26603,8 +26628,9 @@ return {
    [9] = "O Conde de Monte Cristo",
    [10] = "Zemsta hrabiego Monte Cristo",
    [11] = "مونتي كريستو",
-   [12] = "巌窟王",
-   [13] = "암굴왕",
+   [12] = "کونت مونت کریستو",
+   [13] = "巌窟王",
+   [14] = "암굴왕",
    },
   ["short"] = {
    [1] = "Gank-Ou",
@@ -30513,11 +30539,12 @@ return {
    [1] = "Crow",
    [2] = "Karga",
    [3] = "Kruk",
-   [4] = "Varnas",
-   [5] = "Ворон",
-   [6] = "Карас",
-   [7] = "קאראס",
-   [8] = "كاراس",
+   [4] = "The Crow",
+   [5] = "Varnas",
+   [6] = "Ворон",
+   [7] = "Карас",
+   [8] = "קאראס",
+   [9] = "كاراس",
    },
   },
  [2181] = {
@@ -33837,7 +33864,7 @@ return {
   ["main"] = "Gakuen Alice",
   ["official"] = {
    [1] = "Alice Academy",
-   [2] = "Campus Alice",
+   [2] = "Gakuen Alice",
    [3] = "学園アリス",
    [4] = "학원 앨리스",
    },
@@ -33847,9 +33874,10 @@ return {
    },
   ["syn"] = {
    [1] = "Alice Academy",
-   [2] = "L`académie Alice",
-   [3] = "أكاديمية أليس",
-   [4] = "学园爱丽丝",
+   [2] = "Campus Alice",
+   [3] = "L`académie Alice",
+   [4] = "أكاديمية أليس",
+   [5] = "学园爱丽丝",
    },
   },
  [2436] = {
@@ -34475,7 +34503,7 @@ return {
   ["main"] = "Dirty Pair: Lovely Angels yori Ai o Komete",
   ["official"] = {
    [1] = "Dan et Danny - Épisodes 25 & 26",
-   [2] = "Dirty Pair: With Love From the Lovely Angels",
+   [2] = "Dirty Pair: With Love from the Lovely Angels",
    [3] = "ダーティペア ラブリーエンジェルより愛をこめて",
    },
   ["short"] = {
@@ -36139,6 +36167,7 @@ return {
    [3] = "Kino`s Journey Movie",
    [4] = "Kino`s Journey: Life Goes On",
    [5] = "Пътешествието на Кино: Животът продължава",
+   [6] = "سفرهای کینو: به خاطر کردن کاری - زندگی ادامه دارد",
    },
   },
  [2652] = {
@@ -38275,6 +38304,7 @@ return {
    [11] = "Мед і клевер І",
    [12] = "Мёд и клевер",
    [13] = "דבש ותלתן",
+   [14] = "عسل و شبدر",
    },
   },
  [2836] = {
@@ -41215,14 +41245,14 @@ return {
   ["main"] = "Mori no Tonto-tachi",
   ["official"] = {
    [1] = "Alla scoperta di Babbo Natale",
-   [2] = "Elves of the Forest",
-   [3] = "Familie Nikolaus",
-   [4] = "Histoire du père Noël",
-   [5] = "森のトントたち",
+   [2] = "Familie Nikolaus",
+   [3] = "Histoire du père Noël",
+   [4] = "森のトントたち",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Elves of the Forest",
    },
   },
  [3167] = {
@@ -42031,7 +42061,8 @@ return {
   ["official"] = {
    [1] = "Ergo Proxy",
    [2] = "Эрго Прокси",
-   [3] = "エルゴプラクシー",
+   [3] = "ارگو پروکسی",
+   [4] = "エルゴプラクシー",
    },
   ["short"] = {
    [1] = "EP",
@@ -42044,7 +42075,8 @@ return {
    [3] = "Ерго Прокси",
    [4] = "Ерго проксі",
    [5] = "Ерґо Проксі",
-   [6] = "死亡代理人",
+   [6] = "پروکسی مابعد",
+   [7] = "死亡代理人",
    },
   },
  [3303] = {
@@ -46654,17 +46686,17 @@ return {
    [2] = "Mary e il giardino dei misteri",
    [3] = "Mary şi grădina secretă",
    [4] = "Tajemniczy ogród",
-   [5] = "The Animated Secret Garden",
-   [6] = "Ο Μυστικός Κήπος",
-   [7] = "الحديقة السرية",
-   [8] = "アニメ ひみつの花園",
+   [5] = "Ο Μυστικός Κήπος",
+   [6] = "الحديقة السرية",
+   [7] = "アニメ ひみつの花園",
    },
   ["short"] = {
    },
   ["syn"] = {
    [1] = "Secret Flower Garden",
    [2] = "Si Maria at Ang Lihim na Hardin",
-   [3] = "The Secret Garden",
+   [3] = "The Animated Secret Garden",
+   [4] = "The Secret Garden",
    },
   },
  [3672] = {
@@ -47459,12 +47491,12 @@ return {
  [3989] = {
   ["main"] = "Totsugeki! Pappara-tai",
   ["official"] = {
-   [1] = "Charge! Pappara Team",
-   [2] = "突撃! パッパラ隊",
+   [1] = "突撃! パッパラ隊",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Charge! Pappara Team",
    },
   },
  [3990] = {
@@ -51581,7 +51613,8 @@ return {
   ["main"] = "Dennou Coil",
   ["official"] = {
    [1] = "Cyber Coil",
-   [2] = "電脳コイル",
+   [2] = "سایبر کویل",
+   [3] = "電脳コイル",
    },
   ["short"] = {
    [1] = "DenCo",
@@ -51592,7 +51625,8 @@ return {
    [3] = "Denno Coil",
    [4] = "Виртуален шум",
    [5] = "Кибер-виток",
-   [6] = "电脑线圈",
+   [6] = "ذغال الکترونیکی",
+   [7] = "电脑线圈",
    },
   },
  [4346] = {
@@ -52202,7 +52236,7 @@ return {
   ["main"] = "Kanon (2006)",
   ["official"] = {
    [1] = "Kanon",
-   [2] = "カノン (2006)",
+   [2] = "Kanon (2006)",
    },
   ["short"] = {
    },
@@ -52213,7 +52247,8 @@ return {
    [4] = "Kanon(新)",
    [5] = "Канон (2006)",
    [6] = "كانون 2006",
-   [7] = "雪之少女",
+   [7] = "カノン (2006)",
+   [8] = "雪之少女",
    },
   },
  [4406] = {
@@ -53472,7 +53507,8 @@ return {
    [7] = "Τετράδιο Θανάτου",
    [8] = "Бележник на Смъртта",
    [9] = "Тетрадь cмерти",
-   [10] = "데스노트",
+   [10] = "دفترچه یادداشت مرگ",
+   [11] = "데스노트",
    },
   ["short"] = {
    [1] = "DN",
@@ -59002,6 +59038,7 @@ return {
   ["official"] = {
    [1] = "CLANNAD",
    [2] = "Clannad",
+   [3] = "خانواده",
    },
   ["short"] = {
    [1] = "Clannad 1",
@@ -59011,7 +59048,8 @@ return {
    [1] = "Кланад",
    [2] = "Кланнад",
    [3] = "كلاناد",
-   [4] = "クラナド",
+   [4] = "کلاناد",
+   [5] = "クラナド",
    },
   },
  [5104] = {
@@ -59079,6 +59117,7 @@ return {
    [2] = "Ponyo On A Cliff",
    [3] = "Ponyo das verzauberte Goldfischmädchen",
    [4] = "Ponyo na klifie",
+   [5] = "Рыбка Поньо на утёсе",
    },
   },
  [5108] = {
@@ -59325,8 +59364,9 @@ return {
   ["official"] = {
    [1] = "Time of Eve",
    [2] = "Čas večerní",
-   [3] = "イヴの時間",
-   [4] = "이브의 시간",
+   [3] = "زمان عصرگاهی",
+   [4] = "イヴの時間",
+   [5] = "이브의 시간",
    },
   ["short"] = {
    [1] = "enj",
@@ -59827,7 +59867,8 @@ return {
  [5189] = {
   ["main"] = "Rental Magica",
   ["official"] = {
-   [1] = "レンタルマギカ",
+   [1] = "Rental Magica",
+   [2] = "レンタルマギカ",
    },
   ["short"] = {
    [1] = "Rental",
@@ -62547,7 +62588,8 @@ return {
  [5532] = {
   ["main"] = "Junjou Romantica",
   ["official"] = {
-   [1] = "純情ロマンチカ",
+   [1] = "Junjo Romantica",
+   [2] = "純情ロマンチカ",
    },
   ["short"] = {
    },
@@ -63643,7 +63685,8 @@ return {
  [5673] = {
   ["main"] = "Kaiba",
   ["official"] = {
-   [1] = "カイバ",
+   [1] = "کایبا",
+   [2] = "カイバ",
    },
   ["short"] = {
    },
@@ -64540,8 +64583,9 @@ return {
  [5801] = {
   ["main"] = "Chii`s Sweet Home",
   ["official"] = {
-   [1] = "บ้านนี้ต้องมีเหมียว",
-   [2] = "チーズスイートホーム",
+   [1] = "خانه زیبای چی",
+   [2] = "บ้านนี้ต้องมีเหมียว",
+   [3] = "チーズスイートホーム",
    },
   ["short"] = {
    [1] = "Chi",
@@ -64803,7 +64847,8 @@ return {
   ["official"] = {
    [1] = "CLANNAD ~AFTER STORY~",
    [2] = "Clannad After Story",
-   [3] = "클라나드 애프터 스토리",
+   [3] = "خانواده: ادامه داستان",
+   [4] = "클라나드 애프터 스토리",
    },
   ["short"] = {
    [1] = "Clannad 2",
@@ -64813,8 +64858,9 @@ return {
   ["syn"] = {
    [1] = "Кланнад: След историята",
    [2] = "كلاناد ما بعد القصة",
-   [3] = "クラナド アフターストーリー",
-   [4] = "クラナド- AFTER STORY",
+   [3] = "کلاناد ادامه داستان",
+   [4] = "クラナド アフターストーリー",
+   [5] = "クラナド- AFTER STORY",
    },
   },
  [5842] = {
@@ -66632,7 +66678,8 @@ return {
  [6073] = {
   ["main"] = "Junjou Romantica 2",
   ["official"] = {
-   [1] = "純情ロマンチカ2",
+   [1] = "Junjo Romantica 2",
+   [2] = "純情ロマンチカ2",
    },
   ["short"] = {
    },
@@ -68884,10 +68931,11 @@ return {
    [8] = "Монстроповідання",
    [9] = "Оповідання про монстрів",
    [10] = "Потвороповідь",
-   [11] = "داستان روح",
-   [12] = "บาเกะโมโนกาตาริ",
-   [13] = "化物語",
-   [14] = "化物语",
+   [11] = "باکمونوگاتاری",
+   [12] = "داستان از ما بهتران",
+   [13] = "บาเกะโมโนกาตาริ",
+   [14] = "化物語",
+   [15] = "化物语",
    },
   },
  [6329] = {
@@ -69832,7 +69880,8 @@ return {
  [6452] = {
   ["main"] = "Chii`s Sweet Home: Atarashii O`uchi",
   ["official"] = {
-   [1] = "チーズスイートホーム あたらしいおうち",
+   [1] = "خانه زیبای چی: آپارتمان جدید",
+   [2] = "チーズスイートホーム あたらしいおうち",
    },
   ["short"] = {
    [1] = "Chi2",
@@ -69989,7 +70038,8 @@ return {
    [9] = "Достучаться до тебя",
    [10] = "Дотянуться до тебя",
    [11] = "Чамруу тэмүүлэх нь",
-   [12] = "好想告诉你",
+   [12] = "از من به تو",
+   [13] = "好想告诉你",
    },
   },
  [6467] = {
@@ -72144,13 +72194,15 @@ return {
    },
   },
  [6714] = {
-  ["main"] = "Kinnikuman: Kessen! Shichinin no Seigi Choujin vs Uchuu Nobushi",
+  ["main"] = "Kinnikuman: Kessen!! Shichinin no Choujin Tai Uchuu Nobushi",
   ["official"] = {
-   [1] = "キン肉マン 決戦!7人の正義超人vs宇宙野武士",
+   [1] = "キン肉マン 決戦!! 七人の超人VS[たい]宇宙野武士",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Kinnikuman: Kessen! Shichinin no Seigi Choujin vs Uchuu Nobushi",
+   [2] = "キン肉マン 決戦! 7人の正義超人vs宇宙野武士",
    },
   },
  [6715] = {
@@ -72790,7 +72842,8 @@ return {
   ["syn"] = {
    [1] = "Танец на Вампирском берегу",
    [2] = "Танець на набережній вампірів",
-   [3] = "吸血鬼同盟",
+   [3] = "رقص در باند خون آشام",
+   [4] = "吸血鬼同盟",
    },
   },
  [6775] = {
@@ -75130,7 +75183,8 @@ return {
    [7] = "Президент студенческого совета — горничная!",
    [8] = "Президент студради - покоївка",
    [9] = "Училищната президентка е прислужничка!",
-   [10] = "会长是女仆大人",
+   [10] = "نماینده مدرسه پیشخدمته!",
+   [11] = "会长是女仆大人",
    },
   },
  [7009] = {
@@ -75155,7 +75209,7 @@ return {
    },
   },
  [7010] = {
-  ["main"] = "Himitsu Kessha Taka no Tsume Countdown",
+  ["main"] = "Himitsukessha Taka no Tsume Countdown",
   ["official"] = {
    [1] = "秘密結社 鷹の爪 カウントダウン",
    },
@@ -77550,7 +77604,8 @@ return {
  [7249] = {
   ["main"] = "Eve no Jikan Gekijouban",
   ["official"] = {
-   [1] = "イヴの時間 劇場版",
+   [1] = "فیلم زمان عصرگاهی",
+   [2] = "イヴの時間 劇場版",
    },
   ["short"] = {
    [1] = "EnJ Movie",
@@ -77681,7 +77736,8 @@ return {
    [11] = "The Secret World of Arrietty",
    [12] = "Ариэтти из страны лилипутов",
    [13] = "Зээлдэгч Арриэтти",
-   [14] = "借りぐらしのアリエッティ",
+   [14] = "آریتی دختر قرض گیرنده",
+   [15] = "借りぐらしのアリエッティ",
    },
   ["short"] = {
    [1] = "Arrietty",
@@ -79154,6 +79210,7 @@ return {
    [2] = "Pestrobarevný",
    [3] = "Spalvinga",
    [4] = "Многоцветье",
+   [5] = "رنگارنگ",
    },
   ["short"] = {
    },
@@ -80374,18 +80431,18 @@ return {
  [7541] = {
   ["main"] = "Sono Hanabira ni Kuchizuke o",
   ["official"] = {
-   [1] = "Becoming your lover",
-   [2] = "その花びらにくちづけを",
+   [1] = "その花びらにくちづけを",
    },
   ["short"] = {
    },
   ["syn"] = {
    [1] = "A Kiss for the Petals",
-   [2] = "Sono Hanabira ni Kuchiduke o",
-   [3] = "Sono Hanabira ni Kuchizuke o: Anata to Koibito Tsunagi",
-   [4] = "Sono Hanabira ni Kuchizuke wo",
-   [5] = "Un bacio a quei petali",
-   [6] = "Un bacio a quei petali ~ Il legame tra te e la tua amata",
+   [2] = "Becoming your lover",
+   [3] = "Sono Hanabira ni Kuchiduke o",
+   [4] = "Sono Hanabira ni Kuchizuke o: Anata to Koibito Tsunagi",
+   [5] = "Sono Hanabira ni Kuchizuke wo",
+   [6] = "Un bacio a quei petali",
+   [7] = "Un bacio a quei petali ~ Il legame tra te e la tua amata",
    },
   },
  [7542] = {
@@ -82135,9 +82192,10 @@ return {
    },
   ["syn"] = {
    [1] = "IS: Безкрайни небеса",
-   [2] = "Infinite Stratos",
-   [3] = "Infinite Stratos IS",
-   [4] = "Необъятные небеса",
+   [2] = "IS: آسمان بی انتها",
+   [3] = "Infinite Stratos",
+   [4] = "Infinite Stratos IS",
+   [5] = "Необъятные небеса",
    },
   },
  [7728] = {
@@ -83698,7 +83756,7 @@ return {
  [7880] = {
   ["main"] = "Kuma no Gakkou: Jackie to Katie",
   ["official"] = {
-   [1] = "くまのがっこう ～ジャッキーとケイティ～",
+   [1] = "くまのがっこう ジャッキーとケイティ",
    },
   ["short"] = {
    },
@@ -85510,10 +85568,11 @@ return {
    },
   ["syn"] = {
    [1] = "Children Who Chase Stars",
-   [2] = "Hoshi wo Ou Kodomo",
-   [3] = "Journey to Agartha",
-   [4] = "Децата, които преследваха загубените гласове",
-   [5] = "Діти, що женуться за зорями",
+   [2] = "Die Reise nach Agartha",
+   [3] = "Hoshi wo Ou Kodomo",
+   [4] = "Journey to Agartha",
+   [5] = "Децата, които преследваха загубените гласове",
+   [6] = "Діти, що женуться за зорями",
    },
   },
  [8074] = {
@@ -86189,6 +86248,7 @@ return {
    [2] = "Kokuriko Saka kara",
    [3] = "Kokuriko-Zaka Kara",
    [4] = "Kokurikozaka Kara",
+   [5] = "از بالا به روی تپه لاله های وحشی",
    },
   },
  [8142] = {
@@ -87945,7 +88005,8 @@ return {
   ["main"] = "Gyo",
   ["official"] = {
    [1] = "Gyo - Der Tod aus dem Meer",
-   [2] = "ギョ",
+   [2] = "Gyo: Tokyo Fish Attack!",
+   [3] = "ギョ",
    },
   ["short"] = {
    },
@@ -88317,17 +88378,19 @@ return {
    },
   },
  [8358] = {
-  ["main"] = "Hayabusa: Back to the Earth - Kikan",
+  ["main"] = "Hayabusa: Back to the Earth (2011)",
   ["official"] = {
-   [1] = "はやぶさ HAYABUSA - BACK TO THE EARTH - 帰還",
+   [1] = "HAYABUSA BACK TO THE EARTH (2011)",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "HAYABUSA -BACK TO THE EARTH- 帰還バージョン",
+   [2] = "Hayabusa: Back to the Earth - Kikan Version",
    },
   },
  [8359] = {
-  ["main"] = "Hayabusa Back to the Earth",
+  ["main"] = "Hayabusa: Back to the Earth",
   ["official"] = {
    [1] = "HAYABUSA BACK TO THE EARTH",
    },
@@ -89499,7 +89562,8 @@ return {
    [2] = "Вінець Провини",
    [3] = "Корона Грешника",
    [4] = "Короната на Грешника",
-   [5] = "罪恶之冠",
+   [5] = "تاج مجرم",
+   [6] = "罪恶之冠",
    },
   },
  [8481] = {
@@ -89978,7 +90042,7 @@ return {
    [1] = "Chihaya Full",
    [2] = "Chihaya Furu",
    [3] = "Colorful Chihaya",
-   [4] = "چیهایای رنگارنگ",
+   [4] = "شوریده",
    },
   },
  [8539] = {
@@ -90142,7 +90206,8 @@ return {
    [1] = "Інша",
    [2] = "Иная",
    [3] = "Лишний",
-   [4] = "アナザー",
+   [4] = "دیگری",
+   [5] = "アナザー",
    },
   },
  [8557] = {
@@ -90209,6 +90274,7 @@ return {
    },
   ["syn"] = {
    [1] = "Inu x Boku SS",
+   [2] = "سگ و من: سرویس مخفی",
    },
   },
  [8565] = {
@@ -90500,6 +90566,7 @@ return {
    [2] = "るろうに剣心 -明治剣客浪漫譚- 新京都編",
    },
   ["short"] = {
+   [1] = "RuroKen OVA 3",
    },
   ["syn"] = {
    [1] = "Kenshin OVA",
@@ -90762,6 +90829,7 @@ return {
    },
   ["syn"] = {
    [1] = "Ждём тебя летом",
+   [2] = "منتظر آن تابستان هستم",
    },
   },
  [8624] = {
@@ -91771,12 +91839,12 @@ return {
  [8733] = {
   ["main"] = "Musekinin Kanchou Tylor: Chijou yori Eien ni",
   ["official"] = {
-   [1] = "無責任艦長タイラー 地上より永遠に",
+   [1] = "The Irresponsible Captain Tylor: From Here to Eternity",
+   [2] = "無責任艦長タイラー 地上より永遠に",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Irresponsible Captain Tylor - From Here To Eternity",
    },
   },
  [8734] = {
@@ -92950,7 +93018,8 @@ return {
    [3] = "I scream",
    [4] = "Ice-cream",
    [5] = "The Niece of Time",
-   [6] = "冰果",
+   [6] = "هیوکا",
+   [7] = "冰果",
    },
   },
  [8856] = {
@@ -93413,7 +93482,7 @@ return {
    },
   },
  [8904] = {
-  ["main"] = "Mukashi no Yoshida-kun: Himitsu Kessha Taka no Tsume Gaiden",
+  ["main"] = "Mukashi no Yoshida-kun: Himitsukessha Taka no Tsume Gaiden",
   ["official"] = {
    [1] = "むかしの吉田くん -秘密結社鷹の爪外伝-",
    },
@@ -94957,7 +95026,8 @@ return {
    },
   ["syn"] = {
    [1] = "Jormungand 2",
-   [2] = "军火女王2",
+   [2] = "جورمونگاند: فرمان بی نقص",
+   [3] = "军火女王2",
    },
   },
  [9077] = {
@@ -96090,15 +96160,15 @@ return {
  [9214] = {
   ["main"] = "Zetsuen no Tempest: The Civilization Blaster",
   ["official"] = {
-   [1] = "Zetsuen no Tempest",
+   [1] = "Blast of Tempest",
    [2] = "絶園のテンペスト ~THE CIVILIZATION BLASTER~",
    },
   ["short"] = {
    [1] = "zetsuen",
    },
   ["syn"] = {
-   [1] = "Blast of Tempest",
-   [2] = "Forsaken Tempest",
+   [1] = "Forsaken Tempest",
+   [2] = "Zetsuen no Tempest",
    [3] = "Буреносен удар: Унищожител на цивилизации",
    },
   },
@@ -96415,12 +96485,14 @@ return {
  [9261] = {
   ["main"] = "Chihayafuru 2",
   ["official"] = {
-   [1] = "ちはやふる 2",
-   [2] = "치하야후루 2기",
+   [1] = "چیهایافورو 2",
+   [2] = "ちはやふる 2",
+   [3] = "치하야후루 2기",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "شوریده 2",
    },
   },
  [9262] = {
@@ -96799,6 +96871,8 @@ return {
    [1] = "Kami-sama Kiss",
    [2] = "Kamisama Hajimemashita",
    [3] = "Kamisama Kiss",
+   [4] = "بوسه ایزدی",
+   [5] = "حضرت ایزد از ملاقاتتون خوشوقتم",
    },
   },
  [9299] = {
@@ -97366,6 +97440,7 @@ return {
    },
   ["syn"] = {
    [1] = "The Flowers of Evil",
+   [2] = "گل شیطان",
    },
   },
  [9358] = {
@@ -98332,13 +98407,13 @@ return {
  [9466] = {
   ["main"] = "Hataraku Maou-sama!",
   ["official"] = {
-   [1] = "The Devil Is a Part-Timer!",
-   [2] = "はたらく魔王さま!",
+   [1] = "!پادشاه دیوها، کارگر نیمه وقته",
+   [2] = "The Devil Is a Part-Timer!",
+   [3] = "はたらく魔王さま!",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "!پادشاه دیوها، کارگر نیمه وقته",
    },
   },
  [9467] = {
@@ -98684,6 +98759,7 @@ return {
    [1] = "よんでますよ, アザゼルさん. Z",
    },
   ["short"] = {
+   [1] = "azazel z",
    },
   ["syn"] = {
    },
@@ -99089,13 +99165,12 @@ return {
   ["official"] = {
    [1] = "Attack on Titan",
    [2] = "L`attaque des Titans",
-   [3] = "Атака на титанів",
-   [4] = "الهجوم على العملاقة",
-   [5] = "حمله به تایتان",
-   [6] = "进击的巨人",
-   [7] = "進撃の巨人",
-   [8] = "進擊的巨人",
-   [9] = "진격의 거인",
+   [3] = "الهجوم على العملاقة",
+   [4] = "حمله به تایتان",
+   [5] = "进击的巨人",
+   [6] = "進撃の巨人",
+   [7] = "進擊的巨人",
+   [8] = "진격의 거인",
    },
   ["short"] = {
    [1] = "AoT",
@@ -99103,9 +99178,10 @@ return {
    [3] = "shingeki",
    },
   ["syn"] = {
-   [1] = "Атака Титанів",
-   [2] = "Вторжение Гигантов",
-   [3] = "На бій проти титанів",
+   [1] = "Atacul Titanilor",
+   [2] = "Атака Титанів",
+   [3] = "Вторжение Гигантов",
+   [4] = "На бій проти титанів",
    },
   },
  [9542] = {
@@ -99176,6 +99252,7 @@ return {
   ["official"] = {
    [1] = "DEVIL SURVIVOR 2 the ANIMATION",
    [2] = "Devil Survivor 2 the Animation",
+   [3] = "نجات یافته اهریمنی 2",
    },
   ["short"] = {
    },
@@ -99482,13 +99559,13 @@ return {
  [9589] = {
   ["main"] = "Kotonoha no Niwa",
   ["official"] = {
-   [1] = "Сад слів",
-   [2] = "言の葉の庭",
+   [1] = "The Garden of Words",
+   [2] = "Сад слів",
+   [3] = "言の葉の庭",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "The Garden of Words",
    },
   },
  [9590] = {
@@ -99762,13 +99839,14 @@ return {
    },
   },
  [9620] = {
-  ["main"] = "Tokurei Sochi Dantai Stella Jo-Gakuin Koutou-ka C3-Bu",
+  ["main"] = "Stella Jogakuin Koutouka C3-bu",
   ["official"] = {
-   [1] = "特例措置団体ステラ女学院高等科C3部",
+   [1] = "ステラ女学院高等科C3部[しーきゅーぶ]",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Stella Women`s Academy, High School Division Class C3",
    },
   },
  [9622] = {
@@ -102134,6 +102212,56 @@ return {
   ["main"] = "Code Geass: Soubou no Oz Picture Drama",
   ["official"] = {
    [1] = "コードギアス 双貌のオズ ピクチャードマラ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9913] = {
+  ["main"] = "Hotaru Kagayaku",
+  ["official"] = {
+   [1] = "ホタルかがやく",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9914] = {
+  ["main"] = "Shin Hitou Meguri",
+  ["official"] = {
+   [1] = "真・秘湯めぐり",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9916] = {
+  ["main"] = "Akuma no Riddle",
+  ["official"] = {
+   [1] = "悪魔のリドル",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9917] = {
+  ["main"] = "Zecchou Rocket",
+  ["official"] = {
+   [1] = "絶頂ロケット",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9918] = {
+  ["main"] = "Taka no Tsume Go: Yoshida, Himitsukessha Yamerutteyo",
+  ["official"] = {
+   [1] = "鷹の爪GO　吉田, 秘密結社やめるってよ.",
    },
   ["short"] = {
    },
