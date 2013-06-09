@@ -75,8 +75,8 @@ local events = {
 		core = {
 			function(self, source, nick)
 				for channel, nicks in pairs(self.channels) do
+					nicks[nick] = nicks[source.nick]
 					nicks[source.nick] = nil
-					nicks[nick] = true
 				end
 			end,
 		},
