@@ -89,6 +89,11 @@ local events = {
 
 				if(not self.channels[chan]) then self.channels[chan] = {} end
 				for nick in nicks:gmatch("%S+") do
+					local prefix = nick:sub(1, 1)
+					if(prefix == '+' or prefix == '@') then
+						nick = nick:sub(2)
+					end
+
 					self.channels[chan][nick] = true
 				end
 			end,
