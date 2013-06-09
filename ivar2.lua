@@ -50,7 +50,9 @@ local events = {
 			function(self, source, chan)
 				if(not self.channels[chan]) then self.channels[chan] = {} end
 
-				self.channels[chan][source.nick] = true
+				self.channels[chan][source.nick] = {
+					modes = {},
+				}
 			end,
 		},
 	},
@@ -82,19 +84,51 @@ local events = {
 		},
 	},
 
+	['MODE'] = {
+		core = {
+			function(self, source, channel, modeLine)
+				if(channel == self.config.nick) then return end
+
+				local dir, mode, nick = modeLine:match('([+%-])([^ ]+) (.+)$')
+				local modes = self.channels[channel][nick].modes
+				if(dir == '+') then
+					table.insert(modes, mode)
+				elseif(dir == '-') then
+					for i=1, #modes do
+						if(modes[i] == mode) then
+							table.remove(modes, i)
+							break
+						end
+					end
+				end
+			end,
+		},
+	},
+
 	['353'] = {
 		core = {
 			function(self, source, chan, nicks)
 				chan = chan:match('= (.*)$')
 
+				local convert = {
+					['+'] = 'v',
+					['@'] = 'o',
+				}
+
 				if(not self.channels[chan]) then self.channels[chan] = {} end
 				for nick in nicks:gmatch("%S+") do
 					local prefix = nick:sub(1, 1)
-					if(prefix == '+' or prefix == '@') then
+					if(convert[prefix]) then
 						nick = nick:sub(2)
+					else
+						prefix = nil
 					end
 
-					self.channels[chan][nick] = true
+					self.channels[chan][nick] = {
+						modes = {
+							convert[prefix]
+						},
+					}
 				end
 			end,
 		},
