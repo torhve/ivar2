@@ -24,6 +24,7 @@ local ivar2 = {
 	ignores = {},
 	Loop = loop,
 	event = event,
+	channels = {},
 
 	timeoutFunc = function(ivar2)
 		return function(loop, timer, revents)
@@ -43,6 +44,57 @@ local events = {
 			end,
 		},
 	},
+
+	['JOIN'] = {
+		core = {
+			function(self, source, chan)
+				if(not self.channels[chan]) then self.channels[chan] = {} end
+
+				self.channels[chan][source.nick] = true
+			end,
+		},
+	},
+
+	['PART'] = {
+		core = {
+			function(self, source, chan)
+				self.channels[chan][source.nick] = nil
+			end,
+		},
+	},
+
+	['KICK'] = {
+		core = {
+			function(self, source, chan, nick)
+				self.channels[chan][nick] = nil
+			end,
+		},
+	},
+
+	['NICK'] = {
+		core = {
+			function(self, source, nick)
+				for channel, nicks in pairs(self.channels) do
+					nicks[source.nick] = nil
+					nicks[nick] = true
+				end
+			end,
+		},
+	},
+
+	['353'] = {
+		core = {
+			function(self, source, chan, nicks)
+				chan = chan:match('= (.*)$')
+
+				if(not self.channels[chan]) then self.channels[chan] = {} end
+				for nick in nicks:gmatch("%S+") do
+					self.channels[chan][nick] = true
+				end
+			end,
+		},
+	},
+
 	['433'] = {
 		core = {
 			function(self)
@@ -370,6 +422,7 @@ function ivar2:Reload()
 		message.config = self.config
 		message.timers = self.timers
 		message.Loop = self.Loop
+		message.channels = self.channels
 		message.event = self.event
 		-- Clear the registered events
 		message.event:ClearAll()
