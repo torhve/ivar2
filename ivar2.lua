@@ -48,9 +48,18 @@ local events = {
 	['JOIN'] = {
 		core = {
 			function(self, source, chan)
-				if(not self.channels[chan]) then self.channels[chan] = {} end
+				if(not self.channels[chan]) then
+					self.channels[chan] = {
+						nicks = {},
+						modes = {},
+					}
+				end
 
-				self.channels[chan][source.nick] = {
+				if(source.nick == self.config.nick) then
+					self:Mode(chan, '')
+				end
+
+				self.channels[chan].nicks[source.nick] = {
 					modes = {},
 				}
 			end,
@@ -60,7 +69,7 @@ local events = {
 	['PART'] = {
 		core = {
 			function(self, source, chan)
-				self.channels[chan][source.nick] = nil
+				self.channels[chan].nicks[source.nick] = nil
 			end,
 		},
 	},
@@ -68,7 +77,7 @@ local events = {
 	['KICK'] = {
 		core = {
 			function(self, source, chan, nick)
-				self.channels[chan][nick] = nil
+				self.channels[chan].nicks[nick] = nil
 			end,
 		},
 	},
@@ -76,9 +85,9 @@ local events = {
 	['NICK'] = {
 		core = {
 			function(self, source, nick)
-				for channel, nicks in pairs(self.channels) do
-					nicks[nick] = nicks[source.nick]
-					nicks[source.nick] = nil
+				for channel, data in pairs(self.channels) do
+					data.nicks[nick] = data.nicks[source.nick]
+					data.nicks[source.nick] = nil
 				end
 			end,
 		},
@@ -89,8 +98,14 @@ local events = {
 			function(self, source, channel, modeLine)
 				if(channel == self.config.nick) then return end
 
-				local dir, mode, nick = modeLine:match('([+%-])([^ ]+) (.+)$')
-				local modes = self.channels[channel][nick].modes
+				local dir, mode, nick = modeLine:match('([+%-])([^ ]+) ?(.*)$')
+				local modes
+				if(nick == '') then
+					modes = self.channels[channel].modes
+				else
+					modes = self.channels[channel].nicks[nick].modes
+				end
+
 				if(dir == '+') then
 					table.insert(modes, mode)
 				elseif(dir == '-') then
@@ -100,6 +115,19 @@ local events = {
 							break
 						end
 					end
+				end
+			end,
+		},
+	},
+
+	['324'] = {
+		core = {
+			function(self, source, _, argument)
+				local chan, dir, modes = argument:match('([^ ]+) ([+%-])(.*)$')
+
+				local chanModes = self.channels[chan].modes
+				for mode in modes:gmatch('[a-zA-Z]') do
+					table.insert(chanModes, mode)
 				end
 			end,
 		},
@@ -115,7 +143,12 @@ local events = {
 					['@'] = 'o',
 				}
 
-				if(not self.channels[chan]) then self.channels[chan] = {} end
+				if(not self.channels[chan]) then
+					self.channels[chan] = {
+						nicks = {},
+						modes = {},
+					}
+				end
 				for nick in nicks:gmatch("%S+") do
 					local prefix = nick:sub(1, 1)
 					if(convert[prefix]) then
@@ -124,7 +157,7 @@ local events = {
 						prefix = nil
 					end
 
-					self.channels[chan][nick] = {
+					self.channels[chan].nicks[nick] = {
 						modes = {
 							convert[prefix]
 						},
