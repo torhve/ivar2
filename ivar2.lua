@@ -107,12 +107,16 @@ local events = {
 				end
 
 				if(dir == '+') then
-					table.insert(modes, mode)
+					for m in mode:gmatch('[a-zA-Z]') do
+						table.insert(modes, m)
+					end
 				elseif(dir == '-') then
-					for i=1, #modes do
-						if(modes[i] == mode) then
-							table.remove(modes, i)
-							break
+					for m in mode:gmatch('[a-zA-Z]') do
+						for i=1, #modes do
+							if(modes[i] == m) then
+								table.remove(modes, i)
+								break
+							end
 						end
 					end
 				end
