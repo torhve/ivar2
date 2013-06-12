@@ -24,6 +24,7 @@ local ivar2 = {
 	ignores = {},
 	Loop = loop,
 	event = event,
+	channels = {},
 
 	timeoutFunc = function(ivar2)
 		return function(loop, timer, revents)
@@ -43,6 +44,133 @@ local events = {
 			end,
 		},
 	},
+
+	['JOIN'] = {
+		core = {
+			function(self, source, chan)
+				if(not self.channels[chan]) then
+					self.channels[chan] = {
+						nicks = {},
+						modes = {},
+					}
+				end
+
+				if(source.nick == self.config.nick) then
+					self:Mode(chan, '')
+				end
+
+				self.channels[chan].nicks[source.nick] = {
+					modes = {},
+				}
+			end,
+		},
+	},
+
+	['PART'] = {
+		core = {
+			function(self, source, chan)
+				self.channels[chan].nicks[source.nick] = nil
+			end,
+		},
+	},
+
+	['KICK'] = {
+		core = {
+			function(self, source, chan, nick)
+				self.channels[chan].nicks[nick] = nil
+			end,
+		},
+	},
+
+	['NICK'] = {
+		core = {
+			function(self, source, nick)
+				for channel, data in pairs(self.channels) do
+					data.nicks[nick] = data.nicks[source.nick]
+					data.nicks[source.nick] = nil
+				end
+			end,
+		},
+	},
+
+	['MODE'] = {
+		core = {
+			function(self, source, channel, modeLine)
+				if(channel == self.config.nick) then return end
+
+				local dir, mode, nick = modeLine:match('([+%-])([^ ]+) ?(.*)$')
+				local modes
+				if(nick == '') then
+					modes = self.channels[channel].modes
+				else
+					modes = self.channels[channel].nicks[nick].modes
+				end
+
+				if(dir == '+') then
+					for m in mode:gmatch('[a-zA-Z]') do
+						table.insert(modes, m)
+					end
+				elseif(dir == '-') then
+					for m in mode:gmatch('[a-zA-Z]') do
+						for i=1, #modes do
+							if(modes[i] == m) then
+								table.remove(modes, i)
+								break
+							end
+						end
+					end
+				end
+			end,
+		},
+	},
+
+	['324'] = {
+		core = {
+			function(self, source, _, argument)
+				local chan, dir, modes = argument:match('([^ ]+) ([+%-])(.*)$')
+
+				local chanModes = self.channels[chan].modes
+				for mode in modes:gmatch('[a-zA-Z]') do
+					table.insert(chanModes, mode)
+				end
+			end,
+		},
+	},
+
+	['353'] = {
+		core = {
+			function(self, source, chan, nicks)
+				chan = chan:match('= (.*)$')
+
+				local convert = {
+					['+'] = 'v',
+					['@'] = 'o',
+				}
+
+				if(not self.channels[chan]) then
+					self.channels[chan] = {
+						nicks = {},
+						modes = {},
+					}
+				end
+				for nick in nicks:gmatch("%S+") do
+					local prefix = nick:sub(1, 1)
+					if(convert[prefix]) then
+						nick = nick:sub(2)
+					else
+						prefix = nil
+					end
+
+					self.channels[chan].nicks[nick] = {
+						modes = {
+							convert[prefix]
+						},
+					}
+				end
+			end,
+		},
+	},
+
 	['433'] = {
 		core = {
 			function(self)
@@ -263,6 +391,7 @@ function ivar2:EnableModule(moduleName, moduleTable)
 end
 
 function ivar2:DisableModule(moduleName)
+	if(moduleName == 'core') then return end
 	for command, modules in next, events do
 		if(modules[moduleName]) then
 			self:Log('info', 'Disabling module: %s', moduleName)
@@ -369,6 +498,7 @@ function ivar2:Reload()
 		message.config = self.config
 		message.timers = self.timers
 		message.Loop = self.Loop
+		message.channels = self.channels
 		message.event = self.event
 		-- Clear the registered events
 		message.event:ClearAll()
