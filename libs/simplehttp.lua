@@ -27,6 +27,8 @@ local function simplehttp(url, callback, stream, limit, visited)
 	local sinkSize = 0
 	local sink = {}
 	local visited = visited or {}
+	local method = "GET"
+	local data = nil
 
 	local client = httpclient.new(ev.Loop.default)
 	if(type(url) == "table") then
@@ -34,6 +36,14 @@ local function simplehttp(url, callback, stream, limit, visited)
 			for k, v in next, url.headers do
 				client.headers[k] = v
 			end
+		end
+
+		if(url.method) then
+			method = url.method
+		end
+
+		if(url.data) then
+			data = url.data
 		end
 
 		url = url.url or url[1]
@@ -48,6 +58,8 @@ local function simplehttp(url, callback, stream, limit, visited)
 
 	client:request{
 		url = url,
+		method = method,
+		body = data,
 		stream_response = stream,
 
 		on_data = function(request, response, data)
