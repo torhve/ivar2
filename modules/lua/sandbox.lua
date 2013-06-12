@@ -277,7 +277,7 @@ local function main()
 			local stack = traceback()
 			stack = stack:gsub("%S+sputnik%-weblua[^\n]+%s+", "")
 			stack = stack:gsub("%s+%[C%]: in function 'xpcall'.+$", "")
-			return "<pre>" .. tostring(msg) .. "<br/>" .. stack .. "</pre>"
+			return tostring(msg) .. stack
 		end
 
 		local results = capture(xpcall(func, handler))
