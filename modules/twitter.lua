@@ -47,10 +47,6 @@ local function getLatestStatus(self, source, destination, screen_name)
 		function(data)
 			local info = json.decode(data)
 			outputTweet(self, source, destination, info[1])
-			for k,v in pairs(info[1]) do
-				print(k)
-				print(v)
-			end
 		end
 	)
 end
