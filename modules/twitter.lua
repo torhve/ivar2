@@ -89,13 +89,13 @@ getToken()
 
 return {
 	PRIVMSG = {
-		['^%.twitter (%d+)$'] = function(self, source, destination, tid)
+		['^!twitter (%d+)$'] = function(self, source, destination, tid)
 			getStatus(self, source, destination, tid)
 		end,
-		['^%.tweet (%d+)$'] = function(self, source, destination, tid)
+		['^!tweet (%d+)$'] = function(self, source, destination, tid)
 			getStatus(self, source, destination, tid)
 		end,
-		['^%.twitter (%w+)$'] = function(self, source, destination, screen_name)
+		['^!twitter (%w+)$'] = function(self, source, destination, screen_name)
 			getLatestStatus(self, source, destination, screen_name)
 		end,
 	},
