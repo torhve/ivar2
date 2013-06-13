@@ -140,7 +140,7 @@ local events = {
 	['353'] = {
 		core = {
 			function(self, source, chan, nicks)
-				chan = chan:match('= (.*)$')
+				chan = chan:match('[=*@] (.*)$')
 
 				local convert = {
 					['+'] = 'v',
