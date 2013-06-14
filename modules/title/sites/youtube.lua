@@ -1,41 +1,38 @@
 local simplehttp = require'simplehttp'
-local html2unicode = require'html'
+local json = require'json'
+
+local siValue = function(val)
+	val = tonumber(val)
+	if(val >= 1e6) then
+		return ('%.1f'):format(val / 1e6):gsub('%.', 'M')
+	elseif(val >= 1e4) then
+		return ("%.1f"):format(val / 1e3):gsub('%.', 'k')
+	else
+		return val
+	end
+end
 
 local fetchInformation = function(queue, vid)
+	local key = ivar2.config.youtubeAPIKey
+	local url = string.format('https://www.googleapis.com/youtube/v3/videos?part=snippet%%2CcontentDetails%%2Cstatistics&id=%s&key=%s', vid, key)
 	simplehttp(
-		'https://gdata.youtube.com/feeds/api/videos/' .. vid,
-
+		url,
 		function(data)
-			local title = html2unicode(data:match("<title type='text'>([^<]+)</title>"))
-			local uploader = html2unicode(data:match('<author><name>([^<]+)</name>'))
-			local duration = tonumber(data:match("<yt:duration seconds='(%d+)'/>"))
+			local info = json.decode(data)
+			local video = info.items[1]
+			local title = video.snippet.title
+			local uploader = video.snippet.channelTitle
+			local duration = video.contentDetails.duration
+			local views = siValue(video.statistics.viewCount)
+			local likeCount = siValue(video.statistics.likeCount)
+			local dislikeCount = siValue(video.statistics.dislikeCount)
 
-			local output
-			if(duration) then
-				if(duration > 3600) then
-					duration = string.format(
-						'%d:%02d:%02d',
-						math.floor(duration / 3600),
-						math.floor((duration % 3600) / 60),
-						duration % 60
-					)
-				else
-					duration = string.format(
-						'%d:%02d',
-						math.floor(duration / 60),
-						duration % 60
-					)
-				end
-
-				output = string.format('%s (%s) by %s', title, duration, uploader)
-			else
-				output = string.format('%s by %s', title, uploader)
-			end
-
+			local output = string.format('%s (%s) by %s [+%s/-%s, %s views]', title, duration, uploader, likeCount, dislikeCount, views)
 			queue:done(output)
 		end
 	)
 end
+
 
 customHosts['youtube%.com'] = function(queue, info)
 	local query = info.query
