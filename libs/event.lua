@@ -12,16 +12,16 @@ local argcheck = function(value, num, ...)
 	error(("Bad argument #%d to '%s' (%s expected, got %s"):format(num, name, table.concat(types, ', '), type(value)), 3)
 end
 
-return {
-	__register = {},
+local register = {}
 
+return {
 	Register = function(self, eventName, eventFunc)
 		argcheck(eventName, 1, "string")
 		argcheck(eventFunc, 2, "function")
 
-		if(not self.__register[eventName]) then self.__register[eventName] = {} end
+		if(not register[eventName]) then register[eventName] = {} end
 
-		local funcs = self.__register[eventName]
+		local funcs = register[eventName]
 		for i=1, #funcs do
 			if(funcs[i] == func) then
 				return nil, "Event handler already registered."
@@ -34,7 +34,7 @@ return {
 	Fire = function(self, eventName, ...)
 		argcheck(eventName, 1, "string")
 
-		local funcs = self.__register[eventName]
+		local funcs = register[eventName]
 		if(funcs) then
 			for i=1, #funcs do
 				funcs[i](...)
@@ -43,6 +43,6 @@ return {
 	end,
 
 	ClearAll = function(self)
-		self.__register = {}
+		register = {}
 	end,
 }
