@@ -396,6 +396,7 @@ function ivar2:DisableModule(moduleName)
 		if(modules[moduleName]) then
 			self:Log('info', 'Disabling module: %s', moduleName)
 			modules[moduleName] = nil
+			event:ClearModule(moduleName)
 		end
 	end
 end

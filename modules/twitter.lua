@@ -49,10 +49,6 @@ local function getLatestStatus(self, source, destination, screen_name)
 		function(data)
 			local info = json.decode(data)
 			outputTweet(self, source, destination, info[1])
-			for k,v in pairs(info[1]) do
-				print(k)
-				print(v)
-			end
 		end
 	)
 end
@@ -89,13 +85,13 @@ getToken()
 
 return {
 	PRIVMSG = {
-		['^%.twitter (%d+)$'] = function(self, source, destination, tid)
+		['^!twitter (%d+)$'] = function(self, source, destination, tid)
 			getStatus(self, source, destination, tid)
 		end,
-		['^%.tweet (%d+)$'] = function(self, source, destination, tid)
+		['^!tweet (%d+)$'] = function(self, source, destination, tid)
 			getStatus(self, source, destination, tid)
 		end,
-		['^%.twitter (%w+)$'] = function(self, source, destination, screen_name)
+		['^!twitter (%w+)$'] = function(self, source, destination, screen_name)
 			getLatestStatus(self, source, destination, screen_name)
 		end,
 	},
