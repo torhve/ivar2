@@ -36,6 +36,17 @@ return {
 		end
 	end,
 
+	ClearModule = function(self, module)
+		argcheck(module, 1, "string")
+
+		for event, tbl in next, register do
+			tbl[module] = nil
+			if(not next(tbl)) then
+				register[event] = nil
+			end
+		end
+	end,
+
 	ClearAll = function(self)
 		register = {}
 	end,
