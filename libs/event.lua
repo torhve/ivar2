@@ -21,14 +21,8 @@ return {
 
 		if(not register[eventName]) then register[eventName] = {} end
 
-		local funcs = register[eventName]
-		for i=1, #funcs do
-			if(funcs[i] == func) then
-				return nil, "Event handler already registered."
-			end
-		end
-
-		funcs[#funcs + 1] = eventFunc
+		local module = debug.getinfo(2).short_src:match('modules/([^./]+)')
+		register[eventName][module] = eventFunc
 	end,
 
 	Fire = function(self, eventName, ...)
@@ -36,8 +30,8 @@ return {
 
 		local funcs = register[eventName]
 		if(funcs) then
-			for i=1, #funcs do
-				funcs[i](...)
+			for module, func in next, funcs do
+				func(...)
 			end
 		end
 	end,
