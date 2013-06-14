@@ -1,6 +1,27 @@
 local simplehttp = require'simplehttp'
 local json = require'json'
 
+local parseDuration = function(val)
+	local out = {}
+	years = val:match('(%d+)Y')
+	if years then table.insert(out, years..'y ') end
+	months = val:match('(%d+)M.+T')
+	if months then table.insert(out, months..'mon ') end
+	weeks = val:match('(%d+)W')
+	if weeks then table.insert(out, weeks..'w ') end
+	days = val:match('(%d+)D')
+	if days then table.insert(out, days.. 'd ') end
+	hours = val:match('(%d+)H')
+	if hours then table.insert(out, string.format('%02d:', hours)) end
+	minutes = val:match('T.*(%d+)M')
+	if minutes then table.insert(out, string.format('%02d:', minutes))
+	else table.insert(out, '00:') end
+	seconds = val:match('(%d+)S')
+	if seconds then table.insert(out, string.format('%02d', seconds)) end
+
+	return table.concat(out, '')
+end
+
 local siValue = function(val)
 	val = tonumber(val)
 	if(val >= 1e6) then
@@ -22,7 +43,7 @@ local fetchInformation = function(queue, vid)
 			local video = info.items[1]
 			local title = video.snippet.title
 			local uploader = video.snippet.channelTitle
-			local duration = video.contentDetails.duration
+			local duration = parseDuration(video.contentDetails.duration)
 			local views = siValue(video.statistics.viewCount)
 			local likeCount = siValue(video.statistics.likeCount)
 			local dislikeCount = siValue(video.statistics.dislikeCount)
