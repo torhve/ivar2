@@ -43,7 +43,14 @@ local function handleKarma(self, source, destination, item, sign, change)
 		end
 	end
 
-	if(config and config.nicksOnly and not itemIsNick(item)) then return end
+	if(config and config.nicksOnly) then
+		if(not itemIsNick(item)) then
+			return
+		elseif(source.nick == item) then
+			self:Msg('privmsg', destination, source, "%s: Silly human, your karma must be decided by others!", source.nick)
+			return
+		end
+	end
 
 	local db = sql.open("cache/karma.sql")
 	local insStmt = db:prepare("INSERT INTO karma (item, change, nick) VALUES(?, ?, ?)")
