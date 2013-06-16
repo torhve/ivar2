@@ -15,8 +15,7 @@ local function outputKarma(self, source, destination, item)
 	end
 end
 
-local function handleKarma(self, source, destination, item, sign, change) 
-
+local function handleKarma(self, source, destination, item, sign, change)
 	local value = 0
 
 	if change then
@@ -36,8 +35,8 @@ local function handleKarma(self, source, destination, item, sign, change)
 	local db = sql.open("cache/karma.sql")
 	local insStmt = db:prepare("INSERT INTO karma (item, change, nick) VALUES(?, ?, ?)")
 	local code = insStmt:bind_values(item, value, source.nick)
-		  code = insStmt:step()
-		  code = insStmt:finalize()
+	code = insStmt:step()
+	code = insStmt:finalize()
 
 	db:close()
 
