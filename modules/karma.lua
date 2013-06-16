@@ -1,5 +1,13 @@
 local sql = require'lsqlite3'
 
+local itemIsNick = function(nick)
+	for channel, data in pairs(ivar2.channels) do
+		for chanNick in pairs(data.nicks) do
+			if(chanNick == nick) then return true end
+		end
+	end
+end
+
 local function outputKarma(self, source, destination, item)
 	local db = sql.open("cache/karma.sql")
 	local selectStmt  = db:prepare('SELECT SUM(change) AS sum FROM karma WHERE LOWER(item) = LOWER(?)')
@@ -18,7 +26,10 @@ end
 local function handleKarma(self, source, destination, item, sign, change)
 	local value = 0
 
+	local config = self.config.karma
 	if change then
+		if(config and not config.allowStepping) then return end
+
 		if sign == '+=' then
 			value = tonumber(change)
 		elseif sign == '-=' then
@@ -31,6 +42,8 @@ local function handleKarma(self, source, destination, item, sign, change)
 			value = -1
 		end
 	end
+
+	if(config and config.nicksOnly and not itemIsNick(item)) then return end
 
 	local db = sql.open("cache/karma.sql")
 	local insStmt = db:prepare("INSERT INTO karma (item, change, nick) VALUES(?, ?, ?)")
