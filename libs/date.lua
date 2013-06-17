@@ -4,7 +4,7 @@ local _M = {
 }
 
 do
-	function _M.relativeSeconds(sec, T, L)
+	function _M.relativeSeconds(diff, T, L)
 		local out
 
 		for i=1, #T do
