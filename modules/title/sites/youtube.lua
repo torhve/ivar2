@@ -1,25 +1,39 @@
 local simplehttp = require'simplehttp'
 local json = require'json'
+local date = require'date'
 
-local parseDuration = function(val)
-	local out = {}
-	local years = val:match('(%d+)Y')
-	if years then table.insert(out, years..'y ') end
-	local months = val:match('(%d+)M.+T')
-	if months then table.insert(out, months..'mon ') end
-	local weeks = val:match('(%d+)W')
-	if weeks then table.insert(out, weeks..'w ') end
-	local days = val:match('(%d+)D')
-	if days then table.insert(out, days.. 'd ') end
-	local hours = val:match('(%d+)H')
-	if hours then table.insert(out, string.format('%02d:', hours)) end
-	local minutes = val:match('T.*(%d+)M')
-	if minutes then table.insert(out, string.format('%02d:', minutes))
-	else table.insert(out, '00:') end
-	local seconds = val:match('(%d+)S')
-	if seconds then table.insert(out, string.format('%02d', seconds)) end
+local parseDuration
+do
+	local elementPattern = '(%d+%.?%d*)([YMWDTHS])'
 
-	return table.concat(out, '')
+	local fmtTable = {
+		y = 12*30*24*60*60,
+		m = 30*24*60*60,
+		w = 7*24*60*60,
+		d = 24*60*60,
+		H = 60*60,
+		M = 60,
+		S = 1,
+	}
+
+	parseDuration = function(str)
+		if(not (str:sub(1,1) == "P" and str:sub(-1):match("[YMWDHS]"))) then
+			return nil, "Invalid ISO 8601 duration."
+		end
+
+		local duration = 0
+		local date, time = str:match("P([^T]*)T?(.*)$")
+		for dur, elm in date:gmatch(elementPattern) do
+			elm = elm:lower()
+			duration = duration + (dur * fmtTable[elm])
+		end
+
+		for dur, elm in time:gmatch(elementPattern) do
+			duration = duration + (dur * fmtTable[elm])
+		end
+
+		return duration
+	end
 end
 
 local siValue = function(val)
@@ -43,7 +57,7 @@ local fetchInformation = function(queue, vid)
 			local video = info.items[1]
 			local title = video.snippet.title
 			local uploader = video.snippet.channelTitle
-			local duration = parseDuration(video.contentDetails.duration)
+			local duration = date.relativeDuration(parseDuration(video.contentDetails.duration))
 			local views = siValue(video.statistics.viewCount)
 			local likeCount = siValue(video.statistics.likeCount)
 			local dislikeCount = siValue(video.statistics.dislikeCount)
