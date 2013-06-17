@@ -78,7 +78,7 @@ do
 	}
 
 	function _M.relativeTimeShort(t1, t2)
-		return relativeTime(t1, t2, _M.durations.short, _M.strings.short)
+		return _M.relativeTime(t1, t2, _M.durations.short, _M.strings.short)
 	end
 end
 
