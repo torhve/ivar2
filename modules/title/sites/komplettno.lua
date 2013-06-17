@@ -38,7 +38,11 @@ customHosts['komplett%.no'] = function(queue, info)
 					ins(', \002%s\002 ', trim(price))
 				end
 				if(storage) then
-					ins('(%s)', trim(storage:gsub('<%/?[%w:]+.-%/?>', '')):sub(1, -2))
+					storage = trim(storage:gsub('<%/?[%w:]+.-%/?>', ''))
+					if(storage:sub(-1) == '.') then
+						storage = storage:sub(1, -2)
+					end
+					ins('(%s)', storage)
 				end
 
 				queue:done(table.concat(out, ''))
