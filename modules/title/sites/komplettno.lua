@@ -5,7 +5,7 @@ local trim = function(s)
 	return (string.gsub(s, "^%s*(.-)%s*$", "%1"))
 end
 
-customHosts['komplett%.no'] = function(queue, info)
+local handler = function(queue, info)
 	local query = info.query
 	if(query and query:match('sku=%d+')) then
 		simplehttp(
@@ -52,3 +52,9 @@ customHosts['komplett%.no'] = function(queue, info)
 		return true
 	end
 end
+
+customHosts['komplett%.no'] = handler
+customHosts['komplett%.dk'] = handler
+customHosts['komplett%.se'] = handler
+customHosts['inwarehouse%.se'] = handler
+customHosts['mpx%.no'] = handler
