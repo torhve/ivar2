@@ -39,9 +39,9 @@ end
 local siValue = function(val)
 	val = tonumber(val)
 	if(val >= 1e6) then
-		return ('%.1f'):format(val / 1e6):gsub('%.', 'M')
+		return ('%.1f'):format(val / 1e6):gsub('%.', 'M'):gsub('M0', 'M')
 	elseif(val >= 1e4) then
-		return ("%.1f"):format(val / 1e3):gsub('%.', 'k')
+		return ("%.1f"):format(val / 1e3):gsub('%.', 'k'):gsub('k0', 'k')
 	else
 		return val
 	end
