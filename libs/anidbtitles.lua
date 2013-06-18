@@ -5312,9 +5312,10 @@ return {
    [1] = "Case Closed Movie: The Time-Bombed Skyscraper",
    [2] = "Conan, a detektív - Bomba a felhőkarcolóban",
    [3] = "Detektiv Conan - 1. Film: Der tickende Wolkenkratzer",
-   [4] = "Détective Conan - Le gratte-ciel infernal",
-   [5] = "ยอดนักสืบจิ๋วโคนัน เดอะมูฟวี่ 1 ตอน คดีปริศนาระเบิดฟ้า",
-   [6] = "名探偵コナン 時計じかけの摩天楼",
+   [4] = "Detektyw Conan: Architekt Zniszczenia",
+   [5] = "Détective Conan - Le gratte-ciel infernal",
+   [6] = "ยอดนักสืบจิ๋วโคนัน เดอะมูฟวี่ 1 ตอน คดีปริศนาระเบิดฟ้า",
+   [7] = "名探偵コナン 時計じかけの摩天楼",
    },
   ["short"] = {
    },
@@ -10059,6 +10060,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Slave Bazaar",
    },
   },
  [609] = {
@@ -15427,21 +15429,22 @@ return {
  [990] = {
   ["main"] = "Gekijouban Pocket Monsters: Mewtwo no Gyakushuu",
   ["official"] = {
-   [1] = "Pokemon o Filme - Mewtwo Contra Mew",
-   [2] = "Pokemon: The First Movie - Mewtwo Strikes Back",
-   [3] = "Pokémon - Der Film: Mewtu gegen Mew",
-   [4] = "Pokémon - Filmen",
-   [5] = "Pokémon az első film - Mewtwo visszavág",
-   [6] = "Pokémon η ταινία - Ο Mewtwo αντεπιτίθεται",
-   [7] = "Pokémon: Elokuva",
-   [8] = "Pokémon: Film Pierwszy",
-   [9] = "Pokémon: První film",
-   [10] = "Pokémon: Prvý film",
-   [11] = "Pokémon: den första filmen - Mewtvå slår tillbaka",
-   [12] = "Pokémon: İlk Film",
-   [13] = "Покемон Филмът",
-   [14] = "פוקימון: הסרט הראשון - מיוטו מכה שנית",
-   [15] = "劇場版ポケットモンスター ミュウツーの逆襲",
+   [1] = "Pokemon: The First Movie - Mewtwo Strikes Back",
+   [2] = "Pokémon - Der Film: Mewtu gegen Mew",
+   [3] = "Pokémon - Filmen",
+   [4] = "Pokémon az első film - Mewtwo visszavág",
+   [5] = "Pokémon η ταινία - Ο Mewtwo αντεπιτίθεται",
+   [6] = "Pokémon: Elokuva",
+   [7] = "Pokémon: Film Pierwszy",
+   [8] = "Pokémon: O Filme - Mewtwo Contra Mew",
+   [9] = "Pokémon: O Filme - Mewtwo x Mew",
+   [10] = "Pokémon: První film",
+   [11] = "Pokémon: Prvý film",
+   [12] = "Pokémon: den första filmen - Mewtvå slår tillbaka",
+   [13] = "Pokémon: İlk Film",
+   [14] = "Покемон Филмът",
+   [15] = "פוקימון: הסרט הראשון - מיוטו מכה שנית",
+   [16] = "劇場版ポケットモンスター ミュウツーの逆襲",
    },
   ["short"] = {
    },
@@ -15459,12 +15462,12 @@ return {
  [991] = {
   ["main"] = "Pocket Monsters: Celebi Toki o Koeta Deai",
   ["official"] = {
-   [1] = "Pokemon 4Ever: Celebi - A Voz Da Floresta",
-   [2] = "Pokemon 4Ever: Celebi - Voice of the Forest",
-   [3] = "Pokemonas amžiams",
-   [4] = "Pokemoni zauvijek",
-   [5] = "Pokémon 4. - Az időkapu",
-   [6] = "Pokémon 4: Die zeitlose Begegnung",
+   [1] = "Pokemon 4Ever: Celebi - Voice of the Forest",
+   [2] = "Pokemonas amžiams",
+   [3] = "Pokemoni zauvijek",
+   [4] = "Pokémon 4. - Az időkapu",
+   [5] = "Pokémon 4: Die zeitlose Begegnung",
+   [6] = "Pokémon 4: Viajantes do Tempo",
    [7] = "Pokémon 4Ever",
    [8] = "Pokémon 4Ever - Matka aikojen halki",
    [9] = "Pokémon Navždy: Celebi - Hlas lesa",
@@ -15482,24 +15485,26 @@ return {
    [2] = "Pokemon 4Ever",
    [3] = "Pokemon: Movie 4",
    [4] = "Pokémon 4Ever",
-   [5] = "Покемон: Сереби - встреча за пределами времени",
+   [5] = "Pokémon 4Ever: Celebi - A Voz da Floresta",
+   [6] = "Покемон: Сереби - встреча за пределами времени",
    },
   },
  [992] = {
   ["main"] = "Pocket Monsters: Kesshoutou no Teiou",
   ["official"] = {
-   [1] = "Pokemon 3 - O Feitiço dos Unown",
-   [2] = "Pokemon 3: Kristallitorni",
-   [3] = "Pokemon 3: The Movie - Spell of the Unown",
-   [4] = "Pokemonai 3",
-   [5] = "Pokémon 3",
-   [6] = "Pokémon 3 : Le sort des Zarbis",
+   [1] = "Pokemon 3: Kristallitorni",
+   [2] = "Pokemon 3: The Movie - Spell of the Unown",
+   [3] = "Pokemonai 3",
+   [4] = "Pokémon 3",
+   [5] = "Pokémon 3 : Le sort des Zarbis",
+   [6] = "Pokémon 3: Entei - O Feitiço dos Unown",
    [7] = "Pokémon 3: Im Bann der Icognito",
-   [8] = "Pokémon 3: Unowns Förtrollning",
-   [9] = "Pokémon 3: Zaklęcie Unown",
-   [10] = "Pokémon: Az Öntudatlan betűi",
-   [11] = "Unown פוקימון 3: ההרפתקה של",
-   [12] = "ポケットモンスター 結晶塔の帝王",
+   [8] = "Pokémon 3: O Feitiço dos Unown",
+   [9] = "Pokémon 3: Unowns Förtrollning",
+   [10] = "Pokémon 3: Zaklęcie Unown",
+   [11] = "Pokémon: Az Öntudatlan betűi",
+   [12] = "Unown פוקימון 3: ההרפתקה של",
+   [13] = "ポケットモンスター 結晶塔の帝王",
    },
   ["short"] = {
    },
@@ -16523,7 +16528,7 @@ return {
    [10] = "Yeşilin Kızı Anne",
    [11] = "Άννα, το Κορίτσι της Χαράς",
    [12] = "האסופית",
-   [13] = "حنا دختری در مزرعه",
+   [13] = "آنه شرلی در گرین گیبلز",
    [14] = "شما في البراري الخضراء",
    [15] = "赤毛のアン",
    },
@@ -21574,15 +21579,15 @@ return {
   ["main"] = "Ashita no Joe 2",
   ["official"] = {
    [1] = "Ashita no Joe 2",
-   [2] = "Tomorrow`s Joe 2",
-   [3] = "جو البطل",
-   [4] = "あしたのジョー2",
+   [2] = "جو البطل",
+   [3] = "あしたのジョー2",
    },
   ["short"] = {
    },
   ["syn"] = {
    [1] = "Joe 2",
-   [2] = "rocky joe 2",
+   [2] = "Tomorrow`s Joe 2",
+   [3] = "rocky joe 2",
    },
   },
  [1459] = {
@@ -22604,7 +22609,7 @@ return {
    [5] = "Naoki Urasawa`s MONSTER",
    [6] = "Монстр",
    [7] = "Чудовище",
-   [8] = "الوحش",
+   [8] = "وحش",
    },
   },
  [1540] = {
@@ -28288,13 +28293,13 @@ return {
  [2000] = {
   ["main"] = "Oishinbo",
   ["official"] = {
-   [1] = "The Gourmet",
-   [2] = "美味しんぼ",
+   [1] = "美味しんぼ",
    },
   ["short"] = {
    },
   ["syn"] = {
    [1] = "Skanautojas",
+   [2] = "The Gourmet",
    },
   },
  [2001] = {
@@ -28575,7 +28580,7 @@ return {
   ["main"] = "Mashou no Kao",
   ["official"] = {
    [1] = "The Two Facials of Eve",
-   [2] = "魔性の貌(かお)",
+   [2] = "魔性の貌[かお]",
    },
   ["short"] = {
    },
@@ -33102,18 +33107,19 @@ return {
   ["main"] = "Pocket Monsters Advanced Generation: Rekkuu no Houmonsha Deoxys",
   ["official"] = {
    [1] = "Pokemon - Sudbina Deoxysa",
-   [2] = "Pokemon 7 - Alma gémea",
-   [3] = "Pokemon: Destiny Deoxys",
-   [4] = "Pokemonai: Deoksio likimas",
-   [5] = "Pokémon - Deoxys Duet",
-   [6] = "Pokémon 7 - Destiny Deoxys - Der Film",
-   [7] = "Pokémon Salaperäinen Deoxys",
-   [8] = "Pokémon: Cel - Deoxys",
-   [9] = "Pokémon: Fratello dallo Spazio",
-   [10] = "Pokémon: Osudový Deoxys",
-   [11] = "Πεπρωμένο Ντέοξις",
-   [12] = "Покемон: Судьба Деоксиса",
-   [13] = "ポケットモンスター アドバンスジェネレーション 裂空の訪問者 デオキシス",
+   [2] = "Pokemon: Destiny Deoxys",
+   [3] = "Pokemonai: Deoksio likimas",
+   [4] = "Pokémon - Deoxys Duet",
+   [5] = "Pokémon 7 - Destiny Deoxys - Der Film",
+   [6] = "Pokémon 7: Alma Gémea",
+   [7] = "Pokémon 7: Alma Gêmea",
+   [8] = "Pokémon Salaperäinen Deoxys",
+   [9] = "Pokémon: Cel - Deoxys",
+   [10] = "Pokémon: Fratello dallo Spazio",
+   [11] = "Pokémon: Osudový Deoxys",
+   [12] = "Πεπρωμένο Ντέοξις",
+   [13] = "Покемон: Судьба Деоксиса",
+   [14] = "ポケットモンスター アドバンスジェネレーション 裂空の訪問者 デオキシス",
    },
   ["short"] = {
    },
@@ -40856,13 +40862,13 @@ return {
  [3135] = {
   ["main"] = "Shizukanaru Don: Yakuza Side Story",
   ["official"] = {
-   [1] = "The Quietened Don: Yakuza Side Story",
-   [2] = "静かなるドン YAKUZA SIDE STORY",
+   [1] = "静かなるドン YAKUZA SIDE STORY",
    },
   ["short"] = {
    },
   ["syn"] = {
    [1] = "The Quiet Don",
+   [2] = "The Quietened Don: Yakuza Side Story",
    },
   },
  [3136] = {
@@ -49456,8 +49462,9 @@ return {
    [15] = "시간을 달리는 소녀",
    },
   ["short"] = {
-   [1] = "tokikake",
-   [2] = "twks",
+   [1] = "TGWLTT",
+   [2] = "tokikake",
+   [3] = "twks",
    },
   ["syn"] = {
    [1] = "A Garota que Salta Através do Tempo",
@@ -55361,9 +55368,10 @@ return {
   ["syn"] = {
    [1] = "Pokémon - saison 10 - Diamant et Perle",
    [2] = "Pokémon DP: Battle Dimension - מימד הקרב",
-   [3] = "Карманные монстры: Алмаз и жемчуг",
-   [4] = "פוקימון: יהלום ופנינה",
-   [5] = "ポケットモンスター ダイヤモンド・パール",
+   [3] = "pokemon",
+   [4] = "Карманные монстры: Алмаз и жемчуг",
+   [5] = "פוקימון: יהלום ופנינה",
+   [6] = "ポケットモンスター ダイヤモンド・パール",
    },
   },
  [4729] = {
@@ -67009,7 +67017,7 @@ return {
    [4] = "Fullmetal Alchemist: Testvériség",
    [5] = "Сталевий алхімік. Братерство",
    [6] = "Цулметаллан Алхимич: Ахан дүүсийн барилдлага",
-   [7] = "کیمیاگر تمام فلزی : برودر هود",
+   [7] = "کیمیاگر تمام فلزی : داستان برادری",
    [8] = "鋼の錬金術師 FULLMETAL ALCHEMIST (2009)",
    },
   ["short"] = {
@@ -72056,7 +72064,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "상관유희2",
+   [1] = "相姦遊戯2",
+   [2] = "상관유희2",
    },
   },
  [6699] = {
@@ -72893,10 +72902,11 @@ return {
    },
   ["syn"] = {
    [1] = "Muncind",
-   [2] = "working",
-   [3] = "Работа`!!",
-   [4] = "Работаю!!",
-   [5] = "迷糊餐厅",
+   [2] = "Poplar",
+   [3] = "working",
+   [4] = "Работа`!!",
+   [5] = "Работаю!!",
+   [6] = "迷糊餐厅",
    },
   },
  [6781] = {
@@ -86350,7 +86360,7 @@ return {
    [1] = "C - The Money of Soul and Possibility Control",
    [2] = "C The Money of Soul and Possibility Control",
    [3] = "C: The Money of Soul and Possibility",
-   [4] = "C: پول (برگرفته از) روح و کنترل احتمالات",
+   [4] = "C: پول روح و کنترل احتمالات",
    [5] = "Control",
    [6] = "[C]",
    [7] = "[C] - Control - The Money and Soul of Possibility",
@@ -88442,9 +88452,10 @@ return {
    [1] = "working2",
    },
   ["syn"] = {
-   [1] = "Wagnaria!! 2",
-   [2] = "Working!! 2",
-   [3] = "迷糊快餐厅2",
+   [1] = "Poplar 2",
+   [2] = "Wagnaria!! 2",
+   [3] = "Working!! 2",
+   [4] = "迷糊快餐厅2",
    },
   },
  [8365] = {
@@ -88908,7 +88919,7 @@ return {
  [8413] = {
   ["main"] = "Yume Kui: Tsurumiku Shiki Game Seisaku",
   ["official"] = {
-   [1] = "夢喰い－つるみく式ゲーム製作－",
+   [1] = "夢喰い -つるみく式ゲーム製作-",
    },
   ["short"] = {
    },
@@ -91180,13 +91191,15 @@ return {
    },
   },
  [8665] = {
-  ["main"] = "Tobe! Pegasus Kokoro no Goal ni Shoot",
+  ["main"] = "Tobe! Pegasus",
   ["official"] = {
-   [1] = "翔べ! ペガサス 心のゴールにシュート",
+   [1] = "翔べ! ペガサス",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Tobe! Pegasus: Kokoro no Goal ni Shoot",
+   [2] = "翔べ! ペガサス -心のゴールにシュート-",
    },
   },
  [8666] = {
@@ -91796,7 +91809,8 @@ return {
    },
   ["syn"] = {
    [1] = "Daily Lives of High School Boys",
-   [2] = "nichibros",
+   [2] = "The Daily Lives of High School Boys",
+   [3] = "nichibros",
    },
   },
  [8730] = {
@@ -95440,9 +95454,9 @@ return {
    },
   },
  [9129] = {
-  ["main"] = "Kore wa Zombie Desuka? (2012)",
+  ["main"] = "Kore wa Zombie Desuka? Of the Dead (2012)",
   ["official"] = {
-   [1] = "これはゾンビですか? (2012)",
+   [1] = "これはゾンビですか? OF THE DEAD (2012)",
    },
   ["short"] = {
    },
@@ -96975,6 +96989,7 @@ return {
    [1] = "Boundary of Emptiness: Gospel in the Future",
    [2] = "Gospel in the Future",
    [3] = "Mirai Fukuin",
+   [4] = "The Garden of Sinners: Recalled out Summer",
    },
   },
  [9310] = {
@@ -97050,8 +97065,9 @@ return {
  [9320] = {
   ["main"] = "Tai Chi Chasers",
   ["official"] = {
-   [1] = "太極千字文",
-   [2] = "태극천자문",
+   [1] = "太极千字文",
+   [2] = "太極千字文",
+   [3] = "태극천자문",
    },
   ["short"] = {
    },
@@ -97190,7 +97206,8 @@ return {
    },
   ["short"] = {
    [1] = "MDJ",
-   [2] = "Mondaijitachi",
+   [2] = "Mondaiji",
+   [3] = "Mondaijitachi",
    },
   ["syn"] = {
    [1] = "Anak-anak Bermasalah Datangnya dari Dunia Lain, Kan?",
@@ -100308,13 +100325,15 @@ return {
    },
   },
  [9672] = {
-  ["main"] = "Kingdom 2",
+  ["main"] = "Kingdom (2013)",
   ["official"] = {
-   [1] = "キングダム 2",
+   [1] = "キングダム (2013)",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Kingdom: Dai 2 Series",
+   [2] = "キングダム 第2シリーズ",
    },
   },
  [9674] = {
@@ -101134,7 +101153,7 @@ return {
  [9784] = {
   ["main"] = "Tanken Driland: 1000-nen no Mahou",
   ["official"] = {
-   [1] = "探検ドリランド－1000年の真宝－",
+   [1] = "探検ドリランド -1000年の真宝-",
    },
   ["short"] = {
    [1] = "driland2",
@@ -102080,7 +102099,7 @@ return {
  [9897] = {
   ["main"] = "Mesu Saga: Persona",
   ["official"] = {
-   [1] = "牝性 －ペルソナ－",
+   [1] = "牝性 -ペルソナ-",
    },
   ["short"] = {
    },
@@ -102259,9 +102278,89 @@ return {
    },
   },
  [9918] = {
-  ["main"] = "Taka no Tsume Go: Yoshida, Himitsukessha Yamerutteyo",
+  ["main"] = "Taka no Tsume Go: Yoshida, Himitsukessha Yamerutteyo.",
   ["official"] = {
-   [1] = "鷹の爪GO　吉田, 秘密結社やめるってよ.",
+   [1] = "鷹の爪GO 吉田, 秘密結社やめるってよ.",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9919] = {
+  ["main"] = "Takanashi Rikka Kai: Gekijouban Chuunibyou demo Koi ga Shitai!",
+  ["official"] = {
+   [1] = "小鳥遊六花・改 ~劇場版 中二病でも恋がしたい!~",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9920] = {
+  ["main"] = "Gekijouban \"Kara no Kyoukai\"",
+  ["official"] = {
+   [1] = "劇場版｢空の境界｣",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9921] = {
+  ["main"] = "Giovanni no Shima",
+  ["official"] = {
+   [1] = "ジョバンニの島",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9922] = {
+  ["main"] = "Sakura Trick",
+  ["official"] = {
+   [1] = "桜Trick",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9923] = {
+  ["main"] = "Future Card Buddyfight",
+  ["official"] = {
+   [1] = "フューチャーカード バディファイト",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9924] = {
+  ["main"] = "Sanjougattai Transformers Go!",
+  ["official"] = {
+   [1] = "参乗合体 トランスフォーマーGo!",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9925] = {
+  ["main"] = "Noragami",
+  ["official"] = {
+   [1] = "ノラガミ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9926] = {
+  ["main"] = "Mewtwo: Kakusei e no Prologue",
+  ["official"] = {
+   [1] = "ミュウツー ~覚醒への序章[プロローグ]～",
    },
   ["short"] = {
    },
