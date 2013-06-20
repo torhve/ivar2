@@ -89,22 +89,23 @@ local checkOlds = function(self, dbh, destination, source, url)
 end
 
 local handleUrl = function(self, source, destination, msg, url)
-    -- Fire the oldsdone event for sqllogger
-    ivar2.event:Fire('olds', self, source, destination, msg, url)
 
     -- Check if this module is disabled and just stop here if it is
-    if self:IsModuleDisabled('olds', destination) then
-        return
+    if not self:IsModuleDisabled('olds', destination) then
+		local nick = source.nick
+
+		-- TODO save connection
+		local dbh = DBI.Connect('PostgreSQL', self.config.dbname, self.config.dbuser, self.config.dbpass, self.config.dbhost, self.config.dbport)
+
+		checkOlds(self, dbh, destination, source, url)
+
+
+		--local ok = dbh:close()
+		--
     end
-    local nick = source.nick
 
-    -- TODO save connection
-    local dbh = DBI.Connect('PostgreSQL', self.config.dbname, self.config.dbuser, self.config.dbpass, self.config.dbhost, self.config.dbport)
-
-    checkOlds(self, dbh, destination, source, url)
-
-
-    --local ok = dbh:close()
+	-- Fire the oldsdone event for sqllogger
+	ivar2.event:Fire('olds', self, source, destination, msg, url)
 end
 
 ivar2.event:Register('url', handleUrl)
