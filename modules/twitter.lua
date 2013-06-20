@@ -38,17 +38,21 @@ local function getStatus(self, source, destination, tid)
 end
 
 
-local function getLatestStatus(self, source, destination, screen_name)
-	local count = 1
+local function getLatestStatuses(self, source, destination, screen_name, count)
+	if not count then
+		count = 1
+	else
+		count = tonumber(count)
+	end
 	simplehttp({
-			url = string.format('https://api.twitter.com/1.1/statuses/user_timeline.json?exclude_replies=true&count=%s&screen_name=%s', count, screen_name),
+			url = string.format('https://api.twitter.com/1.1/statuses/user_timeline.json?exclude_replies=true&screen_name=%s', screen_name),
 			headers = {
 				['Authorization'] = string.format("Bearer %s", access_token)
 			},
 		},
 		function(data)
 			local info = json.decode(data)
-			outputTweet(self, source, destination, info[1])
+			outputTweet(self, source, destination, info[count])
 		end
 	)
 end
@@ -79,9 +83,9 @@ local function getToken()
 	)
 	return true
 end
+
 -- get initial token
 getToken()
-
 
 return {
 	PRIVMSG = {
@@ -91,11 +95,17 @@ return {
 		['^%ptweet (%d+)$'] = function(self, source, destination, tid)
 			getStatus(self, source, destination, tid)
 		end,
-		['^%ptwitter (%w+)$'] = function(self, source, destination, screen_name)
-			getLatestStatus(self, source, destination, screen_name)
+		['^%ptwitter ([a-zA-Z0-9_]+)$'] = function(self, source, destination, screen_name)
+			getLatestStatuses(self, source, destination, screen_name)
 		end,
-		['^%ptweet (%w+)$'] = function(self, source, destination, screen_name)
-			getLatestStatus(self, source, destination, screen_name)
+		['^%ptweet ([a-zA-Z0-9_]+)$'] = function(self, source, destination, screen_name)
+			getLatestStatuses(self, source, destination, screen_name)
+		end,
+		['^%ptwitter ([a-zA-Z0-9_]+) (%d+)$'] = function(self, source, destination, screen_name, count)
+			getLatestStatuses(self, source, destination, screen_name, count)
+		end,
+		['^%ptweet ([a-zA-Z0-9_]+) (%d+)$'] = function(self, source, destination, screen_name, count)
+			getLatestStatuses(self, source, destination, screen_name, count)
 		end,
 	},
 }
