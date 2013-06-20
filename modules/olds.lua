@@ -89,6 +89,9 @@ local checkOlds = function(self, dbh, destination, source, url)
 end
 
 local handleUrl = function(self, source, destination, msg, url)
+    -- Fire the oldsdone event for sqllogger
+    ivar2.event:Fire('olds', self, source, destination, msg, url)
+
     -- Check if this module is disabled and just stop here if it is
     if self:IsModuleDisabled('olds', destination) then
         return
@@ -100,8 +103,6 @@ local handleUrl = function(self, source, destination, msg, url)
 
     checkOlds(self, dbh, destination, source, url)
 
-    -- Fire the oldsdone event for sqllogger
-    ivar2.event:Fire('olds', self, source, destination, msg, url)
 
     --local ok = dbh:close()
 end
