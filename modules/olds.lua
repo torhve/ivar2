@@ -89,6 +89,10 @@ local checkOlds = function(self, dbh, destination, source, url)
 end
 
 local handleUrl = function(self, source, destination, msg, url)
+    -- Check if this module is disabled and just stop here if it is
+    if self:IsModuleDisabled('olds', destination) then
+        return
+    end
     local nick = source.nick
 
     -- TODO save connection
