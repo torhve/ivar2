@@ -10,7 +10,13 @@ local secret = ivar2.config.twitterApiSecret
 local function outputTweet(self, source, destination, info)
 	local name = info.user.name
 	local screen_name = html2unicode(info.user.screen_name)
-	local tweet = html2unicode(info.text)
+	local tweet
+	if info.retweeted_status then
+		local rter = info.retweeted_status.user.screen_name
+		tweet = 'RT @'..rter..': '..html2unicode(info.retweeted_status.text)
+	else
+		tweet = html2unicode(info.text)
+	end
 
 	local out = {}
 	if(name == screen_name) then
