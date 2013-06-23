@@ -1226,10 +1226,9 @@ return {
    [1] = "One Piece",
    [2] = "One Piece TV",
    [3] = "Tek parça",
-   [4] = "piecePROJECT",
-   [5] = "Едно Цяло",
-   [6] = "Одним куском",
-   [7] = "Уан Пийс",
+   [4] = "Едно Цяло",
+   [5] = "Одним куском",
+   [6] = "Уан Пийс",
    },
   },
  [70] = {
@@ -2903,7 +2902,8 @@ return {
    },
   ["syn"] = {
    [1] = "Saber Rider",
-   [2] = "Космический Рыцарь и Звёздные Шерифы",
+   [2] = "Sêjûshi Bisumaruku",
+   [3] = "Космический Рыцарь и Звёздные Шерифы",
    },
   },
  [163] = {
@@ -3666,7 +3666,7 @@ return {
    },
   },
  [207] = {
-  ["main"] = "Ijigen no Sekai El Hazard",
+  ["main"] = "Ijigen no Sekai El-Hazard",
   ["official"] = {
    [1] = "El Hazard - Les mondes alternatifs",
    [2] = "異次元の世界エルハザード",
@@ -3681,11 +3681,11 @@ return {
    },
   },
  [208] = {
-  ["main"] = "Shinpi no Sekai El Hazard",
+  ["main"] = "El-Hazard: The Magnificent World",
   ["official"] = {
-   [1] = "El Hazard",
-   [2] = "El Hazard - Le monde magnifique",
-   [3] = "神秘の世界エルハザード",
+   [1] = "EL-HAZARD The Magnificent World",
+   [2] = "El Hazard",
+   [3] = "El Hazard - Le monde magnifique",
    },
   ["short"] = {
    [1] = "elhaz",
@@ -3693,7 +3693,9 @@ return {
   ["syn"] = {
    [1] = "El Hazard OVA 1",
    [2] = "El Hazard: The Magnificent World",
-   [3] = "Удивительный мир Эль-Хазард OVA-1",
+   [3] = "Shinpi no Sekai El-Hazard",
+   [4] = "Удивительный мир Эль-Хазард OVA-1",
+   [5] = "神秘の世界エルハザード",
    },
   },
  [209] = {
@@ -4086,7 +4088,6 @@ return {
   ["short"] = {
    [1] = "DB",
    [2] = "DBTV",
-   [3] = "Smocze Kule",
    },
   ["syn"] = {
    [1] = "7 viên ngọc rồng",
@@ -4096,8 +4097,9 @@ return {
    [5] = "Esferas del Dragón",
    [6] = "Globurile Dragonului",
    [7] = "Sfere del drago",
-   [8] = "Драконий жемчуг",
-   [9] = "драконова топка",
+   [8] = "Smocze Kule",
+   [9] = "Драконий жемчуг",
+   [10] = "драконова топка",
    },
   },
  [233] = {
@@ -5329,17 +5331,19 @@ return {
    },
   },
  [305] = {
-  ["main"] = "El Hazard: The Magnificent World 2",
+  ["main"] = "El-Hazard: The Magnificent World 2",
   ["official"] = {
-   [1] = "El Hazard - Le monde magnifique 2",
-   [2] = "神秘の世界エルハザード2",
+   [1] = "EL-HAZARD The Magnificent World 2",
+   [2] = "El Hazard - Le monde magnifique 2",
    },
   ["short"] = {
    [1] = "elhaz2",
    },
   ["syn"] = {
    [1] = "El Hazard OVA 2",
-   [2] = "Удивительный мир Эль-Хазард OVA-2",
+   [2] = "Shinpi no Sekai El-Hazard 2",
+   [3] = "Удивительный мир Эль-Хазард OVA-2",
+   [4] = "神秘の世界エルハザード2",
    },
   },
  [306] = {
@@ -5764,7 +5768,7 @@ return {
    [4] = "Gökteki Kale",
    [5] = "Laputa - Az égi palota",
    [6] = "Laputa - Il castello nel cielo",
-   [7] = "Laputa - Slottet i Himlen",
+   [7] = "Laputa - Slottet i himlen",
    [8] = "Laputa - podniebny Zamek",
    [9] = "Laputa, lendav kindlus",
    [10] = "Laputa: Castle in the Sky",
@@ -9279,12 +9283,13 @@ return {
    },
   },
  [556] = {
-  ["main"] = "El Hazard: The Wanderers",
+  ["main"] = "Shinpi no Sekai El-Hazard TV",
   ["official"] = {
    [1] = "El Hazard",
    [2] = "El Hazard - Le monde alternatif",
-   [3] = "El-Hazard: Странники",
-   [4] = "神秘の世界エルハザード (TV)",
+   [3] = "El-Hazard: The Wanderers",
+   [4] = "El-Hazard: Странники",
+   [5] = "神秘の世界エルハザード TV",
    },
   ["short"] = {
    [1] = "elhaz tv",
@@ -9613,7 +9618,8 @@ return {
  [578] = {
   ["main"] = "Black Magic M-66",
   ["official"] = {
-   [1] = "ブラックマジックM(マリオ)-66",
+   [1] = "Black Magic M-66",
+   [2] = "ブラックマジックM(マリオ)-66",
    },
   ["short"] = {
    [1] = "Black magic",
@@ -12109,6 +12115,7 @@ return {
    [5] = "otw",
    [6] = "otwins",
    [7] = "pt2",
+   [8] = "おね*2",
    },
   ["syn"] = {
    [1] = "Prašau Dvyniai",
@@ -12177,7 +12184,7 @@ return {
   ["main"] = "Kaitei Choutokkyuu Marine Express",
   ["official"] = {
    [1] = "L`espresso sottomarino",
-   [2] = "Osamu Tezuka`s Marine Express",
+   [2] = "Marine Express",
    [3] = "海底超特急マリン・エクスプレス",
    },
   ["short"] = {
@@ -12185,9 +12192,10 @@ return {
    },
   ["syn"] = {
    [1] = "Marine express",
-   [2] = "Tezuka Special TV Memorial Box",
-   [3] = "Undersea Super Train: Marine Express",
-   [4] = "Подводният влак",
+   [2] = "Osamu Tezuka`s Marine Express",
+   [3] = "Tezuka Special TV Memorial Box",
+   [4] = "Undersea Super Train: Marine Express",
+   [5] = "Подводният влак",
    },
   },
  [757] = {
@@ -33338,9 +33346,10 @@ return {
   ["main"] = "Black Jack (2004)",
   ["official"] = {
    [1] = "Black Jack",
-   [2] = "แบล็คแจ็คหมอปีศาจ",
-   [3] = "ブラックジャック (2004)",
-   [4] = "怪醫黑傑克",
+   [2] = "Black Jack TV",
+   [3] = "แบล็คแจ็คหมอปีศาจ",
+   [4] = "ブラックジャック (2004)",
+   [5] = "怪醫黑傑克",
    },
   ["short"] = {
    [1] = "BJ 04",
@@ -35079,15 +35088,15 @@ return {
   ["official"] = {
    [1] = "La Maquina del Tiempo",
    [2] = "Les chevaliers du temps",
-   [3] = "Timefighters",
-   [4] = "Οι Αστρομαχητές του Κακού",
-   [5] = "رحلة العجائب",
-   [6] = "タイムボカン",
+   [3] = "Οι Αστρομαχητές του Κακού",
+   [4] = "رحلة العجائب",
+   [5] = "タイムボカン",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Timefighters in the Land of Fantasy",
+   [1] = "Timefighters",
+   [2] = "Timefighters in the Land of Fantasy",
    },
   },
  [2547] = {
@@ -36353,7 +36362,7 @@ return {
    },
   },
  [2672] = {
-  ["main"] = "Black Jack Special: Inochi o Meguru 4tsu no Kiseki",
+  ["main"] = "Black Jack Special: Inochi o Meguru 4-tsu no Kiseki",
   ["official"] = {
    [1] = "ブラック·ジャック スペシャル ~命をめぐる4つの奇跡~",
    },
@@ -39645,7 +39654,7 @@ return {
    [1] = "100万年地球の旅バンダーブック",
    [2] = "Le Avventure Di Bander",
    [3] = "Le prince du soleil",
-   [4] = "One Million-year Trip: Bander Book",
+   [4] = "One Million-Year Trip: Bander Book",
    },
   ["short"] = {
    [1] = "Bander Book",
@@ -47492,6 +47501,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "ノーラ",
    },
   },
  [3989] = {
@@ -49858,6 +49868,7 @@ return {
   ["main"] = "5-tou ni Naritai.",
   ["official"] = {
    [1] = "5等になりたい.",
+   [2] = "Run",
    },
   ["short"] = {
    },
@@ -62217,14 +62228,15 @@ return {
    },
   },
  [5486] = {
-  ["main"] = "Mittsu no Hanashi",
+  ["main"] = "Atarashii Douga: 3-tsu no Hanashi",
   ["official"] = {
    [1] = "新しい動画 3つのはなし",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Three Tales",
+   [1] = "Atarashii Douga: Mittsu no Hanashi",
+   [2] = "Three Tales",
    },
   },
  [5487] = {
@@ -71429,7 +71441,8 @@ return {
  [6631] = {
   ["main"] = "Daichan, Daisuki.",
   ["official"] = {
-   [1] = "大ちゃん, だいすき.",
+   [1] = "Dai-chan",
+   [2] = "大ちゃん, だいすき.",
    },
   ["short"] = {
    },
@@ -71439,7 +71452,8 @@ return {
  [6632] = {
   ["main"] = "Happy Birthday Inochi Kagayaku Toki",
   ["official"] = {
-   [1] = "ハッピーバースデー 命かがやく瞬間[とき]",
+   [1] = "Re-Birthday",
+   [2] = "ハッピーバースデー 命かがやく瞬間[とき]",
    },
   ["short"] = {
    },
@@ -71449,15 +71463,15 @@ return {
  [6633] = {
   ["main"] = "Inochi no Chikyuu: Dioxin no Natsu",
   ["official"] = {
-   [1] = "Диоксиновое лето",
-   [2] = "いのちの地球 ダイオキシンの夏",
+   [1] = "Tracing the Gray Summer",
+   [2] = "Диоксиновое лето",
+   [3] = "いのちの地球 ダイオキシンの夏",
    },
   ["short"] = {
    },
   ["syn"] = {
    [1] = "Dioxin Summer",
    [2] = "The Summer of Dioxin",
-   [3] = "Tracing the Gray Summer",
    },
   },
  [6634] = {
@@ -73656,7 +73670,7 @@ return {
  [6855] = {
   ["main"] = "Chinkoroheibei Tamatebako",
   ["official"] = {
-   [1] = "ちんころ平々玉手箱",
+   [1] = "ちんころ平平玉手箱",
    },
   ["short"] = {
    },
@@ -77189,7 +77203,8 @@ return {
  [7209] = {
   ["main"] = "Yume Miru Kikai",
   ["official"] = {
-   [1] = "夢みる機械",
+   [1] = "The Dream Machine",
+   [2] = "夢みる機械",
    },
   ["short"] = {
    },
@@ -79658,7 +79673,8 @@ return {
  [7458] = {
   ["main"] = "Tegami Bachi Reverse",
   ["official"] = {
-   [1] = "テガミバチ REVERSE",
+   [1] = "Tegami Bachi: Letter Bee Reverse",
+   [2] = "テガミバチ REVERSE",
    },
   ["short"] = {
    [1] = "bee2",
@@ -81060,11 +81076,12 @@ return {
  [7600] = {
   ["main"] = "Twinkle Nora Rock Me!",
   ["official"] = {
-   [1] = "トゥインクル NORA(ノーラ) ロック・ミー!",
+   [1] = "Twinkle NORA Rock me!",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "トゥインクル NORA(ノーラ) ロック・ミー!",
    },
   },
  [7601] = {
@@ -86425,6 +86442,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Big Fish&Chinese Flowering Crabapple",
+   [2] = "大鱼·海棠",
    },
   },
  [8158] = {
@@ -86744,8 +86763,7 @@ return {
    [2] = "Anohana: The Flower We Saw That Day",
    [3] = "Все още не знаем името на цветето, което видяхме онзи ден.",
    [4] = "Тэр Нэгэн Өдөр Харсан Цэцгийн Нэрийг Бид Одоо ч Мэдэхгүй",
-   [5] = "آنو هی میتا هانا نو ناما و بکوتاچی وا مادا شیرانای",
-   [6] = "あの日見た花の名前を僕達はまだ知らない.",
+   [5] = "あの日見た花の名前を僕達はまだ知らない.",
    },
   ["short"] = {
    [1] = "Ano Hana",
@@ -87886,7 +87904,8 @@ return {
  [8299] = {
   ["main"] = "Aquarion Evol",
   ["official"] = {
-   [1] = "アクエリオンEVOL",
+   [1] = "Aquarion Evol",
+   [2] = "アクエリオンEVOL",
    },
   ["short"] = {
    },
@@ -92814,7 +92833,8 @@ return {
  [8834] = {
   ["main"] = "Shining Hearts: Shiawase no Pan",
   ["official"] = {
-   [1] = "Shining Hearts -幸せのパン-",
+   [1] = "Shining Hearts",
+   [2] = "Shining Hearts -幸せのパン-",
    },
   ["short"] = {
    },
@@ -93032,8 +93052,9 @@ return {
    [3] = "I scream",
    [4] = "Ice-cream",
    [5] = "The Niece of Time",
-   [6] = "هیوکا",
-   [7] = "冰果",
+   [6] = "Хьёка",
+   [7] = "هیوکا",
+   [8] = "冰果",
    },
   },
  [8856] = {
@@ -93049,7 +93070,8 @@ return {
  [8857] = {
   ["main"] = "Sakasama no Patema",
   ["official"] = {
-   [1] = "サカサマのパテマ",
+   [1] = "Патема догори дриґом",
+   [2] = "サカサマのパテマ",
    },
   ["short"] = {
    },
@@ -93472,6 +93494,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Юмористки",
    },
   },
  [8901] = {
@@ -96720,16 +96743,14 @@ return {
    },
   },
  [9283] = {
-  ["main"] = "Idolmaster (2012)",
+  ["main"] = "The Idolmaster: Shiny Festa",
   ["official"] = {
-   [1] = "アイドルマスター (2012)",
+   [1] = "THE iDOLM@STER SHINY FESTA",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "THE iDOLM@STER SHINY FESTA",
-   [2] = "The Idolmaster Shiny Festa",
-   [3] = "シャイニーフェスタ",
+   [1] = "アイドルマスター シャイニーフェスタ",
    },
   },
  [9284] = {
@@ -98681,7 +98702,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Widow Diaries: Under One House with That Person I Admire",
+   [1] = "Widow Diaries: Under One Roof with That Person I Admire",
    },
   },
  [9493] = {
@@ -98891,12 +98912,13 @@ return {
  [9513] = {
   ["main"] = "Vanquished Queens",
   ["official"] = {
-   [1] = "ヴァンキッシュド・クイーンズ",
+   [1] = "VANQUISHED QUEENS",
    },
   ["short"] = {
    },
   ["syn"] = {
    [1] = "Queen`s Blade: Vanquished Queens",
+   [2] = "ヴァンキッシュド・クイーンズ",
    },
   },
  [9514] = {
@@ -99099,6 +99121,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Compatible Mind, Compatible Love Note The Animation",
+   [2] = "Mutual Love Note The Animation",
    },
   },
  [9533] = {
@@ -99199,6 +99223,7 @@ return {
    [2] = "Атака Титанів",
    [3] = "Вторжение Гигантов",
    [4] = "На бій проти титанів",
+   [5] = "Нашествие на гиганти",
    },
   },
  [9542] = {
@@ -99712,6 +99737,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Comfort Station The Animation",
+   [2] = "Public Toilet The Animation",
    },
   },
  [9603] = {
@@ -100201,13 +100228,13 @@ return {
  [9658] = {
   ["main"] = "Koukaku Kidoutai Arise: Ghost in the Shell",
   ["official"] = {
-   [1] = "攻殻機動隊ARISE -GHOST IN THE SHELL-",
+   [1] = "Ghost in the Shell: Arise",
+   [2] = "攻殻機動隊ARISE -GHOST IN THE SHELL-",
    },
   ["short"] = {
    [1] = "GitS: Arise",
    },
   ["syn"] = {
-   [1] = "Ghost in the Shell: Arise",
    },
   },
  [9659] = {
@@ -100355,6 +100382,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Genshiken Second Generation",
    },
   },
  [9677] = {
@@ -100461,9 +100489,9 @@ return {
    },
   },
  [9690] = {
-  ["main"] = "Eiga DokiDoki! Precure",
+  ["main"] = "Eiga DokiDoki! Precure: Mana Kekkon!!? Mirai ni Tsunagu Kibou no Dress",
   ["official"] = {
-   [1] = "映画 ドキドキ! プリキュア",
+   [1] = "映画 ドキドキ! プリキュア マナ結婚!!? 未来につなぐ希望のドレス",
    },
   ["short"] = {
    },
@@ -101265,7 +101293,8 @@ return {
  [9795] = {
   ["main"] = "Juusen Battle Monsuno (2013)",
   ["official"] = {
-   [1] = "獣旋バトル モンスーノ (2013)",
+   [1] = "Monsuno`",
+   [2] = "獣旋バトル モンスーノ (2013)",
    },
   ["short"] = {
    },
@@ -101775,13 +101804,14 @@ return {
    },
   },
  [9861] = {
-  ["main"] = "Lupin VIII",
+  ["main"] = "Lupin Hassei",
   ["official"] = {
-   [1] = "Lupin VIII",
+   [1] = "ルパン8世",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Lupin VIII",
    },
   },
  [9862] = {
@@ -101805,9 +101835,9 @@ return {
    },
   },
  [9865] = {
-  ["main"] = "Noobow - Kieta Medal",
+  ["main"] = "Noobow: Kieta Medal",
   ["official"] = {
-   [1] = "ぬ～ぼ～　消えたメダル",
+   [1] = "ぬ~ぼ~ 消えたメダル",
    },
   ["short"] = {
    },
@@ -101815,9 +101845,9 @@ return {
    },
   },
  [9866] = {
-  ["main"] = "Noobow Mini",
+  ["main"] = "Noobow: Mini Theater",
   ["official"] = {
-   [1] = "ぬ～ぼ～ミニシアター",
+   [1] = "ぬ~ぼ~ ミニシアター",
    },
   ["short"] = {
    },
@@ -101833,6 +101863,7 @@ return {
    },
   ["syn"] = {
    [1] = "Inazuma Eleven GO 3",
+   [2] = "inago3",
    },
   },
  [9868] = {
@@ -101858,6 +101889,7 @@ return {
  [9870] = {
   ["main"] = "Redial",
   ["official"] = {
+   [1] = "Redial",
    },
   ["short"] = {
    },
@@ -102119,7 +102151,7 @@ return {
  [9899] = {
   ["main"] = "Ninja Hattori-kun (2012)",
   ["official"] = {
-   [1] = "忍者ハットリくん （2012年版）",
+   [1] = "忍者ハットリくん (2012年版)",
    },
   ["short"] = {
    },
@@ -102188,7 +102220,7 @@ return {
    },
   },
  [9908] = {
-  ["main"] = "Joshikousei nobunagachan!!",
+  ["main"] = "Joshikousei Nobunaga-chan!!",
   ["official"] = {
    [1] = "女子高生信長ちゃん!!",
    },
@@ -102360,7 +102392,129 @@ return {
  [9926] = {
   ["main"] = "Mewtwo: Kakusei e no Prologue",
   ["official"] = {
-   [1] = "ミュウツー ~覚醒への序章[プロローグ]～",
+   [1] = "ミュウツー ~覚醒への序章[プロローグ]~",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9927] = {
+  ["main"] = "Love Live! 2",
+  ["official"] = {
+   [1] = "Love Live! 2",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "ラブライブ! 2",
+   },
+  },
+ [9928] = {
+  ["main"] = "Mogura no Adventure",
+  ["official"] = {
+   [1] = "もぐらのアバンチュール",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Mole`s Adventure",
+   },
+  },
+ [9929] = {
+  ["main"] = "Rin x Sen + Ran-&gt;Sem: Cross Mix",
+  ["official"] = {
+   [1] = "RINxSEN+Ran→Sem Cross Mix",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9930] = {
+  ["main"] = "Youkai Watch",
+  ["official"] = {
+   [1] = "妖怪ウォッチ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9931] = {
+  ["main"] = "Walkure Romanze",
+  ["official"] = {
+   [1] = "ワルキューレロマンツェ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9932] = {
+  ["main"] = "Yuuto-kun ga Iku",
+  ["official"] = {
+   [1] = "ゆうとくんがいく",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9933] = {
+  ["main"] = "PeroPero Teacher",
+  ["official"] = {
+   [1] = "ぺろぺろ☆てぃーちゃー",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9934] = {
+  ["main"] = "Genshiken Nidaime no Roku",
+  ["official"] = {
+   [1] = "げんしけん 二代目の六",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9935] = {
+  ["main"] = "Date a Live 2",
+  ["official"] = {
+   [1] = "デート・ア・ライブ 2",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9936] = {
+  ["main"] = "Go! Go! Kadendanshi",
+  ["official"] = {
+   [1] = "Go!Go!家電男子",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9937] = {
+  ["main"] = "Lupin Ikka Seizoroi",
+  ["official"] = {
+   [1] = "ルパン一家勢揃い",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [9938] = {
+  ["main"] = "Sore Ike! Anpanman: Anpanman to Oyakusoku",
+  ["official"] = {
+   [1] = "それいけ! アンパンマン アンパンマンとおやくそく",
    },
   ["short"] = {
    },
