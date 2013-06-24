@@ -28,12 +28,20 @@ customHosts['twitter%.com'] = function(queue, info)
 			},
 		},
 		function(data)
-			print(data)
 			local info = json.decode(data)
-
 			local name = info.user.name
 			local screen_name = html2unicode(info.user.screen_name)
-			local tweet = html2unicode(info.text)
+
+			local tweet
+			if info.retweeted_status then
+				local rter = info.retweeted_status.user.screen_name
+				tweet = 'RT @'..rter..': '..html2unicode(info.retweeted_status.text)
+			else
+				tweet = html2unicode(info.text)
+			end
+
+			-- replace newlines with spaces
+			tweet = tweet:gsub('\n', ' ')
 
 			local out = {}
 			if(name == screen_name) then

@@ -17,6 +17,9 @@ local function outputTweet(self, source, destination, info)
 	else
 		tweet = html2unicode(info.text)
 	end
+	
+	-- replace newlines with spaces
+	tweet = tweet:gsub('\n', ' ')
 
 	local out = {}
 	if(name == screen_name) then
