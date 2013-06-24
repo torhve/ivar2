@@ -51,7 +51,23 @@ return {
 		['reload>'] = function(self, source, destination)
 			if(not verifyOwner(source)) then return end
 
+			self:Msg('privmsg', destination, source, "Triggered reload.")
 			self:Reload()
-		end
+		end,
+
+		['timers> (%S+) ?(.*)$'] = function(self, source, destination, command, argument )
+			if(not verifyOwner(source)) then return end
+
+			command = command:lower()
+			if(command == "list") then
+				for id,_ in pairs(self.timers) do
+					self:Msg('privmsg', destination, source, "Id: %s", id)
+				end
+			elseif command == "stop" then
+				self.timers[argument]:stop(self.Loop)
+				self.timers[argument] = nil
+				self:Msg('privmsg', destination, source, 'OK')
+			end
+		end,
 	},
 }
