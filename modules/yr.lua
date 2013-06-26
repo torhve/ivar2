@@ -71,12 +71,44 @@ end
 local handleData = function(type, line)
 	local out = {}
 	local data = line:match(string.format("<%s (.-) />", type))
+	if not data then return end
 
 	string.gsub(data, '(%w+)="([^"]+)"', function(a, b)
 		out[a] = b
 	end)
 
 	return out
+end
+
+local handleObservationOutput = function(source, destination, data, city, try)
+	local location = data:match("<location>(.-)</location>")
+	if(not location and not try) then
+		simplehttp(
+			("http://yr.no/stad/%s/%s/%s~%s/varsel.xml"):format(
+				urlEncode(city.countryName),
+				urlEncode(city.adminName1),
+				urlEncode(city.toponymName),
+				city.geonameId
+			),
+			function(data)
+				handleObservationOutput(source, destination, seven, data, city, true)
+			end
+		)
+	end
+
+	local name = location:match("<name>([^<]+)</name>"):lower():gsub("^%l", string.upper)
+
+	local tabular = data:match("<observations>(.*)</observations>")
+	for stno, sttype, name, distance, lat, lon, source, data in tabular:gmatch([[<weatherstation stno="([^"]+)" sttype="([^"]+)" name="([^"]+)" distance="([^"]+)" lat="([^"]+)" lon="([^"]+)" source="([^"]+)">(.-)</weatherstation]]) do
+		local windDirection = handleData('windDirection', data)
+		local windSpeed = handleData("windSpeed", data)
+		if windSpeed then windSpeed = windSpeed.name else windSpeed = '' end
+		local temperature = handleData('temperature', data)
+		if windDirection then windDirection = windDirection.name else windDirection = '' end
+		ivar2:Msg('privmsg', destination, source, '\002%s\002°C, %s %s (%s)', temperature.value, windDirection, windSpeed, name)
+		-- Use the first result
+		return
+	end
 end
 
 local handleOutput = function(source, destination, seven, data, city, try)
@@ -179,6 +211,28 @@ local handleOutput = function(source, destination, seven, data, city, try)
 	ivar2:Msg('privmsg', destination, source, table.concat(out, " - "))
 end
 
+local getPlace = function(input)
+	input = trim(input):lower()
+	local inputISO = utf2iso:iconv(input)
+
+	local country
+	if(input:find(',', 1, true)) then
+		input, country = input:match('([^,]+),(.+)')
+		country = trim(country):upper()
+		inputISO, _ = input:match('([^,]+),(.+)')
+	end
+
+	local db = sql.open("cache/places-norway.sql")
+	local selectStmt = db:prepare("SELECT name, url FROM places WHERE name = ? OR name = ?")
+	selectStmt:bind_values(input, inputISO)
+
+	local iter, vm = selectStmt:nrows()
+	local place = iter(vm)
+
+	db:close()
+	return place
+end
+
 local urlBase = "http://api.geonames.org/hierarchyJSON?geonameId=%d&username=haste"
 return {
 	PRIVMSG = {
@@ -268,6 +322,21 @@ return {
 				)
 			else
 				ivar2:Msg('privmsg', destination, source, "Does that place even exist?")
+			end
+		end,
+		['^!temp (.+)$'] = function(self, source, destination, input) 
+			place = getPlace(input)
+
+			if(place) then
+				-- use nynorsk text
+				local url = place.url:gsub('/place/', '/stad/')
+				simplehttp(
+					url,
+					function(data)
+						handleObservationOutput(source, destination, data)
+					end
+				)
+				return
 			end
 		end,
 	}
