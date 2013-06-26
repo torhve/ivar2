@@ -203,8 +203,10 @@ return {
 			db:close()
 
 			if(place) then
+				-- use nynorsk text
+				local url = place.url:gsub('/place/', '/stad/')
 				simplehttp(
-					place.url,
+					url,
 					function(data)
 						handleOutput(source, destination, seven == '7', data)
 					end
