@@ -25,6 +25,7 @@ local ivar2 = {
 	Loop = loop,
 	event = event,
 	channels = {},
+	more = {},
 
 	timeoutFunc = function(ivar2)
 		return function(loop, timer, revents)
@@ -200,13 +201,15 @@ local tableHasValue = function(table, value)
 	end
 end
 
-local IrcMessageLimit = function(message)
+local IrcMessageSplit = function(message)
 	local hostmask = string.format('%s!%s@%s', ivar2.config.nick, ivar2.config.ident, ivar2.config.host)
+	local extra
 	if #message > (510+#hostmask) then
 		local trail = ' (…)'
+		extra = message:sub(510-#trail-#hostmask+1)
 		message = message:sub(1, 510-#trail-#hostmask) .. trail
 	end
-	return message
+	return message, extra
 end
 
 local client_mt = {
@@ -256,7 +259,6 @@ function ivar2:Send(format, ...)
 	local message = safeFormat(format, ...)
 	if(message) then
 		message = message:gsub('[\r\n]+', ' ')
-		message = IrcMessageLimit(message)
 
 		self:Log('debug', message)
 
@@ -311,7 +313,11 @@ function ivar2:Notice(destination, format, ...)
 end
 
 function ivar2:Privmsg(destination, format, ...)
-	return self:Send('PRIVMSG %s :%s', destination, safeFormat(format, ...))
+
+	local message, extra = IrcMessageSplit(safeFormat(format, ...))
+	-- Save the potential extra stuff from the split into the more container
+	ivar2.more[destination] = extra 
+	return self:Send('PRIVMSG %s :%s', destination, message)
 end
 
 function ivar2:Msg(type, destination, source, ...)
