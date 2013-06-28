@@ -289,9 +289,9 @@ end
 
 local IrcMessageLimit = function(message)
 	local hostmask = string.format('%s!%s@%s', ivar2.config.nick, ivar2.config.ident, ivar2.config.host)
-	if #message > (508+#hostmask) then
+	if #message > (510+#hostmask) then
 		local trail = ' (…)'
-		message = message:sub(1, 508-#trail-#hostmask) .. trail
+		message = message:sub(1, 510-#trail-#hostmask) .. trail
 	end
 	return message
 end
