@@ -287,6 +287,15 @@ local tableHasValue = function(table, value)
 	end
 end
 
+local IrcMessageLimit = function(message)
+	local hostmask = string.format('%s!%s@%s', ivar2.config.nick, ivar2.config.ident, ivar2.config.host)
+	if #message > (508+#hostmask) then
+		local trail = ' (…)'
+		message = message:sub(1, 508-#trail-#hostmask) .. trail
+	end
+	return message
+end
+
 local client_mt = {
 	handle_error = function(self, err)
 		self:Log('error', err)
@@ -337,7 +346,9 @@ end
 function ivar2:Send(format, ...)
 	local message = safeFormat(format, ...)
 	if(message) then
-		message = message:gsub('[\r\n]+', '')
+		message = message:gsub('[\r\n]+', ' ')
+		message = IrcMessageLimit(message)
+
 		self:Log('debug', message)
 
 		self.socket:send(message .. '\r\n')
