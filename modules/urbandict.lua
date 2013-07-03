@@ -25,7 +25,7 @@ end
 local APIBase = 'http://api.urbandictionary.com/v0/define?term=%s'
 return {
 	PRIVMSG = {
-		['^.ud (.+)$'] = function(self, source, destination, input)
+		['^%pud (.+)$'] = function(self, source, destination, input)
 			input = trim(input)
 			simplehttp(
 				APIBase:format(urlEncode(input)),
