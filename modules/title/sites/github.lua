@@ -1,7 +1,7 @@
 local simplehttp = require'simplehttp'
 local json = require'json'
 
-customHosts['github%.com'] = function(queue, info)
+customHosts['^github%.com'] = function(queue, info)
 	local query = info.query
 	local path = info.path
 	local fragment = info.fragment
