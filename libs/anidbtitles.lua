@@ -1393,8 +1393,9 @@ return {
    [4] = "Robotech",
    [5] = "Robotech: The Macross Saga",
    [6] = "Space Fortress Macross",
-   [7] = "قلعة الأبعاد الخارقة ماكروس",
-   [8] = "超时空要塞",
+   [7] = "Superfortaleza Dimensional Macross",
+   [8] = "قلعة الأبعاد الخارقة ماكروس",
+   [9] = "超时空要塞",
    },
   },
  [78] = {
@@ -1753,11 +1754,12 @@ return {
    },
   ["syn"] = {
    [1] = "Cadı Avcısı Robin",
-   [2] = "Raganų Medžiotoja Robin",
-   [3] = "Мисливиця на відьом Робін",
-   [4] = "Робин охотница на ведьм",
-   [5] = "روبن صائدة السحرة",
-   [6] = "魔女猎人罗宾",
+   [2] = "Cazadora de Brujas Robin",
+   [3] = "Raganų Medžiotoja Robin",
+   [4] = "Мисливиця на відьом Робін",
+   [5] = "Робин охотница на ведьм",
+   [6] = "روبن صائدة السحرة",
+   [7] = "魔女猎人罗宾",
    },
   },
  [97] = {
@@ -3467,11 +3469,12 @@ return {
    },
   ["syn"] = {
    [1] = "As Asas de Honneamise",
-   [2] = "Star Quest",
-   [3] = "Wings of Honneamise",
-   [4] = "Wings of Honneamise: The Royal Space Force",
-   [5] = "Королевские космические силы - Крылья Хоннеамиз",
-   [6] = "王立宇宙军",
+   [2] = "Las Alas de Honneamise",
+   [3] = "Star Quest",
+   [4] = "Wings of Honneamise",
+   [5] = "Wings of Honneamise: The Royal Space Force",
+   [6] = "Королевские космические силы - Крылья Хоннеамиз",
+   [7] = "王立宇宙军",
    },
   },
  [197] = {
@@ -3995,7 +3998,7 @@ return {
    },
   },
  [228] = {
-  ["main"] = "Jungle wa Itsumo Hare nochi Guu",
+  ["main"] = "Jungle wa Itsumo Hare Nochi Guu",
   ["official"] = {
    [1] = "Hare+Guu",
    [2] = "Haré+Guu",
@@ -4055,21 +4058,22 @@ return {
    },
   ["syn"] = {
    [1] = "PM",
-   [2] = "Pokemon season 1: The Indigo League",
-   [3] = "Pokemon season 2: The Orange Island League",
-   [4] = "Pokemon season 3: The Johto Journeys",
-   [5] = "Pokemon season 4: Johto League Champions",
-   [6] = "Pokemon season 5: Master Quest",
-   [7] = "Pokémon - saison 1 - Ligue Pokémon",
-   [8] = "Pokémon - saison 2 - Ligue Orange",
-   [9] = "Pokémon - saison 3 - Voyage à Johto",
-   [10] = "Pokémon - saison 4 - Les Champions de Johto",
-   [11] = "Pokémon - saison 5 - La Quête Ultime",
-   [12] = "pkmn 1st",
-   [13] = "Карманные монстры",
-   [14] = "פוקימון: גביע המאסטר",
-   [15] = "口袋妖怪",
-   [16] = "宠物小精灵",
+   [2] = "Pocket Monsters TV",
+   [3] = "Pokemon season 1: The Indigo League",
+   [4] = "Pokemon season 2: The Orange Island League",
+   [5] = "Pokemon season 3: The Johto Journeys",
+   [6] = "Pokemon season 4: Johto League Champions",
+   [7] = "Pokemon season 5: Master Quest",
+   [8] = "Pokémon - saison 1 - Ligue Pokémon",
+   [9] = "Pokémon - saison 2 - Ligue Orange",
+   [10] = "Pokémon - saison 3 - Voyage à Johto",
+   [11] = "Pokémon - saison 4 - Les Champions de Johto",
+   [12] = "Pokémon - saison 5 - La Quête Ultime",
+   [13] = "pkmn 1st",
+   [14] = "Карманные монстры",
+   [15] = "פוקימון: גביע המאסטר",
+   [16] = "口袋妖怪",
+   [17] = "宠物小精灵",
    },
   },
  [231] = {
@@ -5563,7 +5567,7 @@ return {
    },
   },
  [317] = {
-  ["main"] = "Jungle wa Itsumo Hare nochi Guu Deluxe",
+  ["main"] = "Jungle wa Itsumo Hare Nochi Guu Deluxe",
   ["official"] = {
    [1] = "Hare + Guu Deluxe",
    [2] = "ジャングルはいつもハレのちグゥ デラックス",
@@ -12186,8 +12190,7 @@ return {
  [755] = {
   ["main"] = "Kidou Shin Seiki Gundam X",
   ["official"] = {
-   [1] = "Mobile Suit Gundam X",
-   [2] = "機動新世紀ガンダムX",
+   [1] = "機動新世紀ガンダムX",
    },
   ["short"] = {
    [1] = "Gundam X",
@@ -12195,8 +12198,9 @@ return {
   ["syn"] = {
    [1] = "After War Gundam X",
    [2] = "Mobile New Century Gundam X",
-   [3] = "Poválečný Gundam X",
-   [4] = "كاندام اكس مابعد الحرب",
+   [3] = "Mobile Suit Gundam X",
+   [4] = "Poválečný Gundam X",
+   [5] = "كاندام اكس مابعد الحرب",
    },
   },
  [756] = {
@@ -12606,13 +12610,14 @@ return {
    [1] = "A Canção do Cordeiro",
    [2] = "Avinėlio Giesmė",
    [3] = "Canção da Ovelha",
-   [4] = "Lament of the Lamb",
-   [5] = "Sheep`s Song",
-   [6] = "Song of Sheep",
-   [7] = "Song of the Sheep",
-   [8] = "Песен за агнето",
-   [9] = "Песента на агнето",
-   [10] = "Песнь агнца",
+   [4] = "El Lamento del Cordero",
+   [5] = "Lament of the Lamb",
+   [6] = "Sheep`s Song",
+   [7] = "Song of Sheep",
+   [8] = "Song of the Sheep",
+   [9] = "Песен за агнето",
+   [10] = "Песента на агнето",
+   [11] = "Песнь агнца",
    },
   },
  [785] = {
@@ -21815,7 +21820,7 @@ return {
    },
   ["syn"] = {
    [1] = "Great War of the Demon of Illusions: The Chapter of the Previous Night of the Myth",
-   [2] = "Harmageddon TV",
+   [2] = "Harmagedon TV",
    },
   },
  [1474] = {
@@ -23014,8 +23019,9 @@ return {
   ["main"] = "City Hunter 3",
   ["official"] = {
    [1] = "CITY HUNTER 3",
-   [2] = "City Hunter III",
-   [3] = "Nicky Larson - Saison 3",
+   [2] = "City Hunter 3",
+   [3] = "City Hunter III",
+   [4] = "Nicky Larson - Saison 3",
    },
   ["short"] = {
    [1] = "CHun3",
@@ -23029,8 +23035,9 @@ return {
   ["main"] = "City Hunter `91",
   ["official"] = {
    [1] = "CITY HUNTER`91",
-   [2] = "City Hunter ´91",
-   [3] = "Nicky Larson - Saison 4",
+   [2] = "City Hunter `91",
+   [3] = "City Hunter ´91",
+   [4] = "Nicky Larson - Saison 4",
    },
   ["short"] = {
    [1] = "CHun91",
@@ -25823,8 +25830,9 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Space Runaway Ideon: A Contact",
-   [2] = "The Ideon/A Contact",
+   [1] = "El Ideon: Un Contacto",
+   [2] = "Space Runaway Ideon: A Contact",
+   [3] = "The Ideon/A Contact",
    },
   },
  [1809] = {
@@ -25835,8 +25843,9 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Space Runaway Ideon: Be Invoked",
-   [2] = "The Ideon/Be Invoked",
+   [1] = "El Ideon: La Activacion",
+   [2] = "Space Runaway Ideon: Be Invoked",
+   [3] = "The Ideon/Be Invoked",
    },
   },
  [1810] = {
@@ -49508,18 +49517,19 @@ return {
    [1] = "Das Mädchen, das durch die Zeit sprang",
    [2] = "Dekle, ki je skočilo skozi čas",
    [3] = "La Ragazza che Saltava nel Tempo",
-   [4] = "La traversée du temps",
-   [5] = "O dziewczynie skaczącej przez czas",
-   [6] = "O dívce, která proskočila časem",
-   [7] = "Putovanje kroz vrijeme",
-   [8] = "The Girl Who Leapt Through Time",
-   [9] = "Tüdruk, kes hüppas läbi aja",
-   [10] = "Девочка, покорившая время",
-   [11] = "กระโดดจัมพ์ ทะลุข้ามเวลา",
-   [12] = "時をかける少女",
-   [13] = "跳跃吧! 时空少女",
-   [14] = "跳躍吧! 時空少女",
-   [15] = "시간을 달리는 소녀",
+   [4] = "La chica que saltaba a través del tiempo",
+   [5] = "La traversée du temps",
+   [6] = "O dziewczynie skaczącej przez czas",
+   [7] = "O dívce, která proskočila časem",
+   [8] = "Putovanje kroz vrijeme",
+   [9] = "The Girl Who Leapt Through Time",
+   [10] = "Tüdruk, kes hüppas läbi aja",
+   [11] = "Девочка, покорившая время",
+   [12] = "กระโดดจัมพ์ ทะลุข้ามเวลา",
+   [13] = "時をかける少女",
+   [14] = "跳跃吧! 时空少女",
+   [15] = "跳躍吧! 時空少女",
+   [16] = "시간을 달리는 소녀",
    },
   ["short"] = {
    [1] = "TGWLTT",
@@ -61845,7 +61855,8 @@ return {
  [5427] = {
   ["main"] = "Gyakkyou Burai Kaiji: Ultimate Survivor",
   ["official"] = {
-   [1] = "逆境無頼カイジ Ultimate Survivor",
+   [1] = "Kaiji: Ultimate Survivor",
+   [2] = "逆境無頼カイジ Ultimate Survivor",
    },
   ["short"] = {
    [1] = "kaiji",
@@ -65388,7 +65399,7 @@ return {
    },
   },
  [5902] = {
-  ["main"] = "Shirouto Kurabu Hame Tori Anime Kanzen Mushuusei!!",
+  ["main"] = "Shirouto Club: Hamedori Anime Kanzen Mushuusei!!",
   ["official"] = {
    [1] = "素人倶楽部/ハメ撮りアニメ完全無修正!!",
    },
@@ -71448,7 +71459,7 @@ return {
    },
   },
  [6623] = {
-  ["main"] = "Dr. Slump: Arale-chan N-cha! Penguin-mura wa Hare nochi Hare",
+  ["main"] = "Dr. Slump: Arale-chan - Ncha! Penguin Mura wa Hare Nochi Hare",
   ["official"] = {
    [1] = "Dr.スランプ アラレちゃん んちゃ!ペンギン村はハレのち晴れ",
    },
@@ -71481,7 +71492,7 @@ return {
    },
   },
  [6627] = {
-  ["main"] = "Dr. Slump: Arale-chan N-cha!! Wakuwaku Hot no Natsuyasumi",
+  ["main"] = "Dr. Slump: Arale-chan - Ncha!! Wakuwaku Hot no Natsuyasumi",
   ["official"] = {
    [1] = "Dr.スランプ アラレちゃん んちゃ!!わくわくハートの夏休み",
    },
@@ -77707,9 +77718,10 @@ return {
   ["syn"] = {
    [1] = "House of 5 Leaves",
    [2] = "House of the Five Leaves",
-   [3] = "Penkių Lapų Namai",
-   [4] = "Saraiya Goyou",
-   [5] = "江户盗贼团五叶",
+   [3] = "La casa de las cinco hojas",
+   [4] = "Penkių Lapų Namai",
+   [5] = "Saraiya Goyou",
+   [6] = "江户盗贼团五叶",
    },
   },
  [7249] = {
@@ -79982,8 +79994,9 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "The Recollection of a Certain Airship Pilot",
-   [2] = "The Recollections of a Certain Pilot",
+   [1] = "La Princesa y el Piloto",
+   [2] = "The Recollection of a Certain Airship Pilot",
+   [3] = "The Recollections of a Certain Pilot",
    },
   },
  [7481] = {
@@ -82339,14 +82352,15 @@ return {
    [3] = "シュタゲ",
    },
   ["syn"] = {
-   [1] = "Брама Штайна",
-   [2] = "Ворота Штейна",
-   [3] = "Врата Штейна",
-   [4] = "Штэйнс Гэйт",
-   [5] = "シュタインズ ゲート",
-   [6] = "シュタインズ・ゲート",
-   [7] = "命运石之门",
-   [8] = "슈타인즈 게이트",
+   [1] = "Steins Gate",
+   [2] = "Брама Штайна",
+   [3] = "Ворота Штейна",
+   [4] = "Врата Штейна",
+   [5] = "Штэйнс Гэйт",
+   [6] = "シュタインズ ゲート",
+   [7] = "シュタインズ・ゲート",
+   [8] = "命运石之门",
+   [9] = "슈타인즈 게이트",
    },
   },
  [7730] = {
@@ -84918,7 +84932,8 @@ return {
    [1] = "Berserk - L`epoca d`oro",
    [2] = "Berserk: Das goldene Zeitalter",
    [3] = "Berserk: The Golden Age Arc",
-   [4] = "ベルセルク 黄金時代篇",
+   [4] = "Berserk: Zlatý věk",
+   [5] = "ベルセルク 黄金時代篇",
    },
   ["short"] = {
    },
@@ -87011,7 +87026,8 @@ return {
    },
   ["syn"] = {
    [1] = "Seitokai Yakuindomo OVA",
-   [2] = "Seitokai Yakuindomo: The Return of Seitokai Yakuindomo",
+   [2] = "Seitokai Yakuindomo: Kaette Kita",
+   [3] = "Seitokai Yakuindomo: The Return of Seitokai Yakuindomo",
    },
   },
  [8205] = {
@@ -87352,7 +87368,8 @@ return {
  [8242] = {
   ["main"] = "Gyakkyou Burai Kaiji: Hakairoku Hen",
   ["official"] = {
-   [1] = "逆境無頼カイジ 破戒録篇",
+   [1] = "Kaiji: Against All Rules",
+   [2] = "逆境無頼カイジ 破戒録篇",
    },
   ["short"] = {
    [1] = "Kaiji 2",
@@ -90354,7 +90371,8 @@ return {
   ["main"] = "Dragon Age: Blood Mage no Seisen",
   ["official"] = {
    [1] = "Dragon Age: Dawn of the Seeker",
-   [2] = "ドラゴンエイジ -ブラッドメイジの聖戦-",
+   [2] = "Dragon Age: Úsvit hledačů",
+   [3] = "ドラゴンエイジ -ブラッドメイジの聖戦-",
    },
   ["short"] = {
    },
@@ -91436,8 +91454,9 @@ return {
   ["main"] = "Mass Effect: Paragon Lost",
   ["official"] = {
    [1] = "Mass Effect: Paragon Lost",
-   [2] = "Mass Effect: Згуба Параґону",
-   [3] = "マスエフェクト～失われたパラゴン",
+   [2] = "Mass Effect: Ztracený ideál",
+   [3] = "Mass Effect: Згуба Параґону",
+   [4] = "マスエフェクト～失われたパラゴン",
    },
   ["short"] = {
    },
@@ -91800,8 +91819,9 @@ return {
    [2] = "リコーダーとランドセル ド♪",
    },
   ["short"] = {
-   [1] = "rikoran",
-   [2] = "リコラン",
+   [1] = "recorder and randoseru do",
+   [2] = "rikoran",
+   [3] = "リコラン",
    },
   ["syn"] = {
    [1] = "Recorder and Backpack",
@@ -92920,9 +92940,10 @@ return {
   ["official"] = {
    [1] = "Ame & Yuki – Die Wolfskinder",
    [2] = "Les enfants loups - Ame & Yuki",
-   [3] = "Wolf Children",
-   [4] = "Wolf Children. Los niños lobo",
-   [5] = "おおかみこどもの雨と雪",
+   [3] = "Vlčí děti",
+   [4] = "Wolf Children",
+   [5] = "Wolf Children. Los niños lobo",
+   [6] = "おおかみこどもの雨と雪",
    },
   ["short"] = {
    [1] = "Wolfskinder",
@@ -93468,8 +93489,9 @@ return {
    [4] = "중2병이라도 사랑이 하고 싶어!",
    },
   ["short"] = {
-   [1] = "chuu2koi",
-   [2] = "chuunibyou",
+   [1] = "chu2koi",
+   [2] = "chuu2koi",
+   [3] = "chuunibyou",
    },
   ["syn"] = {
    [1] = "Chu-2 Byou demo Koi ga Shitai!",
@@ -94820,6 +94842,7 @@ return {
    [2] = "リコーダーとランドセル レ♪",
    },
   ["short"] = {
+   [1] = "recorder and randoseru re",
    },
   ["syn"] = {
    },
@@ -97198,12 +97221,14 @@ return {
  [9314] = {
   ["main"] = "Dragon Ball Z: Kami to Kami",
   ["official"] = {
-   [1] = "ドラゴンボールZ 神と神",
+   [1] = "Dragon Ball Z: A Batalha dos Deuses",
+   [2] = "ドラゴンボールZ 神と神",
    },
   ["short"] = {
    },
   ["syn"] = {
    [1] = "Dragon Ball Z: Battle of Gods",
+   [2] = "Dragon Ball Z: God vs. God",
    },
   },
  [9316] = {
@@ -98449,6 +98474,7 @@ return {
    [1] = "MJP",
    },
   ["syn"] = {
+   [1] = "Galactic Armored Fleet Majestic Prince",
    },
   },
  [9453] = {
@@ -98978,9 +99004,9 @@ return {
    },
   },
  [9503] = {
-  ["main"] = "Chitose Get You!! (2013)",
+  ["main"] = "Asako Get You!!",
   ["official"] = {
-   [1] = "ちとせげっちゅ!! (2013)",
+   [1] = "あさこげっちゅ!!",
    },
   ["short"] = {
    },
@@ -99150,6 +99176,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Mondaiji-tachi ga Isekai kara Kuru Sou Desu yo? OVA",
    },
   },
  [9520] = {
@@ -100501,11 +100528,12 @@ return {
  [9666] = {
   ["main"] = "Mushibugyou",
   ["official"] = {
-   [1] = "ムシブギョー 蟲奉行",
+   [1] = "ムシブギョー",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "蟲奉行",
    },
   },
  [9667] = {
@@ -100939,6 +100967,7 @@ return {
    [1] = "パパのいうことを聞きなさい! OAD",
    },
   ["short"] = {
+   [1] = "papakiki ova",
    },
   ["syn"] = {
    },
@@ -101999,6 +102028,7 @@ return {
    },
   ["short"] = {
    [1] = "KKK",
+   [2] = "kitakubu",
    },
   ["syn"] = {
    },
@@ -102971,7 +103001,7 @@ return {
  [9971] = {
   ["main"] = "Little Witch Academia 2",
   ["official"] = {
-   [1] = "リトルウイッチアカデミア２",
+   [1] = "リトルウイッチアカデミア2",
    },
   ["short"] = {
    },
@@ -103244,17 +103274,18 @@ return {
    },
   },
  [10006] = {
-  ["main"] = "Zenryoku Gu Shoujo!! Action!!",
+  ["main"] = "Zetsumetsu Kigu Shoujo: Amazing Twins",
   ["official"] = {
-   [1] = "全力愚少女!!アクション!!",
+   [1] = "絶滅危愚少女 Amazing Twins",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "全力愚少女!!アクション!!",
    },
   },
  [10007] = {
-  ["main"] = "Super Seisyun Brothers",
+  ["main"] = "Super Seishun Brothers",
   ["official"] = {
    [1] = "Super Seisyun Brothers -超青春姉弟s-",
    },
@@ -103277,6 +103308,136 @@ return {
   ["main"] = "Girls und Panzer: Ooarai Joshi Gakuen vs Anzio Koukou",
   ["official"] = {
    [1] = "ガールズ&パンツァー 大洗女子学園 vs アンツィオ高校",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10010] = {
+  ["main"] = "Tesagure! Bukatsumono",
+  ["official"] = {
+   [1] = "てさぐれ! 部活もの",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10011] = {
+  ["main"] = "D-Frag!",
+  ["official"] = {
+   [1] = "ディーふらぐ!",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10012] = {
+  ["main"] = "Gekijouban Hunter x Hunter: The Last Mission",
+  ["official"] = {
+   [1] = "劇場版 HUNTERxHUNTER THE LAST MISSION",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10015] = {
+  ["main"] = "Minami-ke Natsu Yasumi",
+  ["official"] = {
+   [1] = "みなみけ 夏やすみ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10016] = {
+  ["main"] = "GJ-bu 2",
+  ["official"] = {
+   [1] = "GJ部 2",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10020] = {
+  ["main"] = "Donten ni Warau",
+  ["official"] = {
+   [1] = "曇天に笑う",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10021] = {
+  ["main"] = "Lupin Sansei: Princess of the Breeze - Kakusareta Kuuchuu Toshi",
+  ["official"] = {
+   [1] = "ルパン三世 princess of the breeze ~隠された空中都市~",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10022] = {
+  ["main"] = "Sword Art Online: Extra Edition",
+  ["official"] = {
+   [1] = "ソードアート・オンライン Extra Edition",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10023] = {
+  ["main"] = "Miss Monochrome",
+  ["official"] = {
+   [1] = "ミス・モノクローム",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10024] = {
+  ["main"] = "Wizard Barristers: Benmashi Cecil",
+  ["official"] = {
+   [1] = "ウィザード・バリスターズ~弁魔士セシル",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10025] = {
+  ["main"] = "Kill Me Baby (2013)",
+  ["official"] = {
+   [1] = "キルミーベイベー (2013)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10026] = {
+  ["main"] = "IS: Infinite Stratos 2 - Hitonatsu no Omoide",
+  ["official"] = {
+   [1] = "IS&lt;インフィニット・ストラトス&gt; 2 一夏[ひとなつ]の想いで",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10027] = {
+  ["main"] = "Space Dandy",
+  ["official"] = {
+   [1] = "スペース☆ダンディ",
    },
   ["short"] = {
    },
