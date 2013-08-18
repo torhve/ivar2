@@ -7735,8 +7735,9 @@ return {
  [453] = {
   ["main"] = "Grappler Baki (2001)",
   ["official"] = {
-   [1] = "Baki The Grappler",
-   [2] = "グラップラー刃牙 (2001)",
+   [1] = "Baki",
+   [2] = "Baki The Grappler",
+   [3] = "グラップラー刃牙 (2001)",
    },
   ["short"] = {
    [1] = "gbtv",
@@ -11232,6 +11233,7 @@ return {
    },
   ["syn"] = {
    [1] = "Angel Blade Returns",
+   [2] = "엔젤 블레이드",
    },
   },
  [688] = {
@@ -14583,11 +14585,11 @@ return {
    [1] = "DNA Hunter",
    [2] = "DNAハンター",
    [3] = "Insémination artificielle",
+   [4] = "Mai in geheimer Mission",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Mai in geheimer Mission",
    },
   },
  [928] = {
@@ -23510,8 +23512,9 @@ return {
  [1606] = {
   ["main"] = "Reiju Gakuen",
   ["official"] = {
-   [1] = "Xtra Credit",
-   [2] = "隷従学園",
+   [1] = "X-Tra Credit",
+   [2] = "Xtra Credit",
+   [3] = "隷従学園",
    },
   ["short"] = {
    },
@@ -25838,7 +25841,8 @@ return {
  [1809] = {
   ["main"] = "Densetsu Kyojin Ideon Hatsudou Hen",
   ["official"] = {
-   [1] = "伝説巨神イデオン 発動篇",
+   [1] = "The Ideon: Be Invoked",
+   [2] = "伝説巨神イデオン 発動篇",
    },
   ["short"] = {
    },
@@ -39644,11 +39648,12 @@ return {
  [2985] = {
   ["main"] = "Iruka to Shounen",
   ["official"] = {
-   [1] = "Oum le dauphin blanc",
-   [2] = "The Dolphin and the Boy",
-   [3] = "Zum il delfino bianco",
-   [4] = "Ум белият делфин",
-   [5] = "イルカと少年",
+   [1] = "Biały delfin Um",
+   [2] = "Oum le dauphin blanc",
+   [3] = "The Dolphin and the Boy",
+   [4] = "Zum il delfino bianco",
+   [5] = "Ум белият делфин",
+   [6] = "イルカと少年",
    },
   ["short"] = {
    [1] = "dolph",
@@ -40881,8 +40886,9 @@ return {
  [3131] = {
   ["main"] = "Stratosphera no Yousei",
   ["official"] = {
-   [1] = "Nymphs of the Stratosphere",
-   [2] = "ストラトスフェラの妖精",
+   [1] = "Elfen der Stratosphäre",
+   [2] = "Nymphs of the Stratosphere",
+   [3] = "ストラトスフェラの妖精",
    },
   ["short"] = {
    },
@@ -44008,6 +44014,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "레퀴엠",
    },
   },
  [3453] = {
@@ -50112,6 +50119,8 @@ return {
    },
   ["syn"] = {
    [1] = "Cleavage",
+   [2] = "Die Supermoepse",
+   [3] = "Die Supermöpse",
    },
   },
  [4195] = {
@@ -52786,8 +52795,10 @@ return {
    [1] = "Gun Samurai",
    [2] = "Gun-do Musashi",
    [3] = "MUSASHI -GUN道-",
-   [4] = "Musashi: The Way of the Gun",
-   [5] = "מוסאשי האקדוחן המטורף",
+   [4] = "Musashi Gundoh",
+   [5] = "Musashi Way of the Gun",
+   [6] = "Musashi: The Way of the Gun",
+   [7] = "מוסאשי האקדוחן המטורף",
    },
   },
  [4463] = {
@@ -60510,11 +60521,12 @@ return {
    [2] = "Gundam Double Oh",
    [3] = "Gundam dobbelt null",
    [4] = "Kidou Senshi Gandamu Daburuou",
-   [5] = "Mobile Suit Gundam Double O",
-   [6] = "Мобилен Костюм Гъндам 00",
-   [7] = "Подвижен Костюм Гъндам 00",
-   [8] = "机动战士高达00",
-   [9] = "機動戰士鋼彈OO",
+   [5] = "Kidou Senshi Gundam OO",
+   [6] = "Mobile Suit Gundam Double O",
+   [7] = "Мобилен Костюм Гъндам 00",
+   [8] = "Подвижен Костюм Гъндам 00",
+   [9] = "机动战士高达00",
+   [10] = "機動戰士鋼彈OO",
    },
   },
  [5255] = {
@@ -65303,7 +65315,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Wife Bondage",
+   [1] = "Tokio Love Story",
+   [2] = "Wife Bondage",
    },
   },
  [5893] = {
@@ -66170,7 +66183,7 @@ return {
  [6002] = {
   ["main"] = "Aneimo",
   ["official"] = {
-   [1] = "Aneimo",
+   [1] = "Aneimo: Heimliche Liebe",
    [2] = "あねいも",
    },
   ["short"] = {
@@ -67601,10 +67614,11 @@ return {
    [3] = "Evangelion New Theatrical Version: Destruction",
    [4] = "Evangelion New Theatrical Version: Division",
    [5] = "Evangelion: 2.0",
-   [6] = "Evangelionas 2.22 Tu (Ne) Gali Pažengti",
-   [7] = "Rebuild of Evangelion: 2.0",
-   [8] = "eva2",
-   [9] = "Евангелион 2.22 Ты (Не) Продвинешься",
+   [6] = "Evangelion: 2.0 Você (não) pode prosseguir",
+   [7] = "Evangelionas 2.22 Tu (Ne) Gali Pažengti",
+   [8] = "Rebuild of Evangelion: 2.0",
+   [9] = "eva2",
+   [10] = "Евангелион 2.22 Ты (Не) Продвинешься",
    },
   },
  [6172] = {
@@ -84938,8 +84952,9 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Берсерк. Золота Доба",
-   [2] = "بيرسيرك: فصل العصر الذهبي",
+   [1] = "Berserk Movie",
+   [2] = "Берсерк. Золота Доба",
+   [3] = "بيرسيرك: فصل العصر الذهبي",
    },
   },
  [7992] = {
@@ -85633,7 +85648,8 @@ return {
  [8068] = {
   ["main"] = "Issho ni Training Ofuro: Bathtime with Hinako & Hiyoko",
   ["official"] = {
-   [1] = "いっしょにとれーにんぐ026[おふろ] BATHTIME WITH HINAKO&HIYOKO",
+   [1] = "Im Bad mit Hinako",
+   [2] = "いっしょにとれーにんぐ026[おふろ] BATHTIME WITH HINAKO&HIYOKO",
    },
   ["short"] = {
    },
@@ -91954,15 +91970,15 @@ return {
  [8729] = {
   ["main"] = "Danshi Koukousei no Nichijou",
   ["official"] = {
-   [1] = "男子高校生の日常",
-   [2] = "남자고교생의 일상",
+   [1] = "Daily Lives of High School Boys",
+   [2] = "男子高校生の日常",
+   [3] = "남자고교생의 일상",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Daily Lives of High School Boys",
-   [2] = "The Daily Lives of High School Boys",
-   [3] = "nichibros",
+   [1] = "The Daily Lives of High School Boys",
+   [2] = "nichibros",
    },
   },
  [8730] = {
@@ -94973,7 +94989,8 @@ return {
  [9048] = {
   ["main"] = "Metal Fight Beyblade Zero G",
   ["official"] = {
-   [1] = "メタルファイト ベイブレード ZEROG",
+   [1] = "Beyblade: Shogun Steel",
+   [2] = "メタルファイト ベイブレード ZEROG",
    },
   ["short"] = {
    },
@@ -95598,7 +95615,6 @@ return {
    [2] = "Psycho-Pass",
    },
   ["short"] = {
-   [1] = "gibs",
    },
   ["syn"] = {
    [1] = "Psycho Pass",
@@ -98725,7 +98741,7 @@ return {
    },
   },
  [9478] = {
-  ["main"] = "Kuro to Kin no Hirakanai Kagi.",
+  ["main"] = "Kuro to Kin no Akanai Kagi.",
   ["official"] = {
    [1] = "黒と金の開かない鍵.",
    },
@@ -103332,6 +103348,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "D-FRAGMENTS",
    },
   },
  [10012] = {
@@ -103438,6 +103455,28 @@ return {
   ["main"] = "Space Dandy",
   ["official"] = {
    [1] = "スペース☆ダンディ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10031] = {
+  ["main"] = "Pocket Monsters: The Origin",
+  ["official"] = {
+   [1] = "ポケットモンスター THE ORIGIN",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Покемоны: Начало",
+   [2] = "ポケットモンスター ジ・オリジン",
+   },
+  },
+ [10032] = {
+  ["main"] = "Aikatsu! 2",
+  ["official"] = {
+   [1] = "アイカツ! 2",
    },
   ["short"] = {
    },
