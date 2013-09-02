@@ -4,11 +4,10 @@ local dbi = require 'DBI'
 require'logging.console'
 local log = logging.console()
 
-
 local patterns = {
 	-- X://Y url
 	"^(https?://%S+)",
-    "^<(https?://%S+)>",
+	"^<(https?://%S+)>",
 	"%f[%S](https?://%S+)",
 	-- www.X.Y url
 	"^(www%.[%w_-%%]+%.%S+)",
@@ -34,64 +33,60 @@ local smartEscape = function(str)
 end
 
 -- check for existing url
-local checkOlds = function(self, dbh, destination, source, url) 
+local checkOlds = function(self, dbh, destination, source, url)
+	-- create a select handle
+	local sth = assert(dbh:prepare([[
+		SELECT
+			date_trunc('second', time),
+			date_trunc('second', age(now(), date_trunc('second', time))),
+			nick
+		FROM urls
+		WHERE
+			url=?
+			AND
+			channel=?
+		ORDER BY time ASC
+	]]))
 
-    -- create a select handle
-    local sth = assert(dbh:prepare([[
-            SELECT 
-                date_trunc('second', time),
-                date_trunc('second', age(now(), date_trunc('second', time))),
-                nick
-            FROM urls
-            WHERE 
-                url=? 
-            AND
-                channel=?
-            ORDER BY time ASC
-        ]]
-        ))
+	-- execute select with a url bound to variable
+	sth:execute(url,destination)
 
-    -- execute select with a url bound to variable
-    sth:execute(url,destination)
+	-- get list of column names in the result set
+	--local columns = sth:columns()
 
-    -- get list of column names in the result set
-    --local columns = sth:columns()
+	local count = 0
+	local nick
+	local when
 
-    local count = 0
-    local nick
-    local when
+	-- iterate over the returned data
+	for row in sth:rows() do
+		count = count + 1
+		-- rows() with no arguments (or false) returns
+		-- the data as a numerically indexed table
+		-- passing it true returns a table indexed by
+		-- column names
+		if count == 1 then
+			when = row[1]
+			ago = row[2]
+			nick = row[3]
+			when = when .. ', ' .. ago .. ' ago'
+		end
+	end
 
-    -- iterate over the returned data
-    for row in sth:rows() do
-        count = count + 1
-        -- rows() with no arguments (or false) returns
-        -- the data as a numerically indexed table
-        -- passing it true returns a table indexed by
-        -- column names
-        if count == 1 then
-            when = row[1]
-            ago = row[2]
-            nick = row[3]
-            when = when .. ', ' .. ago .. ' ago'
-        end
-    end
-
-    if count > 0 then
-        local plural = ''
-        if count > 1 then 
-            plural = 's' 
-            ivar2:Msg('privmsg', destination, source, 'Olds! Linked %s time%s before. First %s by %s', count, plural, when, nick)
-        else
-            ivar2:Msg('privmsg', destination, source, 'Olds! Linked before at %s by %s', when, nick)
-        end
-    end
-
+	if count > 0 then
+		local plural = ''
+		if count > 1 then
+			plural = 's'
+			ivar2:Msg('privmsg', destination, source, 'Olds! Linked %s time%s before. First %s by %s', count, plural, when, nick)
+		else
+			ivar2:Msg('privmsg', destination, source, 'Olds! Linked before at %s by %s', when, nick)
+		end
+	end
 end
 
 local handleUrl = function(self, source, destination, msg, url)
-
-    -- Check if this module is disabled and just stop here if it is
-    if not self:IsModuleDisabled('olds', destination) then
+	-- Check if this module is disabled and just stop here if it is
+	if not self:IsModuleDisabled('olds', destination) then
 		local nick = source.nick
 
 		-- TODO save connection
@@ -99,10 +94,9 @@ local handleUrl = function(self, source, destination, msg, url)
 
 		checkOlds(self, dbh, destination, source, url)
 
-
 		--local ok = dbh:close()
 		--
-    end
+	end
 
 	-- Fire the oldsdone event for sqllogger
 	ivar2.event:Fire('olds', self, source, destination, msg, url)
@@ -114,7 +108,7 @@ return {
 	-- Dummy event
 	['9999'] = {
 		function(...)
-            return
-        end,
-    }
+			return
+		end,
+	}
 }
