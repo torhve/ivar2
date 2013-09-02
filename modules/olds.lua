@@ -36,13 +36,13 @@ local checkOld = function(source, destination, url)
 	local sth = db:prepare([[
 		SELECT
 			nick,
-			timestamp,
+			timestamp
 		FROM urls
 		WHERE
 			url=?
 			AND
 			channel=?
-		ORDER BY time ASC
+		ORDER BY timestamp ASC
 	]])
 
 	-- execute select with a url bound to variable
@@ -61,7 +61,7 @@ local checkOld = function(source, destination, url)
 	db:close()
 
 	if(count > 0) then
-		local age = date.relativeTimeShort(os.time() - first.timestamp)
+		local age = date.relativeTimeShort(first.timestamp)
 
 		if(count > 1) then
 			ivar2:Msg('privmsg', destination, source, 'Old! Linked %s times before. First %s by %s', count, age, first.nick)
