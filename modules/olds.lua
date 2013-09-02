@@ -64,9 +64,9 @@ local checkOld = function(source, destination, url)
 		local age = date.relativeTimeShort(first.timestamp)
 
 		if(count > 1) then
-			ivar2:Msg('privmsg', destination, source, 'Old! Linked %s times before. First %s by %s', count, age, first.nick)
+			ivar2:Msg('privmsg', destination, source, 'Old! Linked %s times before. First %s ago by %s', count, age, first.nick)
 		else
-			ivar2:Msg('privmsg', destination, source, 'Old! Linked before, %s by %s', age, first.nick)
+			ivar2:Msg('privmsg', destination, source, 'Old! Linked before, %s ago by %s', age, first.nick)
 		end
 	end
 end
