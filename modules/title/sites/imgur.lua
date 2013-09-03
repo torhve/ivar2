@@ -28,6 +28,8 @@ local nsfw = {
 }
 
 local generateTitle = function(gallery, withURL)
+	if(gallery.error) then return end
+
 	local out = {}
 
 	if(withURL) then
@@ -77,7 +79,7 @@ local function handleOutput(queue, hash, data, withURL, try)
 	data = json.decode(data)
 	local gallery = data.data
 
-	if(data.status == 404) then
+	if(try == nil and data.status == 404) then
 		local url = ('https://api.imgur.com/3/image/%s.json'):format(hash)
 		return simplehttp(
 			{
