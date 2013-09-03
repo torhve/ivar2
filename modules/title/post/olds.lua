@@ -63,11 +63,7 @@ local checkOld = function(source, destination, url)
 	if(count > 0) then
 		local age = date.relativeTimeShort(first.timestamp)
 
-		if(count > 1) then
-			ivar2:Msg('privmsg', destination, source, 'Old! Linked %s times before. First %s ago by %s', count, age, first.nick)
-		else
-			ivar2:Msg('privmsg', destination, source, 'Old! Linked before, %s ago by %s', age, first.nick)
-		end
+		return first.nick, count, age
 	end
 end
 
@@ -84,32 +80,17 @@ local updateDB = function(source, destination, url)
 	sth:finalize()
 end
 
-local handleUrl = function(self, source, destination, url)
-	checkOld(source, destination, url)
-	updateDB(source, destination, url)
+do
+	return function(source, destination, queue)
+		local nick, count, age = checkOld(source, destination, queue.url)
+		updateDB(source, destination, queue.url)
+
+		if(not nick) then return end
+
+		if(count > 1) then
+			queue.output = string.format("Old! %s times, first by %s %s ago - %s", count, nick, age, queue.output)
+		else
+			queue.output = string.format("Old! Linked by %s %s ago - %s", nick ,age, queue.output)
+		end
+	end
 end
-
-return {
-	PRIVMSG = {
-		function(self, source, destination, argument)
-			-- We don't want to pick up URLs from commands.
-			if(argument:sub(1,1) == '!') then return end
-
-			for split in argument:gmatch('%S+') do
-				for i=1, #patterns do
-					local _, count = split:gsub(patterns[i], function(url)
-						if(url:sub(1,4) ~= 'http') then
-							url = 'http://' .. url
-						end
-
-						handleUrl(self, source, destination, smartEscape(url))
-					end)
-
-					if(count > 0) then
-						break
-					end
-				end
-			end
-		end,
-	}
-}
