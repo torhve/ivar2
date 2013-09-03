@@ -278,9 +278,9 @@ local fetchInformation = function(queue)
 	)
 end
 
-local postProcess = function(self)
+local postProcess = function(source, destination, self)
 	for _, customHandler in next, customPost do
-		customHandler(self)
+		customHandler(source, destination, self)
 	end
 end
 
@@ -334,7 +334,7 @@ return {
 						done = function(self, msg)
 							self.output = msg
 
-							postProcess(self)
+							postProcess(source, destination, self)
 							handleOutput(output)
 						end,
 					}
