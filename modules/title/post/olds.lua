@@ -87,10 +87,17 @@ do
 
 		if(not nick) then return end
 
+		local prepend
 		if(count > 1) then
-			queue.output = string.format("Old! %s times, first by %s %s ago - %s", count, nick, age, queue.output)
+			prepend = string.format("Old! %s times, first by %s %s ago", count, nick, age)
 		else
-			queue.output = string.format("Old! Linked by %s %s ago - %s", nick ,age, queue.output)
+			prepend = string.format("Old! Linked by %s %s ago", nick, age)
+		end
+
+		if(queue.output) then
+			queue.output = string.format("%s - %s", prepend, queue.output)
+		else
+			queue.output = prepend
 		end
 	end
 end
