@@ -63,6 +63,8 @@ local function simplehttp(url, callback, stream, limit, visited)
 		stream_response = stream,
 
 		on_data = function(request, response, data)
+			if(request.is_cancelled) then return end
+
 			if(data) then
 				sinkSize = sinkSize + #data
 				sink[#sink + 1] = data
