@@ -79,7 +79,7 @@ local function simplehttp(url, callback, stream, limit, visited)
 				local location = response.headers.Location
 				if(location:sub(1, 4) ~= 'http') then
 					local info = uri_parse(url)
-					location = string.format('%s://%s/', info.scheme, info.host, location)
+					location = string.format('%s://%s%s', info.scheme, info.host, location)
 				end
 
 				if(url.headers) then
