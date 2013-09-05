@@ -85,7 +85,8 @@ do
 		local nick, count, age = checkOld(source, destination, queue.url)
 		updateDB(source, destination, queue.url)
 
-		if(not nick) then return end
+		-- relativeTimeShort() returns nil if it gets fed os.time().
+		if(not age) then return end
 
 		local prepend
 		if(count > 1) then
