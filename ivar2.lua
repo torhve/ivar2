@@ -426,6 +426,10 @@ end
 function ivar2:LoadModule(moduleName)
 	local moduleFile, moduleError = loadfile('modules/' .. moduleName .. '.lua')
 	if(not moduleFile) then
+		moduleFile, moduleError = loadfile('modules/' .. moduleName .. '/init.lua')
+	end
+
+	if(not moduleFile) then
 		return self:Log('error', 'Unable to load module %s: %s.', moduleName, moduleError)
 	end
 
