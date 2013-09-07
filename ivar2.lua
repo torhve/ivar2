@@ -124,6 +124,17 @@ local events = {
 		},
 	},
 
+	['005'] = {
+		core = {
+			function(self, source, param, _)
+				local network = param:match("NETWORK=([^ ]+)")
+				if(network) then
+					self.network = network
+				end
+			end,
+		},
+	},
+
 	['324'] = {
 		core = {
 			function(self, source, _, argument)
