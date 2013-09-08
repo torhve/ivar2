@@ -8561,6 +8561,7 @@ return {
    [7] = "キャプテン翼J",
    },
   ["short"] = {
+   [1] = "CTJ",
    },
   ["syn"] = {
    [1] = "Captain Hawk J",
@@ -18001,18 +18002,19 @@ return {
    },
   },
  [1172] = {
-  ["main"] = "Bakusou Kyoudai Let`s & Go WGP",
+  ["main"] = "Bakusou Kyoudai Let`s & Go!! WGP",
   ["official"] = {
    [1] = "爆走兄弟レッツ&ゴー!! WGP",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "The Racing Brothers, Lets and Go WGP",
+   [1] = "Bakusou Kyoudai Let`s & Go!! World Grand Prix",
+   [2] = "The Racing Brothers, Lets and Go WGP",
    },
   },
  [1173] = {
-  ["main"] = "Bakusou Kyoudai Lets & Go Max",
+  ["main"] = "Bakusou Kyoudai Let`s & Go!! Max",
   ["official"] = {
    [1] = "سابق ولاحق ماكس",
    [2] = "爆走兄弟レッツ&ゴー!! MAX",
@@ -18782,12 +18784,12 @@ return {
  [1232] = {
   ["main"] = "Sangokushi Dainibu Choukou Moyu!",
   ["official"] = {
-   [1] = "Great Conquest: Romance of Three Kingdoms",
-   [2] = "三国志 第二部 長江燃ゆ!",
+   [1] = "三国志 第二部 長江燃ゆ!",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Great Conquest: Romance of Three Kingdoms",
    },
   },
  [1233] = {
@@ -23331,6 +23333,7 @@ return {
    },
   ["syn"] = {
    [1] = "ダークロウズ",
+   [2] = "다크로우즈",
    },
   },
  [1588] = {
@@ -25568,13 +25571,15 @@ return {
  [1782] = {
   ["main"] = "Gold Lightan",
   ["official"] = {
-   [1] = "Golden Warrior - The Gold Lightan",
-   [2] = "ゴールドライタン",
+   [1] = "ゴールドライタン",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Златният боец",
+   [1] = "Golden Warrior - The Gold Lightan",
+   [2] = "Ougon Senshi Gold Lightan",
+   [3] = "Златният боец",
+   [4] = "黄金戦士ゴールドライタン",
    },
   },
  [1783] = {
@@ -26448,6 +26453,7 @@ return {
    },
   ["syn"] = {
    [1] = "大惡司",
+   [2] = "대악사",
    },
   },
  [1848] = {
@@ -34151,7 +34157,7 @@ return {
    },
   },
  [2450] = {
-  ["main"] = "Ho Ta Ru Ko",
+  ["main"] = "Hotaruko",
   ["official"] = {
    [1] = "Crimson Climax",
    [2] = "Exorcismo carnal",
@@ -34162,7 +34168,6 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Hotaruko",
    },
   },
  [2451] = {
@@ -40824,6 +40829,7 @@ return {
    },
   ["syn"] = {
    [1] = "Black Jack: Capital Transfer To Heian",
+   [2] = "Black Jack: Tezuka World Movie",
    },
   },
  [3120] = {
@@ -42758,6 +42764,7 @@ return {
    [1] = "F/SN",
    [2] = "Fate/SN",
    [3] = "fsn",
+   [4] = "fsn tv",
    },
   ["syn"] = {
    [1] = "Fate Stay Night",
@@ -47292,11 +47299,11 @@ return {
   ["main"] = "Easy Cooking Animation: Seishun no Shokutaku",
   ["official"] = {
    [1] = "EASY COOKING ANIMATION セイシュンの食卓",
-   [2] = "Easy Cooking Animation: Youth`s Dining Table",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Easy Cooking Animation: Youth`s Dining Table",
    },
   },
  [3958] = {
@@ -50872,6 +50879,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "어두운 미래",
    },
   },
  [4254] = {
@@ -51847,6 +51855,7 @@ return {
    },
   ["syn"] = {
    [1] = "Tamsioji Koplyčia",
+   [2] = "성항녀",
    },
   },
  [4355] = {
@@ -52984,12 +52993,16 @@ return {
  [4486] = {
   ["main"] = "Zettai Muteki Raijin Ou",
   ["official"] = {
-   [1] = "絶対無敵ライジンオー",
+   [1] = "Matchless Raijin-Oh",
+   [2] = "絶対無敵ライジンオー",
    },
   ["short"] = {
    [1] = "raijin ou",
    },
   ["syn"] = {
+   [1] = "Absolutely Invincible Raijin-Oh",
+   [2] = "Raijin-Oh",
+   [3] = "Zettai Muteki Raijin-Oh",
    },
   },
  [4487] = {
@@ -69335,6 +69348,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Hey, Addachi!",
    },
   },
  [6362] = {
@@ -77327,6 +77341,7 @@ return {
    [1] = "Fate/stay night TV reproduction",
    },
   ["short"] = {
+   [1] = "fsnr",
    },
   ["syn"] = {
    [1] = "Съдба/Нощна битка: телевизионна репродукция",
@@ -85716,23 +85731,23 @@ return {
    [4] = "마법소녀 마도카 마기카",
    },
   ["short"] = {
-   [1] = "Madoka",
-   [2] = "Madoka Magica",
-   [3] = "madomagi",
-   [4] = "pmagi",
-   [5] = "まどマギ",
-   [6] = "マドマギ",
-   [7] = "小圆",
+   [1] = "MSMM",
+   [2] = "Madoka",
+   [3] = "Madoka Magica",
+   [4] = "madomagi",
+   [5] = "pmagi",
+   [6] = "まどマギ",
+   [7] = "マドマギ",
+   [8] = "小圆",
    },
   ["syn"] = {
-   [1] = "MSMM",
-   [2] = "Magical Girl Madoka Magika",
-   [3] = "Mahou Shoujo Madoka Magika",
-   [4] = "Волшебница Мадока Магика",
-   [5] = "Дівчина-чарівниця Мадока Маґіка",
-   [6] = "Чарівниця Мадока Магіка",
-   [7] = "مدوکا مجیکا دختر جادویی",
-   [8] = "魔法少女小圆",
+   [1] = "Magical Girl Madoka Magika",
+   [2] = "Mahou Shoujo Madoka Magika",
+   [3] = "Волшебница Мадока Магика",
+   [4] = "Дівчина-чарівниця Мадока Маґіка",
+   [5] = "Чарівниця Мадока Магіка",
+   [6] = "مدوکا مجیکا دختر جادویی",
+   [7] = "魔法少女小圆",
    },
   },
  [8070] = {
@@ -92035,6 +92050,7 @@ return {
   ["syn"] = {
    [1] = "The Daily Lives of High School Boys",
    [2] = "nichibros",
+   [3] = "Всекидневието на гимназистите",
    },
   },
  [8730] = {
@@ -95667,7 +95683,7 @@ return {
    },
   },
  [9127] = {
-  ["main"] = "Psycho-pass",
+  ["main"] = "Psycho-Pass",
   ["official"] = {
    [1] = "PSYCHO-PASS",
    [2] = "Psycho-Pass",
@@ -98810,6 +98826,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Kuro to Kin no Hirakanai Kagi.",
    },
   },
  [9479] = {
@@ -98855,9 +98872,10 @@ return {
    },
   ["syn"] = {
    [1] = "Kamisama no Inai Nichiyoubi",
-   [2] = "The Sunday Without God",
-   [3] = "В неделя Господ няма",
-   [4] = "神様のいない日曜日",
+   [2] = "Tanrısız Pazar Günü",
+   [3] = "The Sunday Without God",
+   [4] = "В неделя Господ няма",
+   [5] = "神様のいない日曜日",
    },
   },
  [9483] = {
@@ -101534,13 +101552,13 @@ return {
  [9787] = {
   ["main"] = "Ore no Nounai Sentakushi ga, Gakuen Lovecome o Zenryoku de Jama Shiteiru",
   ["official"] = {
-   [1] = "My Mental Multiple-Choice Power Is Completely Ruining My School Romantic Comedy",
-   [2] = "俺の脳内選択肢が, 学園ラブコメを全力で邪魔している",
+   [1] = "俺の脳内選択肢が, 学園ラブコメを全力で邪魔している",
    },
   ["short"] = {
    [1] = "NouCome",
    },
   ["syn"] = {
+   [1] = "My Mental Multiple-Choice Power Is Completely Ruining My School Romantic Comedy",
    },
   },
  [9788] = {
@@ -102283,6 +102301,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "High School Girls` Waists",
    },
   },
  [9878] = {
@@ -102547,9 +102566,9 @@ return {
    [1] = "Fate/ゼロカフェ",
    },
   ["short"] = {
+   [1] = "fz cafe",
    },
   ["syn"] = {
-   [1] = "fz cafe",
    },
   },
  [9908] = {
@@ -102867,6 +102886,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "A True Story Immoral Confession of a Married Woman",
+   [2] = "本当にあった人妻不倫告白 本村陶子の場合",
    },
   },
  [9942] = {
@@ -103675,7 +103696,7 @@ return {
  [10050] = {
   ["main"] = "Tamagotchi! Miracle Friends",
   ["official"] = {
-   [1] = "たまごっち! ~みらくるフレン~",
+   [1] = "たまごっち! ~みらくるフレンズ~",
    },
   ["short"] = {
    },
@@ -103686,6 +103707,176 @@ return {
   ["main"] = "Chikyu wo Mitsumete",
   ["official"] = {
    [1] = "ちきゅうをみつめて",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10052] = {
+  ["main"] = "Himitsukessha Taka no Tsume The Planetarium: Burabura! Black Hole no Nazo",
+  ["official"] = {
+   [1] = "秘密結社鷹の爪 THE PLANETARIUM: ブラブラ!ブラックホールの謎",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10053] = {
+  ["main"] = "Pocket Monsters: Best Wishes! Kou to Kage no Tenkyuugi",
+  ["official"] = {
+   [1] = "ポケットモンスター ベストウイッシュ~光と影のテンキュウギ~",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10054] = {
+  ["main"] = "Norman the Snowman: Kita no Kuni Aurora (Kari)",
+  ["official"] = {
+   [1] = "ノーマン・ザ・スノーマン　~北の国のオーロ ラ （仮）~",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10055] = {
+  ["main"] = "Hi no Tori: Kizuna Hen",
+  ["official"] = {
+   [1] = "火の鳥 絆編",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10057] = {
+  ["main"] = "Peeping Life: Tezuka X Tatsunoko Production Wonderland",
+  ["official"] = {
+   [1] = "Peeping Life 手塚プロ・タツノコプロ ワンダーラン (japanese)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10058] = {
+  ["main"] = "Anisava",
+  ["official"] = {
+   [1] = "アニサバ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10059] = {
+  ["main"] = "Sennen no Yakusoku",
+  ["official"] = {
+   [1] = "千年の約束",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10060] = {
+  ["main"] = "Aoki Uru",
+  ["official"] = {
+   [1] = "蒼きウル",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10061] = {
+  ["main"] = "Oni Chichi 2: Revenge",
+  ["official"] = {
+   [1] = "鬼父2 -REVENGE-",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10062] = {
+  ["main"] = "Naruto SD: Rock Lee no Seishun Full-Power Ninden Mou Iccho",
+  ["official"] = {
+   [1] = "NARUTO-ナルト- SD ロック・リーの青春フルパワー忍伝 もういっちょ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10064] = {
+  ["main"] = "Watashi ga Motenai no wa Dou Kangaete mo Omaera ga Warui! (2014)",
+  ["official"] = {
+   [1] = "私がモテないのはどう考えてもお前らが悪い! (2014)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10065] = {
+  ["main"] = "Psycho-Pass 2",
+  ["official"] = {
+   [1] = "サイコパス 2",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10066] = {
+  ["main"] = "Gekijouban Psycho-Pass",
+  ["official"] = {
+   [1] = "劇場版 サイコパス",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10067] = {
+  ["main"] = "Captain Earth",
+  ["official"] = {
+   [1] = "キャプテン・アース",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10068] = {
+  ["main"] = "11eyes -Tsumi to Batsu to Aganai no Shoujo- OVA",
+  ["official"] = {
+   [1] = "イレブンアイズ OVA",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10069] = {
+  ["main"] = "Gokukoku no Brynhildr",
+  ["official"] = {
+   [1] = "極黒のブリュンヒルデ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10070] = {
+  ["main"] = "Hoshizora e Kakaru Hashi OVA",
+  ["official"] = {
+   [1] = "星空へ架かる橋 OVAスペシャル",
    },
   ["short"] = {
    },
