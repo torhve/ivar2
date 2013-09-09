@@ -83,6 +83,8 @@ return {
 			if(globalNumNotes >= 5) then
 				notes:close()
 				return self:Msg('privmsg', destination, source, "I'm sorry, Dave. I'm afraid I can't do that.")
+			else
+				self:Notice(source.nick, "%s will be notified!", recipient)
 			end
 
 			local key = destination .. ':' .. recipient:lower()

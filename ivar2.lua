@@ -125,6 +125,17 @@ local events = {
 		},
 	},
 
+	['005'] = {
+		core = {
+			function(self, source, param, _)
+				local network = param:match("NETWORK=([^ ]+)")
+				if(network) then
+					self.network = network
+				end
+			end,
+		},
+	},
+
 	['324'] = {
 		core = {
 			function(self, source, _, argument)
@@ -431,6 +442,10 @@ end
 
 function ivar2:LoadModule(moduleName)
 	local moduleFile, moduleError = loadfile('modules/' .. moduleName .. '.lua')
+	if(not moduleFile) then
+		moduleFile, moduleError = loadfile('modules/' .. moduleName .. '/init.lua')
+	end
+
 	if(not moduleFile) then
 		return self:Log('error', 'Unable to load module %s: %s.', moduleName, moduleError)
 	end

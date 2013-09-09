@@ -191,10 +191,10 @@ local handleOutput = function(metadata)
 end
 
 local customHosts = {}
+local customPost = {}
 do
 	local _PROXY = setmetatable(
 		{
-			customHosts = customHosts,
 			DL_LIMIT = DL_LIMIT,
 
 			ivar2 = ivar2,
@@ -204,20 +204,43 @@ do
 		},{ __index = _G }
 	)
 
-	local path = 'modules/title/sites/'
-	for custom in nixio.fs.dir(path) do
-		local customFile, customError = loadfile(path .. custom)
+	local loadFile = function(kind, path, filename)
+		local customFile, customError = loadfile(path .. filename)
 		if(customFile) then
 			setfenv(customFile, _PROXY)
 
 			local success, message = pcall(customFile, ivar2)
 			if(not success) then
-				ivar2:Log('error', 'Unable to execute custom title handler %s: %s.', custom:sub(1, -5), message)
+				ivar2:Log('error', 'Unable to execute %s title handler %s: %s.', kind, filename:sub(1, -5), message)
 			else
-				ivar2:Log('info', 'Loading custom title handler: %s.', custom:sub(1, -5))
+				ivar2:Log('info', 'Loading %s title handler: %s.', kind, filename:sub(1, -5))
+				return message
 			end
 		else
-			ivar2:Log('error', 'Unable to load custom title handler %s: %s.', custom:sub(1, -5), customError)
+			ivar2:Log('error', 'Unable to load %s title handler %s: %s.', kind, filename:sub(1, -5), customError)
+		end
+	end
+
+	-- Custom hosts
+	do
+		local path = 'modules/title/sites/'
+		_PROXY.customHosts = customHosts
+
+		for fn in nixio.fs.dir(path) do
+			loadFile('custom',  path, fn)
+		end
+
+		_PROXY.customHosts = nil
+	end
+
+	-- Custom post processing
+	do
+		local path = 'modules/title/post/'
+		for fn in nixio.fs.dir(path) do
+			local func = loadFile('post',  path, fn)
+			if(func) then
+				table.insert(customPost, func)
+			end
 		end
 	end
 end
@@ -246,6 +269,12 @@ local fetchInformation = function(queue)
 		true,
 		DL_LIMIT
 	)
+end
+
+local postProcess = function(source, destination, self)
+	for _, customHandler in next, customPost do
+		customHandler(source, destination, self)
+	end
 end
 
 return {
@@ -297,6 +326,8 @@ return {
 						url = url,
 						done = function(self, msg)
 							self.output = msg
+
+							postProcess(source, destination, self)
 							handleOutput(output)
 						end,
 					}
