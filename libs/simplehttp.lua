@@ -63,6 +63,8 @@ local function simplehttp(url, callback, stream, limit, visited)
 		stream_response = stream,
 
 		on_data = function(request, response, data)
+			if(request.is_cancelled) then return end
+
 			if(data) then
 				sinkSize = sinkSize + #data
 				sink[#sink + 1] = data
@@ -79,7 +81,7 @@ local function simplehttp(url, callback, stream, limit, visited)
 				local location = response.headers.Location
 				if(location:sub(1, 4) ~= 'http') then
 					local info = uri_parse(url)
-					location = string.format('%s://%s/', info.scheme, info.host, location)
+					location = string.format('%s://%s%s', info.scheme, info.host, location)
 				end
 
 				if(url.headers) then
