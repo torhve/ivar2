@@ -85,7 +85,7 @@ local shipmentTrack = function(self, source, destination, pid, alias)
 				end
 				local out = {}
 				local items = cs['items'][1]
-				local status = string.format('\002%s\002', titlecase(items['status']:gsub('_', ' ')))
+				local status = string.format('\002%s\002', titlecase(items['status']))
 				local events = items['events']
 				local newEventCount = #events
 
