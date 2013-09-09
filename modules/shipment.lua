@@ -80,7 +80,12 @@ local shipmentTrack = function(self, source, destination, message)
 				local eventset = ps['eventSet']
 				local newEventCount = #eventset
 				local out = {}
-				for i=newEventCount,self.shipmentEvents[id]+1,-1 do
+				--print('id:',id,'new:',newEventCount,'old:',self.shipmentEvents[id])
+				if newEventCount < self.shipmentEvents[id] 
+					then newEventCount = self.shipmentEvents[id] 
+				end
+				for i=self.shipmentEvents[id]+1,newEventCount do
+					--print('loop:',i)
 					local event = eventset[i]
 					if event then
 						table.insert(out, eventHandler(event))
@@ -128,10 +133,16 @@ local shipmentLocate = function(self, source, destination, pid)
 	end)
 end
 
+local shipmentHelp = function(self, source, destination)
+	return self:Msg('privmsg', destination, source, 'For lookup: !pakke pakkeid. For tracking: !sporing pakkeid alias')
+end
+
 return {
 	PRIVMSG = {
 		['^%psporing (.*)$'] = shipmentTrack,
 		['^%pspor (.*)$'] = shipmentTrack,
 		['^%ppakke (.*)$'] = shipmentLocate,
+		['^%psporing$'] = shipmentHelp,
+		['^%ppakke$'] = shipmentHelp,
 	},
 }
