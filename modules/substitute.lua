@@ -65,6 +65,10 @@ return {
 			-- Don't validate input here, people fail to often and try again.
 			if(argument:match('^<[^>]+>s/') or argument:sub(1, 2) == 's/') then return end
 
+			if(argument:sub(1,1) == '\001' and argument:sub(-1) == '\001') then
+				argument = argument:sub(9, -2)
+			end
+
 			local nick = source.nick
 			if(not db[nick]) then db[nick] = {} end
 			db[nick][destination] = argument
