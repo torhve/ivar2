@@ -100,10 +100,15 @@ local events = {
 
 				local dir, mode, nick = modeLine:match('([+%-])([^ ]+) ?(.*)$')
 				local modes
-				if(nick == '') then
-					modes = self.channels[channel].modes
-				else
+
+				if(self.channels[channel].nicks[nick]) then
 					modes = self.channels[channel].nicks[nick].modes
+				elseif(nick == '') then
+					modes = self.channels[channel].modes
+				end
+
+				if(not modes) then
+					return
 				end
 
 				if(dir == '+') then
