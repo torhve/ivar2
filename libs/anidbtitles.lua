@@ -4684,8 +4684,9 @@ return {
    [13] = "المحقق كونان",
    [14] = "کاراگاه کونان",
    [15] = "ยอดนักสืบจิ๋วโคนัน เดอะซีรีส์",
-   [16] = "名探偵コナン",
-   [17] = "명탐정 코난",
+   [16] = "名侦探柯南",
+   [17] = "名探偵コナン",
+   [18] = "명탐정 코난",
    },
   ["short"] = {
    [1] = "Conan",
@@ -4715,6 +4716,7 @@ return {
   ["syn"] = {
    [1] = "Karree des Mondes",
    [2] = "Square of the Moon: The Night is Coming!",
+   [3] = "밤이 온다",
    },
   },
  [269] = {
@@ -7571,6 +7573,7 @@ return {
    },
   ["short"] = {
    [1] = "m7",
+   [2] = "m7 tv",
    },
   ["syn"] = {
    [1] = "Макрос 7",
@@ -8429,6 +8432,7 @@ return {
    [1] = "Magical Fairy Persia",
    [2] = "Magical Fairy Perusha",
    [3] = "Mahou no Yousei Perusha",
+   [4] = "Магическата фея Перша",
    },
   },
  [500] = {
@@ -8821,7 +8825,8 @@ return {
    },
   ["syn"] = {
    [1] = "Creamy Mami",
-   [2] = "ทรามวัยกายสิทธิ์",
+   [2] = "Магическият ангел Крийми Мами",
+   [3] = "ทรามวัยกายสิทธิ์",
    },
   },
  [522] = {
@@ -9268,7 +9273,8 @@ return {
  [553] = {
   ["main"] = "Di Gi Charat",
   ["official"] = {
-   [1] = "デ・ジ・キャラット",
+   [1] = "Di Gi Charat",
+   [2] = "デ・ジ・キャラット",
    },
   ["short"] = {
    [1] = "dgc",
@@ -13871,7 +13877,7 @@ return {
    [2] = "Urotsukidoji 3",
    [3] = "Urotsukidoji III - Return of the Overfiend Collection",
    [4] = "Urotsukidōji: Powrót Superdemona",
-   [5] = "초신전설 우로츠키동자 미래편",
+   [5] = "초신전설 우로츠키 동자 미래편",
    },
   },
  [877] = {
@@ -17421,6 +17427,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "미괴",
    },
   },
  [1125] = {
@@ -17981,6 +17988,7 @@ return {
    [4] = "デッド リーブス",
    },
   ["short"] = {
+   [1] = "dl",
    },
   ["syn"] = {
    [1] = "Negyvi Lapai: Kosminis Kalėjimas",
@@ -18515,6 +18523,7 @@ return {
    },
   ["syn"] = {
    [1] = "Depravity",
+   [2] = "타락 ~여교사 파괴~",
    },
   },
  [1212] = {
@@ -19923,6 +19932,7 @@ return {
   ["syn"] = {
    [1] = "Mizuiro (2002)",
    [2] = "Mizuiro OVA 1",
+   [3] = "미즈이로",
    },
   },
  [1329] = {
@@ -20056,6 +20066,7 @@ return {
    },
   ["syn"] = {
    [1] = "Le guerrier démon Koji",
+   [2] = "쾌락 살인 조사관",
    },
   },
  [1338] = {
@@ -20332,6 +20343,7 @@ return {
   ["syn"] = {
    [1] = "Magical Girl Ai",
    [2] = "Sexy Magical Girl Ai",
+   [3] = "마법소녀 아이",
    },
   },
  [1359] = {
@@ -21477,7 +21489,8 @@ return {
    },
   ["syn"] = {
    [1] = "Magic Star Magical Emi",
-   [2] = "魔法のスターマジカルエミ",
+   [2] = "Звездата на магията Меджикъл Еми",
+   [3] = "魔法のスターマジカルエミ",
    },
   },
  [1445] = {
@@ -23206,6 +23219,7 @@ return {
    [1] = "Midara",
    },
   ["syn"] = {
+   [1] = "미다라",
    },
   },
  [1576] = {
@@ -28158,6 +28172,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "미망인",
    },
   },
  [1973] = {
@@ -28729,6 +28744,7 @@ return {
   ["syn"] = {
    [1] = "The Offering of the Shrike",
    [2] = "百舌鳥の贄",
+   [3] = "모즈의 지",
    },
   },
  [2029] = {
@@ -30747,16 +30763,18 @@ return {
    },
   },
  [2187] = {
-  ["main"] = "Kidou Senshi Z Gundam I: Hoshi o Tsugu Mono",
+  ["main"] = "Kidou Senshi Z Gundam: A New Translation - Hoshi o Tsugu Mono",
   ["official"] = {
    [1] = "Mobile Suit Zeta Gundam: A New Translation -Heir to the Stars-",
    [2] = "โมบิลสูท Z กันดั้ม ภาค 1 ตอน ผู้สืบทอดแห่งดวงดาว",
-   [3] = "機動戦士Zガンダム -星を継ぐ者-",
+   [3] = "機動戦士Zガンダム A New Translation 星を継ぐ者",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "机动战士Z高达 星之继承者",
+   [1] = "Kidou Senshi Z Gundam I: Hoshi o Tsugu Mono",
+   [2] = "机动战士Z高达 星之继承者",
+   [3] = "機動戦士ZガンダムI 星を継ぐ者",
    },
   },
  [2188] = {
@@ -34646,6 +34664,7 @@ return {
    },
   ["syn"] = {
    [1] = "Момидзи",
+   [2] = "모미지",
    },
   },
  [2501] = {
@@ -35304,6 +35323,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Магическият идол Пастел Юми",
    },
   },
  [2556] = {
@@ -36426,6 +36446,7 @@ return {
    [1] = "Shinjin Tour Conductor",
    [2] = "新人ツアーコンダクター",
    [3] = "新人ツアーコンダクター・里奈 ツアーオプション&lt;=&gt;添乗員強制乱交",
+   [4] = "신인 투어 컨덕터 리나",
    },
   },
  [2666] = {
@@ -42260,6 +42281,7 @@ return {
    },
   ["syn"] = {
    [1] = "Tokyo Chinkonka",
+   [2] = "동경 진혼가",
    },
   },
  [3307] = {
@@ -43977,8 +43999,9 @@ return {
  [3446] = {
   ["main"] = "Touhai Densetsu Akagi: Yami ni Maiorita Tensai",
   ["official"] = {
-   [1] = "闘牌伝説アカギ 闇に舞い降りた天才",
-   [2] = "투패전설 아카기",
+   [1] = "Akagi",
+   [2] = "闘牌伝説アカギ 闇に舞い降りた天才",
+   [3] = "투패전설 아카기",
    },
   ["short"] = {
    [1] = "Akagi",
@@ -46252,6 +46275,7 @@ return {
    [3] = "Charming Figures of the Magical Girl Trio",
    [4] = "Les trois charmantes jeunes filles magiques",
    [5] = "Mami, Emi, Pelsia: Adesugata Mahou no Sannin Musume",
+   [6] = "Трите очарователни магически момичета",
    },
   },
  [3634] = {
@@ -46265,6 +46289,7 @@ return {
   ["syn"] = {
    [1] = "Magical Girl Club Quartet - Alien X from A Zone",
    [2] = "Majocco Club",
+   [3] = "Квартетът от Клуба на магическите момичета - пришълецът Хикс от зона А",
    },
   },
  [3635] = {
@@ -47411,19 +47436,21 @@ return {
    },
   },
  [3969] = {
-  ["main"] = "Kidou Senshi Z Gundam II: Koibito-tachi",
+  ["main"] = "Kidou Senshi Z Gundam: A New Translation - Koibito-tachi",
   ["official"] = {
    [1] = "Mobile Suit Zeta Gundam -Lovers-",
    [2] = "โมบิลสูท Z กันดั้ม ภาค 2 ตอน เลิฟเวอร์",
-   [3] = "機動戦士ZガンダムII -恋人たち-",
+   [3] = "機動戦士Zガンダム A New Translation 恋人たち",
    },
   ["short"] = {
    [1] = "ZGII -Lovers-",
    },
   ["syn"] = {
-   [1] = "Mobile Suit Zeta Gundam: A New Translation II -Lovers-",
-   [2] = "ZGII",
-   [3] = "机动战士Z高达 恋人们",
+   [1] = "Kidou Senshi Z Gundam II: Koibito-tachi",
+   [2] = "Mobile Suit Zeta Gundam: A New Translation II -Lovers-",
+   [3] = "ZGII",
+   [4] = "机动战士Z高达 恋人们",
+   [5] = "機動戦士ZガンダムII 恋人たち",
    },
   },
  [3972] = {
@@ -48885,16 +48912,18 @@ return {
    },
   },
  [4095] = {
-  ["main"] = "Kidou Senshi Z Gundam III: A New Translation - Hoshi no Kodou wa Ai",
+  ["main"] = "Kidou Senshi Z Gundam: A New Translation - Hoshi no Kodou wa Ai",
   ["official"] = {
    [1] = "Mobile Suit Zeta Gundam: A New Translation III -Love is the Pulse of the Stars-",
    [2] = "โมบิลสูท Z กันดั้ม ภาค 3 ตอน รักคือชีพจรแห่งดวงดาว",
-   [3] = "機動戦士ΖガンダムIII A New Translation -星の鼓動は愛-",
+   [3] = "機動戦士Zガンダム A New Translation 星の鼓動は愛",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "机动战士Z高达 星的鼓动是爱",
+   [1] = "Kidou Senshi Z Gundam III: Hoshi no Kodou wa Ai",
+   [2] = "机动战士Z高达 星的鼓动是爱",
+   [3] = "機動戦士ZガンダムIII 星の鼓動は愛",
    },
   },
  [4097] = {
@@ -50868,6 +50897,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "미세스 중독자",
    },
   },
  [4253] = {
@@ -53480,6 +53510,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "두명의 형수",
    },
   },
  [4548] = {
@@ -53809,6 +53840,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "린월",
    },
   },
  [4570] = {
@@ -58531,6 +58563,7 @@ return {
    [2] = "Urotsukidoji V: The Final Chapter",
    [3] = "Urotsukidōji V: Ostatni rozdział",
    [4] = "超神伝説うろつき童子 完結篇",
+   [5] = "초신전설 우로츠키 동자 완결편",
    },
   },
  [5044] = {
@@ -61478,7 +61511,8 @@ return {
  [5362] = {
   ["main"] = "After... The Animation",
   ["official"] = {
-   [1] = "After... THE ANIMATION",
+   [1] = "After...",
+   [2] = "After... THE ANIMATION",
    },
   ["short"] = {
    },
@@ -61503,6 +61537,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "방과후2",
    },
   },
  [5367] = {
@@ -62913,6 +62948,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "리조트 보잉",
    },
   },
  [5544] = {
@@ -65926,6 +65962,7 @@ return {
    },
   ["syn"] = {
    [1] = "Let`s Fall in Love Like the Ero-manga",
+   [2] = "에로 망가같은 사랑을 하자",
    },
   },
  [5952] = {
@@ -67573,6 +67610,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "레이프! 레이프! 레이프!",
    },
   },
  [6155] = {
@@ -68160,6 +68198,7 @@ return {
   ["syn"] = {
    [1] = "Magical Girl Ai S2",
    [2] = "Magical Girl Ai Season 2",
+   [3] = "마법소녀 아이 참",
    },
   },
  [6231] = {
@@ -69810,6 +69849,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "당신이 모르는 간호사",
    },
   },
  [6424] = {
@@ -70105,6 +70145,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "독아 ~THE ANIMATION~",
    },
   },
  [6458] = {
@@ -70875,6 +70916,7 @@ return {
    },
   ["syn"] = {
    [1] = "ドリームノート",
+   [2] = "드림 노트",
    },
   },
  [6552] = {
@@ -70911,6 +70953,7 @@ return {
    },
   ["syn"] = {
    [1] = "Hell Knight Ingrid",
+   [2] = "마계기사 잉그리드",
    },
   },
  [6555] = {
@@ -71111,6 +71154,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "마마 푸릿!?",
    },
   },
  [6576] = {
@@ -80064,9 +80108,10 @@ return {
  [7478] = {
   ["main"] = "Toaru Hikuushi e no Tsuioku",
   ["official"] = {
-   [1] = "Princezna a pilot",
-   [2] = "The Princess and the Pilot",
-   [3] = "とある飛空士への追憶",
+   [1] = "A Princesa e o Piloto",
+   [2] = "Princezna a pilot",
+   [3] = "The Princess and the Pilot",
+   [4] = "とある飛空士への追憶",
    },
   ["short"] = {
    },
@@ -80274,6 +80319,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "미숙모",
    },
   },
  [7506] = {
@@ -92608,7 +92654,8 @@ return {
  [8788] = {
   ["main"] = "Gekijouban Fairy Tail: Houou no Miko",
   ["official"] = {
-   [1] = "劇場版 FAIRY TAIL 鳳凰の巫女",
+   [1] = "Fairy Tail le film: La prêtresse du Phœnix",
+   [2] = "劇場版 FAIRY TAIL 鳳凰の巫女",
    },
   ["short"] = {
    },
@@ -97275,7 +97322,8 @@ return {
   ["official"] = {
    [1] = "My Teen Romantic Comedy SNAFU",
    [2] = "My Teen Romantic Comedy: SNAFU",
-   [3] = "やはり俺の青春ラブコメはまちがっている.",
+   [3] = "Yahari Ore no Seishun Love Come wa Machigatteiru",
+   [4] = "やはり俺の青春ラブコメはまちがっている.",
    },
   ["short"] = {
    [1] = "Oregairu",
@@ -97751,7 +97799,8 @@ return {
   ["official"] = {
    [1] = "AMNESIA",
    [2] = "Amnesia",
-   [3] = "암네시아",
+   [3] = "Амнезия",
+   [4] = "암네시아",
    },
   ["short"] = {
    },
@@ -98738,6 +98787,7 @@ return {
    [1] = "ロウきゅーぶ! 智花のいちごサンデー",
    },
   ["short"] = {
+   [1] = "RKB OVA",
    },
   ["syn"] = {
    },
@@ -99221,7 +99271,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "The Wind Is Rising",
+   [1] = "The Wind Rises",
    },
   },
  [9515] = {
@@ -99781,6 +99831,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Когда плачут цикады: Побег",
    },
   },
  [9575] = {
@@ -100086,7 +100137,8 @@ return {
   ["main"] = "Gin no Saji",
   ["official"] = {
    [1] = "Silver Spoon",
-   [2] = "銀の匙 Silver Spoon",
+   [2] = "الملعقة الفضية",
+   [3] = "銀の匙 Silver Spoon",
    },
   ["short"] = {
    [1] = "Ginsaji",
@@ -101180,7 +101232,7 @@ return {
   ["main"] = "Gen`ei o Kakeru Taiyou",
   ["official"] = {
    [1] = "Day Break Illusion",
-   [2] = "幻影ヲ駆ケル太陽",
+   [2] = "幻影ヲ駆ケル太陽 il sole penetra le illusioni",
    },
   ["short"] = {
    [1] = "geneitaiyo",
@@ -101293,6 +101345,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "有你的小镇",
    },
   },
  [9752] = {
@@ -102288,6 +102341,7 @@ return {
    [1] = "キルラキル",
    },
   ["short"] = {
+   [1] = "klk",
    },
   ["syn"] = {
    [1] = "KILL la KILL",
@@ -102676,11 +102730,13 @@ return {
  [9921] = {
   ["main"] = "Giovanni no Shima",
   ["official"] = {
-   [1] = "ジョバンニの島",
+   [1] = "Остров Джованни",
+   [2] = "ジョバンニの島",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Giovanni`s Island",
    },
   },
  [9922] = {
@@ -103803,16 +103859,6 @@ return {
   ["syn"] = {
    },
   },
- [10062] = {
-  ["main"] = "Naruto SD: Rock Lee no Seishun Full-Power Ninden Mou Iccho",
-  ["official"] = {
-   [1] = "NARUTO-ナルト- SD ロック・リーの青春フルパワー忍伝 もういっちょ",
-   },
-  ["short"] = {
-   },
-  ["syn"] = {
-   },
-  },
  [10064] = {
   ["main"] = "Watashi ga Motenai no wa Dou Kangaete mo Omaera ga Warui! (2014)",
   ["official"] = {
@@ -103873,10 +103919,160 @@ return {
   ["syn"] = {
    },
   },
- [10070] = {
-  ["main"] = "Hoshizora e Kakaru Hashi OVA",
+ [10071] = {
+  ["main"] = "Kaitou Gari no Nipponjin Kouryakuhou",
   ["official"] = {
-   [1] = "星空へ架かる橋 OVAスペシャル",
+   [1] = "怪盗ガリーの日本人攻略法!",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10073] = {
+  ["main"] = "Mai Zhu",
+  ["official"] = {
+   [1] = "卖猪",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10074] = {
+  ["main"] = "Peeping Life: YouTuber-kun",
+  ["official"] = {
+   [1] = "Peeping Life ユーチューバ―くん",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10075] = {
+  ["main"] = "MINT",
+  ["official"] = {
+   [1] = "MINT",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10076] = {
+  ["main"] = "Nepos Napos",
+  ["official"] = {
+   [1] = "ネポス・ナポス",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10077] = {
+  ["main"] = "Goannaishimasu Another World E",
+  ["official"] = {
+   [1] = "ご案内します アナザーワールドへ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10079] = {
+  ["main"] = "Bikyaku Seido Kaichou Ai",
+  ["official"] = {
+   [1] = "美脚性奴会長 亜衣",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10080] = {
+  ["main"] = "Toki Kono Chikyuu (Hoshi) no Mirai o Mitsumete",
+  ["official"] = {
+   [1] = "トキ この地球（ほし）の未来を見つめて",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10081] = {
+  ["main"] = "Kubbe Kort Animasjon",
+  ["official"] = {
+   [1] = "キュッパのアニメ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10082] = {
+  ["main"] = "Starry Tales: Seiza wa Toki o Koete",
+  ["official"] = {
+   [1] = "スターリーテイルズ -星座は時をこえて-",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10084] = {
+  ["main"] = "Yonimo Kimyou na Man Gatarou",
+  ["official"] = {
+   [1] = "世にも奇妙な漫☆画太郎",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10085] = {
+  ["main"] = "Jigoku Koushien",
+  ["official"] = {
+   [1] = "地獄甲子園",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10086] = {
+  ["main"] = "Hinata no Aoshigure",
+  ["official"] = {
+   [1] = "陽なたのアオシグレ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10087] = {
+  ["main"] = "Shashin kan",
+  ["official"] = {
+   [1] = "寫眞館",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10090] = {
+  ["main"] = "Mini Vanguard",
+  ["official"] = {
+   [1] = "みにヴァン",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10091] = {
+  ["main"] = "Fate/Kaleid Liner Prisma Illya 2wei!",
+  ["official"] = {
+   [1] = "Fate/kaleid liner プリズマ☆イリヤ ツヴァイ!",
    },
   ["short"] = {
    },
