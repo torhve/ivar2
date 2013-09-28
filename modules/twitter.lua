@@ -2,10 +2,31 @@ local simplehttp = require'simplehttp'
 local json = require'json'
 local html2unicode = require'html'
 local base64 = require 'base64'
+local sql = require'lsqlite3'
 
 local access_token
 local key = ivar2.config.twitterApiKey
 local secret = ivar2.config.twitterApiSecret
+
+if(not ivar2.timers) then ivar2.timers = {} end
+
+local function openDb()
+	local db = sql.open("cache/twitter.sql")
+	db:exec([[
+		CREATE TABLE IF NOT EXISTS twitter (
+			screen_name text,
+			destination text,
+			UNIQUE (screen_name, destination) ON CONFLICT REPLACE
+		);
+	]])
+	db:exec([[
+		CREATE TABLE IF NOT EXISTS last (
+			screen_name text UNIQUE,
+			since_id text
+		);
+	]])
+	return db
+end
 
 local function outputTweet(self, source, destination, info)
 	local name = info.user.name
@@ -29,7 +50,7 @@ local function outputTweet(self, source, destination, info)
 	end
 
 	table.insert(out, tweet)
-	self:Msg('privmsg', destination, source, table.concat(out, ' '))
+	ivar2:Msg('privmsg', destination, source, table.concat(out, ' '))
 end
 
 local function getStatus(self, source, destination, tid)
@@ -46,6 +67,97 @@ local function getStatus(self, source, destination, tid)
 	)
 end
 
+local function saveSince(tweet)
+	if tweet then
+		local db = openDb()
+		local insStmt = db:prepare("UPDATE last SET since_id = ? WHERE screen_name = ?")
+		local code = insStmt:bind_values(tweet.id_str, tweet.user.screen_name)
+		code = insStmt:step()
+		code = insStmt:finalize()
+		db:close()
+	end
+end
+
+local function tPoll(self)
+	local db = openDb()
+	for row in db:nrows('SELECT DISTINCT twitter.screen_name, since_id FROM twitter JOIN last ON twitter.screen_name=last.screen_name') do
+		local url = string.format('https://api.twitter.com/1.1/statuses/user_timeline.json?exclude_replies=true&screen_name=%s', row.screen_name)
+		if tonumber(row.since_id) > 0 then
+			url = url .. string.format('&since_id=%s', row.since_id)
+		else
+			local initial_count = 1
+			url = url .. string.format('&count=%s', initial_count)
+		end
+		simplehttp({
+				url,
+				headers = {
+					['Authorization'] = string.format("Bearer %s", access_token)
+				},
+			},
+			function(data)
+				local info = json.decode(data)
+				local tweet = info[1]
+				if tweet then 
+					saveSince(tweet)
+
+					local destinations = {}
+					local stmt = openDb():prepare('SELECT destination FROM twitter WHERE screen_name=?')
+					local code = stmt:bind_values(tweet.user.screen_name)
+					for row in stmt:nrows() do
+						table.insert(destinations, row.destination)
+					end
+
+					for _,tweet in pairs(info) do
+						for _, destination in pairs(destinations) do
+							outputTweet(nil, nil, destination, tweet)
+						end
+					end
+				end
+			end
+		)
+		
+	end
+	db:close()
+end
+
+local function tFollow(self, source, destination, screen_name)
+	if(destination == self.config.nick) then
+		-- Send the respons as a PM.
+		destination = source.nick
+	end
+	local db = openDb()
+	local insStmt = db:prepare("INSERT INTO twitter (screen_name, destination) VALUES(?, ?)")
+	local code = insStmt:bind_values(screen_name, destination)
+	code = insStmt:step()
+	code = insStmt:finalize()
+	local insStmt = db:prepare("INSERT INTO last (screen_name, since_id) VALUES(?, ?)")
+	local code = insStmt:bind_values(screen_name, '0')
+	code = insStmt:step()
+	code = insStmt:finalize()
+	db:close()
+	-- TODO set up handler
+	self:Msg('privmsg', destination, source, 'Now following \002%s\002', screen_name)
+end
+
+local function tunFollow(self, source, destination, screen_name)
+	local db = openDb()
+	--[[local insStmt = db:prepare("DELETE FROM last WHERE screen_name = ?")
+	if insStmt then
+		local code = insStmt:bind_values(screen_name)
+		code = insStmt:step()
+		code = insStmt:finalize()
+	end
+	--]]
+	local insStmt = db:prepare("DELETE FROM twitter WHERE screen_name = ? AND destination = ?")
+	if insStmt then
+		local code = insStmt:bind_values(screen_name, destination)
+		code = insStmt:step()
+		code = insStmt:finalize()
+	end
+	db:close()
+	-- TODO set up handler
+	self:Msg('privmsg', destination, source, 'Not following \002%s\002', screen_name)
+end
 
 local function getLatestStatuses(self, source, destination, screen_name, count)
 	if not count then
@@ -96,6 +208,28 @@ end
 -- get initial token
 getToken()
 
+local id = 'twitterUpdater'
+local runningTimer = ivar2.timers[id]
+
+-- stop any running timer
+if(runningTimer) then
+	-- cancel existing timer
+	runningTimer:stop(ivar2.Loop)
+end
+
+local duration = 60
+-- start new poller
+local timer = ev.Timer.new(
+	function(loop, timer, revents)
+		tPoll()
+	end,
+	5,
+	duration
+)
+ivar2.timers[id] = timer
+timer:start(ivar2.Loop)
+
+
 return {
 	PRIVMSG = {
 		['^%ptwitter (%d+)%s*$'] = function(self, source, destination, tid)
@@ -115,6 +249,16 @@ return {
 		end,
 		['^%ptweet ([a-zA-Z0-9_]+) (%d+)$'] = function(self, source, destination, screen_name, count)
 			getLatestStatuses(self, source, destination, screen_name, count)
+		end,
+		['^%ptfollow ([a-zA-Z0-9_]+)%s*$'] = function(self, source, destination, screen_name)
+			tFollow(self, source, destination, screen_name)
+			--tPoll(self, source, destination)
+		end,
+		['^%ptunfollow ([a-zA-Z0-9_]+)%s*$'] = function(self, source, destination, screen_name)
+			tunFollow(self, source, destination, screen_name)
+		end,
+		['^%ptpoll$'] = function(self, source, destination)
+			tPoll(self, source, destination)
 		end,
 	},
 }
