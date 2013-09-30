@@ -127,7 +127,7 @@ local events = {
 
 	['005'] = {
 		core = {
-			function(self, source, param, _)
+			function(self, source, _, param)
 				local network = param:match("NETWORK=([^ ]+)")
 				if(network) then
 					self.network = network
