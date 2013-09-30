@@ -11,7 +11,9 @@ local secret = ivar2.config.twitterApiSecret
 if(not ivar2.timers) then ivar2.timers = {} end
 
 local function openDb()
-    local db = sql.open("cache/twitter.sql")
+    -- Create a new DB if non existant using the current network in the file path
+    local dbfilename = string.format("cache/twitter.%s.db", ivar2.network)
+    local db = sql.open(dbfilename)
     db:exec([[
         CREATE TABLE IF NOT EXISTS twitter (
             screen_name text,
@@ -191,7 +193,7 @@ local function tunFollow(self, source, destination, screen_name)
         code = insStmt:finalize()
     end
     db:close()
-    self:Msg('privmsg', destination, source, 'Not following \002%s\002', screen_name)
+    self:Msg('privmsg', destination, source, 'Stopped following \002%s\002', screen_name)
 end
 
 local function getLatestStatuses(self, source, destination, screen_name, count)
