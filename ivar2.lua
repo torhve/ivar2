@@ -12,6 +12,7 @@ package.cpath = table.concat({
 }, ';') .. package.cpath
 
 local connection = require'handler.connection'
+local uri_mod = require'handler.uri'
 local nixio = require'nixio'
 local ev = require'ev'
 local event = require 'event'
@@ -485,8 +486,9 @@ function ivar2:Connect(config)
 		bindHost, bindPort = unpack(config.bind)
 	end
 
-	self:Log('info', 'Connecting to %s:%s.', config.host, config.port)
-	self.socket = connection.tcp(loop, self, config.host, config.port, bindHost, bindPort)
+	local uri = uri_mod.parse(uri)
+	self:Log('info', 'Connecting to %s:%s.', uri.host, uri.port)
+	self.socket = connection.uri(loop, self, config.uri)
 
 	self:DisableAllModules()
 	self:LoadModules()
