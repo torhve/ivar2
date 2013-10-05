@@ -524,6 +524,7 @@ function ivar2:Reload()
 		message.Loop = self.Loop
 		message.channels = self.channels
 		message.event = self.event
+		message.network = self.network
 		-- Clear the registered events
 		message.event:ClearAll()
 
