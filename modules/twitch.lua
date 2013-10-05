@@ -51,7 +51,7 @@ local parseData = function(source, destination, data, search)
 			)
 		end
 		ins(
-			"\002%s\002 %d watching %s",
+			"http://twitch.tv/\002%s\002 %d watching %s",
 			stream.name, stream.viewers, stream.game
 		)
 		ivar2:Msg('privmsg', destination, source, table.concat(out, " "))
