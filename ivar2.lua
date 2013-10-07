@@ -236,7 +236,8 @@ local client_mt = {
 	handle_connected = function(self)
 		if(not self.updated) then
 			self:Nick(self.config.nick)
-			self:Send(string.format('USER %s %s blah :%s', self.config.ident, self.config.host, self.config.realname))
+			local uri = uri_mod.parse(self.config.uri)
+			self:Send(string.format('USER %s %s blah :%s', self.config.ident, uri.host, self.config.realname))
 		else
 			self.updated = nil
 		end
