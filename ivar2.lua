@@ -481,12 +481,7 @@ function ivar2:Connect(config)
 	self.timeout = ev.Timer.new(self.timeoutFunc(self), 60*6, 60*6)
 	self.timeout:start(loop)
 
-	local bindHost, bindPort
-	if(config.bind) then
-		bindHost, bindPort = unpack(config.bind)
-	end
-
-	local uri = uri_mod.parse(uri)
+	local uri = uri_mod.parse(config.uri)
 	self:Log('info', 'Connecting to %s:%s.', uri.host, uri.port)
 	self.socket = connection.uri(loop, self, config.uri)
 
