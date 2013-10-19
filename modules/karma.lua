@@ -1,5 +1,21 @@
 local sql = require'lsqlite3'
 
+local function openDB()
+	local dbfilename = string.format("cache/karma.%s.sql", ivar2.network)
+	local db = sql.open(dbfilename)
+
+	db:exec([[
+		CREATE TABLE IF NOT EXISTS karma (
+			item text,
+			time timestamp default current_timestamp,
+			change integer,
+			nick text
+		);
+	]])
+
+	return db
+end
+
 local itemIsNick = function(nick)
 	for channel, data in pairs(ivar2.channels) do
 		for chanNick in pairs(data.nicks) do
@@ -9,7 +25,7 @@ local itemIsNick = function(nick)
 end
 
 local function outputKarma(self, source, destination, item)
-	local db = sql.open("cache/karma.sql")
+	local db = openDB()
 	local selectStmt  = db:prepare('SELECT SUM(change) AS sum FROM karma WHERE LOWER(item) = LOWER(?)')
 	selectStmt:bind_values(item)
 
@@ -52,7 +68,7 @@ local function handleKarma(self, source, destination, item, sign, change)
 		end
 	end
 
-	local db = sql.open("cache/karma.sql")
+	local db = openDB()
 	local insStmt = db:prepare("INSERT INTO karma (item, change, nick) VALUES(?, ?, ?)")
 	local code = insStmt:bind_values(item, value, source.nick)
 	code = insStmt:step()
@@ -64,7 +80,7 @@ local function handleKarma(self, source, destination, item, sign, change)
 end
 
 local getKarma = function(self, source, destination, dir, text)
-	local db = sql.open("cache/karma.sql")
+	local db = openDB()
 
 	local out = {}
 
