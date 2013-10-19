@@ -11,6 +11,22 @@ local patterns = {
 	"%f[%S](www%.[%w_-%%]+%.%S+)",
 }
 
+local openDB = function()
+	local dbfilename = string.format("cache/urls.%s.sql", ivar2.network)
+	local db = sql.open(dbfilename)
+
+	db:exec([[
+		CREATE TABLE IF NOT EXISTS urls (
+			nick text,
+			timestamp integer,
+			url text,
+			channel text
+		);
+	]])
+
+	return db
+end
+
 -- RFC 2396, section 1.6, 2.2, 2.3 and 2.4.1.
 local smartEscape = function(str)
 	local pathOffset = str:match("//[^/]+/()")
@@ -31,7 +47,7 @@ end
 
 -- check for existing url
 local checkOld = function(source, destination, url)
-	local db = sql.open("cache/urls.sql")
+	local db = openDB()
 	-- create a select handle
 	local sth = db:prepare([[
 		SELECT
@@ -68,7 +84,7 @@ local checkOld = function(source, destination, url)
 end
 
 local updateDB = function(source, destination, url)
-	local db = sql.open("cache/urls.sql")
+	local db = openDB()
 
 	local sth = db:prepare[[
 		INSERT INTO urls(nick, channel, url, timestamp)
