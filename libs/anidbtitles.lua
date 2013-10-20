@@ -8804,7 +8804,7 @@ return {
   ["syn"] = {
    [1] = "The Heroic Legend of Arislan - Age of Heroes",
    [2] = "The Heroic Legend of Arslan - Age of Heroes",
-   [3] = "Героичната легенда за Арислан - Ерата на геройте",
+   [3] = "Героичната легенда за Арислан - Ерата на героите",
    [4] = "حماسه ارسلان",
    },
   },
@@ -17778,6 +17778,7 @@ return {
    [3] = "デジモンアドベンチャー ぼくらのウォーゲーム",
    },
   ["short"] = {
+   [1] = "Digimon Movie 2",
    },
   ["syn"] = {
    [1] = "Digimon: Children`s War Game",
@@ -17791,6 +17792,7 @@ return {
    [2] = "デジモンアドベンチャー02 前編 デジモンハリケーン上陸!! / 後編 超絶進化!! 黄金のデジメンタル",
    },
   ["short"] = {
+   [1] = "Digimon Movie 3",
    },
   ["syn"] = {
    [1] = "Digimon Movie 02 - Digimon Hurricane Touchdown!",
@@ -23606,7 +23608,8 @@ return {
   ["main"] = "Mahou Shoujo Tai Arusu",
   ["official"] = {
    [1] = "Tweeny Witches",
-   [2] = "魔法少女隊アルス",
+   [2] = "Три ведьмы",
+   [3] = "魔法少女隊アルス",
    },
   ["short"] = {
    [1] = "MSTA",
@@ -24553,8 +24556,7 @@ return {
    [4] = "Rai Luolapoika",
    [5] = "Rai, a dzsungel fia",
    [6] = "Ryu, il ragazzo delle caverne",
-   [7] = "Ryu, the Primitive Boy",
-   [8] = "原始少年リュウ",
+   [7] = "原始少年リュウ",
    },
   ["short"] = {
    [1] = "GSR",
@@ -24562,6 +24564,7 @@ return {
   ["syn"] = {
    [1] = "Chłopiec z Parku Jurajskiego",
    [2] = "Genshi Shonen Ryu",
+   [3] = "Ryu, the Primitive Boy",
    },
   },
  [1687] = {
@@ -26194,7 +26197,8 @@ return {
  [1826] = {
   ["main"] = "Dragon Slayer Eiyuu Densetsu: Ouji no Tabidachi",
   ["official"] = {
-   [1] = "ドラゴンスレイヤー英雄伝説 王子の旅立ち",
+   [1] = "Dragon Slayer: A Lenda de um Herói",
+   [2] = "ドラゴンスレイヤー英雄伝説 王子の旅立ち",
    },
   ["short"] = {
    [1] = "Dragon Slayer",
@@ -36571,24 +36575,24 @@ return {
  [2674] = {
   ["main"] = "Sorairo no Tane",
   ["official"] = {
-   [1] = "The Sky-Colored Seed",
-   [2] = "そらいろのたね",
+   [1] = "そらいろのたね",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "The Sky-Colored Seed",
    },
   },
  [2675] = {
   ["main"] = "Nandarou",
   ["official"] = {
    [1] = "Ce e?",
-   [2] = "What is It?",
-   [3] = "なんだろう",
+   [2] = "なんだろう",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "What is It?",
    },
   },
  [2679] = {
@@ -40420,15 +40424,15 @@ return {
  [3079] = {
   ["main"] = "Astroganger",
   ["official"] = {
-   [1] = "Astro Ganga",
-   [2] = "Astroganga",
-   [3] = "غزاة من الفضاء",
-   [4] = "アストロガンガー",
+   [1] = "Astroganga",
+   [2] = "غزاة من الفضاء",
+   [3] = "アストロガンガー",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "جونغر",
+   [1] = "Astro Ganga",
+   [2] = "جونغر",
    },
   },
  [3080] = {
@@ -41432,17 +41436,17 @@ return {
   ["main"] = "Sengoku Kitan Youtouden",
   ["official"] = {
    [1] = "Magiczny miecz ninja",
-   [2] = "Yotoden: Chronicle of the Warlord Period",
-   [3] = "戦国奇譚妖刀伝",
+   [2] = "O Espadachim Ninja",
+   [3] = "Yotoden: Chronicle of the Warlord Period",
+   [4] = "戦国奇譚妖刀伝",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Espadachim Ninja",
-   [2] = "Sengoku Kidan Youtouden",
-   [3] = "Zaklęty miecz ninja",
-   [4] = "Гнев ниндзя",
-   [5] = "Йотоден: Хроники военного времени",
+   [1] = "Sengoku Kidan Youtouden",
+   [2] = "Zaklęty miecz ninja",
+   [3] = "Гнев ниндзя",
+   [4] = "Йотоден: Хроники военного времени",
    },
   },
  [3165] = {
@@ -47059,12 +47063,12 @@ return {
  [3682] = {
   ["main"] = "Umacha",
   ["official"] = {
-   [1] = "Delicious Tea",
-   [2] = "旨茶",
+   [1] = "旨茶",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Delicious Tea",
    },
   },
  [3683] = {
@@ -49081,35 +49085,35 @@ return {
  [4103] = {
   ["main"] = "Yadosagashi",
   ["official"] = {
-   [1] = "Looking for a Home",
-   [2] = "やどさがし",
+   [1] = "やどさがし",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Looking for a Home",
    },
   },
  [4104] = {
   ["main"] = "Hoshi o Katta Hi",
   ["official"] = {
-   [1] = "The Day I Cropped a Star",
-   [2] = "星をかった日",
+   [1] = "星をかった日",
    },
   ["short"] = {
    },
   ["syn"] = {
    [1] = "Hoshi wo Katta Hi",
+   [2] = "The Day I Cropped a Star",
    },
   },
  [4105] = {
   ["main"] = "Mizugumo Monmon",
   ["official"] = {
-   [1] = "Water Spider Monmon",
-   [2] = "水グモもんもん",
+   [1] = "水グモもんもん",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Water Spider Monmon",
    },
   },
  [4106] = {
@@ -62222,6 +62226,7 @@ return {
    },
   ["syn"] = {
    [1] = "Debt Sisters",
+   [2] = "차금 자매",
    },
   },
  [5453] = {
@@ -66216,6 +66221,7 @@ return {
    },
   ["short"] = {
    [1] = "Index",
+   [2] = "Index1",
    },
   ["syn"] = {
    [1] = "To Aru Majutsu no Index",
@@ -66488,7 +66494,8 @@ return {
   ["official"] = {
    [1] = "Pororo - Le petit pingouin",
    [2] = "Pororo - The Little Penguin",
-   [3] = "뽀롱뽀롱 뽀로로",
+   [3] = "ポロンポロン ポロロ",
+   [4] = "뽀롱뽀롱 뽀로로",
    },
   ["short"] = {
    [1] = "Pororo",
@@ -66508,7 +66515,7 @@ return {
    },
   },
  [6022] = {
-  ["main"] = "Futago no Monchhichi",
+  ["main"] = "Futago no Monchicchi",
   ["official"] = {
    [1] = "ふたごのモンチッチ",
    },
@@ -67627,6 +67634,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "진 린월",
    },
   },
  [6141] = {
@@ -68708,6 +68716,7 @@ return {
    },
   ["syn"] = {
    [1] = "Hypnosis Humiliation School",
+   [2] = "최면 능욕 학원",
    },
   },
  [6271] = {
@@ -91545,7 +91554,7 @@ return {
    [2] = "Nisemonogatari (Histoires d`Imposture)",
    [3] = "伪物语",
    [4] = "偽物語",
-   [5] = "가짜 이야기",
+   [5] = "니세모노가타리",
    },
   ["short"] = {
    [1] = "NMG",
@@ -91553,6 +91562,7 @@ return {
   ["syn"] = {
    [1] = "Bogustory",
    [2] = "Impostory",
+   [3] = "가짜 이야기",
    },
   },
  [8659] = {
@@ -96399,12 +96409,13 @@ return {
   ["syn"] = {
    [1] = "Kabukimonogatari",
    [2] = "Koimonogatari",
-   [3] = "Nekomonogatari (Shiro)",
-   [4] = "Onimonogatari",
-   [5] = "Otorimonogatari",
-   [6] = "Story Series: Second Season",
-   [7] = "Zenmonogatari",
-   [8] = "猫物語(白)",
+   [3] = "Monogatari SS",
+   [4] = "Nekomonogatari (Shiro)",
+   [5] = "Onimonogatari",
+   [6] = "Otorimonogatari",
+   [7] = "Story Series: Second Season",
+   [8] = "Zenmonogatari",
+   [9] = "猫物語(白)",
    },
   },
  [9184] = {
@@ -97971,12 +97982,12 @@ return {
   ["official"] = {
    [1] = "AMNESIA",
    [2] = "Amnesia",
-   [3] = "Амнезия",
-   [4] = "암네시아",
+   [3] = "암네시아",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Амнезия",
    },
   },
  [9359] = {
@@ -98805,6 +98816,7 @@ return {
    [1] = "Nekomonogatari Noir",
    [2] = "猫物語(黒)",
    [3] = "猫物语（黑）",
+   [4] = "네코모노가타리",
    },
   ["short"] = {
    [1] = "nkmg",
@@ -98814,10 +98826,12 @@ return {
    [1] = "Cat Story (Black)",
    [2] = "Nekomonogatari Black",
    [3] = "Tsubasa Family",
+   [4] = "고양이 이야기 (흑)",
+   [5] = "네코모노가타리 (흑)",
    },
   },
  [9454] = {
-  ["main"] = "Saint Oniisan",
+  ["main"] = "Saint Onii-san",
   ["official"] = {
    [1] = "聖☆おにいさん",
    },
@@ -99093,7 +99107,8 @@ return {
   ["main"] = "Tokyo Ravens",
   ["official"] = {
    [1] = "Tokyo Ravens",
-   [2] = "東京レイヴンズ",
+   [2] = "东京乌鸦",
+   [3] = "東京レイヴンズ",
    },
   ["short"] = {
    },
@@ -99837,7 +99852,8 @@ return {
   ["official"] = {
    [1] = "DEVIL SURVIVOR 2 the ANIMATION",
    [2] = "Devil Survivor 2 the Animation",
-   [3] = "نجات یافته اهریمنی 2",
+   [3] = "Devil Survivor 2: The Animation",
+   [4] = "نجات یافته اهریمنی 2",
    },
   ["short"] = {
    },
@@ -99953,7 +99969,8 @@ return {
   ["official"] = {
    [1] = "Valvrave the Liberator",
    [2] = "Valvrave: the liberator",
-   [3] = "革命機ヴァルヴレイヴ",
+   [3] = "革命机Valvrave",
+   [4] = "革命機ヴァルヴレイヴ",
    },
   ["short"] = {
    [1] = "valvrave",
@@ -100192,6 +100209,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Плахият велосипедист",
+   [2] = "Трусливый Велосипедист",
    },
   },
  [9592] = {
@@ -100871,7 +100890,8 @@ return {
   ["main"] = "Machine-Doll wa Kizutsukanai",
   ["official"] = {
    [1] = "Unbreakable Machine-Doll",
-   [2] = "機巧少女[マシンドール]は傷つかない",
+   [2] = "机巧少女不受伤",
+   [3] = "機巧少女[マシンドール]は傷つかない",
    },
   ["short"] = {
    },
@@ -100962,6 +100982,7 @@ return {
    [2] = "げんしけん 二代目",
    },
   ["short"] = {
+   [1] = "Genshiken Gen2",
    },
   ["syn"] = {
    [1] = "Genshiken Second Generation",
@@ -101828,9 +101849,10 @@ return {
    [2] = "俺の脳内選択肢が, 学園ラブコメを全力で邪魔している",
    },
   ["short"] = {
-   [1] = "NouCome",
-   [2] = "noukome",
-   [3] = "のうコメ",
+   [1] = "Nokome",
+   [2] = "NouCome",
+   [3] = "noukome",
+   [4] = "のうコメ",
    },
   ["syn"] = {
    [1] = "My Mental Multiple-Choice Power Is Completely Ruining My School Romantic Comedy",
@@ -102635,8 +102657,10 @@ return {
    },
   ["syn"] = {
    [1] = "Ace of Diamond",
-   [2] = "Daiya no Ace",
-   [3] = "Diamond no Ace",
+   [2] = "Daiya no A",
+   [3] = "Daiya no Ace",
+   [4] = "Daiya no Eisu",
+   [5] = "Diamond no Ace",
    },
   },
  [9882] = {
@@ -102838,7 +102862,8 @@ return {
  [9905] = {
   ["main"] = "Aoki Hagane no Arpeggio: Ars Nova",
   ["official"] = {
-   [1] = "蒼き鋼のアルペジオ -ARS NOVA-",
+   [1] = "苍蓝钢铁战舰",
+   [2] = "蒼き鋼のアルペジオ -ARS NOVA-",
    },
   ["short"] = {
    },
@@ -103254,7 +103279,8 @@ return {
  [9949] = {
   ["main"] = "Kakumeiki Valvrave 2",
   ["official"] = {
-   [1] = "革命機ヴァルヴレイヴ 2",
+   [1] = "革命机Valvrave 2",
+   [2] = "革命機ヴァルヴレイヴ 2",
    },
   ["short"] = {
    },
@@ -103372,6 +103398,7 @@ return {
   ["main"] = "Galilei Donna",
   ["official"] = {
    [1] = "ガリレイドンナ",
+   [2] = "伽利略女神",
    },
   ["short"] = {
    },
@@ -105219,6 +105246,170 @@ return {
   ["main"] = "Hana no Zundamaru",
   ["official"] = {
    [1] = "花のずんだ丸",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10197] = {
+  ["main"] = "Seitokai Yakuindomo 2",
+  ["official"] = {
+   [1] = "生徒会役員共 2",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10198] = {
+  ["main"] = "Strike Witches 3",
+  ["official"] = {
+   [1] = "ストライクウィッチーズ 3",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10199] = {
+  ["main"] = "Parol no Mirai Shima",
+  ["official"] = {
+   [1] = "パロルのみらい島",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10200] = {
+  ["main"] = "Ookii 1 Nensei to Chiisana 2 Nensei",
+  ["official"] = {
+   [1] = "大きい1年生と小さな2年生",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "大きい一年生と小さな二年生",
+   },
+  },
+ [10201] = {
+  ["main"] = "Kuro no Sumika: Chronus",
+  ["official"] = {
+   [1] = "黒の栖-クロノス-",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10202] = {
+  ["main"] = "Harmonie",
+  ["official"] = {
+   [1] = "アルモニ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10203] = {
+  ["main"] = "Dokidoki Gakuen Kessen!! Youki Daimashiro",
+  ["official"] = {
+   [1] = "ドキドキ学園 決戦!!妖奇大魔城",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10204] = {
+  ["main"] = "Music S.T.A.R.T!!",
+  ["official"] = {
+   [1] = "Music S.T.A.R.T!!",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10205] = {
+  ["main"] = "Onee-chan ga Kita",
+  ["official"] = {
+   [1] = "お姉ちゃんが来た",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10206] = {
+  ["main"] = "JoJo no Kimyou na Bouken: Stardust Crusaders",
+  ["official"] = {
+   [1] = "ジョジョの奇妙な冒険 スターダストクルセイダース",
+   },
+  ["short"] = {
+   [1] = "JJBASC",
+   },
+  ["syn"] = {
+   [1] = "JoJo`s Bizarre Adventure Part 3",
+   },
+  },
+ [10207] = {
+  ["main"] = "DPR Special Movie",
+  ["official"] = {
+   [1] = "DPRスペシャルムービー",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10208] = {
+  ["main"] = "Ore no Nounai Sentakushi ga, Gakuen Lovecome o Zenryoku de Jama Shiteiru (2014)",
+  ["official"] = {
+   [1] = "俺の脳内選択肢が, 学園ラブコメを全力で邪魔している (2014)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10209] = {
+  ["main"] = "Osamu to Musashi",
+  ["official"] = {
+   [1] = "オサムとムサシ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Osamu and Musashi",
+   },
+  },
+ [10210] = {
+  ["main"] = "Kin`iro no Chord 3",
+  ["official"] = {
+   [1] = "金色のコルダ3",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10211] = {
+  ["main"] = "Yakusoku",
+  ["official"] = {
+   [1] = "約束",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10212] = {
+  ["main"] = "Sekai Seifuku: Bouryaku no Zvezda",
+  ["official"] = {
+   [1] = "世界征服　~謀略のズヴィズダー~",
    },
   ["short"] = {
    },
