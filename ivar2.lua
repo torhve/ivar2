@@ -12,6 +12,7 @@ package.cpath = table.concat({
 }, ';') .. package.cpath
 
 local connection = require'handler.connection'
+local uri_mod = require'handler.uri'
 local nixio = require'nixio'
 local ev = require'ev'
 local event = require 'event'
@@ -101,10 +102,15 @@ local events = {
 
 				local dir, mode, nick = modeLine:match('([+%-])([^ ]+) ?(.*)$')
 				local modes
-				if(nick == '') then
-					modes = self.channels[channel].modes
-				else
+
+				if(self.channels[channel].nicks[nick]) then
 					modes = self.channels[channel].nicks[nick].modes
+				elseif(nick == '') then
+					modes = self.channels[channel].modes
+				end
+
+				if(not modes) then
+					return
 				end
 
 				if(dir == '+') then
@@ -250,7 +256,8 @@ local client_mt = {
 				self:Send(string.format('PASS %s', self.config.password))
 			end
 			self:Nick(self.config.nick)
-			self:Send(string.format('USER %s %s blah :%s', self.config.ident, self.config.host, self.config.realname))
+			local uri = uri_mod.parse(self.config.uri)
+			self:Send(string.format('USER %s %s blah :%s', self.config.ident, uri.host, self.config.realname))
 		else
 			self.updated = nil
 		end
@@ -541,6 +548,7 @@ function ivar2:Reload()
 		message.Loop = self.Loop
 		message.channels = self.channels
 		message.event = self.event
+		message.network = self.network
 		-- Clear the registered events
 		message.event:ClearAll()
 
