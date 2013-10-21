@@ -178,9 +178,15 @@ end
 
 return {
 	PRIVMSG = {
-		['^.xe (%S+) (%S+) ?(.*)$'] = handleExchange,
-		['^.cur (%S+) (%S+) ?(.*)$'] = handleExchange,
-		['^.jpy'] = function(self, source, destination)
+		['^%pxe (%S+) (%S+) ?(.*)$'] = handleExchange,
+		['^%pcur (%S+) (%S+) ?(.*)$'] = handleExchange,
+		['^%pusd'] = function(self, source, destination)
+			handleExchange(self, source, destination, '1', 'USD', 'NOK')
+		end,
+		['^%peur'] = function(self, source, destination)
+			handleExchange(self, source, destination, '1', 'EUR', 'NOK')
+		end,
+		['^%pjpy'] = function(self, source, destination)
 			handleExchange(self, source, destination, '100', 'JPY', 'NOK')
 		end
 	},
