@@ -2,7 +2,7 @@ local simplehttp = require'simplehttp'
 local html2unicode = require'html'
 local base58 = require'base58'
 
-customHosts['farm%d+%.static%.flickr.com'] = function(queue, info)
+local handler = function(queue, info)
 	local path = info.path
 
 	-- http://farm{farm-id}.static.flickr.com/{server-id}/{id}_{secret}.jpg
@@ -35,3 +35,6 @@ customHosts['farm%d+%.static%.flickr.com'] = function(queue, info)
 		return true
 	end
 end
+
+customHosts['farm%d+%.static%.flickr.com'] = handler
+customHosts['farm%d+%.staticflickr.com'] = handler
