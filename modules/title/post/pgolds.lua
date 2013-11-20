@@ -32,7 +32,6 @@ local checkOlds = function(dbh, source, destination, url)
         ))
 
     -- execute select with a url bound to variable
-    log:info(string.format('conf %s %s', url, destination))
     sth:execute(url, destination)
 
     -- get list of column names in the result set
@@ -41,6 +40,7 @@ local checkOlds = function(dbh, source, destination, url)
     local count = 0
     local nick
     local when
+    local ago
 
     -- iterate over the returned data
     for row in sth:rows() do
@@ -57,14 +57,12 @@ local checkOlds = function(dbh, source, destination, url)
         end
     end
 
-    if count > 0 then
-        return nick, count, ago
-    end
+    return nick, count, ago
 
 end
 
 -- save url to db
-local dbLogUrl = function(dbh, source, destination, msg, url)
+local dbLogUrl = function(dbh, source, destination, url, msg)
     local nick = source.nick
 
     log:info(string.format('Inserting URL into db. %s,%s, %s, %s', nick, destination, msg, url))
@@ -84,10 +82,13 @@ local dbLogUrl = function(dbh, source, destination, msg, url)
     --local ok = dbh:close()
 end
 do
-	return function(source, destination, queue)
+	return function(source, destination, queue, msg)
         local dbh = openDb()
         local nick, count, ago = checkOlds(dbh, source, destination, queue.url)
-        dbLogUrl(dbh, source, destination, queue.url)
+        dbLogUrl(dbh, source, destination, queue.url, msg)
+
+        if not count then return end
+        if count == 0 then return end
 
         -- Check if this module is disabled and just stop here if it is
         if not ivar2:IsModuleDisabled('olds', destination) then
