@@ -337,7 +337,7 @@ return {
 						done = function(self, msg)
 							self.output = msg
 
-							postProcess(source, destination, self)
+							postProcess(source, destination, self, argument)
 							handleOutput(output)
 						end,
 					}
