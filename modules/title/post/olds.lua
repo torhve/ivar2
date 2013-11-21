@@ -93,7 +93,8 @@ do
 		updateDB(source, destination, queue.url)
 
 		-- relativeTimeShort() returns nil if it gets fed os.time().
-		if(not age) then return end
+		-- Don't yell if it's the initial poster.
+		if(not age or (nick and nick:lower() == source.nick:lower())) then return end
 
 		local prepend
 		if(count > 1) then
