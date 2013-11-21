@@ -1,5 +1,8 @@
 local sql = require'lsqlite3'
 local date = require'date'
+local uri = require"handler.uri"
+
+local uri_parse = uri.parse
 
 local patterns = {
 	-- X://Y url
@@ -29,6 +32,12 @@ end
 
 -- check for existing url
 local checkOld = function(source, destination, url)
+	-- Don't lookup root path URLs.
+	local info = uri_parse(url)
+	if(info.path == '' or info.path == '/') then
+		return
+	end
+
 	local db = openDB()
 	-- create a select handle
 	local sth = db:prepare([[
