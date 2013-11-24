@@ -3670,7 +3670,7 @@ return {
   ["main"] = "Gekijouban Aa! Megami-sama!",
   ["official"] = {
    [1] = "Ah! My Goddess - Le film",
-   [2] = "Ah! My Goddess - The Movie",
+   [2] = "Ah! My Goddess: The Movie",
    [3] = "Oh! My Goddess - Der Film",
    [4] = "劇場版 ああっ女神さまっ",
    },
@@ -5543,7 +5543,8 @@ return {
    },
   ["syn"] = {
    [1] = "Street Fighter 2",
-   [2] = "Уличен Боец 2: Филмът",
+   [2] = "Street Fighter II - O Filme",
+   [3] = "Уличен Боец 2: Филмът",
    },
   },
  [314] = {
@@ -5639,11 +5640,12 @@ return {
    [4] = "Lupin - Vévodsví Cagliostro",
    [5] = "Lupin III - Il castello di Cagliostro",
    [6] = "Lupin III. - Cagliostro kastélya",
-   [7] = "Lupin III: The Castle of Cagliostro",
-   [8] = "Lupin Trzeci: Zamek Cagliostro",
-   [9] = "Замок Калиостро",
-   [10] = "Люпен Трети: Замъкът на Каглиостро",
-   [11] = "「ルパン三世」 カリオストロの城",
+   [7] = "Lupin III: O Castelo de Cagliostro",
+   [8] = "Lupin III: The Castle of Cagliostro",
+   [9] = "Lupin Trzeci: Zamek Cagliostro",
+   [10] = "Замок Калиостро",
+   [11] = "Люпен Трети: Замъкът на Каглиостро",
+   [12] = "「ルパン三世」 カリオストロの城",
    },
   ["short"] = {
    [1] = "CoC",
@@ -5995,20 +5997,21 @@ return {
    [4] = "Si tu tends l`oreille",
    [5] = "Stimme des Herzens - Whisper of the Heart",
    [6] = "Sussurro do Coração",
-   [7] = "Susurros del corazón",
-   [8] = "Sydämen kuiskaus",
-   [9] = "Szept serca",
-   [10] = "Südame sosin",
-   [11] = "Whisper of the Heart",
-   [12] = "Yüreğinin Sesi",
-   [13] = "Şoapta Inimii",
-   [14] = "Širdies Šnabždezys",
-   [15] = "Ο Ψίθυρος της Καρδιάς",
-   [16] = "Шепотът на сърцето",
-   [17] = "Шёпот сердца",
-   [18] = "הלחישה שבלב",
-   [19] = "夢幻街少女",
-   [20] = "耳をすませば",
+   [7] = "Susurros del Corazón",
+   [8] = "Susurros del corazón",
+   [9] = "Sydämen kuiskaus",
+   [10] = "Szept serca",
+   [11] = "Südame sosin",
+   [12] = "Whisper of the Heart",
+   [13] = "Yüreğinin Sesi",
+   [14] = "Şoapta Inimii",
+   [15] = "Širdies Šnabždezys",
+   [16] = "Ο Ψίθυρος της Καρδιάς",
+   [17] = "Шепотът на сърцето",
+   [18] = "Шёпот сердца",
+   [19] = "הלחישה שבלב",
+   [20] = "夢幻街少女",
+   [21] = "耳をすませば",
    },
   ["short"] = {
    [1] = "MoS",
@@ -17870,6 +17873,7 @@ return {
    },
   ["syn"] = {
    [1] = "Possession",
+   [2] = "귀점청",
    },
   },
  [1153] = {
@@ -26665,14 +26669,14 @@ return {
  [1856] = {
   ["main"] = "Daishizen no Majuu Bagi",
   ["official"] = {
-   [1] = "Bagi, the Monster of Mighty Nature",
+   [1] = "Baggy",
    [2] = "大自然の魔獣 バギ",
    },
   ["short"] = {
    [1] = "Bagi",
    },
   ["syn"] = {
-   [1] = "Baggy",
+   [1] = "Bagi, the Monster of Mighty Nature",
    [2] = "Taishizen no Makemono Bagi",
    },
   },
@@ -28389,6 +28393,7 @@ return {
    },
   ["syn"] = {
    [1] = "胸キュンはぁとふるCafe",
+   [2] = "가슴 쿵! 하트풀 카페",
    },
   },
  [1987] = {
@@ -31956,18 +31961,19 @@ return {
  [2270] = {
   ["main"] = "Sekai Meisaku Douwa: Aladdin to Mahou no Lamp",
   ["official"] = {
-   [1] = "Aladdin and the Wonderful Lamp",
-   [2] = "Aladdin en de Wonderlamp",
-   [3] = "Aladdin és a csodalámpa",
-   [4] = "Aladdinin Taikalamppu",
-   [5] = "Aladin et la lampe merveilleuse",
-   [6] = "Aladin und die Wunderlampe",
-   [7] = "Aladino e a Lâmpada Mágica",
-   [8] = "Aladinova kouzelná lampa",
-   [9] = "Lampa Aladyna",
-   [10] = "Ο Αλαντίν και το Μαγικό Λυχνάρι",
-   [11] = "علاء الدين والمصباح السحري",
-   [12] = "世界名作童話 アラジンと魔法のランプ",
+   [1] = "Aladdin E A Lâmpada Maravilhosa",
+   [2] = "Aladdin and the Wonderful Lamp",
+   [3] = "Aladdin en de Wonderlamp",
+   [4] = "Aladdin és a csodalámpa",
+   [5] = "Aladdinin Taikalamppu",
+   [6] = "Aladin et la lampe merveilleuse",
+   [7] = "Aladin und die Wunderlampe",
+   [8] = "Aladino e a Lâmpada Mágica",
+   [9] = "Aladinova kouzelná lampa",
+   [10] = "Lampa Aladyna",
+   [11] = "Ο Αλαντίν και το Μαγικό Λυχνάρι",
+   [12] = "علاء الدين والمصباح السحري",
+   [13] = "世界名作童話 アラジンと魔法のランプ",
    },
   ["short"] = {
    [1] = "علاء الدين",
@@ -47582,7 +47588,7 @@ return {
  [3969] = {
   ["main"] = "Kidou Senshi Z Gundam: A New Translation - Koibito-tachi",
   ["official"] = {
-   [1] = "Mobile Suit Zeta Gundam -Lovers-",
+   [1] = "Mobile Suit Zeta Gundam: A New Translation II -Lovers-",
    [2] = "โมบิลสูท Z กันดั้ม ภาค 2 ตอน เลิฟเวอร์",
    [3] = "機動戦士Zガンダム A New Translation 恋人たち",
    },
@@ -47591,7 +47597,7 @@ return {
    },
   ["syn"] = {
    [1] = "Kidou Senshi Z Gundam II: Koibito-tachi",
-   [2] = "Mobile Suit Zeta Gundam: A New Translation II -Lovers-",
+   [2] = "Mobile Suit Zeta Gundam -Lovers-",
    [3] = "ZGII",
    [4] = "机动战士Z高达 恋人们",
    [5] = "機動戦士ZガンダムII 恋人たち",
@@ -50697,7 +50703,8 @@ return {
  [4223] = {
   ["main"] = "Strawberry Panic",
   ["official"] = {
-   [1] = "ストロベリー・パニック",
+   [1] = "Strawberry Panic",
+   [2] = "ストロベリー・パニック",
    },
   ["short"] = {
    [1] = "SPanic",
@@ -52617,6 +52624,7 @@ return {
    [2] = "Samed, el Duende Mágico",
    [3] = "سميد",
    [4] = "おねがい! サミアどん",
+   [5] = "모래요정 바람돌이",
    },
   ["short"] = {
    },
@@ -53721,7 +53729,6 @@ return {
  [4552] = {
   ["main"] = "Whatever you searched for is NOT anime...",
   ["official"] = {
-   [1] = "The Last Airbender",
    },
   ["short"] = {
    },
@@ -53959,7 +53966,7 @@ return {
    [10] = "Секундэд таван сантиметр",
    [11] = "秒速5センチメートル",
    [12] = "秒速5厘米",
-   [13] = "초속 5센티미터",
+   [13] = "초속 5 센티미터",
    },
   ["short"] = {
    [1] = "5cm",
@@ -59119,7 +59126,8 @@ return {
  [5077] = {
   ["main"] = "Pelican Road: Club Caroucha",
   ["official"] = {
-   [1] = "ペリカンロード クラブ・カルーチャ",
+   [1] = "Johnny - O Motoqueiro",
+   [2] = "ペリカンロード クラブ・カルーチャ",
    },
   ["short"] = {
    },
@@ -69353,6 +69361,7 @@ return {
    },
   ["short"] = {
    [1] = "BMG",
+   [2] = "bakemono",
    },
   ["syn"] = {
    [1] = "Ghostory",
@@ -86747,17 +86756,18 @@ return {
  [8141] = {
   ["main"] = "Coquelicot-zaka kara",
   ["official"] = {
-   [1] = "From Up On Poppy Hill",
-   [2] = "Kukkulan tyttö, sataman poika",
-   [3] = "La Colina de las Amapolas",
-   [4] = "La collina dei papaveri",
-   [5] = "La colline aux coquelicots",
-   [6] = "Makowe wzgórze",
-   [7] = "Oppe på Valmuebakken",
-   [8] = "Uppe på vallmokullen",
-   [9] = "От върха на маковия хълм",
-   [10] = "Со склонов Кокурико",
-   [11] = "コクリコ坂から",
+   [1] = "Der Mohnblumenberg",
+   [2] = "From Up On Poppy Hill",
+   [3] = "Kukkulan tyttö, sataman poika",
+   [4] = "La Colina de las Amapolas",
+   [5] = "La collina dei papaveri",
+   [6] = "La colline aux coquelicots",
+   [7] = "Makowe wzgórze",
+   [8] = "Oppe på Valmuebakken",
+   [9] = "Uppe på vallmokullen",
+   [10] = "От върха на маковия хълм",
+   [11] = "Со склонов Кокурико",
+   [12] = "コクリコ坂から",
    },
   ["short"] = {
    },
@@ -91237,8 +91247,9 @@ return {
   ["syn"] = {
    [1] = ".hack//Beyond the World",
    [2] = ".hack//The Movie",
-   [3] = "ドット ハック",
-   [4] = "ドットハック セカイの向こうに",
+   [3] = ".hack//Versus: The Thanatos Report",
+   [4] = "ドット ハック",
+   [5] = "ドットハック セカイの向こうに",
    },
   },
  [8607] = {
@@ -92943,7 +92954,7 @@ return {
    },
   },
  [8789] = {
-  ["main"] = "Taekwon V",
+  ["main"] = "Robot Taekwon V",
   ["official"] = {
    [1] = "Voltar the Invincible",
    [2] = "Βολτάρ ο αήττητος",
@@ -95334,6 +95345,7 @@ return {
    [1] = "Fate/Kaleid Liner Prisma Illya",
    [2] = "Fate/kaleid liner プリズマ☆イリヤ",
    [3] = "Fate/kaleid liner 魔法少女☆伊莉雅",
+   [4] = "Kaleid liner Prisma Illya",
    },
   ["short"] = {
    },
@@ -99237,6 +99249,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Токийски гарвани",
    },
   },
  [9482] = {
@@ -99247,6 +99260,8 @@ return {
    [3] = "神不在的星期天",
    },
   ["short"] = {
+   [1] = "kami-nai",
+   [2] = "kaminai",
    },
   ["syn"] = {
    [1] = "Kamisama no Inai Nichiyoubi",
@@ -100000,7 +100015,8 @@ return {
    [1] = "Danganronpa",
    },
   ["syn"] = {
-   [1] = "Murder School",
+   [1] = "Dangan Ronpa the Animation",
+   [2] = "Murder School",
    },
   },
  [9556] = {
@@ -100098,7 +100114,7 @@ return {
    [1] = "Valvrave the Liberator",
    [2] = "Valvrave: the liberator",
    [3] = "革命机Valvrave",
-   [4] = "革命機ヴァルヴレイヴ",
+   [4] = "革命機ヴァルヴレイヴ Valvrave the Liberator",
    },
   ["short"] = {
    [1] = "valvrave",
@@ -100464,6 +100480,7 @@ return {
    },
   ["syn"] = {
    [1] = "Kuroko no Basuke 2",
+   [2] = "Баскетболът на Куроко 2",
    },
   },
  [9605] = {
@@ -102104,6 +102121,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "NO-RIN",
    },
   },
  [9802] = {
@@ -103406,15 +103424,16 @@ return {
    },
   },
  [9949] = {
-  ["main"] = "Kakumeiki Valvrave 2",
+  ["main"] = "Kakumeiki Valvrave (2013)",
   ["official"] = {
    [1] = "革命机Valvrave 2",
-   [2] = "革命機ヴァルヴレイヴ 2",
+   [2] = "革命機ヴァルヴレイヴ Valvrave the Liberator (2013)",
    },
   ["short"] = {
    [1] = "Valvrave 2",
    },
   ["syn"] = {
+   [1] = "Valvrave the Liberator (2013)",
    },
   },
  [9950] = {
@@ -103541,7 +103560,8 @@ return {
  [9967] = {
   ["main"] = "Samurai Flamenco",
   ["official"] = {
-   [1] = "サムライフラメンコ",
+   [1] = "Самурай Фламенко",
+   [2] = "サムライフラメンコ",
    },
   ["short"] = {
    },
@@ -103642,7 +103662,8 @@ return {
  [9982] = {
   ["main"] = "Hajime no Ippo: The Fighting! - Rising",
   ["official"] = {
-   [1] = "はじめの一歩 THE FIGHTING! Rising",
+   [1] = "Боен дух: Подем",
+   [2] = "はじめの一歩 THE FIGHTING! Rising",
    },
   ["short"] = {
    [1] = "hni3",
@@ -103746,6 +103767,7 @@ return {
    [1] = "Capital Craze Comic (2013)",
    [2] = "Kyousogiga (2013)",
    [3] = "Mirror Capital",
+   [4] = "קיוסוגיגה",
    },
   },
  [9995] = {
@@ -103883,9 +103905,9 @@ return {
    },
   },
  [10009] = {
-  ["main"] = "Girls und Panzer: Ooarai Joshi Gakuen vs Anzio Koukou",
+  ["main"] = "Girls und Panzer: Kore ga Hontou no Anzio-sen desu",
   ["official"] = {
-   [1] = "ガールズ&パンツァー 大洗女子学園 vs アンツィオ高校",
+   [1] = "ガールズ&パンツァー これが本当のアンツィオ戦です!",
    },
   ["short"] = {
    },
@@ -105625,7 +105647,7 @@ return {
  [10227] = {
   ["main"] = "Eiga Precure All Stars New Stage 3: Eien no Tomodachi",
   ["official"] = {
-   [1] = "映画プリキュアオールスターズニューステージ3 永遠のともだち",
+   [1] = "映画プリキュアオールスターズ New Stage 3 永遠のともだち",
    },
   ["short"] = {
    },
@@ -105785,8 +105807,10 @@ return {
    },
   },
  [10246] = {
-  ["main"] = "Kadeu Wang Mikseu Maseuteo",
+  ["main"] = "Kaduu Wang Miksuu Mastaa",
   ["official"] = {
+   [1] = "Card Wang Mix Master",
+   [2] = "카드왕 믹스 마스터",
    },
   ["short"] = {
    },
@@ -105794,9 +105818,9 @@ return {
    },
   },
  [10247] = {
-  ["main"] = "Robot Taekwon V: Wooju Jakjeon",
+  ["main"] = "Robot Taekwon V Jae2tan: Wooju-jakjeon",
   ["official"] = {
-   [1] = "로보트 태권V 우주작전",
+   [1] = "로보트 태권V 제2탄 - 우주작전",
    },
   ["short"] = {
    },
@@ -105804,9 +105828,9 @@ return {
    },
   },
  [10248] = {
-  ["main"] = "Robot Taekwon V 3tan! Sujung Teukgongdae",
+  ["main"] = "Robot Taekwon V Jae3tan! - Sujuung Teukgongdae",
   ["official"] = {
-   [1] = "로보트 태권브이 3 - 수중 특공대",
+   [1] = "로보트 태권브이 제3탄 - 수중 특공대",
    },
   ["short"] = {
    },
@@ -105814,7 +105838,7 @@ return {
    },
   },
  [10249] = {
-  ["main"] = "Robot Taekwon V wa Hwanggeum Nalgae",
+  ["main"] = "Robot Taekwon V wa Hwanggeum Nalgae ue Daegyul",
   ["official"] = {
    [1] = "로보트 태권V와 황금날개의 대결",
    },
@@ -105827,6 +105851,7 @@ return {
   ["main"] = "84 Taekwon V",
   ["official"] = {
    [1] = "`84 태권V",
+   [2] = "`Pal-siip sa Taekwon V",
    },
   ["short"] = {
    },
@@ -105834,7 +105859,7 @@ return {
    },
   },
  [10251] = {
-  ["main"] = "Syupeo Taegwon V",
+  ["main"] = "Super Taekwon V",
   ["official"] = {
    [1] = "슈퍼 태권V",
    },
@@ -105869,6 +105894,7 @@ return {
    [1] = "ソウルイーターノット!",
    },
   ["short"] = {
+   [1] = "SEN!",
    },
   ["syn"] = {
    },
@@ -105894,16 +105920,6 @@ return {
   ["syn"] = {
    },
   },
- [10259] = {
-  ["main"] = "Sparkling Red Star",
-  ["official"] = {
-   [1] = "闪闪的红星 孩子的天空",
-   },
-  ["short"] = {
-   },
-  ["syn"] = {
-   },
-  },
  [10260] = {
   ["main"] = "Feng Yun Jue",
   ["official"] = {
@@ -105918,6 +105934,127 @@ return {
   ["main"] = "Gochuumon wa Usagi Desuka?",
   ["official"] = {
    [1] = "ご注文はうさぎですか?",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Is the Order a Rabbit?",
+   },
+  },
+ [10263] = {
+  ["main"] = "Kichiku: Haha Shimai Choukyou Nikki",
+  ["official"] = {
+   [1] = "鬼畜 〜母姉妹調教日記〜",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10267] = {
+  ["main"] = "Trick or Alice",
+  ["official"] = {
+   [1] = "トリック・オア・アリス",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10269] = {
+  ["main"] = "Yawaraka Atom",
+  ["official"] = {
+   [1] = "やわらかアトム",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10270] = {
+  ["main"] = "Kyoukai no Kanata Idol Saiban! ~Mayoinagara mo Kimi wo Sabaku Tami",
+  ["official"] = {
+   [1] = "きょうかいのかなた アイドル裁判！～迷いながらも君を裁く民～",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10271] = {
+  ["main"] = "Pupipoo!",
+  ["official"] = {
+   [1] = "プピポー!",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10272] = {
+  ["main"] = "Kiseijuu",
+  ["official"] = {
+   [1] = "寄生獣",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10273] = {
+  ["main"] = "Isshuukan Friends.",
+  ["official"] = {
+   [1] = "一週間フレンズ.",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "One Week Friends.",
+   },
+  },
+ [10274] = {
+  ["main"] = "Mushishi Tokubetsu-hen: Hihamukage",
+  ["official"] = {
+   [1] = "蟲師 特別編「日蝕む翳」",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10276] = {
+  ["main"] = "Double Circle",
+  ["official"] = {
+   [1] = "ダブルサークル",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10277] = {
+  ["main"] = "Tokubetsu Jugyou 3 SLG The Animation",
+  ["official"] = {
+   [1] = "特別授業3SLG THE ANIMATION",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10278] = {
+  ["main"] = "Garo",
+  ["official"] = {
+   [1] = "牙狼",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10279] = {
+  ["main"] = "Peaceful Times(F02)petit film",
+  ["official"] = {
    },
   ["short"] = {
    },
