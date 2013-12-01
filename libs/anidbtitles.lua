@@ -2019,13 +2019,13 @@ return {
    },
   },
  [109] = {
-  ["main"] = "Mahoromatic",
+  ["main"] = "Mahoromatic: Automatic Maiden",
   ["official"] = {
    [1] = "Mahoromatic",
    [2] = "Mahoromatic - Automatic Maiden",
    [3] = "Mahoromatic: Automatic Maiden",
    [4] = "Махороматик: Автоматическая девушка",
-   [5] = "まほろまてぃっく",
+   [5] = "まほろまてぃっく Automatic Maiden",
    },
   ["short"] = {
    [1] = "MM",
@@ -3570,10 +3570,10 @@ return {
    },
   },
  [201] = {
-  ["main"] = "Mahoromatic: Motto Utsukushii Mono",
+  ["main"] = "Mahoromatic: Automatic Maiden - Motto Utsukushii Mono",
   ["official"] = {
    [1] = "Mahoromatic: Something More Beautiful",
-   [2] = "まほろまてぃっく ～もっと美しいもの～",
+   [2] = "まほろまてぃっく Automatic Maiden ～もっと美しいもの～",
    },
   ["short"] = {
    [1] = "MM2",
@@ -6625,7 +6625,9 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Tenchi the Movie 3",
+   [1] = "Tenchi Forever!",
+   [2] = "Tenchi Muyo in Love 2 - Distant Memories",
+   [3] = "Tenchi the Movie 3",
    },
   },
  [377] = {
@@ -20579,6 +20581,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "음몽 2",
    },
   },
  [1370] = {
@@ -21492,6 +21495,7 @@ return {
    },
   ["syn"] = {
    [1] = "Kaishun",
+   [2] = "회춘",
    },
   },
  [1437] = {
@@ -26875,6 +26879,7 @@ return {
    [2] = "11인이 있다",
    [3] = "They Were Eleven!",
    [4] = "Zvijezda Odisej",
+   [5] = "¿Quién es el 11º pasajero?",
    },
   ["short"] = {
    [1] = "tw11",
@@ -28811,6 +28816,7 @@ return {
    },
   ["syn"] = {
    [1] = "Masho no Kao",
+   [2] = "마성의 얼굴",
    },
   },
  [2025] = {
@@ -31270,12 +31276,13 @@ return {
  [2214] = {
   ["main"] = "Doubutsu Takarajima",
   ["official"] = {
-   [1] = "Die Schatzinsel - Der Film",
-   [2] = "Dzieci wśród piratów",
-   [3] = "Gli allegri pirati dell`Isola del Tesoro",
-   [4] = "La isla del tesoro de los animales",
-   [5] = "Les joyeux pirates de l`île au trésor",
-   [6] = "どうぶつ宝島",
+   [1] = "Animal Treasure Island",
+   [2] = "Die Schatzinsel - Der Film",
+   [3] = "Dzieci wśród piratów",
+   [4] = "Gli allegri pirati dell`Isola del Tesoro",
+   [5] = "La isla del tesoro de los animales",
+   [6] = "Les joyeux pirates de l`île au trésor",
+   [7] = "どうぶつ宝島",
    },
   ["short"] = {
    [1] = "dotakara",
@@ -31285,10 +31292,9 @@ return {
    [5] = "ど宝島",
    },
   ["syn"] = {
-   [1] = "Animal Treasure Island",
-   [2] = "Jolly Joker",
-   [3] = "Wyspa skarbów",
-   [4] = "Остров сокровищ",
+   [1] = "Jolly Joker",
+   [2] = "Wyspa skarbów",
+   [3] = "Остров сокровищ",
    },
   },
  [2215] = {
@@ -40707,14 +40713,14 @@ return {
  [3095] = {
   ["main"] = "Inakappe Taishou",
   ["official"] = {
-   [1] = "General Inakappe",
-   [2] = "Ugo il Re del Judo",
-   [3] = "いなかっぺ大将",
+   [1] = "Ugo il Re del Judo",
+   [2] = "いなかっぺ大将",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Hugo el Rey del Judo",
+   [1] = "General Inakappe",
+   [2] = "Hugo el Rey del Judo",
    },
   },
  [3096] = {
@@ -45120,6 +45126,7 @@ return {
    },
   ["syn"] = {
    [1] = "[etʃiːz]",
+   [2] = "엣치-즈",
    },
   },
  [3532] = {
@@ -54803,6 +54810,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "치한 이야기",
    },
   },
  [4645] = {
@@ -70627,6 +70635,7 @@ return {
    [1] = "Cartagra: Disease of Moon Confusion",
    [2] = "Cartagra: Tsuki Kurui no Yamai",
    [3] = "Karutagura Tsuki Kyou Ino Byou",
+   [4] = "카르타그라",
    },
   },
  [6485] = {
@@ -86044,10 +86053,11 @@ return {
   ["syn"] = {
    [1] = "Magical Girl Madoka Magika",
    [2] = "Mahou Shoujo Madoka Magika",
-   [3] = "Волшебница Мадока Магика",
-   [4] = "Дівчина-чарівниця Мадока Маґіка",
-   [5] = "Чарівниця Мадока Магіка",
-   [6] = "مدوکا مجیکا دختر جادویی",
+   [3] = "Meguca",
+   [4] = "Волшебница Мадока Магика",
+   [5] = "Дівчина-чарівниця Мадока Маґіка",
+   [6] = "Чарівниця Мадока Магіка",
+   [7] = "مدوکا مجیکا دختر جادویی",
    },
   },
  [8070] = {
@@ -98616,9 +98626,10 @@ return {
  [9417] = {
   ["main"] = "Wake Up, Girls!",
   ["official"] = {
-   [1] = "Wake Up,Girls!",
+   [1] = "Wake Up, Girls!",
    },
   ["short"] = {
+   [1] = "WU,G!",
    },
   ["syn"] = {
    },
@@ -99250,6 +99261,7 @@ return {
    },
   ["syn"] = {
    [1] = "Токийски гарвани",
+   [2] = "Токийские вороны",
    },
   },
  [9482] = {
@@ -102725,9 +102737,9 @@ return {
    },
   },
  [9874] = {
-  ["main"] = "Chuunibyou demo Koi ga Shitai! 2",
+  ["main"] = "Chuunibyou demo Koi ga Shitai! Ren",
   ["official"] = {
-   [1] = "中二病でも恋がしたい! 2",
+   [1] = "中二病でも恋がしたい! 戀",
    },
   ["short"] = {
    },
@@ -103547,8 +103559,9 @@ return {
  [9966] = {
   ["main"] = "Galilei Donna",
   ["official"] = {
-   [1] = "ガリレイドンナ",
-   [2] = "伽利略女神",
+   [1] = "Galilei Donna",
+   [2] = "ガリレイドンナ",
+   [3] = "伽利略女神",
    },
   ["short"] = {
    },
@@ -103564,6 +103577,7 @@ return {
    [2] = "サムライフラメンコ",
    },
   ["short"] = {
+   [1] = "Samumenco",
    },
   ["syn"] = {
    },
@@ -103655,6 +103669,7 @@ return {
    [1] = "Fairy Tail 2",
    },
   ["short"] = {
+   [1] = "ft2",
    },
   ["syn"] = {
    },
@@ -105245,6 +105260,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Music S.T.A.R.T!!",
    },
   },
  [10178] = {
@@ -105444,16 +105460,6 @@ return {
   ["main"] = "Dokidoki Gakuen Kessen!! Youki Daimashiro",
   ["official"] = {
    [1] = "ドキドキ学園 決戦!!妖奇大魔城",
-   },
-  ["short"] = {
-   },
-  ["syn"] = {
-   },
-  },
- [10204] = {
-  ["main"] = "Music S.T.A.R.T!!",
-  ["official"] = {
-   [1] = "Music S.T.A.R.T!!",
    },
   ["short"] = {
    },
@@ -106055,6 +106061,96 @@ return {
  [10279] = {
   ["main"] = "Peaceful Times(F02)petit film",
   ["official"] = {
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10281] = {
+  ["main"] = "Marvel Disk Wars: The Avengers",
+  ["official"] = {
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10282] = {
+  ["main"] = "Happiness Charge Precure!",
+  ["official"] = {
+   [1] = "ハピネスチャージプリキュア!",
+   },
+  ["short"] = {
+   [1] = "precure11",
+   },
+  ["syn"] = {
+   },
+  },
+ [10283] = {
+  ["main"] = "Utopia",
+  ["official"] = {
+   [1] = "ユートピア",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10284] = {
+  ["main"] = "Yugami-kun ni wa Tomodachi ga Inai",
+  ["official"] = {
+   [1] = "湯神くんには友達がいない",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10285] = {
+  ["main"] = "Shiiba-san no Ura no Kao.",
+  ["official"] = {
+   [1] = "椎葉さんのウラの顔.",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10286] = {
+  ["main"] = "Mahou Shoujo Taisen",
+  ["official"] = {
+   [1] = "魔法少女大戦",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10288] = {
+  ["main"] = "Bokura wa Minna Kawaisou",
+  ["official"] = {
+   [1] = "僕らはみんな河合荘",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10289] = {
+  ["main"] = "Minna Atsumare! Falcom Gakuen",
+  ["official"] = {
+   [1] = "みんな集まれ! ファルコム学園",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10290] = {
+  ["main"] = "Meitantei Conan: Ijigen no Sniper",
+  ["official"] = {
+   [1] = "名探偵コナン・異次元の狙撃手[スナイパー]",
    },
   ["short"] = {
    },
