@@ -13,7 +13,7 @@ local parseData = function(data)
 		for _, name, class, rarity, kind, race, mana, attack, life, desc in row:gmatch(pattern) do
 			-- Strip HTML:
 			name = name:gsub('<%/?[%w:]+.-%/?>', '')
-			class = class:match('alt="([^"]+)"') or class
+			class = class:match('alt="([^"]+)"') or class:sub(1, -6)
 
 			tmp[name:lower()] = {
 				name = name,
