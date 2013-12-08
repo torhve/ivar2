@@ -3935,9 +3935,12 @@ return {
    [3] = "HackOVA",
    },
   ["syn"] = {
-   [1] = ".хак//Лиминалити",
-   [2] = "dot hack liminality",
-   [3] = "hack//Liminality",
+   [1] = ".hack Liminality",
+   [2] = ".hack∕∕Liminality",
+   [3] = ".хак//Лиминалити",
+   [4] = "dot hack liminality",
+   [5] = "dotHack∕∕Liminality",
+   [6] = "hack//Liminality",
    },
   },
  [223] = {
@@ -31227,9 +31230,8 @@ return {
    [4] = "Der Kater mit den Zauberstiefeln",
    [5] = "El gato con botas",
    [6] = "Kot w Butach",
-   [7] = "Puss `n Boots",
-   [8] = "كركور وحذاء السعادة",
-   [9] = "ファンタジーアドベンチャー長靴をはいた猫の冒険",
+   [7] = "كركور وحذاء السعادة",
+   [8] = "ファンタジーアドベンチャー長靴をはいた猫の冒険",
    },
   ["short"] = {
    },
@@ -31237,6 +31239,7 @@ return {
    [1] = "Adventures of Puss-in-Boots",
    [2] = "Fantasy Adventure: Adventures of Puss `n Boots",
    [3] = "Nagagutsu wo Haita Neko no Boken",
+   [4] = "Puss `n Boots",
    },
   },
  [2212] = {
@@ -31702,7 +31705,7 @@ return {
    },
   },
  [2243] = {
-  ["main"] = "Harisu no Kaze",
+  ["main"] = "Haris no Kaze",
   ["official"] = {
    [1] = "ハリスの旋風",
    },
@@ -36473,9 +36476,10 @@ return {
    [8] = "Peukaloisen retket",
    [9] = "Wonderful Adventures of Nils",
    [10] = "Wunderbare Reise des kleinen Nils Holgersson mit den Wildgänsen",
-   [11] = "נילס הולגרסון",
-   [12] = "مغامرات نيلز",
-   [13] = "ニルスのふしぎな旅",
+   [11] = "Το θαυμαστό ταξίδι του Νίλς Χόλγκερσον",
+   [12] = "נילס הולגרסון",
+   [13] = "مغامرات نيلز",
+   [14] = "ニルスのふしぎな旅",
    },
   ["short"] = {
    [1] = "Nils Holgersson",
@@ -45177,12 +45181,12 @@ return {
  [3536] = {
   ["main"] = "Neko Neko Fantasia",
   ["official"] = {
-   [1] = "Kitty-Cat Fantasia",
-   [2] = "ねこ·ねこ·幻想曲[ファンタジア]",
+   [1] = "ねこ·ねこ·幻想曲[ファンタジア]",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Kitty-Cat Fantasia",
    },
   },
  [3537] = {
@@ -46067,18 +46071,18 @@ return {
  [3606] = {
   ["main"] = "Daikyouryuu Jidai",
   ["official"] = {
-   [1] = "Age Of The Great Dinosaurs",
-   [2] = "Quando vivevano i dinosauri",
-   [3] = "Στην εποχή των δεινοσαύρων",
-   [4] = "大恐竜時代",
+   [1] = "Quando vivevano i dinosauri",
+   [2] = "Στην εποχή των δεινοσαύρων",
+   [3] = "大恐竜時代",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Daikyouryu Monogatari",
-   [2] = "Daikyouryu no Jidai",
-   [3] = "The Era of the Great Dinosaurs",
-   [4] = "大恐竜物語",
+   [1] = "Age Of The Great Dinosaurs",
+   [2] = "Daikyouryu Monogatari",
+   [3] = "Daikyouryu no Jidai",
+   [4] = "The Era of the Great Dinosaurs",
+   [5] = "大恐竜物語",
    },
   },
  [3607] = {
@@ -49714,7 +49718,8 @@ return {
    [5] = "Хост-клуб Оранской школы",
    [6] = "מועדון האירוח של תיכון אורן",
    [7] = "نادي مدرسة أوران الثانوية للضيافة",
-   [8] = "樱兰高校男公关部",
+   [8] = "کلوپ میزبانی دبیرستان اوران",
+   [9] = "樱兰高校男公关部",
    },
   },
  [4149] = {
@@ -65284,11 +65289,12 @@ return {
    [3] = "Clannad2",
    },
   ["syn"] = {
-   [1] = "Кланнад: След историята",
-   [2] = "كلاناد ما بعد القصة",
-   [3] = "کلاناد ادامه داستان",
-   [4] = "クラナド アフターストーリー",
-   [5] = "クラナド- AFTER STORY",
+   [1] = "Кланад: Продовження Історії",
+   [2] = "Кланнад: След историята",
+   [3] = "كلاناد ما بعد القصة",
+   [4] = "کلاناد ادامه داستان",
+   [5] = "クラナド アフターストーリー",
+   [6] = "クラナド- AFTER STORY",
    },
   },
  [5842] = {
@@ -70088,7 +70094,8 @@ return {
   ["syn"] = {
    [1] = "crossgame",
    [2] = "Перекрестная игра",
-   [3] = "幸运四叶草",
+   [3] = "Перехрестна гра",
+   [4] = "幸运四叶草",
    },
   },
  [6425] = {
@@ -79824,7 +79831,8 @@ return {
   ["main"] = "Nils no Fushigi na Tabi Gekijouban",
   ["official"] = {
    [1] = "Nils Holgersson csodálatos utazása a vadludakkal (mozi)",
-   [2] = "ニルスのふしぎな旅 劇場版",
+   [2] = "Νίλς Χόλγκερσον",
+   [3] = "ニルスのふしぎな旅 劇場版",
    },
   ["short"] = {
    },
@@ -85317,7 +85325,8 @@ return {
    [2] = "Berserk: Das goldene Zeitalter",
    [3] = "Berserk: The Golden Age Arc",
    [4] = "Berserk: Zlatý věk",
-   [5] = "ベルセルク 黄金時代篇",
+   [5] = "Берсерк: Золотой век",
+   [6] = "ベルセルク 黄金時代篇",
    },
   ["short"] = {
    },
@@ -92942,10 +92951,13 @@ return {
  [8787] = {
   ["main"] = "Uchuu Senkan Yamato 2199",
   ["official"] = {
-   [1] = "宇宙戦艦ヤマト2199",
+   [1] = "Star Blazers 2199",
+   [2] = "宇宙戦艦ヤマト2199",
    },
   ["short"] = {
-   [1] = "yamato 2199",
+   [1] = "SBY 2199",
+   [2] = "USY 2199",
+   [3] = "yamato 2199",
    },
   ["syn"] = {
    [1] = "Space Battleship Yamato 2199",
@@ -99910,8 +99922,8 @@ return {
  [9541] = {
   ["main"] = "Shingeki no Kyojin",
   ["official"] = {
-   [1] = "Attack on Titan",
-   [2] = "El Ataque de los Titanes",
+   [1] = "Ataque a los Titanes",
+   [2] = "Attack on Titan",
    [3] = "L`attaque des Titans",
    [4] = "الهجوم على العملاقة",
    [5] = "حمله به تایتان",
@@ -100079,24 +100091,28 @@ return {
  [9564] = {
   ["main"] = "Gekijouban Pocket Monsters: Best Wishes! - Shinsoku no Genosect: Mewtwo Kakusei",
   ["official"] = {
-   [1] = "劇場版 ポケットモンスター ベストウイッシュ 神速のゲノセクト ミュウツー覚醒",
+   [1] = "Pokemon the Movie: Genesect and the Legend Awakened",
+   [2] = "劇場版 ポケットモンスター ベストウイッシュ 神速のゲノセクト ミュウツー覚醒",
    },
   ["short"] = {
    },
   ["syn"] = {
    [1] = "ExtremeSpeed Genesect: Mewtwo Awakens",
    [2] = "Pokemon: Movie 16",
+   [3] = "Pokémon the Movie: Genesect and the Legend Awakened",
    },
   },
  [9565] = {
   ["main"] = "Pikachuu to Eievui Friends",
   ["official"] = {
-   [1] = "ピカチュウとイーブイフレンズ",
+   [1] = "Pokemon: Eevee and Friends",
+   [2] = "ピカチュウとイーブイフレンズ",
    },
   ["short"] = {
    },
   ["syn"] = {
    [1] = "Pokemon: Movie 16 Short",
+   [2] = "Pokémon: Eevee and Friends",
    },
   },
  [9566] = {
@@ -101619,7 +101635,7 @@ return {
    },
   },
  [9736] = {
-  ["main"] = "Gen`ei o Kakeru Taiyou",
+  ["main"] = "Gen`ei o Kakeru Taiyou: Il Sole Penetra le Illusioni",
   ["official"] = {
    [1] = "Day Break Illusion",
    [2] = "幻影ヲ駆ケル太陽 il sole penetra le illusioni",
@@ -103019,14 +103035,14 @@ return {
  [9905] = {
   ["main"] = "Aoki Hagane no Arpeggio: Ars Nova",
   ["official"] = {
-   [1] = "苍蓝钢铁战舰",
-   [2] = "蒼き鋼のアルペジオ -ARS NOVA-",
+   [1] = "Arpeggio of Blue Steel",
+   [2] = "苍蓝钢铁战舰",
+   [3] = "蒼き鋼のアルペジオ -ARS NOVA-",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Arpeggio of Blue Steel",
-   [2] = "蒼き鋼のアルペジオ -アルス・ノヴァ-",
+   [1] = "蒼き鋼のアルペジオ -アルス・ノヴァ-",
    },
   },
  [9906] = {
@@ -103557,17 +103573,16 @@ return {
    },
   },
  [9966] = {
-  ["main"] = "Galilei Donna",
+  ["main"] = "Galilei Donna: Storia di Tre Sorelle a Caccia di un Mistero",
   ["official"] = {
    [1] = "Galilei Donna",
-   [2] = "ガリレイドンナ",
+   [2] = "ガリレイドンナ Storia di tre sorelle a caccia di un mistero",
    [3] = "伽利略女神",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Galilei Donna: Storia di Tre Sorelle a Caccia di un Mistero",
-   [2] = "Ґалілей Донна",
+   [1] = "Ґалілей Донна",
    },
   },
  [9967] = {
@@ -103920,7 +103935,7 @@ return {
    },
   },
  [10009] = {
-  ["main"] = "Girls und Panzer: Kore ga Hontou no Anzio-sen desu",
+  ["main"] = "Girls und Panzer: Kore ga Hontou no Anzio-sen Desu!",
   ["official"] = {
    [1] = "ガールズ&パンツァー これが本当のアンツィオ戦です!",
    },
@@ -103938,6 +103953,7 @@ return {
    [1] = "tesabu",
    },
   ["syn"] = {
+   [1] = "Tesagure! Bukatsu-mono",
    },
   },
  [10011] = {
@@ -105044,7 +105060,7 @@ return {
  [10150] = {
   ["main"] = "Shimajirou to Kujira no Uta",
   ["official"] = {
-   [1] = "しまじろうと くじらのうた",
+   [1] = "しまじろうとくじらのうた",
    },
   ["short"] = {
    },
@@ -105138,6 +105154,7 @@ return {
    [1] = "艦隊これくしょん",
    },
   ["short"] = {
+   [1] = "KanColle",
    },
   ["syn"] = {
    },
@@ -105437,7 +105454,7 @@ return {
    },
   },
  [10201] = {
-  ["main"] = "Kuro no Sumika: Chronus",
+  ["main"] = "Kuro no Su: Chronus",
   ["official"] = {
    [1] = "黒の栖-クロノス-",
    },
@@ -106125,6 +106142,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "MAGICA WARS",
    },
   },
  [10288] = {
@@ -106151,6 +106169,117 @@ return {
   ["main"] = "Meitantei Conan: Ijigen no Sniper",
   ["official"] = {
    [1] = "名探偵コナン・異次元の狙撃手[スナイパー]",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10291] = {
+  ["main"] = "Buddy Complex",
+  ["official"] = {
+   [1] = "バディ・コンプレックス",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10292] = {
+  ["main"] = "Uta no Prince-sama (2015)",
+  ["official"] = {
+   [1] = "うたの☆プリンスさまっ♪ (2015)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10293] = {
+  ["main"] = "Yama no Susume 2",
+  ["official"] = {
+   [1] = "ヤマノススメ 2",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10294] = {
+  ["main"] = "Meitantei Rascal",
+  ["official"] = {
+   [1] = "めいたんてい ラスカル",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10295] = {
+  ["main"] = "Mangaka-san to Assistant-san to",
+  ["official"] = {
+   [1] = "マンガ家さんとアシスタントさんと",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10296] = {
+  ["main"] = "Futabu!",
+  ["official"] = {
+   [1] = "ふた部!",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10297] = {
+  ["main"] = "Okusama wa Moto Yariman",
+  ["official"] = {
+   [1] = "奥様は元ヤリマン",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10298] = {
+  ["main"] = "Sengoku Musou SP: Sanada no Shou",
+  ["official"] = {
+   [1] = "戦国無双SP 真田の章",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10299] = {
+  ["main"] = "Imako System",
+  ["official"] = {
+   [1] = "イマコシステム",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10300] = {
+  ["main"] = "Naisho no Wakana-san",
+  ["official"] = {
+   [1] = "ナイショの若菜さん",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Secret Wakana",
+   },
+  },
+ [10301] = {
+  ["main"] = "Fight Ippatsu! Juuden-chan!! (2014)",
+  ["official"] = {
+   [1] = "ファイト一発! 充電ちゃん!! (2014)",
    },
   ["short"] = {
    },
