@@ -13,11 +13,11 @@ local parseData = function(data)
 		for _, name, class, rarity, kind, race, mana, attack, life, desc in row:gmatch(pattern) do
 			-- Strip HTML:
 			name = name:gsub('<%/?[%w:]+.-%/?>', '')
-			class = class:match('(%w)%.png"') or class
+			class = class:match('alt="([^"]+)"') or class
 
 			tmp[name:lower()] = {
 				name = name,
-				class = class:sub(1, -6),
+				class = class,
 				rarity = rarity:sub(1, -6),
 				type = kind:sub(1, -6),
 				race = race ~= "" and race:sub(1, -6) or nil,
@@ -79,7 +79,7 @@ local checkCache = function(card)
 		if(#matches == 1) then
 			out = formatOutput(matches[1]:lower())
 		elseif(#matches > 1) then
-			local n = 7
+			local n = 13 + 7
 			out = {}
 			local msgLimit = (512 - 16 - 65 - 10) - #ivar2.config.nick - 30
 			for i=1, #matches do
@@ -103,19 +103,22 @@ return {
 			card = trim(card:lower())
 
 			local out = checkCache(card)
-			if(not out) then
-				simplehttp('http://hearthstonecardlist.com/', function(data)
-					-- Update cache.
-					parseData(data)
-
-					local out = checkCache(card)
-					if(out) then
-						self:Msg('privmsg', destination, source, 'Hearthstone: %s', out)
-					else
-						self:Msg('privmsg', destination, source, 'Hearthstone: No matching card found.')
-					end
-				end)
+			if(out) then
+				self:Msg('privmsg', destination, source, 'Hearthstone: %s', out)
+				return
 			end
+
+			simplehttp('http://hearthstonecardlist.com/', function(data)
+				-- Update cache.
+				parseData(data)
+
+				local out = checkCache(card)
+				if(out) then
+					self:Msg('privmsg', destination, source, 'Hearthstone: %s', out)
+				else
+					self:Msg('privmsg', destination, source, 'Hearthstone: No matching card found.')
+				end
+			end)
 		end,
 	},
 }
