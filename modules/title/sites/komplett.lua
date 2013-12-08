@@ -1,4 +1,5 @@
 local simplehttp = require'simplehttp'
+local html2unicode = require'html'
 
 local trim = function(s)
 	if(not s) then return end
@@ -7,7 +8,9 @@ end
 
 local handler = function(queue, info)
 	local query = info.query
-	if(query and query:match('sku=%d+')) then
+	local path = info.path
+
+	if((query and query:match('sku=%d+')) or (path and path:match('/[^/]+/%d+'))) then
 		simplehttp(
 			info.url,
 
@@ -27,16 +30,19 @@ local handler = function(queue, info)
 				end
 
 				local out = {}
-				local name = data:match('<h1 id="ki_h_maktx" itemprop="name">([^<]+)</h1>')
-				local desc = data:match('<h2 class="name2" itemprop="description">([^<]+)</h2>')
-				local price = data:match('<strong class="price">([^<]+)</strong>')
-				local storage = data:match('<div class="availability">Lagerstatus:(.-)</div>')
-				local bomb = data:match('<div class="bomb">.-<span class="value">([^<]+)</span>')
+				local name = data:match('<h1 class="main%-header" itemprop="name">([^<]+)</h1>')
+				local desc = data:match('<h3 class="secondary%-header" itemprop="description">([^<]+)</h3>')
+				local price = data:match('<span itemprop="price"[^>]+>([^<]+)</span>')
+				local storage = data:match('<span class="stock%-details">(.-)</span>')
+				local bomb = data:match('<div class="bomb">.-<div class="value">([^<]+)</div>')
 
-				ins(out, '\002%s\002: ', name)
-				ins(out, '%s', desc)
+				ins(out, '\002%s\002: ', html2unicode(name))
+				if(desc) then
+					ins(out, '%s ,', html2unicode(desc))
+				end
+
 				if(price) then
-					ins(out, ', \002%s\002 ', trim(price))
+					ins(out, '\002%s\002 ', trim(price))
 				end
 
 				local extra = {}
@@ -50,6 +56,7 @@ local handler = function(queue, info)
 				end
 
 				if(storage) then
+					storage = html2unicode(storage)
 					storage = trim(storage:gsub('<%/?[%w:]+.-%/?>', ''))
 					if(storage:sub(-1) == '.') then
 						storage = storage:sub(1, -2)
