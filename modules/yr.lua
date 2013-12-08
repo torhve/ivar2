@@ -32,10 +32,15 @@ local parseDate = function(datestr)
 	}
 end
 
+local feelsLike = function(celsius, wind)
+	local V = wind * 3.6
+	return math.floor(13.12 + 0.6215 * celsius - 11.37 * V^0.16 + 0.3965 * celsius * V^0.16 + .5)
+end
+
 local formatPeriod = function(period)
 	local out = {}
 
-	table.insert(out, string.format("%s, %s°C", period.symbol.name, period.temperature.value))
+	table.insert(out, string.format("%s, %s°C (feels like %s°C)", period.symbol.name, period.temperature.value, period.temperature.feels, period.temperature.feels))
 
 	local rain = period.precipitation
 	if(rain.value ~= "0") then
@@ -61,10 +66,11 @@ end
 local formatShortPeriod = function(period)
 	local wday = os.date('*t', period.from)['wday']
 	return string.format(
-		"\002%s\002: %s, %s°C",
+		"\002%s\002: %s, %s°C (feels like %s°C)",
 		days[wday],
 		period.symbol.name,
-		period.temperature.value
+		period.temperature.value,
+		period.temperature.feels
 	)
 end
 
@@ -147,6 +153,7 @@ local handleOutput = function(source, destination, seven, data, city, try)
 		time.windDirection = handleData('windDirection', data)
 		time.windSpeed = handleData("windSpeed", data)
 		time.temperature = handleData('temperature', data)
+		time.temperature.feels = feelsLike(time.temperature.value, time.windSpeed.mps)
 		time.pressure = handleData('pressure', data)
 
 		table.insert(periods, time)
