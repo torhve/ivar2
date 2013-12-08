@@ -7,7 +7,9 @@ end
 
 local handler = function(queue, info)
 	local query = info.query
-	if(query and query:match('sku=%d+')) then
+	local path = info.path
+
+	if((query and query:match('sku=%d+')) or (path and path:match('/[^/]+/%d+'))) then
 		simplehttp(
 			info.url,
 
