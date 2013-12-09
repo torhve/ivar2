@@ -20,11 +20,11 @@ local parseData = function(data)
 				class = class,
 				rarity = rarity:sub(1, -6),
 				type = kind:sub(1, -6),
-				race = race ~= "" and race:sub(1, -6) or nil,
-				mana = mana ~= "" and mana:sub(1, -6) or nil,
-				attack = attack ~= "" and attack:sub(1, -6) or nil,
-				life = life ~= "" and attack:sub(1, -6) or nil,
-				desc = desc ~= "" and desc:sub(1, -6) or nil,
+				race = race ~= "</td>" and race:sub(1, -6) or nil,
+				mana = mana ~= "</td>" and mana:sub(1, -6) or nil,
+				attack = attack ~= "</td>" and attack:sub(1, -6) or nil,
+				life = life ~= "</td>" and life:sub(1, -6) or nil,
+				desc = desc ~= "</td>" and desc:sub(1, -6) or nil,
 			}
 		end
 	end
@@ -48,11 +48,11 @@ local formatOutput = function(card)
 	end
 
 	if(card.attack) then
-		table.insert(out, string.format('Attack: %s', card.mana))
+		table.insert(out, string.format('Attack: %s', card.attack))
 	end
 
 	if(card.life) then
-		table.insert(out, string.format('HP: %s', card.mana))
+		table.insert(out, string.format('HP: %s', card.life))
 	end
 
 	if(card.desc) then
