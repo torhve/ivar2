@@ -23,7 +23,7 @@ local parseData = function(data)
 				race = race ~= "" and race:sub(1, -6) or nil,
 				mana = mana ~= "" and mana:sub(1, -6) or nil,
 				attack = attack ~= "" and attack:sub(1, -6) or nil,
-				life = life ~= "" and attack:sub(1, -6) or nil,
+				life = life ~= "" and life:sub(1, -6) or nil,
 				desc = desc ~= "" and desc:sub(1, -6) or nil,
 			}
 		end
@@ -48,11 +48,11 @@ local formatOutput = function(card)
 	end
 
 	if(card.attack) then
-		table.insert(out, string.format('Attack: %s', card.mana))
+		table.insert(out, string.format('Attack: %s', card.attack))
 	end
 
 	if(card.life) then
-		table.insert(out, string.format('HP: %s', card.mana))
+		table.insert(out, string.format('HP: %s', card.life))
 	end
 
 	if(card.desc) then
