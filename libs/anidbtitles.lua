@@ -5533,20 +5533,19 @@ return {
   ["official"] = {
    [1] = "STREET FIGHTER 2 - THE MOVIE",
    [2] = "Street Fighter II - Le film",
-   [3] = "Street Fighter II - O Filme",
-   [4] = "Street Fighter II - The Animated Movie",
-   [5] = "Street Fighter II: The Animated Movie",
-   [6] = "Uliczny wojownik II",
-   [7] = "Οι Μαχητές των Δρόμων 2",
-   [8] = "Уличный боец - 2",
-   [9] = "ストリートファイターII",
+   [3] = "Street Fighter II - The Animated Movie",
+   [4] = "Street Fighter II: The Animated Movie",
+   [5] = "Uliczny wojownik II",
+   [6] = "Οι Μαχητές των Δρόμων 2",
+   [7] = "Уличный боец - 2",
+   [8] = "ストリートファイターII",
    },
   ["short"] = {
    [1] = "SF2",
    },
   ["syn"] = {
    [1] = "Street Fighter 2",
-   [2] = "Street Fighter II - O Filme",
+   [2] = "Street Fighter II: O Filme",
    [3] = "Уличен Боец 2: Филмът",
    },
   },
@@ -9793,7 +9792,8 @@ return {
    [4] = "Les héros de la galaxie",
    [5] = "افسانه قهرمانان کهکشانی",
    [6] = "حرب الكواكب",
-   [7] = "은하영웅전설",
+   [7] = "银河英雄传说",
+   [8] = "은하영웅전설",
    },
   ["short"] = {
    [1] = "GED",
@@ -23105,8 +23105,9 @@ return {
    [1] = "kkow",
    },
   ["syn"] = {
-   [1] = "Today, It`s My Turn!!",
-   [2] = "Сегодня и начну!",
+   [1] = "Starting Today, I`ll!!",
+   [2] = "Today, It`s My Turn!!",
+   [3] = "Сегодня и начну!",
    },
   },
  [1561] = {
@@ -25223,7 +25224,7 @@ return {
    [1] = "Az Űrrepülőszázad",
    [2] = "Dieu bénisse Dancougar",
    [3] = "God Bless Dan Cougar",
-   [4] = "God bless dancougar",
+   [4] = "God Bless Dancougar",
    [5] = "超獣機神ダンクーガ GOD BLESS DANCOUGA",
    },
   ["short"] = {
@@ -28429,12 +28430,12 @@ return {
  [1989] = {
   ["main"] = "Kibun Kibun",
   ["official"] = {
-   [1] = "気分きぶん",
+   [1] = "気分²",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "気分きぶん いっぽんめ",
+   [1] = "気分きぶん",
    },
   },
  [1990] = {
@@ -33204,9 +33205,10 @@ return {
    [9] = "Μεταλλικός Αλχημιστής, η Ταινία",
    [10] = "Стоманеният Алхимик - Завоевателят на Шамбала",
    [11] = "แขนกลคนแปรธาตุ เดอะมูฟวี่ ฝ่ามิติพิชิตแดนสวรรค์",
-   [12] = "劇場版 鋼の錬金術師 シャンバラを征[ゆ]く者",
-   [13] = "钢之炼金术师剧场版 香巴拉的征服者",
-   [14] = "강철의 연금술사 - 샴발라의 정복자",
+   [12] = "剧场版 钢之炼金术师 香巴拉的征服者",
+   [13] = "劇場版 鋼の錬金術師 シャンバラを征[ゆ]く者",
+   [14] = "钢之炼金术师剧场版 香巴拉的征服者",
+   [15] = "강철의 연금술사 - 샴발라의 정복자",
    },
   ["short"] = {
    [1] = "fma movie",
@@ -67458,6 +67460,7 @@ return {
    [6] = "Цулметаллан Алхимич: Ахан дүүсийн барилдлага",
    [7] = "کیمیاگر تمام فلزی : داستان برادری",
    [8] = "鋼の錬金術師 FULLMETAL ALCHEMIST (2009)",
+   [9] = "钢之炼金术师 FULLMETAL ALCHEMIST",
    },
   ["short"] = {
    [1] = "FMA (2009)",
@@ -70179,11 +70182,14 @@ return {
    [1] = "ルパン三世 vs 名探偵コナン",
    },
   ["short"] = {
+   [1] = "lupicona",
+   [2] = "lupicona-tv",
    },
   ["syn"] = {
    [1] = "Lupin III vs. Detective Conan",
-   [2] = "Люпен Трети срещу Детектив Конан",
-   [3] = "لوبان الثالث ضد المحقق كونان",
+   [2] = "Lupin Sansei versus Meitantei Conan",
+   [3] = "Люпен Трети срещу Детектив Конан",
+   [4] = "لوبان الثالث ضد المحقق كونان",
    },
   },
  [6433] = {
@@ -77374,6 +77380,7 @@ return {
   ["official"] = {
    [1] = "Gintama: The Movie",
    [2] = "劇場版 銀魂 新訳紅桜篇",
+   [3] = "银魂剧场版 新译红樱篇",
    },
   ["short"] = {
    },
@@ -84756,6 +84763,7 @@ return {
   ["official"] = {
    [1] = "COPPELION",
    [2] = "Coppelion",
+   [3] = "核爆末世录",
    },
   ["short"] = {
    },
@@ -86278,6 +86286,7 @@ return {
    [4] = "Fullmetal Alchemist: The Sacred Star of Milos",
    [5] = "Цул Металлан Алхимич: Милосын ариун од",
    [6] = "鋼の錬金術師 嘆きの丘[ミロス]の聖なる星",
+   [7] = "钢之炼金术师 叹息之丘的圣星",
    },
   ["short"] = {
    [1] = "fmab movie",
@@ -86617,6 +86626,7 @@ return {
   ["main"] = "Gintama`",
   ["official"] = {
    [1] = "銀魂´",
+   [2] = "银魂`",
    },
   ["short"] = {
    },
@@ -86842,7 +86852,8 @@ return {
    [1] = "Death Note: Egy új világ istene",
    [2] = "Death Note: R(デスノート:リライト) 幻視する神",
    [3] = "Death Note: Re-Light - Visions of a God",
-   [4] = "Zápisník smrti - Spasitelské vize",
+   [4] = "La Visualizacion de Dios",
+   [5] = "Zápisník smrti - Spasitelské vize",
    },
   ["short"] = {
    },
@@ -86856,6 +86867,7 @@ return {
    [1] = "Death Note: L örökösei",
    [2] = "Death Note: R2(デスノート:リライト2) Lを継ぐ者",
    [3] = "Death Note: Re-Light 2 - L`s Successors",
+   [4] = "Los Sucesores de L",
    },
   ["short"] = {
    },
@@ -92883,6 +92895,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Gekijouban Meguca",
    },
   },
  [8779] = {
@@ -92952,7 +92965,8 @@ return {
   ["main"] = "Uchuu Senkan Yamato 2199",
   ["official"] = {
    [1] = "Star Blazers 2199",
-   [2] = "宇宙戦艦ヤマト2199",
+   [2] = "宇宙战舰大和号2199",
+   [3] = "宇宙戦艦ヤマト2199",
    },
   ["short"] = {
    [1] = "SBY 2199",
@@ -95173,6 +95187,7 @@ return {
    [1] = "黒魔女さんが通る!!",
    },
   ["short"] = {
+   [1] = "kuromajo",
    },
   ["syn"] = {
    },
@@ -98148,6 +98163,7 @@ return {
    },
   ["syn"] = {
    [1] = "Амнезия",
+   [2] = "アムネシア",
    },
   },
  [9359] = {
@@ -98339,6 +98355,7 @@ return {
   ["main"] = "Gekijouban Gintama Kanketsuhen: Yorozuya yo Eien Nare",
   ["official"] = {
    [1] = "劇場版 銀魂 完結篇 万事屋よ永遠なれ",
+   [2] = "银魂剧场版 完结篇 永远的万事屋",
    },
   ["short"] = {
    },
@@ -98712,6 +98729,7 @@ return {
   ["main"] = "Gintama` (2012)",
   ["official"] = {
    [1] = "銀魂´(2012)",
+   [2] = "银魂`(第三期)",
    },
   ["short"] = {
    [1] = "Gintama 3",
@@ -98883,7 +98901,8 @@ return {
    [1] = "puchimas",
    },
   ["syn"] = {
-   [1] = "ぷちます! -PETIT IDOLM@STER-",
+   [1] = "puchimasu!",
+   [2] = "ぷちます! -PETIT IDOLM@STER-",
    },
   },
  [9446] = {
@@ -99266,7 +99285,7 @@ return {
   ["main"] = "Tokyo Ravens",
   ["official"] = {
    [1] = "Tokyo Ravens",
-   [2] = "东京乌鸦",
+   [2] = "东京暗鸦",
    [3] = "東京レイヴンズ",
    },
   ["short"] = {
@@ -100512,9 +100531,9 @@ return {
    },
   },
  [9605] = {
-  ["main"] = "K 2",
+  ["main"] = "K (2014)",
   ["official"] = {
-   [1] = "K 2",
+   [1] = "K (2014)",
    },
   ["short"] = {
    },
@@ -100995,7 +101014,8 @@ return {
   ["main"] = "Koukaku Kidoutai Arise",
   ["official"] = {
    [1] = "Ghost in the Shell: Arise",
-   [2] = "攻殻機動隊ARISE -GHOST IN THE SHELL-",
+   [2] = "攻壳机动队 ARISE",
+   [3] = "攻殻機動隊ARISE -GHOST IN THE SHELL-",
    },
   ["short"] = {
    [1] = "GitS: Arise",
@@ -101066,7 +101086,7 @@ return {
   ["main"] = "Machine-Doll wa Kizutsukanai",
   ["official"] = {
    [1] = "Unbreakable Machine-Doll",
-   [2] = "机巧少女不受伤",
+   [2] = "机巧少女不会受伤",
    [3] = "機巧少女[マシンドール]は傷つかない",
    },
   ["short"] = {
@@ -101545,6 +101565,7 @@ return {
   ["official"] = {
    [1] = "Non Non Biyori",
    [2] = "のんのんびより",
+   [3] = "悠哉日常大王",
    },
   ["short"] = {
    },
@@ -101910,7 +101931,7 @@ return {
   ["official"] = {
    [1] = "Golden Time",
    [2] = "ゴールデンタイム",
-   [3] = "金色时光",
+   [3] = "青春纪行",
    [4] = "골든 타임",
    },
   ["short"] = {
@@ -102019,6 +102040,7 @@ return {
   ["official"] = {
    [1] = "My Mental Choices are Completely Interfering with my School Romantic Comedy",
    [2] = "俺の脳内選択肢が, 学園ラブコメを全力で邪魔している",
+   [3] = "我的脑内恋碍选项",
    },
   ["short"] = {
    [1] = "Nokome",
@@ -102051,6 +102073,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Freezing 2",
    },
   },
  [9790] = {
@@ -102457,6 +102480,7 @@ return {
    [1] = "ルパン三世vs.名探偵コナン THE MOVIE",
    },
   ["short"] = {
+   [1] = "lupicona-movie",
    },
   ["syn"] = {
    },
@@ -102584,9 +102608,9 @@ return {
  [9855] = {
   ["main"] = "Outbreak Company",
   ["official"] = {
-   [1] = "OUTBREAK COMPANY",
-   [2] = "Outbreak Company",
-   [3] = "アウトブレイク・カンパニー",
+   [1] = "Outbreak Company",
+   [2] = "アウトブレイク・カンパニー",
+   [3] = "萌萌侵略者 OUTBREAK COMPANY",
    },
   ["short"] = {
    },
@@ -102767,6 +102791,7 @@ return {
   ["official"] = {
    [1] = "Kill la Kill",
    [2] = "キルラキル",
+   [3] = "双斩少女",
    },
   ["short"] = {
    [1] = "klk",
@@ -103577,7 +103602,7 @@ return {
   ["official"] = {
    [1] = "Galilei Donna",
    [2] = "ガリレイドンナ Storia di tre sorelle a caccia di un mistero",
-   [3] = "伽利略女神",
+   [3] = "伽利略少女",
    },
   ["short"] = {
    },
@@ -103590,6 +103615,7 @@ return {
   ["official"] = {
    [1] = "Самурай Фламенко",
    [2] = "サムライフラメンコ",
+   [3] = "武士弗拉明戈",
    },
   ["short"] = {
    [1] = "Samumenco",
@@ -103975,7 +104001,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Ловец срещу Ловец: Последно назначение",
+   [1] = "hxh last mission",
+   [2] = "Ловец срещу Ловец: Последно назначение",
    },
   },
  [10015] = {
@@ -105149,9 +105176,9 @@ return {
    },
   },
  [10161] = {
-  ["main"] = "Kantai Collection",
+  ["main"] = "Kantai Collection: KanColle",
   ["official"] = {
-   [1] = "艦隊これくしょん",
+   [1] = "艦隊これくしょん -艦これ-",
    },
   ["short"] = {
    [1] = "KanColle",
@@ -105499,7 +105526,9 @@ return {
    [1] = "ジョジョの奇妙な冒険 スターダストクルセイダース",
    },
   ["short"] = {
-   [1] = "JJBASC",
+   [1] = "JJBA 2014",
+   [2] = "JJBASC",
+   [3] = "JoJo 2014",
    },
   ["syn"] = {
    [1] = "JoJo`s Bizarre Adventure Part 3",
@@ -105615,6 +105644,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "The Fake",
    },
   },
  [10221] = {
@@ -105699,9 +105729,9 @@ return {
    },
   },
  [10232] = {
-  ["main"] = "Non Non Biyori OAD",
+  ["main"] = "Non Non Biyori (2014)",
   ["official"] = {
-   [1] = "のんのんびよりOAD",
+   [1] = "のんのんびより (2014)",
    },
   ["short"] = {
    },
@@ -106280,6 +106310,187 @@ return {
   ["main"] = "Fight Ippatsu! Juuden-chan!! (2014)",
   ["official"] = {
    [1] = "ファイト一発! 充電ちゃん!! (2014)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10302] = {
+  ["main"] = "Puchimas!! Petit Idolmaster (2014)",
+  ["official"] = {
+   [1] = "ぷちます!! -PETIT IDOLM@STER- (2014)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10303] = {
+  ["main"] = "Sri Lanka Kousokudouro",
+  ["official"] = {
+   [1] = "スリランカ高速道路",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10304] = {
+  ["main"] = "Shin Doha Kokusai Kuukou",
+  ["official"] = {
+   [1] = "新ドーハ国際空港",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10305] = {
+  ["main"] = "Kamigami no Asobi",
+  ["official"] = {
+   [1] = "神々の悪戯",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10306] = {
+  ["main"] = "Keroro",
+  ["official"] = {
+   [1] = "ケロロ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10307] = {
+  ["main"] = "Yabai! Fukushuu Yami Site",
+  ["official"] = {
+   [1] = "ヤバい！-復讐・闇サイト-",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10308] = {
+  ["main"] = "Chang",
+  ["official"] = {
+   [1] = "창",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10310] = {
+  ["main"] = "Yuu Gi Ou: Arc-V",
+  ["official"] = {
+   [1] = "遊戯王 アーク・ファイブ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10311] = {
+  ["main"] = "Pic-lele",
+  ["official"] = {
+   [1] = "ピクレレ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10313] = {
+  ["main"] = "Omoide no Marnie",
+  ["official"] = {
+   [1] = "思い出のマーニー",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "When Marnie Was There",
+   },
+  },
+ [10314] = {
+  ["main"] = "Yuki no Taiyou",
+  ["official"] = {
+   [1] = "ユキの太陽",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10315] = {
+  ["main"] = "Mou Hitotsu no Mirai o.",
+  ["official"] = {
+   [1] = "もうひとつの未来を.",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10316] = {
+  ["main"] = "Ppaekkom-ui meogeu-jan yeohaeng",
+  ["official"] = {
+   [1] = "빼꼼의 머그잔 여행",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10317] = {
+  ["main"] = "Madangeul Naon Amtak",
+  ["official"] = {
+   [1] = "마당을 나온 암탉",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10318] = {
+  ["main"] = "Pocket Monsters XY: Hakai no Mayu",
+  ["official"] = {
+   [1] = "ポケットモンスターXY 破壊の繭",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10319] = {
+  ["main"] = "Pikachu, Kore Nanno Kagi?",
+  ["official"] = {
+   [1] = "ピカチュウ, これなんのカギ?",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10320] = {
+  ["main"] = "Uchuu Kyoudai (2014)",
+  ["official"] = {
+   [1] = "宇宙兄弟 (2014)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10321] = {
+  ["main"] = "Senki Zesshou Symphogear 3",
+  ["official"] = {
+   [1] = "戦姫絶唱シンフォギア 3",
    },
   ["short"] = {
    },
