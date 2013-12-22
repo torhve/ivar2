@@ -3802,7 +3802,8 @@ return {
   ["official"] = {
    [1] = "Cutey Honey",
    [2] = "New Cutey Honey",
-   [3] = "新・キューティーハニー",
+   [3] = "Новая сладкая милашка",
+   [4] = "新・キューティーハニー",
    },
   ["short"] = {
    [1] = "NCH",
@@ -5550,9 +5551,9 @@ return {
    },
   },
  [314] = {
-  ["main"] = "Kite",
+  ["main"] = "A Kite",
   ["official"] = {
-   [1] = "A カイト",
+   [1] = "A KITE",
    [2] = "Domination Nakite",
    [3] = "Kite",
    [4] = "Kite - Ein gefährliches Mädchen",
@@ -5566,6 +5567,7 @@ return {
    [1] = "A Kite",
    [2] = "Kite: Angel of Revenge",
    [3] = "Кайт",
+   [4] = "カイト",
    },
   },
  [315] = {
@@ -13508,6 +13510,7 @@ return {
    },
   ["syn"] = {
    [1] = "CLAMP Gakuen Tanteiden",
+   [2] = "Clamp Campus Detectives",
    },
   },
  [842] = {
@@ -23377,6 +23380,7 @@ return {
    },
   ["syn"] = {
    [1] = "Cutey Honey 73",
+   [2] = "Сладкая милашка",
    },
   },
  [1580] = {
@@ -24303,6 +24307,7 @@ return {
   ["main"] = "Re:Cutie Honey",
   ["official"] = {
    [1] = "Re:キューティーハニー",
+   [2] = "Возвращение сладкой милашки",
    },
   ["short"] = {
    [1] = "Re:CH",
@@ -50847,6 +50852,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Bebop High School",
    },
   },
  [4236] = {
@@ -91684,6 +91690,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Steins;Gate the Movie: Burdened Domain of Deja vu",
    },
   },
  [8656] = {
@@ -92104,6 +92111,7 @@ return {
    [1] = "劇場版 とある魔術の禁書目録[インデックス] エンデュミオンの奇蹟",
    },
   ["short"] = {
+   [1] = "Index Movie",
    },
   ["syn"] = {
    [1] = "A Certain Magical Index The Movie: Miracle of Endymion",
@@ -93021,6 +93029,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Kingdom (2012)",
    },
   },
  [8792] = {
@@ -94347,9 +94356,9 @@ return {
    },
   },
  [8931] = {
-  ["main"] = "Sora no Otoshimono (2014)",
+  ["main"] = "Sora no Otoshimono Final: Eternal My Master",
   ["official"] = {
-   [1] = "そらのおとしもの (2014)",
+   [1] = "そらのおとしもの Final 永遠の私の鳥籠[エターナルマイマスター]",
    },
   ["short"] = {
    },
@@ -95013,6 +95022,7 @@ return {
    [1] = "From the New World",
    [2] = "Shin Sekai Yori: Do Novo Mundo",
    [3] = "新世界より",
+   [4] = "来自新世界",
    },
   ["short"] = {
    [1] = "SSY",
@@ -97084,6 +97094,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "金田一少年の事件簿 黒魔術殺人事件",
    },
   },
  [9249] = {
@@ -97498,9 +97509,9 @@ return {
    },
   },
  [9293] = {
-  ["main"] = "Gekijouban Mouretsu Pirates",
+  ["main"] = "Mouretsu Pirates: Abyss of Hyperspace - Akuu no Shin`en",
   ["official"] = {
-   [1] = "劇場版 モーレツ宇宙海賊",
+   [1] = "モーレツ宇宙海賊　ABYSS OF HYPERSPACE -亜空の深淵-",
    },
   ["short"] = {
    },
@@ -99655,8 +99666,9 @@ return {
   ["main"] = "Kaze Tachinu",
   ["official"] = {
    [1] = "Le Vent se lève",
-   [2] = "風立ちぬ",
-   [3] = "바람이 분다",
+   [2] = "Se levanta el viento",
+   [3] = "風立ちぬ",
+   [4] = "바람이 분다",
    },
   ["short"] = {
    },
@@ -99864,13 +99876,13 @@ return {
  [9533] = {
   ["main"] = "Sei Yariman Gakuen Enkou Nikki The Animation",
   ["official"] = {
-   [1] = "Saint Slut Academy Dating Diary",
-   [2] = "聖ヤリマン学園援交日記 THE ANIMATION",
+   [1] = "聖ヤリマン学園援交日記 THE ANIMATION",
    },
   ["short"] = {
    },
   ["syn"] = {
    [1] = "Holy Yariman Academy Compensated Dating Diaries",
+   [2] = "Saint Slut Academy Dating Diary",
    },
   },
  [9534] = {
@@ -99964,6 +99976,7 @@ return {
    [5] = "Вторжение Гигантов",
    [6] = "На бій проти титанів",
    [7] = "Нашествие на гиганти",
+   [8] = "Поход срещу титаните",
    },
   },
  [9542] = {
@@ -101090,6 +101103,7 @@ return {
    [3] = "機巧少女[マシンドール]は傷つかない",
    },
   ["short"] = {
+   [1] = "UMD",
    },
   ["syn"] = {
    [1] = "Kikou Shoujo wa Kizutsukanai",
@@ -101542,7 +101556,7 @@ return {
   ["main"] = "Papa no Iukoto o Kikinasai! OAD",
   ["official"] = {
    [1] = "パパのいうことを聞きなさい! OAD",
-   [2] = "要听爸爸的话！ OVA",
+   [2] = "要听爸爸的话！ OAD",
    },
   ["short"] = {
    [1] = "papakiki ova",
@@ -101649,6 +101663,7 @@ return {
   ["main"] = "Date a Live OAD",
   ["official"] = {
    [1] = "デート・ア・ライブ OAD",
+   [2] = "约会大作战 OAD",
    },
   ["short"] = {
    },
@@ -102190,7 +102205,8 @@ return {
  [9803] = {
   ["main"] = "Blood Lad OAD",
   ["official"] = {
-   [1] = "ブラッドラッド OAD",
+   [1] = "BLOOD LAD 血意少年 OAD",
+   [2] = "ブラッドラッド OAD",
    },
   ["short"] = {
    },
@@ -102365,7 +102381,8 @@ return {
  [9826] = {
   ["main"] = "Shingeki no Kyojin OAD",
   ["official"] = {
-   [1] = "進撃の巨人 OAD",
+   [1] = "进击的巨人 OAD",
+   [2] = "進撃の巨人 OAD",
    },
   ["short"] = {
    },
@@ -103086,7 +103103,7 @@ return {
    [1] = "Fate/ゼロカフェ",
    },
   ["short"] = {
-   [1] = "fz cafe",
+   [1] = "FZ Cafe",
    },
   ["syn"] = {
    },
@@ -103341,9 +103358,9 @@ return {
    },
   },
  [9935] = {
-  ["main"] = "Date a Live 2",
+  ["main"] = "Date a Live II",
   ["official"] = {
-   [1] = "デート・ア・ライブ 2",
+   [1] = "デート・ア・ライブ II",
    },
   ["short"] = {
    },
@@ -103999,10 +104016,10 @@ return {
    [1] = "劇場版 HUNTERxHUNTER THE LAST MISSION",
    },
   ["short"] = {
+   [1] = "HxH Last Mission",
    },
   ["syn"] = {
-   [1] = "hxh last mission",
-   [2] = "Ловец срещу Ловец: Последно назначение",
+   [1] = "Ловец срещу Ловец: Последно назначение",
    },
   },
  [10015] = {
@@ -105284,6 +105301,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "The Crab Gets Its Revenge on the Monkey",
    },
   },
  [10174] = {
@@ -105445,6 +105463,7 @@ return {
    [1] = "生徒会役員共＊",
    },
   ["short"] = {
+   [1] = "SYD*",
    },
   ["syn"] = {
    },
@@ -105566,9 +105585,9 @@ return {
    },
   },
  [10210] = {
-  ["main"] = "Kin`iro no Chord 3",
+  ["main"] = "Kin`iro no Chord: Blue Sky",
   ["official"] = {
-   [1] = "金色のコルダ3",
+   [1] = "金色のコルダ Blue♪Sky",
    },
   ["short"] = {
    },
@@ -106369,7 +106388,7 @@ return {
  [10307] = {
   ["main"] = "Yabai! Fukushuu Yami Site",
   ["official"] = {
-   [1] = "ヤバい！-復讐・闇サイト-",
+   [1] = "ヤバい! -復讐・闇サイト-",
    },
   ["short"] = {
    },
@@ -106394,6 +106413,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Yu-Gi-Oh! Arc Five",
+   [2] = "Yu-Gi-Oh! Arc-V",
    },
   },
  [10311] = {
@@ -106437,16 +106458,6 @@ return {
   ["syn"] = {
    },
   },
- [10316] = {
-  ["main"] = "Ppaekkom-ui meogeu-jan yeohaeng",
-  ["official"] = {
-   [1] = "빼꼼의 머그잔 여행",
-   },
-  ["short"] = {
-   },
-  ["syn"] = {
-   },
-  },
  [10317] = {
   ["main"] = "Madangeul Naon Amtak",
   ["official"] = {
@@ -106468,7 +106479,7 @@ return {
    },
   },
  [10319] = {
-  ["main"] = "Pikachu, Kore Nanno Kagi?",
+  ["main"] = "Pikachu, Kore Nan no Kagi?",
   ["official"] = {
    [1] = "ピカチュウ, これなんのカギ?",
    },
@@ -106491,6 +106502,165 @@ return {
   ["main"] = "Senki Zesshou Symphogear 3",
   ["official"] = {
    [1] = "戦姫絶唱シンフォギア 3",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10322] = {
+  ["main"] = "Ppaekkom-ui Meogeu-jan Yeohaeng",
+  ["official"] = {
+   [1] = "빼꼼의 머그잔 여행",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10323] = {
+  ["main"] = "Ore, Twintails ni Narimasu",
+  ["official"] = {
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10324] = {
+  ["main"] = "Nagato Yuki-chan no Shoushitsu",
+  ["official"] = {
+   [1] = "長門有希ちゃんの消失",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10325] = {
+  ["main"] = "Mitsuwano",
+  ["official"] = {
+   [1] = "みツわの",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10326] = {
+  ["main"] = "Tamako Love Story",
+  ["official"] = {
+   [1] = "たまこラブストーリー",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10329] = {
+  ["main"] = "IS: Infinite Stratos 2 - World Purge Hen",
+  ["official"] = {
+   [1] = "IS＜インフィニット・ストラトス＞2 ワールド・パージ編",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10330] = {
+  ["main"] = "Kakumei-teki Broadway Shugisha Doumei",
+  ["official"] = {
+   [1] = "革命的ブロードウェイ主義者同盟",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10331] = {
+  ["main"] = "Kakumeiki Valvrave Recaps",
+  ["official"] = {
+   [1] = "革命機ヴァルヴレイヴ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10332] = {
+  ["main"] = "Last Orders",
+  ["official"] = {
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10333] = {
+  ["main"] = "Trip Trek (2013)",
+  ["official"] = {
+   [1] = "トリップトレック",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10341] = {
+  ["main"] = "Trip Trek",
+  ["official"] = {
+   [1] = "トリップトレック (2003)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10348] = {
+  ["main"] = "Trip Trek 2003",
+  ["official"] = {
+   [1] = "トリップトレック 2003",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10349] = {
+  ["main"] = "Denpa Kyoushi",
+  ["official"] = {
+   [1] = "電波教師",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10350] = {
+  ["main"] = "Saikin, Imouto no Yousu ga Chotto Okashiinda ga. OAD",
+  ["official"] = {
+   [1] = "最近, 妹のようすがちょっとおかしいんだが. OAD",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10351] = {
+  ["main"] = "Hana Yamata",
+  ["official"] = {
+   [1] = "ハナヤマタ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Hanayamata",
+   },
+  },
+ [10352] = {
+  ["main"] = "High Score Girl",
+  ["official"] = {
+   [1] = "ハイスコアガール",
    },
   ["short"] = {
    },
