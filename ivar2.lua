@@ -173,18 +173,14 @@ local events = {
 			-- XXX: We should probably parse out everything and move it to
 			-- self.server or something.
 			function(self, source, param, param2)
-				-- Sometimes param holds the values, sometimes param2 holds the values.
-				-- Check first param then check param2
-				if param then
-					local network = param:match("NETWORK=([^ ]+)")
-					if(network) then
-						self.network = network
-					end
-				elseif param2 then
-					local network = param2:match("NETWORK=([^ ]+)")
-					if(network) then
-						self.network = network
-					end
+				local network = matchFirst("NETWORK=([^ ]+)", param, param2)
+				if(network) then
+					self.network = network
+				end
+
+				local maxNickLength = matchFirst("MAXNICKLEN=(%d+)", param, param2)
+				if(maxNickLength) then
+					self.maxNickLength = maxNickLength
 				end
 			end,
 		},
