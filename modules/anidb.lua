@@ -227,21 +227,19 @@ return {
 				end
 
 				do
-					local n = 15
 					local out = {}
-					local msgLimit = (512 - 16 - 65 - 10) - #self.config.nick - #destination
 					for i=1, numResults do
 						local anime = results[i]
 						local aid = anime.aid
 						local title = anime.title
 
-						n = n + #title + #tostring(aid) + 5
-						if(n < msgLimit) then
-							table.insert(out, string.format('\002[%s]\002 %s', aid, title))
-						end
+						table.insert(out, string.format('\002[%s]\002 %s', aid, title))
 					end
 
-					return self:Msg('privmsg', destination, source, table.concat(out, ' '))
+					return self:Msg(
+						'privmsg', destination, source,
+						table.concat(self:LimitOutput(destination, out, 1), ' ')
+					)
 				end
 			end
 		end,
