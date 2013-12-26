@@ -37,6 +37,16 @@ local ivar2 = {
 	end,
 }
 
+local matchFirst = function(pattern, ...)
+	for i=1, select('#', pattern) do
+		local arg = select(i, ...)
+		if(arg) then
+			local match = arg:match(pattern)
+			if(match) then return match end
+		end
+	end
+end
+
 local events = {
 	['PING'] = {
 		core = {
@@ -132,18 +142,17 @@ local events = {
 
 	['005'] = {
 		core = {
+			-- XXX: We should probably parse out everything and move it to
+			-- self.server or something.
 			function(self, source, param, param2)
-				local network
-				if(param) then
-					network = param:match("NETWORK=([^ ]+)")
-				end
-
-				if(not network and param2) then
-					network = param2:match("NETWORK=([^ ]+)")
-				end
-
+				local network = matchFirst("NETWORK=([^ ]+)", param, param2)
 				if(network) then
 					self.network = network
+				end
+
+				local maxNickLength = matchFirst("MAXNICKLEN=(%d+)", param, param2)
+				if(maxNickLength) then
+					self.maxNickLength = maxNickLength
 				end
 			end,
 		},
@@ -532,6 +541,7 @@ function ivar2:Reload()
 		message.channels = self.channels
 		message.event = self.event
 		message.network = self.network
+		message.maxNickLength = self.maxNickLength
 		-- Clear the registered events
 		message.event:ClearAll()
 
