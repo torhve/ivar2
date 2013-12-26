@@ -36,6 +36,8 @@ local handleMessage = function(nick, destination, msg, update)
 		)
 
 		if(success and out ~= db[nick][destination]) then
+			local limit = 512 - #ivar2.config.nick - 1 - 1 - 63 - 1 - #destination - 32 - 50
+			out = out:sub(1, limit)
 			if(update) then
 				db[nick][destination] = out
 			end
