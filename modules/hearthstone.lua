@@ -63,35 +63,27 @@ local formatOutput = function(card)
 end
 
 local checkCache = function(card)
-	local out
 	if(cache[card]) then
-		out = formatOutput(card)
+		return formatOutput(card)
 	end
 
-	if(not out) then
-		local matches = {}
-		for name, data in next, cache do
-			if(name:find(card, 1, true)) then
-				table.insert(matches, data.name)
-			end
+	local matches = {}
+	for name, data in next, cache do
+		if(name:find(card, 1, true)) then
+			table.insert(matches, data.name)
 		end
+	end
 
-		if(#matches == 1) then
-			out = formatOutput(matches[1]:lower())
-		elseif(#matches > 1) then
-			local n = 13 + 7
-			out = {}
-			local msgLimit = (512 - 16 - 65 - 10) - #ivar2.config.nick - 30
-			for i=1, #matches do
-				local name = matches[i]
-				n = n + #name + 2
-				if(n < msgLimit) then
-					table.insert(out, string.format('%s', name))
-				end
-			end
+	if(#matches == 1) then
+		return formatOutput(matches[1]:lower())
+	elseif(#matches == 0) then
+		return
+	end
 
-			out = 'Found: ' .. table.concat(out, ', ')
-		end
+	local out = {}
+	for i=1, #matches do
+		local name = matches[i]
+		table.insert(out, name)
 	end
 
 	return out
@@ -114,6 +106,10 @@ return {
 
 				local out = checkCache(card)
 				if(out) then
+					if(type(out) == 'table') then
+						out = "Multiple matches - " .. table.concat(self:LimitOutput(destination, out, 2, 31), ', ')
+					end
+
 					self:Msg('privmsg', destination, source, 'Hearthstone: %s', out)
 				else
 					self:Msg('privmsg', destination, source, 'Hearthstone: No matching card found.')
