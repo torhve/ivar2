@@ -367,6 +367,25 @@ function ivar2:ParseMask(mask)
 	return source
 end
 
+function ivar2:LimitOutput(destination, output, sep)
+	-- 512 - <nick> - ":" - "!" - 63 (max host size, rfc) - " " - destination
+	local limit = 512 - #self.config.nick - 1 - 1 - 63 - 1 - #destination
+	sep = sep or 2
+
+	local out = {}
+	for i=1, #output do
+		local entry = output[i]
+		limit = limit - #entry - sep
+		if(limit > 0) then
+			table.insert(out, entry)
+		else
+			break
+		end
+	end
+
+	return out, limit
+end
+
 function ivar2:DispatchCommand(command, argument, source, destination)
 	if(not events[command]) then return end
 
