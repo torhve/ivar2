@@ -367,9 +367,9 @@ function ivar2:ParseMask(mask)
 	return source
 end
 
-function ivar2:LimitOutput(destination, output, sep)
+function ivar2:LimitOutput(destination, output, sep, padding)
 	-- 512 - <nick> - ":" - "!" - 63 (max host size, rfc) - " " - destination
-	local limit = 512 - #self.config.nick - 1 - 1 - 63 - 1 - #destination
+	local limit = 512 - #self.config.nick - 1 - 1 - 63 - 1 - #destination - (padding or 0)
 	sep = sep or 2
 
 	local out = {}
