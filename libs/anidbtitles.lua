@@ -2210,15 +2210,15 @@ return {
  [118] = {
   ["main"] = "Ajimu: Kaigan Monogatari",
   ["official"] = {
-   [1] = "Ajimu Beach Story",
-   [2] = "あじむ ～海岸物語～",
+   [1] = "あじむ ～海岸物語～",
    },
   ["short"] = {
    [1] = "ABJ",
    [2] = "ajimu",
    },
   ["syn"] = {
-   [1] = "Адзиму - пляжная история",
+   [1] = "Ajimu Beach Story",
+   [2] = "Адзиму - пляжная история",
    },
   },
  [119] = {
@@ -6291,7 +6291,8 @@ return {
  [356] = {
   ["main"] = "Marmalade Boy",
   ["official"] = {
-   [1] = "ママレード・ボーイ",
+   [1] = "Marmalade Boy (La Familia Crece)",
+   [2] = "ママレード・ボーイ",
    },
   ["short"] = {
    [1] = "mb",
@@ -7511,6 +7512,7 @@ return {
    },
   ["syn"] = {
    [1] = "Най-добрият готвач",
+   [2] = "中华小当家",
    },
   },
  [436] = {
@@ -8855,6 +8857,7 @@ return {
   ["syn"] = {
    [1] = "Nadja of Tomorrow",
    [2] = "نادجا الغد",
+   [3] = "明日的娜嘉",
    },
   },
  [521] = {
@@ -19211,7 +19214,8 @@ return {
  [1259] = {
   ["main"] = "Marmalade Boy (1995)",
   ["official"] = {
-   [1] = "ママレード・ボーイ (1995)",
+   [1] = "Marmalade Boy (La Familia Crece): La Película",
+   [2] = "ママレード・ボーイ (1995)",
    },
   ["short"] = {
    },
@@ -20475,8 +20479,9 @@ return {
  [1361] = {
   ["main"] = "Unico: Mahou no Shima e",
   ["official"] = {
-   [1] = "Unico sur l`île magique",
-   [2] = "ユニコ 魔法の島へ",
+   [1] = "Unico en la isla de la magia",
+   [2] = "Unico sur l`île magique",
+   [3] = "ユニコ 魔法の島へ",
    },
   ["short"] = {
    },
@@ -22899,7 +22904,8 @@ return {
    [10] = "Ельфійська пісня",
    [11] = "إلفن ليد",
    [12] = "الفن لیت",
-   [13] = "妖精的旋律",
+   [13] = "ایلفن لائیڈ",
+   [14] = "妖精的旋律",
    },
   },
  [1545] = {
@@ -25660,8 +25666,9 @@ return {
   ["main"] = "Arabian Nights: Sindbad no Bouken",
   ["official"] = {
    [1] = "As Aventuras de Simbad - O Marinheiro",
-   [2] = "Szindbád a hajós",
-   [3] = "アラビアンナイト シンドバッドの冒険",
+   [2] = "Simbad el marino",
+   [3] = "Szindbád a hajós",
+   [4] = "アラビアンナイト シンドバッドの冒険",
    },
   ["short"] = {
    },
@@ -29374,13 +29381,14 @@ return {
  [2068] = {
   ["main"] = "Lady Lady!!",
   ["official"] = {
-   [1] = "Gwendoline - Saison 1",
-   [2] = "Lady Lady!",
-   [3] = "Ledi Lina",
-   [4] = "Mała dama",
-   [5] = "Milly un giorno dopo l`altro",
-   [6] = "ليدي ليدي",
-   [7] = "レディレディ!!",
+   [1] = "Chiquitina",
+   [2] = "Gwendoline - Saison 1",
+   [3] = "Lady Lady!",
+   [4] = "Ledi Lina",
+   [5] = "Mała dama",
+   [6] = "Milly un giorno dopo l`altro",
+   [7] = "ليدي ليدي",
+   [8] = "レディレディ!!",
    },
   ["short"] = {
    [1] = "Gwendoline",
@@ -31142,7 +31150,8 @@ return {
   ["main"] = "Shounen Jack to Mahou Tsukai",
   ["official"] = {
    [1] = "Jack e a Bruxa",
-   [2] = "少年ジャックと魔法使い",
+   [2] = "Jack y la Bruja",
+   [3] = "少年ジャックと魔法使い",
    },
   ["short"] = {
    },
@@ -31269,9 +31278,9 @@ return {
   ["main"] = "Kaitei 3-man Mile",
   ["official"] = {
    [1] = "20 Mil Léguas Sob o Mar",
-   [2] = "30,000 ميل تحت سطح البحر",
-   [3] = "Bulles sous les mers",
-   [4] = "La ciudad sumergida de Samu",
+   [2] = "20.000 Leguas de Viaje Submarino",
+   [3] = "30,000 ميل تحت سطح البحر",
+   [4] = "Bulles sous les mers",
    [5] = "海底3万マイル",
    },
   ["short"] = {
@@ -31289,7 +31298,7 @@ return {
    [2] = "Die Schatzinsel - Der Film",
    [3] = "Dzieci wśród piratów",
    [4] = "Gli allegri pirati dell`Isola del Tesoro",
-   [5] = "La isla del tesoro de los animales",
+   [5] = "La Isla del Tesoro",
    [6] = "Les joyeux pirates de l`île au trésor",
    [7] = "どうぶつ宝島",
    },
@@ -31310,7 +31319,8 @@ return {
   ["main"] = "Ali Baba to 40-hiki no Touzoku",
   ["official"] = {
    [1] = "Alibaba und die 40 Räuber",
-   [2] = "アリババと40匹の盗賊",
+   [2] = "Alí Babá y los 40 ladrones",
+   [3] = "アリババと40匹の盗賊",
    },
   ["short"] = {
    },
@@ -31357,11 +31367,12 @@ return {
   ["main"] = "Panda no Daibouken",
   ["official"] = {
    [1] = "As Aventuras do Ursinho Panda",
-   [2] = "Les aventures de Panda",
-   [3] = "Panda seikkailee",
-   [4] = "Pandamaci kalandjai",
-   [5] = "Πάντα, το χαρούμενο αρκουδάκι",
-   [6] = "パンダの大冒険",
+   [2] = "Las aventuras del osito panda",
+   [3] = "Les aventures de Panda",
+   [4] = "Panda seikkailee",
+   [5] = "Pandamaci kalandjai",
+   [6] = "Πάντα, το χαρούμενο αρκουδάκι",
+   [7] = "パンダの大冒険",
    },
   ["short"] = {
    },
@@ -31390,10 +31401,11 @@ return {
    [1] = "A Pequena Sereia",
    [2] = "A kis hableány",
    [3] = "Die kleine Meerjungfrau",
-   [4] = "Przygody Syrenki",
-   [5] = "Русалочка - Принцесса подводного царства",
-   [6] = "حورية البحر الصغيرة",
-   [7] = "アンデルセン童話 にんぎょ姫",
+   [4] = "La Pequeña Sirenita",
+   [5] = "Przygody Syrenki",
+   [6] = "Русалочка - Принцесса подводного царства",
+   [7] = "حورية البحر الصغيرة",
+   [8] = "アンデルセン童話 にんぎょ姫",
    },
   ["short"] = {
    },
@@ -32950,6 +32962,7 @@ return {
    [2] = "Captain Tsubasa Movie (1985 Summer)",
    [3] = "Captain Tsubasa Movie 1",
    [4] = "Captain Tsubasa: Europe Dai Kessen",
+   [5] = "足球小将 决战欧洲",
    },
   },
  [2339] = {
@@ -38700,7 +38713,7 @@ return {
  [2842] = {
   ["main"] = "Hotori: Tada Saiwai o Koinegau",
   ["official"] = {
-   [1] = "ほとり～たださいわいを希う.～",
+   [1] = "ほとり~たださいわいを希う.~",
    },
   ["short"] = {
    [1] = "hotori",
@@ -41551,7 +41564,8 @@ return {
    [1] = "Alla scoperta di Babbo Natale",
    [2] = "Familie Nikolaus",
    [3] = "Histoire du père Noël",
-   [4] = "森のトントたち",
+   [4] = "Noeli",
+   [5] = "森のトントたち",
    },
   ["short"] = {
    },
@@ -41633,16 +41647,16 @@ return {
  [3172] = {
   ["main"] = "Columbus no Daibouken",
   ["official"] = {
-   [1] = "Great Adventure of Columbus",
-   [2] = "Krzysztof Kolumb",
-   [3] = "コロンブスの大冒険",
+   [1] = "Krzysztof Kolumb",
+   [2] = "コロンブスの大冒険",
    },
   ["short"] = {
    },
   ["syn"] = {
    [1] = "Columbus`s Great Adventures",
-   [2] = "Krzysztof Kolumb - Odkrycie Ameryki",
-   [3] = "הרפתקאות קולומבוס",
+   [2] = "Great Adventure of Columbus",
+   [3] = "Krzysztof Kolumb - Odkrycie Ameryki",
+   [4] = "הרפתקאות קולומבוס",
    },
   },
  [3173] = {
@@ -42943,9 +42957,8 @@ return {
    [1] = "Fate/Stay Night",
    [2] = "Fate/stay night",
    [3] = "มหาสงครามจอกศักดิ์สิทธิ์",
-   [4] = "フェイト/ステイナイト",
-   [5] = "命運守護夜",
-   [6] = "페이트 스테이 나이트",
+   [4] = "命運守護夜",
+   [5] = "페이트 스테이 나이트",
    },
   ["short"] = {
    [1] = "F/SN",
@@ -42958,6 +42971,7 @@ return {
    [2] = "Судьба: Ночь Схватки",
    [3] = "Съдба/Нощна битка",
    [4] = "قسمت / رہو نائٹ",
+   [5] = "フェイト/ステイナイト",
    },
   },
  [3349] = {
@@ -43863,7 +43877,7 @@ return {
    },
   },
  [3425] = {
-  ["main"] = "Tsuri Kichi Sanpei",
+  ["main"] = "Tsurikichi Sanpei",
   ["official"] = {
    [1] = "Paul le pêcheur",
    [2] = "Sampei",
@@ -44381,7 +44395,8 @@ return {
    [1] = "Gintama",
    [2] = "กินทามะ",
    [3] = "銀魂[ぎんたま]",
-   [4] = "은혼",
+   [4] = "银魂",
+   [5] = "은혼",
    },
   ["short"] = {
    },
@@ -44390,7 +44405,6 @@ return {
    [2] = "gintama tv",
    [3] = "Гинтама",
    [4] = "جينتاما",
-   [5] = "银魂",
    },
   },
  [3469] = {
@@ -48734,7 +48748,7 @@ return {
    },
   },
  [4068] = {
-  ["main"] = "Yoshinaga-san`chi no Gargoyle",
+  ["main"] = "Yoshinaga-sanchi no Gargoyle",
   ["official"] = {
    [1] = "吉永さん家のガーゴイル",
    },
@@ -53976,9 +53990,9 @@ return {
   ["official"] = {
    [1] = "5 Centimeters per Second",
    [2] = "5 Centimeters per second",
-   [3] = "5 Centimetros por Segundo",
-   [4] = "5 Centimetru za Sekundu",
-   [5] = "5 Centimètres par seconde",
+   [3] = "5 Centimetru za Sekundu",
+   [4] = "5 Centimètres par seconde",
+   [5] = "5 Centímetros por Segundo",
    [6] = "5 centimeter per seconde",
    [7] = "5 sentimeetrit sekundis",
    [8] = "5 сантиметров в секунду",
@@ -55315,7 +55329,8 @@ return {
    [1] = "Nodame Cantabile",
    [2] = "Нодаме Кантабиле",
    [3] = "のだめカンタービレ",
-   [4] = "노다메 칸타빌레",
+   [4] = "交响情人梦",
+   [5] = "노다메 칸타빌레",
    },
   ["short"] = {
    [1] = "NC",
@@ -55329,7 +55344,6 @@ return {
    [2] = "Нодамэ Кантабиле",
    [3] = "จังหวะรัก หัวใจดนตรี",
    [4] = "วุ่นรักนักดนตรี",
-   [5] = "交响情人梦",
    },
   },
  [4692] = {
@@ -64903,7 +64917,8 @@ return {
   ["main"] = "Natsume Yuujinchou",
   ["official"] = {
    [1] = "Natsume Yujincho",
-   [2] = "夏目友人帳",
+   [2] = "夏目友人帐",
+   [3] = "夏目友人帳",
    },
   ["short"] = {
    [1] = "Natsume 1",
@@ -64918,7 +64933,6 @@ return {
    [4] = "Το \"βιβλίο των φίλων\" του Νατσούμε",
    [5] = "Тетрадь дружбы Нацумэ",
    [6] = "کتابٍ دوستان ناتسومه",
-   [7] = "夏目友人帐",
    },
   },
  [5788] = {
@@ -69618,7 +69632,7 @@ return {
    },
   },
  [6361] = {
-  ["main"] = "Ooi! Adatchie!",
+  ["main"] = "Ooi! Adacchi!",
   ["official"] = {
    [1] = "おーい! アダッチー",
    },
@@ -69802,7 +69816,7 @@ return {
    },
   },
  [6386] = {
-  ["main"] = "Zoo no Inai Doubutsuen",
+  ["main"] = "Zou no Inai Doubutsuen",
   ["official"] = {
    [1] = "象のいない動物園",
    },
@@ -70096,7 +70110,8 @@ return {
   ["main"] = "Cross Game",
   ["official"] = {
    [1] = "クロスゲーム",
-   [2] = "크로스 게임",
+   [2] = "幸运四叶草",
+   [3] = "크로스 게임",
    },
   ["short"] = {
    },
@@ -70104,7 +70119,6 @@ return {
    [1] = "crossgame",
    [2] = "Перекрестная игра",
    [3] = "Перехрестна гра",
-   [4] = "幸运四叶草",
    },
   },
  [6425] = {
@@ -84067,13 +84081,15 @@ return {
    },
   },
  [7858] = {
-  ["main"] = "Hello Kitty no Happy Birthday",
+  ["main"] = "Kitty to Mimmy no Happy Birthday",
   ["official"] = {
-   [1] = "ハローキティとミミィのハッピーバースデー",
+   [1] = "キティとミミィのハッピーバースデー",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Hello Kitty to Mimmy no Happy Birthday",
+   [2] = "ハローキティとミミィのハッピーバースデー",
    },
   },
  [7859] = {
@@ -84661,6 +84677,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Yumeiro Patissiere SP Professional",
    },
   },
  [7923] = {
@@ -85385,7 +85402,8 @@ return {
  [7995] = {
   ["main"] = "Hiyokoi",
   ["official"] = {
-   [1] = "ひよ恋",
+   [1] = "Amor de Hiyo",
+   [2] = "ひよ恋",
    },
   ["short"] = {
    },
@@ -92983,6 +93001,7 @@ return {
    },
   ["syn"] = {
    [1] = "Space Battleship Yamato 2199",
+   [2] = "Звезден кораб \"Ямато\" 2199",
    },
   },
  [8788] = {
@@ -93416,12 +93435,13 @@ return {
   ["main"] = "Ookami Kodomo no Ame to Yuki",
   ["official"] = {
    [1] = "Ame & Yuki – Die Wolfskinder",
-   [2] = "Les enfants loups - Ame & Yuki",
-   [3] = "Vlčí děti",
-   [4] = "Wolf Children",
-   [5] = "Wolf Children - Los Niños Lobo",
-   [6] = "おおかみこどもの雨と雪",
-   [7] = "狼的孩子雨和雪",
+   [2] = "Djeca vukovi",
+   [3] = "Les enfants loups - Ame & Yuki",
+   [4] = "Vlčí děti",
+   [5] = "Wolf Children",
+   [6] = "Wolf Children - Los Niños Lobo",
+   [7] = "おおかみこどもの雨と雪",
+   [8] = "狼的孩子雨和雪",
    },
   ["short"] = {
    [1] = "Wolfskinder",
@@ -93925,14 +93945,14 @@ return {
    [2] = "Фатум 2012",
    },
   ["syn"] = {
-   [1] = "Fate Zero (2012)",
-   [2] = "Fate/Zero 2ndシーズン",
-   [3] = "Fate/Zero II",
-   [4] = "Fate/Zero: 2nd Season",
-   [5] = "Fate/Zero: Second Season",
-   [6] = "Доля/Початок II",
-   [7] = "Фатум/Початок II",
-   [8] = "قسمت / صفر (2012)",
+   [1] = "(قسمت / صفر (2012",
+   [2] = "Fate Zero (2012)",
+   [3] = "Fate/Zero 2ndシーズン",
+   [4] = "Fate/Zero II",
+   [5] = "Fate/Zero: 2nd Season",
+   [6] = "Fate/Zero: Second Season",
+   [7] = "Доля/Початок II",
+   [8] = "Фатум/Початок II",
    [9] = "フェイト/ゼロ 2ndシーズン",
    },
   },
@@ -95029,6 +95049,7 @@ return {
    },
   ["syn"] = {
    [1] = "Iš naujojo pasaulio",
+   [2] = "З нового світу",
    },
   },
  [9003] = {
@@ -97943,7 +97964,7 @@ return {
    },
   },
  [9337] = {
-  ["main"] = "Macross FB7: Ginga Rukon Ore no Uta o Kike!",
+  ["main"] = "Macross FB7: Ore no Uta o Kike!",
   ["official"] = {
    [1] = "マクロスFB7 銀河流魂 オレノウタヲキケ!",
    },
@@ -98371,6 +98392,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Сребърна душа: Краят - Йородзуя завинаги",
    },
   },
  [9385] = {
@@ -99954,14 +99976,15 @@ return {
   ["main"] = "Shingeki no Kyojin",
   ["official"] = {
    [1] = "Ataque a los Titanes",
-   [2] = "Attack on Titan",
-   [3] = "L`attaque des Titans",
-   [4] = "الهجوم على العملاقة",
-   [5] = "حمله به تایتان",
-   [6] = "进击的巨人",
-   [7] = "進撃の巨人 attack on titan",
-   [8] = "進擊的巨人",
-   [9] = "진격의 거인",
+   [2] = "Ataque dos Titãs",
+   [3] = "Attack on Titan",
+   [4] = "L`attaque des Titans",
+   [5] = "الهجوم على العملاقة",
+   [6] = "حمله به تایتان",
+   [7] = "进击的巨人",
+   [8] = "進撃の巨人 attack on titan",
+   [9] = "進擊的巨人",
+   [10] = "진격의 거인",
    },
   ["short"] = {
    [1] = "AoT",
@@ -101050,6 +101073,7 @@ return {
    },
   ["syn"] = {
    [1] = "I Couldn`t Become a Hero, so I Reluctantly Decided to Get a Job",
+   [2] = "Героем я не стал и нехотя решил найти работу.",
    },
   },
  [9660] = {
@@ -101671,7 +101695,7 @@ return {
    },
   },
  [9736] = {
-  ["main"] = "Gen`ei o Kakeru Taiyou: Il Sole Penetra le Illusioni",
+  ["main"] = "Gen`ei o Kakeru Taiyou",
   ["official"] = {
    [1] = "Day Break Illusion",
    [2] = "幻影ヲ駆ケル太陽 il sole penetra le illusioni",
@@ -103056,11 +103080,13 @@ return {
  [9903] = {
   ["main"] = "Nisekoi",
   ["official"] = {
-   [1] = "ニセコイ",
+   [1] = "Nisekoi",
+   [2] = "ニセコイ",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "False Love",
    },
   },
  [9904] = {
@@ -103702,13 +103728,17 @@ return {
    },
   },
  [9977] = {
-  ["main"] = "Fate/Staynight",
+  ["main"] = "Fate/Stay Night (2014)",
   ["official"] = {
-   [1] = "Fate/Stay Night",
+   [1] = "Fate/stay night (2014)",
    },
   ["short"] = {
+   [1] = "F/SN 2014",
+   [2] = "FSN 2014",
    },
   ["syn"] = {
+   [1] = "Fate Stay Night 2014",
+   [2] = "フェイト/ステイナイト (2014)",
    },
   },
  [9979] = {
@@ -103722,9 +103752,9 @@ return {
    },
   },
  [9980] = {
-  ["main"] = "Fairy Tail 2",
+  ["main"] = "Fairy Tail (2014)",
   ["official"] = {
-   [1] = "Fairy Tail 2",
+   [1] = "Fairy Tail (2014)",
    },
   ["short"] = {
    [1] = "ft2",
@@ -105479,7 +105509,7 @@ return {
    },
   },
  [10199] = {
-  ["main"] = "Parol no Mirai Shima",
+  ["main"] = "Parol no Miraijima",
   ["official"] = {
    [1] = "パロルのみらい島",
    },
@@ -105520,13 +105550,14 @@ return {
    },
   },
  [10203] = {
-  ["main"] = "Dokidoki Gakuen Kessen!! Youki Daimashiro",
+  ["main"] = "Dokidoki Gakuen: Kessen!! Youki Daimajou",
   ["official"] = {
    [1] = "ドキドキ学園 決戦!!妖奇大魔城",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Dokidoki Gakuen Kessen!! Youki Daimashiro",
    },
   },
  [10205] = {
@@ -105550,7 +105581,8 @@ return {
    [3] = "JoJo 2014",
    },
   ["syn"] = {
-   [1] = "JoJo`s Bizarre Adventure Part 3",
+   [1] = "JOJO`S BIZARRE ADVENTURE: Stardust Crusaders",
+   [2] = "JoJo`s Bizarre Adventure Part 3",
    },
   },
  [10207] = {
@@ -106085,7 +106117,7 @@ return {
    },
   },
  [10274] = {
-  ["main"] = "Mushishi Tokubetsu-hen: Hihamukage",
+  ["main"] = "Mushishi Tokubetsu Hen: Hihamukage",
   ["official"] = {
    [1] = "蟲師 特別編「日蝕む翳」",
    },
@@ -106661,6 +106693,186 @@ return {
   ["main"] = "High Score Girl",
   ["official"] = {
    [1] = "ハイスコアガール",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10353] = {
+  ["main"] = "Gekijouban Pretty Rhythm",
+  ["official"] = {
+   [1] = "劇場版 プリティーリズム",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10354] = {
+  ["main"] = "Majin Bone",
+  ["official"] = {
+   [1] = "マジンボーン",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10355] = {
+  ["main"] = "KanColle Nanchatte PV",
+  ["official"] = {
+   [1] = "艦これなんちゃってPV",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10356] = {
+  ["main"] = "Planet: Valkyrie",
+  ["official"] = {
+   [1] = "プラネットワルキューレ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10357] = {
+  ["main"] = "Rail Wars! Nihon Kokuyuu Tetsudou Kouantai",
+  ["official"] = {
+   [1] = "RAIL WARS!-日本國有鉄道公安隊-",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10358] = {
+  ["main"] = "Little Busters! EX",
+  ["official"] = {
+   [1] = "リトルバスターズ！EX",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10359] = {
+  ["main"] = "Romantica Clock",
+  ["official"] = {
+   [1] = "ロマンチカ クロック",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10360] = {
+  ["main"] = "Mekaku City Actors",
+  ["official"] = {
+   [1] = "メカクシティアクターズ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10361] = {
+  ["main"] = "Sugar Soldier",
+  ["official"] = {
+   [1] = "シュガー＊ソルジャー",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10362] = {
+  ["main"] = "Daicon Film 33",
+  ["official"] = {
+   [1] = "DAICON FILM 33",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10363] = {
+  ["main"] = "Fela Pure: Mitarashi-san Chi no Jijou The Animation",
+  ["official"] = {
+   [1] = "フェラピュア ~御手洗さん家の事情~ THE ANIMATION",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10365] = {
+  ["main"] = "Fuuun Ishin Dai Shougun",
+  ["official"] = {
+   [1] = "風雲維新ダイ☆ショーグン",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10366] = {
+  ["main"] = "Kenzen Robo Daimidaler",
+  ["official"] = {
+   [1] = "健全ロボ ダイミダラー",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10367] = {
+  ["main"] = "Tsubasa to Hotaru",
+  ["official"] = {
+   [1] = "つばさとホタル",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10368] = {
+  ["main"] = "Shin Tennis no Ouji-sama (2014)",
+  ["official"] = {
+   [1] = "新テニスの王子様 (2014)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10369] = {
+  ["main"] = "Chou Akuukan Bouheki Cheese Napolitan",
+  ["official"] = {
+   [1] = "超亜空間防壁チーズ・ナポリタン",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10370] = {
+  ["main"] = "Edogawa Conan Shissou Jiken ~Shijou Saiaku no Ichinishi",
+  ["official"] = {
+   [1] = "The Disappearance of Conan Edogawa: The Worst Day in History",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10371] = {
+  ["main"] = "Darker than Black: Kuro no Keiyakusha Gaiden",
+  ["official"] = {
+   [1] = "Darker than Black: Kuro no Keiyakusha Gaiden",
    },
   ["short"] = {
    },
