@@ -3694,15 +3694,15 @@ return {
   ["main"] = "Ijigen no Sekai El-Hazard",
   ["official"] = {
    [1] = "El Hazard - Les mondes alternatifs",
-   [2] = "異次元の世界エルハザード",
+   [2] = "El Hazard: The Alternative World",
+   [3] = "異次元の世界エルハザード",
    },
   ["short"] = {
    [1] = "elhaz tv2",
    },
   ["syn"] = {
    [1] = "El Hazard TV 2",
-   [2] = "El Hazard: The Alternative World",
-   [3] = "Альтернативный мир Эль-Хазард",
+   [2] = "Альтернативный мир Эль-Хазард",
    },
   },
  [208] = {
@@ -10444,6 +10444,7 @@ return {
    [1] = "Gundam 0123: Formula 91",
    [2] = "Gundam F91",
    [3] = "Gundam Formula 91",
+   [4] = "机动战士高达 F91",
    },
   },
  [627] = {
@@ -44302,7 +44303,7 @@ return {
    },
   },
  [3459] = {
-  ["main"] = "Kizuna: Koi no kara Sawagi",
+  ["main"] = "Kizuna: Koi no Karasawagi",
   ["official"] = {
    [1] = "KIZUNA ~恋のから騒ぎ~",
    [2] = "Kizuna - Liebe und viel Lärm um nichts",
@@ -56780,7 +56781,7 @@ return {
    },
   },
  [4841] = {
-  ["main"] = "Shounan Jun`ai-gumi",
+  ["main"] = "Shounan Jun`ai-gumi!",
   ["official"] = {
    [1] = "湘南純愛組!",
    },
@@ -64281,7 +64282,7 @@ return {
    },
   },
  [5693] = {
-  ["main"] = "Ramayana - Rama Ouji Densetsu",
+  ["main"] = "Ramayana: Rama Ouji Densetsu",
   ["official"] = {
    [1] = "Ramayana - legenda o princi Ramovi",
    [2] = "Ramayana: Opowieść o księciu Ramie",
@@ -64536,6 +64537,7 @@ return {
    },
   ["syn"] = {
    [1] = "12 Female Teachers",
+   [2] = "12인의 여교사",
    },
   },
  [5728] = {
@@ -66828,7 +66830,7 @@ return {
  [6040] = {
   ["main"] = "Tales of the Abyss",
   ["official"] = {
-   [1] = "テイルズ オブジ アビス",
+   [1] = "TALES OF THE ABYSS",
    },
   ["short"] = {
    [1] = "TotA",
@@ -66836,7 +66838,8 @@ return {
   ["syn"] = {
    [1] = "Приказки от бездната",
    [2] = "Сказания Бездны",
-   [3] = "深渊传说",
+   [3] = "テイルズ オブ ジ アビス",
+   [4] = "深渊传说",
    },
   },
  [6041] = {
@@ -93382,7 +93385,8 @@ return {
   ["syn"] = {
    [1] = "Gekijouban Hana-Saku Iroha: Home Sweet Home",
    [2] = "Gekijouban Hanasaku Iroha: Home Sweet Home",
-   [3] = "劇場版 花咲くいろは HOME SWEET HOME",
+   [3] = "剧场版 花开伊吕波：Home Sweet Home",
+   [4] = "劇場版 花咲くいろは HOME SWEET HOME",
    },
   },
  [8828] = {
@@ -95257,7 +95261,8 @@ return {
    },
   ["syn"] = {
    [1] = "Naruto Shippuuden Movie 6",
-   [2] = "ロード・トゥ・ニンジャ ナルト・ザ・ムービー",
+   [2] = "Naruto Shippuuden Movie 6 - Road to Ninja",
+   [3] = "ロード・トゥ・ニンジャ ナルト・ザ・ムービー",
    },
   },
  [9025] = {
@@ -95319,6 +95324,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Lupin III - The Woman Called Fujiko Mine",
    },
   },
  [9032] = {
@@ -96953,6 +96959,7 @@ return {
   ["official"] = {
    [1] = "OniAi",
    [2] = "お兄ちゃんだけど愛さえあれば関係ないよねっ",
+   [3] = "我与亲爱哥哥的日常",
    },
   ["short"] = {
    [1] = "oniai",
@@ -99929,6 +99936,7 @@ return {
    },
   ["syn"] = {
    [1] = "Precure All Stars New Stage Movie 2: Friends From the Heart",
+   [2] = "البنوت الملونوت",
    },
   },
  [9536] = {
@@ -100018,8 +100026,10 @@ return {
    [1] = "最近, 妹のようすがちょっとおかしいんだが.",
    },
   ["short"] = {
+   [1] = "ImoCho",
    },
   ["syn"] = {
+   [1] = "Recently, my sister is unusual",
    },
   },
  [9549] = {
@@ -100563,7 +100573,8 @@ return {
    },
   ["syn"] = {
    [1] = "Kuroko no Basuke 2",
-   [2] = "Баскетболът на Куроко 2",
+   [2] = "Kuroko`s Basketball 2",
+   [3] = "Баскетболът на Куроко 2",
    },
   },
  [9605] = {
@@ -102821,6 +102832,7 @@ return {
   ["main"] = "Chuunibyou demo Koi ga Shitai! Ren",
   ["official"] = {
    [1] = "中二病でも恋がしたい! 戀",
+   [2] = "中二病也要谈恋爱！恋",
    },
   ["short"] = {
    },
@@ -102949,6 +102961,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "The Pilot`s Love Song",
    },
   },
  [9889] = {
@@ -103565,7 +103578,8 @@ return {
  [9955] = {
   ["main"] = "Hoozuki no Reitetsu",
   ["official"] = {
-   [1] = "鬼灯の冷徹",
+   [1] = "Hozuki no Reitetsu",
+   [2] = "鬼灯の冷徹",
    },
   ["short"] = {
    },
@@ -103718,7 +103732,7 @@ return {
    },
   },
  [9975] = {
-  ["main"] = "Eiga Doraemon: Shin Nobita no Daimakyo - Peko to 5-nin no Tankentai",
+  ["main"] = "Eiga Doraemon: Shin Nobita no Daimakyou - Peko to 5-nin no Tankentai",
   ["official"] = {
    [1] = "映画ドラえもん 新・のび太の大魔境 ~ペコと5人の探検隊~",
    },
@@ -103941,6 +103955,7 @@ return {
    [1] = "ロボットガールズZ",
    },
   ["short"] = {
+   [1] = "RGZ",
    },
   ["syn"] = {
    },
@@ -104027,6 +104042,7 @@ return {
    },
   ["syn"] = {
    [1] = "Tesagure! Bukatsu-mono",
+   [2] = "Поиск! Клубная деятельность",
    },
   },
  [10011] = {
@@ -104095,7 +104111,8 @@ return {
  [10022] = {
   ["main"] = "Sword Art Online: Extra Edition",
   ["official"] = {
-   [1] = "ソードアート・オンライン Extra Edition",
+   [1] = "Sword Art Online Extra Edition",
+   [2] = "ソードアート・オンライン Extra Edition",
    },
   ["short"] = {
    },
@@ -104130,16 +104147,6 @@ return {
   ["main"] = "Kill Me Baby (2013)",
   ["official"] = {
    [1] = "キルミーベイベー (2013)",
-   },
-  ["short"] = {
-   },
-  ["syn"] = {
-   },
-  },
- [10026] = {
-  ["main"] = "IS: Infinite Stratos 2 - Hitonatsu no Omoide",
-  ["official"] = {
-   [1] = "IS&lt;インフィニット・ストラトス&gt; 2 一夏[ひとなつ]の想いで",
    },
   ["short"] = {
    },
@@ -104755,6 +104762,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Engaged to the Unidentified",
    },
   },
  [10111] = {
@@ -106093,6 +106101,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "PuPiPo",
    },
   },
  [10272] = {
@@ -106294,6 +106303,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "めいたんていラスカル",
    },
   },
  [10295] = {
@@ -106749,16 +106759,6 @@ return {
   ["syn"] = {
    },
   },
- [10358] = {
-  ["main"] = "Little Busters! EX",
-  ["official"] = {
-   [1] = "リトルバスターズ！EX",
-   },
-  ["short"] = {
-   },
-  ["syn"] = {
-   },
-  },
  [10359] = {
   ["main"] = "Romantica Clock",
   ["official"] = {
@@ -106869,12 +106869,106 @@ return {
   ["syn"] = {
    },
   },
- [10371] = {
-  ["main"] = "Darker than Black: Kuro no Keiyakusha Gaiden",
+ [10372] = {
+  ["main"] = "Ushinawareta Mirai o Motomete",
   ["official"] = {
-   [1] = "Darker than Black: Kuro no Keiyakusha Gaiden",
+   [1] = "失われた未来を求めて",
    },
   ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "À la recherche du futur perdu",
+   },
+  },
+ [10373] = {
+  ["main"] = "Shingeki no Bahamut: Genesis",
+  ["official"] = {
+   [1] = "神撃のバハムート GENESIS",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10374] = {
+  ["main"] = "Tesagure! Bukatsumono Encore",
+  ["official"] = {
+   [1] = "てさぐれ! 部活もの あんこーる",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Поиск! Клубная деятельность: На бис",
+   },
+  },
+ [10376] = {
+  ["main"] = "Sword Art Online II",
+  ["official"] = {
+   [1] = "ソードアート・オンラインII",
+   },
+  ["short"] = {
+   [1] = "SAO 2",
+   },
+  ["syn"] = {
+   },
+  },
+ [10378] = {
+  ["main"] = "Dracula no Uta",
+  ["official"] = {
+   [1] = "ドラキュラのうた",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10379] = {
+  ["main"] = "Higenashi Gogejabaru",
+  ["official"] = {
+   [1] = "ひげなしゴゲジャバル",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10380] = {
+  ["main"] = "Chuunibyou demo Koi ga Shitai! Ren Lite",
+  ["official"] = {
+   [1] = "中二病でも恋がしたい！戀",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10382] = {
+  ["main"] = "Koukaku Kidoutai Nyuumon Arise",
+  ["official"] = {
+   [1] = "攻殻機動隊入門あらいず",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10383] = {
+  ["main"] = "Shouta no Sushi: Kokoro ni Hibiku Shari no Aji",
+  ["official"] = {
+   [1] = "将太の寿司 心にひびくシャリの味",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10384] = {
+  ["main"] = "Mushishi Zoku Shou",
+  ["official"] = {
+   [1] = "蟲師 続章",
+   },
+  ["short"] = {
+   [1] = "mushi2",
    },
   ["syn"] = {
    },
