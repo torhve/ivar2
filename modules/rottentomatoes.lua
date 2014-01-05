@@ -65,9 +65,15 @@ local parseData = function(source, destination, data, search)
 	end
 
 	ins(
-		"\002%s\002 (%d) %s/%d min",
+		"\002%s\002 (%d)",
 		movie['title'], movie['year'], movie['mpaa_rating'], movie['runtime']
 	)
+
+	if(movie['runtime'] ~= "") then
+		ins("%s/%d min", movie['mpaa_rating'], movie['runtime'])
+	else
+		ins("%s", movie['mpaa_rating'])
+	end
 
 	ins("- Critics: %d%%", movie['ratings']['critics_score'])
 	ins("(%s)", movie['ratings']['critics_rating'])
