@@ -38,7 +38,7 @@ local ivar2 = {
 }
 
 local matchFirst = function(pattern, ...)
-	for i=1, select('#', pattern) do
+	for i=1, select('#', ...) do
 		local arg = select(i, ...)
 		if(arg) then
 			local match = arg:match(pattern)
@@ -145,7 +145,7 @@ local events = {
 			-- XXX: We should probably parse out everything and move it to
 			-- self.server or something.
 			function(self, source, param, param2)
-				local network = matchFirst("NETWORK=([^ ]+)", param, param2)
+				local network = matchFirst("NETWORK=(%S+)", param, param2)
 				if(network) then
 					self.network = network
 				end
