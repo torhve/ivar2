@@ -11,6 +11,8 @@ package.cpath = table.concat({
 	'',
 }, ';') .. package.cpath
 
+local configFile, reload = ...
+
 local connection = require'handler.connection'
 local uri_mod = require'handler.uri'
 local nixio = require'nixio'
@@ -546,7 +548,7 @@ function ivar2:Reload()
 		return self:Log('error', 'Unable to reload core: %s.', coreError)
 	end
 
-	local success, message = pcall(coreFunc)
+	local success, message = pcall(coreFunc, configFile, 'reload')
 	if(not success) then
 		return self:Log('error', 'Unable to execute new core: %s.', message)
 	else
@@ -650,7 +652,13 @@ function ivar2:ParseInput(data)
 	end
 end
 
+if(reload) then
+	return ivar2
+end
+
 -- Attempt to create the cache folder.
 nixio.fs.mkdir('cache')
 
-return ivar2
+local config, err = loadfile(configFile)()
+ivar2:Connect(config)
+ivar2.Loop:loop()
