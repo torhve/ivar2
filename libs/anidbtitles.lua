@@ -11813,7 +11813,7 @@ return {
    },
   },
  [723] = {
-  ["main"] = "Time Stranger Kyoko: Chocola ni Omakase!",
+  ["main"] = "Time Stranger Kyouko: Chocola ni Omakase!",
   ["official"] = {
    [1] = "時空異邦人KYOKO[タイム ストレンジャー キョーコ] ちょこらにおまかせ!",
    },
@@ -46770,7 +46770,7 @@ return {
    [1] = "Ayakashi",
    [2] = "Ayakashi - Japanese Classic Horror",
    [3] = "Ayakashi - Samurai Horror Tales",
-   [4] = "怪～ayakashi～ Japanese Classic Horror",
+   [4] = "怪~ayakashi~ JAPANESE CLASSIC HORROR",
    },
   ["short"] = {
    },
@@ -48106,10 +48106,11 @@ return {
   ["main"] = "Fairy Princess Minky Momo: Yume no Naka no Rondo",
   ["official"] = {
    [1] = "Fairy Princess Minky Momo 夢の中の輪舞[ロンド] La ronde in my dream",
-   [2] = "Gigi i fontanna młodości",
-   [3] = "Magical Princess Minky Momo: La Ronde in my Dream",
-   [4] = "Η Πηγή της Νιότης",
-   [5] = "Джи-Джи и ее мечты",
+   [2] = "Gigi e a Fonte da Juventude",
+   [3] = "Gigi i fontanna młodości",
+   [4] = "Magical Princess Minky Momo: La Ronde in my Dream",
+   [5] = "Η Πηγή της Νιότης",
+   [6] = "Джи-Джи и ее мечты",
    },
   ["short"] = {
    [1] = "Gígja Prinsessa",
@@ -70682,7 +70683,8 @@ return {
  [6485] = {
   ["main"] = "Kimihagu",
   ["official"] = {
-   [1] = "きみはぐ",
+   [1] = "Kimihagu",
+   [2] = "きみはぐ",
    },
   ["short"] = {
    },
@@ -71017,6 +71019,7 @@ return {
    [1] = "MAKSIMALUS GREITIS",
    [2] = "REDLINE",
    [3] = "Redline",
+   [4] = "Красная черта",
    },
   ["short"] = {
    },
@@ -73345,8 +73348,9 @@ return {
  [6773] = {
   ["main"] = "Dance in the Vampire Bund",
   ["official"] = {
-   [1] = "Dance in the Vampire Bund",
-   [2] = "ダンスインザヴァンパイアバンド",
+   [1] = "Bailando con Vampiros",
+   [2] = "Dance in the Vampire Bund",
+   [3] = "ダンスインザヴァンパイアバンド",
    },
   ["short"] = {
    [1] = "Bund",
@@ -75193,7 +75197,8 @@ return {
  [6959] = {
   ["main"] = "Gekijouban Bungaku Shoujo",
   ["official"] = {
-   [1] = "劇場版\"文学少女\"",
+   [1] = "Буквоежка",
+   [2] = "劇場版\"文学少女\"",
    },
   ["short"] = {
    },
@@ -88156,7 +88161,8 @@ return {
    [1] = "A Letter to Momo",
    [2] = "Lettre à Momo",
    [3] = "Una lettera per Momo",
-   [4] = "ももへの手紙",
+   [4] = "Письмо для Момо",
+   [5] = "ももへの手紙",
    },
   ["short"] = {
    },
@@ -89171,7 +89177,8 @@ return {
  [8375] = {
   ["main"] = "Gekijouban Blood-C: The Last Dark",
   ["official"] = {
-   [1] = "劇場版 BLOOD-C The Last Dark",
+   [1] = "BLOOD-C: последний Тёмный",
+   [2] = "劇場版 BLOOD-C The Last Dark",
    },
   ["short"] = {
    },
@@ -90923,7 +90930,8 @@ return {
  [8566] = {
   ["main"] = "Maken-ki!: Natsu Da! Mizugi Da! Gasshuku Da!",
   ["official"] = {
-   [1] = "マケン姫っ! 夏だ! 水着だ! 合宿だ!",
+   [1] = "Maken-ki! It`s Summer! It`s Swimsuits! It`s Training Camp!",
+   [2] = "マケン姫っ! 夏だ! 水着だ! 合宿だ!",
    },
   ["short"] = {
    },
@@ -97599,7 +97607,8 @@ return {
   ["main"] = "Kami-sama Hajimemashita",
   ["official"] = {
    [1] = "Kamisama Kiss",
-   [2] = "神様はじめました",
+   [2] = "Soy una Diosa ¿Y ahora qué?",
+   [3] = "神様はじめました",
    },
   ["short"] = {
    [1] = "Kamihaji",
@@ -97646,7 +97655,7 @@ return {
    [1] = "Battle Tendency",
    [2] = "Jojo`s Bizarre Adventure (2012)",
    [3] = "Phantom Blood",
-   [4] = "Невероятните приключения на ДжоДжо (2012)",
+   [4] = "Невероятните приключения на Джо-Джо (2012)",
    },
   },
  [9305] = {
@@ -99519,8 +99528,10 @@ return {
   ["official"] = {
    [1] = "Witchcraft Works",
    [2] = "ウィッチクラフトワークス",
+   [3] = "魔女的使命",
    },
   ["short"] = {
+   [1] = "wcw",
    },
   ["syn"] = {
    [1] = "WitchCraft Works",
@@ -99708,8 +99719,9 @@ return {
   ["official"] = {
    [1] = "Le Vent se lève",
    [2] = "Se levanta el viento",
-   [3] = "風立ちぬ",
-   [4] = "바람이 분다",
+   [3] = "Ветер крепчает",
+   [4] = "風立ちぬ",
+   [5] = "바람이 분다",
    },
   ["short"] = {
    },
@@ -99953,7 +99965,8 @@ return {
  [9536] = {
   ["main"] = "Inari, Konkon, Koi Iroha.",
   ["official"] = {
-   [1] = "いなり, こんこん, 恋いろは.",
+   [1] = "Inari, Konkon, Koi Iroha",
+   [2] = "いなり, こんこん, 恋いろは.",
    },
   ["short"] = {
    },
@@ -100068,9 +100081,9 @@ return {
    },
   },
  [9552] = {
-  ["main"] = "Ane Koi",
+  ["main"] = "Ane Koi: Suki Kirai Daisuki.",
   ["official"] = {
-   [1] = "姉恋",
+   [1] = "姉恋 スキ・キライ・ダイスキ.",
    },
   ["short"] = {
    },
@@ -100431,8 +100444,9 @@ return {
   ["official"] = {
    [1] = "Garden of Words",
    [2] = "The Garden of Words",
-   [3] = "言の葉の庭",
-   [4] = "言叶之庭",
+   [3] = "Сад изящных слов",
+   [4] = "言の葉の庭",
+   [5] = "言叶之庭",
    },
   ["short"] = {
    },
@@ -102255,10 +102269,10 @@ return {
    },
   },
  [9803] = {
-  ["main"] = "Blood Lad OAD",
+  ["main"] = "Blood Lad: Wagahai wa Neko de wa Nai",
   ["official"] = {
    [1] = "BLOOD LAD 血意少年 OAD",
-   [2] = "ブラッドラッド OAD",
+   [2] = "ブラッドラッド 我輩は猫ではない",
    },
   ["short"] = {
    },
@@ -102325,6 +102339,7 @@ return {
   ["official"] = {
    [1] = "Tonari no Seki-kun: The Master of Killing Time",
    [2] = "となりの関くん",
+   [3] = "邻座同学是怪咖",
    },
   ["short"] = {
    },
@@ -102929,8 +102944,7 @@ return {
    [1] = "Ace of Diamond",
    [2] = "Daiya no A",
    [3] = "Daiya no Ace",
-   [4] = "Daiya no Eisu",
-   [5] = "Diamond no Ace",
+   [4] = "Diamond no Ace",
    },
   },
  [9882] = {
@@ -102979,6 +102993,7 @@ return {
   ["main"] = "Toaru Hikuushi e no Koiuta",
   ["official"] = {
    [1] = "とある飛空士への恋歌",
+   [2] = "献给某飞行员的恋歌",
    },
   ["short"] = {
    },
@@ -103118,6 +103133,7 @@ return {
   ["official"] = {
    [1] = "Nisekoi",
    [2] = "ニセコイ",
+   [3] = "偽戀",
    },
   ["short"] = {
    },
@@ -103320,6 +103336,7 @@ return {
   ["official"] = {
    [1] = "Noragami",
    [2] = "ノラガミ",
+   [3] = "流浪神差",
    },
   ["short"] = {
    },
@@ -103449,6 +103466,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Lupin III: Family All-Stars",
    },
   },
  [9938] = {
@@ -103868,7 +103886,7 @@ return {
    },
   },
  [9989] = {
-  ["main"] = "Neppu Kairiku Bushi Road",
+  ["main"] = "Neppuu Kairiku Bushi Road",
   ["official"] = {
    [1] = "熱風海陸ブシロード",
    },
@@ -104188,10 +104206,12 @@ return {
   ["official"] = {
    [1] = "Space Dandy",
    [2] = "スペース☆ダンディ",
+   [3] = "宇宙浪子",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Космическото Конте",
    },
   },
  [10031] = {
@@ -105612,7 +105632,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "My Sister Came",
+   [1] = "My big sister arrived",
    },
   },
  [10206] = {
@@ -105684,12 +105704,13 @@ return {
  [10212] = {
   ["main"] = "Sekai Seifuku: Bouryaku no Zvezda",
   ["official"] = {
-   [1] = "世界征服 ~謀略のズヴィズダー~",
+   [1] = "World Conquest Zvezda Plot",
+   [2] = "世界征服 ~謀略のズヴィズダー~",
    },
   ["short"] = {
+   [1] = "zvezda",
    },
   ["syn"] = {
-   [1] = "World Conquest Zvezda Plot",
    },
   },
  [10215] = {
@@ -105802,6 +105823,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Precure All Stars New Stage Movie 3: Friends Forever",
    },
   },
  [10228] = {
@@ -106093,13 +106115,14 @@ return {
    },
   },
  [10263] = {
-  ["main"] = "Kichiku: Haha Shimai Choukyou Nikki",
+  ["main"] = "Kichiku: Oyako Choukyou Nikki",
   ["official"] = {
    [1] = "鬼畜 〜母姉妹調教日記〜",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Kichiku: Haha Shimai Choukyou Nikki",
    },
   },
  [10267] = {
@@ -106164,6 +106187,7 @@ return {
   ["syn"] = {
    [1] = "Mushi-shi Special Episode: The Shadow That Devours the Sun",
    [2] = "Mushishi Tokubetsu-hen - Hihamukage",
+   [3] = "Мушіші, спеціальний випуск: Тінь, що поглинає сонце",
    },
   },
  [10276] = {
@@ -106975,6 +106999,9 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Aoharaido",
+   [2] = "Blue Spring Ride",
+   [3] = "Youth Ride",
    },
   },
  [10386] = {
@@ -107032,6 +107059,136 @@ return {
   ["main"] = "Inari, Konkon, Koi Iroha. OAD",
   ["official"] = {
    [1] = "いなり, こんこん, 恋いろは. OAD",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10392] = {
+  ["main"] = "Magi: Sinbad no Bouken",
+  ["official"] = {
+   [1] = "マギ シンドバッドの冒険",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10393] = {
+  ["main"] = "Inuneko awa 47 todoufuken R & nya-men",
+  ["official"] = {
+   [1] = "犬猫アワー 47都道府犬R＆にゃ～めん",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10394] = {
+  ["main"] = "Chikasugi aidoru \"akae-chan\"",
+  ["official"] = {
+   [1] = "地下すぎアイドル 「あかえちゃん」",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10395] = {
+  ["main"] = "Soredemo Sekai wa Utsukushii",
+  ["official"] = {
+   [1] = "それでも世界は美しい",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10396] = {
+  ["main"] = "X Maiden",
+  ["official"] = {
+   [1] = "エクスメイデン",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10397] = {
+  ["main"] = "Witch Craft Works OAD",
+  ["official"] = {
+   [1] = "ウィッチクラフトワークス OAD",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10398] = {
+  ["main"] = "Inugami-san to Nekoyama-san",
+  ["official"] = {
+   [1] = "犬神さんと猫山さん",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10399] = {
+  ["main"] = "Amagi Brilliant Park",
+  ["official"] = {
+   [1] = "甘城ブリリアントパーク",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10400] = {
+  ["main"] = "Ping Pong The Animation",
+  ["official"] = {
+   [1] = "ピンポン THE ANIMATION",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10401] = {
+  ["main"] = "Tokyo Ghoul",
+  ["official"] = {
+   [1] = "東京喰種[トウキョウグール]",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10402] = {
+  ["main"] = "Kuroshitsuji Shin Series",
+  ["official"] = {
+   [1] = "黒執事 新シリーズ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10403] = {
+  ["main"] = "Momo Kyun Sword",
+  ["official"] = {
+   [1] = "モモキュンソード",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10404] = {
+  ["main"] = "Futsuu no Joshikousei ga [Locodol] Yattemita.",
+  ["official"] = {
+   [1] = "普通の女子校生が【ろこどる】やってみた。",
    },
   ["short"] = {
    },
