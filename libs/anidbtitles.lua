@@ -5535,13 +5535,14 @@ return {
   ["main"] = "Street Fighter II: The Movie",
   ["official"] = {
    [1] = "STREET FIGHTER 2 - THE MOVIE",
-   [2] = "Street Fighter II - Le film",
-   [3] = "Street Fighter II - The Animated Movie",
-   [4] = "Street Fighter II: The Animated Movie",
-   [5] = "Uliczny wojownik II",
-   [6] = "Οι Μαχητές των Δρόμων 2",
-   [7] = "Уличный боец - 2",
-   [8] = "ストリートファイターII",
+   [2] = "Street Fighter II",
+   [3] = "Street Fighter II - Le film",
+   [4] = "Street Fighter II - The Animated Movie",
+   [5] = "Street Fighter II: The Animated Movie",
+   [6] = "Uliczny wojownik II",
+   [7] = "Οι Μαχητές των Δρόμων 2",
+   [8] = "Уличный боец - 2",
+   [9] = "ストリートファイターII",
    },
   ["short"] = {
    [1] = "SF2",
@@ -9892,11 +9893,11 @@ return {
   ["main"] = "Slam Dunk",
   ["official"] = {
    [1] = "Basket",
-   [2] = "Slam Dunk",
-   [3] = "Τρίποντο",
-   [4] = "سلام دانك",
-   [5] = "สแลมดั๊งค์",
-   [6] = "スラムダンク",
+   [2] = "SLAM DUNK",
+   [3] = "Slam Dunk",
+   [4] = "Τρίποντο",
+   [5] = "سلام دانك",
+   [6] = "สแลมดั๊งค์",
    [7] = "男兒當入樽",
    },
   ["short"] = {
@@ -9907,7 +9908,8 @@ return {
    [1] = "Slam Dunk TV",
    [2] = "Slam Dunk!",
    [3] = "Слэм-данк",
-   [4] = "灌篮高手",
+   [4] = "スラムダンク",
+   [5] = "灌篮高手",
    },
   },
  [591] = {
@@ -11415,38 +11417,41 @@ return {
  [695] = {
   ["main"] = "Slam Dunk (1994)",
   ["official"] = {
-   [1] = "スラムダンク (1994)",
+   [1] = "SLAM DUNK (1994)",
    },
   ["short"] = {
    [1] = "SDM1",
    },
   ["syn"] = {
    [1] = "Slam Dunk Movie 1",
+   [2] = "スラムダンク (1994)",
    },
   },
  [696] = {
-  ["main"] = "Slam Dunk: Zenkoku Seiha da! Sakuragi Hanamichi",
+  ["main"] = "Slam Dunk: Zenkoku Seiha Da! Sakuragi Hanamichi",
   ["official"] = {
    [1] = "National Champions, Sakuragi Hanamichi!",
-   [2] = "スラムダンク 全国制覇だ! 桜木花道",
+   [2] = "SLAM DUNK 全国制覇だ! 桜木花道",
    },
   ["short"] = {
    [1] = "SDM2",
    },
   ["syn"] = {
    [1] = "Slam Dunk Movie 2",
+   [2] = "スラムダンク 全国制覇だ! 桜木花道",
    },
   },
  [697] = {
   ["main"] = "Slam Dunk: Shouhoku Saidai no Kiki! Moero Sakuragi Hanamichi",
   ["official"] = {
-   [1] = "スラムダンク 湘北最大の危機! 燃えろ桜木花道",
+   [1] = "SLAM DUNK 湘北最大の危機! 燃えろ桜木花道",
    },
   ["short"] = {
    [1] = "SDM3",
    },
   ["syn"] = {
    [1] = "Slam Dunk Movie 3",
+   [2] = "スラムダンク 湘北最大の危機! 燃えろ桜木花道",
    },
   },
  [698] = {
@@ -23534,6 +23539,7 @@ return {
    [1] = "SFSS",
    },
   ["syn"] = {
+   [1] = "Starzinger",
    },
   },
  [1594] = {
@@ -28705,7 +28711,8 @@ return {
  [2013] = {
   ["main"] = "Vampiyan Kids",
   ["official"] = {
-   [1] = "バンパイヤン・キッズ",
+   [1] = "I Vampiriani - Vampiri Vegetariani",
+   [2] = "バンパイヤン・キッズ",
    },
   ["short"] = {
    },
@@ -29433,7 +29440,8 @@ return {
  [2071] = {
   ["main"] = "Sakigake!! Otoko Juku (1988)",
   ["official"] = {
-   [1] = "魁!!男塾 (1988)",
+   [1] = "Otoko Juku - L`ultime combat",
+   [2] = "魁!!男塾 (1988)",
    },
   ["short"] = {
    },
@@ -46106,8 +46114,9 @@ return {
    [1] = "Age Of The Great Dinosaurs",
    [2] = "Daikyouryu Monogatari",
    [3] = "Daikyouryu no Jidai",
-   [4] = "The Era of the Great Dinosaurs",
-   [5] = "大恐竜物語",
+   [4] = "La era de los dinosaurios",
+   [5] = "The Era of the Great Dinosaurs",
+   [6] = "大恐竜物語",
    },
   },
  [3607] = {
@@ -56791,6 +56800,7 @@ return {
    [1] = "湘南純愛組!",
    },
   ["short"] = {
+   [1] = "SJG",
    },
   ["syn"] = {
    [1] = "Genç Onizuka",
@@ -75480,13 +75490,18 @@ return {
  [6985] = {
   ["main"] = "Ashita no Eleven-tachi",
   ["official"] = {
-   [1] = "あしたの勇者(イレブン)たち",
+   [1] = "11 campioni",
+   [2] = "Once pares de botas juveniles",
+   [3] = "Young Eleven",
+   [4] = "あしたの勇者(イレブン)たち",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Tomorrow`s Eleven",
-   [2] = "あしたの勇者たち",
+   [1] = "Once jóvenes",
+   [2] = "Tomorrow`s Eleven",
+   [3] = "Undici campioni",
+   [4] = "あしたの勇者たち",
    },
   },
  [6986] = {
@@ -90813,6 +90828,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "소교녀",
    },
   },
  [8555] = {
@@ -97596,7 +97612,8 @@ return {
  [9297] = {
   ["main"] = "Usagi no Mofy",
   ["official"] = {
-   [1] = "うさぎのモフィ",
+   [1] = "Mofy",
+   [2] = "うさぎのモフィ",
    },
   ["short"] = {
    },
@@ -102455,6 +102472,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Attack on Titan OAD",
    },
   },
  [9828] = {
@@ -102868,7 +102886,8 @@ return {
    [2] = "中二病也要谈恋爱！恋",
    },
   ["short"] = {
-   [1] = "chuu2koiren",
+   [1] = "chu2ren",
+   [2] = "chuu2koiren",
    },
   ["syn"] = {
    [1] = "Chu-2 Byo demo Koi ga Shitai! Ren",
@@ -102878,9 +102897,10 @@ return {
  [9875] = {
   ["main"] = "Kill La Kill",
   ["official"] = {
-   [1] = "Kill la Kill",
-   [2] = "キルラキル",
-   [3] = "双斩少女",
+   [1] = "KILL la KILL",
+   [2] = "Kill la Kill",
+   [3] = "キルラキル",
+   [4] = "双斩少女",
    },
   ["short"] = {
    [1] = "klk",
@@ -102992,8 +103012,9 @@ return {
  [9888] = {
   ["main"] = "Toaru Hikuushi e no Koiuta",
   ["official"] = {
-   [1] = "とある飛空士への恋歌",
-   [2] = "献给某飞行员的恋歌",
+   [1] = "Love Song pour un pilote",
+   [2] = "とある飛空士への恋歌",
+   [3] = "献给某飞行员的恋歌",
    },
   ["short"] = {
    },
@@ -103133,7 +103154,8 @@ return {
   ["official"] = {
    [1] = "Nisekoi",
    [2] = "ニセコイ",
-   [3] = "偽戀",
+   [3] = "伪恋",
+   [4] = "偽戀",
    },
   ["short"] = {
    },
@@ -103934,13 +103956,13 @@ return {
  [9995] = {
   ["main"] = "Mahou Sensou",
   ["official"] = {
-   [1] = "魔法戦争",
+   [1] = "Magical Warfare",
+   [2] = "魔法戦争",
    },
   ["short"] = {
    [1] = "Mahosen",
    },
   ["syn"] = {
-   [1] = "Magical Warfare",
    },
   },
  [9996] = {
@@ -104809,12 +104831,12 @@ return {
  [10110] = {
   ["main"] = "Mikakunin de Shinkoukei",
   ["official"] = {
-   [1] = "未確認で進行形",
+   [1] = "Engaged to the Unidentified",
+   [2] = "未確認で進行形",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Engaged to the Unidentified",
    },
   },
  [10111] = {
@@ -105042,7 +105064,8 @@ return {
  [10134] = {
   ["main"] = "SoniAni: Super Sonico The Animation",
   ["official"] = {
-   [1] = "そにアニ SUPER SONICO THE ANIMATION",
+   [1] = "Soni-Ani: Super Sonico the Animation",
+   [2] = "そにアニ SUPER SONICO THE ANIMATION",
    },
   ["short"] = {
    },
@@ -105648,6 +105671,7 @@ return {
   ["syn"] = {
    [1] = "JOJO`S BIZARRE ADVENTURE: Stardust Crusaders",
    [2] = "JoJo`s Bizarre Adventure Part 3",
+   [3] = "JoJo`s Bizzare Adventure: Stardust Crusaders",
    },
   },
  [10207] = {
@@ -106231,8 +106255,9 @@ return {
    },
   },
  [10281] = {
-  ["main"] = "Marvel Disk Wars: The Avengers",
+  ["main"] = "Disk Wars: Avengers",
   ["official"] = {
+   [1] = "ディスク・ウォーズ：アベンジャーズ",
    },
   ["short"] = {
    },
@@ -107075,16 +107100,6 @@ return {
   ["syn"] = {
    },
   },
- [10393] = {
-  ["main"] = "Inuneko awa 47 todoufuken R & nya-men",
-  ["official"] = {
-   [1] = "犬猫アワー 47都道府犬R＆にゃ～めん",
-   },
-  ["short"] = {
-   },
-  ["syn"] = {
-   },
-  },
  [10394] = {
   ["main"] = "Chikasugi aidoru \"akae-chan\"",
   ["official"] = {
@@ -107188,7 +107203,65 @@ return {
  [10404] = {
   ["main"] = "Futsuu no Joshikousei ga [Locodol] Yattemita.",
   ["official"] = {
-   [1] = "普通の女子校生が【ろこどる】やってみた。",
+   [1] = "普通の女子校生が【ろこどる】やってみた.",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10405] = {
+  ["main"] = "Yorinuki Gintama-san on Theater 2D",
+  ["official"] = {
+   [1] = "銀魂 よりぬき銀魂さんオンシアター2D",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10406] = {
+  ["main"] = "Sengoku Basara (2014)",
+  ["official"] = {
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10407] = {
+  ["main"] = "Akame ga Kill!",
+  ["official"] = {
+   [1] = "アカメが斬る!",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10409] = {
+  ["main"] = "Avengers Confidential: Black Widow & Punisher",
+  ["official"] = {
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10411] = {
+  ["main"] = "Inuneko awa 47 todoufuken R & nya-men",
+  ["official"] = {
+   [1] = "犬猫アワー 47都道府犬R＆にゃ～めん",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10412] = {
+  ["main"] = "Pandra The Animation",
+  ["official"] = {
+   [1] = "PANDRA THE ANIMATION",
    },
   ["short"] = {
    },
