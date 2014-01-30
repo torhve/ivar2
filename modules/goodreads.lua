@@ -36,7 +36,18 @@ local lookup = function(self, source, destination, id)
 			local month = work:match("<original_publication_month[^>]+>([^<]+)</original_publication_month>")
 			local year = work:match("<original_publication_year[^>]+>([^<]+)</original_publication_year>")
 			local title = work:match("original_title>([^<]+)</original_title>")
-			local date = string.format("%02d/%02d/%d", day, month, year)
+
+			local date = {}
+			if(day) then
+				table.insert(date, string.format("%02d", day))
+			end
+			if(month) then
+				table.insert(date, string.format("%02d", month))
+			end
+			if(year) then
+				table.insert(date, year)
+			end
+			date = table.concat(date, "/")
 
 			local authors = {}
 			for author in data:match("<authors>(.-)</authors>"):gmatch("<author>(.-)</author>") do
