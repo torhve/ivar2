@@ -1944,17 +1944,18 @@ return {
   ["main"] = "R.O.D: Read or Die",
   ["official"] = {
    [1] = "R.O.D - Read or Die",
-   [2] = "R.O.D リード・オア・ダイ",
+   [2] = "R.O.D READ OR DIE",
    [3] = "Прочти или умри",
    },
   ["short"] = {
-   [1] = "R.O.D.",
+   [1] = "R.O.D",
    [2] = "RoD",
    [3] = "rod ova",
    },
   ["syn"] = {
-   [1] = "Read or Die OVA",
-   [2] = "Читай або помри",
+   [1] = "R.O.D リード・オア・ダイ",
+   [2] = "Read or Die OVA",
+   [3] = "Читай або помри",
    },
   },
  [106] = {
@@ -10063,13 +10064,13 @@ return {
   ["main"] = "Maze Bakunetsu Jikuu",
   ["official"] = {
    [1] = "MAZE☆爆熱時空",
-   [2] = "Maze Megaburst Space OVA",
    },
   ["short"] = {
    [1] = "Maze OVA",
    },
   ["syn"] = {
    [1] = "Maze Bakunetsu Jikuu OVA",
+   [2] = "Maze Megaburst Space OVA",
    },
   },
  [603] = {
@@ -12149,7 +12150,7 @@ return {
    },
   },
  [746] = {
-  ["main"] = "Shusaku",
+  ["main"] = "Shuusaku",
   ["official"] = {
    [1] = "Shusaku The Letch",
    [2] = "臭作",
@@ -12161,7 +12162,7 @@ return {
    },
   },
  [747] = {
-  ["main"] = "Shusaku Replay",
+  ["main"] = "Shuusaku: Replay",
   ["official"] = {
    [1] = "Le dortoir des grandes",
    [2] = "Shusaku The Letch - Replay",
@@ -20724,7 +20725,7 @@ return {
    },
   },
  [1380] = {
-  ["main"] = "Shusaku Liberty",
+  ["main"] = "Shuusaku: Liberty",
   ["official"] = {
    [1] = "Shusaku the Letch - Liberty",
    [2] = "臭作 ～Liberty～",
@@ -22153,11 +22154,13 @@ return {
    },
   ["syn"] = {
    [1] = "Giacca rosa",
-   [2] = "Lupin III TV 3",
-   [3] = "Lupin S3",
-   [4] = "Pink jacket",
-   [5] = "Люпен Трети - част трета",
-   [6] = "鲁邦三世 PartIII",
+   [2] = "Lupin III Part 3",
+   [3] = "Lupin III Part III",
+   [4] = "Lupin III TV 3",
+   [5] = "Lupin S3",
+   [6] = "Pink jacket",
+   [7] = "Люпен Трети - част трета",
+   [8] = "鲁邦三世 PartIII",
    },
   },
  [1487] = {
@@ -47417,6 +47420,7 @@ return {
  [3949] = {
   ["main"] = "White Reflection",
   ["official"] = {
+   [1] = "WHITE REFLECTION",
    },
   ["short"] = {
    },
@@ -68703,7 +68707,8 @@ return {
    [4] = "Summer Wars",
    [5] = "Suvesõjad",
    [6] = "Зуны Дайн",
-   [7] = "サマーウォーズ",
+   [7] = "Летние войны",
+   [8] = "サマーウォーズ",
    },
   ["short"] = {
    },
@@ -68711,9 +68716,8 @@ return {
    [1] = "Vasaros Karai",
    [2] = "Yaz Savaşları",
    [3] = "Летни войни",
-   [4] = "Летние войны",
-   [5] = "حروب الصيف",
-   [6] = "夏日大作战",
+   [4] = "حروب الصيف",
+   [5] = "夏日大作战",
    },
   },
  [6255] = {
@@ -80927,6 +80931,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "The Human Revolution",
    },
   },
  [7535] = {
@@ -86124,7 +86129,7 @@ return {
   ["syn"] = {
    [1] = "Magical Girl Madoka Magika",
    [2] = "Mahou Shoujo Madoka Magika",
-   [3] = "Meguca",
+   [3] = "Meduka Meguca",
    [4] = "Волшебница Мадока Магика",
    [5] = "Дівчина-чарівниця Мадока Маґіка",
    [6] = "Чарівниця Мадока Магіка",
@@ -90193,8 +90198,9 @@ return {
   ["main"] = "Guilty Crown",
   ["official"] = {
    [1] = "Guilty Crown",
-   [2] = "ギルティクラウン",
-   [3] = "罪恶王冠",
+   [2] = "Корона грешника",
+   [3] = "ギルティクラウン",
+   [4] = "罪恶王冠",
    },
   ["short"] = {
    [1] = "gc",
@@ -90202,9 +90208,8 @@ return {
   ["syn"] = {
    [1] = "Kaltės karūna",
    [2] = "Вінець Провини",
-   [3] = "Корона Грешника",
-   [4] = "Короната на Грешника",
-   [5] = "تاج مجرم",
+   [3] = "Короната на Грешника",
+   [4] = "تاج مجرم",
    },
   },
  [8481] = {
@@ -92135,9 +92140,10 @@ return {
   ["main"] = "Sword Art Online",
   ["official"] = {
    [1] = "Sword Art Online",
-   [2] = "فن السيف عبر الانترنت",
-   [3] = "ソードアート・オンライン",
-   [4] = "刀剑神域",
+   [2] = "Мастер меча онлайн",
+   [3] = "فن السيف عبر الانترنت",
+   [4] = "ソードアート・オンライン",
+   [5] = "刀剑神域",
    },
   ["short"] = {
    [1] = "SAO",
@@ -93475,8 +93481,9 @@ return {
    [4] = "Vlčí děti",
    [5] = "Wolf Children",
    [6] = "Wolf Children - Los Niños Lobo",
-   [7] = "おおかみこどもの雨と雪",
-   [8] = "狼的孩子雨和雪",
+   [7] = "Волчьи дети Амэ и Юки",
+   [8] = "おおかみこどもの雨と雪",
+   [9] = "狼的孩子雨和雪",
    },
   ["short"] = {
    [1] = "Wolfskinder",
@@ -93488,7 +93495,6 @@ return {
    [2] = "The Wolf Children Ame and Yuki",
    [3] = "Вовченята Аме та Юкі",
    [4] = "Вовчі діти Аме та Юкі",
-   [5] = "Волчьи дети Амэ и Юки",
    },
   },
  [8833] = {
@@ -93954,8 +93960,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Aruvu Rezuru",
-   [2] = "Mechanized Fairies",
+   [1] = "Mechanized Fairies",
    },
   },
  [8879] = {
@@ -97645,6 +97650,7 @@ return {
    },
   ["short"] = {
    [1] = "P3",
+   [2] = "P3M",
    },
   ["syn"] = {
    },
@@ -99552,6 +99558,7 @@ return {
    },
   ["syn"] = {
    [1] = "WitchCraft Works",
+   [2] = "Вещерство",
    },
   },
  [9497] = {
@@ -102888,6 +102895,7 @@ return {
   ["short"] = {
    [1] = "chu2ren",
    [2] = "chuu2koiren",
+   [3] = "chuu2ren",
    },
   ["syn"] = {
    [1] = "Chu-2 Byo demo Koi ga Shitai! Ren",
@@ -105579,6 +105587,7 @@ return {
    },
   ["short"] = {
    [1] = "SYD*",
+   [2] = "SYD2",
    },
   ["syn"] = {
    [1] = "Seitokai Yakuindomo Bleep",
@@ -105728,8 +105737,9 @@ return {
  [10212] = {
   ["main"] = "Sekai Seifuku: Bouryaku no Zvezda",
   ["official"] = {
-   [1] = "World Conquest Zvezda Plot",
-   [2] = "世界征服 ~謀略のズヴィズダー~",
+   [1] = "Sekai seifuku: le complot Zvezda",
+   [2] = "World Conquest Zvezda Plot",
+   [3] = "世界征服 ~謀略のズヴィズダー~",
    },
   ["short"] = {
    [1] = "zvezda",
@@ -105975,7 +105985,8 @@ return {
  [10243] = {
   ["main"] = "Nobunaga the Fool",
   ["official"] = {
-   [1] = "ノブナガ・ザ・フール",
+   [1] = "Nobunaga the Fool",
+   [2] = "ノブナガ・ザ・フール",
    },
   ["short"] = {
    },
@@ -107262,6 +107273,99 @@ return {
   ["main"] = "Pandra The Animation",
   ["official"] = {
    [1] = "PANDRA THE ANIMATION",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10414] = {
+  ["main"] = "Touhou PVD 5",
+  ["official"] = {
+   [1] = "東方 PVD 5",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10415] = {
+  ["main"] = "Free! 2",
+  ["official"] = {
+   [1] = "Free! 2",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10417] = {
+  ["main"] = "Selector Infected Wixoss",
+  ["official"] = {
+   [1] = "selector infected WIXOSS",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10419] = {
+  ["main"] = "Wonder Momo",
+  ["official"] = {
+   [1] = "ワンダーモモ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10420] = {
+  ["main"] = "Itadaki! Seieki",
+  ["official"] = {
+   [1] = "いただきっ! セーエキ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10421] = {
+  ["main"] = "Sanzoku no Musume Ronja",
+  ["official"] = {
+   [1] = "Ronja Rövardotter",
+   [2] = "山賊の娘ローニャ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Ronia the Robber`s Daughter",
+   [2] = "Ronja Räubertochter",
+   },
+  },
+ [10422] = {
+  ["main"] = "Washimo",
+  ["official"] = {
+   [1] = "わしも",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10423] = {
+  ["main"] = "Nandaka Velonica",
+  ["official"] = {
+   [1] = "ナンダカベロニカ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10424] = {
+  ["main"] = "Kutsushita ga Daru Daru ni Nacchau Wake: Imadoki Youkai Zukan",
+  ["official"] = {
+   [1] = "くつしたがだるだるになっちゃうわけ ~イマドキ妖怪図鑑~",
    },
   ["short"] = {
    },
