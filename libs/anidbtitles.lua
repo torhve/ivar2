@@ -1863,21 +1863,20 @@ return {
   ["official"] = {
    [1] = "Card Captor Sakura",
    [2] = "Cardcaptor Sakura",
-   [3] = "Cardcaptors",
-   [4] = "Pesca la tua carta Sakura",
-   [5] = "Sakura , Stăpâna Cărţilor Magice",
-   [6] = "Sakura Card Captor",
-   [7] = "Sakura Card Captors",
-   [8] = "Sakura, Cazadora de Cartas",
-   [9] = "Sakura, Caçadora de Cartas",
-   [10] = "Sakura, chasseuse de cartes",
-   [11] = "Thủ lĩnh thẻ bài",
-   [12] = "Zdobywczyni kart Sakura",
-   [13] = "Οι Περιπέτειες της Νίκης",
-   [14] = "סאקורה",
-   [15] = "การ์ดแคปเตอร์ ซากุระ",
-   [16] = "カードキャプターさくら",
-   [17] = "카드캡터 체리",
+   [3] = "Pesca la tua carta Sakura",
+   [4] = "Sakura , Stăpâna Cărţilor Magice",
+   [5] = "Sakura Card Captor",
+   [6] = "Sakura Card Captors",
+   [7] = "Sakura, Cazadora de Cartas",
+   [8] = "Sakura, Caçadora de Cartas",
+   [9] = "Sakura, chasseuse de cartes",
+   [10] = "Thủ lĩnh thẻ bài",
+   [11] = "Zdobywczyni kart Sakura",
+   [12] = "Οι Περιπέτειες της Νίκης",
+   [13] = "סאקורה",
+   [14] = "การ์ดแคปเตอร์ ซากุระ",
+   [15] = "カードキャプターさくら",
+   [16] = "카드캡터 체리",
    },
   ["short"] = {
    [1] = "CCS",
@@ -2087,7 +2086,7 @@ return {
    [19] = "Začarani grad",
    [20] = "Čudežno potovanje",
    [21] = "Ταξίδι στη Χώρα των Θαυμάτων",
-   [22] = "Отвлечена от Духове",
+   [22] = "Отнесени от Духове",
    [23] = "Унесённые призраками",
    [24] = "המסע המופלא",
    [25] = "شيهيرو",
@@ -3765,8 +3764,9 @@ return {
    [2] = "Fist of the North Star (1986)",
    [3] = "Ken - the Great Bearfist",
    [4] = "Ken le survivant - Le film",
-   [5] = "北斗の拳 (1986)",
-   [6] = "북두의 권 - 세기말구세주전설",
+   [5] = "Юмрукът На Северната Звезда (1986)",
+   [6] = "北斗の拳 (1986)",
+   [7] = "북두의 권 - 세기말구세주전설",
    },
   ["short"] = {
    },
@@ -5088,11 +5088,12 @@ return {
    [18] = "Podniebna poczta Kiki",
    [19] = "Κίκι: Η Μικρή Μαγισσούλα",
    [20] = "Ведьмина служба доставки",
-   [21] = "שרות המשלוחים של קיקי",
-   [22] = "سرویس تحویل کیکی",
-   [23] = "แม่มดน้อยกิกิ",
-   [24] = "魔女の宅急便",
-   [25] = "魔女宅急便",
+   [21] = "Службата За Доставки На Кики",
+   [22] = "שרות המשלוחים של קיקי",
+   [23] = "سرویس تحویل کیکی",
+   [24] = "แม่มดน้อยกิกิ",
+   [25] = "魔女の宅急便",
+   [26] = "魔女宅急便",
    },
   ["short"] = {
    [1] = "kiki",
@@ -5102,9 +5103,8 @@ return {
   ["syn"] = {
    [1] = "Witch`s Delivery Service",
    [2] = "Відьомська пошта",
-   [3] = "Куриерска служба Кики",
-   [4] = "Служба доставки Кікі",
-   [5] = "خدمة توصيل كيكي",
+   [3] = "Служба доставки Кікі",
+   [4] = "خدمة توصيل كيكي",
    },
   },
  [287] = {
@@ -5341,12 +5341,13 @@ return {
    [20] = "Οι περιπέτειες του Τότορο",
    [21] = "Миний хөрш Тоторо",
    [22] = "Мой сосед Тоторо",
-   [23] = "השכן שלי טוטורו",
-   [24] = "جاري توتورو",
-   [25] = "โทโทโร่ เพื่อนรัก",
-   [26] = "となりのトトロ",
-   [27] = "龍貓",
-   [28] = "이웃집 토토로",
+   [23] = "Моят Съсед Тоторо",
+   [24] = "השכן שלי טוטורו",
+   [25] = "جاري توتورو",
+   [26] = "โทโทโร่ เพื่อนรัก",
+   [27] = "となりのトトロ",
+   [28] = "龍貓",
+   [29] = "이웃집 토토로",
    },
   ["short"] = {
    [1] = "TnT",
@@ -5357,8 +5358,7 @@ return {
    [1] = "My Neighbour Totoro",
    [2] = "Người bạn hàng xóm Totoro",
    [3] = "Näkymätön ystävä",
-   [4] = "Комшията Тоторо",
-   [5] = "Мій сусід Тоторо",
+   [4] = "Мій сусід Тоторо",
    },
   },
  [304] = {
@@ -5836,12 +5836,13 @@ return {
    [14] = "Le château dans le ciel",
    [15] = "O Castelo no Céu",
    [16] = "Το Κάστρο στον Ουρανό",
-   [17] = "Небесный замок Лапута",
-   [18] = "הטירה בשמיים",
-   [19] = "ลาพิวต้า พลิกตำนานเหนือเวหา",
-   [20] = "天空の城ラピュタ",
-   [21] = "天空之城",
-   [22] = "천공의 성 라퓨타",
+   [17] = "Лапута: Замъкът в Небето",
+   [18] = "Небесный замок Лапута",
+   [19] = "הטירה בשמיים",
+   [20] = "ลาพิวต้า พลิกตำนานเหนือเวหา",
+   [21] = "天空の城ラピュタ",
+   [22] = "天空之城",
+   [23] = "천공의 성 라퓨타",
    },
   ["short"] = {
    [1] = "Laputa",
@@ -5908,7 +5909,7 @@ return {
    [7] = "Tränen der Erinnerung - Only Yesterday",
    [8] = "Yesterday - Vissza a gyerekkorba",
    [9] = "Ταξιδιώτες στο Παρελθόν",
-   [10] = "Едва вчера",
+   [10] = "Единствено Вчера",
    [11] = "Ещё вчера",
    [12] = "רק אתמול",
    [13] = "ในความทรงจำที่ไม่มีวันจาง",
@@ -6015,7 +6016,7 @@ return {
    [14] = "Şoapta Inimii",
    [15] = "Širdies Šnabždezys",
    [16] = "Ο Ψίθυρος της Καρδιάς",
-   [17] = "Шепотът на сърцето",
+   [17] = "Шепотът На Сърцето",
    [18] = "Шёпот сердца",
    [19] = "הלחישה שבלב",
    [20] = "夢幻街少女",
@@ -11004,7 +11005,8 @@ return {
   ["main"] = "Injuu Gakuen La Blue Girl",
   ["official"] = {
    [1] = "La Blue Girl",
-   [2] = "淫獣学園 La Blue Girl",
+   [2] = "Miko Mido EST La Blue Girl",
+   [3] = "淫獣学園 La Blue Girl",
    },
   ["short"] = {
    },
@@ -16226,15 +16228,17 @@ return {
    },
   },
  [1031] = {
-  ["main"] = "Princess Army",
+  ["main"] = "Princess Army: Wedding Combat",
   ["official"] = {
    [1] = "Princess Army -Wedding Combat-",
-   [2] = "ぷりんせすARMY - ウェディング★COMBAT -",
+   [2] = "ぷりんせすARMY ウエディング★COMBAT",
    },
   ["short"] = {
+   [1] = "ぷりアミ",
    },
   ["syn"] = {
    [1] = "Princess Army Wedding Combat!",
+   [2] = "ぷりんせすARMY ウェディング★COMBAT",
    },
   },
  [1032] = {
@@ -18734,11 +18738,12 @@ return {
    [20] = "Zámek v oblacích",
    [21] = "Čarovnik Howl in gibljivi grad",
    [22] = "Το Κινούμενο Κάστρο",
-   [23] = "Ходячий замок",
-   [24] = "הטירה הנעה",
-   [25] = "قلعه متحرک هاول",
-   [26] = "ハウルの動く城",
-   [27] = "哈爾移動城堡",
+   [23] = "Замъкът на Хаул",
+   [24] = "Ходячий замок",
+   [25] = "הטירה הנעה",
+   [26] = "قلعه متحرک هاول",
+   [27] = "ハウルの動く城",
+   [28] = "哈爾移動城堡",
    },
   ["short"] = {
    [1] = "HMC",
@@ -18753,11 +18758,10 @@ return {
    [5] = "Keliaujanti Haulo Pilis",
    [6] = "Lâu đài di động của Howl",
    [7] = "Движещият се замък на Хоул",
-   [8] = "Замакът на Хаул",
-   [9] = "Замок-мандрівник",
-   [10] = "Мандрівний замок",
-   [11] = "Рухомий замок Хаула",
-   [12] = "قلعة هاول المتحركة",
+   [8] = "Замок-мандрівник",
+   [9] = "Мандрівний замок",
+   [10] = "Рухомий замок Хаула",
+   [11] = "قلعة هاول المتحركة",
    },
   },
  [1219] = {
@@ -20216,8 +20220,9 @@ return {
  [1341] = {
   ["main"] = "Cyborg Kuro-chan",
   ["official"] = {
-   [1] = "القط الأسود",
-   [2] = "サイボーグクロちゃん",
+   [1] = "Roba da gatti",
+   [2] = "القط الأسود",
+   [3] = "サイボーグクロちゃん",
    },
   ["short"] = {
    },
@@ -26099,7 +26104,8 @@ return {
    [2] = "daitarn",
    },
   ["syn"] = {
-   [1] = "Invincible Steel Man Daitarn 3",
+   [1] = "Daitan 3",
+   [2] = "Invincible Steel Man Daitarn 3",
    },
   },
  [1814] = {
@@ -27491,7 +27497,9 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Machine Peregrine",
+   [1] = "Ken Falco",
+   [2] = "Ken Falco il Superbolide",
+   [3] = "Machine Peregrine",
    },
   },
  [1913] = {
@@ -30025,15 +30033,16 @@ return {
    },
   },
  [2119] = {
-  ["main"] = "Lime-iro Senkitan: Nankoku Yume Roman",
+  ["main"] = "Lime-iro Senkitan: Nangoku Yume Roman",
   ["official"] = {
    [1] = "らいむいろ戦奇譚 南国夢浪漫",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Lime-iro Senkitan: The South Island Dream Romantic Adventure (OAV)",
-   [2] = "Raimuiro Senkitan ~Southern Romance Story~",
+   [1] = "Lime-iro Senkitan: Nankoku Yume Roman",
+   [2] = "Lime-iro Senkitan: The South Island Dream Romantic Adventure (OAV)",
+   [3] = "Raimuiro Senkitan ~Southern Romance Story~",
    },
   },
  [2120] = {
@@ -35392,8 +35401,9 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Timefighters",
-   [2] = "Timefighters in the Land of Fantasy",
+   [1] = "Time Fighters",
+   [2] = "Timefighters",
+   [3] = "Timefighters in the Land of Fantasy",
    },
   },
  [2547] = {
@@ -42020,7 +42030,7 @@ return {
    },
   },
  [3204] = {
-  ["main"] = "Paaman (1983)",
+  ["main"] = "Perman (1983)",
   ["official"] = {
    [1] = "SUPERKID",
    [2] = "パーマン (1983)",
@@ -42029,11 +42039,13 @@ return {
    },
   ["syn"] = {
    [1] = "Paa man",
-   [2] = "Perman",
+   [2] = "Paaman (1983)",
+   [3] = "Parman (1983)",
+   [4] = "Perman",
    },
   },
  [3205] = {
-  ["main"] = "Paaman",
+  ["main"] = "Perman",
   ["official"] = {
    [1] = "SUPERKID (1967)",
    [2] = "パーマン",
@@ -42041,17 +42053,21 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Paaman",
+   [2] = "Parman",
    },
   },
  [3206] = {
-  ["main"] = "Paaman: Birdman ga Yatte Kita!!",
+  ["main"] = "Perman: Birdman ga Yatte Kita!!",
   ["official"] = {
    [1] = "パーマン バードマンがやって来た!!",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Paman Movie",
+   [1] = "Paaman: Birdman ga Yatte Kita!!",
+   [2] = "Paman Movie",
+   [3] = "Parman: Birdman ga Yatte Kita!!",
    },
   },
  [3207] = {
@@ -42755,7 +42771,7 @@ return {
    },
   },
  [3327] = {
-  ["main"] = "Super Doll Licca-chan: Licca-chan Zettai Zetsumei! Doll Knights no Kiseki",
+  ["main"] = "Super Doll Licca-chan: Licca-chan Zettaizetsumei! Doll Knights no Kiseki",
   ["official"] = {
    [1] = "Super Doll Licca-chan: Licca-chan`s Desperate Situation! The Doll Knights` Miracle",
    [2] = "スーパードール★リカちゃん リカちゃん絶体絶命! ドールナイツの奇跡",
@@ -45758,7 +45774,8 @@ return {
   ["main"] = "Time Bokan Oudou Fukko",
   ["official"] = {
    [1] = "Time Bokan",
-   [2] = "タイムボカン王道復古",
+   [2] = "Time Bokan: Royal Revival",
+   [3] = "タイムボカン王道復古",
    },
   ["short"] = {
    },
@@ -50370,11 +50387,12 @@ return {
    [13] = "TALES from EARTHSEA",
    [14] = "Yerdeniz Öyküleri",
    [15] = "Žemjūrės pasakos",
-   [16] = "Сказания Земноморья",
-   [17] = "הקוסם מארץ ים",
-   [18] = "ゲド戦記 TALES from EARTHSEA",
-   [19] = "地海戰記",
-   [20] = "게드전기",
+   [16] = "Приказки от Землемория",
+   [17] = "Сказания Земноморья",
+   [18] = "הקוסם מארץ ים",
+   [19] = "ゲド戦記 TALES from EARTHSEA",
+   [20] = "地海戰記",
+   [21] = "게드전기",
    },
   ["short"] = {
    [1] = "Ged Senki",
@@ -52232,7 +52250,7 @@ return {
    },
   },
  [4371] = {
-  ["main"] = "Zettai Zetsumei Dangerous Jiisan",
+  ["main"] = "Zettaizetsumei Dangerous Jii-san",
   ["official"] = {
    [1] = "Grandpa Danger",
    [2] = "絶体絶命でんぢゃらすじーさん",
@@ -53217,7 +53235,7 @@ return {
    },
   },
  [4482] = {
-  ["main"] = "Shiritsu Tantei: Toki Shouzou Trouble Note - Hard & Loose",
+  ["main"] = "Shiritsu Tantei Toki Shouzou Trouble Note: Hard & Loose",
   ["official"] = {
    [1] = "私立探偵・土岐正造トラブル・ノート ハード&ルーズ",
    },
@@ -54162,7 +54180,7 @@ return {
    [2] = "Heaven-Piercing Gurren Lagann",
    [3] = "Pokořitel nebes Gurren-Lagann",
    [4] = "Гуррен Лаганн - прочь из этого мира",
-   [5] = "Гуррен Лаганн: Прорыв!",
+   [5] = "Гуррен-Лаганн: на прорыв!",
    [6] = "Ґуррен Лаґанн",
    [7] = "天元突破 红莲之眼",
    },
@@ -55929,7 +55947,7 @@ return {
    },
   },
  [4742] = {
-  ["main"] = "Ninja Hattori-kun Plus Paaman: Chounouryoku Wars",
+  ["main"] = "Ninja Hattori-kun Plus Perman: Chounouryoku Wars",
   ["official"] = {
    [1] = "忍者ハットリくん+[プラス]パーマン 超能力ウォーズ",
    },
@@ -55937,6 +55955,8 @@ return {
    },
   ["syn"] = {
    [1] = "Ninja Hattori-kun + Paman ESP Wars",
+   [2] = "Ninja Hattori-kun Plus Paaman: Chounouryoku Wars",
+   [3] = "Ninja Hattori-kun Plus Parman: Chounouryoku Wars",
    },
   },
  [4743] = {
@@ -57672,14 +57692,17 @@ return {
    },
   },
  [4926] = {
-  ["main"] = "Catblue: Dynamite",
+  ["main"] = "Catblue Dynamite",
   ["official"] = {
-   [1] = "CATBLUE:DYNAMITE(キャットブルー:ダイナマイト)",
+   [1] = "CATBLUE DYNAMITE",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "キャットブルー: ダイナマイト",
+   [1] = "CATBLUE:DYNAMITE",
+   [2] = "キャットブルー: ダイナマイト",
+   [3] = "キャットブルー:ダイナマイト",
+   [4] = "キャットブルー・ダイナマイト",
    },
   },
  [4927] = {
@@ -65302,10 +65325,11 @@ return {
   ["syn"] = {
    [1] = "Gekijouban Major: Yuujou no Ikkyuu",
    [2] = "Major Movie",
-   [3] = "Major: Yuujou no Winning Shot",
-   [4] = "Мейжър: Филмът",
-   [5] = "メジャー 友情の一球",
-   [6] = "メジャー 友情の一球(ウイニングショット)",
+   [3] = "Major: Ball of Friendship",
+   [4] = "Major: Yuujou no Winning Shot",
+   [5] = "Мейжър: Филмът",
+   [6] = "メジャー 友情の一球",
+   [7] = "メジャー 友情の一球(ウイニングショット)",
    },
   },
  [5840] = {
@@ -66520,7 +66544,7 @@ return {
    },
   },
  [5996] = {
-  ["main"] = "Anoko ni 1000%",
+  ["main"] = "Ano Ko ni 1000%",
   ["official"] = {
    [1] = "あのこに1000%",
    },
@@ -66528,9 +66552,8 @@ return {
    },
   ["syn"] = {
    [1] = "1000% for That Girl",
-   [2] = "Ano Ko ni 1000%",
-   [3] = "That Girl Goes to 1000%",
-   [4] = "That Girl is 1000%",
+   [2] = "That Girl Goes to 1000%",
+   [3] = "That Girl is 1000%",
    },
   },
  [5997] = {
@@ -70444,7 +70467,7 @@ return {
   ["official"] = {
    [1] = "A Certain Scientific Railgun",
    [2] = "เรลกัน แฟ้มลับคดีวิทยาศาสตร์",
-   [3] = "とある科学の超電磁砲(レールガン)",
+   [3] = "とある科学の超電磁砲[レールガン]",
    },
   ["short"] = {
    [1] = "railgun",
@@ -73424,11 +73447,10 @@ return {
    },
   ["syn"] = {
    [1] = "Muncind",
-   [2] = "Poplar",
-   [3] = "working",
-   [4] = "Работа`!!",
-   [5] = "Работаю!!",
-   [6] = "迷糊餐厅",
+   [2] = "working",
+   [3] = "Работа`!!",
+   [4] = "Работаю!!",
+   [5] = "迷糊餐厅",
    },
   },
  [6781] = {
@@ -80902,7 +80924,8 @@ return {
  [7532] = {
   ["main"] = "Seitokai Yakuindomo",
   ["official"] = {
-   [1] = "生徒会役員共",
+   [1] = "妄想学生会",
+   [2] = "生徒会役員共",
    },
   ["short"] = {
    [1] = "SYD",
@@ -80910,7 +80933,6 @@ return {
   ["syn"] = {
    [1] = "Student Council Staff Members",
    [2] = "Члены школьного совета",
-   [3] = "妄想学生会",
    },
   },
  [7533] = {
@@ -85234,16 +85256,18 @@ return {
    },
   },
  [7975] = {
-  ["main"] = "Toaru Kagaku no Railgun OVA",
+  ["main"] = "Toaru Kagaku no Railgun: Misaka-san wa Ima Chuumoku no Mato Desu kara",
   ["official"] = {
-   [1] = "とある科学の超電磁砲(レールガン) OVA",
+   [1] = "とある科学の超電磁砲[レールガン] 御坂さんはいま注目の的ですから",
    },
   ["short"] = {
    [1] = "Railgun OVA",
    },
   ["syn"] = {
    [1] = "A Certain Scientific Railgun OVA",
-   [2] = "科学电磁炮 ova",
+   [2] = "Toaru Kagaku no Railgun OVA",
+   [3] = "とある科学の超電磁砲[レールガン] OVA",
+   [4] = "科学电磁炮 ova",
    },
   },
  [7976] = {
@@ -86939,9 +86963,10 @@ return {
   ["main"] = "Ao no Exorcist",
   ["official"] = {
    [1] = "Blue Exorcist",
-   [2] = "المعوذ الأزرق",
-   [3] = "جنگیر آبی",
-   [4] = "青の祓魔師",
+   [2] = "Синий экзорцист",
+   [3] = "المعوذ الأزرق",
+   [4] = "جنگیر آبی",
+   [5] = "青の祓魔師",
    },
   ["short"] = {
    [1] = "AnE",
@@ -86950,12 +86975,11 @@ return {
    },
   ["syn"] = {
    [1] = "Ao no Futsumashi",
-   [2] = "Синий Экзорцист",
-   [3] = "Синият Екзорсист",
-   [4] = "اگزورسیست آبی",
-   [5] = "جن گیر آبی",
-   [6] = "青のエクソシスト",
-   [7] = "青之驱魔师",
+   [2] = "Синият Екзорсист",
+   [3] = "اگزورسیست آبی",
+   [4] = "جن گیر آبی",
+   [5] = "青のエクソシスト",
+   [6] = "青之驱魔师",
    },
   },
  [8149] = {
@@ -89082,10 +89106,9 @@ return {
    [1] = "working2",
    },
   ["syn"] = {
-   [1] = "Poplar 2",
-   [2] = "Wagnaria!! 2",
-   [3] = "Working!! 2",
-   [4] = "迷糊快餐厅2",
+   [1] = "Wagnaria!! 2",
+   [2] = "Working!! 2",
+   [3] = "迷糊快餐厅2",
    },
   },
  [8365] = {
@@ -93214,6 +93237,10 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "The Beginning",
+   [2] = "The Rising",
+   [3] = "Tiger & Bunny The Movie: The Beginning",
+   [4] = "Tiger & Bunny The Movie: The Rising",
    },
   },
  [8806] = {
@@ -93982,8 +94009,9 @@ return {
    [1] = "Fate/Zero (2012)",
    },
   ["short"] = {
-   [1] = "fz2",
-   [2] = "Фатум 2012",
+   [1] = "fz 2012",
+   [2] = "fz2",
+   [3] = "Фатум 2012",
    },
   ["syn"] = {
    [1] = "(قسمت / صفر (2012",
@@ -95304,33 +95332,39 @@ return {
    },
   },
  [9025] = {
-  ["main"] = "Ninja Hattori-kun Plus Paaman: Ninja Kaijuu Jippou VS Miracle Tamago",
+  ["main"] = "Ninja Hattori-kun Plus Perman: Ninja Kaijuu Jippou Tai Miracle Tamago",
   ["official"] = {
    [1] = "忍者ハットリくん+パーマン 忍者怪獣ジッポウVSミラクル卵",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Ninja Hattori-kun Plus Paaman: Ninja Kaijuu Jippou Tai Miracle Tamago",
+   [2] = "Ninja Hattori-kun Plus Parman: Ninja Kaijuu Jippou Tai Miracle Tamago",
    },
   },
  [9026] = {
-  ["main"] = "Pa-Pa-Pa the Movie: Paaman",
+  ["main"] = "Pa-Pa-Pa the Movie: Perman",
   ["official"] = {
    [1] = "Pa-Pa-Pa ザ★ムービー パーマン",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Pa-Pa-Pa the Movie: Paaman",
+   [2] = "Pa-Pa-Pa the Movie: Parman",
    },
   },
  [9027] = {
-  ["main"] = "Pa-Pa-Pa the Movie: Paaman - Tako de Pon! Ashi wa Pon!",
+  ["main"] = "Pa-Pa-Pa the Movie: Perman - Tako de Pon! Ashi wa Pon!",
   ["official"] = {
    [1] = "Pa-Pa-Pa ザ★ムービー パーマン タコDEポン! アシHAポン!",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Pa-Pa-Pa the Movie: Paaman - Tako de Pon! Ashi wa Pon!",
+   [2] = "Pa-Pa-Pa the Movie: Parman - Tako de Pon! Ashi wa Pon!",
    },
   },
  [9028] = {
@@ -97702,12 +97736,11 @@ return {
    [1] = "美少女戦士セーラームーン (2014)",
    },
   ["short"] = {
-   [1] = "sm2013",
+   [1] = "sm2014",
    },
   ["syn"] = {
-   [1] = "Pretty Soldier Sailor Moon (2013)",
+   [1] = "Pretty Soldier Sailor Moon (2014)",
    [2] = "Sailor Moon Remake",
-   [3] = "เซเลอร์มูน 2013",
    },
   },
  [9307] = {
@@ -99991,6 +100024,7 @@ return {
   ["official"] = {
    [1] = "Inari, Konkon, Koi Iroha",
    [2] = "いなり, こんこん, 恋いろは.",
+   [3] = "狐仙的恋爱入门",
    },
   ["short"] = {
    },
@@ -102889,8 +102923,9 @@ return {
  [9874] = {
   ["main"] = "Chuunibyou demo Koi ga Shitai! Ren",
   ["official"] = {
-   [1] = "中二病でも恋がしたい! 戀",
-   [2] = "中二病也要谈恋爱！恋",
+   [1] = "Love, Chunibyo and Other Delusions! Heart Throb",
+   [2] = "中二病でも恋がしたい! 戀",
+   [3] = "中二病也要谈恋爱！恋",
    },
   ["short"] = {
    [1] = "chu2ren",
@@ -102915,8 +102950,9 @@ return {
    },
   ["syn"] = {
    [1] = "KILL la KILL",
-   [2] = "Круши-кромсай",
-   [3] = "Убийствени намерения",
+   [2] = "Клъцни-трепи",
+   [3] = "Круши-кромсай",
+   [4] = "Убийствени намерения",
    },
   },
  [9877] = {
@@ -103509,16 +103545,6 @@ return {
   ["syn"] = {
    },
   },
- [9939] = {
-  ["main"] = "1992",
-  ["official"] = {
-   [1] = "極限バトル!!三大超サイヤ人　スペシャル",
-   },
-  ["short"] = {
-   },
-  ["syn"] = {
-   },
-  },
  [9940] = {
   ["main"] = "Junjou Shoujo Et Cetera",
   ["official"] = {
@@ -103631,16 +103657,6 @@ return {
   ["main"] = "Oyako Rankan The Animation",
   ["official"] = {
    [1] = "母娘乱館 THE ANIMATION",
-   },
-  ["short"] = {
-   },
-  ["syn"] = {
-   },
-  },
- [9954] = {
-  ["main"] = "Gekijouban Houkago no Pleiades (2013)",
-  ["official"] = {
-   [1] = "劇場版 放課後のプレアデス (2013)",
    },
   ["short"] = {
    },
@@ -103982,16 +103998,6 @@ return {
    },
   ["syn"] = {
    [1] = "Dragonar Academy",
-   },
-  },
- [9997] = {
-  ["main"] = "Madan no Ou to Vanadis",
-  ["official"] = {
-   [1] = "魔弾の王と戦姫",
-   },
-  ["short"] = {
-   },
-  ["syn"] = {
    },
   },
  [9998] = {
@@ -105583,7 +105589,8 @@ return {
  [10197] = {
   ["main"] = "Seitokai Yakuindomo *",
   ["official"] = {
-   [1] = "生徒会役員共＊",
+   [1] = "妄想学生会＊",
+   [2] = "生徒会役員共＊",
    },
   ["short"] = {
    [1] = "SYD*",
@@ -105737,7 +105744,7 @@ return {
  [10212] = {
   ["main"] = "Sekai Seifuku: Bouryaku no Zvezda",
   ["official"] = {
-   [1] = "Sekai seifuku: le complot Zvezda",
+   [1] = "Sekai Seifuku: le complot Zvezda",
    [2] = "World Conquest Zvezda Plot",
    [3] = "世界征服 ~謀略のズヴィズダー~",
    },
@@ -106128,16 +106135,6 @@ return {
   ["syn"] = {
    },
   },
- [10260] = {
-  ["main"] = "Feng Yun Jue",
-  ["official"] = {
-   [1] = "风云决",
-   },
-  ["short"] = {
-   },
-  ["syn"] = {
-   },
-  },
  [10262] = {
   ["main"] = "Gochuumon wa Usagi Desuka?",
   ["official"] = {
@@ -106199,6 +106196,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Parasyte",
    },
   },
  [10273] = {
@@ -106257,8 +106255,9 @@ return {
    },
   },
  [10279] = {
-  ["main"] = "Peaceful Times(F02)petit film",
+  ["main"] = "Peaceful Times (F02) Petit Film",
   ["official"] = {
+   [1] = "Peaceful Times(F02)petit film",
    },
   ["short"] = {
    },
@@ -106417,6 +106416,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Futa Club!",
    },
   },
  [10297] = {
@@ -106464,26 +106464,6 @@ return {
   ["main"] = "Fight Ippatsu! Juuden-chan!! (2014)",
   ["official"] = {
    [1] = "ファイト一発! 充電ちゃん!! (2014)",
-   },
-  ["short"] = {
-   },
-  ["syn"] = {
-   },
-  },
- [10303] = {
-  ["main"] = "Sri Lanka Kousokudouro",
-  ["official"] = {
-   [1] = "スリランカ高速道路",
-   },
-  ["short"] = {
-   },
-  ["syn"] = {
-   },
-  },
- [10304] = {
-  ["main"] = "Shin Doha Kokusai Kuukou",
-  ["official"] = {
-   [1] = "新ドーハ国際空港",
    },
   ["short"] = {
    },
@@ -106614,9 +106594,9 @@ return {
    },
   },
  [10320] = {
-  ["main"] = "Uchuu Kyoudai (2014)",
+  ["main"] = "Uchuu Kyoudai: Number Zero",
   ["official"] = {
-   [1] = "宇宙兄弟 (2014)",
+   [1] = "宇宙兄弟#0[ナンバー・ゼロ]",
    },
   ["short"] = {
    },
@@ -106702,43 +106682,26 @@ return {
   ["syn"] = {
    },
   },
- [10332] = {
-  ["main"] = "Last Orders",
-  ["official"] = {
-   },
-  ["short"] = {
-   },
-  ["syn"] = {
-   },
-  },
  [10333] = {
   ["main"] = "Trip Trek (2013)",
   ["official"] = {
-   [1] = "トリップトレック",
+   [1] = "TRIP TREK (2013)",
    },
   ["short"] = {
    },
   ["syn"] = {
-   },
-  },
- [10341] = {
-  ["main"] = "Trip Trek",
-  ["official"] = {
-   [1] = "トリップトレック (2003)",
-   },
-  ["short"] = {
-   },
-  ["syn"] = {
+   [1] = "トリップトレック (2013)",
    },
   },
  [10348] = {
-  ["main"] = "Trip Trek 2003",
+  ["main"] = "Trip Trek",
   ["official"] = {
-   [1] = "トリップトレック 2003",
+   [1] = "TRIP TREK",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "トリップトレック",
    },
   },
  [10349] = {
@@ -107112,9 +107075,9 @@ return {
    },
   },
  [10394] = {
-  ["main"] = "Chikasugi aidoru \"akae-chan\"",
+  ["main"] = "Chikasugi Idol Akae-chan",
   ["official"] = {
-   [1] = "地下すぎアイドル 「あかえちゃん」",
+   [1] = "地下すぎアイドル あかえちゃん",
    },
   ["short"] = {
    },
@@ -107234,6 +107197,7 @@ return {
  [10406] = {
   ["main"] = "Sengoku Basara (2014)",
   ["official"] = {
+   [1] = "戦国BASARA (2014)",
    },
   ["short"] = {
    },
@@ -107253,6 +107217,7 @@ return {
  [10409] = {
   ["main"] = "Avengers Confidential: Black Widow & Punisher",
   ["official"] = {
+   [1] = "アベンジャーズ コンフィデンシャル：ブラックウィドウとパニッシャー",
    },
   ["short"] = {
    },
@@ -107260,9 +107225,9 @@ return {
    },
   },
  [10411] = {
-  ["main"] = "Inuneko awa 47 todoufuken R & nya-men",
+  ["main"] = "47 Todoufuken R",
   ["official"] = {
-   [1] = "犬猫アワー 47都道府犬R＆にゃ～めん",
+   [1] = "47都道府犬R",
    },
   ["short"] = {
    },
@@ -107366,6 +107331,108 @@ return {
   ["main"] = "Kutsushita ga Daru Daru ni Nacchau Wake: Imadoki Youkai Zukan",
   ["official"] = {
    [1] = "くつしたがだるだるになっちゃうわけ ~イマドキ妖怪図鑑~",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10425] = {
+  ["main"] = "xxxHOLiC: Rei",
+  ["official"] = {
+   [1] = "xxxHOLiC・戻",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10426] = {
+  ["main"] = "Break Blade (2014)",
+  ["official"] = {
+   [1] = "ブレイクブレイド (2014)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10427] = {
+  ["main"] = "Oniku Daisuki! Zeushi-kun",
+  ["official"] = {
+   [1] = "おにくだいすき! ゼウシくん",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10428] = {
+  ["main"] = "Maido! Urayasu Tekkin Kazoku",
+  ["official"] = {
+   [1] = "毎度! 浦安鉄筋家族",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10429] = {
+  ["main"] = "Kyonyuu Kazoku Saimin",
+  ["official"] = {
+   [1] = "巨乳家族催眠",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10430] = {
+  ["main"] = "Uchuu Senkan Yamato 2199 (2014)",
+  ["official"] = {
+   [1] = "宇宙戦艦ヤマト2199 (2014)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10431] = {
+  ["main"] = "Nyamen",
+  ["official"] = {
+   [1] = "にゃ~めん",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10432] = {
+  ["main"] = "Blade and Soul",
+  ["official"] = {
+   [1] = "ブレイドアンドソウル",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Blade & Soul",
+   [2] = "ブレイド＆ソウル",
+   },
+  },
+ [10434] = {
+  ["main"] = "Gekijouban Train Heroes",
+  ["official"] = {
+   [1] = "劇場版 トレインヒーロー",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10436] = {
+  ["main"] = "Right Places: Sono Toki, Boku no Irubeki Basho",
+  ["official"] = {
+   [1] = "Right Places その時, ぼくの居るべき場所",
    },
   ["short"] = {
    },
