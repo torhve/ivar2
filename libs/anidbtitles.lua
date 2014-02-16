@@ -3495,7 +3495,7 @@ return {
    },
   },
  [197] = {
-  ["main"] = "Iria: Zeiram the Animation",
+  ["main"] = "Iria: Zeiram - The Animation",
   ["official"] = {
    [1] = "Iria",
    [2] = "Iria - Zeiram the Animation",
@@ -4106,14 +4106,14 @@ return {
    [1] = "As Bolas Máxicas",
    [2] = "Bola de Drac",
    [3] = "Bola de Dragón",
-   [4] = "Dragon Ball",
-   [5] = "Dragonball",
-   [6] = "Drakonų kovos",
-   [7] = "Zmajeva Kugla",
-   [8] = "Zmajeva kugla",
-   [9] = "دراغون بول",
-   [10] = "ดราก้อนบอล",
-   [11] = "ドラゴンボール",
+   [4] = "DRAGON BALL",
+   [5] = "Dragon Ball",
+   [6] = "Dragonball",
+   [7] = "Drakonų kovos",
+   [8] = "Zmajeva Kugla",
+   [9] = "Zmajeva kugla",
+   [10] = "دراغون بول",
+   [11] = "ดราก้อนบอล",
    [12] = "龍珠",
    [13] = "龙珠",
    [14] = "드래곤볼",
@@ -4133,19 +4133,20 @@ return {
    [8] = "Smocze Kule",
    [9] = "Драконий жемчуг",
    [10] = "драконова топка",
+   [11] = "ドラゴンボール",
    },
   },
  [233] = {
   ["main"] = "Dragon Ball GT",
   ["official"] = {
    [1] = "Bola de Drac GT",
-   [2] = "Dragon Ball GT",
-   [3] = "Dragonball GT",
-   [4] = "Drakonų Kovos GT",
-   [5] = "GT דרגון בול",
-   [6] = "دراغون بول GT",
-   [7] = "ดราก้อนบอล จีที",
-   [8] = "ドラゴンボールGT",
+   [2] = "DRAGON BALL GT",
+   [3] = "Dragon Ball GT",
+   [4] = "Dragonball GT",
+   [5] = "Drakonų Kovos GT",
+   [6] = "GT דרגון בול",
+   [7] = "دراغون بول GT",
+   [8] = "ดราก้อนบอล จีที",
    [9] = "龍珠GT",
    },
   ["short"] = {
@@ -4156,6 +4157,7 @@ return {
    [2] = "Dragonball GT",
    [3] = "Ejder Topu GT",
    [4] = "Драконий жемчуг БП",
+   [5] = "ドラゴンボールGT",
    },
   },
  [234] = {
@@ -7630,15 +7632,15 @@ return {
    },
   },
  [443] = {
-  ["main"] = "Macross 7: Ginga ga Ore o Yonde Iru",
+  ["main"] = "Macross 7: Ginga ga Ore o Yonde Iru!",
   ["official"] = {
-   [1] = "Macross 7: The Galaxy is Calling Me",
-   [2] = "マクロス7 -銀河がオレを呼んでいる!-",
+   [1] = "マクロス7 -銀河がオレを呼んでいる!-",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Macross 7: The Movie",
+   [1] = "Macross 7: The Galaxy is Calling Me",
+   [2] = "Macross 7: The Movie",
    },
   },
  [444] = {
@@ -11957,10 +11959,11 @@ return {
  [731] = {
   ["main"] = "Maou Dante",
   ["official"] = {
-   [1] = "Dante, seigneur des démons",
-   [2] = "Demon Lord Dante",
-   [3] = "Mao Dante",
-   [4] = "魔王ダンテ",
+   [1] = "Dante el señor de los demonios",
+   [2] = "Dante, seigneur des démons",
+   [3] = "Demon Lord Dante",
+   [4] = "Mao Dante",
+   [5] = "魔王ダンテ",
    },
   ["short"] = {
    },
@@ -15436,7 +15439,7 @@ return {
    },
   },
  [980] = {
-  ["main"] = "Jinzou Ningen Kikaider the Animation",
+  ["main"] = "Jinzou Ningen Kikaider The Animation",
   ["official"] = {
    [1] = "Android Kikaider - The Animation",
    [2] = "Humanoid Kikaider",
@@ -22239,9 +22242,9 @@ return {
    },
   },
  [1492] = {
-  ["main"] = "Seifuku Shojo the Animation",
+  ["main"] = "Seifuku Shojo The Animation",
   ["official"] = {
-   [1] = "制服処女 the Animation",
+   [1] = "制服処女 THE ANIMATION",
    },
   ["short"] = {
    },
@@ -22579,7 +22582,7 @@ return {
    },
   },
  [1523] = {
-  ["main"] = "Ragnarok the Animation",
+  ["main"] = "Ragnarok The Animation",
   ["official"] = {
    [1] = "RAGNAROK THE ANIMATION",
    [2] = "Ragnarok",
@@ -22676,13 +22679,13 @@ return {
   ["official"] = {
    [1] = "Bola De Drac Z",
    [2] = "Bola de Dragón Z",
-   [3] = "Dragon Ball Z",
-   [4] = "DragonBall Z",
-   [5] = "Drakonų Kovos Z",
-   [6] = "Z דרגון בול",
-   [7] = "دراغون بول z",
-   [8] = "ดราก้อนบอล Z",
-   [9] = "ドラゴンボールZ",
+   [3] = "DRAGON BALL Z",
+   [4] = "Dragon Ball Z",
+   [5] = "DragonBall Z",
+   [6] = "Drakonų Kovos Z",
+   [7] = "Z דרגון בול",
+   [8] = "دراغون بول z",
+   [9] = "ดราก้อนบอล Z",
    [10] = "龍珠二世",
    [11] = "龙珠Z",
    [12] = "드래곤볼Z",
@@ -22697,6 +22700,7 @@ return {
    [3] = "Ejder Topu Z",
    [4] = "Драконий жемчуг Зет",
    [5] = "Драконова топка Зет",
+   [6] = "ドラゴンボールZ",
    },
   },
  [1531] = {
@@ -22745,12 +22749,12 @@ return {
   ["main"] = "Maetel Legend",
   ["official"] = {
    [1] = "La légende de Maetel",
-   [2] = "メーテルレジェンド",
+   [2] = "Maetel Legend",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Maetel Legend",
+   [1] = "メーテルレジェンド",
    },
   },
  [1535] = {
@@ -23874,7 +23878,7 @@ return {
    },
   },
  [1625] = {
-  ["main"] = "Phantom the Animation",
+  ["main"] = "Phantom The Animation",
   ["official"] = {
    [1] = "Phantom - The Animation",
    [2] = "Phantom the animation",
@@ -32532,9 +32536,10 @@ return {
    [4] = "Tom Sawyer",
    [5] = "Tom Sawyers Abenteuer",
    [6] = "Tom story",
-   [7] = "תום סויר",
-   [8] = "توم سوير",
-   [9] = "トム・ソーヤーの冒険",
+   [7] = "Приключения Тома Сойера",
+   [8] = "תום סויר",
+   [9] = "توم سوير",
+   [10] = "トム・ソーヤーの冒険",
    },
   ["short"] = {
    },
@@ -40909,7 +40914,7 @@ return {
    },
   },
  [3108] = {
-  ["main"] = "Otoko do-Ahou! Koushien",
+  ["main"] = "Otoko Doahou! Koushien",
   ["official"] = {
    [1] = "男どアホウ! 甲子園",
    },
@@ -48541,7 +48546,7 @@ return {
    },
   },
  [4049] = {
-  ["main"] = "Ray the Animation",
+  ["main"] = "Ray The Animation",
   ["official"] = {
    [1] = "RAY THE ANIMATION",
    [2] = "Ray",
@@ -52375,7 +52380,7 @@ return {
    },
   },
  [4382] = {
-  ["main"] = "Shin Kyouhaku 2 the Animation: Kizu ni Saku Hana Senketsu no Kurenai",
+  ["main"] = "Shin Kyouhaku 2 The Animation: Kizu ni Saku Hana Senketsu no Kurenai",
   ["official"] = {
    [1] = "新・脅迫2 THE ANIMATION ～傷に咲く花 鮮血の紅～",
    },
@@ -54071,7 +54076,7 @@ return {
    },
   },
  [4569] = {
-  ["main"] = "Ringetsu the Animation",
+  ["main"] = "Ringetsu The Animation",
   ["official"] = {
    [1] = "Ringetsu The Animation",
    [2] = "燐月 ～リンゲツ～ THE ANIMATION",
@@ -57161,6 +57166,8 @@ return {
    [4] = "Наруто Шиппүүдэн",
    [5] = "ناروتو شیپودن",
    [6] = "นารูโตะ ตำนานวายุสลาตัน",
+   [7] = "火影忍者疾風傳",
+   [8] = "火影忍者疾风传",
    },
   ["short"] = {
    [1] = "Naruto 2",
@@ -57182,7 +57189,6 @@ return {
    [9] = "ناروتو: أسطورة الزوبعة",
    [10] = "নারূতঃ সিপ্পুডেন",
    [11] = "ナルト 疾風伝",
-   [12] = "火影忍者 疾风传",
    },
   },
  [4884] = {
@@ -57659,7 +57665,8 @@ return {
    [2] = "おお振り",
    },
   ["syn"] = {
-   [1] = "王牌投手-振臂高挥",
+   [1] = "Swing Big!",
+   [2] = "王牌投手-振臂高挥",
    },
   },
  [4924] = {
@@ -61011,6 +61018,7 @@ return {
   ["main"] = "Exper Zenon",
   ["official"] = {
    [1] = "EXPER ZENON",
+   [2] = "Експер Дзенон",
    },
   ["short"] = {
    },
@@ -62868,7 +62876,7 @@ return {
    },
   },
  [5509] = {
-  ["main"] = "Chibi Maruko-chan : Watashi no Suki na Uta",
+  ["main"] = "Chibi Maruko-chan: Watashi no Suki na Uta",
   ["official"] = {
    [1] = "ちびまる子ちゃん わたしの好きな歌",
    },
@@ -65604,7 +65612,7 @@ return {
   ["official"] = {
    [1] = "Eureka Seven - Der Film: Good Night, Sleep Tight, Young Lovers",
    [2] = "Eureka Seven - Le Film: Good Night, Sleep Tight, Young Lovers",
-   [3] = "Eureka Seven -good night, sleep tight, young lovers-",
+   [3] = "Eureka Seven: Good Night, Sleep Tight, Young Lovers",
    [4] = "交響詩篇エウレカセブン ポケットが虹でいっぱい",
    },
   ["short"] = {
@@ -65804,11 +65812,11 @@ return {
    },
   },
  [5903] = {
-  ["main"] = "Kidou Senshi Gundam 00 2nd Season",
+  ["main"] = "Kidou Senshi Gundam 00 (2008)",
   ["official"] = {
    [1] = "Mobile Suit Gundam 00 Season 2",
    [2] = "Mobile Suit Gundam 00 Second Season",
-   [3] = "機動戦士ガンダム00 第2シーズン",
+   [3] = "機動戦士ガンダム00 (2008)",
    },
   ["short"] = {
    [1] = "G002",
@@ -65817,13 +65825,15 @@ return {
   ["syn"] = {
    [1] = "Gundam Double O 2nd Season",
    [2] = "Gundam Double Oh 2nd Season",
-   [3] = "Mobile Suit Gundam 00 2nd Season",
-   [4] = "Mobile Suit Gundam 00 Second Season",
-   [5] = "Mobile Suit Gundam Double O 2nd Season",
-   [6] = "Мобилен Костюм Гъндам 00 2",
-   [7] = "جاندام 00 الجزء الثاني",
-   [8] = "机动战士高达00第二季",
-   [9] = "機動戦士ガンダム00 セカンドシーズン",
+   [3] = "Kidou Senshi Gundam 00 2nd Season",
+   [4] = "Mobile Suit Gundam 00 2nd Season",
+   [5] = "Mobile Suit Gundam 00 Second Season",
+   [6] = "Mobile Suit Gundam Double O 2nd Season",
+   [7] = "Мобилен Костюм Гъндам 00 2",
+   [8] = "جاندام 00 الجزء الثاني",
+   [9] = "机动战士高达00第二季",
+   [10] = "機動戦士ガンダム00 セカンドシーズン",
+   [11] = "機動戦士ガンダム00 第2シーズン",
    },
   },
  [5904] = {
@@ -66240,7 +66250,7 @@ return {
    },
   },
  [5951] = {
-  ["main"] = "Eromanga Mitai na Koi Shiyo: Let`s Fall in Love The Ero-manga",
+  ["main"] = "Eromanga Mitai na Koi Shiyou: Let`s Fall in Love The Ero-manga",
   ["official"] = {
    [1] = "エロマンガみたいな恋しよう LET`S FALL IN LOVE THE ERO-MANGA",
    },
@@ -69375,7 +69385,7 @@ return {
    },
   },
  [6322] = {
-  ["main"] = "Denpa Teki na Kanojo",
+  ["main"] = "Denpateki na Kanojo",
   ["official"] = {
    [1] = "電波的な彼女",
    },
@@ -70785,7 +70795,7 @@ return {
    },
   },
  [6494] = {
-  ["main"] = "Cobra the Animation",
+  ["main"] = "Cobra The Animation",
   ["official"] = {
    [1] = "COBRA THE ANIMATION",
    [2] = "Cobra the Animation",
@@ -72358,7 +72368,8 @@ return {
   ["main"] = "Durarara!!",
   ["official"] = {
    [1] = "Durarara!!",
-   [2] = "デュラララ!!",
+   [2] = "Дюрарара!!",
+   [3] = "デュラララ!!",
    },
   ["short"] = {
    },
@@ -72371,9 +72382,8 @@ return {
    [6] = "Durarara",
    [7] = "Dyurarara!!",
    [8] = "Дурарара!!",
-   [9] = "Дюрарара!!!",
-   [10] = "无头骑士异闻录",
-   [11] = "듀라라라!!",
+   [9] = "无头骑士异闻录",
+   [10] = "듀라라라!!",
    },
   },
  [6672] = {
@@ -73662,7 +73672,8 @@ return {
    [1] = "Pingvinė Jona Jona",
    [2] = "Yona, a pingvinek királynője",
    [3] = "Yona, la légende de l`oiseau sans ailes",
-   [4] = "よなよなペンギン",
+   [4] = "Yona: A Lenda da Ave Sem Asas",
+   [5] = "よなよなペンギン",
    },
   ["short"] = {
    [1] = "yonapen",
@@ -76501,7 +76512,7 @@ return {
    },
   },
  [7078] = {
-  ["main"] = "Tamagotchi!",
+  ["main"] = "Tamagocchi!",
   ["official"] = {
    [1] = "たまごっち!",
    },
@@ -80679,7 +80690,8 @@ return {
   ["main"] = "Tezuka Osamu no Buddha: Akai Sabaku yo! Utsukushiku",
   ["official"] = {
    [1] = "Bouddha - Le grand départ",
-   [2] = "手塚治虫のブッダ -赤い砂漠よ! 美しく-",
+   [2] = "Osamu Tezuka`s Buddha: Beautiful Red Desert",
+   [3] = "手塚治虫のブッダ -赤い砂漠よ! 美しく-",
    },
   ["short"] = {
    },
@@ -83181,7 +83193,7 @@ return {
    },
   },
  [7764] = {
-  ["main"] = "The Doraemons: Okashi na Okashi na Okashinana?",
+  ["main"] = "The Doraemons: Okashina Okashi na Okashinana?",
   ["official"] = {
    [1] = "ザ☆ドラえもんズ おかしなお菓子なオカシナナ?",
    },
@@ -89406,8 +89418,9 @@ return {
    [1] = "Mirai Nikki",
    [2] = "The Future Diary",
    [3] = "Дневник будущего",
-   [4] = "Ирээдүйн Тэмдэглэл",
-   [5] = "未来日記 (2011)",
+   [4] = "Дневник на бъдещето",
+   [5] = "Ирээдүйн Тэмдэглэл",
+   [6] = "未来日記 (2011)",
    },
   ["short"] = {
    [1] = "MN",
@@ -93774,7 +93787,8 @@ return {
  [8857] = {
   ["main"] = "Sakasama no Patema",
   ["official"] = {
-   [1] = "サカサマのパテマ",
+   [1] = "Patéma et le monde inversé",
+   [2] = "サカサマのパテマ",
    },
   ["short"] = {
    },
@@ -97108,7 +97122,7 @@ return {
    },
   },
  [9240] = {
-  ["main"] = "Persona 4 the Animation: The Factor of Hope",
+  ["main"] = "Persona 4 The Animation: The Factor of Hope",
   ["official"] = {
    [1] = "ペルソナ4 the Animation -the Factor of Hope-",
    },
@@ -97363,6 +97377,7 @@ return {
    [5] = "マギ The labyrinth of magic",
    },
   ["short"] = {
+   [1] = "magi",
    },
   ["syn"] = {
    [1] = "Маги",
@@ -98492,12 +98507,13 @@ return {
  [9386] = {
   ["main"] = "Wooser no Sono Higurashi",
   ["official"] = {
-   [1] = "うーさーのその日暮らし",
+   [1] = "Wooser lebt von der Hand in den Mund",
+   [2] = "Wooser`s Hand-to-Mouth Life",
+   [3] = "うーさーのその日暮らし",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Wooser`s Hand-to-Mouth Life",
    },
   },
  [9387] = {
@@ -98735,6 +98751,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Namanaka 100%!",
    },
   },
  [9414] = {
@@ -99227,13 +99244,15 @@ return {
    },
   },
  [9463] = {
-  ["main"] = "Elecking the Animation",
+  ["main"] = "Elec-king The Animation",
   ["official"] = {
    [1] = "エレキング the Animation",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Elecking The Animation",
+   [2] = "elec.king the Animation",
    },
   },
  [9464] = {
@@ -99947,18 +99966,6 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   },
-  },
- [9529] = {
-  ["main"] = "Jigoku Youchien",
-  ["official"] = {
-   [1] = "地獄ようちえん",
-   },
-  ["short"] = {
-   },
-  ["syn"] = {
-   [1] = "Hell Kindergarten",
-   [2] = "Hell`s Kindergarten",
    },
   },
  [9530] = {
@@ -102345,6 +102352,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Какавида",
    },
   },
  [9805] = {
@@ -103065,6 +103073,7 @@ return {
   ["syn"] = {
    [1] = "Love Song of a Certain Pilot",
    [2] = "The Pilot`s Love Song",
+   [3] = "The Pilots Love Song",
    },
   },
  [9889] = {
@@ -103208,10 +103217,10 @@ return {
    },
   },
  [9904] = {
-  ["main"] = "Natsume Yuujinchou OAD",
+  ["main"] = "Natsume Yuujinchou: Nyanko-sensei to Hajimete no Otsukai",
   ["official"] = {
    [1] = "夏目友人帐 OAD",
-   [2] = "夏目友人帳 OAD",
+   [2] = "夏目友人帳 ニャンコ先生とはじめてのおつかい",
    },
   ["short"] = {
    },
@@ -105341,17 +105350,6 @@ return {
   ["syn"] = {
    },
   },
- [10165] = {
-  ["main"] = "Natsume Yuujinchou: Itsuka Yuki no Hi ni",
-  ["official"] = {
-   [1] = "夏目友人帳 いつかゆきのひに",
-   },
-  ["short"] = {
-   },
-  ["syn"] = {
-   [1] = "Natsume`s Book of Friends: Sometime on a Snowy Day",
-   },
-  },
  [10166] = {
   ["main"] = "Follow Me",
   ["official"] = {
@@ -106476,6 +106474,7 @@ return {
    [1] = "神々の悪戯",
    },
   ["short"] = {
+   [1] = "kamiaso",
    },
   ["syn"] = {
    },
@@ -106566,7 +106565,8 @@ return {
  [10317] = {
   ["main"] = "Madangeul Naon Amtak",
   ["official"] = {
-   [1] = "마당을 나온 암탉",
+   [1] = "Leafie, a Hen Into the Wild",
+   [2] = "마당을 나온 암탉",
    },
   ["short"] = {
    },
@@ -106614,9 +106614,10 @@ return {
    },
   },
  [10322] = {
-  ["main"] = "Ppaekkom-ui Meogeu-jan Yeohaeng",
+  ["main"] = "Ppaekkom-ui Mug-jan Yeohaeng",
   ["official"] = {
-   [1] = "빼꼼의 머그잔 여행",
+   [1] = "Mug Travel",
+   [2] = "빼꼼의 머그잔 여행",
    },
   ["short"] = {
    },
@@ -107315,6 +107316,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "WASIMO",
    },
   },
  [10423] = {
@@ -107433,6 +107435,116 @@ return {
   ["main"] = "Right Places: Sono Toki, Boku no Irubeki Basho",
   ["official"] = {
    [1] = "Right Places その時, ぼくの居るべき場所",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10437] = {
+  ["main"] = "Nerawareta Megami Tenshi Angeltia: Mamotta Ningentachi ni Uragirarete",
+  ["official"] = {
+   [1] = "狙われた女神天使エンゼルティアー ~守った人間達に裏切られて~",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10438] = {
+  ["main"] = "Seiken Tsukai no World Break",
+  ["official"] = {
+   [1] = "聖剣使いの禁呪詠唱",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10439] = {
+  ["main"] = "Terra Formars",
+  ["official"] = {
+   [1] = "テラフォーマーズ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10440] = {
+  ["main"] = "Lady Jewelpet",
+  ["official"] = {
+   [1] = "レディ ジュエルペット",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10441] = {
+  ["main"] = "Trinity Seven: 7-nin no Masho Tsukai",
+  ["official"] = {
+   [1] = "トリニティセブン 7人の魔書使い",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10442] = {
+  ["main"] = "Kindaichi Shounen no Jikenbo (2014)",
+  ["official"] = {
+   [1] = "金田一少年の事件簿 (2014)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10443] = {
+  ["main"] = "Dragon Collection",
+  ["official"] = {
+   [1] = "ドラゴンコレクション",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10444] = {
+  ["main"] = "Oreca Battle",
+  ["official"] = {
+   [1] = "オレカバトル",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10445] = {
+  ["main"] = "Aldnoah.Zero",
+  ["official"] = {
+   [1] = "アルドノア・ゼロ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10446] = {
+  ["main"] = "Jinsei",
+  ["official"] = {
+   [1] = "人生",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10447] = {
+  ["main"] = "Natsume Yuujinchou: Itsuka Yuki no Hi ni",
+  ["official"] = {
+   [1] = "夏目友人帳 いつかゆきのひに",
    },
   ["short"] = {
    },
