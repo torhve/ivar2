@@ -1500,7 +1500,7 @@ return {
    },
   },
  [83] = {
-  ["main"] = "Jin-Roh",
+  ["main"] = "Jin-Rou",
   ["official"] = {
    [1] = "Džin Ro: Vilko brigada",
    [2] = "Jin Roh la brigade des loups",
@@ -6943,11 +6943,11 @@ return {
  [397] = {
   ["main"] = "Dragon Ball Z: Ryuuken Bakuhatsu!! Gokuu ga Yaraneba Dare ga Yaru",
   ["official"] = {
-   [1] = "Dragon Ball Z 13 - L`attaque du dragon",
-   [2] = "Dragon Ball Z 13 - O Ataque do Dragão",
-   [3] = "Dragon Ball Z: Atak smoka",
-   [4] = "Dragon Ball Z: Wrath of the Dragon",
-   [5] = "ドラゴンボールZ 龍拳爆発!! 悟空がやらねば誰がやる",
+   [1] = "DRAGON BALL Z 龍拳爆発!! 悟空がやらねば誰がやる",
+   [2] = "Dragon Ball Z 13 - L`attaque du dragon",
+   [3] = "Dragon Ball Z 13 - O Ataque do Dragão",
+   [4] = "Dragon Ball Z: Atak smoka",
+   [5] = "Dragon Ball Z: Wrath of the Dragon",
    },
   ["short"] = {
    [1] = "DBZ Movie 13",
@@ -6956,6 +6956,7 @@ return {
    [1] = "Dragon Ball Z 13 - Tapion",
    [2] = "Dragon Ball Z: Dragon Fist Explosion!! If Goku Can`t Do It, Who Can",
    [3] = "Dragon Ball Z: L`eroe del Pianeta Conuts",
+   [4] = "ドラゴンボールZ 龍拳爆発!! 悟空がやらねば誰がやる",
    },
   },
  [398] = {
@@ -7167,10 +7168,10 @@ return {
  [411] = {
   ["main"] = "One Piece (2000)",
   ["official"] = {
-   [1] = "One Piece: Der Film",
-   [2] = "One Piece: Per tutto l`oro del mondo",
-   [3] = "One Piece: The Great Gold Pirate",
-   [4] = "ワンピース (2000)",
+   [1] = "ONE PIECE (2000)",
+   [2] = "One Piece: Der Film",
+   [3] = "One Piece: Per tutto l`oro del mondo",
+   [4] = "One Piece: The Great Gold Pirate",
    },
   ["short"] = {
    [1] = "OP Movie 1",
@@ -7180,6 +7181,7 @@ return {
    [5] = "opm1",
    },
   ["syn"] = {
+   [1] = "ワンピース (2000)",
    },
   },
  [412] = {
@@ -8154,7 +8156,7 @@ return {
    },
   },
  [476] = {
-  ["main"] = "Tenamonya Voyagers",
+  ["main"] = "Tenamon`ya Voyagers",
   ["official"] = {
    [1] = "Tenamonya Voyagers",
    [2] = "てなもんやボイジャーズ",
@@ -9253,14 +9255,14 @@ return {
    },
   },
  [548] = {
-  ["main"] = "Dragon Ball Z: Kyokugen Battle!! Sandai Super Saiyajin",
+  ["main"] = "Dragon Ball Z: Kyokugen Battle!! Sandai Super Saiya-jin",
   ["official"] = {
-   [1] = "Dragon Ball Z 07 - L`offensive cyborg",
-   [2] = "Dragon Ball Z 7 - O Destemido Songoku",
-   [3] = "Dragon Ball Z: Super Android 13!",
-   [4] = "Dragonball Z - The Movie: Angriff der Cyborgs",
-   [5] = "Tres grandes superguerreiros",
-   [6] = "ラゴンボールZ 極限バトル!!三大超サイヤ人",
+   [1] = "DRAGON BALL Z 極限バトル!! 三大超[スーパー]サイヤ人",
+   [2] = "Dragon Ball Z 07 - L`offensive cyborg",
+   [3] = "Dragon Ball Z 7 - O Destemido Songoku",
+   [4] = "Dragon Ball Z: Super Android 13!",
+   [5] = "Dragonball Z - The Movie: Angriff der Cyborgs",
+   [6] = "Tres grandes superguerreiros",
    },
   ["short"] = {
    [1] = "DBZ Movie 7",
@@ -9270,6 +9272,7 @@ return {
    [2] = "Dragon Ball Z: Extreme Battle!! Three Super Saiyajin",
    [3] = "Dragon Ball Z: I tre supersaiyan",
    [4] = "Dragon Ball Z: Superandroid #13",
+   [5] = "ドラゴンボールZ 極限バトル!! 三大超サイヤ人",
    },
   },
  [549] = {
@@ -12400,18 +12403,18 @@ return {
    },
   },
  [762] = {
-  ["main"] = "Dragon Ball Z: Chikyuu Marugoto Chou-Kessen",
+  ["main"] = "Dragon Ball Z: Chikyuu Marugoto Choukessen",
   ["official"] = {
-   [1] = "Dragon Ball Z - La grande battaglia per il destino del mondo",
-   [2] = "Dragon Ball Z 03 - Le combat fratricide",
-   [3] = "Dragon Ball Z 3 - A Grande Batalha",
-   [4] = "Dragon Ball Z: Największy pojedynek na świecie",
-   [5] = "Dragon Ball Z: O Filme",
-   [6] = "Dragon Ball Z: The Tree of Might",
-   [7] = "Dragonball Z - The Movie: Die Entscheidungsschlacht",
-   [8] = "Dragonball Z: Suuri taistelu",
-   [9] = "Superbatalla na Terra",
-   [10] = "ドラゴンボールZ 地球まるごと超決戦",
+   [1] = "DRAGON BALL Z 地球まるごと超決戦",
+   [2] = "Dragon Ball Z - La grande battaglia per il destino del mondo",
+   [3] = "Dragon Ball Z 03 - Le combat fratricide",
+   [4] = "Dragon Ball Z 3 - A Grande Batalha",
+   [5] = "Dragon Ball Z: Największy pojedynek na świecie",
+   [6] = "Dragon Ball Z: O Filme",
+   [7] = "Dragon Ball Z: The Tree of Might",
+   [8] = "Dragonball Z - The Movie: Die Entscheidungsschlacht",
+   [9] = "Dragonball Z: Suuri taistelu",
+   [10] = "Superbatalla na Terra",
    },
   ["short"] = {
    [1] = "DBZ Movie 3",
@@ -12420,19 +12423,20 @@ return {
    [1] = "Dragon Ball Z - The Movie: Die Entscheidungsschlacht",
    [2] = "Dragon Ball Z: The Ultimate Decisive Battle Over Earth",
    [3] = "دراغون بول زد: شجرة القوى",
+   [4] = "ドラゴンボールZ 地球まるごと超決戦",
    },
   },
  [763] = {
-  ["main"] = "Dragon Ball Z: Super Saiyajin da Songokuu",
+  ["main"] = "Dragon Ball Z: Super Saiya-jin Da Son Gokuu",
   ["official"] = {
-   [1] = "Dragon Ball Z 04 - La menace de Namec",
-   [2] = "Dragon Ball Z 4 - Super Saya Son Goku",
-   [3] = "Dragon Ball Z: Goku é um Super Saiyajin",
-   [4] = "Dragon Ball Z: La sfida dei guerrieri invincibili",
-   [5] = "Dragon Ball Z: Lord Slug",
-   [6] = "Dragonball Z - The Movie: Super-Saiyajin Son-Goku",
-   [7] = "Son Gokuh superguerreiro",
-   [8] = "ドラゴンボールZ 超サイヤ人だ孫悟空",
+   [1] = "DRAGON BALL Z 超[スーパー]サイヤ人だ孫悟空",
+   [2] = "Dragon Ball Z 04 - La menace de Namec",
+   [3] = "Dragon Ball Z 4 - Super Saya Son Goku",
+   [4] = "Dragon Ball Z: Goku é um Super Saiyajin",
+   [5] = "Dragon Ball Z: La sfida dei guerrieri invincibili",
+   [6] = "Dragon Ball Z: Lord Slug",
+   [7] = "Dragonball Z - The Movie: Super-Saiyajin Son-Goku",
+   [8] = "Son Gokuh superguerreiro",
    },
   ["short"] = {
    [1] = "DBZ Movie 4",
@@ -12442,6 +12446,7 @@ return {
    [2] = "Dragon Ball Z: Nameczanin",
    [3] = "Dragon Ball Z: Super Saiyajin Son Goku",
    [4] = "Драконова топка Z 04: Суперсаянът Сон Гоку",
+   [5] = "ドラゴンボールZ 超サイヤ人だ孫悟空",
    },
   },
  [764] = {
@@ -14212,7 +14217,7 @@ return {
    },
   },
  [893] = {
-  ["main"] = "One Piece: Nejimaki Jima no Bouken",
+  ["main"] = "One Piece: Nejimakijima no Bouken",
   ["official"] = {
    [1] = "ONE PIECE ねじまき島の冒険",
    [2] = "One Piece - 2. Film: Abenteuer auf der Spiralinsel",
@@ -14383,14 +14388,14 @@ return {
    },
   },
  [905] = {
-  ["main"] = "Dragon Ball Z: Moetsukiro!! Nessen - Ressen - Chou Gekisen",
+  ["main"] = "Dragon Ball Z: Moetsukiro!! Nessen, Ressen, Chougekisen",
   ["official"] = {
-   [1] = "Dragon Ball Z 08 - Broly le super guerrier",
-   [2] = "Dragon Ball Z 8 - A Força Suprema",
-   [3] = "Dragon Ball Z: Broly, the Legendary Super Saiyan",
-   [4] = "Dragonball Z - Der Legendäre Super-Saiyajin",
-   [5] = "Estala o duelo",
-   [6] = "ドラゴンボールZ 燃え尽きろ!! 熱戦・烈戦・超激戦",
+   [1] = "DRAGON BALL Z 燃えつきろ!! 熱戦・烈戦・超激戦",
+   [2] = "Dragon Ball Z 08 - Broly le super guerrier",
+   [3] = "Dragon Ball Z 8 - A Força Suprema",
+   [4] = "Dragon Ball Z: Broly, the Legendary Super Saiyan",
+   [5] = "Dragonball Z - Der Legendäre Super-Saiyajin",
+   [6] = "Estala o duelo",
    },
   ["short"] = {
    [1] = "DBZ Movie 8",
@@ -14402,15 +14407,16 @@ return {
    [4] = "Dragon Ball Z: Ignite!! Hard Fight - Furious Fight - Super Severe Fight",
    [5] = "Dragon Ball Z: Il Super Saiyan della leggenda",
    [6] = "Dragon Ball Z: Legendarny super-Saiyanin",
+   [7] = "ドラゴンボールZ 燃えつきろ!! 熱戦・烈戦・超激戦",
    },
   },
  [906] = {
-  ["main"] = "Dragon Ball Z: Super Senshi Gekiha!! Katsu no wa Ore da",
+  ["main"] = "Dragon Ball Z: Super Senshi Gekiha!! Katsu no wa Ore Da",
   ["official"] = {
-   [1] = "Dragon Ball Z 11 - Attaque super warrior",
-   [2] = "Dragon Ball Z: Bio-Broly",
-   [3] = "Dragonball Z - The Movie: Angriff der Bio-Kämpfer",
-   [4] = "ドラゴンボールZ 超戦士撃破!!勝つのはオレだ",
+   [1] = "DRAGON BALL Z 超[スーパー]戦士撃破!! 勝つのはオレだ",
+   [2] = "Dragon Ball Z 11 - Attaque super warrior",
+   [3] = "Dragon Ball Z: Bio-Broly",
+   [4] = "Dragonball Z - The Movie: Angriff der Bio-Kämpfer",
    },
   ["short"] = {
    [1] = "DBZ Movie 11",
@@ -14420,6 +14426,7 @@ return {
    [2] = "Dragon Ball Z: Bio-Brolly",
    [3] = "Dragon Ball Z: L`irriducibile bio-combattente",
    [4] = "Dragon Ball Z: Super Soldiers Annihilate!! The Winner Will Be Me",
+   [5] = "ドラゴンボールZ 超戦士撃破!! 勝つのはオレだ",
    },
   },
  [907] = {
@@ -16407,18 +16414,18 @@ return {
    },
   },
  [1043] = {
-  ["main"] = "Dragon Ball Z: Ora no Gohan o Kaese!!",
+  ["main"] = "Dragon Ball Z (1989)",
   ["official"] = {
    [1] = "A ameaza da zona escura",
-   [2] = "Dragon Ball Z - A Zona Morta",
-   [3] = "Dragon Ball Z - Garlicin jäljillä",
-   [4] = "Dragon Ball Z - La vendetta divina",
-   [5] = "Dragon Ball Z 01 - À la poursuite de Garlic",
-   [6] = "Dragon Ball Z: Devolva-me Gohan",
-   [7] = "Dragon Ball Z: Martwa strefa",
-   [8] = "Dragon Ball Z: The Dead Zone",
-   [9] = "Dragonball Z - The Movie: Die Todeszone des Garlic Jr.",
-   [10] = "ドラゴンボールZ オラの悟飯をかえせッ!!",
+   [2] = "DRAGON BALL Z (1989)",
+   [3] = "Dragon Ball Z - A Zona Morta",
+   [4] = "Dragon Ball Z - Garlicin jäljillä",
+   [5] = "Dragon Ball Z - La vendetta divina",
+   [6] = "Dragon Ball Z 01 - À la poursuite de Garlic",
+   [7] = "Dragon Ball Z: Devolva-me Gohan",
+   [8] = "Dragon Ball Z: Martwa strefa",
+   [9] = "Dragon Ball Z: The Dead Zone",
+   [10] = "Dragonball Z - The Movie: Die Todeszone des Garlic Jr.",
    },
   ["short"] = {
    [1] = "DBZ Movie 1",
@@ -16427,22 +16434,24 @@ return {
   ["syn"] = {
    [1] = "Dragon Ball Z - The Movie: Die Todeszone des Garlic Jr.",
    [2] = "Dragon Ball Z: Give Me Back My Gohan!!",
+   [3] = "Dragon Ball Z: Ora no Gohan o Kaese!!",
+   [4] = "ドラゴンボールZ オラの悟飯をかえせッ!!",
    },
   },
  [1044] = {
   ["main"] = "Dragon Ball Z: Kono Yo de Ichiban Tsuyoi Yatsu",
   ["official"] = {
-   [1] = "Dragon Ball Z - Il più forte del mondo",
-   [2] = "Dragon Ball Z - O Super Herói",
-   [3] = "Dragon Ball Z 02 - Le robot des glaces",
-   [4] = "Dragon Ball Z: Najsilniejszy wojownik na ziemi",
-   [5] = "Dragon Ball Z: O Homem Mais Forte do Mundo",
-   [6] = "Dragon Ball Z: The World`s Strongest",
-   [7] = "Dragonball Z - Der stärkste auf Erden",
-   [8] = "Dragonball Z: Maailman vahvin",
-   [9] = "O máis forte do mundo",
-   [10] = "دراغون بول زد: أقوى شخص في العالم",
-   [11] = "ドラゴンボールZ この世で一番強いヤツ",
+   [1] = "DRAGON BALL Z この世で一番強いヤツ",
+   [2] = "Dragon Ball Z - Il più forte del mondo",
+   [3] = "Dragon Ball Z - O Super Herói",
+   [4] = "Dragon Ball Z 02 - Le robot des glaces",
+   [5] = "Dragon Ball Z: Najsilniejszy wojownik na ziemi",
+   [6] = "Dragon Ball Z: O Homem Mais Forte do Mundo",
+   [7] = "Dragon Ball Z: The World`s Strongest",
+   [8] = "Dragonball Z - Der stärkste auf Erden",
+   [9] = "Dragonball Z: Maailman vahvin",
+   [10] = "O máis forte do mundo",
+   [11] = "دراغون بول زد: أقوى شخص في العالم",
    },
   ["short"] = {
    [1] = "DBZ Movie 2",
@@ -16450,19 +16459,20 @@ return {
    },
   ["syn"] = {
    [1] = "Dragon Ball Z: The Strongest Guy in the World",
+   [2] = "ドラゴンボールZ この世で一番強いヤツ",
    },
   },
  [1045] = {
   ["main"] = "Dragon Ball Z: Tobikkiri no Saikyou Tai Saikyou",
   ["official"] = {
-   [1] = "Dragon Ball Z - Pahimmat viholliset",
-   [2] = "Dragon Ball Z 05 - La revanche de Cooler",
-   [3] = "Dragon Ball Z 5 - Os Grandes Rivais",
-   [4] = "Dragon Ball Z: Cooler`s Revenge",
-   [5] = "Dragon Ball Z: Il destino dei Saiyan",
-   [6] = "Dragonball Z - The Movie: Rache für Freezer",
-   [7] = "Os adversarios máis fortes",
-   [8] = "ドラゴンボールZ とびっきりの最強対最強",
+   [1] = "DRAGON BALL Z とびっきりの最強対最強",
+   [2] = "Dragon Ball Z - Pahimmat viholliset",
+   [3] = "Dragon Ball Z 05 - La revanche de Cooler",
+   [4] = "Dragon Ball Z 5 - Os Grandes Rivais",
+   [5] = "Dragon Ball Z: Cooler`s Revenge",
+   [6] = "Dragon Ball Z: Il destino dei Saiyan",
+   [7] = "Dragonball Z - The Movie: Rache für Freezer",
+   [8] = "Os adversarios máis fortes",
    },
   ["short"] = {
    [1] = "DBZ Movie 5",
@@ -16470,20 +16480,21 @@ return {
   ["syn"] = {
    [1] = "Dragon Ball Z: Battle of the Strongest vs. the Strongest",
    [2] = "Dragon Ball Z: Zemsta Coolera",
+   [3] = "ドラゴンボールZ とびっきりの最強対最強",
    },
   },
  [1046] = {
   ["main"] = "Dragon Ball Z: Gekitotsu!! 100-oku Power no Senshi-tachi",
   ["official"] = {
    [1] = "Combate contra cen millóns de poderosos guerreiros",
-   [2] = "Dragon Ball Z - Taistelu ylivoimaa vastaan",
-   [3] = "Dragon Ball Z 06 - Cent mille guerriers de métal",
-   [4] = "Dragon Ball Z 6 - O Poder Misterioso",
-   [5] = "Dragon Ball Z: Ataque! 10 Bilhões de Guerreiros Poderosos",
-   [6] = "Dragon Ball Z: L`invasione di Neo Namek",
-   [7] = "Dragon Ball Z: The Return of Cooler",
-   [8] = "Dragonball Z - The Movie: Coolers Rückkehr",
-   [9] = "ラゴンボールZ 激突!!100億パワーの戦士たち",
+   [2] = "DRAGON BALL Z 激突!! 100億パワーの戦士たち",
+   [3] = "Dragon Ball Z - Taistelu ylivoimaa vastaan",
+   [4] = "Dragon Ball Z 06 - Cent mille guerriers de métal",
+   [5] = "Dragon Ball Z 6 - O Poder Misterioso",
+   [6] = "Dragon Ball Z: Ataque! 10 Bilhões de Guerreiros Poderosos",
+   [7] = "Dragon Ball Z: L`invasione di Neo Namek",
+   [8] = "Dragon Ball Z: The Return of Cooler",
+   [9] = "Dragonball Z - The Movie: Coolers Rückkehr",
    },
   ["short"] = {
    [1] = "DBZ Movie 6",
@@ -16493,6 +16504,7 @@ return {
    [2] = "Dragon Ball Z: Attack!! 10.000.000.000 Power Warriors",
    [3] = "Dragon Ball Z: Collision! 10 Billion Powered Warriors",
    [4] = "Dragon Ball Z: Powrót Coolera",
+   [5] = "ドラゴンボールZ 激突!! 100億パワーの戦士たち",
    },
   },
  [1047] = {
@@ -16834,10 +16846,10 @@ return {
  [1070] = {
   ["main"] = "Dragon Ball Z: Kiken na Futari! Super Senshi wa Nemurenai",
   ["official"] = {
-   [1] = "Dragon Ball Z - The Movie: Brolys Rückkehr",
-   [2] = "Dragon Ball Z 10 - Rivaux dangereux",
-   [3] = "Dragon Ball Z: Broly - Second Coming",
-   [4] = "ドラゴンボールZ 危険なふたり! 超戦士はねむれない",
+   [1] = "DRAGON BALL Z 危険なふたり! 超[スーパー]戦士はねむれない",
+   [2] = "Dragon Ball Z - The Movie: Brolys Rückkehr",
+   [3] = "Dragon Ball Z 10 - Rivaux dangereux",
+   [4] = "Dragon Ball Z: Broly - Second Coming",
    },
   ["short"] = {
    [1] = "DBZ Movie 10",
@@ -16846,6 +16858,7 @@ return {
    [1] = "Dragon Ball Z 10 - Le retour de Broly",
    [2] = "Dragon Ball Z: Dangerous Duo! Super Soldiers Never Sleep",
    [3] = "Dragon Ball Z: Sfida alla leggenda",
+   [4] = "ドラゴンボールZ 危険なふたり! 超戦士はねむれない",
    },
   },
  [1071] = {
@@ -16996,7 +17009,7 @@ return {
    },
   },
  [1080] = {
-  ["main"] = "First Kiss Story: Kiss Kara Hajimaru Monogatari",
+  ["main"] = "First Kiss Story: Kiss kara Hajimaru Monogatari",
   ["official"] = {
    [1] = "ファーストKiss☆物語[ストーリー] Kissからはじまる物語",
    },
@@ -17571,13 +17584,13 @@ return {
   ["main"] = "Dragon Ball: Saikyou e no Michi",
   ["official"] = {
    [1] = "Bola de Drac: El Camí cap a el més fort",
-   [2] = "Dragon Ball - Il cammino dell`eroe",
-   [3] = "Dragon Ball 4 - L`armée du Ruban Rouge",
-   [4] = "Dragon Ball: A Lei do Mais Forte",
-   [5] = "Dragon Ball: El camino hacia el Poder",
-   [6] = "Dragon Ball: The Path to Power",
-   [7] = "ดราก้อนบอล มูฟวี่ 4 ตอน วิถีแห่งเจ้ายุทธจักร",
-   [8] = "ドラゴンボール 最強への道",
+   [2] = "DRAGON BALL 最強への道",
+   [3] = "Dragon Ball - Il cammino dell`eroe",
+   [4] = "Dragon Ball 4 - L`armée du Ruban Rouge",
+   [5] = "Dragon Ball: A Lei do Mais Forte",
+   [6] = "Dragon Ball: El camino hacia el Poder",
+   [7] = "Dragon Ball: The Path to Power",
+   [8] = "ดราก้อนบอล มูฟวี่ 4 ตอน วิถีแห่งเจ้ายุทธจักร",
    },
   ["short"] = {
    [1] = "DB Movie 4",
@@ -17588,6 +17601,7 @@ return {
    [3] = "Dragon Ball Z: Sposób, by stać się silniejszym",
    [4] = "Dragon Ball: Droga ku potędze",
    [5] = "Dragon Ball: The Path to Ultimate Strength",
+   [6] = "ドラゴンボール 最強への道",
    },
   },
  [1130] = {
@@ -17774,14 +17788,14 @@ return {
   ["official"] = {
    [1] = "Aventura mística",
    [2] = "Bola de Drac: Aventura Mística",
-   [3] = "Dragon Ball - Il torneo di Miifan",
-   [4] = "Dragon Ball 3 - La sinistre et mystérieuse aventure mystique",
-   [5] = "Dragon Ball Filme 3 - Uma Aventura Inesquecível",
-   [6] = "Dragon Ball: Aventura Mística",
-   [7] = "Dragon Ball: Mystical Adventure",
-   [8] = "Dragonball - The Movie 3: Son-Gokus erstes Turnier",
-   [9] = "ดราก้อนบอล มูฟวี่ 3 ตอน การผจญภัยสุดพิสดาร",
-   [10] = "ドラゴンボール 摩訶不思議大冒険",
+   [3] = "DRAGON BALL 摩訶不思議大冒険",
+   [4] = "Dragon Ball - Il torneo di Miifan",
+   [5] = "Dragon Ball 3 - La sinistre et mystérieuse aventure mystique",
+   [6] = "Dragon Ball Filme 3 - Uma Aventura Inesquecível",
+   [7] = "Dragon Ball: Aventura Mística",
+   [8] = "Dragon Ball: Mystical Adventure",
+   [9] = "Dragonball - The Movie 3: Son-Gokus erstes Turnier",
+   [10] = "ดราก้อนบอล มูฟวี่ 3 ตอน การผจญภัยสุดพิสดาร",
    },
   ["short"] = {
    [1] = "DB Movie 3",
@@ -17790,6 +17804,7 @@ return {
    [1] = "DBMV3",
    [2] = "Dragon Ball 3 - L`aventure mystique",
    [3] = "Dragon Ball Movie 3",
+   [4] = "ドラゴンボール 摩訶不思議大冒険",
    },
   },
  [1143] = {
@@ -19148,11 +19163,11 @@ return {
  [1253] = {
   ["main"] = "One Piece: Chinjuujima no Chopper Oukoku",
   ["official"] = {
-   [1] = "One Piece - 3. Film: Chopper auf der Insel der seltsamen Tiere",
-   [2] = "One Piece: Chopper Kingdom of Strange Animal Island",
-   [3] = "One Piece: Il Tesoro del Re",
-   [4] = "One Piece: Le royaume de Chopper l`étrange île des animaux",
-   [5] = "ワンピース 珍獣島のチョッパー王国",
+   [1] = "ONE PIECE 珍獣島のチョッパー王国",
+   [2] = "One Piece - 3. Film: Chopper auf der Insel der seltsamen Tiere",
+   [3] = "One Piece: Chopper Kingdom of Strange Animal Island",
+   [4] = "One Piece: Il Tesoro del Re",
+   [5] = "One Piece: Le royaume de Chopper l`étrange île des animaux",
    },
   ["short"] = {
    [1] = "OP Movie 3",
@@ -19160,16 +19175,17 @@ return {
    [3] = "opm3",
    },
   ["syn"] = {
+   [1] = "ワンピース 珍獣島のチョッパー王国",
    },
   },
  [1254] = {
-  ["main"] = "One Piece: Dead End no Bouken",
+  ["main"] = "One Piece The Movie: Dead End no Bouken",
   ["official"] = {
-   [1] = "One Piece - 4. Film: Das Dead End Rennen",
-   [2] = "One Piece: Dead End",
-   [3] = "One Piece: Trappola mortale",
-   [4] = "One Piece: Une aventure sans issue",
-   [5] = "ワンピース デッドエンドの冒険",
+   [1] = "ONE PIECE THE MOVIE デッドエンドの冒険",
+   [2] = "One Piece - 4. Film: Das Dead End Rennen",
+   [3] = "One Piece: Dead End",
+   [4] = "One Piece: Trappola mortale",
+   [5] = "One Piece: Une aventure sans issue",
    },
   ["short"] = {
    [1] = "OP Movie 4",
@@ -19178,6 +19194,7 @@ return {
    },
   ["syn"] = {
    [1] = "One Piece: Dead End Adventure",
+   [2] = "ワンピース デッドエンドの冒険",
    },
   },
  [1255] = {
@@ -21992,12 +22009,12 @@ return {
  [1474] = {
   ["main"] = "Dragon Ball Z: Zetsubou e no Hankou!! Nokosareta Chousenshi - Gohan to Trunks",
   ["official"] = {
-   [1] = "Dragon Ball Z - O Desafio Final",
-   [2] = "Dragon Ball Z Spécial 2 : L`histoire de Trunk",
-   [3] = "Dragon Ball Z: Die Geschichte von Trunks - Das Trunks Special",
-   [4] = "Dragon Ball Z: The History of Trunks",
-   [5] = "Un futuro diferente",
-   [6] = "ドラゴンボールZ・絶望への反抗!! 残された超戦士・悟飯とトランクス",
+   [1] = "DRAGON BALL Z 絶望への反抗!! 残された超戦士・悟飯とトランクス",
+   [2] = "Dragon Ball Z - O Desafio Final",
+   [3] = "Dragon Ball Z Spécial 2 : L`histoire de Trunk",
+   [4] = "Dragon Ball Z: Die Geschichte von Trunks - Das Trunks Special",
+   [5] = "Dragon Ball Z: The History of Trunks",
+   [6] = "Un futuro diferente",
    },
   ["short"] = {
    [1] = "DBZ Special 2",
@@ -22007,6 +22024,7 @@ return {
    [2] = "Dragon Ball Z: Historia Trunksa",
    [3] = "Dragon Ball Z: La storia di Trunks",
    [4] = "Dragon Ball Z: Resist Despair!! The Surviving Fighters - Gohan and Trunks",
+   [5] = "ドラゴンボールZ 絶望への反抗!! 残された超戦士・悟飯とトランクス",
    },
   },
  [1475] = {
@@ -24511,7 +24529,7 @@ return {
    },
   },
  [1677] = {
-  ["main"] = "Kyou Kara Maou!",
+  ["main"] = "Kyou kara Maou!",
   ["official"] = {
    [1] = "Kyo Kara Maoh! - God (?) Save Our King!",
    [2] = "Kyou Kara Maou!",
@@ -25647,7 +25665,7 @@ return {
    },
   },
  [1776] = {
-  ["main"] = "Mirai Kara Kita Shounen Super Jetter",
+  ["main"] = "Mirai kara Kita Shounen Super Jetter",
   ["official"] = {
    [1] = "未来から来た少年 スーパージェッター",
    },
@@ -28089,13 +28107,13 @@ return {
   ["official"] = {
    [1] = "A bela dorminte do castelo do demo",
    [2] = "Bola de Drac: La Bella dorment al castell del mal",
-   [3] = "Dragon Ball 2 - Le château du démon",
-   [4] = "Dragon Ball Filme 2 - O Castelo Fantástico",
-   [5] = "Dragon Ball: La bella durmiente en el castillo del mal",
-   [6] = "Dragon Ball: Sleeping Princess in Devil`s Castle",
-   [7] = "Dragonball - The Movie 2: Das Schloss der Dämonen",
-   [8] = "ดราก้อนบอล มูฟวี่ 2 ตอน เจ้าหญิงนิทราแห่งปราสาทจอมมาร",
-   [9] = "ドラゴンボール 魔神城のねむり姫",
+   [3] = "DRAGON BALL 魔神城のねむり姫",
+   [4] = "Dragon Ball 2 - Le château du démon",
+   [5] = "Dragon Ball Filme 2 - O Castelo Fantástico",
+   [6] = "Dragon Ball: La bella durmiente en el castillo del mal",
+   [7] = "Dragon Ball: Sleeping Princess in Devil`s Castle",
+   [8] = "Dragonball - The Movie 2: Das Schloss der Dämonen",
+   [9] = "ดราก้อนบอล มูฟวี่ 2 ตอน เจ้าหญิงนิทราแห่งปราสาทจอมมาร",
    },
   ["short"] = {
    [1] = "DB Movie 2",
@@ -28104,6 +28122,7 @@ return {
   ["syn"] = {
    [1] = "Dragon Ball - La bella addormentata a Castel Demonio",
    [2] = "Dragon Ball Movie 2",
+   [3] = "ドラゴンボール 魔神城のねむり姫",
    },
   },
  [1955] = {
@@ -28988,11 +29007,11 @@ return {
  [2036] = {
   ["main"] = "One Piece: Norowareta Seiken",
   ["official"] = {
-   [1] = "One Piece - 5. Film: Der Fluch des heiligen Schwerts",
-   [2] = "One Piece: La Malédiction de l`épée sacrée",
-   [3] = "One Piece: La spada delle sette stelle",
-   [4] = "One Piece: The Curse of the Sacred Sword",
-   [5] = "ワンピース呪われた聖剣",
+   [1] = "ONE PIECE 呪われた聖剣",
+   [2] = "One Piece - 5. Film: Der Fluch des heiligen Schwerts",
+   [3] = "One Piece: La Malédiction de l`épée sacrée",
+   [4] = "One Piece: La spada delle sette stelle",
+   [5] = "One Piece: The Curse of the Sacred Sword",
    },
   ["short"] = {
    [1] = "OP Movie 5",
@@ -29000,6 +29019,7 @@ return {
    [3] = "opm5",
    },
   ["syn"] = {
+   [1] = "ワンピース 呪われた聖剣",
    },
   },
  [2037] = {
@@ -29340,7 +29360,7 @@ return {
    },
   },
  [2063] = {
-  ["main"] = "Kono Shihai Kara no Sotsugyou: Ozaki Yutaka",
+  ["main"] = "Kono Shihai kara no Sotsugyou: Ozaki Yutaka",
   ["official"] = {
    [1] = "～この支配からの卒業～ 尾崎豊",
    },
@@ -32025,10 +32045,11 @@ return {
    [7] = "Aladin und die Wunderlampe",
    [8] = "Aladino e a Lâmpada Mágica",
    [9] = "Aladinova kouzelná lampa",
-   [10] = "Lampa Aladyna",
-   [11] = "Ο Αλαντίν και το Μαγικό Λυχνάρι",
-   [12] = "علاء الدين والمصباح السحري",
-   [13] = "世界名作童話 アラジンと魔法のランプ",
+   [10] = "La Lampada di Aladino",
+   [11] = "Lampa Aladyna",
+   [12] = "Ο Αλαντίν και το Μαγικό Λυχνάρι",
+   [13] = "علاء الدين والمصباح السحري",
+   [14] = "世界名作童話 アラジンと魔法のランプ",
    },
   ["short"] = {
    [1] = "علاء الدين",
@@ -33311,7 +33332,7 @@ return {
    },
   },
  [2363] = {
-  ["main"] = "Ginga Hyouryuu Vifam: Kachua Kara no Tayori",
+  ["main"] = "Ginga Hyouryuu Vifam: Kachua kara no Tayori",
   ["official"] = {
    [1] = "銀河漂流バイファム カチュアからの便り",
    },
@@ -36351,7 +36372,7 @@ return {
  [2643] = {
   ["main"] = "Dragon Ball Z Gaiden: Saiya-jin Zetsumetsu Keikaku",
   ["official"] = {
-   [1] = "ドラゴンボールZ / 外伝・サイヤ人絶滅計画",
+   [1] = "DRAGON BALL Z 外伝 サイヤ人絶滅計画",
    },
   ["short"] = {
    [1] = "DBZ OVA",
@@ -36363,16 +36384,17 @@ return {
    [3] = "Dragon Ball Z: Plan zniszczenia Saiyan",
    [4] = "Dragon Ball Z: Plan zniszczenia Saiyaninów",
    [5] = "La revanche du Docteur Egui",
-   [6] = "赛亚人灭绝计划 ～地球篇|宇宙篇～",
+   [6] = "ドラゴンボールZ 外伝 サイヤ人絶滅計画",
+   [7] = "赛亚人灭绝计划 ～地球篇|宇宙篇～",
    },
   },
  [2644] = {
   ["main"] = "One Piece: Omatsuri Danshaku to Himitsu no Shima",
   ["official"] = {
-   [1] = "One Piece - 6. Film: Baron Omatsuri und die geheimnisvolle Insel",
-   [2] = "One Piece: Baron Omatsuri and the Secret Island",
-   [3] = "One Piece: L`Isola Segreta del Barone Omatsuri",
-   [4] = "ワンピース オマツリ男爵と秘密の島",
+   [1] = "ONE PIECE -オマツリ男爵と秘密の島-",
+   [2] = "One Piece - 6. Film: Baron Omatsuri und die geheimnisvolle Insel",
+   [3] = "One Piece: Baron Omatsuri and the Secret Island",
+   [4] = "One Piece: L`Isola Segreta del Barone Omatsuri",
    },
   ["short"] = {
    [1] = "OP Movie 6",
@@ -36380,7 +36402,9 @@ return {
    [3] = "opm6",
    },
   ["syn"] = {
-   [1] = "One Piece: Baronas Omatsuri ir Paslaptingoji sala",
+   [1] = "ONE PIECE THE MOVIE オマツリ男爵と秘密の島",
+   [2] = "One Piece: Baronas Omatsuri ir Paslaptingoji sala",
+   [3] = "ワンピース オマツリ男爵と秘密の島",
    },
   },
  [2645] = {
@@ -38187,7 +38211,7 @@ return {
    },
   },
  [2801] = {
-  ["main"] = "Coo: Tooi Umi Kara Kita Coo",
+  ["main"] = "Coo: Tooi Umi kara Kita Coo",
   ["official"] = {
    [1] = "Coo - Der Dino aus dem Meer",
    [2] = "Coo che arrivò da un mare lontano",
@@ -46499,10 +46523,10 @@ return {
    },
   },
  [3634] = {
-  ["main"] = "Majokko Club Yonin-gumi: A Kuukan Kara no Alien X",
+  ["main"] = "Majokko Club Yonin-gumi: A Kuukan kara no Alien X",
   ["official"] = {
    [1] = "Alien X from A Zone",
-   [2] = "魔女っ子クラブ4人組 A空間からのエイリアンX",
+   [2] = "魔女っ子クラブ四人組 A空間からのエイリアンX",
    },
   ["short"] = {
    },
@@ -49151,12 +49175,12 @@ return {
    },
   },
  [4097] = {
-  ["main"] = "One Piece: Karakurijou no Mecha Kyohei",
+  ["main"] = "One Piece The Movie: Karakurijou no Mecha Kyohei",
   ["official"] = {
-   [1] = "One Piece - 7. Film: Schloß Karakuris Metall-Soldaten",
-   [2] = "One Piece: I Misteri dell`Isola Meccanica",
-   [3] = "One Piece: The Giant Mechanical Soldier of Karakuri Castle",
-   [4] = "ワンピース THE MOVIE カラクリ城のメカ巨兵",
+   [1] = "ONE PIECE THE MOVIE カラクリ城のメカ巨兵",
+   [2] = "One Piece - 7. Film: Schloß Karakuris Metall-Soldaten",
+   [3] = "One Piece: I Misteri dell`Isola Meccanica",
+   [4] = "One Piece: The Giant Mechanical Soldier of Karakuri Castle",
    },
   ["short"] = {
    [1] = "OP Movie 7",
@@ -49167,6 +49191,7 @@ return {
    [1] = "One Piece - Movie 7: Karakuri Castle`s Mecha Giant Soldier",
    [2] = "One Piece Movie 7 - Karakuri Jo no Meka Kyohei",
    [3] = "One Piece: Karakuri Castle`s Mecha Giant Soldier",
+   [4] = "ワンピース THE MOVIE カラクリ城のメカ巨兵",
    },
   },
  [4098] = {
@@ -49551,15 +49576,15 @@ return {
  [4131] = {
   ["main"] = "Kouchuu Ouja Mushiking: Greatest Champion e no Michi Gekijouban",
   ["official"] = {
-   [1] = "Mushiking: The Road to the Greatest Champion",
-   [2] = "甲虫王者ムシキング グレイテストチャンピオンへの道 劇場版",
+   [1] = "甲虫王者ムシキング グレイテストチャンピオンへの道 劇場版",
    },
   ["short"] = {
    },
   ["syn"] = {
    [1] = "Gekijouban Kabutomushi Ouja Mushiking: Greatest Champion e no Michi",
    [2] = "Kochu Ohja Mushiking: Greatest Champion e no Michi",
-   [3] = "劇場版甲虫王者ムシキング グレイテストチャンピオンへの道",
+   [3] = "Mushiking: The Road to the Greatest Champion",
+   [4] = "劇場版甲虫王者ムシキング グレイテストチャンピオンへの道",
    },
   },
  [4132] = {
@@ -51189,7 +51214,8 @@ return {
  [4258] = {
   ["main"] = "Ganbare! Bokura no Hit and Run",
   ["official"] = {
-   [1] = "がんばれ! ぼくらのヒットエンドラン",
+   [1] = "Aprender a Ganhar",
+   [2] = "がんばれ! ぼくらのヒットエンドラン",
    },
   ["short"] = {
    },
@@ -56932,9 +56958,9 @@ return {
  [4851] = {
   ["main"] = "One Piece: Episode of Arabasta - Sabaku no Oujo to Kaizoku-tachi",
   ["official"] = {
-   [1] = "One Piece - 8. Film: Abenteuer in Alabasta - Die Wüstenprinzessin",
-   [2] = "One Piece - The Desert Princess and the Pirates: Adventures in Alabasta",
-   [3] = "劇場版ワンピース エピソードオブアラバスタ 砂漠の王女と海賊たち",
+   [1] = "ONE PIECE エピソードオブアラバスタ 砂漠の王女と海賊たち",
+   [2] = "One Piece - 8. Film: Abenteuer in Alabasta - Die Wüstenprinzessin",
+   [3] = "One Piece - The Desert Princess and the Pirates: Adventures in Alabasta",
    },
   ["short"] = {
    [1] = "OP Movie 8",
@@ -56943,6 +56969,7 @@ return {
    },
   ["syn"] = {
    [1] = "One Piece The Movie: Episode of Arabasta - The Desert Princess and the Pirates",
+   [2] = "ワンピース エピソードオブアラバスタ 砂漠の王女と海賊たち",
    },
   },
  [4852] = {
@@ -62449,7 +62476,7 @@ return {
    },
   },
  [5457] = {
-  ["main"] = "Kyou Kara Maou! R",
+  ["main"] = "Kyou kara Maou! R",
   ["official"] = {
    [1] = "今日からマ王! R",
    },
@@ -64318,9 +64345,9 @@ return {
    },
   },
  [5691] = {
-  ["main"] = "One Piece: Episode of Chopper Plus - Fuyu ni Saku, Kiseki no Sakura",
+  ["main"] = "One Piece The Movie: Episode of Chopper Plus - Fuyu ni Saku, Kiseki no Sakura",
   ["official"] = {
-   [1] = "ONE PIECE(ワンピース) エピソードオブチョッパー+冬に咲く, 奇跡の桜",
+   [1] = "ONE PIECE THE MOVIE エピソードオブチョッパー+ 冬に咲く, 奇跡の桜",
    [2] = "One Piece - 9. Film: Chopper und das Wunder der Winterkirschblüte",
    },
   ["short"] = {
@@ -64330,6 +64357,7 @@ return {
    },
   ["syn"] = {
    [1] = "One Piece: Episode of Chopper Plus - Bloom in the Winter, Miracle Sakura",
+   [2] = "ワンピース エピソードオブチョッパー+ 冬に咲く, 奇跡の桜",
    },
   },
  [5693] = {
@@ -65220,7 +65248,7 @@ return {
    },
   },
  [5815] = {
-  ["main"] = "Kyou Kara Maou! (2008)",
+  ["main"] = "Kyou kara Maou! (2008)",
   ["official"] = {
    [1] = "今日からマ王! (2008)",
    },
@@ -67750,12 +67778,12 @@ return {
    },
   },
  [6127] = {
-  ["main"] = "Dragon Ball: Ossu! Kaette Kita Son Goku to Nakama-tachi!!",
+  ["main"] = "Dragon Ball: Ossu! Kaette Kita Son Gokuu to Nakama-tachi!!",
   ["official"] = {
-   [1] = "Dragon Ball : Salut ! Son Goku et ses amis sont de retour !!",
-   [2] = "Dragon Ball: Hey! Son-Goku und seine Freunde kehren zurück!!",
-   [3] = "Dragon Ball: Yo! The Return of Son-Goku and Friends!!",
-   [4] = "ドラゴンボール オッス! 帰ってきた孫悟空と仲間たち!!",
+   [1] = "DRAGON BALL オッス! 帰ってきた孫悟空と仲間たち!!",
+   [2] = "Dragon Ball : Salut ! Son Goku et ses amis sont de retour !!",
+   [3] = "Dragon Ball: Hey! Son-Goku und seine Freunde kehren zurück!!",
+   [4] = "Dragon Ball: Yo! The Return of Son-Goku and Friends!!",
    },
   ["short"] = {
    },
@@ -67764,6 +67792,7 @@ return {
    [2] = "Dragon Ball: Siemano! Son Gokū i spółka wracają!",
    [3] = "Dragon Ball: Yeah! O retorno de Goku e seus amigos!!",
    [4] = "Dragon Ball: Yo! Son Goku and His Friends Return!!",
+   [5] = "ドラゴンボール オッス! 帰ってきた孫悟空と仲間たち!!",
    },
   },
  [6128] = {
@@ -68250,14 +68279,15 @@ return {
    },
   },
  [6199] = {
-  ["main"] = "One Piece: Romance Dawn Story",
+  ["main"] = "One Piece Special: Romance Dawn Story",
   ["official"] = {
-   [1] = "One Piece: Romance Dawn Story",
-   [2] = "ワンピース ロマンスドーンストーリー",
+   [1] = "ONE PIECE SPECIAL ROMANCE DAWN STORY",
+   [2] = "One Piece: Romance Dawn Story",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "ワンピース ロマンスドーンストーリー",
    },
   },
  [6200] = {
@@ -68532,7 +68562,7 @@ return {
    },
   },
  [6233] = {
-  ["main"] = "Tezuka Osamu Monogatari: Boku wa Songokuu",
+  ["main"] = "Tezuka Osamu Monogatari: Boku wa Son Gokuu",
   ["official"] = {
    [1] = "手塚治虫物語 ぼくは孫悟空",
    },
@@ -69011,6 +69041,7 @@ return {
    },
   ["short"] = {
    [1] = "fpc",
+   [2] = "precure6",
    },
   ["syn"] = {
    [1] = "Fresh Pretty Cure",
@@ -69447,10 +69478,11 @@ return {
  [6327] = {
   ["main"] = "Bakemonogatari",
   ["official"] = {
-   [1] = "化物語",
-   [2] = "化物语",
-   [3] = "괴물 이야기",
-   [4] = "바케모노가타리",
+   [1] = "ปกรณัมของเหล่าภูต",
+   [2] = "化物語",
+   [3] = "化物语",
+   [4] = "괴물 이야기",
+   [5] = "바케모노가타리",
    },
   ["short"] = {
    [1] = "BMG",
@@ -71100,17 +71132,17 @@ return {
    },
   },
  [6537] = {
-  ["main"] = "One Piece: Strong World",
+  ["main"] = "One Piece Film: Strong World",
   ["official"] = {
-   [1] = "One Piece - 10. Film: Strong World",
-   [2] = "ワンピースフィルム ストロングワールド",
+   [1] = "ONE PIECE FILM STRONG WORLD",
+   [2] = "One Piece - 10. Film: Strong World",
    },
   ["short"] = {
    [1] = "One Piece Movie 10",
    },
   ["syn"] = {
-   [1] = "ONE PIECE FILM ストロングワールド",
-   [2] = "ون بيس: العالم القوي",
+   [1] = "ون بيس: العالم القوي",
+   [2] = "ワンピース フィルム ストロングワールド",
    },
   },
  [6538] = {
@@ -71135,13 +71167,14 @@ return {
    },
   },
  [6540] = {
-  ["main"] = "Dragon Ball Z: Atsumare! Gokuu`s World",
+  ["main"] = "Dragon Ball Z: Atsumare! Gokuu World",
   ["official"] = {
-   [1] = "ドラゴンボールZ あつまれ! 悟空ワールド",
+   [1] = "DRAGON BALL Z あつまれ! 悟空ワールド",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "ドラゴンボールZ あつまれ! 悟空ワールド",
    },
   },
  [6542] = {
@@ -71355,7 +71388,8 @@ return {
   ["main"] = "Angel Beats!",
   ["official"] = {
    [1] = "Angel Beats!",
-   [2] = "エンジェル ビーツ!",
+   [2] = "แองเจิลบีทส์ แผนพิชิตนางฟ้า",
+   [3] = "エンジェル ビーツ!",
    },
   ["short"] = {
    [1] = "AB!",
@@ -75365,17 +75399,20 @@ return {
    },
   },
  [6970] = {
-  ["main"] = "White Album 2nd Season",
+  ["main"] = "White Album (2009)",
   ["official"] = {
-   [1] = "WHITE ALBUM 後期",
+   [1] = "WHITE ALBUM (2009)",
    },
   ["short"] = {
    [1] = "white album 2",
    },
   ["syn"] = {
    [1] = "WHITE ALBUM 後半",
-   [2] = "الألبوم الأبيض 2",
-   [3] = "白色相簿第二季",
+   [2] = "WHITE ALBUM 後期",
+   [3] = "White Album 2nd Season",
+   [4] = "الألبوم الأبيض 2",
+   [5] = "ホワイトアルバム (2009)",
+   [6] = "白色相簿第二季",
    },
   },
  [6971] = {
@@ -78729,7 +78766,7 @@ return {
    },
   },
  [7298] = {
-  ["main"] = "Gunparade Orchestra: Ao no Shou - Hikari no Umi Kara Tegami o Okurimasu",
+  ["main"] = "Gunparade Orchestra: Ao no Shou - Hikari no Umi kara Tegami o Okurimasu",
   ["official"] = {
    [1] = "ガンパレード・オーケストラ 青の章 光の海から手紙を送ります",
    },
@@ -80865,7 +80902,8 @@ return {
   ["syn"] = {
    [1] = "My Little Sister Can`t Be This Cute",
    [2] = "Не може моя сестра бути такою милою",
-   [3] = "我的妹妹才不会这么可爱",
+   [3] = "Няма как по-малката ми сестра да е такава сладурана",
+   [4] = "我的妹妹才不会这么可爱",
    },
   },
  [7526] = {
@@ -81006,11 +81044,12 @@ return {
  [7538] = {
   ["main"] = "One Piece Film: Strong World - Episode 0",
   ["official"] = {
-   [1] = "ONE PIECE FILM STRONG WORLD EPISODE:0",
+   [1] = "ONE PIECE FILM STRONG WORLD Episode:0",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "ワンピース フィルム ストロングワールド エピソード・ゼロ",
    },
   },
  [7539] = {
@@ -82798,6 +82837,7 @@ return {
   ["official"] = {
    [1] = "IS&lt;インフィニット・ストラトス&gt;",
    [2] = "IS: Infinite Stratos",
+   [3] = "ปฏิบัติการรักจักรกลทะยานฟ้า",
    },
   ["short"] = {
    [1] = "IS",
@@ -84590,8 +84630,9 @@ return {
   ["main"] = "Denpa Onna to Seishun Otoko",
   ["official"] = {
    [1] = "Ground Control to Psychoelectric Girl",
-   [2] = "电波女与青春男",
-   [3] = "電波女と青春男",
+   [2] = "หนุ่มสามัญกับสาวหลุดโลก",
+   [3] = "电波女与青春男",
+   [4] = "電波女と青春男",
    },
   ["short"] = {
    [1] = "Denpa Onna",
@@ -85283,7 +85324,7 @@ return {
    },
   },
  [7976] = {
-  ["main"] = "Umi Kara no Shisha",
+  ["main"] = "Umi kara no Shisha",
   ["official"] = {
    [1] = "海からの使者",
    },
@@ -86147,9 +86188,10 @@ return {
   ["official"] = {
    [1] = "Madoka Magica",
    [2] = "Puella Magi Madoka Magica",
-   [3] = "魔法少女まどか★マギカ PUELLA MAGI MADOKA MAGICA",
-   [4] = "魔法少女小圆",
-   [5] = "마법소녀 마도카 마기카",
+   [3] = "สาวน้อยเวทมนตร์ มาโดกะ",
+   [4] = "魔法少女まどか★マギカ PUELLA MAGI MADOKA MAGICA",
+   [5] = "魔法少女小圆",
+   [6] = "마법소녀 마도카 마기카",
    },
   ["short"] = {
    [1] = "MSMM",
@@ -87394,8 +87436,9 @@ return {
    [2] = "Anohana: The Flower We Saw That Day",
    [3] = "Все още не знаем името на цветето, което видяхме онзи ден.",
    [4] = "Тэр Нэгэн Өдөр Харсан Цэцгийн Нэрийг Бид Одоо ч Мэдэхгүй",
-   [5] = "あの日見た花の名前を僕達はまだ知らない.",
-   [6] = "我们仍未知道那天所看见的花的名字。",
+   [5] = "ดอกไม้ มิตรภาพ และ ความทรงจำ",
+   [6] = "あの日見た花の名前を僕達はまだ知らない.",
+   [7] = "我们仍未知道那天所看见的花的名字。",
    },
   ["short"] = {
    [1] = "Ano Hana",
@@ -88290,8 +88333,7 @@ return {
   ["main"] = "Jinrui wa Suitai Shimashita",
   ["official"] = {
    [1] = "Humanity Has Declined",
-   [2] = "Закат человечества",
-   [3] = "人類は衰退しました",
+   [2] = "人類は衰退しました",
    },
   ["short"] = {
    [1] = "Jintai",
@@ -88939,7 +88981,7 @@ return {
    },
   },
  [8344] = {
-  ["main"] = "Tennis no Ouji-sama: Atobe Kara no Okurimono - Kimi ni Sasageru Tenipri Matsuri",
+  ["main"] = "Tennis no Ouji-sama: Atobe kara no Okurimono - Kimi ni Sasageru Tenipri Matsuri",
   ["official"] = {
    [1] = "テニスの王子様 跡部からの贈り物 君に捧げるテニプリ祭り",
    },
@@ -89725,7 +89767,7 @@ return {
    },
   },
  [8427] = {
-  ["main"] = "Ultra B: Black Hole Kara no Dokusaisha BB!!",
+  ["main"] = "Ultra B: Black Hole kara no Dokusaisha BB!!",
   ["official"] = {
    [1] = "ウルトラB ブラックホールからの独裁者B・B!!",
    },
@@ -91008,7 +91050,8 @@ return {
  [8569] = {
   ["main"] = "Ikkitousen: Shuugaku Toushi Keppuu-roku",
   ["official"] = {
-   [1] = "一騎当千 集鍔闘士血風録",
+   [1] = "Ikki Tousen: Shuugaku Epic Battle",
+   [2] = "一騎当千 集鍔闘士血風録",
    },
   ["short"] = {
    [1] = "ikki5",
@@ -92743,7 +92786,7 @@ return {
    },
   },
  [8751] = {
-  ["main"] = "Precure Kara Minna e no Ouen Movie",
+  ["main"] = "Precure kara Minna e no Ouen Movie",
   ["official"] = {
    [1] = "プリキュアからみんなへの応援ムービー",
    },
@@ -93758,8 +93801,9 @@ return {
  [8855] = {
   ["main"] = "Hyouka",
   ["official"] = {
-   [1] = "氷菓",
-   [2] = "빙과",
+   [1] = "ปริศนาความทรงจำ",
+   [2] = "氷菓",
+   [3] = "빙과",
    },
   ["short"] = {
    },
@@ -94555,13 +94599,14 @@ return {
    },
   },
  [8940] = {
-  ["main"] = "One Piece Film Z",
+  ["main"] = "One Piece Film: Z",
   ["official"] = {
-   [1] = "ワンピース フィルム Z",
+   [1] = "ONE PIECE FILM Z",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "ワンピース フィルム Z",
    },
   },
  [8941] = {
@@ -95912,7 +95957,7 @@ return {
    },
   },
  [9088] = {
-  ["main"] = "Rakuen Tsuihou: Expelled From Paradise",
+  ["main"] = "Rakuen Tsuihou: Expelled from Paradise",
   ["official"] = {
    [1] = "楽園追放 -Expelled From Paradise-",
    },
@@ -96412,8 +96457,9 @@ return {
   ["main"] = "Sakurasou no Pet na Kanojo",
   ["official"] = {
    [1] = "The Pet Girl of Sakurasou",
-   [2] = "さくら荘のペットな彼女",
-   [3] = "樱花庄的宠物女孩",
+   [2] = "ซากุระโซว หอพักสร้างฝัน",
+   [3] = "さくら荘のペットな彼女",
+   [4] = "樱花庄的宠物女孩",
    },
   ["short"] = {
    [1] = "sakurasou",
@@ -98482,8 +98528,9 @@ return {
  [9384] = {
   ["main"] = "Gekijouban Gintama Kanketsuhen: Yorozuya yo Eien Nare",
   ["official"] = {
-   [1] = "劇場版 銀魂 完結篇 万事屋よ永遠なれ",
-   [2] = "银魂剧场版 完结篇 永远的万事屋",
+   [1] = "Gintama: The Movie: The Final Chapter: Be Forever Yorozuya",
+   [2] = "劇場版 銀魂 完結篇 万事屋よ永遠なれ",
+   [3] = "银魂剧场版 完结篇 永远的万事屋",
    },
   ["short"] = {
    },
@@ -98896,13 +98943,14 @@ return {
    },
   },
  [9432] = {
-  ["main"] = "One Piece: Romance Dawn",
+  ["main"] = "One Piece: Romance Dawn - Bouken no Yoake",
   ["official"] = {
-   [1] = "ワンピース ロマンスドーン",
+   [1] = "ONE PIECE ROMANCE DAWN 冒険の夜明け",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "ワンピース ロマンスドーン 冒険の夜明け",
    },
   },
  [9433] = {
@@ -100034,6 +100082,8 @@ return {
    [3] = "狐仙的恋爱入门",
    },
   ["short"] = {
+   [1] = "Inakon",
+   [2] = "いなこん",
    },
   ["syn"] = {
    },
@@ -100215,7 +100265,8 @@ return {
  [9557] = {
   ["main"] = "Hal",
   ["official"] = {
-   [1] = "ハル",
+   [1] = "Хал",
+   [2] = "ハル",
    },
   ["short"] = {
    },
@@ -100538,6 +100589,7 @@ return {
    [1] = "弱虫ペダル",
    },
   ["short"] = {
+   [1] = "yowapeda",
    },
   ["syn"] = {
    [1] = "Плахият велосипедист",
@@ -103379,7 +103431,8 @@ return {
  [9922] = {
   ["main"] = "Sakura Trick",
   ["official"] = {
-   [1] = "桜Trick",
+   [1] = "Sakura Trick",
+   [2] = "桜Trick",
    },
   ["short"] = {
    },
@@ -103416,6 +103469,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Уличен бог",
    },
   },
  [9926] = {
@@ -103616,6 +103670,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "せいこう! ~幼なじみは照れくさそうに嘘をつく~",
    },
   },
  [9946] = {
@@ -106574,9 +106629,9 @@ return {
    },
   },
  [10318] = {
-  ["main"] = "Pocket Monsters XY: Hakai no Mayu",
+  ["main"] = "Pocket Monsters XY: Hakai no Mayu to Diancie",
   ["official"] = {
-   [1] = "ポケットモンスターXY 破壊の繭",
+   [1] = "ポケットモンスターXY 破壊の繭とディアンシー",
    },
   ["short"] = {
    },
@@ -106744,6 +106799,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Hi-Score Girl",
+   [2] = "Hiscore Girl",
    },
   },
  [10353] = {
@@ -107492,11 +107549,12 @@ return {
    },
   },
  [10442] = {
-  ["main"] = "Kindaichi Shounen no Jikenbo (2014)",
+  ["main"] = "Kindaichi Shounen no Jikenbo Returns",
   ["official"] = {
-   [1] = "金田一少年の事件簿 (2014)",
+   [1] = "金田一少年の事件簿R[リターンズ]",
    },
   ["short"] = {
+   [1] = "Kindaichi R",
    },
   ["syn"] = {
    },
@@ -107545,6 +107603,88 @@ return {
   ["main"] = "Natsume Yuujinchou: Itsuka Yuki no Hi ni",
   ["official"] = {
    [1] = "夏目友人帳 いつかゆきのひに",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10450] = {
+  ["main"] = "Minihams no Ai no Uta",
+  ["official"] = {
+   [1] = "ミニハムずの愛の唄",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10452] = {
+  ["main"] = "Dragon Ball Kai (2014)",
+  ["official"] = {
+   [1] = "ドラゴンボール改 (2014)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10453] = {
+  ["main"] = "Toaru Kagaku no Railgun S: Daiji na Koto wa Zenbu Sentou ni Osowatta",
+  ["official"] = {
+   [1] = "とある科学の超電磁砲S 大事なことはぜんぶ銭湯に教わった",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10454] = {
+  ["main"] = "Gekijouban Yuuto-kun ga Iku",
+  ["official"] = {
+   [1] = "劇場版 ゆうとくんがいく",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10456] = {
+  ["main"] = "Terra Formars (OVA)",
+  ["official"] = {
+   [1] = "テラフォーマーズ (OVA)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10457] = {
+  ["main"] = "Tenkai Knight",
+  ["official"] = {
+   [1] = "Tenkai Knights",
+   [2] = "テンカイナイト",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10458] = {
+  ["main"] = "Cross Road",
+  ["official"] = {
+   [1] = "クロスロード",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Crossroad",
+   },
+  },
+ [10459] = {
+  ["main"] = "Yariman Fudousan",
+  ["official"] = {
+   [1] = "やりマン不動産",
    },
   ["short"] = {
    },
