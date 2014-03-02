@@ -1518,8 +1518,9 @@ return {
   ["syn"] = {
    [1] = "Jin Roh",
    [2] = "Jin-Roh, the Wolf Brigade",
-   [3] = "Загін вовків",
-   [4] = "Перевертень",
+   [3] = "Jin-Roh: La Brigada Lobo",
+   [4] = "Загін вовків",
+   [5] = "Перевертень",
    },
   },
  [84] = {
@@ -4543,6 +4544,7 @@ return {
   ["official"] = {
    [1] = "Plastic Little",
    [2] = "プラスチックリトル",
+   [3] = "雲海歷險",
    },
   ["short"] = {
    },
@@ -5900,7 +5902,7 @@ return {
    },
   },
  [333] = {
-  ["main"] = "Omoide Poro-poro",
+  ["main"] = "Omoide Poroporo",
   ["official"] = {
    [1] = "Alles eile",
    [2] = "Dün Gibi",
@@ -5929,10 +5931,9 @@ return {
    [6] = "Omohide Poro-poro",
    [7] = "Omohide Poroporo",
    [8] = "Omoide Poro Poro",
-   [9] = "Omoide Poroporo",
-   [10] = "Сочащиеся воспоминания",
-   [11] = "Спогади наче краплі дощу",
-   [12] = "Ще учора",
+   [9] = "Сочащиеся воспоминания",
+   [10] = "Спогади наче краплі дощу",
+   [11] = "Ще учора",
    },
   },
  [334] = {
@@ -12808,7 +12809,8 @@ return {
   ["main"] = "JoJo no Kimyou na Bouken (2000)",
   ["official"] = {
    [1] = "JoJo`s Bizarre Adventure",
-   [2] = "ジョジョの奇妙な冒険 (2000)",
+   [2] = "JoJo`s Bizarre Adventure (2000)",
+   [3] = "ジョジョの奇妙な冒険 (2000)",
    },
   ["short"] = {
    [1] = "jojo 2000",
@@ -29403,8 +29405,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Himegoto",
-   [2] = "Secret",
+   [1] = "Secret",
    },
   },
  [2067] = {
@@ -35620,7 +35621,7 @@ return {
   ["main"] = "Matou Kitan Zankan",
   ["official"] = {
    [1] = "Zankan, cazadores de demonios",
-   [2] = "魔法綺譚ZANKAN[斬奸]",
+   [2] = "魔討綺譚ZANKAN[斬奸]",
    },
   ["short"] = {
    [1] = "Zankan",
@@ -37131,7 +37132,7 @@ return {
    [8] = "D’Artagnan i trzej muszkieterowie",
    [9] = "Kolme muskettikoiraa",
    [10] = "Les 3 mousquetaires",
-   [11] = "Οι 3 Σωματοφύλακες",
+   [11] = "Ο Ντ`Αρτανιάν και οι 3 Σωματοφύλακες",
    [12] = "שלושת המוסקטרים",
    [13] = "الفرسان الثلاثة",
    [14] = "ワンワン三銃士",
@@ -43454,11 +43455,12 @@ return {
  [3385] = {
   ["main"] = "Gin`iro no Kami no Agito",
   ["official"] = {
-   [1] = "Origin - Spirits of the past",
-   [2] = "Origin: Spirits of the Past",
-   [3] = "Origine",
-   [4] = "Исток",
-   [5] = "銀色の髪のアギト",
+   [1] = "Origem: Espíritos do passado",
+   [2] = "Origin - Spirits of the past",
+   [3] = "Origin: Spirits of the Past",
+   [4] = "Origine",
+   [5] = "Исток",
+   [6] = "銀色の髪のアギト",
    },
   ["short"] = {
    [1] = "Agito",
@@ -56030,6 +56032,7 @@ return {
    },
   ["syn"] = {
    [1] = "Coral Reef Legend: Elfie of the Blue Sea",
+   [2] = "Elfie - The Legend of Coral Island",
    },
   },
  [4747] = {
@@ -65177,9 +65180,9 @@ return {
    },
   },
  [5806] = {
-  ["main"] = "Onegai! Samia Don Movie",
+  ["main"] = "Onegai! Samia Don (1989)",
   ["official"] = {
-   [1] = "おねがい!サミアどん",
+   [1] = "おねがい! サミアどん (1989)",
    },
   ["short"] = {
    },
@@ -65707,8 +65710,10 @@ return {
    },
   ["syn"] = {
    [1] = "Classmate",
-   [2] = "クラスメイト",
-   [3] = "蕾の誘惑～淫乱少女たちの姫穴比べ～ (1)",
+   [2] = "キャンパスメイト",
+   [3] = "キャンパスメイト Campus Mate",
+   [4] = "クラスメイト",
+   [5] = "蕾の誘惑～淫乱少女たちの姫穴比べ～ (1)",
    },
   },
  [5889] = {
@@ -66552,7 +66557,9 @@ return {
    [1] = "Brothers Grime X-Rated Cartoons part 1",
    [2] = "Inma Taisen",
    [3] = "Search for Uranus",
-   [4] = "淫魔大戦",
+   [4] = "淫魔列伝",
+   [5] = "淫魔列伝 The Immorality Wars",
+   [6] = "淫魔大戦",
    },
   },
  [5986] = {
@@ -71095,10 +71102,11 @@ return {
  [6529] = {
   ["main"] = "Redline",
   ["official"] = {
-   [1] = "MAKSIMALUS GREITIS",
-   [2] = "REDLINE",
-   [3] = "Redline",
-   [4] = "Красная черта",
+   [1] = "Linha Vermelha",
+   [2] = "MAKSIMALUS GREITIS",
+   [3] = "REDLINE",
+   [4] = "Redline",
+   [5] = "Красная черта",
    },
   ["short"] = {
    },
@@ -71458,10 +71466,11 @@ return {
    [2] = "おまひま",
    },
   ["syn"] = {
-   [1] = "Защитница Химари",
-   [2] = "Химари - живой талисман",
-   [3] = "守护猫娘绯鞠",
-   [4] = "守護貓娘緋鞠",
+   [1] = "Protective Charm Himari",
+   [2] = "Защитница Химари",
+   [3] = "Химари - живой талисман",
+   [4] = "守护猫娘绯鞠",
+   [5] = "守護貓娘緋鞠",
    },
   },
  [6572] = {
@@ -79820,14 +79829,14 @@ return {
  [7408] = {
   ["main"] = "Gekijouban Kidou Senshi Gundam 00: A Wakening of the Trailblazer",
   ["official"] = {
-   [1] = "劇場版 機動戦士ガンダム00 -A wakening of the Trailblazer-",
+   [1] = "Mobile Suit Gundam 00: A Wakening of the Trailblazer",
+   [2] = "劇場版 機動戦士ガンダム00 -A wakening of the Trailblazer-",
    },
   ["short"] = {
    [1] = "G00movie",
    },
   ["syn"] = {
-   [1] = "Mobile Suit Gundam 00: A Wakening of the Trailblazer",
-   [2] = "Мобилен Костюм Гъндам 00: Събуждането на Изгубения",
+   [1] = "Мобилен Костюм Гъндам 00: Събуждането на Изгубения",
    },
   },
  [7409] = {
@@ -89275,7 +89284,8 @@ return {
   ["main"] = "Gekijouban Blood-C: The Last Dark",
   ["official"] = {
    [1] = "BLOOD-C: последний Тёмный",
-   [2] = "劇場版 BLOOD-C The Last Dark",
+   [2] = "Blood-C: The Last Dark",
+   [3] = "劇場版 BLOOD-C The Last Dark",
    },
   ["short"] = {
    },
@@ -92439,7 +92449,7 @@ return {
  [8719] = {
   ["main"] = "Haiyore! Nyaruko-san",
   ["official"] = {
-   [1] = "Nyarko-san: Another Crawling Chaos",
+   [1] = "Nyaruko: Crawling with Love!",
    [2] = "潜行吧！奈亚子",
    [3] = "這いよれ! ニャル子さん",
    [4] = "기어와라! 냐루코양",
@@ -92449,6 +92459,7 @@ return {
    },
   ["syn"] = {
    [1] = "Haiyore! Nyarlko-san",
+   [2] = "Nyaruko-san: Another Crawling Chaos",
    },
   },
  [8720] = {
@@ -93832,7 +93843,8 @@ return {
   ["main"] = "Sakasama no Patema",
   ["official"] = {
    [1] = "Patéma et le monde inversé",
-   [2] = "サカサマのパテマ",
+   [2] = "Патэма наоборот",
+   [3] = "サカサマのパテマ",
    },
   ["short"] = {
    },
@@ -95860,6 +95872,7 @@ return {
   ["official"] = {
    [1] = "TARI TARI",
    [2] = "Tari Tari",
+   [3] = "บทเพลงบรรเลงฝัน",
    },
   ["short"] = {
    [1] = "Tari x2",
@@ -99332,7 +99345,8 @@ return {
   ["official"] = {
    [1] = "!پادشاه دیوها، کارگر نیمه وقته",
    [2] = "The Devil Is a Part-Timer!",
-   [3] = "はたらく魔王さま!",
+   [3] = "ผู้กล้าซึนซ่าส์กับจอมมารสู้ชีวิต",
+   [4] = "はたらく魔王さま!",
    },
   ["short"] = {
    },
@@ -103121,6 +103135,7 @@ return {
    [3] = "献给某飞行员的恋歌",
    },
   ["short"] = {
+   [1] = "koiuta",
    },
   ["syn"] = {
    [1] = "Love Song of a Certain Pilot",
@@ -103258,9 +103273,10 @@ return {
   ["main"] = "Nisekoi",
   ["official"] = {
    [1] = "Nisekoi",
-   [2] = "ニセコイ",
-   [3] = "伪恋",
-   [4] = "偽戀",
+   [2] = "รักลวงป่วนใจ",
+   [3] = "ニセコイ",
+   [4] = "伪恋",
+   [5] = "偽戀",
    },
   ["short"] = {
    },
@@ -103410,6 +103426,7 @@ return {
   ["main"] = "Takanashi Rikka Kai: Gekijouban Chuunibyou demo Koi ga Shitai!",
   ["official"] = {
    [1] = "小鳥遊六花・改 ~劇場版 中二病でも恋がしたい!~",
+   [2] = "小鸟游六花・改 ~剧场版 中二病也要谈恋爱！~",
    },
   ["short"] = {
    },
@@ -103464,12 +103481,13 @@ return {
   ["official"] = {
    [1] = "Noragami",
    [2] = "ノラガミ",
-   [3] = "流浪神差",
+   [3] = "野良神",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Уличен бог",
+   [1] = "Stray God",
+   [2] = "Уличен бог",
    },
   },
  [9926] = {
@@ -103983,6 +104001,7 @@ return {
    },
   ["syn"] = {
    [1] = "Initial D the New Movie",
+   [2] = "New Initial D Movie: Legend 1 - Kakusei",
    },
   },
  [9988] = {
@@ -104045,7 +104064,8 @@ return {
   ["main"] = "Mahou Sensou",
   ["official"] = {
    [1] = "Magical Warfare",
-   [2] = "魔法戦争",
+   [2] = "魔法战争",
+   [3] = "魔法戦争",
    },
   ["short"] = {
    [1] = "Mahosen",
@@ -104283,8 +104303,9 @@ return {
  [10024] = {
   ["main"] = "Wizard Barristers: Benmashi Cecil",
   ["official"] = {
-   [1] = "Wizard Barristers",
-   [2] = "ウィザード・バリスターズ~弁魔士セシル",
+   [1] = "WIZARD BARRISTERS～弁魔士赛希尔",
+   [2] = "Wizard Barristers",
+   [3] = "ウィザード・バリスターズ~弁魔士セシル",
    },
   ["short"] = {
    },
@@ -104910,7 +104931,8 @@ return {
   ["main"] = "Mikakunin de Shinkoukei",
   ["official"] = {
    [1] = "Engaged to the Unidentified",
-   [2] = "未確認で進行形",
+   [2] = "未确认进行式",
+   [3] = "未確認で進行形",
    },
   ["short"] = {
    },
@@ -105800,6 +105822,7 @@ return {
    [1] = "Sekai Seifuku: le complot Zvezda",
    [2] = "World Conquest Zvezda Plot",
    [3] = "世界征服 ~謀略のズヴィズダー~",
+   [4] = "世界征服 谋略之星",
    },
   ["short"] = {
    [1] = "zvezda",
@@ -106804,9 +106827,9 @@ return {
    },
   },
  [10353] = {
-  ["main"] = "Gekijouban Pretty Rhythm",
+  ["main"] = "Gekijouban Pretty Rhythm All Star Selection: Prism Show Best Ten",
   ["official"] = {
-   [1] = "劇場版 プリティーリズム",
+   [1] = "劇場版 プリティーリズム・オールスターセレクション プリズムショー☆ベストテン",
    },
   ["short"] = {
    },
@@ -107178,6 +107201,7 @@ return {
    [1] = "犬神さんと猫山さん",
    },
   ["short"] = {
+   [1] = "inuneko",
    },
   ["syn"] = {
    },
@@ -107685,6 +107709,127 @@ return {
   ["main"] = "Yariman Fudousan",
   ["official"] = {
    [1] = "やりマン不動産",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10461] = {
+  ["main"] = "Mahou Shoujo wa Kiss Shite Kawaru",
+  ["official"] = {
+   [1] = "魔法少女はキスして変身[かわ]る",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10462] = {
+  ["main"] = "Abarenbou Rikishi!! Matsutarou",
+  ["official"] = {
+   [1] = "暴れん坊力士!!松太郎",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10475] = {
+  ["main"] = "Himegoto",
+  ["official"] = {
+   [1] = "ひめゴト",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10476] = {
+  ["main"] = "Momoya x Peeping Life: Go en Desu yo!",
+  ["official"] = {
+   [1] = "桃屋×Peeping Life ご縁ですよ！",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10477] = {
+  ["main"] = "Momoya x Peeping Life: Go en Desu yo! II",
+  ["official"] = {
+   [1] = "桃屋×Peeping Life ご縁ですよ！Ⅱ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10478] = {
+  ["main"] = "Wazaguu! VS Dangerous Jiisan Ja: Houfukuzettou! Anime Quiz",
+  ["official"] = {
+   [1] = "わざぐぅ!VSでんぢゃらすじーさん邪 抱腹絶倒!アニメクイズ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10479] = {
+  ["main"] = "Koukaku Kidoutai Arise: Borderless Project",
+  ["official"] = {
+   [1] = "攻殻機動隊ARISE border:less project",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10480] = {
+  ["main"] = "Rokujouma no Shinryakusha!?",
+  ["official"] = {
+   [1] = "六畳間の侵略者!?",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10482] = {
+  ["main"] = "Gekijouban Aikatsu! Idol Katsudou!",
+  ["official"] = {
+   [1] = "劇場版 アイカツ! アイドルカツドウ!",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10483] = {
+  ["main"] = "Cardfight!! Vanguard: Legion Mate Hen",
+  ["official"] = {
+   [1] = "カードファイト!! ヴァンガード レギオンメイト編",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10484] = {
+  ["main"] = "Love es M The Animation",
+  ["official"] = {
+   [1] = "ラブesエム THE ANIMATION",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Love SM",
+   },
+  },
+ [10485] = {
+  ["main"] = "Rennyuu Tales The Animation",
+  ["official"] = {
+   [1] = "恋乳ているず THE ANIMATION",
    },
   ["short"] = {
    },
