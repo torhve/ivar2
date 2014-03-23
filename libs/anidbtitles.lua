@@ -35426,16 +35426,19 @@ return {
   ["official"] = {
    [1] = "La Maquina del Tiempo",
    [2] = "Les chevaliers du temps",
-   [3] = "Οι Αστρομαχητές του Κακού",
-   [4] = "رحلة العجائب",
-   [5] = "タイムボカン",
+   [3] = "TimeFighters",
+   [4] = "Οι Αστρομαχητές του Κακού",
+   [5] = "رحلة العجائب",
+   [6] = "タイムボカン",
    },
   ["short"] = {
    },
   ["syn"] = {
    [1] = "Time Fighters",
-   [2] = "Timefighters",
-   [3] = "Timefighters in the Land of Fantasy",
+   [2] = "TimeFighters",
+   [3] = "TimeFighters - Reise in die Vergangenheit",
+   [4] = "TimeFighters im Land der Fantasy",
+   [5] = "Timefighters in the Land of Fantasy",
    },
   },
  [2547] = {
@@ -49734,7 +49737,7 @@ return {
  [4145] = {
   ["main"] = "Amaenaide yo!! Katsu!!",
   ["official"] = {
-   [1] = "Ah My Buddha 2",
+   [1] = "Ah My Buddha (2)",
    [2] = "あまえないでよっ!! 喝!!",
    },
   ["short"] = {
@@ -56142,6 +56145,7 @@ return {
    [1] = "人造昆虫カブトボーグ VxV",
    },
   ["short"] = {
+   [1] = "kabutoborg",
    },
   ["syn"] = {
    [1] = "Artificial Insect Kabutoborg",
@@ -67945,8 +67949,9 @@ return {
    },
   ["syn"] = {
    [1] = "Ippo2",
-   [2] = "Боен дух: Нов противник",
-   [3] = "神拳一步 New Challenger 第二季",
+   [2] = "Боен дух: Нов претендент",
+   [3] = "Боен дух: Нов противник",
+   [4] = "神拳一步 New Challenger 第二季",
    },
   },
  [6154] = {
@@ -83030,6 +83035,7 @@ return {
   ["syn"] = {
    [1] = "Sore Ike! Anpanman: Kuruyuki-hime to Motemote Baikinman",
    [2] = "それいけ! アンパンマン くろゆき姫とモテモテばいきんまん",
+   [3] = "それいけ!アンパンマン モテモテくろゆき姫とばいきんまん",
    },
   },
  [7743] = {
@@ -87496,7 +87502,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Вечност над вечността",
+   [1] = "The Ephemeral Petal",
+   [2] = "Вечност над вечността",
    },
   },
  [8186] = {
@@ -88670,16 +88677,18 @@ return {
    },
   },
  [8307] = {
-  ["main"] = "Deadman Wonderland OAD",
+  ["main"] = "Deadman Wonderland: Akai Knife Tsukai",
   ["official"] = {
-   [1] = "The Red Knife Wielder",
-   [2] = "デッドマン・ワンダーランド OAD",
+   [1] = "Deadman Wonderland: The Red Knife Wielder",
+   [2] = "デッドマン・ワンダーランド 赤いナイフ使い",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Wielder of the Red Knife",
-   [2] = "Мъртвата Страна на Чудесата ОАД",
+   [1] = "Deadman Wonderland OAD",
+   [2] = "Wielder of the Red Knife",
+   [3] = "Мъртвата Страна на Чудесата ОАД",
+   [4] = "デッドマン・ワンダーランド OAD",
    },
   },
  [8308] = {
@@ -97861,6 +97870,7 @@ return {
   ["main"] = "Kara no Kyoukai: Mirai Fukuin",
   ["official"] = {
    [1] = "空の境界 未来福音",
+   [2] = "空之境界 未来福音",
    },
   ["short"] = {
    [1] = "KnK2",
@@ -99877,10 +99887,11 @@ return {
   ["official"] = {
    [1] = "Le Vent se lève",
    [2] = "Se levanta el viento",
-   [3] = "Vidas ao Vento",
-   [4] = "Ветер крепчает",
-   [5] = "風立ちぬ",
-   [6] = "바람이 분다",
+   [3] = "The Wind Rises: As Asas do Vento",
+   [4] = "Vidas ao Vento",
+   [5] = "Ветер крепчает",
+   [6] = "風立ちぬ",
+   [7] = "바람이 분다",
    },
   ["short"] = {
    },
@@ -104443,6 +104454,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Survival Game Club!",
    },
   },
  [10043] = {
@@ -104474,6 +104486,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Monogatari Series: Second Season +α",
    },
   },
  [10048] = {
@@ -105281,6 +105294,7 @@ return {
  [10143] = {
   ["main"] = "\"0\"",
   ["official"] = {
+   [1] = "「0」",
    },
   ["short"] = {
    },
@@ -106357,9 +106371,9 @@ return {
    },
   },
  [10278] = {
-  ["main"] = "Garo",
+  ["main"] = "Garo: Honoo no Kokuin",
   ["official"] = {
-   [1] = "牙狼",
+   [1] = "牙狼〈GARO〉-炎の刻印-",
    },
   ["short"] = {
    },
@@ -106443,7 +106457,8 @@ return {
  [10288] = {
   ["main"] = "Bokura wa Minna Kawaisou",
   ["official"] = {
-   [1] = "僕らはみんな河合荘",
+   [1] = "The Kawai Complex Guide to Manors and Hostel Behavior",
+   [2] = "僕らはみんな河合荘",
    },
   ["short"] = {
    },
@@ -106542,6 +106557,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Madam was once a slut",
    },
   },
  [10298] = {
@@ -106896,9 +106912,9 @@ return {
    },
   },
  [10357] = {
-  ["main"] = "Rail Wars! Nihon Kokuyuu Tetsudou Kouantai",
+  ["main"] = "Rail Wars!",
   ["official"] = {
-   [1] = "RAIL WARS!-日本國有鉄道公安隊-",
+   [1] = "RAIL WARS!",
    },
   ["short"] = {
    },
@@ -107141,6 +107157,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "I just can`t stand not getting between them! ~I made a wish to the stars and they got this big!~",
    },
   },
  [10388] = {
@@ -107210,6 +107227,7 @@ return {
    [1] = "それでも世界は美しい",
    },
   ["short"] = {
+   [1] = "soreseka",
    },
   ["syn"] = {
    [1] = "Still World Is Beautiful",
@@ -107278,13 +107296,15 @@ return {
    },
   },
  [10402] = {
-  ["main"] = "Kuroshitsuji Shin Series",
+  ["main"] = "Kuroshitsuji: Book of Circus",
   ["official"] = {
-   [1] = "黒執事 新シリーズ",
+   [1] = "黒執事 Book of Circus",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Kuroshitsuji Circus Hen",
+   [2] = "黒執事 サーカス編",
    },
   },
  [10403] = {
@@ -107318,9 +107338,9 @@ return {
    },
   },
  [10406] = {
-  ["main"] = "Sengoku Basara (2014)",
+  ["main"] = "Sengoku Basara: Judge End",
   ["official"] = {
-   [1] = "戦国BASARA (2014)",
+   [1] = "戦国BASARA Judge End",
    },
   ["short"] = {
    },
@@ -108084,6 +108104,269 @@ return {
   ["main"] = "Duel Masters Versus",
   ["official"] = {
    [1] = "デュエル・マスターズ VS",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10523] = {
+  ["main"] = "Durarara!! 2",
+  ["official"] = {
+   [1] = "デュラララ!! 2",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10525] = {
+  ["main"] = "Sora no Method",
+  ["official"] = {
+   [1] = "天体のメソッド",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10526] = {
+  ["main"] = "Kantoku Fuyukitodoki",
+  ["official"] = {
+   [1] = "監督不行届",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Insufficient Direction",
+   },
+  },
+ [10527] = {
+  ["main"] = "Choubakuretsu Ijigen Menko Battle: Gigant Shooter Tsukasa",
+  ["official"] = {
+   [1] = "超爆裂異次元メンコバトル ギガントシューター つかさ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10528] = {
+  ["main"] = "Yuru Yuri Nachuyachumi!",
+  ["official"] = {
+   [1] = "ゆるゆり なちゅやちゅみ!",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10529] = {
+  ["main"] = "Shinmai Maou no Testament",
+  ["official"] = {
+   [1] = "新妹魔王の契約者[テスタメント]",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10530] = {
+  ["main"] = "Gugure! Kokkuri-san",
+  ["official"] = {
+   [1] = "繰繰れ! コックリさん",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10531] = {
+  ["main"] = "Gundam G no Reconguista",
+  ["official"] = {
+   [1] = "ガンダム Gのレコンギスタ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Gundam Reconguista in G",
+   },
+  },
+ [10532] = {
+  ["main"] = "Toruru`s Adventure",
+  ["official"] = {
+   [1] = "Toruru`s Adventure",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10533] = {
+  ["main"] = "Ren`ai Fuyou Gakuha The Animation",
+  ["official"] = {
+   [1] = "恋愛不要学派 THE ANIMATION",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10534] = {
+  ["main"] = "Shin Sei Yariman Gakuen Enkou Nikki The Animation",
+  ["official"] = {
+   [1] = "新・聖ヤリマン学園援交日記 THE ANIMATION",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10535] = {
+  ["main"] = "Lupin the IIIrd: Jigen Daisuke no Bohyou",
+  ["official"] = {
+   [1] = "LUPIN THE IIIRD 次元大介の墓標",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Lupin the IIIrd: Daisuke Jigen`s Gravestone",
+   },
+  },
+ [10536] = {
+  ["main"] = "Tsubu Doll",
+  ["official"] = {
+   [1] = "ツブ★ドル",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10537] = {
+  ["main"] = "Zankyou no Terror",
+  ["official"] = {
+   [1] = "残響のテロル",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10538] = {
+  ["main"] = "Saenai Heroine no Sodatekata",
+  ["official"] = {
+   [1] = "冴えない彼女の育てかた",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10539] = {
+  ["main"] = "Shigatsu wa Kimi no Uso",
+  ["official"] = {
+   [1] = "四月は君の嘘",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10540] = {
+  ["main"] = "Gyakusatsu Kikan",
+  ["official"] = {
+   [1] = "虐殺器官",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10541] = {
+  ["main"] = "Poulette no Isu",
+  ["official"] = {
+   [1] = "ポレットのイス",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10542] = {
+  ["main"] = "Gekkan Shoujo Nozaki-kun",
+  ["official"] = {
+   [1] = "月刊少女野崎くん",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10546] = {
+  ["main"] = "Cencoroll 2",
+  ["official"] = {
+   [1] = "センコロール2",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10548] = {
+  ["main"] = "Kuroshitsuji: Book of Murder",
+  ["official"] = {
+   [1] = "黒執事 Book of Murder",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10549] = {
+  ["main"] = "Suisei no Gargantia: Meguru Kouro, Haruka",
+  ["official"] = {
+   [1] = "翠星のガルガンティア～めぐる航路, 遥か～",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10550] = {
+  ["main"] = "Shirogane no Ishi: Argevollen",
+  ["official"] = {
+   [1] = "白銀の意思 アルジェヴォルン",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10551] = {
+  ["main"] = "Log Horizon 2",
+  ["official"] = {
+   [1] = "ログ・ホライズン 2",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10553] = {
+  ["main"] = "Space Dandy 2",
+  ["official"] = {
+   [1] = "スペース☆ダンディ 2",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10554] = {
+  ["main"] = "Dramatical Murder",
+  ["official"] = {
+   [1] = "ドラマティカルマーダー",
    },
   ["short"] = {
    },
