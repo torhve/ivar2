@@ -25971,13 +25971,14 @@ return {
   ["official"] = {
    [1] = "Pokemon: Jirachi Wish Maker",
    [2] = "Pokemonai: Džiračis - norų valdovas",
-   [3] = "Pokémon 6 - Jirachi: Wishmaker - Der Film",
-   [4] = "Pokémon 6. - Kívánj valamit!",
-   [5] = "Pokémon Jirachi-toiveentäyttäjä",
-   [6] = "Pokémon: Jirachi - Spełnione marzenia",
-   [7] = "Τζιράτσι ο Ευχοποιός",
-   [8] = "Покемон: Джирачи - исполнитель желаний",
-   [9] = "ポケットモンスター アドバンスジェネレーション 七夜の願い星ジラーチ",
+   [3] = "Pokémon 6 - Jirachi co plní přání",
+   [4] = "Pokémon 6 - Jirachi: Wishmaker - Der Film",
+   [5] = "Pokémon 6. - Kívánj valamit!",
+   [6] = "Pokémon Jirachi-toiveentäyttäjä",
+   [7] = "Pokémon: Jirachi - Spełnione marzenia",
+   [8] = "Τζιράτσι ο Ευχοποιός",
+   [9] = "Покемон: Джирачи - исполнитель желаний",
+   [10] = "ポケットモンスター アドバンスジェネレーション 七夜の願い星ジラーチ",
    },
   ["short"] = {
    },
@@ -43172,13 +43173,14 @@ return {
    [2] = "okusei",
    },
   ["syn"] = {
-   [1] = "My Wife is a High School Girl",
-   [2] = "Oku-sama wa Joshi Kousei (2005)",
-   [3] = "Oku-sama wa Joshikosei (2005)",
-   [4] = "Oku-sama wa Joshikousei (2005)",
-   [5] = "Okusama wa Joshi Kousei (2005)",
-   [6] = "Okusama wa Joshikosei (2005)",
-   [7] = "老婆是女高中生",
+   [1] = "Ma femme est une étudiante",
+   [2] = "My Wife is a High School Girl",
+   [3] = "Oku-sama wa Joshi Kousei (2005)",
+   [4] = "Oku-sama wa Joshikosei (2005)",
+   [5] = "Oku-sama wa Joshikousei (2005)",
+   [6] = "Okusama wa Joshi Kousei (2005)",
+   [7] = "Okusama wa Joshikosei (2005)",
+   [8] = "老婆是女高中生",
    },
   },
  [3363] = {
@@ -44273,8 +44275,9 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "ボイン",
-   [2] = "보잉",
+   [1] = "Boin Lecture",
+   [2] = "ボイン",
+   [3] = "보잉",
    },
   },
  [3448] = {
@@ -48758,13 +48761,13 @@ return {
  [4063] = {
   ["main"] = "Omakase Scrappers",
   ["official"] = {
-   [1] = "おまかせ スクラッパーズ",
+   [1] = "Los Robotrabajadores",
+   [2] = "おまかせ スクラッパーズ",
    },
   ["short"] = {
    },
   ["syn"] = {
    [1] = "Leave It to Scrappers",
-   [2] = "Los Robotrabajadores",
    },
   },
  [4064] = {
@@ -64900,10 +64903,11 @@ return {
    [1] = "Pokemon: Giratina & the Sky Warrior",
    [2] = "Pokémon - Giratina e o Guerreiro Celeste",
    [3] = "Pokémon - Giratina És Az Égi Harcos",
-   [4] = "Pokémon: Giratina i strażnik nieba",
-   [5] = "Pokémon: Giratina und der Himmelsritter",
-   [6] = "Покемон: Джиратина и Небесният Воин",
-   [7] = "劇場版 ポケットモンスター ダイヤモンド&パール ギラティナと氷空の花束 シェイミ",
+   [4] = "Pokémon: Giratina a strážce nebe",
+   [5] = "Pokémon: Giratina i strażnik nieba",
+   [6] = "Pokémon: Giratina und der Himmelsritter",
+   [7] = "Покемон: Джиратина и Небесният Воин",
+   [8] = "劇場版 ポケットモンスター ダイヤモンド&パール ギラティナと氷空の花束 シェイミ",
    },
   ["short"] = {
    },
@@ -69267,6 +69271,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "さいふぁ",
    },
   },
  [6303] = {
@@ -79009,7 +79014,8 @@ return {
  [7319] = {
   ["main"] = "Oppai no Ouja 48: Nanimo Kangaezu Me no Mae no Oppai Zenbu Shabure!",
   ["official"] = {
-   [1] = "おっぱいの王者48～何も考えず目の前のおっぱい全部しゃぶれ!",
+   [1] = "King of Boobs",
+   [2] = "おっぱいの王者48～何も考えず目の前のおっぱい全部しゃぶれ!",
    },
   ["short"] = {
    },
@@ -84269,7 +84275,7 @@ return {
    },
   },
  [7863] = {
-  ["main"] = "Minna no Tanoshii Natsu Yasumi",
+  ["main"] = "Minna no Tanoshii Natsuyasumi",
   ["official"] = {
    [1] = "みんなの楽しい夏休み",
    },
@@ -88850,9 +88856,9 @@ return {
    },
   },
  [8326] = {
-  ["main"] = "Rinshi!! Ekoda-chan",
+  ["main"] = "Genki!! Ekoda-chan",
   ["official"] = {
-   [1] = "臨死!! 江古田ちゃん",
+   [1] = "元気!! 江古田ちゃん",
    },
   ["short"] = {
    },
@@ -93063,9 +93069,10 @@ return {
  [8778] = {
   ["main"] = "Gekijouban Mahou Shoujo Madoka Magica",
   ["official"] = {
-   [1] = "Puella Magi Madoka Magica the Movie",
-   [2] = "剧场版 魔法少女小圆",
-   [3] = "劇場版 魔法少女まどか☆マギカ",
+   [1] = "Madoka Magica The Movie",
+   [2] = "Puella Magi Madoka Magica the Movie",
+   [3] = "剧场版 魔法少女小圆",
+   [4] = "劇場版 魔法少女まどか☆マギカ",
    },
   ["short"] = {
    },
@@ -98881,6 +98888,7 @@ return {
    },
   ["short"] = {
    [1] = "WU,G!",
+   [2] = "wug",
    },
   ["syn"] = {
    },
@@ -101872,11 +101880,13 @@ return {
  [9732] = {
   ["main"] = "Buki yo Saraba",
   ["official"] = {
-   [1] = "武器よさらば",
+   [1] = "Farewell to Weapons",
+   [2] = "武器よさらば",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Farewell to Arms",
    },
   },
  [9733] = {
@@ -101890,14 +101900,19 @@ return {
    },
   },
  [9734] = {
-  ["main"] = "Date a Live OAD",
+  ["main"] = "Date a Live: Date to Date",
   ["official"] = {
-   [1] = "デート・ア・ライブ OAD",
+   [1] = "デート・ア・ライブ DATE TO DATE",
    [2] = "约会大作战 OAD",
    },
   ["short"] = {
+   [1] = "Date A Live Encore",
    },
   ["syn"] = {
+   [1] = "Date a Live Encore",
+   [2] = "Date a Live OAD",
+   [3] = "デート・ア・ライブ OAD",
+   [4] = "デート・ア・ライブ アンコール",
    },
   },
  [9736] = {
@@ -102377,8 +102392,9 @@ return {
  [9795] = {
   ["main"] = "Juusen Battle Monsuno (2013)",
   ["official"] = {
-   [1] = "Monsuno`",
-   [2] = "獣旋バトル モンスーノ (2013)",
+   [1] = "Monsuno: Chaos walki",
+   [2] = "Monsuno`",
+   [3] = "獣旋バトル モンスーノ (2013)",
    },
   ["short"] = {
    },
@@ -104484,6 +104500,7 @@ return {
    [2] = "花物语",
    },
   ["short"] = {
+   [1] = "HMG",
    },
   ["syn"] = {
    [1] = "Monogatari Series: Second Season +α",
@@ -105622,6 +105639,7 @@ return {
    [1] = "魔法科高校の劣等生",
    },
   ["short"] = {
+   [1] = "mahouka",
    },
   ["syn"] = {
    [1] = "The Irregular at Magic High School",
@@ -105790,6 +105808,7 @@ return {
   ["main"] = "Onee-chan ga Kita",
   ["official"] = {
    [1] = "お姉ちゃんが来た",
+   [2] = "姐姐来了",
    },
   ["short"] = {
    },
@@ -106141,6 +106160,7 @@ return {
    [2] = "Wake Up, Girls! 七位偶像",
    },
   ["short"] = {
+   [1] = "wug movie",
    },
   ["syn"] = {
    [1] = "Wake Up, Girls! - Seven Idols",
@@ -106645,13 +106665,14 @@ return {
  [10310] = {
   ["main"] = "Yuu Gi Ou: Arc-V",
   ["official"] = {
-   [1] = "遊戯王 アーク・ファイブ",
+   [1] = "遊☆戯☆王ARC‐V",
    },
   ["short"] = {
    },
   ["syn"] = {
    [1] = "Yu-Gi-Oh! Arc Five",
    [2] = "Yu-Gi-Oh! Arc-V",
+   [3] = "遊戯王 アーク・ファイブ",
    },
   },
  [10311] = {
@@ -107828,16 +107849,6 @@ return {
   ["syn"] = {
    },
   },
- [10479] = {
-  ["main"] = "Koukaku Kidoutai Arise: Borderless Project",
-  ["official"] = {
-   [1] = "攻殻機動隊ARISE border:less project",
-   },
-  ["short"] = {
-   },
-  ["syn"] = {
-   },
-  },
  [10480] = {
   ["main"] = "Rokujouma no Shinryakusha!?",
   ["official"] = {
@@ -107900,9 +107911,9 @@ return {
    },
   },
  [10496] = {
-  ["main"] = "Francesca",
+  ["main"] = "Francesca: Girls Be Ambitious",
   ["official"] = {
-   [1] = "フランチェスカ",
+   [1] = "フランチェスカ Girls Be Ambitious",
    },
   ["short"] = {
    },
@@ -108284,7 +108295,7 @@ return {
    },
   },
  [10541] = {
-  ["main"] = "Poulette no Isu",
+  ["main"] = "Paulette no Isu",
   ["official"] = {
    [1] = "ポレットのイス",
    },
@@ -108367,6 +108378,216 @@ return {
   ["main"] = "Dramatical Murder",
   ["official"] = {
    [1] = "ドラマティカルマーダー",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10555] = {
+  ["main"] = "Minarai Diva",
+  ["official"] = {
+   [1] = "みならいディーバ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10556] = {
+  ["main"] = "Sagashita no wa Oheya, Mitsuketa no wa Mirai",
+  ["official"] = {
+   [1] = "探したのはお部屋, 見つけたのは未来",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10559] = {
+  ["main"] = "Enbi",
+  ["official"] = {
+   [1] = "艶美",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10561] = {
+  ["main"] = "Ryuugajou Nanana no Maizoukin (2014)",
+  ["official"] = {
+   [1] = "龍ヶ嬢七々々の埋蔵金 (2014)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10562] = {
+  ["main"] = "Master of Torque",
+  ["official"] = {
+   [1] = "マスター・オブ・トルク",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10563] = {
+  ["main"] = "Pocket Monsters XY tokubetsu-hen: MEGA EVOLUTION I",
+  ["official"] = {
+   [1] = "ポケットモンスター ＸＹ特別編 「最強メガシンカ～Act I～」",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10564] = {
+  ["main"] = "D-Frag! OAD",
+  ["official"] = {
+   [1] = "ディーふらぐ! OAD",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10565] = {
+  ["main"] = "Minami no Shima no Dera-chan",
+  ["official"] = {
+   [1] = "南の島のデラちゃん",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10566] = {
+  ["main"] = "Kara no Kyoukai: Mirai Fukuin - Extra Chorus",
+  ["official"] = {
+   [1] = "空の境界 未来福音 extra chorus",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10567] = {
+  ["main"] = "Mujaki no Rakuen",
+  ["official"] = {
+   [1] = "無邪気の楽園",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Paradise of Innocence",
+   },
+  },
+ [10568] = {
+  ["main"] = "Date A Live Encore III",
+  ["official"] = {
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10569] = {
+  ["main"] = "Macross",
+  ["official"] = {
+   [1] = "マクロス",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10570] = {
+  ["main"] = "Toki wa Meguru: Tokyo Station",
+  ["official"] = {
+   [1] = "時季[とき]は巡る ~TOKYO STATION~",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10571] = {
+  ["main"] = "Mushishi Zoku Shou 2",
+  ["official"] = {
+   [1] = "蟲師 続章 2",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10572] = {
+  ["main"] = "Mikakunin de Shinkoukei OAD",
+  ["official"] = {
+   [1] = "未確認で進行形 OAD",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10573] = {
+  ["main"] = "Moses with the False Legs",
+  ["official"] = {
+   [1] = "義足のMoses",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10574] = {
+  ["main"] = "Go-Go Tamagotchi!",
+  ["official"] = {
+   [1] = "GO‐GO たまごっち!",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10575] = {
+  ["main"] = "Love Stage!! OAD",
+  ["official"] = {
+   [1] = "LOVE STAGE!! OAD",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10576] = {
+  ["main"] = "D.backup",
+  ["official"] = {
+   [1] = "D.backup",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10577] = {
+  ["main"] = "Gudetama",
+  ["official"] = {
+   [1] = "ぐでたま",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10578] = {
+  ["main"] = "Pretty Rhythm:  All Star Selection",
+  ["official"] = {
+   [1] = "プリティーリズム・オールスターセレクション",
    },
   ["short"] = {
    },
