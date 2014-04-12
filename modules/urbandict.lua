@@ -22,6 +22,7 @@ local parseJSON = function(data)
 	end
 end
 
+local APIBase = 'http://api.urbandictionary.com/v0/define?term=%s'
 local handler = function(self, source, destination, input)
 	input = trim(input)
 	simplehttp(
@@ -43,7 +44,6 @@ local handler = function(self, source, destination, input)
 	)
 end
 
-local APIBase = 'http://api.urbandictionary.com/v0/define?term=%s'
 return {
 	PRIVMSG = {
 		['^!ud (.+)$'] = handler,
