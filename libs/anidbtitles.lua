@@ -197,8 +197,9 @@ return {
    },
   ["syn"] = {
    [1] = "Bastard! Destroyer of Darkness",
-   [2] = "バスタード!! 暗黒の破壊神",
-   [3] = "暗黑破坏神",
+   [2] = "Bastard!! L`oscuro distruttore",
+   [3] = "バスタード!! 暗黒の破壊神",
+   [4] = "暗黑破坏神",
    },
   },
  [11] = {
@@ -1111,7 +1112,7 @@ return {
    },
   },
  [62] = {
-  ["main"] = "Saber Marionette J Again",
+  ["main"] = "Mata Mata Saber Marionette J",
   ["official"] = {
    [1] = "Saber Marionette J Again",
    [2] = "またまたセイバーマリオネットJ",
@@ -2924,8 +2925,7 @@ return {
    },
   ["syn"] = {
    [1] = "Saber Rider",
-   [2] = "Sêjûshi Bisumaruku",
-   [3] = "Космический Рыцарь и Звёздные Шерифы",
+   [2] = "Космический Рыцарь и Звёздные Шерифы",
    },
   },
  [163] = {
@@ -15634,8 +15634,8 @@ return {
    [6] = "Pokémon 4: Viajantes do Tempo",
    [7] = "Pokémon 4Ever",
    [8] = "Pokémon 4Ever - Matka aikojen halki",
-   [9] = "Pokémon Navždy: Celebi - Hlas lesa",
-   [10] = "Pokémon för alltid: Celebi, skogens röst",
+   [9] = "Pokémon för alltid: Celebi, skogens röst",
+   [10] = "Pokémon navždy",
    [11] = "Pokémon: Głos lasu",
    [12] = "Πόκεμον για Πάντα",
    [13] = "Покемон навсегда",
@@ -22690,6 +22690,7 @@ return {
   ["official"] = {
    [1] = "La Liga del Dragón",
    [2] = "ドラゴンリーグ",
+   [3] = "쥐라기 월드컵",
    },
   ["short"] = {
    },
@@ -26902,7 +26903,7 @@ return {
    [8] = "MonteCristo",
    [9] = "O Conde de Monte Cristo",
    [10] = "Zemsta hrabiego Monte Cristo",
-   [11] = "مونتي كريستو",
+   [11] = "مونت كريستو",
    [12] = "کونت مونت کریستو",
    [13] = "巌窟王",
    [14] = "암굴왕",
@@ -33447,12 +33448,12 @@ return {
    [3] = "Pokemonai: Deoksio likimas",
    [4] = "Pokémon - Deoxys Duet",
    [5] = "Pokémon 7 - Destiny Deoxys - Der Film",
-   [6] = "Pokémon 7: Alma Gémea",
-   [7] = "Pokémon 7: Alma Gêmea",
-   [8] = "Pokémon Salaperäinen Deoxys",
-   [9] = "Pokémon: Cel - Deoxys",
-   [10] = "Pokémon: Fratello dallo Spazio",
-   [11] = "Pokémon: Osudový Deoxys",
+   [6] = "Pokémon 7 - Osud pokémona Deoxise",
+   [7] = "Pokémon 7: Alma Gémea",
+   [8] = "Pokémon 7: Alma Gêmea",
+   [9] = "Pokémon Salaperäinen Deoxys",
+   [10] = "Pokémon: Cel - Deoxys",
+   [11] = "Pokémon: Fratello dallo Spazio",
    [12] = "Πεπρωμένο Ντέοξις",
    [13] = "Покемон: Судьба Деоксиса",
    [14] = "ポケットモンスター アドバンスジェネレーション 裂空の訪問者 デオキシス",
@@ -38833,8 +38834,7 @@ return {
    [1] = "Pokemon: Lucario and The Mystery of Mew",
    [2] = "Pokémon - Lucario et le Mystère de Mew",
    [3] = "Pokémon - Lucario und das Geheimnis von Mew",
-   [4] = "Pokémon: Lucario a tajemný Mew",
-   [5] = "劇場版 ポケットモンスター アドバンスジェネレーション ミュウと波導の勇者ルカリオ",
+   [4] = "劇場版 ポケットモンスター アドバンスジェネレーション ミュウと波導の勇者ルカリオ",
    },
   ["short"] = {
    },
@@ -38844,6 +38844,7 @@ return {
    [3] = "Pokemon 2005 - Mew and the Wave-Guiding Hero Lucario",
    [4] = "Pokemon Movie 8 - Lucario and The Mystery of Mew",
    [5] = "Pokemon: Movie 8",
+   [6] = "Pokémon: Lucario a tajemný Mew",
    },
   },
  [2849] = {
@@ -72433,6 +72434,7 @@ return {
    [1] = "Durarara!!",
    [2] = "Дюрарара!!",
    [3] = "デュラララ!!",
+   [4] = "无头骑士异闻录 DuRaRaRa!!",
    },
   ["short"] = {
    },
@@ -72632,11 +72634,13 @@ return {
  [6694] = {
   ["main"] = "Kakkun Cafe",
   ["official"] = {
-   [1] = "カッくんカフェ",
+   [1] = "KAKKUN CAFÉ",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "カッくんカフェ",
+   [2] = "カックンカフェ",
    },
   },
  [6695] = {
@@ -74539,7 +74543,7 @@ return {
    },
   },
  [6882] = {
-  ["main"] = "Poppaya-san Nonki Kikanshi",
+  ["main"] = "Poppoya-san Nonki Kikanshi",
   ["official"] = {
    [1] = "ポッポやさん のんき機関士",
    },
@@ -74550,7 +74554,7 @@ return {
    },
   },
  [6883] = {
-  ["main"] = "Poppaya-san no Nonki Ekichou",
+  ["main"] = "Poppoya-san no Nonki Ekichou",
   ["official"] = {
    [1] = "ポッポやさんののんき駅長",
    },
@@ -97662,8 +97666,9 @@ return {
  [9287] = {
   ["main"] = "Maoyuu Maou Yuusha",
   ["official"] = {
-   [1] = "まおゆう魔王勇者",
-   [2] = "마오유우 마왕용사",
+   [1] = "Maoyu: Archenemy & Hero",
+   [2] = "まおゆう魔王勇者",
+   [3] = "마오유우 마왕용사",
    },
   ["short"] = {
    [1] = "maoyuu",
@@ -99135,7 +99140,7 @@ return {
  [9445] = {
   ["main"] = "Puchimas! Petit Idolmaster",
   ["official"] = {
-   [1] = "Puchim@s",
+   [1] = "Puchim@s! Petit Idolm@ster",
    [2] = "ぷちます! プチ・アイドルマスター",
    },
   ["short"] = {
@@ -100035,9 +100040,11 @@ return {
    [1] = "彼女がフラグをおられたら",
    },
   ["short"] = {
+   [1] = "gaworare",
    },
   ["syn"] = {
-   [1] = "がをられ",
+   [1] = "Kanojo ga Flag wo Oraretara",
+   [2] = "がをられ",
    },
   },
  [9525] = {
@@ -100657,7 +100664,8 @@ return {
  [9591] = {
   ["main"] = "Yowamushi Pedal",
   ["official"] = {
-   [1] = "弱虫ペダル",
+   [1] = "En selle, Sakamichi !",
+   [2] = "弱虫ペダル",
    },
   ["short"] = {
    [1] = "yowapeda",
@@ -101283,6 +101291,7 @@ return {
    },
   ["short"] = {
    [1] = "GitS: Arise",
+   [2] = "gitsa",
    },
   ["syn"] = {
    [1] = "Дух в стальной плоти: У истоков",
@@ -102450,7 +102459,8 @@ return {
   ["official"] = {
    [1] = "No-Rin",
    [2] = "のうりん",
-   [3] = "농림",
+   [3] = "农林",
+   [4] = "농림",
    },
   ["short"] = {
    },
@@ -103326,7 +103336,7 @@ return {
   ["main"] = "Ninja Hattori-kun (2012)",
   ["official"] = {
    [1] = "Ninja Hattori",
-   [2] = "忍者ハットリくん (2012年版)",
+   [2] = "忍者ハットリくん (2012)",
    },
   ["short"] = {
    },
@@ -103361,12 +103371,12 @@ return {
  [9904] = {
   ["main"] = "Natsume Yuujinchou: Nyanko-sensei to Hajimete no Otsukai",
   ["official"] = {
-   [1] = "夏目友人帐 OAD",
-   [2] = "夏目友人帳 ニャンコ先生とはじめてのおつかい",
+   [1] = "夏目友人帳 ニャンコ先生とはじめてのおつかい",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "夏目友人帐 OAD",
    },
   },
  [9905] = {
@@ -103467,12 +103477,13 @@ return {
  [9916] = {
   ["main"] = "Akuma no Riddle",
   ["official"] = {
-   [1] = "悪魔のリドル",
+   [1] = "Riddle Story of Devil",
+   [2] = "恶魔的谜语",
+   [3] = "悪魔のリドル riddle story of devil",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Riddle Story of Devil",
    },
   },
  [9917] = {
@@ -103578,14 +103589,16 @@ return {
    },
   },
  [9927] = {
-  ["main"] = "Love Live! 2",
+  ["main"] = "Love Live! School Idol Project (2014)",
   ["official"] = {
-   [1] = "Love Live! 2",
+   [1] = "Love Live! School Idol Project (saison 2)",
+   [2] = "ラブライブ! School idol project (2014)",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "ラブライブ! 2",
+   [1] = "Love Live! 2",
+   [2] = "ラブライブ! 2",
    },
   },
  [9928] = {
@@ -103668,7 +103681,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Среща на живо 2",
+   [1] = "Date a Live 2",
+   [2] = "Среща на живо 2",
    },
   },
  [9936] = {
@@ -103930,7 +103944,7 @@ return {
  [9968] = {
   ["main"] = "Gin no Saji (2014)",
   ["official"] = {
-   [1] = "銀の匙 (2014)",
+   [1] = "銀の匙 Silver Spoon (2014)",
    [2] = "银之匙 Silver Spoon (2014)",
    },
   ["short"] = {
@@ -103964,7 +103978,8 @@ return {
  [9973] = {
   ["main"] = "Hitsugi no Chaika",
   ["official"] = {
-   [1] = "棺姫のチャイカ",
+   [1] = "Chaika the Coffin Princess",
+   [2] = "棺姫のチャイカ",
    },
   ["short"] = {
    },
@@ -104157,20 +104172,22 @@ return {
  [9996] = {
   ["main"] = "Seikoku no Dragonar",
   ["official"] = {
-   [1] = "星刻の竜騎士",
+   [1] = "Dragonar Academy",
+   [2] = "星刻の竜騎士",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Dragonar Academy",
    },
   },
  [9998] = {
   ["main"] = "No Game No Life",
   ["official"] = {
-   [1] = "ノーゲーム・ノーライフ",
+   [1] = "No Game No Life",
+   [2] = "ノーゲーム・ノーライフ",
    },
   ["short"] = {
+   [1] = "NGNL",
    },
   ["syn"] = {
    },
@@ -104707,12 +104724,12 @@ return {
  [10069] = {
   ["main"] = "Gokukoku no Brynhildr",
   ["official"] = {
-   [1] = "極黒のブリュンヒルデ",
+   [1] = "Brynhildr in the Darkness",
+   [2] = "極黒のブリュンヒルデ",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Brynhildr in the Darkness",
    },
   },
  [10071] = {
@@ -105660,7 +105677,7 @@ return {
  [10182] = {
   ["main"] = "Mahouka Koukou no Rettousei",
   ["official"] = {
-   [1] = "魔法科高校の劣等生",
+   [1] = "魔法科高校の劣等生 The irregular at magic high school",
    },
   ["short"] = {
    [1] = "mahouka",
@@ -105798,9 +105815,9 @@ return {
    },
   },
  [10201] = {
-  ["main"] = "Kuro no Su: Chronus",
+  ["main"] = "Chronus",
   ["official"] = {
-   [1] = "黒の栖-クロノス-",
+   [1] = "黒の栖[クロノス]",
    },
   ["short"] = {
    },
@@ -105898,6 +105915,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "La Corda d`Oro Blue Sky",
    },
   },
  [10211] = {
@@ -106278,7 +106296,8 @@ return {
  [10254] = {
   ["main"] = "Soul Eater Not!",
   ["official"] = {
-   [1] = "ソウルイーターノット!",
+   [1] = "Soul Eater Not!",
+   [2] = "ソウルイーターノット!",
    },
   ["short"] = {
    [1] = "SEN!",
@@ -106506,6 +106525,7 @@ return {
   ["official"] = {
    [1] = "The Kawai Complex Guide to Manors and Hostel Behavior",
    [2] = "僕らはみんな河合荘",
+   [3] = "我们大家的河合庄",
    },
   ["short"] = {
    },
@@ -106577,12 +106597,13 @@ return {
  [10295] = {
   ["main"] = "Mangaka-san to Assistant-san to The Animation",
   ["official"] = {
-   [1] = "マンガ家さんとアシスタントさんと THE ANIMATION",
+   [1] = "マンガ家さんとアシスタントさんと THE ANIMATION THE COMIC ARTIST AND ASSISTANTS",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "The Comic Artist and Assistants",
+   [1] = "Mangaka-san to Assistant-san to",
+   [2] = "The Comic Artist and Assistants",
    },
   },
  [10296] = {
@@ -107028,12 +107049,14 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Fuuun Ishin Dai Shogun",
    },
   },
  [10366] = {
   ["main"] = "Kenzen Robo Daimidaler",
   ["official"] = {
-   [1] = "健全ロボ ダイミダラー",
+   [1] = "Daimidaler: Prince vs. Penguin Empire",
+   [2] = "健全ロボ ダイミダラー DAIMIDALER THE SOUND ROBOT",
    },
   ["short"] = {
    },
@@ -107167,13 +107190,14 @@ return {
  [10384] = {
   ["main"] = "Mushishi Zoku Shou",
   ["official"] = {
-   [1] = "Mushishi: Zoku-Shô",
-   [2] = "蟲師 続章",
+   [1] = "蟲師 続章",
    },
   ["short"] = {
    [1] = "mushi2",
+   [2] = "mushishi2",
    },
   ["syn"] = {
+   [1] = "Mushishi: Zoku-Shô",
    },
   },
  [10385] = {
@@ -107274,13 +107298,15 @@ return {
  [10395] = {
   ["main"] = "Soredemo Sekai wa Utsukushii",
   ["official"] = {
-   [1] = "それでも世界は美しい",
+   [1] = "The World Is Still Beautiful",
+   [2] = "それでも世界は美しい Still world is Beautiful",
    },
   ["short"] = {
    [1] = "soreseka",
    },
   ["syn"] = {
    [1] = "Still World Is Beautiful",
+   [2] = "Still, the World Is Beautiful",
    },
   },
  [10396] = {
@@ -107328,7 +107354,8 @@ return {
  [10400] = {
   ["main"] = "Ping Pong The Animation",
   ["official"] = {
-   [1] = "ピンポン THE ANIMATION",
+   [1] = "Ping Pong the Animation",
+   [2] = "ピンポン THE ANIMATION",
    },
   ["short"] = {
    },
@@ -107461,7 +107488,8 @@ return {
   ["main"] = "Selector Infected Wixoss",
   ["official"] = {
    [1] = "Selector Infected WIXOSS",
-   [2] = "selector infected WIXOSS",
+   [2] = "Selector Infected Wixoss",
+   [3] = "selector infected WIXOSS",
    },
   ["short"] = {
    },
@@ -107598,6 +107626,7 @@ return {
   ["main"] = "Blade & Soul",
   ["official"] = {
    [1] = "Blade & Soul",
+   [2] = "剑灵",
    },
   ["short"] = {
    },
@@ -107810,6 +107839,7 @@ return {
    },
   ["syn"] = {
    [1] = "Crossroad",
+   [2] = "Z-Kai: Cross Road",
    },
   },
  [10459] = {
@@ -107835,7 +107865,8 @@ return {
  [10462] = {
   ["main"] = "Abarenbou Rikishi!! Matsutarou",
   ["official"] = {
-   [1] = "暴れん坊力士!!松太郎",
+   [1] = "Rowdy Sumo Wrestler Matsutaro!!",
+   [2] = "暴れん坊力士!!松太郎",
    },
   ["short"] = {
    },
@@ -108470,13 +108501,16 @@ return {
    },
   },
  [10563] = {
-  ["main"] = "Pocket Monsters XY tokubetsu-hen: MEGA EVOLUTION I",
+  ["main"] = "Pocket Monsters XY: Mega Evolution",
   ["official"] = {
-   [1] = "ポケットモンスター ＸＹ特別編 「最強メガシンカ～Act I～」",
+   [1] = "ポケットモンスターXY MEGA EVOLUTION",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Pocket Monsters XY Special: The Strongest Mega Evolution ~Act I~",
+   [2] = "Pocket Monsters XY Tokubetsu Hen: Saikyou Megashinka",
+   [3] = "ポケットモンスターXY 特別編 最強メガシンカ",
    },
   },
  [10564] = {
@@ -108694,6 +108728,117 @@ return {
   ["main"] = "Idolmaster: Cinderella Girls",
   ["official"] = {
    [1] = "アイドルマスター シンデレラガールズ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10586] = {
+  ["main"] = "Himitsukessha Taka no Tsume Ex",
+  ["official"] = {
+   [1] = "秘密結社 鷹の爪 EX",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10587] = {
+  ["main"] = "Non Non Biyori 2",
+  ["official"] = {
+   [1] = "のんのんびより 2",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10588] = {
+  ["main"] = "Ninja Slayer",
+  ["official"] = {
+   [1] = "ニンジャスレイヤー",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10589] = {
+  ["main"] = "Ookami Shoujo to Kuro Ouji",
+  ["official"] = {
+   [1] = "オオカミ少女と黒王子",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Wolf Girl & Black Prince",
+   },
+  },
+ [10590] = {
+  ["main"] = "Neko no Dayan",
+  ["official"] = {
+   [1] = "猫のダヤン",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10591] = {
+  ["main"] = "Juuza Engi: Engetsu Sangokuden",
+  ["official"] = {
+   [1] = "十三支演義～偃月三国伝～",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10592] = {
+  ["main"] = "Sega Hard Girls",
+  ["official"] = {
+   [1] = "セガ・ハード・ガールズ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10593] = {
+  ["main"] = "Neko Pitcher",
+  ["official"] = {
+   [1] = "猫ピッチャー",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10594] = {
+  ["main"] = "Konna ni Yasashiku Sareta no",
+  ["official"] = {
+   [1] = "こんなに優しくされたの",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10596] = {
+  ["main"] = "Nanatsu no Taizai: The Seven Deadly Sins",
+  ["official"] = {
+   [1] = "七つの大罪 The Seven Deadly Sins",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10597] = {
+  ["main"] = "Carino Coni",
+  ["official"] = {
+   [1] = "カリーノ・コニ",
    },
   ["short"] = {
    },
