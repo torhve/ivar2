@@ -51,18 +51,7 @@ return {
 
 				function(data)
 					local results = parseXML(data)
-					local out = {}
-
-					local n = 0
-					local msgLimit = (512 - 16 - 65 - 10) - #self.config.nick - #destination
-					for i=1, #results do
-						n = n + #results[i]
-						if(n < msgLimit) then
-							table.insert(out, results[i])
-						else
-							break
-						end
-					end
+					local out = self:LimitOutput(destination, results, 2)
 
 					if(#out > 0) then
 						self:Msg('privmsg', destination, source, table.concat(out, ' '))

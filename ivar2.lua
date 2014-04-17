@@ -11,6 +11,8 @@ package.cpath = table.concat({
 	'',
 }, ';') .. package.cpath
 
+local configFile, reload = ...
+
 local connection = require'handler.connection'
 local uri_mod = require'handler.uri'
 local nixio = require'nixio'
@@ -37,6 +39,16 @@ local ivar2 = {
 		end
 	end,
 }
+
+local matchFirst = function(pattern, ...)
+	for i=1, select('#', ...) do
+		local arg = select(i, ...)
+		if(arg) then
+			local match = arg:match(pattern)
+			if(match) then return match end
+		end
+	end
+end
 
 local events = {
 	['PING'] = {
@@ -133,6 +145,8 @@ local events = {
 
 	['005'] = {
 		core = {
+			-- XXX: We should probably parse out everything and move it to
+			-- self.server or something.
 			function(self, source, param, param2)
 				local network = param:match("NETWORK=([^ ]+)")
 				if(network) then
@@ -372,6 +386,25 @@ function ivar2:ParseMask(mask)
 	return source
 end
 
+function ivar2:LimitOutput(destination, output, sep, padding)
+	-- 512 - <nick> - ":" - "!" - 63 (max host size, rfc) - " " - destination
+	local limit = 512 - #self.config.nick - 1 - 1 - 63 - 1 - #destination - (padding or 0)
+	sep = sep or 2
+
+	local out = {}
+	for i=1, #output do
+		local entry = output[i]
+		limit = limit - #entry - sep
+		if(limit > 0) then
+			table.insert(out, entry)
+		else
+			break
+		end
+	end
+
+	return out, limit
+end
+
 function ivar2:DispatchCommand(command, argument, source, destination)
 	if(not events[command]) then return end
 
@@ -535,7 +568,7 @@ function ivar2:Reload()
 		return self:Log('error', 'Unable to reload core: %s.', coreError)
 	end
 
-	local success, message = pcall(coreFunc)
+	local success, message = pcall(coreFunc, configFile, 'reload')
 	if(not success) then
 		return self:Log('error', 'Unable to execute new core: %s.', message)
 	else
@@ -549,6 +582,7 @@ function ivar2:Reload()
 		message.channels = self.channels
 		message.event = self.event
 		message.network = self.network
+		message.maxNickLength = self.maxNickLength
 		-- Clear the registered events
 		message.event:ClearAll()
 
@@ -638,7 +672,13 @@ function ivar2:ParseInput(data)
 	end
 end
 
+if(reload) then
+	return ivar2
+end
+
 -- Attempt to create the cache folder.
 nixio.fs.mkdir('cache')
 
-return ivar2
+local config, err = loadfile(configFile)()
+ivar2:Connect(config)
+ivar2.Loop:loop()
