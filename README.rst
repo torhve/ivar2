@@ -12,21 +12,61 @@ Installation
 
 Install required dependencies
 
-sudo apt-get install luarocks libev-dev liblua5.1-logging liblua5.1-iconv0 liblua5.1-json cmake
-sudo luarocks install "https://github.com/brimworks/lua-ev/raw/master/rockspec/lua-ev-scm-1.rockspec"
-sudo luarocks install "https://github.com/Neopallium/nixio/raw/master/nixio-scm-0.rockspec"
-sudo luarocks install "https://github.com/Neopallium/lua-handlers/raw/master/lua-handler-scm-0.rockspec"
-sudo luarocks install "https://github.com/brimworks/lua-http-parser/raw/master/lua-http-parser-scm-0.rockspec"
-sudo luarocks install "https://github.com/Neopallium/lua-handlers/raw/master/lua-handler-http-scm-0.rockspec"
-sudo luarocks install lsqlite3
-wget https://github.com/haste/lua-idn/raw/master/idn.lua
+    sudo apt-get install luarocks libev-dev liblua5.1-logging liblua5.1-iconv0 liblua5.1-json cmake
+    sudo luarocks install "https://github.com/brimworks/lua-ev/raw/master/rockspec/lua-ev-scm-1.rockspec"
+    sudo luarocks install "https://github.com/Neopallium/nixio/raw/master/nixio-scm-0.rockspec"
+    sudo luarocks install "https://github.com/Neopallium/lua-handlers/raw/master/lua-handler-scm-0.rockspec"
+    sudo luarocks install "https://github.com/brimworks/lua-http-parser/raw/master/lua-http-parser-scm-0.rockspec"
+    sudo luarocks install "https://github.com/Neopallium/lua-handlers/raw/master/lua-handler-http-scm-0.rockspec"
+    sudo luarocks install lsqlite3
+    wget https://github.com/haste/lua-idn/raw/master/idn.lua
 
 Configuration File
 ------------------
 
-Create a bot launcher
-vim bot.lua
+Create a bot config sort of like this
 
+
+> myconfig.lua
+
+    return {
+        nick = 'ivar2,
+        autoReconnect = true,
+        ident = 'ivar2',
+        host = 'irc.efnet.no',
+        uri = 'tcp://irc.efnet.no:6667/?laddr=my.host.name&lport=0',
+        port = 6667,
+        realname = 'ivar',
+        owners = { 'nick!ident@my.host.name'},
+        modules = {
+        'admin',
+        'autojoin',
+        'lastfm',
+        'spotify',
+        'karma',
+        'roll',
+        'title/init',
+        'tvrage',
+        'urbandict',
+        'substitute',
+        'lua/init',
+        'ping',
+        'more',
+         
+        },
+        channels = {
+            ['#ivar'] = {
+                disabledModules = {'olds'},
+            },
+        }
+    }
+
+
+
+Launch bot
+----------
+
+    luajit ivar2.lua myconfig.lua
 
 Modules
 -------
