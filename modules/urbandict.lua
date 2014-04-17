@@ -44,6 +44,11 @@ return {
 					end
 				end
 			)
-		end,
+end
+
+return {
+	PRIVMSG = {
+		['^!ud (.+)$'] = handler,
+		['^!urb (.+)$'] = handler,
 	},
 }
