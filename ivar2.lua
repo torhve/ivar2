@@ -13,6 +13,10 @@ package.cpath = table.concat({
 
 local configFile, reload = ...
 
+-- Check if we have moonscript available
+local moonstatus, moonscript = pcall(require, 'moonscript')
+moonscript = moonstatus and moonscript or nil
+
 local connection = require'handler.connection'
 local uri_mod = require'handler.uri'
 local nixio = require'nixio'
@@ -22,6 +26,8 @@ require'logging.console'
 
 local log = logging.console()
 local loop = ev.Loop.default
+
+
 
 local ivar2 = {
 	ignores = {},
@@ -496,6 +502,10 @@ function ivar2:LoadModule(moduleName)
 	local moduleFile, moduleError = loadfile('modules/' .. moduleName .. '.lua')
 	if(not moduleFile) then
 		moduleFile, moduleError = loadfile('modules/' .. moduleName .. '/init.lua')
+	end
+
+    if(not moduleFile and moonscript) then
+		moduleFile, moduleError = moonscript.loadfile('modules/' .. moduleName .. '.moon')
 	end
 
 	if(not moduleFile) then
