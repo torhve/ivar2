@@ -75,10 +75,10 @@ local parseData = function(source, destination, data, search)
 		ins("%s", movie['mpaa_rating'])
 	end
 
-	ins("- Critics: %d%%", movie['ratings']['critics_score'])
+	ins("- Critics: \002%d\002%%", movie['ratings']['critics_score'])
 	ins("(%s)", movie['ratings']['critics_rating'])
 
-	ins("- Audience: %d%%", movie['ratings']['audience_score'])
+	ins("- Audience: \002%d\002%%", movie['ratings']['audience_score'])
 	ins("(%s)", movie['ratings']['audience_rating'])
 
 	ins("- %s", movie['critics_consensus'])
