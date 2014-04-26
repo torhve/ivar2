@@ -77,7 +77,3 @@ Modules
 -------
 
 THERES TONS!
-
-Version History
----------------
-Wha-at?
