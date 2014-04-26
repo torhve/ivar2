@@ -15,7 +15,7 @@ local configFile, reload = ...
 
 -- Check if we have moonscript available
 local moonstatus, moonscript = pcall(require, 'moonscript')
-moonscript = moonstatus and moonscript or nil
+moonscript = moonstatus and moonscript
 
 local connection = require'handler.connection'
 local uri_mod = require'handler.uri'
@@ -26,8 +26,6 @@ require'logging.console'
 
 local log = logging.console()
 local loop = ev.Loop.default
-
-
 
 local ivar2 = {
 	ignores = {},
@@ -506,6 +504,10 @@ function ivar2:LoadModule(moduleName)
 
     if(not moduleFile and moonscript) then
 		moduleFile, moduleError = moonscript.loadfile('modules/' .. moduleName .. '.moon')
+	end
+
+    if(not moduleFile and moonscript) then
+		moduleFile, moduleError = moonscript.loadfile('modules/' .. moduleName .. '/init.moon')
 	end
 
 	if(not moduleFile) then
