@@ -12,6 +12,8 @@ Installation
 
 Install required dependencies
 
+::
+
     sudo apt-get install luarocks libev-dev liblua5.1-logging liblua5.1-iconv0 liblua5.1-json cmake
     sudo luarocks install "https://github.com/brimworks/lua-ev/raw/master/rockspec/lua-ev-scm-1.rockspec"
     sudo luarocks install "https://github.com/Neopallium/nixio/raw/master/nixio-scm-0.rockspec"
@@ -27,7 +29,9 @@ Configuration File
 Create a bot config sort of like this
 
 
-> myconfig.lua
+**myconfig.lua**
+
+::
 
     return {
         nick = 'ivar2,
@@ -65,6 +69,8 @@ Create a bot config sort of like this
 
 Launch bot
 ----------
+
+::
 
     luajit ivar2.lua myconfig.lua
 
