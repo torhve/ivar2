@@ -45,7 +45,7 @@ end
 local APIBase = 'http://api.wolframalpha.com/v2/query?input=%s&format=plaintext&appid=' .. ivar2.config.wolframalphaAPIKey
 return {
 	PRIVMSG = {
-		['^!wa (.+)$'] = function(self, source, destination, input)
+		['^%pwa (.+)$'] = function(self, source, destination, input)
 			simplehttp(
 				APIBase:format(urlEncode(input)),
 

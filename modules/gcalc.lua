@@ -33,8 +33,8 @@ end
 
 return {
 	PRIVMSG = {
-		['^.gcalc (.+)$'] = handle,
-		['^.calc (.+)$'] = handle,
-		['^.galc (.+)$'] = handle,
+		['^%pgcalc (.+)$'] = handle,
+		['^%pcalc (.+)$'] = handle,
+		['^%pgalc (.+)$'] = handle,
 	},
 }
