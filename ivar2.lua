@@ -148,14 +148,18 @@ local events = {
 			-- XXX: We should probably parse out everything and move it to
 			-- self.server or something.
 			function(self, source, param, param2)
-				local network = param:match("NETWORK=([^ ]+)")
-				if(network) then
-					self.network = network
-                else
-                    local network = param2:match("NETWORK=([^ ]+)")
-                    if(network) then
-                        self.network = network
-                    end
+				-- Sometimes param holds the values, sometimes param2 holds the values.
+				-- Check first param then check param2
+				if param then 
+					local network = param:match("NETWORK=([^ ]+)")
+					if(network) then
+						self.network = network
+					end
+				elseif param2 then
+					local network = param2:match("NETWORK=([^ ]+)")
+					if(network) then
+						self.network = network
+					end
 				end
 			end,
 		},
