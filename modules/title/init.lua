@@ -289,6 +289,9 @@ return {
 			for split in argument:gmatch('%S+') do
 				for i=1, #patterns do
 					local _, count = split:gsub(patterns[i], function(url)
+						-- URLs usually do not end with , Strip it.
+						url = url:gsub(',$', '')
+
 						if(url:sub(1,4) ~= 'http') then
 							url = 'http://' .. url
 						end
