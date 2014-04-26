@@ -7,10 +7,11 @@ customHosts['^github%.com'] = function(queue, info)
     local fragment = info.fragment
     local repo
 
-    local pattern = '/([%w-.]+/[%w-.]+)/?$'
+    local pattern = '^/([%w-.]+/[%w-.]+)/?$'
     if(path and path:match(pattern)) then
         repo = path:match(pattern)
     end
+    print (path, repo)
 
     if repo then
         simplehttp(
