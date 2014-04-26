@@ -28,7 +28,6 @@ Configuration File
 
 Create a bot config sort of like this
 
-
 **myconfig.lua**
 
 ::
@@ -49,7 +48,7 @@ Create a bot config sort of like this
         'spotify',
         'karma',
         'roll',
-        'title/init',
+        'title',
         'tvrage',
         'urbandict',
         'substitute',
@@ -78,7 +77,3 @@ Modules
 -------
 
 THERES TONS!
-
-Version History
----------------
-Wha-at?
