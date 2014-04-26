@@ -97,7 +97,7 @@ end
 
 return {
 	PRIVMSG = {
-		['^.lastfm (.+)$'] = function(self, source, destination, user)
+		['^%plastfm (.+)$'] = function(self, source, destination, user)
 			simplehttp(
 				buildQuery{
 					method = 'user.getTopArtists',
@@ -111,7 +111,7 @@ return {
 			)
 		end,
 
-		['^!lastfm%s*$'] = function(self, source, destination, user)
+		['^%plastfm%s*$'] = function(self, source, destination, user)
 			simplehttp(
 				buildQuery{
 					method = 'user.getTopArtists',
@@ -125,7 +125,7 @@ return {
 			)
 		end,
 
-		['^!np (.+)$'] = function(self, source, destination, user)
+		['^%pnp (.+)$'] = function(self, source, destination, user)
 			simplehttp(
 				buildQuery{
 					method = 'user.getRecentTracks',
@@ -138,7 +138,7 @@ return {
 			)
 		end,
 
-		['^.np%s*$'] = function(self, source, destination)
+		['^%pnp%s*$'] = function(self, source, destination)
 			simplehttp(
 				buildQuery{
 					method = 'user.getRecentTracks',
