@@ -48,7 +48,7 @@ Create a bot config sort of like this
         'spotify',
         'karma',
         'roll',
-        'title/init',
+        'title',
         'tvrage',
         'urbandict',
         'substitute',
