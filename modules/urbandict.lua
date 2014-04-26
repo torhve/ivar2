@@ -48,7 +48,7 @@ end
 
 return {
 	PRIVMSG = {
-		['^!ud (.+)$'] = handler,
-		['^!urb (.+)$'] = handler,
+		['^%pud (.+)$'] = handler,
+		['^%purb (.+)$'] = handler,
 	},
 }
