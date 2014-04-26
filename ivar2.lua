@@ -679,5 +679,7 @@ end
 -- Attempt to create the cache folder.
 nixio.fs.mkdir('cache')
 local config = assert(loadfile(configFile))()
+-- Store the config file name in the config so it can be accessed later
+config.configFile = configFile
 ivar2:Connect(config)
 ivar2.Loop:loop()
