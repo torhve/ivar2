@@ -111,6 +111,20 @@ return {
 			)
 		end,
 
+		['^!lastfm%s*$'] = function(self, source, destination, user)
+			simplehttp(
+				buildQuery{
+					method = 'user.getTopArtists',
+					period = '7day',
+					limit = '5',
+					user = source.nick,
+				},
+				function(data)
+					parseTopArtists(source, destination, data)
+				end
+			)
+		end,
+
 		['^!np (.+)$'] = function(self, source, destination, user)
 			simplehttp(
 				buildQuery{
