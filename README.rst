@@ -28,8 +28,6 @@ Configuration File
 
 Create a bot config sort of like this
 
->>>>>>> 23bcdbd... update README
-
 **myconfig.lua**
 
 ::
