@@ -3,8 +3,15 @@ local ivar2 = ...
 local nixio = require'nixio'
 local ev = require'ev'
 
--- For now we just use the bots nick as our pipe name.
-local fileName = ivar2.config.nick
+
+local stripExtension = function(path)
+	local i = path:match( ".+()%.%w+$" )
+	if ( i ) then return path:sub(1, i-1) end
+	return path
+end
+
+-- Use the config file name as a base 
+local fileName = stripExtension(nixio.fs.basename(ivar2.config.configFile))
 
 local commands = {
 	['>'] = function(lua)
