@@ -23,27 +23,25 @@ local parseJSON = function(data)
 end
 
 local APIBase = 'http://api.urbandictionary.com/v0/define?term=%s'
-return {
-	PRIVMSG = {
-		['^%pud (.+)$'] = function(self, source, destination, input)
-			input = trim(input)
-			simplehttp(
-				APIBase:format(urlEncode(input)),
+local handler = function(self, source, destination, input)
+	input = trim(input)
+	simplehttp(
+		APIBase:format(urlEncode(input)),
 
-				function(data)
-					local result = parseJSON(data)
+		function(data)
+			local result = parseJSON(data)
 
-					if(result) then
-						local msgLimit = (512 - 16 - 65 - 10) - #self.config.nick - #destination
-						if(#result > msgLimit) then
-							result = result:sub(1, msgLimit - 3) .. '...'
-						end
-						self:Msg('privmsg', destination, source, string.format('%s: %s', source.nick, result))
-					else
-						self:Msg('privmsg', destination, source, string.format("%s: %s is bad and you should feel bad.", source.nick, input))
-					end
+			if(result) then
+				local msgLimit = (512 - 16 - 65 - 10) - #self.config.nick - #destination
+				if(#result > msgLimit) then
+					result = result:sub(1, msgLimit - 3) .. '...'
 				end
-			)
+				self:Msg('privmsg', destination, source, string.format('%s: %s', source.nick, result))
+			else
+				self:Msg('privmsg', destination, source, string.format("%s: %s is bad and you should feel bad.", source.nick, input))
+			end
+		end
+	)
 end
 
 return {
