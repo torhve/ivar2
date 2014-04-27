@@ -530,20 +530,29 @@ function ivar2:DisableAllModules()
 end
 
 function ivar2:LoadModule(moduleName)
-	local moduleFile, moduleError = loadfile('modules/' .. moduleName .. '.lua')
+	local moduleFile
+	local moduleError
+	local endings = {'.lua', '/init.lua', '.moon', '/init.moon'}
+
+	for _,ending in pairs(endings) do
+		local fileName = 'modules/' .. moduleName .. ending
+		-- Check if file exist and is readable before we try to loadfile it
+		local access, errCode, accessError = nixio.fs.access(fileName, 'r')
+		if(access) then
+			if(fileName:match('.lua')) then
+				moduleFile, moduleError = loadfile(fileName)
+			elseif(fileName:match('.moon') and moonscript) then
+				moduleFile, moduleError = moonscript.loadfile(fileName)
+			end
+			if(not moduleFile) then
+				-- If multiple file matches exist and the first match has an error we still
+				-- return here.
+				return self:Log('error', 'Unable to load module %s: %s.', moduleName, moduleError)
+			end
+		end
+	end
 	if(not moduleFile) then
-		moduleFile, moduleError = loadfile('modules/' .. moduleName .. '/init.lua')
-	end
-
-    if(not moduleFile and moonscript) then
-		moduleFile, moduleError = moonscript.loadfile('modules/' .. moduleName .. '.moon')
-	end
-
-    if(not moduleFile and moonscript) then
-		moduleFile, moduleError = moonscript.loadfile('modules/' .. moduleName .. '/init.moon')
-	end
-
-	if(not moduleFile) then
+		moduleError = 'File not found'
 		return self:Log('error', 'Unable to load module %s: %s.', moduleName, moduleError)
 	end
 
