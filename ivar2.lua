@@ -219,6 +219,30 @@ local events = {
 			end,
 		},
 	},
+
+	['437'] = {
+		core = {
+			function(self, source, chan, argument)
+				local password
+				for channel, data in next, self.config.channels do
+					if(channel == chan) then
+						if(type(data) == 'table' and data.password) then
+							password = data.password
+						end
+
+						break
+					end
+				end
+
+				ev.Timer.new(
+					function(loop, timer, revents)
+						self:Join(chan, password)
+					end,
+					30
+				):start(loop)
+			end,
+		},
+	},
 }
 
 local safeFormat = function(format, ...)
