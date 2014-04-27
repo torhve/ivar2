@@ -86,15 +86,24 @@ local events = {
 	['PART'] = {
 		core = {
 			function(self, source, chan)
-				self.channels[chan].nicks[source.nick] = nil
+				if(source.nick == self.config.nick) then
+					self.channels[chan] = nil
+				else
+					self.channels[chan].nicks[source.nick] = nil
+				end
 			end,
 		},
 	},
 
 	['KICK'] = {
 		core = {
-			function(self, source, chan, nick)
-				self.channels[chan].nicks[nick] = nil
+			function(self, source, destination, message)
+				local chan, nick = destination:match("^(%S+) (%S+)$")
+				if(nick == self.config.nick) then
+					self.channels[chan] = nil
+				else
+					self.channels[chan].nicks[nick] = nil
+				end
 			end,
 		},
 	},
