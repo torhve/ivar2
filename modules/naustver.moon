@@ -4,13 +4,13 @@ json = require'json'
 APIBase = 'http://yr.hveem.no/api/now'
 
 PRIVMSG:
-  '^%pvêr$': (self, source, destination, input) ->
+  '^%pvêr$': (source, destination, input) =>
     simplehttp APIBase, (data) ->
       result = json.decode data 
       if result
         result = result[1]
         temp = result.outtemp
-        ws = result.windspeed
+        ws = result.windspeed / 3.6 -- correct unit
         rain = result.dayrain
         windtext = ''
         if ws > 32
@@ -41,4 +41,4 @@ PRIVMSG:
             windtext = 'vindstille'
 
 
-        self\Msg 'privmsg', destination, source, '\002%.1f\002 °C, \002%.1f\002 m/s (%s), \002%.1f\002 mm nedbør', temp, ws, windtext, rain
+        @Msg 'privmsg', destination, source, '\002%.1f\002 °C, \002%.1f\002 m/s (%s), \002%.1f\002 mm nedbør', temp, ws, windtext, rain
