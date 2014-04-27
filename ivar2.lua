@@ -65,6 +65,8 @@ local events = {
 	['JOIN'] = {
 		core = {
 			function(self, source, chan)
+				chan = chan:lower()
+
 				if(not self.channels[chan]) then
 					self.channels[chan] = {
 						nicks = {},
@@ -86,6 +88,8 @@ local events = {
 	['PART'] = {
 		core = {
 			function(self, source, chan)
+				chan = chan:lower()
+
 				if(source.nick == self.config.nick) then
 					self.channels[chan] = nil
 				else
@@ -99,6 +103,8 @@ local events = {
 		core = {
 			function(self, source, destination, message)
 				local chan, nick = destination:match("^(%S+) (%S+)$")
+				chan = chan:lower()
+
 				if(nick == self.config.nick) then
 					self.channels[chan] = nil
 				else
@@ -127,6 +133,7 @@ local events = {
 				local dir, mode, nick = modeLine:match('([+%-])([^ ]+) ?(.*)$')
 				local modes
 
+				channel = channel:lower()
 				if(self.channels[channel].nicks[nick]) then
 					modes = self.channels[channel].nicks[nick].modes
 				elseif(nick == '') then
@@ -179,6 +186,7 @@ local events = {
 				local chan, dir, modes = argument:match('([^ ]+) ([+%-])(.*)$')
 
 				local chanModes = self.channels[chan].modes
+				chan = chan:lower()
 				for mode in modes:gmatch('[a-zA-Z]') do
 					table.insert(chanModes, mode)
 				end
@@ -190,6 +198,7 @@ local events = {
 		core = {
 			function(self, source, chan, nicks)
 				chan = chan:match('[=*@] (.*)$')
+				chan = chan:lower()
 
 				local convert = {
 					['+'] = 'v',
@@ -232,6 +241,8 @@ local events = {
 	['437'] = {
 		core = {
 			function(self, source, chan, argument)
+				chan = chan:lower()
+
 				local password
 				for channel, data in next, self.config.channels do
 					if(channel == chan) then
