@@ -11,7 +11,6 @@ customHosts['^github%.com'] = function(queue, info)
     if(path and path:match(pattern)) then
         repo = path:match(pattern)
     end
-    print (path, repo)
 
     if repo then
         simplehttp(

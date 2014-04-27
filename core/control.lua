@@ -10,7 +10,7 @@ local stripExtension = function(path)
 	return path
 end
 
--- Use the config file name as a base 
+-- Use the config file name as a base
 local fileName = stripExtension(nixio.fs.basename(ivar2.config.configFile))
 
 local commands = {
@@ -92,7 +92,7 @@ local watcher = ev.Stat.new(function(loop, stat, revents)
 			pcall(commands[command], argument)
 		end
 	end
-end, ivar2.config.nick)
+end, fileName)
 
 nixio.fs.mkfifo(fileName, 600)
 
