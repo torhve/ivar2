@@ -21,7 +21,6 @@ for wend in *badends
 
 -- Check every word against our bad patterns.
 checkWord = (source, destination, line) =>
-  print line
   -- First check for exceptions
   for pattern in *lineexceptions
     if line\match pattern
