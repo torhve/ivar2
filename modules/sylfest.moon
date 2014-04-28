@@ -21,6 +21,7 @@ for wend in *badends
 
 -- Check every word against our bad patterns.
 checkWord = (source, destination, line) =>
+  print line
   -- First check for exceptions
   for pattern in *lineexceptions
     if line\match pattern
@@ -35,5 +36,6 @@ checkWord = (source, destination, line) =>
   if #out > 0
     @Msg 'privmsg', destination, source, "Sylfest likar ikkje: %s", table.concat(out, ', ')
 
+-- run our handler on any message that contains '
 PRIVMSG:
-  ".*": checkWord 
+  ".*'.*": checkWord
