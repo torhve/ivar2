@@ -590,6 +590,10 @@ function ivar2:LoadModules()
 	end
 end
 
+function ivar2:Events()
+	return events
+end
+
 function ivar2:Connect(config)
 	self.config = config
 
