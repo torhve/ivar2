@@ -36,30 +36,30 @@ Create a bot config sort of like this
         nick = 'ivar2,
         autoReconnect = true,
         ident = 'ivar2',
-        host = 'irc.efnet.no',
         uri = 'tcp://irc.efnet.no:6667/?laddr=my.host.name&lport=0',
         port = 6667,
         realname = 'ivar',
-        owners = { 'nick!ident@my.host.name'},
+        owners = {
+            'nick!ident@my.host.name'
+        },
         modules = {
-        'admin',
-        'autojoin',
-        'lastfm',
-        'spotify',
-        'karma',
-        'roll',
-        'title',
-        'tvrage',
-        'urbandict',
-        'substitute',
-        'lua/init',
-        'ping',
-        'more',
-         
+            'admin',
+            'autojoin',
+            'lastfm',
+            'spotify',
+            'karma',
+            'roll',
+            'title',
+            'tvrage',
+            'urbandict',
+            'substitute',
+            'lua',
         },
         channels = {
             ['#ivar'] = {
-                disabledModules = {'olds'},
+                disabledModules = {
+                    'olds'
+               },
             },
         }
     }
