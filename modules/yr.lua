@@ -183,7 +183,7 @@ local handleOutput = function(source, destination, seven, data, city, try)
 		end
 
 		table.insert(out, 1, string.format('Longterm for \002%s\002 (%s)', name, country))
-		table.insert(out, longterm .. '.html')
+		table.insert(out, longterm)
 	else
 		local now = periods[1]
 		local later = periods[2]
