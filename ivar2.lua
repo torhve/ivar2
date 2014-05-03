@@ -573,6 +573,32 @@ function ivar2:Events()
 	return events
 end
 
+-- Let modules register commands
+function ivar2:RegisterCommand(handlerName, pattern, handler, event)
+	-- Default event is PRIVMSG
+	if(not event) then
+		event = 'PRIVMSG'
+	end
+	local env = {
+		ivar2 = self,
+		package = package,
+	}
+	local proxy = setmetatable(env, {__index = _G })
+	setfenv(handler, proxy)
+	self:Log('info', 'Registering command %s.', handlerName)
+
+	events[event][handlerName] = {[pattern]=handler}
+end
+
+function ivar2:UnregisterCommand(handlerName, event)
+	-- Default event is PRIVMSG
+	if(not event) then
+		event = 'PRIVMSG'
+	end
+	self:Log('info', 'Clearing command %s.', handlerName)
+	events[event][handlerName] = nil
+end
+
 function ivar2:Connect(config)
 	self.config = config
 
