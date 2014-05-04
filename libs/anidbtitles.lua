@@ -1282,8 +1282,9 @@ return {
  [72] = {
   ["main"] = "Eat-Man `98",
   ["official"] = {
-   [1] = "Eat-man 98",
-   [2] = "`איטמן 98",
+   [1] = "EAT-MAN `98",
+   [2] = "Eat-man 98",
+   [3] = "`איטמן 98",
    },
   ["short"] = {
    },
@@ -6528,7 +6529,7 @@ return {
    },
   },
  [370] = {
-  ["main"] = "Houhokekyo Tonari no Yamada-kun",
+  ["main"] = "Hoohokekyo Tonari no Yamada-kun",
   ["official"] = {
    [1] = "A Família Yamada",
    [2] = "A Yamada család",
@@ -16202,13 +16203,14 @@ return {
  [1026] = {
   ["main"] = "Vicious",
   ["official"] = {
-   [1] = "Vicious",
-   [2] = "Vicius",
-   [3] = "ヴィシャス",
+   [1] = "VICIOUS",
+   [2] = "Vicious",
+   [3] = "Vicius",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "ヴィシャス",
    },
   },
  [1027] = {
@@ -55365,7 +55367,8 @@ return {
  [4682] = {
   ["main"] = "Donkey Kong",
   ["official"] = {
-   [1] = "ドンキーコング",
+   [1] = "Donkey Kong Country",
+   [2] = "ドンキーコング",
    },
   ["short"] = {
    },
@@ -82282,7 +82285,8 @@ return {
   ["main"] = "Alps no Shoujo Heidi: Alm no Yama Hen",
   ["official"] = {
    [1] = "Heidi - Kindheit in den Bergen",
-   [2] = "アルプスの少女ハイジ アルムの山編",
+   [2] = "Heidi a hegyek lánya",
+   [3] = "アルプスの少女ハイジ アルムの山編",
    },
   ["short"] = {
    },
@@ -82295,7 +82299,8 @@ return {
   ["main"] = "Alps no Shoujo Heidi: Heidi to Clara Hen",
   ["official"] = {
    [1] = "Heidi - Ein Sommer voller Glück",
-   [2] = "アルプスの少女ハイジ ハイジとクララ編",
+   [2] = "Heidi és Clara - Egy nyár a hegyekben",
+   [3] = "アルプスの少女ハイジ ハイジとクララ編",
    },
   ["short"] = {
    },
@@ -93944,9 +93949,10 @@ return {
  [8857] = {
   ["main"] = "Sakasama no Patema",
   ["official"] = {
-   [1] = "Patéma et le monde inversé",
-   [2] = "Патэма наоборот",
-   [3] = "サカサマのパテマ",
+   [1] = "Patema upp och ner",
+   [2] = "Patéma et le monde inversé",
+   [3] = "Патэма наоборот",
+   [4] = "サカサマのパテマ",
    },
   ["short"] = {
    },
@@ -94015,6 +94021,7 @@ return {
   ["main"] = "Ryuugajou Nanana no Maizoukin (2014)",
   ["official"] = {
    [1] = "龍ヶ嬢七々々の埋蔵金(2014)",
+   [2] = "龙娘七七七埋藏的宝藏",
    },
   ["short"] = {
    },
@@ -97932,7 +97939,8 @@ return {
    [3] = "Pretty Soldier Sailor Moon (2014)",
    [4] = "Sailor Moon Crystal",
    [5] = "Sailor Moon Remake",
-   [6] = "美少女戦士セーラームーン クリスタル",
+   [6] = "Красавица-воин Сейлор Мун: кристалл",
+   [7] = "美少女戦士セーラームーン クリスタル",
    },
   },
  [9307] = {
@@ -98975,6 +98983,7 @@ return {
    [2] = "wug",
    },
   ["syn"] = {
+   [1] = "Подъём, девчата!",
    },
   },
  [9418] = {
@@ -100116,9 +100125,10 @@ return {
    [1] = "gaworare",
    },
   ["syn"] = {
-   [1] = "If Her Flag Breaks",
-   [2] = "Kanojo ga Flag wo Oraretara",
-   [3] = "がをられ",
+   [1] = "Flag Story",
+   [2] = "If Her Flag Breaks",
+   [3] = "Kanojo ga Flag wo Oraretara",
+   [4] = "がをられ",
    },
   },
  [9525] = {
@@ -101948,9 +101958,9 @@ return {
    },
   },
  [9728] = {
-  ["main"] = "Furyou ni Hamerarete Jusei Suru Kyonyuu Okaa-san The Animation",
+  ["main"] = "Furyou ni Hamerarete Jusei Suru Kyonyuu Okaa-san: Iki Jigoku ni Ochita Kazoku no Game The Animation",
   ["official"] = {
-   [1] = "不良にハメられて受精する巨乳お母さん THE ANIMATION",
+   [1] = "不良にハメられて受精する巨乳お母さん ~イキ地獄に堕ちた家族のゲーム~ THE ANIMATION",
    },
   ["short"] = {
    },
@@ -102363,6 +102373,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Uchoten Kazoku",
    },
   },
  [9784] = {
@@ -103339,6 +103350,7 @@ return {
   ["official"] = {
    [1] = "Рицарите на Сидония",
    [2] = "シドニアの騎士",
+   [3] = "银河骑士传",
    },
   ["short"] = {
    },
@@ -103806,15 +103818,13 @@ return {
    },
   },
  [9941] = {
-  ["main"] = "Hontou ni Atta Hitozuma Furin Kokuhaku",
+  ["main"] = "Hontou ni Atta",
   ["official"] = {
-   [1] = "本当にあった人妻不倫告白",
+   [1] = "本当にあった",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "A True Story Immoral Confession of a Married Woman",
-   [2] = "本当にあった人妻不倫告白 本村陶子の場合",
    },
   },
  [9942] = {
@@ -104796,8 +104806,9 @@ return {
  [10067] = {
   ["main"] = "Captain Earth",
   ["official"] = {
-   [1] = "キャプテン・アース",
-   [2] = "地球队长",
+   [1] = "Captain Earth",
+   [2] = "キャプテン・アース",
+   [3] = "地球队长",
    },
   ["short"] = {
    },
@@ -105458,7 +105469,8 @@ return {
  [10145] = {
   ["main"] = "Haikyuu!!",
   ["official"] = {
-   [1] = "ハイキュー!!",
+   [1] = "Haikyu!!",
+   [2] = "ハイキュー!!",
    },
   ["short"] = {
    },
@@ -105753,7 +105765,9 @@ return {
  [10181] = {
   ["main"] = "Black Bullet",
   ["official"] = {
-   [1] = "ブラック・ブレット",
+   [1] = "Black Bullet",
+   [2] = "ブラック・ブレット",
+   [3] = "黑色子弹",
    },
   ["short"] = {
    },
@@ -106420,13 +106434,13 @@ return {
  [10262] = {
   ["main"] = "Gochuumon wa Usagi Desuka?",
   ["official"] = {
-   [1] = "ご注文はうさぎですか?",
+   [1] = "Is the Order a Rabbit?",
+   [2] = "ご注文はうさぎですか?",
    },
   ["short"] = {
    [1] = "gochiusa",
    },
   ["syn"] = {
-   [1] = "Is the Order a Rabbit?",
    },
   },
  [10263] = {
@@ -106485,13 +106499,13 @@ return {
  [10273] = {
   ["main"] = "Isshuukan Friends.",
   ["official"] = {
-   [1] = "一週間フレンズ.",
+   [1] = "One Week Friends",
+   [2] = "一週間フレンズ.",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "One Week Friends",
-   [2] = "One Week Friends.",
+   [1] = "One Week Friends.",
    },
   },
  [10274] = {
@@ -107353,6 +107367,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Herobank",
    },
   },
  [10390] = {
@@ -107455,8 +107470,9 @@ return {
  [10400] = {
   ["main"] = "Ping Pong The Animation",
   ["official"] = {
-   [1] = "Ping Pong the Animation",
-   [2] = "ピンポン THE ANIMATION",
+   [1] = "Ping Pong",
+   [2] = "Ping Pong the Animation",
+   [3] = "ピンポン THE ANIMATION",
    },
   ["short"] = {
    [1] = "pingpong",
@@ -107577,13 +107593,14 @@ return {
    },
   },
  [10415] = {
-  ["main"] = "Free! 2",
+  ["main"] = "Free! Eternal Summer",
   ["official"] = {
-   [1] = "Free! 2",
+   [1] = "Free! Eternal Summer",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Free! 2",
    },
   },
  [10417] = {
@@ -109107,6 +109124,57 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   },
+  },
+ [10619] = {
+  ["main"] = "Denki-gai no Hon`ya-san",
+  ["official"] = {
+   [1] = "デンキ街の本屋さん",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10620] = {
+  ["main"] = "Re: Hamatora",
+  ["official"] = {
+   [1] = "Re: ハマトラ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10621] = {
+  ["main"] = "Gekijouban Gudaguda Fairies tte Iu Eiga wa Dou kana...?",
+  ["official"] = {
+   [1] = "劇場版 gdgd妖精s っていう映画はどうかな...?",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10622] = {
+  ["main"] = "Lance N` Masques",
+  ["official"] = {
+   [1] = "ランス・アンド・マスクス",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10623] = {
+  ["main"] = "Persona 4 The Golden Animation",
+  ["official"] = {
+   [1] = "Persona 4 the Golden ANIMATION",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "ペルソナ4 ザ・ゴールデン",
    },
   },
 }
