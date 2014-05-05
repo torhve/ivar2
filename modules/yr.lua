@@ -86,22 +86,8 @@ local handleData = function(type, line)
 	return out
 end
 
-local handleObservationOutput = function(source, destination, data, city, try)
+local handleObservationOutput = function(self, source, destination, data)
 	local location = data:match("<location>(.-)</location>")
-	if(not location and not try) then
-		simplehttp(
-			("http://yr.no/stad/%s/%s/%s~%s/varsel.xml"):format(
-				urlEncode(city.countryName),
-				urlEncode(city.adminName1),
-				urlEncode(city.toponymName),
-				city.geonameId
-			),
-			function(data)
-				handleObservationOutput(source, destination, seven, data, city, true)
-			end
-		)
-	end
-
 	local name = location:match("<name>([^<]+)</name>"):lower():gsub("^%l", string.upper)
 
 	local tabular = data:match("<observations>(.*)</observations>")
@@ -111,7 +97,7 @@ local handleObservationOutput = function(source, destination, data, city, try)
 		if windSpeed then windSpeed = windSpeed.name else windSpeed = '' end
 		local temperature = handleData('temperature', data)
 		if windDirection then windDirection = windDirection.name else windDirection = '' end
-		ivar2:Msg('privmsg', destination, source, '\002%s\002°C, %s %s (%s)', temperature.value, windDirection, windSpeed, name)
+		self:Msg('privmsg', destination, source, '\002%s\002°C, %s %s (%s)', temperature.value, windDirection, windSpeed, name)
 		-- Use the first result
 		return
 	end
@@ -336,7 +322,7 @@ return {
 				simplehttp(
 					url,
 					function(data)
-						handleObservationOutput(source, destination, data)
+						handleObservationOutput(self, source, destination, data)
 					end
 				)
 				return
