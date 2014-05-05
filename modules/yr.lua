@@ -235,6 +235,8 @@ local getPlace = function(input)
 
 	local iter, vm = selectStmt:nrows()
 	local place = iter(vm)
+	place.name = trim(place.name)
+	place.url = trim(place.url)
 
 	db:close()
 	return place
@@ -245,23 +247,8 @@ return {
 	PRIVMSG = {
 		['^!yr(7?) (.+)$'] = function(self, source, destination, seven, input)
 			input = trim(input):lower()
-			local inputISO = utf2iso:iconv(input)
+			local place = getPlace(input)
 
-			local country
-			if(input:find(',', 1, true)) then
-				input, country = input:match('([^,]+),(.+)')
-				country = trim(country):upper()
-				inputISO, _ = input:match('([^,]+),(.+)')
-			end
-
-			local db = sql.open("cache/places-norway.sql")
-			local selectStmt = db:prepare("SELECT name, url FROM places WHERE name = ? OR name = ?")
-			selectStmt:bind_values(input, inputISO)
-
-			local iter, vm = selectStmt:nrows()
-			local place = iter(vm)
-
-			db:close()
 
 			if(place) then
 				simplehttp(
@@ -271,6 +258,15 @@ return {
 					end
 				)
 				return
+			end
+
+			local inputISO = utf2iso:iconv(input)
+
+			local country
+			if(input:find(',', 1, true)) then
+				input, country = input:match('([^,]+),(.+)')
+				country = trim(country):upper()
+				inputISO, _ = input:match('([^,]+),(.+)')
 			end
 
 			local db = sql.open("cache/places.sql")
