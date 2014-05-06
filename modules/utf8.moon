@@ -19,9 +19,9 @@ replace = (offset, arg) ->
 
 
 PRIVMSG:
-  '^%pwide (.+)$': wide = (source, destination, arg) =>
+  '^%pwide (.+)$': (source, destination, arg) =>
     @Msg 'privmsg', destination, source, replace(0xFEE0, arg)
   '^%pblackletter (.+)$': (source, destination, arg) =>
     @Msg 'privmsg', destination, source, replace(0x1D4A3, arg)
-  '^%pcircled (.+)$': (destination, source, arg) => 
+  '^%pcircled (.+)$': (source, destination, arg) => 
     @Msg 'privmsg', destination, source, replace(0x246F, arg)
