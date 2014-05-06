@@ -289,13 +289,15 @@ local tableHasValue = function(table, value)
 	end
 end
 
-local IrcMessageSplit = function(message)
-	local hostmask = string.format('%s!%s@%s', ivar2.config.nick, ivar2.config.ident, ivar2.config.host)
+local IrcMessageSplit = function(destination, message)
 	local extra
-	if #message > (510+#hostmask) then
-		local trail = ' (…)'
-		extra = message:sub(510-#trail-#hostmask+1)
-		message = message:sub(1, 510-#trail-#hostmask) .. trail
+	local hostmask = ivar2.hostmask
+	local msgtype = 'privmsg'
+	local trail = ' (…)'
+	local cutoff = 512 - 4 - #hostmask - #destination - #msgtype - #trail
+	if #message > cutoff then
+		extra = message:sub(cutoff)
+		message = message:sub(1, cutoff) .. trail
 	end
 	return message, extra
 end
@@ -323,7 +325,9 @@ local client_mt = {
 			end
 			self:Nick(self.config.nick)
 			local uri = uri_mod.parse(self.config.uri)
-			self:Send(string.format('USER %s %s blah :%s', self.config.ident, uri.host, self.config.realname))
+			local laddr = uri.query:match('laddr=(.+)&lport')
+			self:Send(string.format('USER %s %s blah :%s', self.config.ident, laddr, self.config.realname))
+			self.hostmask = string.format('%s!%s@%s', self.config.nick, self.config.ident, laddr)
 		else
 			self.updated = nil
 		end
@@ -406,7 +410,7 @@ end
 
 function ivar2:Privmsg(destination, format, ...)
 
-	local message, extra = IrcMessageSplit(safeFormat(format, ...))
+	local message, extra = IrcMessageSplit(destination, safeFormat(format, ...))
 	-- Save the potential extra stuff from the split into the more container
 	ivar2.more[destination] = extra 
 	return self:Send('PRIVMSG %s :%s', destination, message)
