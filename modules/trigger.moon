@@ -5,6 +5,7 @@ openDb = ->
 
   db\exec [[
     CREATE TABLE IF NOT EXISTS trigger (
+      name UNIQUE ON CONFLICT REPLACE,
       pattern UNIQUE ON CONFLICT REPLACE,
       funcstr
     );
@@ -12,10 +13,9 @@ openDb = ->
   return db
 
 triggerHelp  = (source, destination, argument) =>
-   @Msg 'privmsg', source, destination, 'Usage: !trigger add <lua pattern>|<lua code>. Ex: !trigger add !help (%w+)|say "%s, you need help'
+   @Msg 'privmsg', destination, source, 'Usage: !trigger add <name>|<lua pattern>|<lua code>. Ex: !trigger add help|^!help (%w+)|say "%s, you need help"'
 
 -- Construct a safe environ for trigger with two functions; say and reply
---- TODO: actually make it safe :-)
 --- Preferrably you should be able to cross-call modules here to make aliasing possible
 sandbox = (func) ->
   (source, destination, ...) =>
@@ -55,38 +55,45 @@ triggerHandler = (source, destination, funcstr) =>
   else
     sandbox(func)
 
-
--- Stub to create a trigger name in event table
-handlerName = (pattern) ->
-  "trigger#{pattern}"
-
 -- Register the command
-regCommand = (source, destination, pattern, funcstr) =>
+regCommand = (source, destination, name, pattern, funcstr) =>
   db = openDb!
-  ins = db\prepare "INSERT INTO trigger (pattern, funcstr) VALUES(?, ?)"
-  code = ins\bind_values pattern, funcstr
+  ins = db\prepare "INSERT INTO trigger (name, pattern, funcstr) VALUES(?, ?, ?)"
+  code = ins\bind_values name, pattern, funcstr
   code = ins\step!
   code = ins\finalize!
   db\close!
 
-  @RegisterCommand handlerName(pattern), pattern, triggerHandler(@, source, destination, funcstr)
+  @RegisterCommand 'trigger', pattern, triggerHandler(@, source, destination, funcstr)
 
-delCommand = (source, destination, pattern) =>
+delCommand = (source, destination, name) =>
   db = openDb!
-  ins = db\prepare "DELETE FROM trigger WHERE pattern = ?"
+  -- Find pattern which is used for deletion of handler
+  stmt = db\prepare "SELECT pattern FROM trigger WHERE name = ?"
+  code = stmt\bind_values name
+  code = stmt\step!
+  if code == sqlite3.DONE
+    -- Invalid name
+    db\close!
+    return
+  pattern = stmt\get_values()[1]
+
+  -- Delete trigger from db
+  ins = db\prepare "DELETE FROM trigger WHERE name = ?"
   code = ins\bind_values pattern
   code = ins\step!
   code = ins\finalize!
   db\close!
-  @UnregisterCommand handlerName(pattern)
+
+  @UnregisterCommand 'trigger', pattern
 
 -- Register commands on startup
 db = openDb!
 for row in db\nrows 'SELECT pattern, funcstr FROM trigger'
-  print ivar2
-  ivar2\RegisterCommand handlerName(row.pattern), row.pattern, triggerHandler(ivar2, nil, nil, row.funcstr)
+  ivar2\RegisterCommand 'trigger', row.pattern, triggerHandler(ivar2, nil, nil, row.funcstr)
+db\close!
 
 PRIVMSG:
   '%ptrigger$': triggerHelp
-  '%ptrigger add (.+)|(.+)$': regCommand
+  '%ptrigger add (.+)|(.+)|(.+)$': regCommand
   '%ptrigger del (.+)$': delCommand
