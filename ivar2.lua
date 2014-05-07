@@ -587,16 +587,24 @@ function ivar2:RegisterCommand(handlerName, pattern, handler, event)
 	setfenv(handler, proxy)
 	self:Log('info', 'Registering command %s.', handlerName)
 
-	events[event][handlerName] = {[pattern]=handler}
+	if(not events[event][handlerName]) then
+		events[event][handlerName] = {}
+	end
+	events[event][handlerName][pattern] = handler
 end
 
-function ivar2:UnregisterCommand(handlerName, event)
+function ivar2:UnregisterCommand(handlerName, pattern, event)
 	-- Default event is PRIVMSG
 	if(not event) then
 		event = 'PRIVMSG'
 	end
-	self:Log('info', 'Clearing command %s.', handlerName)
-	events[event][handlerName] = nil
+	for i=1, #events[handlerName] do
+		local thepattern = events[handlerName][i]
+		if(thepattern == pattern) then
+			events[event][handlerName] = nil
+			self:Log('info', 'Clearing command with pattern %s in module %s.', pattern, handlerName)
+		end
+	end
 end
 
 function ivar2:Connect(config)
