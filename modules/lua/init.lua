@@ -16,7 +16,7 @@ return {
 			local cmd = string.format([[modules/lua/sandbox.sh %s %s 2> /dev/null]], inputFile, outputFile)
 			local status = os.execute(cmd) / 256
 			local file = io.open(outputFile, 'r')
-			local output = file:read(251)
+			local output = file:read(1024)
 			file:close()
 
 			-- Clean up our mess
@@ -39,8 +39,6 @@ return {
 
 			if(not output:match('%S')) then
 				output = 'No output'
-			elseif(#output > 250) then
-				output = output:sub(1, 250) .. '(truncated)'
 			end
 
 			ivar2:Msg('privmsg', destination, source, '%s: %s', source.nick, output)
