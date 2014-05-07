@@ -585,7 +585,7 @@ function ivar2:RegisterCommand(handlerName, pattern, handler, event)
 	}
 	local proxy = setmetatable(env, {__index = _G })
 	setfenv(handler, proxy)
-	self:Log('info', 'Registering command %s.', handlerName)
+	self:Log('info', 'Registering new pattern: %s, in command %s.', pattern, handlerName)
 
 	if(not events[event][handlerName]) then
 		events[event][handlerName] = {}
@@ -598,13 +598,8 @@ function ivar2:UnregisterCommand(handlerName, pattern, event)
 	if(not event) then
 		event = 'PRIVMSG'
 	end
-	for i=1, #events[handlerName] do
-		local thepattern = events[handlerName][i]
-		if(thepattern == pattern) then
-			events[event][handlerName] = nil
-			self:Log('info', 'Clearing command with pattern %s in module %s.', pattern, handlerName)
-		end
-	end
+	events[event][handlerName][pattern] = nil
+	self:Log('info', 'Clearing command with pattern: %s, in module %s.', pattern, handlerName)
 end
 
 function ivar2:Connect(config)
