@@ -693,6 +693,7 @@ function ivar2:Reload()
 		message.channels = self.channels
 		message.event = self.event
 		message.network = self.network
+		message.hostmask = self.hostmask
 		message.maxNickLength = self.maxNickLength
 		-- Clear the registered events
 		message.event:ClearAll()
