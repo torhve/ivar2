@@ -806,6 +806,7 @@ function ivar2:Reload()
 		package.loaded.util = nil
 		message.util = require'util'
 		message.network = self.network
+		message.hostmask = self.hostmask
 		message.maxNickLength = self.maxNickLength
 		-- Clear the registered events
 		message.event:ClearAll()
