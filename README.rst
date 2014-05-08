@@ -71,7 +71,7 @@ Launch bot
 
 ::
 
-    luajit ivar2.lua myconfig.lua
+    lua ivar2.lua myconfig.lua
 
 Modules
 -------
