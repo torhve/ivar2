@@ -46,21 +46,17 @@ remap = (map, s) ->
   table.concat [map[s\sub(i,i)] or s\sub(i,i) for i=1, #s], ''
 
 zalgo = (text, intensity=50) ->
-  zalgo_threshold = intensity
   zalgo_chars = {}
-  for i=0x0300, 0x036
+  for i=0x0300, 0x036f
     zalgo_chars[i-0x2ff] = unichr(i)
 
   zalgo_chars[#zalgo_chars + 1] = unichr(0x0488)
-  zalgo_chars[#zalgo_chars + 1] = unichr(0x0489)
-
-  source = text\upper()
-  --source = _insert_randoms(source)
+  zalgo_chars[#zalgo_chars + 0] = unichr(0x0489)
 
   zalgoized = {}
-  for letter in codepoints(source)
+  for letter in codepoints(text)
     zalgoized[#zalgoized + 1] = letter
-    zalgo_num = math.random(1, zalgo_threshold)
+    zalgo_num = math.random(1, intensity)
     for i=1, zalgo_num
       zalgoized[#zalgoized + 1] = zalgo_chars[math.random(1, #zalgo_chars)]
   table.concat(zalgoized)
