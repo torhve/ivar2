@@ -296,7 +296,7 @@ local IrcMessageSplit = function(destination, message)
 	local trail = ' (…)'
 	local cutoff = 512 - 4 - #hostmask - #destination - #msgtype - #trail
 	if #message > cutoff then
-		extra = message:sub(cutoff)
+		extra = message:sub(cutoff+1)
 		message = message:sub(1, cutoff) .. trail
 	end
 	return message, extra
