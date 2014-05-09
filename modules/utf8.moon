@@ -1,3 +1,6 @@
+html2unicode = require'html'
+math = require'math'
+
 an = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
 ci = 'ⒶⒷⒸⒹⒺⒻⒼⒽⒾⒿⓀⓁⓂⓃⓄⓅⓆⓇⓈⓉⓊⓋⓌⓍⓎⓏⓐⓑⓒⓓⓔⓕⓖⓗⓘⓙⓚⓛⓜⓝⓞⓟⓠⓡⓢⓣⓤⓥⓦⓧⓨⓩ⓪①②③④⑤⑥⑦⑧⑨'
 bl = '𝔄𝔅ℭ𝔇𝔈𝔉𝔊ℌℑ𝔍𝔎𝔏𝔐𝔑𝔒𝔓𝔔ℜ𝔖𝔗𝔘𝔙𝔚𝔛𝔜ℨ𝔞𝔟𝔠𝔡𝔢𝔣𝔤𝔥𝔦𝔧𝔨𝔩𝔪𝔫𝔬𝔭𝔮𝔯𝔰𝔱𝔲𝔳𝔴𝔵𝔶𝔷'
@@ -16,8 +19,13 @@ for uchar in string.gfind(bl, "([%z\1-\127\194-\244][\128-\191]*)")
   an2bl[an\sub(i,i)] = uchar
   i = i +1
 
+codepoints = (str) ->
+  str\gmatch("[%z\1-\127\194-\244][\128-\191]*")
+
+unichr = (n) ->
+  html2unicode('&#x%x;'\format(n))
+
 wireplace = (offset, arg) ->
-    html2unicode = require'html'
     s = arg or ''
     t = {}
     for i = 1, #s
@@ -37,6 +45,27 @@ wireplace = (offset, arg) ->
 remap = (map, s) ->
   table.concat [map[s\sub(i,i)] or s\sub(i,i) for i=1, #s], ''
 
+zalgo = (text, intensity=50) ->
+  zalgo_threshold = intensity
+  zalgo_chars = {}
+  for i=0x0300, 0x036
+    zalgo_chars[i-0x2ff] = unichr(i)
+
+  zalgo_chars[#zalgo_chars + 1] = unichr(0x0488)
+  zalgo_chars[#zalgo_chars + 1] = unichr(0x0489)
+
+  source = text\upper()
+  --source = _insert_randoms(source)
+
+  zalgoized = {}
+  for letter in codepoints(source)
+    zalgoized[#zalgoized + 1] = letter
+    zalgo_num = math.random(1, zalgo_threshold)
+    for i=1, zalgo_num
+      zalgoized[#zalgoized + 1] = zalgo_chars[math.random(1, #zalgo_chars)]
+  table.concat(zalgoized)
+
+
 PRIVMSG:
   '^%pwide (.+)$': (source, destination, arg) =>
     @Msg 'privmsg', destination, source, wireplace(0xFEE0, arg)
@@ -44,3 +73,5 @@ PRIVMSG:
     @Msg 'privmsg', destination, source, remap(an2bl, arg)
   '^%pcircled (.+)$': (source, destination, arg) => 
     @Msg 'privmsg', destination, source, remap(an2ci, arg)
+  '^%pzalgo (.+)$': (source, destination, arg) => 
+    @Msg 'privmsg', destination, source, zalgo(arg, 10)
