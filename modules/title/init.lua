@@ -136,7 +136,7 @@ local guessCharset = function(headers, data)
 end
 
 local limitOutput = function(str)
-	local limit = 100
+	local limit = 300
 	if(#str > limit) then
 		str = str:sub(1, limit)
 		if(#str == limit) then
