@@ -85,12 +85,12 @@ delCommand = (source, destination, name) =>
   code = ins\finalize!
   db\close!
 
-  @UnregisterCommand 'trigger', pattern
+  @UnregisterCommand 'triggers', pattern
 
 -- Register commands on startup
 db = openDb!
 for row in db\nrows 'SELECT pattern, funcstr FROM trigger'
-  ivar2\RegisterCommand 'trigger', row.pattern, triggerHandler(ivar2, nil, nil, row.funcstr)
+  ivar2\RegisterCommand 'triggers', row.pattern, triggerHandler(ivar2, nil, nil, row.funcstr)
 db\close!
 
 PRIVMSG:
