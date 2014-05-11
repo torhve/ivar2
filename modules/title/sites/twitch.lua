@@ -8,9 +8,9 @@ customHosts['twitch%.tv'] = function(queue, info)
 		return
 	end
 
-	local username, video
+	local username, kind, video
 	if(path:match('/[^/]+/[^/]+/[^/]+')) then
-		username, video = path:match('/([^/]+)/[^/]+/(%d+)')
+		username, kind, video = path:match('/([^/]+)/([^/]+)/(%d+)')
 	elseif(path:match('/[^/]+')) then
 		username = path:match('[^/]+')
 	end
@@ -21,7 +21,7 @@ customHosts['twitch%.tv'] = function(queue, info)
 
 	local url
 	if(video) then
-		url = string.format('https://api.twitch.tv/kraken/videos/a%s', video)
+		url = string.format('https://api.twitch.tv/kraken/videos/%s%s', kind, video)
 	else
 		url = string.format('https://api.twitch.tv/kraken/channels/%s', username)
 	end
@@ -40,7 +40,7 @@ customHosts['twitch%.tv'] = function(queue, info)
 				table.insert(out, (resp.status:gsub('\n', ' ')))
 			end
 
-			if(resp.game) then
+			if(resp.game ~= json.util.null) then
 				table.insert(out, string.format(" (Playing: %s)", resp.game))
 			end
 
