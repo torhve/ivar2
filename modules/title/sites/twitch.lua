@@ -35,13 +35,13 @@ customHosts['twitch%.tv'] = function(queue, info)
 			local out = {}
 			if(resp.title) then
 				table.insert(out, resp.title)
-
-				if(resp.game) then
-					table.insert(out, string.format(" (Playing: %s)", resp.game))
-				end
 			else
 				table.insert(out, string.format('\002%s\002: ', resp.display_name))
 				table.insert(out, (resp.status:gsub('\n', ' ')))
+			end
+
+			if(resp.game) then
+				table.insert(out, string.format(" (Playing: %s)", resp.game))
 			end
 
 			queue:done(table.concat(out))
