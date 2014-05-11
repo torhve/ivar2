@@ -13794,6 +13794,7 @@ return {
    [1] = "Divine Love",
    [2] = "Dvine Luv",
    [3] = "Dvine[LUV]",
+   [4] = "디바인 러브",
    },
   },
  [863] = {
@@ -25786,7 +25787,8 @@ return {
   ["official"] = {
    [1] = "Genshiken",
    [2] = "Genshiken - Club d`étude de la culture visuelle moderne",
-   [3] = "げんしけん",
+   [3] = "Genshiken: The Society for the Study of Modern Visual Culture",
+   [4] = "げんしけん",
    },
   ["short"] = {
    },
@@ -26916,7 +26918,7 @@ return {
    [1] = "Contele de Monte Cristo",
    [2] = "Gankutsuou",
    [3] = "Gankutsuou - Le comte de Monte-Cristo",
-   [4] = "Gankutsuou -The Count of Monte Cristo-",
+   [4] = "Gankutsuou: The Count of Monte Cristo",
    [5] = "Hrabě Monte Christo",
    [6] = "Il conte di Montecristo",
    [7] = "Monte Cristo grófja",
@@ -38079,6 +38081,7 @@ return {
    },
   ["syn"] = {
    [1] = "Dutchess of Busty Mounds",
+   [2] = "계모",
    },
   },
  [2784] = {
@@ -54931,7 +54934,7 @@ return {
    [2] = "Hell Girl: Two Mirrors",
    [3] = "La Fille des Enfers - Saison 2",
    [4] = "Piekielna Dziewczyna 2",
-   [5] = "地獄少女 二籠",
+   [5] = "地獄少女二籠",
    },
   ["short"] = {
    [1] = "JSF",
@@ -55362,17 +55365,6 @@ return {
    [3] = "Барманът",
    [4] = "Бармен",
    [5] = "调酒师",
-   },
-  },
- [4682] = {
-  ["main"] = "Donkey Kong",
-  ["official"] = {
-   [1] = "Donkey Kong Country",
-   [2] = "ドンキーコング",
-   },
-  ["short"] = {
-   },
-  ["syn"] = {
    },
   },
  [4683] = {
@@ -60614,7 +60606,8 @@ return {
  [5210] = {
   ["main"] = "Genshiken 2",
   ["official"] = {
-   [1] = "げんしけん2",
+   [1] = "Genshiken 2: The Society for the Study of Modern Visual Culture",
+   [2] = "げんしけん2",
    },
   ["short"] = {
    },
@@ -79644,6 +79637,7 @@ return {
    [5] = "学园黙示録",
    [6] = "学園黙示録",
    [7] = "学園黙示録 HIGH SCHOOL OF THE DEAD",
+   [8] = "학원묵시록",
    },
   ["short"] = {
    [1] = "HOTD",
@@ -90965,9 +90959,9 @@ return {
  [8550] = {
   ["main"] = "Hunter x Hunter (2011)",
   ["official"] = {
-   [1] = "HUNTERxHUNTER (2011)",
-   [2] = "Hunter x Hunter (2011)",
-   [3] = "القناص x القناص",
+   [1] = "(القناص (2011",
+   [2] = "HUNTERxHUNTER (2011)",
+   [3] = "Hunter x Hunter (2011)",
    },
   ["short"] = {
    [1] = "HxH 2011",
@@ -103348,14 +103342,14 @@ return {
  [9892] = {
   ["main"] = "Sidonia no Kishi",
   ["official"] = {
-   [1] = "Рицарите на Сидония",
-   [2] = "シドニアの騎士",
-   [3] = "银河骑士传",
+   [1] = "Knights of Sidonia",
+   [2] = "Рицарите на Сидония",
+   [3] = "シドニアの騎士",
+   [4] = "希德尼娅的骑士",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Knights of Sidonia",
    },
   },
  [9893] = {
@@ -103474,6 +103468,7 @@ return {
    [1] = "Arpeggio of Blue Steel",
    [2] = "苍蓝钢铁战舰",
    [3] = "蒼き鋼のアルペジオ -ARS NOVA-",
+   [4] = "푸른 강철의 아르페지오",
    },
   ["short"] = {
    },
@@ -103571,6 +103566,7 @@ return {
    [3] = "悪魔のリドル riddle story of devil",
    },
   ["short"] = {
+   [1] = "AnR",
    },
   ["syn"] = {
    },
@@ -103766,7 +103762,8 @@ return {
  [9935] = {
   ["main"] = "Date a Live II",
   ["official"] = {
-   [1] = "デート・ア・ライブ II",
+   [1] = "Date a Live II",
+   [2] = "デート・ア・ライブ II",
    },
   ["short"] = {
    },
@@ -104277,6 +104274,7 @@ return {
    [1] = "No Game No Life",
    [2] = "ノーゲーム・ノーライフ",
    [3] = "不游戏无人生",
+   [4] = "노 게임 노 라이프",
    },
   ["short"] = {
    [1] = "NGNL",
@@ -104443,6 +104441,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "GJ-bu@",
    },
   },
  [10020] = {
@@ -105381,6 +105380,11 @@ return {
    [1] = "ぷちます!! プチプチ・アイドルマスター",
    },
   ["short"] = {
+   [1] = "Puchimas 2",
+   [2] = "Puchimas!!",
+   [3] = "Puchimasu 2",
+   [4] = "Puchimasu!!",
+   [5] = "ぷちます 2",
    },
   ["syn"] = {
    [1] = "Puchimas!! Puchi Puchi Idolmaster",
@@ -105777,15 +105781,15 @@ return {
  [10182] = {
   ["main"] = "Mahouka Koukou no Rettousei",
   ["official"] = {
-   [1] = "魔法科高中的劣等生",
-   [2] = "魔法科高校の劣等生 The irregular at magic high school",
+   [1] = "The Irregular at Magic High School",
+   [2] = "The irregular at magic high school",
+   [3] = "魔法科高中的劣等生",
+   [4] = "魔法科高校の劣等生 The irregular at magic high school",
    },
   ["short"] = {
    [1] = "mahouka",
    },
   ["syn"] = {
-   [1] = "Mahouka",
-   [2] = "The Irregular at Magic High School",
    },
   },
  [10184] = {
@@ -105969,6 +105973,7 @@ return {
    [1] = "JJBA 2014",
    [2] = "JJBASC",
    [3] = "JoJo 2014",
+   [4] = "jojosc",
    },
   ["syn"] = {
    [1] = "JOJO`S BIZARRE ADVENTURE: Stardust Crusaders",
@@ -107111,8 +107116,9 @@ return {
  [10360] = {
   ["main"] = "Mekakucity Actors",
   ["official"] = {
-   [1] = "メカクシティアクターズ",
-   [2] = "目隐都市的演绎者",
+   [1] = "Mekakucity Actors",
+   [2] = "メカクシティアクターズ",
+   [3] = "目隐都市的演绎者",
    },
   ["short"] = {
    },
@@ -107478,6 +107484,7 @@ return {
    [1] = "pingpong",
    },
   ["syn"] = {
+   [1] = "Ping Pong",
    },
   },
  [10401] = {
@@ -107684,7 +107691,7 @@ return {
  [10426] = {
   ["main"] = "Break Blade (2014)",
   ["official"] = {
-   [1] = "ブレイクブレイド (2014)",
+   [1] = "ブレイクブレイド BROKEN BLADE (2014)",
    },
   ["short"] = {
    },
@@ -107751,12 +107758,11 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Blade & Soul",
-   [2] = "Blade & Soul Fantasy",
-   [3] = "Blade and Soul",
-   [4] = "Душа и Острие",
-   [5] = "ブレイドアンドソウル",
-   [6] = "ブレイド＆ソウル",
+   [1] = "Blade & Soul Fantasy",
+   [2] = "Blade and Soul",
+   [3] = "Душа и Острие",
+   [4] = "ブレイドアンドソウル",
+   [5] = "ブレイド＆ソウル",
    },
   },
  [10434] = {
@@ -107802,11 +107808,12 @@ return {
  [10439] = {
   ["main"] = "Terra Formars",
   ["official"] = {
-   [1] = "テラフォーマーズ",
+   [1] = "TERRA FORMARS",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "テラフォーマーズ",
    },
   },
  [10440] = {
@@ -107935,13 +107942,14 @@ return {
    },
   },
  [10456] = {
-  ["main"] = "Terra Formars (OVA)",
+  ["main"] = "Terra Formars: Bugs2 2599",
   ["official"] = {
-   [1] = "テラフォーマーズ (OVA)",
+   [1] = "TERRA FORMARS BUGS2 2599",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "テラフォーマーズ OVA",
    },
   },
  [10457] = {
@@ -108260,6 +108268,7 @@ return {
    },
   ["syn"] = {
    [1] = "M3 - Sono Kuroki Hagane",
+   [2] = "M3 the dark metal",
    },
   },
  [10515] = {
@@ -108455,6 +108464,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Terror in Tokyo",
    },
   },
  [10538] = {
@@ -108495,6 +108505,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Poretto no Isu",
    },
   },
  [10542] = {
@@ -109175,6 +109186,116 @@ return {
    },
   ["syn"] = {
    [1] = "ペルソナ4 ザ・ゴールデン",
+   },
+  },
+ [10624] = {
+  ["main"] = "Nobunaga Concerto",
+  ["official"] = {
+   [1] = "信長協奏曲",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10625] = {
+  ["main"] = "Paizuri Cheerleader VS Sakunyuu Ouendan!",
+  ["official"] = {
+   [1] = "ぱいずりチアリーダーVS搾乳応援団!",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10626] = {
+  ["main"] = "Ao Haru Ride OAD",
+  ["official"] = {
+   [1] = "アオハライド OAD",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10627] = {
+  ["main"] = "Mushibugyou (2014)",
+  ["official"] = {
+   [1] = "ムシブギョー (2014)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10628] = {
+  ["main"] = "Imawa no Kuni no Alice",
+  ["official"] = {
+   [1] = "今際の国のアリス",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10629] = {
+  ["main"] = "Oyomesama Honey Days",
+  ["official"] = {
+   [1] = "およめさまHONEYDAYS",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10630] = {
+  ["main"] = "Love Colon",
+  ["official"] = {
+   [1] = "らぶコロン",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10631] = {
+  ["main"] = "Medamayaki no Kimi Itsu Tsubusu?",
+  ["official"] = {
+   [1] = "目玉焼きの黄身 いつつぶす?",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10632] = {
+  ["main"] = "KY Kei JC Kuuki-chan",
+  ["official"] = {
+   [1] = "KY系JCクウキちゃん",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10633] = {
+  ["main"] = "World Fool News",
+  ["official"] = {
+   [1] = "ワールド フールニュース",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10634] = {
+  ["main"] = "Gakumon! Ookami Shoujo wa Kujikenai",
+  ["official"] = {
+   [1] = "がくモン! ~オオカミ少女はくじけない~",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
    },
   },
 }
