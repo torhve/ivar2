@@ -653,6 +653,17 @@ function ivar2:Connect(config)
 
 	self:Log('info', 'Connecting to %s:%s.', config.host, config.port)
 	self.socket = connection.tcp(loop, self, config.host, config.port, bindHost, bindPort)
+
+	if(not self.persist) then
+		-- Load persist library using config
+		self.persist = require('persist')({
+			url = config.redishost or 'localhost',
+			port = config.redisport or 6379,
+			verbose = false,
+			namespace = config.redisnamespace or 'ivar2',
+			clear = false
+		})
+	end
 	self:DisableAllModules()
 	self:LoadModules()
 end
@@ -681,6 +692,7 @@ function ivar2:Reload()
 		self.control:stop(self.Loop)
 		self.timeout:stop(self.Loop)
 
+		message.persist = self.persist
 		message.socket = self.socket
 		message.config = self.config
 		message.timers = self.timers
