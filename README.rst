@@ -20,7 +20,10 @@ Install required dependencies
     sudo luarocks install "https://github.com/Neopallium/lua-handlers/raw/master/lua-handler-scm-0.rockspec"
     sudo luarocks install "https://github.com/brimworks/lua-http-parser/raw/master/lua-http-parser-scm-0.rockspec"
     sudo luarocks install "https://github.com/Neopallium/lua-handlers/raw/master/lua-handler-http-scm-0.rockspec"
+    sudo luarocks install "https://raw.githubusercontent.com/Neopallium/lua-handlers/master/lua-handler-http-scm-0.rockspec"
     sudo luarocks install lsqlite3
+    sudo luarocks install luasocket
+    sudo luarocks install luabitop
     wget https://github.com/haste/lua-idn/raw/master/idn.lua
 
 Configuration File
@@ -71,7 +74,7 @@ Launch bot
 
 ::
 
-    luajit ivar2.lua myconfig.lua
+    lua ivar2.lua myconfig.lua
 
 Modules
 -------
