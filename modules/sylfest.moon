@@ -8,7 +8,7 @@ word = "[%wæøåÆØÅ]+"
 badends = { "'en", "'ene", "'et", "'ing", "'ar", "'ane" }
 
 -- No [$|%s] in lua patterns so we just construct two patterns
-patternends = { '$', '%s' }
+patternends = { '$', '%s', '%.', ',' }
 
 -- Linestart exceptions
 lineexceptions = { '^"', "^'", "^-", "^ %-" }
