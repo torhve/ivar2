@@ -7334,9 +7334,11 @@ return {
    [1] = "Giacca verde",
    [2] = "Green jacket",
    [3] = "Lupin III TV",
-   [4] = "lupins1",
-   [5] = "لوبن الثالث",
-   [6] = "鲁邦三世 (TV第1部)",
+   [4] = "Lupin III: Part I",
+   [5] = "Lupin Sansei: Part I",
+   [6] = "lupins1",
+   [7] = "لوبن الثالث",
+   [8] = "鲁邦三世 (TV第1部)",
    },
   },
  [422] = {
@@ -16598,8 +16600,9 @@ return {
   ["syn"] = {
    [1] = "Komedia",
    [2] = "Komedija",
-   [3] = "Комедия",
-   [4] = "Комедія",
+   [3] = "Sweat Punch 3",
+   [4] = "Комедия",
+   [5] = "Комедія",
    },
   },
  [1055] = {
@@ -32001,7 +32004,8 @@ return {
   ["main"] = "Ryuusei Sentai Musumet",
   ["official"] = {
    [1] = "Musumet",
-   [2] = "流星戦隊ムスメット",
+   [2] = "Musumet: Las justicieras",
+   [3] = "流星戦隊ムスメット",
    },
   ["short"] = {
    },
@@ -33774,6 +33778,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Sweat Punch 2",
    },
   },
  [2395] = {
@@ -38273,7 +38278,8 @@ return {
   ["main"] = "Angel Blade Punish!",
   ["official"] = {
    [1] = "Angel Blade Punish!",
-   [2] = "エンジェルブレイドパニッシュ!",
+   [2] = "Лезвие Ангела - Наказание",
+   [3] = "エンジェルブレイドパニッシュ!",
    },
   ["short"] = {
    },
@@ -38950,14 +38956,15 @@ return {
    },
   },
  [2855] = {
-  ["main"] = "MAR",
+  ["main"] = "MAR Heaven",
   ["official"] = {
-   [1] = "Märchen Awakens Romance",
-   [2] = "อิทธิฤทธิ์พิชิตมายา",
-   [3] = "メル",
+   [1] = "MÄR メルヘヴン MÄRCHEN AWAKENS ROMANCE",
+   [2] = "Märchen Awakens Romance",
+   [3] = "อิทธิฤทธิ์พิชิตมายา",
    [4] = "메르헤븐",
    },
   ["short"] = {
+   [1] = "メル",
    },
   ["syn"] = {
    [1] = "MAR Heaven",
@@ -40880,6 +40887,7 @@ return {
    },
   ["syn"] = {
    [1] = "Pr. Dan Petory`s Blues",
+   [2] = "Sweat Punch 1",
    },
   },
  [3099] = {
@@ -41115,6 +41123,7 @@ return {
    },
   ["syn"] = {
    [1] = "Beyond",
+   [2] = "Sweat Punch 4",
    },
   },
  [3119] = {
@@ -49050,7 +49059,8 @@ return {
   ["main"] = "Cambrian",
   ["official"] = {
    [1] = "Cambrian",
-   [2] = "カンブリアン",
+   [2] = "Воплощение",
+   [3] = "カンブリアン",
    },
   ["short"] = {
    },
@@ -68826,7 +68836,8 @@ return {
    },
   ["syn"] = {
    [1] = "Junk Town",
-   [2] = "Sąvartyno miestas",
+   [2] = "Sweat Punch 5",
+   [3] = "Sąvartyno miestas",
    },
   },
  [6249] = {
@@ -70317,7 +70328,8 @@ return {
   ["syn"] = {
    [1] = "Gekijouban Munto",
    [2] = "Last War of Heavenloids and Akutoloids",
-   [3] = "劇場版ムント",
+   [3] = "Munto3",
+   [4] = "劇場版ムント",
    },
   },
  [6428] = {
@@ -71425,12 +71437,14 @@ return {
  [6558] = {
   ["main"] = "Anata dake Konbanwa",
   ["official"] = {
-   [1] = "貴方だけこんばんわ",
+   [1] = "Good night only to you",
+   [2] = "貴方だけこんばんわ",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "당신만 안녕하세요",
+   [1] = "Good Evening Just For You",
+   [2] = "당신만 안녕하세요",
    },
   },
  [6561] = {
@@ -75677,6 +75691,7 @@ return {
    },
   ["syn"] = {
    [1] = "Dům v plamenech",
+   [2] = "House of Flames",
    },
   },
  [6988] = {
@@ -75736,6 +75751,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Mezamero",
    },
   },
  [6996] = {
@@ -76461,6 +76477,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Bishoujo Animerama: Miyuki-chan SOS-H Shichauzo",
+   [2] = "Sexy Anime Rama #1",
    },
   },
  [7063] = {
@@ -76471,6 +76489,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Bishoujo Animerama 4",
+   [2] = "Sexy Anime Rama #4",
    },
   },
  [7064] = {
@@ -76481,6 +76501,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Bishoujo Animerama: Minami no Watashi no Heart ni Tacchi Shite...",
+   [2] = "Sexy Anime Rama #2",
    },
   },
  [7065] = {
@@ -76503,6 +76525,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Bishoujo Animerama 3",
+   [2] = "Sexy Anime Rama #3",
    },
   },
  [7067] = {
@@ -84818,7 +84842,7 @@ return {
    },
   },
  [7918] = {
-  ["main"] = "Soukou Kihei Votoms Case;Irvine",
+  ["main"] = "Soukou Kihei Votoms: Case;Irvine",
   ["official"] = {
    [1] = "装甲騎兵ボトムズ Case;IRVINE -ケース;アービン-",
    },
@@ -89372,8 +89396,8 @@ return {
  [8375] = {
   ["main"] = "Gekijouban Blood-C: The Last Dark",
   ["official"] = {
-   [1] = "BLOOD-C: последний Тёмный",
-   [2] = "Blood-C: The Last Dark",
+   [1] = "Blood-C: The Last Dark",
+   [2] = "Blood-C: Последний тёмный",
    [3] = "劇場版 BLOOD-C The Last Dark",
    },
   ["short"] = {
@@ -97866,11 +97890,12 @@ return {
    [1] = "Kamihaji",
    },
   ["syn"] = {
-   [1] = "Kami-sama Kiss",
-   [2] = "Kamisama Hajimemashita",
-   [3] = "Kamisama Kiss",
-   [4] = "بوسه ایزدی",
-   [5] = "حضرت ایزد از ملاقاتتون خوشوقتم",
+   [1] = "Divine Nanami",
+   [2] = "Kami-sama Kiss",
+   [3] = "Kamisama Hajimemashita",
+   [4] = "Kamisama Kiss",
+   [5] = "بوسه ایزدی",
+   [6] = "حضرت ایزد از ملاقاتتون خوشوقتم",
    },
   },
  [9299] = {
@@ -97883,6 +97908,7 @@ return {
    [2] = "P3M",
    },
   ["syn"] = {
+   [1] = "Персона 3 филмът",
    },
   },
  [9302] = {
@@ -99665,9 +99691,10 @@ return {
    [1] = "toaru s",
    },
   ["syn"] = {
-   [1] = "Toaru Kagaku no Choudenjihou S",
-   [2] = "railgun s",
-   [3] = "とある科学の超電磁砲S",
+   [1] = "To Aru Kagaku no Railgun S",
+   [2] = "Toaru Kagaku no Choudenjihou S",
+   [3] = "railgun s",
+   [4] = "とある科学の超電磁砲S",
    },
   },
  [9485] = {
@@ -100490,6 +100517,7 @@ return {
    [1] = "LOS",
    },
   ["syn"] = {
+   [1] = "Line Offline: Salaryman",
    },
   },
  [9567] = {
@@ -100723,10 +100751,11 @@ return {
   ["official"] = {
    [1] = "El Jardín de las Palabras",
    [2] = "Garden of Words",
-   [3] = "The Garden of Words",
-   [4] = "Сад изящных слов",
-   [5] = "言の葉の庭",
-   [6] = "言叶之庭",
+   [3] = "Il giardino delle parole",
+   [4] = "The Garden of Words",
+   [5] = "Сад изящных слов",
+   [6] = "言の葉の庭",
+   [7] = "言叶之庭",
    },
   ["short"] = {
    },
@@ -100887,6 +100916,7 @@ return {
    [1] = "Kuroko no Basuke 2",
    [2] = "Kuroko`s Basketball 2",
    [3] = "Баскетболът на Куроко 2",
+   [4] = "黑子的篮球 2",
    },
   },
  [9605] = {
@@ -102577,6 +102607,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Blood Lad: I`m not a cat",
    },
   },
  [9804] = {
@@ -104447,6 +104478,7 @@ return {
   ["main"] = "GJ-bu 2",
   ["official"] = {
    [1] = "GJ部＠",
+   [2] = "GJ부@",
    },
   ["short"] = {
    },
@@ -106607,11 +106639,13 @@ return {
    [1] = "ハピネスチャージプリキュア!",
    },
   ["short"] = {
-   [1] = "hapcha",
-   [2] = "hapicha",
-   [3] = "precure11",
+   [1] = "HaCha",
+   [2] = "hapcha",
+   [3] = "hapicha",
+   [4] = "precure11",
    },
   ["syn"] = {
+   [1] = "HappinessCharge Precure!",
    },
   },
  [10283] = {
@@ -107149,6 +107183,7 @@ return {
    },
   ["syn"] = {
    [1] = "Mekaku City Actors",
+   [2] = "eyeball wizards",
    },
   },
  [10361] = {
@@ -107269,7 +107304,8 @@ return {
  [10376] = {
   ["main"] = "Sword Art Online II",
   ["official"] = {
-   [1] = "ソードアート・オンラインII",
+   [1] = "هنر شمشیر زنی انلاین",
+   [2] = "ソードアート・オンラインII",
    },
   ["short"] = {
    [1] = "SAO 2",
@@ -107322,7 +107358,8 @@ return {
  [10384] = {
   ["main"] = "Mushishi Zoku Shou",
   ["official"] = {
-   [1] = "蟲師 続章",
+   [1] = "Mushi-Shi: Next Passage",
+   [2] = "蟲師 続章",
    },
   ["short"] = {
    [1] = "Mushishi S2",
@@ -108300,9 +108337,9 @@ return {
    },
   },
  [10517] = {
-  ["main"] = "Shounen Hollywood",
+  ["main"] = "Shounen Hollywood: Holly Stage for 49",
   ["official"] = {
-   [1] = "少年ハリウッド",
+   [1] = "少年ハリウッド -HOLLY STAGE FOR 49-",
    },
   ["short"] = {
    },
@@ -109296,6 +109333,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "KY Kei JC Kuukichan",
    },
   },
  [10633] = {
@@ -109371,6 +109409,107 @@ return {
   ["main"] = "Shin Seikimatsu: Yatsuto no Souguu",
   ["official"] = {
    [1] = "新世紀末 奴との遭遇",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10642] = {
+  ["main"] = "Short Peace",
+  ["official"] = {
+   [1] = "ショート・ピース",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10643] = {
+  ["main"] = "Yowamushi Pedal 2",
+  ["official"] = {
+   [1] = "弱虫ペダル 2",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10644] = {
+  ["main"] = "Maid of the Dead",
+  ["official"] = {
+   [1] = "MAID OF THE DEAD",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10645] = {
+  ["main"] = "No Littering",
+  ["official"] = {
+   [1] = "NO LITTERING",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10646] = {
+  ["main"] = "Pinky",
+  ["official"] = {
+   [1] = "PINKY",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10647] = {
+  ["main"] = "Shitcom",
+  ["official"] = {
+   [1] = "Shitcom",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10648] = {
+  ["main"] = "Hitsugi no Chaika OAD",
+  ["official"] = {
+   [1] = "棺姫のチャイカ OAD",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10649] = {
+  ["main"] = "Hashi no Mukou",
+  ["official"] = {
+   [1] = "端ノ向フ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10651] = {
+  ["main"] = "Kitsune to Circus",
+  ["official"] = {
+   [1] = "The Big Top Crime",
+   [2] = "きつねとサーカス",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10652] = {
+  ["main"] = "Mokkai Shiyo?",
+  ["official"] = {
+   [1] = "もっかいしよ?",
    },
   ["short"] = {
    },
