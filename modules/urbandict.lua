@@ -32,10 +32,6 @@ local handler = function(self, source, destination, input)
 			local result = parseJSON(data)
 
 			if(result) then
-				local msgLimit = (512 - 16 - 65 - 10) - #self.config.nick - #destination
-				if(#result > msgLimit) then
-					result = result:sub(1, msgLimit - 3) .. '...'
-				end
 				self:Msg('privmsg', destination, source, string.format('%s: %s', source.nick, result))
 			else
 				self:Msg('privmsg', destination, source, string.format("%s: %s is bad and you should feel bad.", source.nick, input))
