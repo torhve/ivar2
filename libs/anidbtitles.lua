@@ -10806,12 +10806,13 @@ return {
   ["main"] = "Uchuu Senkan Yamato",
   ["official"] = {
    [1] = "Crucero Espacial Yamato",
-   [2] = "Patrulha Estelar",
-   [3] = "Star Blazers",
-   [4] = "Διαστημόπλοιο Αργώ",
-   [5] = "חלוצי החלל",
-   [6] = "أبطال الفضاء",
-   [7] = "宇宙戦艦ヤマト",
+   [2] = "Kosmiczny pancernik Yamato",
+   [3] = "Patrulha Estelar",
+   [4] = "Star Blazers",
+   [5] = "Διαστημόπλοιο Αργώ",
+   [6] = "חלוצי החלל",
+   [7] = "أبطال الفضاء",
+   [8] = "宇宙戦艦ヤマト",
    },
   ["short"] = {
    [1] = "yamato1",
@@ -11518,8 +11519,9 @@ return {
   ["main"] = "Bakuretsu Hunter",
   ["official"] = {
    [1] = "Sorcerer Hunters TV",
-   [2] = "爆れつハンター",
-   [3] = "폭렬헌터",
+   [2] = "Sorcerer hunters",
+   [3] = "爆れつハンター",
+   [4] = "폭렬헌터",
    },
   ["short"] = {
    [1] = "bakuhan",
@@ -11722,8 +11724,9 @@ return {
   ["official"] = {
    [1] = "Gundam",
    [2] = "Mobile Suit Gundam",
-   [3] = "機動戦士ガンダム",
-   [4] = "機動戰士高達",
+   [3] = "机动战士高达",
+   [4] = "機動戦士ガンダム",
+   [5] = "機動戰士高達",
    },
   ["short"] = {
    [1] = "MSG",
@@ -12353,10 +12356,11 @@ return {
    [1] = "Attack # 1",
    [2] = "Attack #1",
    [3] = "Attack No. 1",
-   [4] = "Attack Number 1",
-   [5] = "Attack Number One",
-   [6] = "La ilusión de triunfar",
-   [7] = "Quella magnifica dozzina",
+   [4] = "Attack No.1",
+   [5] = "Attack Number 1",
+   [6] = "Attack Number One",
+   [7] = "La ilusión de triunfar",
+   [8] = "Quella magnifica dozzina",
    },
   },
  [758] = {
@@ -16190,10 +16194,11 @@ return {
  [1025] = {
   ["main"] = "Cat`s Eye",
   ["official"] = {
-   [1] = "Ein Supertrio",
-   [2] = "Occhi di Gatto",
-   [3] = "Signé Cat`s Eye",
-   [4] = "キャッツ・アイ",
+   [1] = "Cat`s Eye",
+   [2] = "Ein Supertrio",
+   [3] = "Occhi di Gatto",
+   [4] = "Signé Cat`s Eye",
+   [5] = "キャッツ・アイ",
    },
   ["short"] = {
    },
@@ -46198,7 +46203,7 @@ return {
    [5] = "Pinóquio",
    [6] = "Πινόκιο",
    [7] = "הרפתקאות פינוקיו",
-   [8] = "ماجد",
+   [8] = "ماجد لعبة خشبية",
    [9] = "樫の木モック",
    },
   ["short"] = {
@@ -55140,6 +55145,7 @@ return {
    [2] = "ママはぽよぽよザウルスがお好き",
    },
   ["short"] = {
+   [1] = "ママぽよ",
    },
   ["syn"] = {
    },
@@ -65171,6 +65177,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Hello Kitty`s Animation Theater 3b",
    },
   },
  [5800] = {
@@ -83786,6 +83793,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Hello Kitty`s Animation Theater 9b",
    },
   },
  [7805] = {
@@ -83838,6 +83846,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Hello Kitty`s Animation Theater 11b",
    },
   },
  [7812] = {
@@ -83849,6 +83858,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Hello Kitty`s Animation Theater 10a",
    },
   },
  [7813] = {
@@ -83916,6 +83926,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Hello Kitty`s Animation Theater 7b",
    },
   },
  [7820] = {
@@ -83939,6 +83950,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Hello Kitty`s Animation Theater 6b",
    },
   },
  [7822] = {
@@ -83962,7 +83974,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Hello Kitty`s Animation Theatre 2a",
+   [1] = "Hello Kitty`s Animation Theater 2a",
    },
   },
  [7825] = {
@@ -83998,7 +84010,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Hello Kitty`s Animation Theatre 1b",
+   [1] = "Hello Kitty`s Animation Theater 1b",
    },
   },
  [7828] = {
@@ -84034,6 +84046,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Hello Kitty`s Animation Theater 4b",
    },
   },
  [7832] = {
@@ -84145,6 +84158,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Hello Kitty`s Animation Theater 5b",
    },
   },
  [7843] = {
@@ -84252,6 +84266,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Hello Kitty`s Animation Theater 8b",
    },
   },
  [7853] = {
@@ -84263,6 +84278,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Hello Kitty`s Animation Theater 12b",
    },
   },
  [7854] = {
@@ -91950,7 +91966,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Steins;Gate the Movie: Burdened Domain of Deja vu",
+   [1] = "Brama Steina: Brzemię déjà vu",
+   [2] = "Steins;Gate the Movie: Burdened Domain of Deja vu",
    },
   },
  [8656] = {
@@ -93131,7 +93148,7 @@ return {
  [8773] = {
   ["main"] = "Game Tengoku",
   ["official"] = {
-   [1] = "ゲーム天国",
+   [1] = "ゲーム天国 THE GAME PARADISE!",
    },
   ["short"] = {
    },
@@ -93239,9 +93256,10 @@ return {
  [8787] = {
   ["main"] = "Uchuu Senkan Yamato 2199",
   ["official"] = {
-   [1] = "Star Blazers 2199",
-   [2] = "宇宙战舰大和号2199",
-   [3] = "宇宙戦艦ヤマト2199",
+   [1] = "Kosmiczny pancernik Yamato 2199",
+   [2] = "Star Blazers 2199",
+   [3] = "宇宙战舰大和号2199",
+   [4] = "宇宙戦艦ヤマト2199",
    },
   ["short"] = {
    [1] = "SBY 2199",
@@ -94312,7 +94330,7 @@ return {
    },
   },
  [8889] = {
-  ["main"] = "Sasami-san Ganbaranai",
+  ["main"] = "Sasami-san@Ganbaranai",
   ["official"] = {
    [1] = "Sasami-san@Ganbaranai",
    [2] = "ささみさん@がんばらない",
@@ -94323,9 +94341,9 @@ return {
    [2] = "sasami-san",
    },
   ["syn"] = {
-   [1] = "Sasami-san at Ganbaranai",
-   [2] = "Sasami-san@Ganbaranai",
-   [3] = "Sasami@Unmotivated",
+   [1] = "Sasami-san Ganbaranai",
+   [2] = "Sasami@Unmotivated",
+   [3] = "ささみさんがんばらない",
    },
   },
  [8890] = {
@@ -96893,14 +96911,15 @@ return {
   ["syn"] = {
    [1] = "Kabukimonogatari",
    [2] = "Koimonogatari",
-   [3] = "Monogatari SS",
-   [4] = "Nekomonogatari (Shiro)",
-   [5] = "Onimonogatari",
-   [6] = "Otorimonogatari",
-   [7] = "Story Series: Second Season",
-   [8] = "Zenmonogatari",
-   [9] = "全物語",
-   [10] = "猫物語(白)",
+   [3] = "Monogatari S2",
+   [4] = "Monogatari SS",
+   [5] = "Nekomonogatari (Shiro)",
+   [6] = "Onimonogatari",
+   [7] = "Otorimonogatari",
+   [8] = "Story Series: Second Season",
+   [9] = "Zenmonogatari",
+   [10] = "全物語",
+   [11] = "猫物語(白)",
    },
   },
  [9184] = {
@@ -98055,14 +98074,14 @@ return {
   ["main"] = "Dragon Ball Z: Kami to Kami",
   ["official"] = {
    [1] = "Dragon Ball Z: A Batalha dos Deuses",
-   [2] = "Dragon Ball Z: La Batalla de los Dioses",
-   [3] = "ドラゴンボールZ 神と神",
+   [2] = "Dragon Ball Z: Battle of Gods",
+   [3] = "Dragon Ball Z: La Batalla de los Dioses",
+   [4] = "ドラゴンボールZ 神と神 Battle of Gods",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Dragon Ball Z: Battle of Gods",
-   [2] = "Dragon Ball Z: God vs. God",
+   [1] = "Dragon Ball Z: God vs. God",
    },
   },
  [9316] = {
@@ -101493,7 +101512,8 @@ return {
  [9666] = {
   ["main"] = "Mushibugyou",
   ["official"] = {
-   [1] = "ムシブギョー",
+   [1] = "Mushibugyo",
+   [2] = "ムシブギョー",
    },
   ["short"] = {
    },
@@ -101668,8 +101688,9 @@ return {
   ["main"] = "Captain Harlock (2013)",
   ["official"] = {
    [1] = "Căpitanul Harlock: Pirat Spațial",
-   [2] = "Космический пират Харлок",
-   [3] = "キャプテンハーロック (2013)",
+   [2] = "Space Pirate Captain Harlock",
+   [3] = "Космический пират Харлок",
+   [4] = "キャプテンハーロック (2013)",
    },
   ["short"] = {
    },
@@ -103522,8 +103543,10 @@ return {
    [1] = "LOVE STAGE!!",
    },
   ["short"] = {
+   [1] = "ラブステ",
    },
   ["syn"] = {
+   [1] = "ラブ ステージ",
    },
   },
  [9907] = {
@@ -104112,6 +104135,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Czajka z Kanhime",
    },
   },
  [9974] = {
@@ -104475,7 +104499,7 @@ return {
    },
   },
  [10016] = {
-  ["main"] = "GJ-bu 2",
+  ["main"] = "GJ-bu@",
   ["official"] = {
    [1] = "GJ部＠",
    [2] = "GJ부@",
@@ -104483,7 +104507,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "GJ-bu@",
+   [1] = "GJ Club@",
    },
   },
  [10020] = {
@@ -107812,11 +107836,10 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Blade & Soul Fantasy",
-   [2] = "Blade and Soul",
-   [3] = "Душа и Острие",
-   [4] = "ブレイドアンドソウル",
-   [5] = "ブレイド＆ソウル",
+   [1] = "Blade and Soul",
+   [2] = "Душа и Острие",
+   [3] = "ブレイドアンドソウル",
+   [4] = "ブレイド＆ソウル",
    },
   },
  [10434] = {
@@ -109172,6 +109195,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Goblin and Snow Hare",
    },
   },
  [10617] = {
@@ -109510,6 +109534,97 @@ return {
   ["main"] = "Mokkai Shiyo?",
   ["official"] = {
    [1] = "もっかいしよ?",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10656] = {
+  ["main"] = "Inui-san!",
+  ["official"] = {
+   [1] = "イヌイさんッ!",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10657] = {
+  ["main"] = "World Trigger",
+  ["official"] = {
+   [1] = "ワールドトリガー",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10659] = {
+  ["main"] = "Baku Ane: Otouto Shibocchau zo! The Animation",
+  ["official"] = {
+   [1] = "ばくあね 弟しぼっちゃうぞ! THE ANIMATION",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10660] = {
+  ["main"] = "Fechikano!",
+  ["official"] = {
+   [1] = "ふぇちかの!",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10661] = {
+  ["main"] = "Gunbare! Game Tengoku 2",
+  ["official"] = {
+   [1] = "GUNばれ! ゲーム天国 THE GAME PARADISE 2",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10662] = {
+  ["main"] = "Kuroko no Baske 3",
+  ["official"] = {
+   [1] = "黒子のバスケ 3",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10663] = {
+  ["main"] = "Kekkai Sensen",
+  ["official"] = {
+   [1] = "血界戦線",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Blood Blockade Battlefront",
+   },
+  },
+ [10665] = {
+  ["main"] = "Kanojo ga Flag o Oraretara OAD",
+  ["official"] = {
+   [1] = "彼女がフラグをおられたら OAD",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10666] = {
+  ["main"] = "Tales of Zestiria: Doushi no Yoake",
+  ["official"] = {
+   [1] = "テイルズ オブ ゼスティリア ~導師の夜明け~",
    },
   ["short"] = {
    },
