@@ -474,8 +474,11 @@ function ivar2:DispatchCommand(command, argument, source, destination)
 					success, message = pcall(callback, self, argument)
 				elseif(type(pattern) == 'number' and source) then
 					success, message = pcall(callback, self, source, destination, argument)
-				elseif(argument:match(pattern)) then
-					success, message = pcall(callback, self, source, destination, argument:match(pattern))
+				else
+					local channelPattern = self:ChannelCommandPattern(pattern, moduleName, destination)
+					if(argument:match(channelPattern)) then
+						success, message = pcall(callback, self, source, destination, argument:match(channelPattern))
+					end
 				end
 
 				if(not success and message) then
@@ -493,6 +496,24 @@ function ivar2:IsModuleDisabled(moduleName, destination)
 	if(type(channel) == 'table') then
 		return tableHasValue(channel.disabledModules, moduleName)
 	end
+end
+
+function ivar2:ChannelCommandPattern(pattern, moduleName, destination)
+	local default = '%p'
+	-- First check for a global pattern
+	local npattern = self.config.commandPattern or default
+	-- If a channel specific pattern exist, use it instead of the default ^%p
+	local channel = self.config.channels[destination]
+
+	if(type(channel) == 'table') then
+		npattern = channel.commandPattern or npattern
+
+		-- Check for module override
+		if(type(channel.modulePatterns) == 'table') then
+			npattern = channel.modulePatterns[moduleName] or npattern
+		end
+	end
+	return pattern:gsub('%^%%p', '%^'..npattern)
 end
 
 function ivar2:Ignore(mask)
