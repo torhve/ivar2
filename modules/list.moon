@@ -17,11 +17,12 @@ listPatterns = (source, destination, moduleName) =>
 
   out = {}
   for pattern, callback in next, moduleTable
-    table.insert out, pattern
+    patt = @ChannelCommandPattern(pattern, moduleName, destination)
+    table.insert out, patt
 
   if #out > 0
     @Msg 'privmsg', destination, source, "%s patterns: %s", moduleName, table.concat(out, ', ')
 
 PRIVMSG:
-  '%plist$': listModules
-  '%plist (%w+)$': listPatterns
+  '^%plist$': listModules
+  '^%plist (%w+)$': listPatterns
