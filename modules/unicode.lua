@@ -66,6 +66,23 @@ local function handleSearch(self, source, destination, name)
 	end
 end
 
+local function handleSearchShort(self, source, destination, name)
+	local db = sql.open("cache/unicode.sql")
+	local selectStmt  = db:prepare('SELECT cp FROM unicode WHERE LOWER(name) LIKE LOWER(?)')
+	selectStmt:bind_values('%'..name..'%')
+
+    local out = {}
+    for row in selectStmt:nrows() do
+        table.insert(out, string.format('%s', toUtf8(row.cp)))
+    end
+
+	db:close()
+
+	if(#out) then
+		self:Msg('privmsg', destination, source, table.concat(out, ''))
+	end
+end
+
 local function handleLookup(self, source, destination, str)
 	local db = sql.open("cache/unicode.sql")
     local out = {}
@@ -92,6 +109,7 @@ end
 return {
 	PRIVMSG = {
 		['^%pu (.*)$'] = handleSearch,
+		['^%pus (.*)$'] = handleSearchShort,
 		['^%pw (.*)$'] = handleLookup,
 	}
 }
