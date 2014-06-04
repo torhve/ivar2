@@ -13,7 +13,7 @@ openDb = ->
   return db
 
 triggerHelp  = (source, destination, argument) =>
-   @Msg 'privmsg', destination, source, 'Usage: !trigger add <name>|<lua pattern>|<lua code>. Ex: !trigger add help|^!help (%w+)|say "%s, you need help"'
+   @Msg 'privmsg', destination, source, 'Usage: !trigger add <name>|<lua pattern>|<lua code>. Ex: !trigger add help|^!help (%w+)|say "%s, you need help. Delete: !trigger del <name>"'
 
 -- Construct a safe environ for trigger with two functions; say and reply
 --- Preferrably you should be able to cross-call modules here to make aliasing possible
@@ -75,17 +75,39 @@ delCommand = (source, destination, name) =>
   if code == sqlite3.DONE
     -- Invalid name
     db\close!
+    @Msg 'privmsg', destination, source, 'Invalid name'
     return
   pattern = stmt\get_values()[1]
 
   -- Delete trigger from db
   ins = db\prepare "DELETE FROM trigger WHERE name = ?"
-  code = ins\bind_values pattern
+  code = ins\bind_values name
   code = ins\step!
   code = ins\finalize!
   db\close!
 
   @UnregisterCommand 'triggers', pattern
+  @Msg 'privmsg', destination, source, "Trigger #{pattern} deleted"
+
+listTriggers = (source, destination) =>
+  db = openDb!
+  stmt = db\prepare "SELECT name FROM trigger"
+  out = {}
+  for row in stmt\nrows! do
+    table.insert out, row.name
+
+  db\close!
+
+  if #out > 0
+    @Msg 'privmsg', destination, source, "Triggers: "..table.concat(out, ', ')
+
+showTrigger = (source, destination, name) =>
+  db = openDb!
+  stmt = db\prepare "SELECT * FROM trigger WHERE name = ?"
+  code = stmt\bind_values name
+  for row in stmt\nrows! do
+    @Msg 'privmsg', destination, source, "Trigger: \002#{row.name}\002, pattern: #{row.pattern}, code: #{row.funcstr}"
+  db\close!
 
 -- Register commands on startup
 db = openDb!
@@ -94,6 +116,8 @@ for row in db\nrows 'SELECT pattern, funcstr FROM trigger'
 db\close!
 
 PRIVMSG:
-  '%ptrigger$': triggerHelp
-  '%ptrigger add (.+)|(.+)|(.+)$': regCommand
-  '%ptrigger del (.+)$': delCommand
+  '^%ptrigger$': triggerHelp
+  '^%ptrigger add (.+)|(.+)|(.+)$': regCommand
+  '^%ptrigger del (.+)$': delCommand
+  '^%ptrigger list$': listTriggers
+  '^%ptrigger show (.+)$': showTrigger
