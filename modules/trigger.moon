@@ -7,18 +7,24 @@ openDb = ->
     CREATE TABLE IF NOT EXISTS trigger (
       name UNIQUE ON CONFLICT REPLACE,
       pattern UNIQUE ON CONFLICT REPLACE,
+      destination,
       funcstr
     );
     ]]
   return db
 
 triggerHelp  = (source, destination, argument) =>
-   @Msg 'privmsg', destination, source, 'Usage: !trigger add <name>|<lua pattern>|<lua code>. Ex: !trigger add help|^!help (%w+)|say "%s, you need help. Delete: !trigger del <name>"'
+  help = 'Usage: ¤trigger add <name>|<lua pattern>|<lua code>. Ex: ¤trigger add help|^!help (%w+)|say "%s, you need help. Delete: ¤trigger del <name>. List: ¤trigger list. Show: ¤trigger show <name>"'
+  patt = @ChannelCommandPattern('^%p', 'triger', destination)
+  help = help\gsub '¤', patt
+  @Msg 'privmsg', destination, source, help
 
 -- Construct a safe environ for trigger with two functions; say and reply
 --- Preferrably you should be able to cross-call modules here to make aliasing possible
+-- TODO: needs a proper sandbox to prevent endless loops, etc
 sandbox = (func) ->
   (source, destination, ...) =>
+    -- TODO check destination here to decide if it's a local or global trigger
     -- Store args so we can use them in env
     arg = {...}
     env =
@@ -28,6 +34,8 @@ sandbox = (func) ->
         @Msg 'privmsg', destination, source, source.nick..': '..str, unpack(arg),
       print: (str) ->
         @Msg 'privmsg', destination, source, str, unpack(arg),
+      :source
+      :destination
       simplehttp:require'simplehttp'
       json:require'json'
       :string
@@ -58,8 +66,8 @@ triggerHandler = (source, destination, funcstr) =>
 -- Register the command
 regCommand = (source, destination, name, pattern, funcstr) =>
   db = openDb!
-  ins = db\prepare "INSERT INTO trigger (name, pattern, funcstr) VALUES(?, ?, ?)"
-  code = ins\bind_values name, pattern, funcstr
+  ins = db\prepare "INSERT INTO trigger (name, pattern, funcstr, destination) VALUES(?, ?, ?, ?)"
+  code = ins\bind_values name, pattern, funcstr, destination
   code = ins\step!
   code = ins\finalize!
   db\close!
@@ -100,6 +108,8 @@ listTriggers = (source, destination) =>
 
   if #out > 0
     @Msg 'privmsg', destination, source, "Triggers: "..table.concat(out, ', ')
+  else
+    @Msg 'privmsg', destination, source, "No triggers defined"
 
 showTrigger = (source, destination, name) =>
   db = openDb!
@@ -111,8 +121,8 @@ showTrigger = (source, destination, name) =>
 
 -- Register commands on startup
 db = openDb!
-for row in db\nrows 'SELECT pattern, funcstr FROM trigger'
-  ivar2\RegisterCommand 'triggers', row.pattern, triggerHandler(ivar2, nil, nil, row.funcstr)
+for row in db\nrows 'SELECT pattern, funcstr, destination FROM trigger'
+  ivar2\RegisterCommand 'triggers', row.pattern, triggerHandler(ivar2, nil, row.destination, row.funcstr)
 db\close!
 
 PRIVMSG:
