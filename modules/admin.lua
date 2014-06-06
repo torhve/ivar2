@@ -48,12 +48,21 @@ return {
 			end
 		end,
 
-		['reload>'] = function(self, source, destination)
+		['^reload>$'] = function(self, source, destination)
 			if(not verifyOwner(source)) then return end
 
 			self:Msg('privmsg', destination, source, "Triggered reload.")
 			self:Reload()
 		end,
+
+		['reload>%s*(%S+)$'] = function(self, source, destination, module)
+			if(not verifyOwner(source)) then return end
+
+			self:Msg('privmsg', destination, source, "Reloading module: %s", module)
+			self:DisableModule(module)
+			self:LoadModule(module)
+		end,
+
 
 		['timers> (%S+) ?(.*)$'] = function(self, source, destination, command, argument )
 			if(not verifyOwner(source)) then return end
