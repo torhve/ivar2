@@ -402,6 +402,14 @@ function ivar2:Msg(type, destination, source, ...)
 	end
 end
 
+function ivar2:Say(destination, source, ...)
+	return self:Msg('privmsg', destination, source, ...)
+end
+
+function ivar2:Reply(destination, source, format, ...)
+	return self:Msg('privmsg', destination, source, source.nick..':'..format, ...)
+end
+
 function ivar2:Nick(nick)
 	self.config.nick = nick
 	return self:Send('NICK %s', nick)
@@ -448,11 +456,11 @@ function ivar2:DispatchCommand(command, argument, source, destination)
 				if(type(pattern) == 'number' and not source) then
 					success, message = pcall(callback, self, argument)
 				elseif(type(pattern) == 'number' and source) then
-					success, message = pcall(callback, self, source, destination, argument)
+					success, message = self:ModuleCall(callback, source, destination, argument)
 				else
 					local channelPattern = self:ChannelCommandPattern(pattern, moduleName, destination)
 					if(argument:match(channelPattern)) then
-						success, message = pcall(callback, self, source, destination, argument:match(channelPattern))
+						success, message = self:ModuleCall(callback, source, destination, argument:match(channelPattern))
 					end
 				end
 
@@ -590,6 +598,24 @@ function ivar2:LoadModules()
 		end
 	end
 end
+
+function ivar2:ModuleCall(func, source, destination, arg)
+	-- Construct a environment for each callback that provide some helper
+	-- functions and utilities for the modules
+	local env = {
+		say = function(str, ...)
+			self:Say(destination, source, str, ...)
+		end,
+		reply = function(str, ...)
+			self:Reply(destination, source, str, ...)
+		end
+	}
+	local proxy = setmetatable(env, {__index = _G })
+	setfenv(func, env)
+
+	return pcall(func, self, source, destination, arg)
+end
+
 
 function ivar2:Events()
 	return events
