@@ -474,7 +474,7 @@ function ivar2:IsModuleDisabled(moduleName, destination)
 end
 
 function ivar2:ChannelCommandPattern(pattern, moduleName, destination)
-	local default = '%p'
+	local default = '%%p'
 	-- First check for a global pattern
 	local npattern = self.config.commandPattern or default
 	-- If a channel specific pattern exist, use it instead of the default ^%p
@@ -488,7 +488,8 @@ function ivar2:ChannelCommandPattern(pattern, moduleName, destination)
 			npattern = channel.modulePatterns[moduleName] or npattern
 		end
 	end
-	return pattern:gsub('%^%%p', '%^'..npattern)
+	local patt, n = pattern:gsub('%^%%p', '%^'..npattern)
+	return patt
 end
 
 function ivar2:Ignore(mask)
