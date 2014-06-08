@@ -84655,7 +84655,8 @@ return {
    [1] = "Pokemon Nero & Bianco",
    [2] = "Pokemon: Black & White",
    [3] = "Pokemon: Czerń i Biel",
-   [4] = "ポケットモンスター ベストウイッシュ",
+   [4] = "Pokémon Preto e Branco",
+   [5] = "ポケットモンスター ベストウイッシュ",
    },
   ["short"] = {
    [1] = "pkmnbw",
@@ -93275,7 +93276,8 @@ return {
   ["main"] = "Gekijouban Fairy Tail: Houou no Miko",
   ["official"] = {
    [1] = "Fairy Tail le film: La prêtresse du Phœnix",
-   [2] = "劇場版 FAIRY TAIL 鳳凰の巫女",
+   [2] = "Fairy Tail the Movie: Phoenix Priestess",
+   [3] = "劇場版 FAIRY TAIL 鳳凰の巫女",
    },
   ["short"] = {
    },
@@ -94595,7 +94597,8 @@ return {
   ["main"] = "Phi Brain: Kami no Puzzle (2012)",
   ["official"] = {
    [1] = "(دماغ الفيلسوف : لغز الإله (2012",
-   [2] = "ファイ・ブレイン 神のパズル (2012)",
+   [2] = "Phi-Brain: Puzzle of God - The Orpheus Order",
+   [3] = "ファイ・ブレイン 神のパズル (2012)",
    },
   ["short"] = {
    },
@@ -97202,7 +97205,8 @@ return {
   ["official"] = {
    [1] = "Pokemon: BW Adventures in Unova (2012)",
    [2] = "Pokemon: BW Avonturen in Unova (2012)",
-   [3] = "ポケットモンスター ベストウイッシュ シーズン2",
+   [3] = "Pokémon Preto e Branco: Destinos Rivais",
+   [4] = "ポケットモンスター ベストウイッシュ シーズン2",
    },
   ["short"] = {
    [1] = "pkmnbw2",
@@ -97986,7 +97990,8 @@ return {
    [4] = "Sailor Moon Crystal",
    [5] = "Sailor Moon Remake",
    [6] = "Красавица-воин Сейлор Мун: кристалл",
-   [7] = "美少女戦士セーラームーン クリスタル",
+   [7] = "Прекрасная воительница Сейлор Мун: Кристалл",
+   [8] = "美少女戦士セーラームーン クリスタル",
    },
   },
  [9307] = {
@@ -98079,6 +98084,7 @@ return {
    [4] = "ドラゴンボールZ 神と神 Battle of Gods",
    },
   ["short"] = {
+   [1] = "DBZ Movie 14",
    },
   ["syn"] = {
    [1] = "Dragon Ball Z: God vs. God",
@@ -98377,6 +98383,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Koukou Butouden Crows",
+   [2] = "高校武闘伝 クローズ",
    },
   },
  [9346] = {
@@ -101373,8 +101381,9 @@ return {
   ["main"] = "Pocket Monsters: Best Wishes! Season 2 - Episode N",
   ["official"] = {
    [1] = "Pokemon: BW Adventures in Unova (2013)",
-   [2] = "Pokémon: BW Avonturen in Unova (2013)",
-   [3] = "ポケットモンスター ベストウイッシュ シーズン2 エピソードN",
+   [2] = "Pokémon Preto e Branco: Aventuras em Unova",
+   [3] = "Pokémon: BW Avonturen in Unova (2013)",
+   [4] = "ポケットモンスター ベストウイッシュ シーズン2 エピソードN",
    },
   ["short"] = {
    [1] = "pmbw2n",
@@ -102288,7 +102297,8 @@ return {
   ["main"] = "Pocket Monsters: Best Wishes! Season 2 - Decolora Adventure",
   ["official"] = {
    [1] = "Pokemon: BW Adventures in Unova and Beyond",
-   [2] = "ポケットモンスター ベストウイッシュ シーズン2 デコロラアドベンチャー",
+   [2] = "Pokémon Preto e Branco: Aventuras em Unova e Além",
+   [3] = "ポケットモンスター ベストウイッシュ シーズン2 デコロラアドベンチャー",
    },
   ["short"] = {
    [1] = "pmbw2d",
@@ -104135,7 +104145,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Czajka z Kanhime",
+   [1] = "Czajka: Księżniczka z trumną",
    },
   },
  [9974] = {
@@ -106047,7 +106057,8 @@ return {
   ["main"] = "JoJo no Kimyou na Bouken: Stardust Crusaders",
   ["official"] = {
    [1] = "JoJo`s Bizarre Adventure: Stardust Crusaders",
-   [2] = "ジョジョの奇妙な冒険 スターダストクルセイダース",
+   [2] = "JoJo`s Bizzare Adventure: Stardust Crusaders",
+   [3] = "ジョジョの奇妙な冒険 スターダストクルセイダース",
    },
   ["short"] = {
    [1] = "JJBA 2014",
@@ -106058,7 +106069,7 @@ return {
   ["syn"] = {
    [1] = "JOJO`S BIZARRE ADVENTURE: Stardust Crusaders",
    [2] = "JoJo`s Bizarre Adventure Part 3",
-   [3] = "JoJo`s Bizzare Adventure: Stardust Crusaders",
+   [3] = "Невероятните приключения на Джо-Джо и звездните кръстоносци",
    },
   },
  [10207] = {
@@ -106521,6 +106532,7 @@ return {
   ["official"] = {
    [1] = "Is the Order a Rabbit?",
    [2] = "ご注文はうさぎですか?",
+   [3] = "请问您今天要来点兔子吗？",
    },
   ["short"] = {
    [1] = "gochiusa",
@@ -107239,6 +107251,7 @@ return {
    },
   ["syn"] = {
    [1] = "Fuuun Ishin Dai Shogun",
+   [2] = "风云维新大将军",
    },
   },
  [10366] = {
@@ -107263,9 +107276,9 @@ return {
    },
   },
  [10368] = {
-  ["main"] = "Shin Tennis no Ouji-sama (2014)",
+  ["main"] = "Shin Tennis no Ouji-sama OVA vs Genius10",
   ["official"] = {
-   [1] = "新テニスの王子様 (2014)",
+   [1] = "新テニスの王子様 OVA vs Genius10",
    },
   ["short"] = {
    },
@@ -107273,7 +107286,7 @@ return {
    },
   },
  [10369] = {
-  ["main"] = "Chou Akuukan Bouheki Cheese Napolitan",
+  ["main"] = "Chou Akuukan Bouheki Cheese Neapolitan",
   ["official"] = {
    [1] = "超亜空間防壁チーズ・ナポリタン",
    },
@@ -107403,6 +107416,7 @@ return {
    [1] = "アオハライド",
    },
   ["short"] = {
+   [1] = "aoha",
    },
   ["syn"] = {
    [1] = "Aoharaido",
@@ -108005,6 +108019,7 @@ return {
    [1] = "とある科学の超電磁砲S 大事なことはぜんぶ銭湯に教わった",
    },
   ["short"] = {
+   [1] = "Railgun S OVA",
    },
   ["syn"] = {
    },
@@ -108341,6 +108356,7 @@ return {
   ["main"] = "M3: Sono Kuroki Hagane",
   ["official"] = {
    [1] = "M3 ~ソノ黒キ鋼~",
+   [2] = "M3～黑色钢铁～",
    },
   ["short"] = {
    },
@@ -109144,6 +109160,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Magimoji Rurumo",
    },
   },
  [10610] = {
@@ -109548,6 +109565,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "イヌイさんっ!",
    },
   },
  [10657] = {
@@ -109625,6 +109643,75 @@ return {
   ["main"] = "Tales of Zestiria: Doushi no Yoake",
   ["official"] = {
    [1] = "テイルズ オブ ゼスティリア ~導師の夜明け~",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10667] = {
+  ["main"] = "Hozuki no Reitetsu OAD",
+  ["official"] = {
+   [1] = "鬼灯の冷徹 OAD",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10669] = {
+  ["main"] = "Buddy Complex: Kanketsuhen - Ano Sora ni Kaeru Mirai de",
+  ["official"] = {
+   [1] = "バディ・コンプレックス 完結編 -あの空に還る未来で-",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10671] = {
+  ["main"] = "School Days",
+  ["official"] = {
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10672] = {
+  ["main"] = "Nozo x Kimi",
+  ["official"] = {
+   [1] = "ノゾxキミ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10673] = {
+  ["main"] = "Ane Log",
+  ["official"] = {
+   [1] = "姉ログ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10674] = {
+  ["main"] = "Fantasista Stella",
+  ["official"] = {
+   [1] = "ファンタジスタ ステラ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10676] = {
+  ["main"] = "Danna ga Nani o Itteiru ka Wakaranai Ken",
+  ["official"] = {
+   [1] = "旦那が何を言っているかわからない件",
    },
   ["short"] = {
    },
