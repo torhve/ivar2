@@ -15,6 +15,9 @@ PRIVMSG: {
         if w == "http" or w == "https"
           break
         if not getting
+          -- Skip k itself
+          if w == 'k'
+            continue
           -- Less odds if not starting with letter.
           if w\find("^[%a']") or math.random(2) == 1
             if math.random(1, max + i + 1) <= i
