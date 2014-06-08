@@ -231,7 +231,7 @@ end
 local urlBase = "http://api.geonames.org/hierarchyJSON?geonameId=%d&username=haste"
 return {
 	PRIVMSG = {
-		['^!yr(7?) (.+)$'] = function(self, source, destination, seven, input)
+		['^%pyr(7?) (.+)$'] = function(self, source, destination, seven, input)
 			input = trim(input):lower()
 			local place = getPlace(input)
 
@@ -313,7 +313,7 @@ return {
 				ivar2:Msg('privmsg', destination, source, "Does that place even exist?")
 			end
 		end,
-		['^!temp (.+)$'] = function(self, source, destination, input) 
+		['^%ptemp (.+)$'] = function(self, source, destination, input)
 			place = getPlace(input)
 
 			if(place) then
