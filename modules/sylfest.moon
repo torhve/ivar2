@@ -1,40 +1,33 @@
-trim = (s) ->
-  string.match s, '^%s*(.*%S)' or ''
+lpeg = require 'lpeg'
+import match, locale, P, R, V, S, Ct, C, Cg, Cf, Cc, Cp from lpeg
+import concat from table
 
--- the words we want to match
-word = "[%wæøåÆØÅ]+"
-
--- These are the endings we don't approve
-badends = { "'en", "'ene", "'et", "'ing", "'ar", "'ane" }
-
--- No [$|%s] in lua patterns so we just construct two patterns
-patternends = { '$', '%s', '%.', ',' }
-
+-- Helper for searching anywhere in string for patterns
+anywhere = (p) ->
+  P{ p + 1 * V(1) }
+-- Helper for maybe pattern
+maybe = (p) -> p^-1
+-- Match norwegian words
+word = R('az') + R('AZ') + S('æøåÆØÅ')
+-- With an '
+apo = P "'"
+-- With bad endings
+bend = P("en") + P("ene") + P("et") + P("ing") + P("ar") + P("ane")
+-- Separated by or line end
+wend = S(',. ') + P(-1)
 -- Linestart exceptions
-lineexceptions = { '^"', "^'", "^-", "^ %-" }
+bstart = maybe(P(' ')) * S[["'-]]
 
--- Construct all the patterns we need to check
-patterns = {}
-for wend in *badends
-  for pend in *patternends
-    table.insert patterns, word .. wend .. pend
-
--- Check every word against our bad patterns.
-checkWord = (source, destination, line) =>
-  -- First check for exceptions
-  for pattern in *lineexceptions
-    if line\match pattern
-      -- Line is excepted. 
-      return
-
-  out = {}
-  for pattern in *patterns
-    for word in line\gmatch pattern
-      table.insert out, trim(word)
-
-  if #out > 0
-    @Msg 'privmsg', destination, source, "Sylfest likar ikkje: %s", table.concat(out, ', ')
+-- Capture word with bad endings followed by good word end
+sylfestpatt = C(word^1 * apo * bend) * P(wend)
+-- Search anywhere in string, capture all sylfestwords, do not match if line starts with excepted linestarts
+fullpatt = Ct(anywhere(sylfestpatt)^1 - bstart)
 
 -- run our handler on any message that contains '
 PRIVMSG:
-  ".*'.*": checkWord
+  ".*'.*": (source, destination, line) =>
+    matches = fullpatt\match(line)
+    if matches
+      reply "Sylfest likar ikkje: %s", concat(matches, ', ')
+
+
