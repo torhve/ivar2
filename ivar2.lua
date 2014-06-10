@@ -686,6 +686,7 @@ function ivar2:ModuleCall(func, source, destination, arg)
 	-- Construct a environment for each callback that provide some helper
 	-- functions and utilities for the modules
 	local env = {
+		ivar2 = self,
 		say = function(str, ...)
 			self:Say(destination, source, str, ...)
 		end,
