@@ -295,9 +295,20 @@ local IrcMessageSplit = function(destination, message)
 	local msgtype = 'privmsg'
 	local trail = ' (…)'
 	local cutoff = 512 - 4 - #hostmask - #destination - #msgtype - #trail
+	out = ""
+	extra = ""
 	if #message > cutoff then
-		extra = message:sub(cutoff+1)
-		message = message:sub(1, cutoff) .. trail
+		count = 0
+		-- Iterate over valid utf8 string so we don't cut off in the middle
+		-- of a utf8 codepoint
+		for c in message:gmatch"([%z\1-\127\194-\244][\128-\191]*)" do
+			if #out+1 < cutoff then
+				out =  out..c
+			else
+				extra = extra..c
+			end
+		end
+		message = out .. trail
 	end
 	return message, extra
 end
@@ -432,7 +443,7 @@ function ivar2:Say(destination, source, ...)
 end
 
 function ivar2:Reply(destination, source, format, ...)
-	return self:Msg('privmsg', destination, source, source.nick..':'..format, ...)
+	return self:Msg('privmsg', destination, source, source.nick..': '..format, ...)
 end
 
 function ivar2:Nick(nick)
