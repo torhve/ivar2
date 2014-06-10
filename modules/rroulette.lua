@@ -1,6 +1,6 @@
 local ev = require'ev'
-require'tokyocabinet'
-local rr = tokyocabinet.hdbnew()
+
+local rr = ivar2.persist
 
 if(not ivar2.timers) then ivar2.timers = {} end
 
@@ -15,21 +15,20 @@ end
 return {
 	PRIVMSG = {
 		['^%prr$'] = function(self, source, destination)
-			rr:open('cache/rr', rr.OWRITER + rr.OCREAT)
 			local nick = source.nick
 
-			if(not rr[destination]) then
-				rr[destination] = 60 + math.random(1,6)
+			if(not rr['rr:'..destination]) then
+				rr['rr:'..destination] = 60 + math.random(1,6)
 			end
 
-			local bullet = getBullet(rr[destination])
-			local chamber = getChamber(rr[destination])
+			local bullet = getBullet(rr['rr:'..destination])
+			local chamber = getChamber(rr['rr:'..destination])
 
 			local deathKey = destination .. ':' .. nick .. ':deaths'
 			local attemptKey = destination .. ':' .. nick .. ':attempts'
 
-			local deaths = rr[deathKey] or 0
-			local attempts = (rr[attemptKey] or 0) + 1
+			local deaths = rr['rr:'..deathKey] or 0
+			local attempts = (rr['rr:'..attemptKey] or 0) + 1
 			local seed = math.random(1, chamber)
 
 			if(seed == bullet) then
@@ -46,48 +45,53 @@ return {
 
 				local src = 'Russian Roulette:' .. destination
 				if(self.timers[src]) then
-					self.timers[src]:again(ivar2.Loop, 15 * 60)
+					self.timers[src]:again(self.Loop, 15 * 60)
 				else
 					local timer = ev.Timer.new(
 						function(loop, timer, revents)
-							rr:open('cache/rr', rr.OWRITER + rr.OCREAT)
-
-							local n = rr[destination]
-							rr[destination] = 60 + math.random(1,6)
-							rr:close()
+							local n = rr['rr:'..destination]
+							rr['rr:'..destination] = 60 + math.random(1,6)
 						end,
 						15 * 60
 					)
 					self.timers[src] = timer
-					timer:start(ivar2.Loop)
+					timer:start(self.Loop)
 				end
 
 				say('Click. %d/6', chamber)
 			end
 
-			rr[destination] = (chamber * 10) + bullet
-			rr[deathKey] = deaths
-			rr[attemptKey] = attempts
+			rr['rr:'..destination] = (chamber * 10) + bullet
+			rr['rr:'..deathKey] = deaths
+			rr['rr:'..attemptKey] = attempts
 
-			rr:close()
 		end,
 
-		['^!rrstat'] = function(self, source, destination)
-			rr:open('cache/rr')
-			local nicks = rr:fwmkeys(destination .. ':')
+		['^%prrstat$'] = function(self, source, destination)
+			local nicks = {}
+			for n,t in pairs(self.channels[destination].nicks) do
+				nicks[n] = destination..':'..n
+			end
 
 			local tmp = {}
-			for _, key in next, nicks do
-				local nick, type = key:match(':([^:]+):(%w+)')
+			for nick, key in next, nicks do
 				if(not tmp[nick]) then tmp[nick] = {} end
-				tmp[nick][type] = tonumber(rr[key])
+				type = 'attempts'
+				res = tonumber(rr['rr:'..key..':'..type])
+				if not res then res = 0 end
+				tmp[nick][type] = res
+				type = 'deaths'
+				res = tonumber(rr['rr:'..key..':'..type])
+				if not res then res = 0 end
+				tmp[nick][type] = res
 			end
-			rr:close()
 
 			local stats = {}
 			for nick, data in next, tmp do
-				local deathRatio = data.deaths / data.attempts
-				table.insert(stats, {nick = nick, deaths = data.deaths, attempts = data.attempts, ratio = deathRatio})
+				if data.deaths > 0 or data.attempts > 0 then
+					local deathRatio = data.deaths / data.attempts
+					table.insert(stats, {nick = nick, deaths = data.deaths, attempts = data.attempts, ratio = deathRatio})
+				end
 			end
 			table.sort(stats, function(a,b) return a.ratio < b.ratio end)
 
