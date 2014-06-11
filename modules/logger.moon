@@ -60,11 +60,42 @@ dblog = (type, source, destination, arg) =>
   unless stmt
     log\error err
 
+history = (source, destination, nr) ->
+  nr = tonumber(nr) or 1
+  stmt = dbh!\prepare [[SELECT * FROM log WHERE channel=? AND type = 'PRIVMSG' ORDER BY time DESC LIMIT ?]]
+  stmt\execute destination, nr
+  out = {}
+  for row in stmt\rows(true) -- true for column names
+    out[#out+1] = row
+
+  if #out == 1
+    return out[1].message
+  return out
+
+lastlog = (source, destination, arg) ->
+  nr = tonumber(nr) or 1
+  arg = '%'..arg..'%'
+  stmt = dbh!\prepare [[SELECT * FROM log WHERE channel=? AND type = 'PRIVMSG' AND message LIKE ? ORDER BY time DESC LIMIT 20]]
+  stmt\execute destination, arg
+  out = {}
+  for row in stmt\rows(true) -- true for column names
+    out[#out+1] = row
+
+  if #out == 1
+    return out[1].message
+  return out
 
 return {
   PRIVMSG: {
     (s, d, a) =>
       dblog @, 'PRIVMSG', s, d, a
+    '%plast$': (source, destination) =>
+      say history(source,destination,1)
+    '%plastlog (.+)$': (source, destination, arg) =>
+      out = {}
+      for k,v in *lastlog(source, destination, arg)
+        table.insert out, string.format('<%s> %s', k.nick, k.message)
+      say table.concat(out, ' ')
   }
   NOTICE: {
     (s, d, a) =>
