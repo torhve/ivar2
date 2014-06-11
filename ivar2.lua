@@ -1,3 +1,4 @@
+-- vim: set noexpandtab:
 package.path = table.concat({
 	'libs/?.lua',
 	'libs/?/init.lua',
