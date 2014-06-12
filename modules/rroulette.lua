@@ -37,6 +37,7 @@ return {
 				chamber = 6
 				deaths = deaths + 1
 				self:Kick(destination, nick, 'BANG!')
+				say('BANG! %s died a gruesome death.', source.nick)
 			else
 				chamber = chamber - 1
 				if(bullet > chamber) then
@@ -61,7 +62,7 @@ return {
 					timer:start(ivar2.Loop)
 				end
 
-				self:Msg('privmsg', destination, source, 'Click. %d/6', chamber)
+				say('Click. %d/6', chamber)
 			end
 
 			rr[destination] = (chamber * 10) + bullet
@@ -95,7 +96,7 @@ return {
 				table.insert(out, string.format('%s (%.1f%%)', stats[i].nick, (1 - stats[i].ratio) * 100))
 			end
 
-			self:Msg('privmsg', destination, source, 'Survival rate: %s', table.concat(out, ', '))
+			say('Survival rate: %s', table.concat(out, ', '))
 		end,
 	}
 }
