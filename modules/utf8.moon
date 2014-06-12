@@ -72,12 +72,14 @@ zalgo = (text, intensity=50) ->
 
 PRIVMSG:
   '^%pwide (.+)$': (source, destination, arg) =>
-    @Msg 'privmsg', destination, source, wireplace(0xFEE0, arg)
+    say wireplace(0xFEE0, arg)
   '^%pblackletter (.+)$': (source, destination, arg) =>
-    @Msg 'privmsg', destination, source, remap(an2bl, arg)
+    say remap(an2bl, arg)
   '^%pcircled (.+)$': (source, destination, arg) => 
-    @Msg 'privmsg', destination, source, remap(an2ci, arg)
+    say remap(an2ci, arg)
   '^%pzalgo (.+)$': (source, destination, arg) => 
-    @Msg 'privmsg', destination, source, zalgo(arg, 10)
+    say zalgo(arg, 10)
   '^%pupsidedown (.+)$': (source, destination, arg) => 
-    @Msg 'privmsg', destination, source, remap(an2ud, arg)
+    say remap(an2ud, arg)
+  '^%pflip (.+)$': (source, destination, arg) => 
+    say remap(an2ud, arg)
