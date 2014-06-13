@@ -81,7 +81,7 @@ local alarm = function(self, source, destination, message)
 	-- 60 days or more?
 	local nick = source.nick
 	if(duration >= (60 * 60 * 24 * 60) or duration == 0) then
-		return self:Msg('privmsg', destination, source, "%s: :'(", nick)
+		return say("%s: :'(", nick)
 	end
 
 	local id = 'Alarm: ' .. nick
@@ -112,7 +112,7 @@ local alarm = function(self, source, destination, message)
 	local timer = ev.Timer.new(
 		function(loop, timer, revents)
 			if(#message == 0) then message = 'Timer finished.' end
-			self:Msg('privmsg', destination, source, '%s: %s', nick, message or 'Timer finished.')
+			say('%s: %s', nick, message or 'Timer finished.')
 		end,
 		duration
 	)

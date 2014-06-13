@@ -232,19 +232,19 @@ local handleExchange = function(self, source, destination, value, from, to)
 	to = (conv[to] or to):upper()
 
 	if(from == to) then
-		return self:Msg('privmsg', destination, source, 'wat ar u dewn... %s! STAHP!', source.nick)
+		return say( 'wat ar u dewn... %s! STAHP!', source.nick)
 	end
 
 	local success, value = checkInput(value, from, to)
 	if(not success) then
-		self:Msg('privmsg', destination, source, '%s: %s', source.nick, value)
+		say( '%s: %s', source.nick, value)
 	else
 		simplehttp(
 			('http://www.google.com/finance/converter?a=%s&from=%s&to=%s'):format(value, from, to),
 			function(data)
 				local message = parseData(data)
 				if(message) then
-					self:Msg('privmsg', destination, source, '%s: %s', source.nick, message)
+					say( '%s: %s', source.nick, message)
 				end
 			end
 		)

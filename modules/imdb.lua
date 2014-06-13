@@ -62,9 +62,9 @@ local parseData = function(source, destination, data)
 			table.insert(out, string.format("| http://imdb.com/title/%s", data.imdbID))
 		end
 
-		ivar2:Msg('privmsg', destination, source, table.concat(out, ' '))
+		say(table.concat(out, ' '))
 	else
-		ivar2:Msg('privmsg', destination, source, '%s', data.Error)
+		say('%s', data.Error)
 	end
 end
 

@@ -45,7 +45,7 @@ local parseData = function(source, destination, data, search)
 	end
 
 	if(not found and not data.movies[1]) then
-		return ivar2:Msg('privmsg', destination, source, "Not even Rotten Tomatoes would rate that movie.")
+		return "Not even Rotten Tomatoes would rate that movie."
 	end
 
 	local movie = data.movies[found] or data.movies[1]
@@ -83,7 +83,7 @@ local parseData = function(source, destination, data, search)
 
 	ins("- %s", movie['critics_consensus'])
 
-	ivar2:Msg('privmsg', destination, source, table.concat(out, " "))
+	return table.concat(out, " ")
 end
 
 local urlFormat = 'http://api.rottentomatoes.com/api/public/v1.0/movies.json?page_limit=5&apikey=%s&q=%s'
@@ -93,7 +93,7 @@ local handler = function(self, source, destination, input)
 	simplehttp(
 		urlFormat:format(self.config.rottenTomatoesAPIKey, search),
 		function(data)
-			parseData(source, destination, data, input:lower())
+			say(parseData(source, destination, data, input:lower()))
 		end
 	)
 end

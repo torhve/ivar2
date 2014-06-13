@@ -36,9 +36,11 @@ local handler = function(self, source, destination, input)
 				if(#result > msgLimit) then
 					result = result:sub(1, msgLimit - 3) .. '...'
 				end
+
+				say(string.format('%s: %s', source.nick, result))
 				self:Msg('privmsg', destination, source, string.format('%s: %s', source.nick, result))
 			else
-				self:Msg('privmsg', destination, source, string.format("%s: %s is bad and you should feel bad.", source.nick, input))
+				say(string.format("%s: %s is bad and you should feel bad.", source.nick, input))
 			end
 		end
 	)

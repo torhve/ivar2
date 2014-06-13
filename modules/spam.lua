@@ -39,16 +39,16 @@ local send = function(destination, source, reply, fuck)
 		math.random(); math.random(); math.random()
 
 		if(fuck) then
-			ivar2:Msg('privmsg', destination, source, case(reply[math.random(1, #reply)]))
+			say(case(reply[math.random(1, #reply)]))
 		else
-			ivar2:Msg('privmsg', destination, source, reply[math.random(1, #reply)])
+			say(reply[math.random(1, #reply)])
 		end
 
 	else
 		if(fuck) then
-			ivar2:Msg('privmsg', destination, source, case(reply))
+			say(case(reply))
 		else
-			ivar2:Msg('privmsg', destination, source, reply)
+			say(reply)
 		end
 	end
 end

@@ -76,7 +76,7 @@ local shipmentTrack = function(self, source, destination, pid, alias)
 				local cs = root['shipments']
 				if not cs[1] then 
 					if self.shipmentEvents[id] == -1 then 
-						self:Msg('privmsg', destination, source, '%s: Found nothing for shipment %s', nick, pid)
+						say('%s: Found nothing for shipment %s', nick, pid)
 					end
 					self.shipmentEvents[id] = 0
 					return
@@ -104,7 +104,7 @@ local shipmentTrack = function(self, source, destination, pid, alias)
 					-- Cancel event here somehow?
 				end
 				if #out > 0 then
-					self:Msg('privmsg', destination, source, '%s: \002%s\002 %s', nick, alias, table.concat(out, ', '))
+					say('%s: \002%s\002 %s', nick, alias, table.concat(out, ', '))
 				end
 				self.shipmentEvents[id] = newEventCount
 			end)
@@ -124,7 +124,7 @@ local shipmentLocate = function(self, source, destination, pid)
 		local root = info['TrackingInformationResponse']
 		local cs = root['shipments']
 		if not cs[1] then 
-			self:Msg('privmsg', destination, source, '%s: Found nothing for shipment %s', nick, pid)
+			say('%s: Found nothing for shipment %s', nick, pid)
 			return
 		else 
 			cs = cs[1] 
@@ -136,12 +136,12 @@ local shipmentLocate = function(self, source, destination, pid)
 		for i, event in pairs(items['events']) do
 			table.insert(out, eventHandler(event))
 		end
-		self:Msg('privmsg', destination, source, '%s: %s', nick, table.concat(out, ', '))
+		say('%s: %s', nick, table.concat(out, ', '))
 	end)
 end
 
 local shipmentHelp = function(self, source, destination)
-	return self:Msg('privmsg', destination, source, 'For lookup: !mypack pakkeid. For tracking: !mypack pakkeid alias')
+	return say('For lookup: !mypack pakkeid. For tracking: !mypack pakkeid alias')
 end
 
 return {
