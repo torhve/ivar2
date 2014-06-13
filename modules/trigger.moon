@@ -17,7 +17,7 @@ triggerHelp  = (source, destination, argument) =>
   help = 'Usage: ¤trigger add <name>|<lua pattern>|<lua code>. Ex: ¤trigger add help|^!help (%w+)|say "%s, you need help. Delete: ¤trigger del <name>. List: ¤trigger list. Show: ¤trigger show <name>"'
   patt = @ChannelCommandPattern('^%p', 'triger', destination)
   help = help\gsub '¤', patt
-  @Msg 'privmsg', destination, source, help
+  say help
 
 -- Construct a safe environ for trigger with two functions; say and reply
 --- Preferrably you should be able to cross-call modules here to make aliasing possible
@@ -51,7 +51,7 @@ sandbox = (func) ->
     setfenv func, env
     success, err = pcall func, arg
     if err
-      @Msg 'privmsg', destination, source, err
+      say err
     else
       success
 
@@ -59,7 +59,7 @@ sandbox = (func) ->
 triggerHandler = (source, destination, funcstr) =>
   func, err = loadstring funcstr
   unless func
-    @Msg 'privmsg', destination, source, 'Trigger error: %s', err
+    say 'Trigger error: %s', err
   else
     sandbox(func)
 
@@ -83,7 +83,7 @@ delCommand = (source, destination, name) =>
   if code == sqlite3.DONE
     -- Invalid name
     db\close!
-    @Msg 'privmsg', destination, source, 'Invalid name'
+    say 'Invalid name'
     return
   pattern = stmt\get_values()[1]
 
@@ -95,7 +95,7 @@ delCommand = (source, destination, name) =>
   db\close!
 
   @UnregisterCommand 'triggers', pattern
-  @Msg 'privmsg', destination, source, "Trigger #{pattern} deleted"
+  say "Trigger #{pattern} deleted"
 
 listTriggers = (source, destination) =>
   db = openDb!
@@ -107,16 +107,16 @@ listTriggers = (source, destination) =>
   db\close!
 
   if #out > 0
-    @Msg 'privmsg', destination, source, "Triggers: "..table.concat(out, ', ')
+    say "Triggers: "..table.concat(out, ', ')
   else
-    @Msg 'privmsg', destination, source, "No triggers defined"
+    say "No triggers defined"
 
 showTrigger = (source, destination, name) =>
   db = openDb!
   stmt = db\prepare "SELECT * FROM trigger WHERE name = ?"
   code = stmt\bind_values name
   for row in stmt\nrows! do
-    @Msg 'privmsg', destination, source, "Trigger: \002#{row.name}\002, pattern: #{row.pattern}, code: #{row.funcstr}"
+    say "Trigger: \002#{row.name}\002, pattern: #{row.pattern}, code: #{row.funcstr}"
   db\close!
 
 -- Register commands on startup

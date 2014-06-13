@@ -75,11 +75,11 @@ PRIVMSG:
     out = {}
     for cat, str in pairs emojis
       table.insert out, str
-    @Msg 'privmsg', dest, source, table.concat out
+    say table.concat out
   '^%pemoji$': (source, dest, arg) =>
     out = {}
     for cat, str in pairs emojis
       table.insert out, cat
-    @Msg 'privmsg', dest, source, table.concat(out, ', ')
+    say table.concat(out, ', ')
   '^%pemoji (.+)$': (source, dest, cat) =>
-    @Msg 'privmsg', dest, source, emojis[cat]
+    say emojis[cat]

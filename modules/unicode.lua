@@ -62,7 +62,7 @@ local function handleSearch(self, source, destination, name)
     db:close()
 
     if(#out) then
-        self:Msg('privmsg', destination, source, table.concat(out, ', '))
+        say(table.concat(out, ', '))
     end
 end
 
@@ -79,7 +79,7 @@ local function handleSearchShort(self, source, destination, name)
     db:close()
 
     if(#out) then
-        self:Msg('privmsg', destination, source, table.concat(out, ''))
+        say(table.concat(out, ''))
     end
 end
 
@@ -102,7 +102,7 @@ local function handleLookup(self, source, destination, str)
     db:close()
 
     if(#out) then
-        self:Msg('privmsg', destination, source, table.concat(out, ', '))
+        say(table.concat(out, ', '))
     end
 end
 

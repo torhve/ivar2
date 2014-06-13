@@ -52,14 +52,14 @@ return {
 		['^s/(.+)$'] = function(self, source, destination, message)
 			local out = handleMessage(source.nick, destination, message, true)
 			if(out) then
-				self:Msg('privmsg', destination, source, '%s meant: %s', source.nick, out)
+				say('%s meant: %s', source.nick, out)
 			end
 		end,
 
 		['^<([^>]+)>s/(.+)$'] = function(self, source, destination, target, message)
 			local out = handleMessage(target, destination, message)
 			if(out) then
-				self:Msg('privmsg', destination, source, '%s thought %s meant: %s', source.nick, target, out)
+				say('%s thought %s meant: %s', source.nick, target, out)
 			end
 		end,
 

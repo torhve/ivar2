@@ -39,7 +39,7 @@ local shipmentTrack = function(self, source, destination, message)
 	local comps = split(message, '%S+')
 	-- Couldn't figure out what the user wanted.
 	if #comps < 2 then
-		return self:Msg('privmsg', destination, source, 'Usage: !sporing pakkeid alias')
+		return say('Usage: !sporing pakkeid alias')
 	end
 
 	local pid = comps[1]
@@ -71,7 +71,7 @@ local shipmentTrack = function(self, source, destination, message)
 				if err then
 					local errmsg = err['message']
 					if self.shipmentEvents[id] == -1 then 
-						self:Msg('privmsg', destination, source, '%s: \002%s\002 %s', nick, alias, errmsg)
+						say('%s: \002%s\002 %s', nick, alias, errmsg)
 					end
 					self.shipmentEvents[id] = 0
 					return
@@ -98,7 +98,7 @@ local shipmentTrack = function(self, source, destination, message)
 					end
 				end
 				if #out > 0 then
-					self:Msg('privmsg', destination, source, '%s: \002%s\002 %s', nick, alias, table.concat(out, ', '))
+					say('%s: \002%s\002 %s', nick, alias, table.concat(out, ', '))
 				end
 				self.shipmentEvents[id] = newEventCount
 			end)
@@ -120,7 +120,7 @@ local shipmentLocate = function(self, source, destination, pid)
 		local err = cs['error']
 		if err then
 			local errmsg = err['message']
-			self:Msg('privmsg', destination, source, '%s: %s', nick, errmsg)
+			say('%s: %s', nick, errmsg)
 			return
 		end
 		local out = {}
@@ -129,12 +129,12 @@ local shipmentLocate = function(self, source, destination, pid)
 		for i,event in pairs(ps['eventSet']) do
 			table.insert(out, eventHandler(event))
 		end
-		self:Msg('privmsg', destination, source, '%s: %s', nick, table.concat(out, ', '))
+		say('%s: %s', nick, table.concat(out, ', '))
 	end)
 end
 
 local shipmentHelp = function(self, source, destination)
-	return self:Msg('privmsg', destination, source, 'For lookup: !pakke pakkeid. For tracking: !sporing pakkeid alias')
+	return say('For lookup: !pakke pakkeid. For tracking: !sporing pakkeid alias')
 end
 
 return {

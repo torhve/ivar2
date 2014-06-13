@@ -96,7 +96,7 @@ return {
 
 			local out = checkCache(card)
 			if(out) then
-				self:Msg('privmsg', destination, source, 'Hearthstone: %s', out)
+				say('Hearthstone: %s', out)
 				return
 			end
 
@@ -110,9 +110,9 @@ return {
 						out = "Multiple matches - " .. table.concat(self:LimitOutput(destination, out, 2, 31), ', ')
 					end
 
-					self:Msg('privmsg', destination, source, 'Hearthstone: %s', out)
+					say('Hearthstone: %s', out)
 				else
-					self:Msg('privmsg', destination, source, 'Hearthstone: No matching card found.')
+					say('Hearthstone: No matching card found.')
 				end
 			end)
 		end,

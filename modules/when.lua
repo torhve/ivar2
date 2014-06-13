@@ -8,17 +8,17 @@ local handleWhen = function(self, source, destination, when)
 	local pretty = os.date('%c', time)
 	local duration = date.relativeTimeShort(now, time)
 	if time and duration then
-		self:Msg('privmsg', destination, source, '\002%s\002 -- %s', duration, pretty)
+		return '\002%s\002 -- %s', duration, pretty
 	end
 end
 
 return {
 	PRIVMSG = {
 		['^%pwhen (.*)$'] = function(self, source, destination, when)
-			handleWhen(self, source, destination, when)
+			say(handleWhen(self, source, destination, when))
 		end,
 		['^helg%??$'] = function(self, source, destination, when)
-			handleWhen(self, source, destination, 'next friday')
+			say(handleWhen(self, source, destination, 'next friday'))
 		end,
 	},
 }

@@ -9,18 +9,19 @@ pick = (data) ->
   joketext = title .. ' ' .. thejoke.data.selftext
   return joketext
 
-joke = (source, destination, subreddit) =>
+joke = (subreddit, cb) ->
   simplehttp "http://www.reddit.com/r/#{subreddit}.json", (data) ->
     data = json.decode data
     -- try to find a short joke
     for i=0, 100 do
       joketext = pick data
       if #joketext < 300
-        @Msg 'privmsg', destination, source, pick data
-        break
+        return cb joketext
 
 PRIVMSG:
   '^%pjoke': (source, destination, arg) =>
-    joke @, source, destination, 'jokes'
+    joke 'jokes', (text) ->
+      say text
   '^%pdadjoke': (source, destination, arg) =>
-    joke @, source, destination, 'dadjokes'
+    joke 'dadjokes', (text) ->
+      say text

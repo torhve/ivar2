@@ -33,12 +33,12 @@ local pattern = ('<td>[^<]+</td><td>([^<]+)</td>'):rep(3) .. '<td>([^<]+)</td>'
 local parseTopArtists = function(source, destination, data)
 	local response = json.decode(utify8(data))
 	if(response.error) then
-		return ivar2:Msg('privmsg', destination, source, response.message)
+		return response.message
 	end
 
 	local info = response.topartists
 	if(info.total == '0') then
-		return ivar2:Msg('privmsg', destination, source, "%s doesn't have any plays in the last 7 days.", info.user)
+		return "%s doesn't have any plays in the last 7 days.", info.user
 	end
 
 	local out = {}
@@ -53,31 +53,29 @@ local parseTopArtists = function(source, destination, data)
 		end
 	end
 
-	ivar2:Msg(
-		'privmsg', destination, source,
-		"%s's top artists the last 7 days: %s | http://last.fm/user/%s",
+	return "%s's top artists the last 7 days: %s | http://last.fm/user/%s",
 		info['@attr'].user,
 		table.concat(out, ', '),
 		info['@attr'].user
-	)
+	
 end
 
 local parseRecentTracks = function(source, destination, data)
 	local response = json.decode(utify8(data))
 	if(response.error) then
-		return ivar2:Msg('privmsg', destination, source, response.message)
+		return response.message
 	end
 
 	-- This should only be the case if someone tries to lookup a registered user
 	-- with no plays registered.
 	local info = response.recenttracks
 	if(info.total == '0') then
-		return ivar2:Msg('privmsg', destination, source, "%s doesn't have any recently played tracks.", info['@attr'].user)
+		return "%s doesn't have any recently played tracks.", info['@attr'].user
 	end
 
 	local track = info.track[1]
 	if(not track) then
-		return ivar2:Msg('privmsg', destination, source, "%s is currently not listening to music.", info['@attr'].user)
+		return "%s is currently not listening to music.", info['@attr'].user
 	end
 
 	local out = {
@@ -91,8 +89,9 @@ local parseRecentTracks = function(source, destination, data)
 	end
 
 	table.insert(out, track.name)
+    table.insert(out, string.format(' %s', '♫♪'))
 
-	return ivar2:Msg('privmsg', destination, source, table.concat(out, ' '))
+	return table.concat(out, ' ')
 end
 
 return {
@@ -106,7 +105,7 @@ return {
 					user = user,
 				},
 				function(data)
-					parseTopArtists(source, destination, data)
+					say(parseTopArtists(source, destination, data))
 				end
 			)
 		end,
@@ -120,7 +119,7 @@ return {
 					user = source.nick,
 				},
 				function(data)
-					parseTopArtists(source, destination, data)
+					say(parseTopArtists(source, destination, data))
 				end
 			)
 		end,
@@ -133,7 +132,7 @@ return {
 					user = user,
 				},
 				function(data)
-					parseRecentTracks(source, destination, data)
+					say(parseRecentTracks(source, destination, data))
 				end
 			)
 		end,
@@ -147,7 +146,7 @@ return {
 				},
 
 				function(data)
-					parseRecentTracks(source, destination, data)
+					say(parseRecentTracks(source, destination, data))
 				end
 			)
 		end,
