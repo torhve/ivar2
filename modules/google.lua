@@ -40,7 +40,7 @@ local urlEncode = function(str)
 end
 
 local outFormat = '\002%s\002 <%s>'
-local parseData = function(source, destination, data)
+local parseData = function(say, source, destination, data)
 	data = utify8(data)
 	data = json.decode(data)
 
@@ -60,7 +60,7 @@ local parseData = function(source, destination, data)
 					arr[i] = outFormat:format(title, short or url)
 
 					if(n == 0) then
-						ivar2:Msg('privmsg', destination, source, table.concat(arr, ' || '))
+						say(table.concat(arr, ' || '))
 					end
 				end)
 			else
@@ -70,9 +70,9 @@ local parseData = function(source, destination, data)
 
 		if(n == 0) then
 			if(#arr > 0) then
-				ivar2:Msg('privmsg', destination, source, table.concat(arr, ' || '))
+				say(table.concat(arr, ' || '))
 			else
-				ivar2:Msg('privmsg', destination, source, 'jack shit found :-(.')
+				say('jack shit found :-(.')
 			end
 		end
 	end
@@ -85,7 +85,7 @@ local handler = function(self, source, destination, input)
 	simplehttp(
 		url:format(self.config.googleAPIKey, search),
 		function(data)
-			parseData(source, destination, data)
+			parseData(say, source, destination, data)
 		end
 	)
 end

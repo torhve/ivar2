@@ -27,5 +27,5 @@ PRIVMSG:
         table.insert out, topic.FirstURL
         table.insert out, topic.Text
 
-      @Msg 'privmsg', destination, source, table.concat(out, ' ')
+      say table.concat(out, ' ')
 

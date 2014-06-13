@@ -31,7 +31,7 @@ local reply = {
 	[[/'''\ʕ•ᴥ•ʔ/'''\]],
 }
 
-local handleOutput = function(source, destination, choices)
+local handleOutput = function(say, source, choices)
 	local hax = {}
 	for k, v in pairs(choices) do
 		hax[v] = true
@@ -43,10 +43,10 @@ local handleOutput = function(source, destination, choices)
 	end
 
 	if(#choices <= 1 or i == 1) then
-		ivar2:Msg('privmsg', destination, source, reply[math.random(1, #reply)])
+		say(reply[math.random(1, #reply)])
 	else
 		local seed = math.random(1, #choices)
-		ivar2:Msg('privmsg', destination, source, '%s: %s', source.nick, choices[seed])
+		say('%s: %s', source.nick, choices[seed])
 	end
 end
 
@@ -73,13 +73,13 @@ return {
 							end
 						end
 
-						handleOutput(source, destination, choices)
+						handleOutput(say, source, choices)
 					end,
 					true,
 					2^16
 				)
 			else
-				handleOutput(source, destination, split(choices, '%s*([^,]+)%s*'))
+				handleOutput(say, source, split(choices, '%s*([^,]+)%s*'))
 			end
 		end
 	}

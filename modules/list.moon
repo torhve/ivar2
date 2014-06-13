@@ -5,7 +5,7 @@ listModules = (source, destination, arg) =>
     unless @IsModuleDisabled moduleName, destination
       table.insert out, moduleName
   if #out > 0
-    @Msg 'privmsg', destination, source, "Modules: %s", table.concat(out, ', ')
+    say "Modules: %s", table.concat(out, ', ')
 
 listPatterns = (source, destination, moduleName) =>
   moduleTable = @Events!['PRIVMSG'][moduleName]
@@ -21,7 +21,7 @@ listPatterns = (source, destination, moduleName) =>
     table.insert out, patt
 
   if #out > 0
-    @Msg 'privmsg', destination, source, "%s patterns: %s", moduleName, table.concat(out, ', ')
+    say "%s patterns: %s", moduleName, table.concat(out, ', ')
 
 PRIVMSG:
   '^%plist$': listModules

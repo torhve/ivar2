@@ -41,4 +41,4 @@ PRIVMSG:
             windtext = 'vindstille'
 
 
-        @Msg 'privmsg', destination, source, '\002%.1f\002 °C, \002%.1f\002 m/s (%s), \002%.1f\002 mm nedbør', temp, ws, windtext, rain
+        say '\002%.1f\002 °C, \002%.1f\002 m/s (%s), \002%.1f\002 mm nedbør', temp, ws, windtext, rain

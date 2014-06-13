@@ -3,7 +3,7 @@
 local simplehttp = require'simplehttp'
 local json = require'json'
 
-local parseData = function(source, destination, data, search)
+local parseData = function(self, source, destination, data, search)
 	data = json.decode(data)
 
 	local streams = {}
@@ -54,7 +54,7 @@ local parseData = function(source, destination, data, search)
 			"http://twitch.tv/\002%s\002 %d watching %s",
 			stream.name, stream.viewers, stream.game
 		)
-		ivar2:Msg('privmsg', destination, source, table.concat(out, " "))
+		self:Msg('privmsg', destination, source, (table.concat(out, " ")))
 		if i==6 then break end
 	end
 
@@ -65,7 +65,7 @@ local handler = function(self, source, destination, input)
 	simplehttp(
 		url,
 		function(data)
-			parseData(source, destination, data, input)
+			parseData(self, source, destination, data, input)
 		end
 	)
 end

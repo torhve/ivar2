@@ -54,9 +54,9 @@ return {
 					local out = self:LimitOutput(destination, results, 2)
 
 					if(#out > 0) then
-						self:Msg('privmsg', destination, source, table.concat(out, ' '))
+						say(table.concat(out, ' '))
 					else
-						self:Msg('privmsg', destination, source, '%s: That made no sense at all.', source.nick)
+						say('%s: That made no sense at all.', source.nick)
 					end
 				end
 			)

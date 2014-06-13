@@ -63,7 +63,7 @@ local function handleKarma(self, source, destination, item, sign, change)
 		if(not itemIsNick(item)) then
 			return
 		elseif(source.nick == item) then
-			self:Msg('privmsg', destination, source, "%s: Silly human, your karma must be decided by others!", source.nick)
+			say("%s: Silly human, your karma must be decided by others!", source.nick)
 			return
 		end
 	end
@@ -90,7 +90,7 @@ local getKarma = function(self, source, destination, dir, text)
 
 	db:close()
 
-	self:Msg('privmsg', destination, source, "%s karma: %s", text, table.concat(out, ', '))
+	say("%s karma: %s", text, table.concat(out, ', '))
 end
 
 local botKarma = function(self, source, destination, inp)

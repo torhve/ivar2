@@ -29,7 +29,7 @@ PRIVMSG: {
             break
           want = want - 1
     outline = table.concat(t, " ")
-    @Msg 'privmsg', destination, source, outline
+    say outline
   (source, destination, argument) =>
     unless history[destination]
       history[destination] = {}
