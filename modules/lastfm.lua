@@ -94,8 +94,22 @@ local parseRecentTracks = function(source, destination, data)
 	return table.concat(out, ' ')
 end
 
+local getUser = function(source)
+	user = source.nick
+	puser = ivar2.persist['lastfm:'..user]
+	if puser then
+		user = puser
+	end
+	return user
+end
+
 return {
 	PRIVMSG = {
+		['^%pset lastfm (.+)$'] = function(self, source, destination, user)
+			ivar2.persist['lastfm:'..source.nick] = user
+			reply('Username set to %s', user)
+		end,
+
 		['^%plastfm (.+)$'] = function(self, source, destination, user)
 			simplehttp(
 				buildQuery{
@@ -116,7 +130,7 @@ return {
 					method = 'user.getTopArtists',
 					period = '7day',
 					limit = '5',
-					user = source.nick,
+					user = getUser(source),
 				},
 				function(data)
 					say(parseTopArtists(source, destination, data))
@@ -142,7 +156,7 @@ return {
 				buildQuery{
 					method = 'user.getRecentTracks',
 					limit = '1',
-					user = source.nick,
+					user = getUser(source),
 				},
 
 				function(data)
