@@ -90,7 +90,7 @@ buildQueryStr = (tbl) ->
     table.insert out, k..'='..urlEncode(v)
   table.concat out, '&'
 
-translate = (source, destination, origin, target, term) =>
+translate = (origin, target, term, cb) ->
   origin = getCode(origin) or 'auto'
   target = getCode(target) or 'en'
   args =
@@ -105,13 +105,34 @@ translate = (source, destination, origin, target, term) =>
     uptl: "en"
     text: term
 
-  simplehttp "https://translate.google.com/translate_a/t?" .. buildQueryStr(args), (data) ->
+  simplehttp {
+    url:"http://translate.google.com/translate_a/t?" .. buildQueryStr(args)
+    headers: {
+      "User-Agent": "Mozilla/5.0"
+      "Accept-Charset": "UTF-8"
+    }
+  }, (data) ->
     if #data > 4
       parsed = json.decode data
       language = parsed.src
       out = table.concat [k.trans for k in *parsed.sentences]
       if #out > 0
-        @Msg 'privmsg', destination, source, "\002#{languages[target]}\002: #{out}"
+        cb(out)
 
 PRIVMSG:
-  '^%ptranslate ([%w%-]+) ([%w%-]+) (.*)$': translate
+  '^%ptranslate ([%w%-]+) ([%w%-]+) (.*)$': (source, destination, origin, target, term) =>
+    translate origin, target, term, (text) ->
+      say text
+  '^%ptr ([%w%-]+) ([%w%-]+) (.*)$': (source, destination, origin, target, term) =>
+    translate origin, target, term, (text) ->
+      say text
+  '^%ptlolno (.*)$': (source, destination, text) =>
+    translate 'auto', 'zh-TW', text, (text) ->
+      translate 'zh-TW', 'no', text, (text) ->
+        say text
+  '^%ptlol (.*)$': (source, destination, text) =>
+    translate 'auto', 'zh-CN', text, (text) ->
+      translate 'zh-CN', 'no', text, (text) ->
+        translate 'no', 'ja', text, (text) ->
+          translate 'ja', 'en', text, (text) ->
+            say text

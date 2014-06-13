@@ -32,9 +32,9 @@ local handler = function(self, source, destination, input)
 			local result = parseJSON(data)
 
 			if(result) then
-				self:Msg('privmsg', destination, source, string.format('%s: %s', source.nick, result))
+				say(string.format('%s: %s', source.nick, result))
 			else
-				self:Msg('privmsg', destination, source, string.format("%s: %s is bad and you should feel bad.", source.nick, input))
+				say(string.format("%s: %s is bad and you should feel bad.", source.nick, input))
 			end
 		end
 	)

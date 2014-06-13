@@ -128,11 +128,11 @@ local handle = function(self, source, destination, input)
 		('http://services.tvrage.com/tools/quickinfo.php?show=%s'):format(urlEncode(input)),
 		function(data)
 			if(data:sub(1, 15) == 'No Show Results') then
-				self:Msg('privmsg', destination, source, '%s: %s', source.nick, 'Invalid show? :(')
+				say('%s: %s', source.nick, 'Invalid show? :(')
 			else
 				local output = out(handleData(data))
 				if(output) then
-					self:Msg('privmsg', destination, source, output)
+					say(output)
 				end
 			end
 		end

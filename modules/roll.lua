@@ -20,7 +20,7 @@ return {
 				seed = 'I will suffocate you with a pillow in your sleep!'
 			end
 
-			self:Msg('privmsg', destination, source, '%s: %s', source.nick, seed)
+			say('%s: %s', source.nick, seed)
 		end,
 	},
 }

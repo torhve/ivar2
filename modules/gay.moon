@@ -11,4 +11,4 @@ gayify = (s) ->
 
 PRIVMSG:
   '^%pgay (.+)$': (source, destination, arg) =>
-      @Msg 'privmsg', destination, source, gayify arg
+      say gayify arg

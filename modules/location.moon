@@ -229,7 +229,7 @@ PRIVMSG:
       nick = source.nick
       @.persist["location:place:#{nick}"] = place
       @.persist["location:coords:#{nick}"] = loc
-      @Msg 'privmsg', destination, source, '%s %s', place, loc
+      say '%s %s', place, loc
   '^%plocation map$': (source, destination, arg) =>
     channel = destination\sub(2)
-    @Msg 'privmsg', destination, source, "http://irc.lart.no:#{ivar2.config.webserverport}/?channel=#{channel}"
+    say "http://irc.lart.no:#{ivar2.config.webserverport}/?channel=#{channel}"
