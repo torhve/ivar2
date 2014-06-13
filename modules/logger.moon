@@ -50,7 +50,7 @@ dblog = (type, source, destination, arg) =>
     -- action
     if arg\sub(1,1) == '\001' and arg\sub(-1) == '\001'
       arg = arg\sub(9, -2)
-    type = 'ACTION'
+      type = 'ACTION'
 
   unless arg
     arg = ''
@@ -62,7 +62,15 @@ dblog = (type, source, destination, arg) =>
 
 history = (source, destination, nr) ->
   nr = tonumber(nr) or 1
-  stmt = dbh!\prepare [[SELECT * FROM log WHERE channel=? AND type = 'PRIVMSG' ORDER BY time DESC LIMIT ?]]
+  stmt = dbh!\prepare [[
+    SELECT 
+      * 
+      FROM log 
+      WHERE channel=? 
+      AND (type = 'PRIVMSG' OR type = 'ACTION') 
+      ORDER BY time 
+      DESC LIMIT ?
+    ]]
   stmt\execute destination, nr
   out = {}
   for row in stmt\rows(true) -- true for column names
@@ -75,7 +83,16 @@ history = (source, destination, nr) ->
 lastlog = (source, destination, arg) ->
   nr = tonumber(nr) or 1
   arg = '%'..arg..'%'
-  stmt = dbh!\prepare [[SELECT * FROM log WHERE channel=? AND type = 'PRIVMSG' AND message LIKE ? ORDER BY time DESC LIMIT 20]]
+  stmt = dbh!\prepare [[
+    SELECT 
+      * 
+      FROM log 
+      WHERE channel=? 
+      AND (type = 'PRIVMSG' OR type = 'ACTION')
+      AND message LIKE ? 
+      ORDER BY time DESC 
+      LIMIT 20
+    ]]
   stmt\execute destination, arg
   out = {}
   for row in stmt\rows(true) -- true for column names
