@@ -191,6 +191,6 @@ generateArgument = ->
 
 PRIVMSG:
   '^%pinsult$': (source, destination) =>
-    @Msg 'privmsg', destination, source, generateArgument()
+    say generateArgument()
   '^%pinsult (.+)$': (source, destination, arg) =>
-    @Msg 'privmsg', destination, source, arg..": "..generateArgument()
+    say arg..": "..generateArgument()
