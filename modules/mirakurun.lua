@@ -44,6 +44,6 @@ end
 
 return {
 	PRIVMSG = {
-		['^!jptv%s*$'] = handler,
+		['^%pjptv%s*$'] = handler,
 	},
 }
