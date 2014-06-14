@@ -8,7 +8,7 @@ end
 
 return {
 	PRIVMSG = {
-		['^!shorten (.+)$'] = handler,
-		['^!x0 (.+)$'] = handler,
+		['^%pshorten (.+)$'] = handler,
+		['^%px0 (.+)$'] = handler,
 	},
 }
