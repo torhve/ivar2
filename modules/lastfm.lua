@@ -109,7 +109,6 @@ return {
 			ivar2.persist['lastfm:'..source.nick] = user
 			reply('Username set to %s', user)
 		end,
-
 		['^%plastfm (.+)$'] = function(self, source, destination, user)
 			simplehttp(
 				buildQuery{
