@@ -132,7 +132,7 @@ end
 
 return {
 	PRIVMSG = {
-		['!gr (.*)$'] = function(self, source, destination, input)
+		['%pgr (.*)$'] = function(self, source, destination, input)
 			if(tonumber(input)) then
 				lookup(self, source, destination, input)
 			else
