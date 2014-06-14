@@ -74,7 +74,7 @@ return {
 		-- Check if we have notes for the person who sent the message.
 		handleOutput,
 
-		['^.note (%S+)%s+(.+)$'] = function(self, source, destination, recipient, message)
+		['^%pnote (%S+)%s+(.+)$'] = function(self, source, destination, recipient, message)
 			-- Only accept notes on channels.
 			if(destination:sub(1,1) ~= '#') then return end
 
