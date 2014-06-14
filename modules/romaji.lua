@@ -96,7 +96,7 @@ end
 
 return {
 	PRIVMSG = {
-		['^.kr (.+)$'] = function(self, source, destination, input)
+		['^%pkr (.+)$'] = function(self, source, destination, input)
 			local tmp = chasen.sparse(input:gsub('%s', '\n'))
 			tmp = split(tmp:gsub("　", " "), '[^\n]+')
 
