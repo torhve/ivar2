@@ -92,7 +92,7 @@ end
 
 return {
 	PRIVMSG = {
-		['^!g (.+)$'] = handler,
-		['^!google (.+)$'] = handler,
+		['^%pg (.+)$'] = handler,
+		['^%pgoogle (.+)$'] = handler,
 	},
 }
