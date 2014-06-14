@@ -18,11 +18,11 @@ end
 
 return {
 	PRIVMSG = {
-		['^!airs%s*$'] = function(self, source, destination)
+		['^%pairs%s*$'] = function(self, source, destination)
 			self:Msg('privmsg', destination, source, 'Returns air time, ETA and channel for <anime>. Usage: !airs <anime>.')
 		end,
 
-		['^!airs (.+)$'] = function(self, source, destination, anime)
+		['^%pairs (.+)$'] = function(self, source, destination, anime)
 			simplehttp('http://www.mahou.org/Showtime/', function(data)
 				parseData(source, destination, data, anime:lower())
 			end)
