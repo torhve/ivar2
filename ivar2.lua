@@ -302,7 +302,7 @@ local IrcMessageSplit = function(destination, message)
 		-- of a utf8 codepoint
 		for c in message:gmatch"([%z\1-\127\194-\244][\128-\191]*)" do
 			if #out+1 < cutoff then
-				out =  out..c
+				out = out..c
 			else
 				extra = extra..c
 			end
@@ -455,6 +455,7 @@ function ivar2:ParseMaskNick(source)
 end
 
 function ivar2:ParseMask(mask)
+	if type(mask) == 'table' then return mask end
 	local source = {}
 	source.mask, source.nick, source.ident, source.host = mask, mask:match'([^!]+)!([^@]+)@(.*)'
 	return source
@@ -491,11 +492,22 @@ function ivar2:DispatchCommand(command, argument, source, destination)
 				if(type(pattern) == 'number' and not source) then
 					success, message = pcall(callback, self, argument)
 				elseif(type(pattern) == 'number' and source) then
-					success, message = self:ModuleCall(callback, source, destination, argument)
+					success, message = self:ModuleCall(callback, source, destination, false, argument)
 				else
 					local channelPattern = self:ChannelCommandPattern(pattern, moduleName, destination)
-					if(argument:match(channelPattern)) then
-						success, message = self:ModuleCall(callback, source, destination, argument:match(channelPattern))
+					-- Check command for filters, aka | operator
+					-- Ex: !joke|!translate en no|!gay
+					local cutarg
+					local remainder = false
+					local cutoff = argument:find('|')
+					if cutoff then
+						cutarg = argument:sub(0,cutoff-1)
+						remainder = argument:sub(cutoff+1)
+					else
+						cutarg = argument
+					end
+					if(cutarg:match(channelPattern)) then
+						success, message = self:ModuleCall(callback, source, destination, remainder, cutarg:match(channelPattern))
 					end
 				end
 
@@ -634,13 +646,39 @@ function ivar2:LoadModules()
 	end
 end
 
-function ivar2:ModuleCall(func, source, destination, ...)
+function ivar2:CommandSplitter(command)
+	local first
+	local remainder = ''
+	local cutoff = command:find('|')
+	if cutoff then
+		first = command:sub(0,cutoff-1)
+		remainder = command:sub(cutoff+1)
+	else
+		first = command
+	end
+	self:Log('debug', 'Splitting command: %s into %s and %s', command, first, remainder)
+	return first, remainder
+end
+
+function ivar2:ModuleCall(func, source, destination, remainder, arg, ...)
 	-- Construct a environment for each callback that provide some helper
 	-- functions and utilities for the modules
+	
 	local env = {
 		ivar2 = self,
 		say = function(str, ...)
-			self:Say(destination, source, str, ...)
+			local output = safeFormat(str, ...)
+			if(not remainder) then
+				self:Say(destination, source, output)
+			else
+				--FIXME mabe do some whitespace trimming ?
+				local command, remainder = self:CommandSplitter(remainder)
+				local newline = command .. " " .. output
+				if remainder ~= '' then
+					newline = newline .. "|" .. remainder
+				end
+				self:DispatchCommand('PRIVMSG', newline, source, destination)
+			end
 		end,
 		reply = function(str, ...)
 			self:Reply(destination, source, str, ...)
@@ -649,7 +687,7 @@ function ivar2:ModuleCall(func, source, destination, ...)
 	local proxy = setmetatable(env, {__index = _G })
 	setfenv(func, env)
 
-	return pcall(func, self, source, destination, ...)
+	return pcall(func, self, source, destination, arg, ...)
 end
 
 
