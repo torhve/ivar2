@@ -100,7 +100,7 @@ end
 
 return {
 	PRIVMSG = {
-		['^.rt (.+)$'] = handler,
-		['^.rotten (.+)$'] = handler,
+		['^%prt (.+)$'] = handler,
+		['^%protten (.+)$'] = handler,
 	},
 }
