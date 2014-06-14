@@ -4,7 +4,7 @@ local json = require'json'
 local APIBase = 'https://blockchain.info/no/ticker'
 return {
 	PRIVMSG = {
-		['^.btc$'] = function(self, source, destination, input)
+		['^%pbtc$'] = function(self, source, destination, input)
 			simplehttp(APIBase, function(data)
 					local result = json.decode(data)
 
