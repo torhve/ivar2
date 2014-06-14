@@ -91,7 +91,7 @@ end
 
 return {
 	PRIVMSG = {
-		['^!hs (.+)$'] = function(self, source, destination, card)
+		['^%phs (.+)$'] = function(self, source, destination, card)
 			card = trim(card:lower())
 
 			local out = checkCache(card)
