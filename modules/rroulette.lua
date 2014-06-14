@@ -14,7 +14,7 @@ end
 
 return {
 	PRIVMSG = {
-		['^!rr$'] = function(self, source, destination)
+		['^%prr$'] = function(self, source, destination)
 			rr:open('cache/rr', rr.OWRITER + rr.OCREAT)
 			local nick = source.nick
 
