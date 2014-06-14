@@ -45,6 +45,7 @@ Create a bot config sort of like this
         owners = {
             'nick!ident@my.host.name'
         },
+        commandPattern = "!",
         modules = {
             'admin',
             'autojoin',
@@ -62,6 +63,11 @@ Create a bot config sort of like this
             ['#ivar'] = {
                 disabledModules = {
                     'olds'
+               },
+               commandPattern = '>',
+               ignoredNicks = {'otherbot'},
+               modulePatterns = {
+                    lastfm = '#',
                },
             },
         }
