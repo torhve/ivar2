@@ -52,7 +52,7 @@ end
 
 return {
 	PRIVMSG = {
-		['^.choose (.+)$'] = function(self, source, destination, choices)
+		['^%pchoose (.+)$'] = function(self, source, destination, choices)
 			if(choices:match('https?://%S+')) then
 				simplehttp(
 					choices:match('(https?://%S+)'),
