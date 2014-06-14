@@ -81,7 +81,7 @@ end
 
 return {
 	PRIVMSG = {
-		["^!awesomejapan%s*$"] = function(self, source, dest)
+		["^%pawesomejapan%s*$"] = function(self, source, dest)
 			local relative = {}
 			local nor = {'sekund', 'sekunder', 'minutt', 'minutter', 'time', 'timer', 'dag', 'dager', 'måned', 'måneder', 'år', 'år'}
 			local order = {'sec','min','hour','day','month','year'}
@@ -124,7 +124,7 @@ return {
 			end
 		end,
 
-		["^!awesomejapan stop$"] = function(self, source, dest)
+		["^%pawesomejapan stop$"] = function(self, source, dest)
 			if(isOwner(source)) then
 				local name = 'Awesome Japan'
 				self.timers[name]:stop(self.Loop)
