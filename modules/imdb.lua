@@ -82,6 +82,6 @@ end
 
 return {
 	PRIVMSG = {
-		['^.imdb (.+)$'] = handler,
+		['^%pimdb (.+)$'] = handler,
 	},
 }
