@@ -97,9 +97,8 @@ local handleObservationOutput = function(self, source, destination, data)
 		if windSpeed then windSpeed = windSpeed.name else windSpeed = '' end
 		local temperature = handleData('temperature', data)
 		if windDirection then windDirection = windDirection.name else windDirection = '' end
-		self:Msg('privmsg', destination, source, '\002%s\002°C, %s %s (%s)', temperature.value, windDirection, windSpeed, name)
 		-- Use the first result
-		return
+		return '\002%s\002°C, %s %s (%s)', temperature.value, windDirection, windSpeed, name
 	end
 end
 
@@ -320,11 +319,38 @@ return {
 				simplehttp(
 					url,
 					function(data)
-						handleObservationOutput(self, source, destination, data)
+						say(handleObservationOutput(self, source, destination, data))
 					end
 				)
 				return
 			end
+		end,
+		['^%ptemp$'] = function(self, source, destination)
+			place = self.persist['yr:place:'..source.nick]
+			if(not place) then
+				local patt = self:ChannelCommandPattern('^%pset yr <location>', "yr", destination):sub(1)
+				reply('Usage: '..patt)
+				return
+			end
+
+			place = getPlace(place)
+
+			if(place) then
+				-- use nynorsk text
+				local url = place.url:gsub('/place/', '/stad/')
+				simplehttp(
+					url,
+					function(data)
+						say(handleObservationOutput(self, source, destination, data))
+					end
+				)
+				return
+
+			end
+		end,
+		['^%pset yr (.+)$'] = function(self, source, destination, location)
+			self.persist['yr:place:'..source.nick] = location
+			reply('Location set to %s', location)
 		end,
 	}
 }
