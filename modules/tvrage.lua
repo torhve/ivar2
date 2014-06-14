@@ -141,8 +141,8 @@ end
 
 return {
 	PRIVMSG = {
-		['^!tv (.+)$'] = handle,
-		['^!tvr (.+)$'] = handle,
-		['^!tvrage (.+)'] = handle,
+		['^%ptv (.+)$'] = handle,
+		['^%ptvr (.+)$'] = handle,
+		['^%ptvrage (.+)'] = handle,
 	},
 }
