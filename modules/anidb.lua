@@ -193,7 +193,7 @@ end
 
 return {
 	PRIVMSG = {
-		['^.anidb (.+)$'] = function(self, source, destination, anime)
+		['^%panidb (.+)$'] = function(self, source, destination, anime)
 			-- Force a close in-case we didn't get to earlier.
 			anidb:close()
 
