@@ -23904,6 +23904,7 @@ return {
    },
   ["syn"] = {
    [1] = "Kawarazaki Ke no Ichizoku 2",
+   [2] = "Kawarazakike no Ichizoku 2",
    },
   },
  [1623] = {
@@ -26676,8 +26677,9 @@ return {
    [2] = "Kickers",
    [3] = "Palla al centro per Rudy",
    [4] = "Piłkarze",
-   [5] = "الهداف",
-   [6] = "がんばれ! キッカーズ",
+   [5] = "Supergol",
+   [6] = "الهداف",
+   [7] = "がんばれ! キッカーズ",
    },
   ["short"] = {
    [1] = "Kickers",
@@ -26685,7 +26687,6 @@ return {
   ["syn"] = {
    [1] = "Die Kickers",
    [2] = "Fight, Kickers!",
-   [3] = "Supergol",
    },
   },
  [1849] = {
@@ -38917,9 +38918,9 @@ return {
  [2852] = {
   ["main"] = "Attacker You!",
   ["official"] = {
-   [1] = "Jeanne et Serge",
-   [2] = "Joana e Sérgio",
-   [3] = "Juana y Sergio",
+   [1] = "Dos Fuera de Serie, Juana y Sergio",
+   [2] = "Jeanne et Serge",
+   [3] = "Joana e Sérgio",
    [4] = "Mila e Shiro, due cuori nella pallavolo",
    [5] = "Pojedynek aniołów",
    [6] = "アタッカーYOU!",
@@ -46415,8 +46416,7 @@ return {
  [3621] = {
   ["main"] = "Rockman.EXE Beast",
   ["official"] = {
-   [1] = "Megaman NT Warrior",
-   [2] = "ロックマンエグゼ・ビースト",
+   [1] = "ロックマンエグゼ・ビースト",
    },
   ["short"] = {
    },
@@ -49582,12 +49582,14 @@ return {
  [4122] = {
   ["main"] = "Ginga Tetsudou 999: Kimi wa Haha no You ni Aiseruka!!",
   ["official"] = {
-   [1] = "銀河鉄道999 君は母のように愛せるか!!",
+   [1] = "Galaxy Express: Can You Love Like a Mother?",
+   [2] = "銀河鉄道999 君は母のように愛せるか!!",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Galaxy Railway 999: Can You Love Like a Mother?!!",
+   [1] = "Galaxy Express 999: Can You Love Like a Mother?",
+   [2] = "Galaxy Railway 999: Can You Love Like a Mother?!!",
    },
   },
  [4123] = {
@@ -51752,6 +51754,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Kawarazakike no Ichizoku The Animation",
    },
   },
  [4304] = {
@@ -69456,7 +69459,7 @@ return {
   ["official"] = {
    [1] = "Pokemon: Arceus and the Jewel of Life",
    [2] = "Pokémon 12 - Arceus und das Juwel des Lebens",
-   [3] = "Pokémon: Arcéus e a Jóia da Vida",
+   [3] = "Pokémon: Arceus e a Jóia da Vida",
    [4] = "劇場版 ポケットモンスター ダイヤモンド&パール アルセウス 超克の時空へ",
    },
   ["short"] = {
@@ -80571,7 +80574,7 @@ return {
    },
   },
  [7475] = {
-  ["main"] = "High School! Kimen-gumi (1986)",
+  ["main"] = "High School! Kimengumi (1986)",
   ["official"] = {
    [1] = "ハイスクール! 奇面組 (1986)",
    },
@@ -87578,17 +87581,18 @@ return {
    [4] = "那朵花",
    },
   ["syn"] = {
-   [1] = "Nadal nie znamy nazwy kwiatu, który widzieliśmy tamtego dnia.",
-   [2] = "O Gün Gördüğümüz Çiçeğin Adını Hala Bilmiyoruz",
-   [3] = "We Still Don`t Know the Name of the Flower We Saw That Day.",
-   [4] = "А нам всё невдомёк, как звался тот цветок",
-   [5] = "Невиданный цветок",
-   [6] = "Невідома квітка, що ми побачили того дня",
-   [7] = "Тэр Цэцэг",
-   [8] = "لازلنا لا نعرف أسماء الزهور التي رأيناها في ذلك اليوم",
-   [9] = "هنوز اسم گلی که آن روز دیدیم را نمی دانیم",
-   [10] = "那日所見花兒之名我們仍未知曉",
-   [11] = "那日所见花儿之名我们仍未知晓",
+   [1] = "Ano Hana",
+   [2] = "Nadal nie znamy nazwy kwiatu, który widzieliśmy tamtego dnia.",
+   [3] = "O Gün Gördüğümüz Çiçeğin Adını Hala Bilmiyoruz",
+   [4] = "We Still Don`t Know the Name of the Flower We Saw That Day.",
+   [5] = "А нам всё невдомёк, как звался тот цветок",
+   [6] = "Невиданный цветок",
+   [7] = "Невідома квітка, що ми побачили того дня",
+   [8] = "Тэр Цэцэг",
+   [9] = "لازلنا لا نعرف أسماء الزهور التي رأيناها في ذلك اليوم",
+   [10] = "هنوز اسم گلی که آن روز دیدیم را نمی دانیم",
+   [11] = "那日所見花兒之名我們仍未知曉",
+   [12] = "那日所见花儿之名我们仍未知晓",
    },
   },
  [8182] = {
@@ -88036,7 +88040,8 @@ return {
  [8240] = {
   ["main"] = "Pretty Rhythm: Aurora Dream",
   ["official"] = {
-   [1] = "プリティーリズム オーロラドリーム",
+   [1] = "Pretty Star - Sognando l`aurora",
+   [2] = "プリティーリズム オーロラドリーム",
    },
   ["short"] = {
    [1] = "PRAD",
@@ -88502,7 +88507,6 @@ return {
    [1] = "K-On Movie",
    },
   ["syn"] = {
-   [1] = "K-On! Never Forget Those Days!!",
    },
   },
  [8281] = {
@@ -92514,7 +92518,8 @@ return {
    [2] = "戦姫絶唱シンフォギア Meteoroid-falling, burning, and disappear, then...",
    },
   ["short"] = {
-   [1] = "symphogear",
+   [1] = "Senki Zesshou Symphogear",
+   [2] = "symphogear",
    },
   ["syn"] = {
    },
@@ -94059,6 +94064,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Ryuugajou Nanana no Maizoukin (TV)",
    },
   },
  [8865] = {
@@ -95716,6 +95722,7 @@ return {
    [4] = "Kaleid liner Prisma Illya",
    },
   ["short"] = {
+   [1] = "F/K",
    },
   ["syn"] = {
    [1] = "Fate/kaleid liner PRISMA☆ILLYA",
@@ -97989,7 +97996,7 @@ return {
    [3] = "Pretty Soldier Sailor Moon (2014)",
    [4] = "Sailor Moon Crystal",
    [5] = "Sailor Moon Remake",
-   [6] = "Красавица-воин Сейлор Мун: кристалл",
+   [6] = "Красавица-воин Сейлор Мун: Кристалл",
    [7] = "Прекрасная воительница Сейлор Мун: Кристалл",
    [8] = "美少女戦士セーラームーン クリスタル",
    },
@@ -98501,6 +98508,8 @@ return {
    [1] = "劇場版あの日見た花の名前を僕達はまだ知らない.",
    },
   ["short"] = {
+   [1] = "Anohana Movie",
+   [2] = "Gekijouban Anohana",
    },
   ["syn"] = {
    },
@@ -98727,7 +98736,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Сребърна душа: Краят - Йородзуя завинаги",
+   [1] = "Gintama: The Movie: The Final Chapter: Be Forever Odd Jobs",
+   [2] = "Сребърна душа: Краят - Йородзуя завинаги",
    },
   },
  [9385] = {
@@ -103105,6 +103115,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Свобода!",
    },
   },
  [9861] = {
@@ -103414,13 +103425,13 @@ return {
   ["main"] = "Sidonia no Kishi",
   ["official"] = {
    [1] = "Knights of Sidonia",
-   [2] = "Рицарите на Сидония",
-   [3] = "シドニアの騎士",
-   [4] = "希德尼娅的骑士",
+   [2] = "シドニアの騎士",
+   [3] = "希德尼娅的骑士",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Рицарите на Сидония",
    },
   },
  [9893] = {
@@ -104335,7 +104346,7 @@ return {
   ["main"] = "Seikoku no Dragonar",
   ["official"] = {
    [1] = "Dragonar Academy",
-   [2] = "星刻の竜騎士",
+   [2] = "星刻の竜騎士[ドラグナー]",
    },
   ["short"] = {
    },
@@ -104557,7 +104568,7 @@ return {
   ["main"] = "Miss Monochrome The Animation",
   ["official"] = {
    [1] = "ミス・モノクローム -The Animation-",
-   [2] = "单色小姐 -The Animation-",
+   [2] = "黑白小姐",
    },
   ["short"] = {
    },
@@ -106326,16 +106337,6 @@ return {
    [1] = "Chichiiro Toiki",
    },
   },
- [10237] = {
-  ["main"] = "Joshikousei no Koshitsuki 2",
-  ["official"] = {
-   [1] = "女子高生の腰つき2",
-   },
-  ["short"] = {
-   },
-  ["syn"] = {
-   },
-  },
  [10238] = {
   ["main"] = "Shengshi Chuanshuo",
   ["official"] = {
@@ -106548,7 +106549,6 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Kichiku: Haha Shimai Choukyou Nikki",
    },
   },
  [10267] = {
@@ -106745,6 +106745,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Everyone Gather! Falcom Academy",
    },
   },
  [10290] = {
@@ -107219,7 +107220,6 @@ return {
    },
   ["syn"] = {
    [1] = "Mekaku City Actors",
-   [2] = "eyeball wizards",
    },
   },
  [10361] = {
@@ -107533,9 +107533,9 @@ return {
    },
   },
  [10397] = {
-  ["main"] = "Witch Craft Works OAD",
+  ["main"] = "Witch Craft Works (2015)",
   ["official"] = {
-   [1] = "ウィッチクラフトワークス OAD",
+   [1] = "ウィッチクラフトワークス (2015)",
    },
   ["short"] = {
    },
@@ -107699,6 +107699,7 @@ return {
    },
   ["syn"] = {
    [1] = "Free! 2",
+   [2] = "Свобода! - Вечное лето",
    },
   },
  [10417] = {
@@ -108022,6 +108023,9 @@ return {
    [1] = "Railgun S OVA",
    },
   ["syn"] = {
+   [1] = "A Certain Scientific Railgun S OVA",
+   [2] = "Toaru Kagaku no Railgun S OVA",
+   [3] = "とある科学の超電磁砲[レールガン]S OVA",
    },
   },
  [10454] = {
@@ -108366,13 +108370,14 @@ return {
    },
   },
  [10515] = {
-  ["main"] = "PuriPara",
+  ["main"] = "PriPara",
   ["official"] = {
    [1] = "プリパラ",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "PuriPara",
    },
   },
  [10517] = {
@@ -108553,7 +108558,8 @@ return {
  [10537] = {
   ["main"] = "Zankyou no Terror",
   ["official"] = {
-   [1] = "残響のテロル",
+   [1] = "Terror in Resonance",
+   [2] = "残響のテロル",
    },
   ["short"] = {
    },
@@ -108901,9 +108907,9 @@ return {
    },
   },
  [10580] = {
-  ["main"] = "Ai Mai Mii (2014)",
+  ["main"] = "Ai Mai Mii: Mousou Catastrophie",
   ["official"] = {
-   [1] = "あいまいみー (2014)",
+   [1] = "あいまいみー ~妄想カタストロフ~",
    },
   ["short"] = {
    },
@@ -109022,9 +109028,9 @@ return {
    },
   },
  [10592] = {
-  ["main"] = "Sega Hard Girls",
+  ["main"] = "Hi Scoool! Seha Girl",
   ["official"] = {
-   [1] = "セガ・ハード・ガールズ",
+   [1] = "Hi☆sCoool! セハガール",
    },
   ["short"] = {
    },
@@ -109253,6 +109259,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Re：␣ハマトラ",
    },
   },
  [10621] = {
@@ -109281,6 +109288,7 @@ return {
    [1] = "Persona 4 the Golden ANIMATION",
    },
   ["short"] = {
+   [1] = "P4GA",
    },
   ["syn"] = {
    [1] = "ペルソナ4 ザ・ゴールデン",
@@ -109669,15 +109677,6 @@ return {
   ["syn"] = {
    },
   },
- [10671] = {
-  ["main"] = "School Days",
-  ["official"] = {
-   },
-  ["short"] = {
-   },
-  ["syn"] = {
-   },
-  },
  [10672] = {
   ["main"] = "Nozo x Kimi",
   ["official"] = {
@@ -109712,6 +109711,101 @@ return {
   ["main"] = "Danna ga Nani o Itteiru ka Wakaranai Ken",
   ["official"] = {
    [1] = "旦那が何を言っているかわからない件",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10680] = {
+  ["main"] = "Eiga Youkai Watch",
+  ["official"] = {
+   [1] = "映画 妖怪ウォッチ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10681] = {
+  ["main"] = "Gundam Build Fighters (2014)",
+  ["official"] = {
+   [1] = "ガンダムビルドファイターズ (2014)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10683] = {
+  ["main"] = "Yamada-kun to 7-nin no Majo OAD",
+  ["official"] = {
+   [1] = "山田くんと7人の魔女 OAD",
+   },
+  ["short"] = {
+   [1] = "Yamajo",
+   [2] = "やまじょ",
+   },
+  ["syn"] = {
+   [1] = "Yamadakun to Nananin no Majo OAD",
+   },
+  },
+ [10684] = {
+  ["main"] = "Koufuku Graffiti",
+  ["official"] = {
+   [1] = "幸腹グラフィティ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Happy Cooking Graffiti",
+   },
+  },
+ [10685] = {
+  ["main"] = "World Fool News (2014)",
+  ["official"] = {
+   [1] = "ワールド フールニュース (2014)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10686] = {
+  ["main"] = "Yobai Suru Shichinin no Harame",
+  ["official"] = {
+   [1] = "夜這いする7人の孕女",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "夜這いする七人の孕女",
+   },
+  },
+ [10687] = {
+  ["main"] = "Kitsune no Homerun-O",
+  ["official"] = {
+   [1] = "きつねのホームラン王",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10688] = {
+  ["main"] = "Gekijouban Date a Live",
+  ["official"] = {
+   [1] = "劇場版 デート・ア・ライブ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10689] = {
+  ["main"] = "Keshikasu-kun",
+  ["official"] = {
+   [1] = "ケシカスくん",
    },
   ["short"] = {
    },
