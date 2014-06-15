@@ -8,7 +8,7 @@ rand = math.random
 tconc = table.concat
 
 benisify = (s) ->
-  reduce (acc, f) -> 
+  reduce (acc, f) ->
     f(acc),
     {
       (s) -> s\lower()
@@ -17,16 +17,16 @@ benisify = (s) ->
       (s) -> s\gsub('you', 'u')
       (s) -> s\gsub 'oo', ->
         ('u')\rep(rand(1, 5))
-      (s) -> 
+      (s) ->
         s\gsub '[%w_]%z', (x) ->
           x\sub(1, 1)\rep(rand(1, 2))
-      (s) -> 
+      (s) ->
         s\gsub 'ck', ->
           'g'\rep(rand(1, 5))
-      (s) -> 
+      (s) ->
         s\gsub '(t+)%f[aeiouys ]', (x) ->
           ('d')\rep(#x)
-      (s) -> 
+      (s) ->
         s\gsub '(t+)$', (x) ->
           ('d')\rep(#x)
       (s) -> s\gsub('p', 'b'),
@@ -35,10 +35,10 @@ benisify = (s) ->
       (s) -> s\gsub('%f[%w_]is%f[^%w_]', 'are'),
       (s) -> s\gsub '(c+)(.)', (x, y) ->
         (y == 'e' or y == 'i' or y == 'y') and (x .. y) or ('g')\rep(rand(1, 5)) ..  (y == 'c' and 'g' or y)
-      (s) -> 
+      (s) ->
         s\gsub '([qk]+)%f[aeiouy ]', ->
           ('g')\rep(rand(1, 5))
-      (s) -> 
+      (s) ->
         s\gsub '([qk]+)$', ->
           ('g')\rep(rand(1, 5))
       (s) ->
