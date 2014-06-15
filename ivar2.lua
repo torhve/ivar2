@@ -648,7 +648,6 @@ function ivar2:LoadModules()
 	end
 end
 
-<<<<<<< HEAD
 function ivar2:CommandSplitter(command)
 	local first
 	local remainder = ''
@@ -682,13 +681,6 @@ function ivar2:ModuleCall(func, source, destination, remainder, arg, ...)
 				end
 				self:DispatchCommand('PRIVMSG', newline, source, destination)
 			end
-function ivar2:ModuleCall(func, source, destination, arg)
-	-- Construct a environment for each callback that provide some helper
-	-- functions and utilities for the modules
-	local env = {
-		ivar2 = self,
-		say = function(str, ...)
-			self:Say(destination, source, str, ...)
 		end,
 		reply = function(str, ...)
 			self:Reply(destination, source, str, ...)
@@ -697,7 +689,7 @@ function ivar2:ModuleCall(func, source, destination, arg)
 	local proxy = setmetatable(env, {__index = _G })
 	setfenv(func, env)
 
-	return pcall(func, self, source, destination, arg)
+	return pcall(func, self, source, destination, arg, ...)
 end
 
 
