@@ -5,7 +5,7 @@ urlEncode = (str, space) ->
   space = space or '+'
 
   str = str\gsub '([^%w ])', (c) ->
-      string.format  "%%%02X", string.byte(c) 
+      string.format  "%%%02X", string.byte(c)
   return str\gsub(' ', space)
 
 PRIVMSG:
