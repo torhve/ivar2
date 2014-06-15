@@ -30,7 +30,7 @@ local function openDb()
     return db
 end
 
-local function outputTweet(self, source, destination, info)
+local function outputTweet(say, source, destination, info)
     local name = info.user.name
     local screen_name = html2unicode(info.user.screen_name)
     local tweet
@@ -70,10 +70,14 @@ local function outputTweet(self, source, destination, info)
     end
 
     table.insert(out, tweet)
-    ivar2:Msg('privmsg', destination, source, table.concat(out, ' '))
+    if(say ~= nil) then
+        say(table.concat(out, ' '))
+    else
+        ivar2:Msg('privmsg', destination, source, table.concat(out, ' '))
+    end
 end
 
-local function getStatus(self, source, destination, tid)
+local function getStatus(say, source, destination, tid)
     simplehttp({
         url = string.format('https://api.twitter.com/1.1/statuses/show/%s.json', tid),
         headers = {
@@ -82,7 +86,7 @@ local function getStatus(self, source, destination, tid)
     },
     function(data)
         local info = json.decode(data)
-        outputTweet(self, source, destination, info)
+        outputTweet(say, source, destination, info)
     end
     )
 end
@@ -214,7 +218,7 @@ local function tunFollow(self, source, destination, screen_name)
     self:Msg('privmsg', destination, source, 'Stopped following \002%s\002', screen_name)
 end
 
-local function getLatestStatuses(self, source, destination, screen_name, count)
+local function getLatestStatuses(say, source, destination, screen_name, count)
     if not count then
         count = 1
     else
@@ -228,7 +232,7 @@ local function getLatestStatuses(self, source, destination, screen_name, count)
         },
         function(data)
             local info = json.decode(data)
-            outputTweet(self, source, destination, info[count])
+            outputTweet(say, source, destination, info[count])
         end
     )
 end
@@ -288,22 +292,22 @@ timer:start(ivar2.Loop)
 return {
     PRIVMSG = {
         ['^%ptwitter (%d+)%s*$'] = function(self, source, destination, tid)
-            getStatus(self, source, destination, tid)
+            getStatus(say, source, destination, tid)
         end,
         ['^%ptweet (%d+)%s*$'] = function(self, source, destination, tid)
-            getStatus(self, source, destination, tid)
+            getStatus(say, source, destination, tid)
         end,
         ['^%ptwitter ([a-zA-Z0-9_]+)%s*$'] = function(self, source, destination, screen_name)
-            getLatestStatuses(self, source, destination, screen_name)
+            getLatestStatuses(say, source, destination, screen_name)
         end,
         ['^%ptweet ([a-zA-Z0-9_]+)%s*$'] = function(self, source, destination, screen_name)
-            getLatestStatuses(self, source, destination, screen_name)
+            getLatestStatuses(say, source, destination, screen_name)
         end,
         ['^%ptwitter ([a-zA-Z0-9_]+) (%d+)%s*$'] = function(self, source, destination, screen_name, count)
-            getLatestStatuses(self, source, destination, screen_name, count)
+            getLatestStatuses(say, source, destination, screen_name, count)
         end,
         ['^%ptweet ([a-zA-Z0-9_]+) (%d+)$'] = function(self, source, destination, screen_name, count)
-            getLatestStatuses(self, source, destination, screen_name, count)
+            getLatestStatuses(say, source, destination, screen_name, count)
         end,
         ['^%ptfollow ([a-zA-Z0-9_]+)%s*$'] = function(self, source, destination, screen_name)
             tFollow(self, source, destination, screen_name)
