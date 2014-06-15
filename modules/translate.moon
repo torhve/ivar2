@@ -80,7 +80,7 @@ urlEncode = (str, space) ->
   str = tostring(str)
 
   str = str\gsub '([^%w ])', (c) ->
-    string.format  "%%%02X", string.byte(c) 
+    string.format  "%%%02X", string.byte(c)
   return str\gsub(' ', space)
 
 
