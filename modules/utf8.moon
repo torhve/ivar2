@@ -75,11 +75,11 @@ PRIVMSG:
     say wireplace(0xFEE0, arg)
   '^%pblackletter (.+)$': (source, destination, arg) =>
     say remap(an2bl, arg)
-  '^%pcircled (.+)$': (source, destination, arg) => 
+  '^%pcircled (.+)$': (source, destination, arg) =>
     say remap(an2ci, arg)
-  '^%pzalgo (.+)$': (source, destination, arg) => 
+  '^%pzalgo (.+)$': (source, destination, arg) =>
     say zalgo(arg, 10)
-  '^%pupsidedown (.+)$': (source, destination, arg) => 
+  '^%pupsidedown (.+)$': (source, destination, arg) =>
     say remap(an2ud, arg)
-  '^%pflip (.+)$': (source, destination, arg) => 
+  '^%pflip (.+)$': (source, destination, arg) =>
     say remap(an2ud, arg)
