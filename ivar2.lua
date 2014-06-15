@@ -600,7 +600,7 @@ function ivar2:LoadModules()
 	end
 end
 
-function ivar2:ModuleCall(func, source, destination, arg)
+function ivar2:ModuleCall(func, source, destination, ...)
 	-- Construct a environment for each callback that provide some helper
 	-- functions and utilities for the modules
 	local env = {
@@ -615,7 +615,7 @@ function ivar2:ModuleCall(func, source, destination, arg)
 	local proxy = setmetatable(env, {__index = _G })
 	setfenv(func, env)
 
-	return pcall(func, self, source, destination, arg)
+	return pcall(func, self, source, destination, ...)
 end
 
 
