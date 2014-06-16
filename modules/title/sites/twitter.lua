@@ -1,5 +1,5 @@
 local simplehttp = require'simplehttp'
-local json = require'json'
+local json = require'cjson'
 local html2unicode = require'html'
 local base64 = require 'base64'
 
