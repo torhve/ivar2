@@ -10,21 +10,14 @@ Partially because its written in lua, which could make the most sane mind go uns
 Installation
 ------------------
 
-Install required dependencies
+Either use the provided Dockerfile in scripts/Dockerfile or follow its command list to install all the required dependencies.
+
+Build the Dockerfile:
 
 ::
 
-    sudo apt-get install luarocks libev-dev liblua5.1-logging liblua5.1-iconv0 liblua5.1-json cmake
-    sudo luarocks install "https://github.com/brimworks/lua-ev/raw/master/rockspec/lua-ev-scm-1.rockspec"
-    sudo luarocks install "https://github.com/Neopallium/nixio/raw/master/nixio-scm-0.rockspec"
-    sudo luarocks install "https://github.com/Neopallium/lua-handlers/raw/master/lua-handler-scm-0.rockspec"
-    sudo luarocks install "https://github.com/brimworks/lua-http-parser/raw/master/lua-http-parser-scm-0.rockspec"
-    sudo luarocks install "https://github.com/Neopallium/lua-handlers/raw/master/lua-handler-http-scm-0.rockspec"
-    sudo luarocks install "https://raw.githubusercontent.com/Neopallium/lua-handlers/master/lua-handler-http-scm-0.rockspec"
-    sudo luarocks install lsqlite3
-    sudo luarocks install luasocket
-    sudo luarocks install luabitop
-    wget https://github.com/haste/lua-idn/raw/master/idn.lua
+    cd scripts
+    docker build -t torhve/ivar2 .
 
 Configuration File
 ------------------
@@ -81,6 +74,13 @@ Launch bot
 ::
 
     lua ivar2.lua myconfig.lua
+
+or using Docker
+
+::
+
+    sudo docker run -i -t -v=/home/ivar2:/ivar2 -w=/ivar2 torhve/ivar2 lua ivar2.lua myconfig.lua
+
 
 Modules
 -------
