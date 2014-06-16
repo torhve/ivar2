@@ -23,6 +23,7 @@ local uri_mod = require'handler.uri'
 local nixio = require'nixio'
 local ev = require'ev'
 local event = require 'event'
+local util = require 'util'
 require'logging.console'
 
 local log = logging.console()
@@ -33,6 +34,7 @@ local ivar2 = {
 	Loop = loop,
 	event = event,
 	channels = {},
+	util = util,
 
 	timeoutFunc = function(ivar2)
 		return function(loop, timer, revents)
@@ -724,6 +726,9 @@ function ivar2:Reload()
 		message.Loop = self.Loop
 		message.channels = self.channels
 		message.event = self.event
+		-- Reload utils
+		package.loaded.util = nil
+		message.util = require'util'
 		message.network = self.network
 		message.maxNickLength = self.maxNickLength
 		-- Clear the registered events
