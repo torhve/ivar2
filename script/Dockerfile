@@ -25,15 +25,14 @@ RUN    apt-get -y install redis-server
 RUN    apt-get -y install git
 RUN    apt-get -y install cmake
 
-RUN    luarocks install --server=http://rocks.moonscript.org moonrocks
-RUN    moonrocks install moonscript 
-RUN    moonrocks install date
-RUN    moonrocks install lsqlite3
-RUN    moonrocks install luabitop
-RUN    moonrocks install redis-lua
-RUN    moonrocks install "https://github.com/brimworks/lua-ev/raw/master/rockspec/lua-ev-scm-1.rockspec" LIBEV_INCDIR=/usr/include/ LIBEV_LIBDIR=/usr/lib/x86_64-linux-gnu/
-RUN    moonrocks install "http://github.com/Neopallium/nixio/raw/master/nixio-scm-0.rockspec"
-RUN    moonrocks install "https://github.com/Neopallium/lua-handlers/raw/master/lua-handler-scm-0.rockspec"
-RUN    moonrocks install "https://github.com/brimworks/lua-http-parser/raw/master/lua-http-parser-scm-0.rockspec"
-RUN    moonrocks install "https://github.com/Neopallium/lua-handlers/raw/master/lua-handler-http-scm-0.rockspec"
+RUN    luarocks install --server=http://rocks.moonscript.org moonscript 
+RUN    luarocks install --server=http://rocks.moonscript.org date
+RUN    luarocks install --server=http://rocks.moonscript.org lsqlite3
+RUN    luarocks install --server=http://rocks.moonscript.org luabitop
+RUN    luarocks install --server=http://rocks.moonscript.org redis-lua
+RUN    luarocks install "https://github.com/brimworks/lua-ev/raw/master/rockspec/lua-ev-scm-1.rockspec" LIBEV_INCDIR=/usr/include/ LIBEV_LIBDIR=/usr/lib/x86_64-linux-gnu/
+RUN    luarocks install "http://github.com/Neopallium/nixio/raw/master/nixio-scm-0.rockspec"
+RUN    luarocks install "https://github.com/Neopallium/lua-handlers/raw/master/lua-handler-scm-0.rockspec"
+RUN    luarocks install "https://github.com/brimworks/lua-http-parser/raw/master/lua-http-parser-scm-0.rockspec"
+RUN    luarocks install "https://github.com/Neopallium/lua-handlers/raw/master/lua-handler-http-scm-0.rockspec"
 
