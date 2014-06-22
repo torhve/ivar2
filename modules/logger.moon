@@ -116,8 +116,49 @@ lastlog = (source, destination, arg) ->
     return out[1].message
   return out
 
+seen = (source, destination, nick) =>
+  nick = ivar2.util.trim(nick)
+  stmt, err = dbh!\prepare [[
+    SELECT
+        *,
+        date_trunc('second', time) as sectime,
+        date_trunc('second', age(now(), date_trunc('second', time))) as ago
+      FROM log
+      WHERE nick = ?
+      ORDER BY time DESC
+      LIMIT 1
+    ]]
+  unless stmt
+    print(err)
+  stmt\execute nick
+  out = {}
+  for row in stmt\rows(true) -- true for column names
+    out[#out+1] = row
+
+  actions =
+    'ACTION': 'talking in third person'
+    'TOPIC': 'changing topic'
+    'PRIVMSG': 'jabbering'
+    'NICK': 'changing nick'
+    'QUIT': 'quitting'
+    'PART': 'leaving'
+    'NOTICE': 'sending a notice'
+    'MODE': 'changing a mode'
+    'JOIN': 'joining'
+
+
+  if #out == 1
+    r = out[1]
+    message = ''
+    if #r.message
+      message == " with message #{r.message}"
+    say "#{ivar2.util.bold r.nick} was last observed #{ivar2.util.italic actions[r.type]}#{message} #{r.ago} ago (#{r.sectime} UTC)"
+  else
+    say "#{ivar2.util.bold nick} was not seen in my lifetime."
+
 return {
   PRIVMSG: {
+    '%pseen (.+)$': seen
     '%plast$': (source, destination) =>
       say history(source,destination,1)
     '%plastlog (.+)$': (source, destination, arg) =>
