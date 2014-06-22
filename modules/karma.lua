@@ -41,6 +41,7 @@ end
 
 local function handleKarma(self, source, destination, item, sign, change)
 	local value = 0
+	item = ivar2.util.trim(item)
 
 	local config = self.config.karma
 	if change then
