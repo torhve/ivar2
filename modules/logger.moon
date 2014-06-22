@@ -1,5 +1,7 @@
 dbi = require 'DBI'
 require'logging.console'
+iconv = require'iconv'
+iso2utf = iconv.new('UTF-8'.."//TRANSLIT", 'ISO-8859-1')
 log = logging.console()
 
 conn = false
@@ -15,6 +17,9 @@ schemas = {[[
   [[CREATE INDEX idx_time ON log(time);]],
   [[CREATE INDEX idx_channel ON log(channel);]]
 }
+
+toutf = (s) ->
+  iso2utf\iconv(s)
 
 connect = ->
   conn, err = DBI.Connect('PostgreSQL', ivar2.config.dbname, ivar2.config.dbuser, ivar2.config.dbpass, ivar2.config.dbhost, ivar2.config.dbport)
@@ -55,10 +60,18 @@ dblog = (type, source, destination, arg) =>
   unless arg
     arg = ''
 
-  insert = dbh!\prepare('INSERT INTO log(nick,channel,message,type) values(?,?,?,?)')
-  stmt, err = insert\execute(nick, destination, arg, type)
+  insert = ->
+    ins = dbh!\prepare('INSERT INTO log(nick,channel,message,type) values(?,?,?,?)')
+    ins\execute(nick, destination, arg, type)
+
+  -- First try to insert statement directly
+  -- if that doesn't work; convert it from iso to utf and try again
+  stmt, err = insert!
   unless stmt
-    log\error err
+    arg, err = toutf(arg)
+    stmt, err = insert!
+    unless stmt
+      log\error err
 
 history = (source, destination, nr) ->
   nr = tonumber(nr) or 1
