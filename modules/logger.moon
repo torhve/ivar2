@@ -75,13 +75,14 @@ dblog = (type, source, destination, arg) =>
 
 history = (source, destination, nr) ->
   nr = tonumber(nr) or 1
+  -- TODO ignore messages that are commands
   stmt = dbh!\prepare [[
-    SELECT 
-      * 
-      FROM log 
-      WHERE channel=? 
-      AND (type = 'PRIVMSG' OR type = 'ACTION') 
-      ORDER BY time 
+    SELECT
+      *
+      FROM log
+      WHERE channel=?
+      AND (type = 'PRIVMSG' OR type = 'ACTION')
+      ORDER BY time
       DESC LIMIT ?
     ]]
   stmt\execute destination, nr
@@ -97,13 +98,13 @@ lastlog = (source, destination, arg) ->
   nr = tonumber(nr) or 1
   arg = '%'..arg..'%'
   stmt = dbh!\prepare [[
-    SELECT 
-      * 
-      FROM log 
-      WHERE channel=? 
+    SELECT
+      *
+      FROM log
+      WHERE channel=?
       AND (type = 'PRIVMSG' OR type = 'ACTION')
-      AND message LIKE ? 
-      ORDER BY time DESC 
+      AND message LIKE ?
+      ORDER BY time DESC
       LIMIT 20
     ]]
   stmt\execute destination, arg
@@ -117,15 +118,17 @@ lastlog = (source, destination, arg) ->
 
 return {
   PRIVMSG: {
-    (s, d, a) =>
-      dblog @, 'PRIVMSG', s, d, a
     '%plast$': (source, destination) =>
       say history(source,destination,1)
     '%plastlog (.+)$': (source, destination, arg) =>
       out = {}
       for k,v in *lastlog(source, destination, arg)
-        table.insert out, string.format('<%s> %s', k.nick, k.message)
+        -- Skip commands
+        unless k.message\match('^%p')
+          table.insert out, string.format('<%s> %s', k.nick, k.message)
       say table.concat(out, ' ')
+    (s, d, a) =>
+      dblog @, 'PRIVMSG', s, d, a
   }
   NOTICE: {
     (s, d, a) =>
