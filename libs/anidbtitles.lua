@@ -13369,10 +13369,9 @@ return {
   ["main"] = "Yuugen Kaisha",
   ["official"] = {
    [1] = "Exorciste S.A. - Yugen Kaisha",
-   [2] = "Phantom Quest Corp",
-   [3] = "Phantom Quest Corp.",
-   [4] = "Phantom Quest Corporation",
-   [5] = "幽幻怪社",
+   [2] = "Phantom Quest Corp.",
+   [3] = "Phantom Quest Corporation",
+   [4] = "幽幻怪社",
    },
   ["short"] = {
    [1] = "PQC",
@@ -20793,8 +20792,8 @@ return {
   ["main"] = "WWWA Dirty Pair no Ooshoubu: Nolandia no Nazo",
   ["official"] = {
    [1] = "Dirty Pair - L`affaire de Nolandia",
-   [2] = "Dirty Pair: Affair Of Nolandia",
-   [3] = "Dirty Pair: Affäre Nolandia",
+   [2] = "Dirty Pair: Affäre Nolandia",
+   [3] = "Original Dirty Pair: Affair of Nolandia",
    [4] = "WWWAダーティペアの大勝負 ノーランディアの謎",
    },
   ["short"] = {
@@ -27581,9 +27580,10 @@ return {
    },
   ["syn"] = {
    [1] = "Au pays de Candy",
-   [2] = "Dolce Candy",
-   [3] = "Kendi Kendi",
-   [4] = "Кенди-Кенди",
+   [2] = "Candy Candy TV",
+   [3] = "Dolce Candy",
+   [4] = "Kendi Kendi",
+   [5] = "Кенди-Кенди",
    },
   },
  [1915] = {
@@ -34997,9 +34997,9 @@ return {
   ["main"] = "Tenchi Muyou! Ryououki Omatsuri Zen`ya no Yoru!",
   ["official"] = {
    [1] = "Tenchi Muyo - Ryo-Ohki - Épisodes 7-8",
-   [2] = "Tenchi Muyo! (Episode 7)",
-   [3] = "Tenchi Muyo! Esperando a Ryu-Oh",
-   [4] = "Tenchi Muyo! The Night Before the Carnival!",
+   [2] = "Tenchi Muyo! Esperando a Ryu-Oh",
+   [3] = "Tenchi Muyo! The Night Before the Carnival!",
+   [4] = "Tenchi Muyo! The Night before the Carnival",
    [5] = "天地無用! 魎皇鬼 お祭り前夜の夜!",
    },
   ["short"] = {
@@ -83304,7 +83304,7 @@ return {
    },
   },
  [7758] = {
-  ["main"] = "Sore Ike! Anpanman: Kaiketsu Naganegiman to Doremi-hime",
+  ["main"] = "Sore Ike! Anpanman: Kaiketsu Naganegiman to Doremi Hime",
   ["official"] = {
    [1] = "それいけ! アンパンマン 怪傑ナガネギマンとドレミ姫",
    },
@@ -98462,7 +98462,7 @@ return {
    },
   },
  [9352] = {
-  ["main"] = "Nazotoki-hime wa Meitantei",
+  ["main"] = "Nazotoki Hime wa Meitantei",
   ["official"] = {
    [1] = "ナゾトキ姫は名探偵♥",
    },
@@ -99845,9 +99845,9 @@ return {
    },
   },
  [9495] = {
-  ["main"] = "Ai Mai Mii",
+  ["main"] = "Choboraunyopomi Gekijou Ai Mai Mii",
   ["official"] = {
-   [1] = "あいまいみー",
+   [1] = "ちょぼらうにょぽみ劇場 あいまいみー",
    [2] = "아이 마이 미이",
    },
   ["short"] = {
@@ -100057,14 +100057,15 @@ return {
    [2] = "El Viento se Levanta",
    [3] = "Le Vent se lève",
    [4] = "Se Levanta el Viento",
-   [5] = "The Wind Rises",
-   [6] = "The Wind Rises: As Asas do Vento",
-   [7] = "Tuuli nousee",
-   [8] = "Vidas ao Vento",
-   [9] = "Vinden stiger",
-   [10] = "Ветер крепчает",
-   [11] = "風立ちぬ",
-   [12] = "바람이 분다",
+   [5] = "Szél támad",
+   [6] = "The Wind Rises",
+   [7] = "The Wind Rises: As Asas do Vento",
+   [8] = "Tuuli nousee",
+   [9] = "Vidas ao Vento",
+   [10] = "Vinden stiger",
+   [11] = "Ветер крепчает",
+   [12] = "風立ちぬ",
+   [13] = "바람이 분다",
    },
   ["short"] = {
    },
@@ -100693,6 +100694,7 @@ return {
   ["main"] = "Z/X: Ignition",
   ["official"] = {
    [1] = "Z/X IGNITION",
+   [2] = "Z/X Ignition",
    },
   ["short"] = {
    },
@@ -103514,6 +103516,7 @@ return {
    [1] = "Fate/kaleid liner プリズマ☆イリヤ 運動会 DE ダンス!",
    },
   ["short"] = {
+   [1] = "Fate Kaleid OVA",
    },
   ["syn"] = {
    },
@@ -103651,6 +103654,7 @@ return {
    },
   ["short"] = {
    [1] = "AnR",
+   [2] = "悪魔のリドル",
    },
   ["syn"] = {
    },
@@ -104190,7 +104194,8 @@ return {
    },
   ["syn"] = {
    [1] = "Fate Stay Night 2014",
-   [2] = "フェイト/ステイナイト (2014)",
+   [2] = "Съдба/Под булото на нощта (2014)",
+   [3] = "フェイト/ステイナイト (2014)",
    },
   },
  [9979] = {
@@ -104363,8 +104368,10 @@ return {
    },
   ["short"] = {
    [1] = "NGNL",
+   [2] = "nogenora",
    },
   ["syn"] = {
+   [1] = "Игра на оцеляване",
    },
   },
  [9999] = {
@@ -104876,6 +104883,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Психо-паспорт 2",
    },
   },
  [10066] = {
@@ -105565,6 +105573,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Висока топка",
+   [2] = "Хайкю!!",
    },
   },
  [10146] = {
@@ -106585,7 +106595,8 @@ return {
  [10272] = {
   ["main"] = "Kiseijuu",
   ["official"] = {
-   [1] = "寄生獣",
+   [1] = "Паразит",
+   [2] = "寄生獣",
    },
   ["short"] = {
    },
@@ -107036,8 +107047,9 @@ return {
    },
   },
  [10323] = {
-  ["main"] = "Ore, Twintails ni Narimasu",
+  ["main"] = "Ore, Twintails ni Narimasu.",
   ["official"] = {
+   [1] = "俺, ツインテールになります.",
    },
   ["short"] = {
    },
@@ -107569,7 +107581,8 @@ return {
   ["official"] = {
    [1] = "Ping Pong",
    [2] = "Ping Pong the Animation",
-   [3] = "ピンポン THE ANIMATION",
+   [3] = "Пинг-понг анимацията",
+   [4] = "ピンポン THE ANIMATION",
    },
   ["short"] = {
    [1] = "pingpong",
@@ -107586,6 +107599,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Токийско чудовище",
    },
   },
  [10402] = {
@@ -107648,6 +107662,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Убийцата Акаме",
    },
   },
  [10409] = {
@@ -107700,6 +107715,7 @@ return {
   ["syn"] = {
    [1] = "Free! 2",
    [2] = "Свобода! - Вечное лето",
+   [3] = "Свободен! Вечно лято",
    },
   },
  [10417] = {
@@ -107905,7 +107921,9 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "テラフォーマーズ",
+   [1] = "Тера Формарс",
+   [2] = "Тераформарсяване",
+   [3] = "テラフォーマーズ",
    },
   },
  [10440] = {
@@ -108565,6 +108583,8 @@ return {
    },
   ["syn"] = {
    [1] = "Terror in Tokyo",
+   [2] = "Ехото на терора",
+   [3] = "Терористичен екот",
    },
   },
  [10538] = {
@@ -108676,6 +108696,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Космическото конте 2",
    },
   },
  [10554] = {
@@ -108738,7 +108759,8 @@ return {
   ["syn"] = {
    [1] = "Pocket Monsters XY Special: The Strongest Mega Evolution ~Act I~",
    [2] = "Pocket Monsters XY Tokubetsu Hen: Saikyou Megashinka",
-   [3] = "ポケットモンスターXY 特別編 最強メガシンカ",
+   [3] = "Pokemon XY Mega Evolution",
+   [4] = "ポケットモンスターXY 特別編 最強メガシンカ",
    },
   },
  [10564] = {
@@ -108907,9 +108929,9 @@ return {
    },
   },
  [10580] = {
-  ["main"] = "Ai Mai Mii: Mousou Catastrophie",
+  ["main"] = "Choboraunyopomi Gekijou Dai Ni Maku Ai Mai Mii: Mousou Catastrophe",
   ["official"] = {
-   [1] = "あいまいみー ~妄想カタストロフ~",
+   [1] = "ちょぼらうにょぽみ劇場第二幕 あいまいみー ~妄想カタストロフ~",
    },
   ["short"] = {
    },
@@ -108947,13 +108969,14 @@ return {
    },
   },
  [10584] = {
-  ["main"] = "12-Sai.",
+  ["main"] = "12-Sai.: Kiss, Kirai, Suki",
   ["official"] = {
-   [1] = "12歳.",
+   [1] = "12歳. ～キス・キライ・スキ～",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "12さい.",
    },
   },
  [10585] = {
@@ -109342,6 +109365,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Alice in Borderland",
    },
   },
  [10629] = {
@@ -109411,6 +109435,7 @@ return {
    [1] = "オレん家のフロ事情",
    },
   ["short"] = {
+   [1] = "orefuro",
    },
   ["syn"] = {
    },
@@ -109783,9 +109808,10 @@ return {
    },
   },
  [10687] = {
-  ["main"] = "Kitsune no Homerun-O",
+  ["main"] = "Kitsune no Homerun Ou",
   ["official"] = {
-   [1] = "きつねのホームラン王",
+   [1] = "Seventh Inning Stretch",
+   [2] = "きつねのホームラン王",
    },
   ["short"] = {
    },
@@ -109806,6 +109832,66 @@ return {
   ["main"] = "Keshikasu-kun",
   ["official"] = {
    [1] = "ケシカスくん",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10690] = {
+  ["main"] = "Shinrabanshou: Tenchishinmei no Shou",
+  ["official"] = {
+   [1] = "神羅万象～天地神明の章～",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10691] = {
+  ["main"] = "High School DxD 3",
+  ["official"] = {
+   [1] = "ハイスクールDxD 3",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10692] = {
+  ["main"] = "Isuca",
+  ["official"] = {
+   [1] = "ISUCA",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10693] = {
+  ["main"] = "Miss Monochrome The Animation: Soccer Hen",
+  ["official"] = {
+   [1] = "ミス・モノクローム -The Animation- サッカー篇",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10697] = {
+  ["main"] = "Gakkou Gurashi!",
+  ["official"] = {
+   [1] = "がっこうぐらし!",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10698] = {
+  ["main"] = "Selector Spread Wixoss",
+  ["official"] = {
+   [1] = "selector spread WIXOSS",
    },
   ["short"] = {
    },
