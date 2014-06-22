@@ -158,10 +158,10 @@ seen = (source, destination, nick) =>
 
 return {
   PRIVMSG: {
-    '%pseen (.+)$': seen
-    '%plast$': (source, destination) =>
+    '^%pseen (.+)$': seen
+    '^%plast$': (source, destination) =>
       say history(source,destination,1)
-    '%plastlog (.+)$': (source, destination, arg) =>
+    '^%plastlog (.+)$': (source, destination, arg) =>
       out = {}
       for k,v in *lastlog(source, destination, arg)
         -- Skip commands
