@@ -51,7 +51,7 @@ end
 
 local function handleSearch(self, source, destination, name)
     local db = sql.open("cache/unicode.sql")
-    local selectStmt  = db:prepare('SELECT * FROM unicode WHERE LOWER(name) LIKE LOWER(?)')
+    local selectStmt  = db:prepare('SELECT * FROM unicode WHERE LOWER(name) LIKE LOWER(?) LIMIT 50')
     selectStmt:bind_values('%'..name..'%')
 
     local out = {}
@@ -68,7 +68,7 @@ end
 
 local function handleSearchShort(self, source, destination, name)
     local db = sql.open("cache/unicode.sql")
-    local selectStmt  = db:prepare('SELECT cp FROM unicode WHERE LOWER(name) LIKE LOWER(?)')
+    local selectStmt  = db:prepare('SELECT cp FROM unicode WHERE LOWER(name) LIKE LOWER(?) LIMIT 500')
     selectStmt:bind_values('%'..name..'%')
 
     local out = {}
