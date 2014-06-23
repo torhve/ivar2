@@ -1,4 +1,4 @@
-scale = (s, d, val, max, frm, to) =>
+scale = (val, max, frm, to) ->
     x1, x2 = '', ''
     max = ivar2.util.trim(max or '')
     val = tonumber(val)
@@ -33,13 +33,17 @@ scale = (s, d, val, max, frm, to) =>
     left = char\rep(pos)
     right = char\rep(max-pos)
 
-    say "#{x1}[#{ivar2.util.green left}#{ivar2.util.bold ivar2.util.italic ivar2.util.yellow 'X'}#{ivar2.util.red right}]#{x2}"
+    return "#{x1}[#{ivar2.util.green left}#{ivar2.util.bold ivar2.util.italic ivar2.util.yellow 'X'}#{ivar2.util.red right}]#{x2}"
 
+scalew = (s, d, val, max, frm, to) =>
+  say(scale(val, max, frm, to))
 
 PRIVMSG:
-  '^%pscale ([0-9]+)$': scale
-  '^%pscale ([0-9]+) ([0-9]+)$': scale
-  '^%pscale ([0-9]+) ([a-zA-ZæøåÆØÅ%-]+)$': scale
-  '^%pscale ([0-9]+) ([0-9]+) ([a-zA-ZæøåÆØÅ#%-]+)$': scale
-  '^%pscale ([0-9]+) ([0-9]+) ([a-zA-ZæøåÆØÅ#%-]+)$': scale
-  '^%pscale ([0-9]+) ([0-9]+) (.+) (.+)$': scale
+  '^%pscale ([0-9]+)$': scalew
+  '^%pscale ([0-9]+) ([0-9]+)$': scalew
+  '^%pscale ([0-9]+) ([a-zA-ZæøåÆØÅ%-]+)$': scalew
+  '^%pscale ([0-9]+) ([0-9]+) ([a-zA-ZæøåÆØÅ#%-]+)$': scalew
+  '^%pscale ([0-9]+) ([0-9]+) ([a-zA-ZæøåÆØÅ#%-]+)$': scalew
+  '^%pscale ([0-9]+) ([0-9]+) (.+) (.+)$': scalew
+  '^%ptscale ([0-9]+)$': (s, d, temp) =>
+    say(scale(temp, 30, 'freezing', 'hot as fuck'))
