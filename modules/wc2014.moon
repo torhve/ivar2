@@ -28,8 +28,9 @@ PRIVMSG:
   '^%pwc$': =>
     ivar2.util.simplehttp URL..'current', (json) ->
       data = ivar2.util.json.decode(json)
-      m = data[1]
-      unless m
+      out = {}
+      for _,m in pairs(data)
+        out[#out+1] = "[#{m.home_team.code} #{bold m.home_team.goals} - #{bold m.away_team.goals} #{m.away_team.code}]"
+      if #out < 1
         return reply "No match being played."
-      else
-        say "#{m.home_team.code} #{bold m.home_team.goals} - #{bold m.away_team.goals} #{m.away_team.code}"
+      say table.concat(out, ' ')
