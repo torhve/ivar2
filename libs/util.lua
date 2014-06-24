@@ -34,6 +34,20 @@ local trim = function(s)
 	return (string.gsub(s, "^%s*(.-)%s*$", "%1"))
 end
 
+split = function(str, delim)
+  if str == "" or str == nil then
+    return { }
+  end
+  str = str .. delim
+  local _accum_0 = { }
+  local _len_0 = 1
+  for m in str:gmatch("(.-)" .. delim) do
+    _accum_0[_len_0] = m
+    _len_0 = _len_0 + 1
+  end
+  return _accum_0
+end
+
 return {
 	bold=bold,
 	underline=underline,
@@ -43,6 +57,7 @@ return {
 	reset=reset,
 	urlEncode=urlEncode,
 	trim=trim,
+	split=split,
 	json = require'cjson',
 	simplehttp = require'simplehttp',
 	white=function(s)
