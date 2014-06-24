@@ -25,3 +25,14 @@ PRIVMSG:
     say ivar2.util.trim(arg)
   '^%pcolor ([0-9]+) (.+)$': (source, destination, color, arg) =>
     say ivar2.util.color(arg, color)
+  '^%pfirst (.+)$': (source, destination, arg) =>
+    say ivar2.util.split(arg, '%s')[1]
+  '^%psplit (.-) (.*)$': (source, destination, arg, args) =>
+    say table.concat(ivar2.util.split(args, arg), ' ')
+  '^%preplace (.-) (.-) (.*)$': (source, destination, pat, repl, arg) =>
+    new, n = string.gsub(arg, pat, repl)
+    say(new)
+  '^%pnocolor (.*)$': (source, destination, arg) =>
+    new, n = string.gsub(arg, '\002', '')
+    new, n = string.gsub(new, '\003[0-9]+(,[0-9]+)?', '')
+    say(new)
