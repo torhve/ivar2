@@ -294,7 +294,7 @@ local IrcMessageSplit = function(destination, message)
 	local hostmask = ivar2.hostmask
 	local msgtype = 'privmsg'
 	local trail = ' (…)'
-	local cutoff = 512 - 4 - #hostmask - #destination - #msgtype - #trail
+	local cutoff = 512 - 5 - #hostmask - #destination - #msgtype - #trail
 	out = ""
 	extra = ""
 	if #message > cutoff then
@@ -653,7 +653,9 @@ function ivar2:CommandSplitter(command)
 	else
 		first = command
 	end
-	self:Log('debug', 'Splitting command: %s into %s and %s', command, first, remainder)
+	if remainder ~= '' then
+		self:Log('debug', 'Splitting command: %s into %s and %s', command, first, remainder)
+	end
 	return first, remainder
 end
 
