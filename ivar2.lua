@@ -704,7 +704,22 @@ function ivar2:Reload()
 		self.timeout:stop(self.Loop)
 
 		message.socket = self.socket
-		message.config = self.config
+		-- reload configuration file
+		local config, err = loadfile(configFile)
+		if(not config) then
+			self:Log('error', 'Unable to reload config file: %s.', err)
+			message.config = self.config
+		else
+			local success, mess = pcall(config)
+			if(not success) then
+				self:Log('error', 'Unable to execute new config file: %s.', mess)
+			else
+				message.config = mess
+			end
+		end
+
+		-- Store the config file name in the config so it can be accessed later
+		message.config.configFile = configFile
 		message.timers = self.timers
 		message.Loop = self.Loop
 		message.channels = self.channels
