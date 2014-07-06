@@ -36,3 +36,11 @@ PRIVMSG:
     new, n = string.gsub(arg, '\002', '')
     new, n = string.gsub(new, '\003[0-9]+(,[0-9]+)?', '')
     say(new)
+  '^%pstutter (.*)$': (source, destination, arg) =>
+    -- Stutter by anders from luabot
+    s_senpai = 0.65
+    say arg\gsub("(%a[%w%p]+)", (w) ->
+      if math.random! >= s_senpai
+        return (w\sub(1, 1).."-")\rep(math.random(1, 3))..w
+      else
+        return w)
