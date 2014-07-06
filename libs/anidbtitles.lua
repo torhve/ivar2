@@ -21,10 +21,11 @@ return {
    [1] = "3x3 Augen (OVA 1)",
    [2] = "3x3 Eyes",
    [3] = "3x3 Occhi",
-   [4] = "3x3 Oči",
-   [5] = "3x3 Ulls",
-   [6] = "3x3 Ögon",
-   [7] = "3×3 EYES",
+   [4] = "3x3 Ojos [1-4]",
+   [5] = "3x3 Oči",
+   [6] = "3x3 Ulls",
+   [7] = "3x3 Ögon",
+   [8] = "3×3 EYES",
    },
   ["short"] = {
    [1] = "3x3",
@@ -45,7 +46,7 @@ return {
    [3] = "3x3 Eyes - La légende du démon divin",
    [4] = "3x3 Eyes: Legend of the Divine Demon",
    [5] = "3x3 Occhi - La Leggenda del Demone Divino",
-   [6] = "3x3 Ojos",
+   [6] = "3x3 Ojos [5-7]",
    [7] = "3×3 EYES -聖魔伝説-",
    },
   ["short"] = {
@@ -1884,7 +1885,8 @@ return {
    },
   ["short"] = {
    [1] = "CCS",
-   [2] = "CCSTV",
+   [2] = "CCS TV",
+   [3] = "CCSTV",
    },
   ["syn"] = {
    [1] = "Cardcaptor Sakura",
@@ -2374,7 +2376,7 @@ return {
    },
   },
  [129] = {
-  ["main"] = "Hajime no Ippo: The Fighting",
+  ["main"] = "Hajime no Ippo: The Fighting!",
   ["official"] = {
    [1] = "Espíritu de Lucha",
    [2] = "Fighting Spirit",
@@ -9057,7 +9059,8 @@ return {
   ["main"] = "Space Pirate Captain Herlock: Outside Legend - The Endless Odyssey",
   ["official"] = {
    [1] = "Capitão Harlock - A Odisseia Interminável",
-   [2] = "Space Pirate Captain Herlock: Outside Legend - The Endless Odyssey",
+   [2] = "SPACE PIRATE CAPTAIN HERLOCK OUTSIDE LEGEND ～The Endless Odyssey～",
+   [3] = "Space Pirate Captain Herlock: Outside Legend - The Endless Odyssey",
    },
   ["short"] = {
    [1] = "herlock",
@@ -15437,14 +15440,15 @@ return {
    },
   ["short"] = {
    [1] = "FMA",
-   [2] = "Fullmetal",
-   [3] = "HagaRen",
-   [4] = "HagaRen TV",
-   [5] = "HnR",
-   [6] = "fma tv",
-   [7] = "fmatv",
-   [8] = "פמ\"א",
-   [9] = "钢炼",
+   [2] = "FMA1",
+   [3] = "Fullmetal",
+   [4] = "HagaRen",
+   [5] = "HagaRen TV",
+   [6] = "HnR",
+   [7] = "fma tv",
+   [8] = "fmatv",
+   [9] = "פמ\"א",
+   [10] = "钢炼",
    },
   ["syn"] = {
    [1] = "Alchimistul de Oţel",
@@ -16280,8 +16284,8 @@ return {
   ["main"] = "Dirty Pair: Project EDEN",
   ["official"] = {
    [1] = "Dirty Pair - Projet Eden",
-   [2] = "Dirty Pair Project EDEN",
-   [3] = "Dirty Pair: Projekt E.D.E.N.",
+   [2] = "Dirty Pair: Projekt E.D.E.N.",
+   [3] = "Original Dirty Pair: Project EDEN",
    [4] = "ダーティペア the Movie",
    },
   ["short"] = {
@@ -17128,9 +17132,9 @@ return {
    },
   },
  [1086] = {
-  ["main"] = "Hajime no Ippo: Mashiba vs Kimura - Shikei Shikkou",
+  ["main"] = "Hajime no Ippo: The Fighting! - Kimura Tatsuya vs Mashiba Ryo",
   ["official"] = {
-   [1] = "はじめの一歩 間柴vs木村 死刑執行",
+   [1] = "はじめの一歩 THE FIGHTING! 木村達也vs間柴了",
    },
   ["short"] = {
    },
@@ -17360,8 +17364,8 @@ return {
  [1104] = {
   ["main"] = "Shinkon Gattai Godannar!!",
   ["official"] = {
-   [1] = "Godannar",
-   [2] = "Godannar!!",
+   [1] = "Godannar!!",
+   [2] = "Marriage of God & Soul Godannar!!",
    [3] = "โกดันน่า อภินิหาร หุ่นพลังเพลิง",
    [4] = "神魂合体ゴーダンナー!!",
    },
@@ -18186,9 +18190,9 @@ return {
  [1174] = {
   ["main"] = "Dirty Pair: Bouryaku no 005-bin",
   ["official"] = {
-   [1] = "Dirty Pair - Flight 005 Conspiracy",
-   [2] = "Dirty Pair - Le complot du vol 005",
-   [3] = "Dirty Pair: Verschwörung um Flug 005",
+   [1] = "Dirty Pair - Le complot du vol 005",
+   [2] = "Dirty Pair: Verschwörung um Flug 005",
+   [3] = "Original Dirty Pair: Flight 005 Conspiracy",
    [4] = "ダーティペア 謀略の005便",
    },
   ["short"] = {
@@ -23822,7 +23826,8 @@ return {
   ["main"] = "Shinkon Gattai Godannar!! Second Season",
   ["official"] = {
    [1] = "Godannar!! (suite)",
-   [2] = "神魂合体ゴーダンナー!!-SECOND SEASON-",
+   [2] = "Marriage of God & Soul Godannar!! Second Season",
+   [3] = "神魂合体ゴーダンナー!!-SECOND SEASON-",
    },
   ["short"] = {
    [1] = "SGG S2",
@@ -35405,6 +35410,7 @@ return {
    [8] = "美少女戦士セーラームーンSuperS",
    },
   ["short"] = {
+   [1] = "SMSS",
    },
   ["syn"] = {
    [1] = "Pretty Soldier Sailor Moon Super S",
@@ -41755,12 +41761,12 @@ return {
   ["main"] = "Daisuki! BuBu ChaCha",
   ["official"] = {
    [1] = "I Love Bubu Chacha",
-   [2] = "I Love! BuBu ChaCha",
-   [3] = "だいすき! ぶぶチャチャ",
+   [2] = "だいすき! ぶぶチャチャ",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "I Love! BuBu ChaCha",
    },
   },
  [3172] = {
@@ -53304,6 +53310,7 @@ return {
    [2] = "まもって! ロリポップ",
    },
   ["short"] = {
+   [1] = "Mamololli",
    },
   ["syn"] = {
    [1] = "恋之魔法波波糖",
@@ -60133,15 +60140,17 @@ return {
    },
   },
  [5150] = {
-  ["main"] = "Bavel no Hon",
+  ["main"] = "Bavel`s Book",
   ["official"] = {
    [1] = "Bavel`s Book",
-   [2] = "バベルの本",
+   [2] = "Bavel`s book",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Bavel`in Kitabı",
+   [1] = "Bavel no Hon",
+   [2] = "Bavel`in Kitabı",
+   [3] = "バベルの本",
    },
   },
  [5151] = {
@@ -63590,9 +63599,9 @@ return {
    },
   },
  [5571] = {
-  ["main"] = "Hidamari Sketch X 365",
+  ["main"] = "Hidamari Sketch x 365",
   ["official"] = {
-   [1] = "Hidamari Sketch X365",
+   [1] = "Hidamari Sketch x 365",
    [2] = "ひだまりスケッチ×365",
    [3] = "히다마리 스케치 X 365",
    },
@@ -68013,7 +68022,7 @@ return {
    },
   },
  [6153] = {
-  ["main"] = "Hajime no Ippo: The Fighting - New Challenger",
+  ["main"] = "Hajime no Ippo: The Fighting! - New Challenger",
   ["official"] = {
    [1] = "はじめの一歩 The Fighting! New Challenger",
    [2] = "더 파이팅 New Challenger",
@@ -70294,9 +70303,10 @@ return {
  [6424] = {
   ["main"] = "Cross Game",
   ["official"] = {
-   [1] = "クロスゲーム",
-   [2] = "幸运四叶草",
-   [3] = "크로스 게임",
+   [1] = "Cross Game",
+   [2] = "クロスゲーム",
+   [3] = "幸运四叶草",
+   [4] = "크로스 게임",
    },
   ["short"] = {
    },
@@ -85154,7 +85164,7 @@ return {
  [7944] = {
   ["main"] = "Agukaru",
   ["official"] = {
-   [1] = "あぐかる",
+   [1] = "あぐかる Agriculture Angel BARAKI",
    },
   ["short"] = {
    },
@@ -95173,6 +95183,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Yuke! Shouei-kun",
+   [2] = "ゆけ! 小英くん",
    },
   },
  [8981] = {
@@ -97502,13 +97514,13 @@ return {
  [9257] = {
   ["main"] = "Yama no Susume",
   ["official"] = {
-   [1] = "ヤマノススメ",
-   [2] = "야마노스스메",
+   [1] = "Encouragement of Climb",
+   [2] = "ヤマノススメ",
+   [3] = "야마노스스메",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Encouragement of Climb",
    },
   },
  [9259] = {
@@ -97559,9 +97571,10 @@ return {
    },
   },
  [9263] = {
-  ["main"] = "Yasashii March: The Tender March",
+  ["main"] = "Yasashii March",
   ["official"] = {
-   [1] = "やさしいマーチ-The Tender March-",
+   [1] = "The Tender March",
+   [2] = "やさしいマーチ The Tender March",
    },
   ["short"] = {
    },
@@ -97999,7 +98012,8 @@ return {
    [2] = "美少女戦士セーラームーン Crystal",
    },
   ["short"] = {
-   [1] = "sm2014",
+   [1] = "SMC",
+   [2] = "sm2014",
    },
   ["syn"] = {
    [1] = "Pretty Guardian Sailor Moon: Crystal",
@@ -98007,8 +98021,9 @@ return {
    [3] = "Sailor Moon Crystal",
    [4] = "Sailor Moon Remake",
    [5] = "Красавица-воин Сейлор Мун: Кристалл",
-   [6] = "Прекрасная воительница Сейлор Мун: Кристалл",
-   [7] = "美少女戦士セーラームーン クリスタル",
+   [6] = "Красивата пазителка Сейлър Муун: Кристал",
+   [7] = "Прекрасная воительница Сейлор Мун: Кристалл",
+   [8] = "美少女戦士セーラームーン クリスタル",
    },
   },
  [9307] = {
@@ -99156,6 +99171,7 @@ return {
    [1] = "バックステージ・アイドル・ストーリー",
    },
   ["short"] = {
+   [1] = "BiS",
    },
   ["syn"] = {
    },
@@ -99412,7 +99428,8 @@ return {
  [9454] = {
   ["main"] = "Saint Onii-san",
   ["official"] = {
-   [1] = "聖☆おにいさん",
+   [1] = "Les vacances de Jésus et Bouddha",
+   [2] = "聖☆おにいさん",
    },
   ["short"] = {
    },
@@ -100074,9 +100091,10 @@ return {
    [8] = "Tuuli nousee",
    [9] = "Vidas ao Vento",
    [10] = "Vinden stiger",
-   [11] = "Ветер крепчает",
-   [12] = "風立ちぬ",
-   [13] = "바람이 분다",
+   [11] = "Wie der Wind sich hebt",
+   [12] = "Ветер крепчает",
+   [13] = "風立ちぬ",
+   [14] = "바람이 분다",
    },
   ["short"] = {
    },
@@ -106050,10 +106068,11 @@ return {
    },
   ["syn"] = {
    [1] = "Black Nest Chronus",
-   [2] = "Kuro no Sumika Chronus",
-   [3] = "Wakate Animator Ikusei Project 2014 4",
-   [4] = "Young Animator Training Project 2014 4",
-   [5] = "若手アニメーター育成プロジェクト 2014 4",
+   [2] = "Kuro no Su",
+   [3] = "Kuro no Sumika Chronus",
+   [4] = "Wakate Animator Ikusei Project 2014 4",
+   [5] = "Young Animator Training Project 2014 4",
+   [6] = "若手アニメーター育成プロジェクト 2014 4",
    },
   },
  [10202] = {
@@ -106626,7 +106645,8 @@ return {
   ["main"] = "Isshuukan Friends.",
   ["official"] = {
    [1] = "One Week Friends",
-   [2] = "一週間フレンズ.",
+   [2] = "Приятели за седмица",
+   [3] = "一週間フレンズ.",
    },
   ["short"] = {
    },
@@ -107326,14 +107346,14 @@ return {
    },
   },
  [10370] = {
-  ["main"] = "Edogawa Conan Shissou Jiken: Shijou Saiaku no Ichinichi",
+  ["main"] = "Edogawa Conan Shissou Jiken: Shijou Saiaku no Futsukakan",
   ["official"] = {
-   [1] = "江戸川コナン失踪事件~史上最悪の1日~",
+   [1] = "江戸川コナン失踪事件~史上最悪の二日間~",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "The Disappearance of Conan Edogawa: The Worst Day in History",
+   [1] = "The Disappearance of Conan Edogawa: The Worst Two Days in History",
    },
   },
  [10372] = {
@@ -107371,8 +107391,9 @@ return {
  [10376] = {
   ["main"] = "Sword Art Online II",
   ["official"] = {
-   [1] = "هنر شمشیر زنی انلاین",
-   [2] = "ソードアート・オンラインII",
+   [1] = "Sword Art Online II",
+   [2] = "هنر شمشیر زنی انلاین",
+   [3] = "ソードアート・オンラインII",
    },
   ["short"] = {
    [1] = "SAO 2",
@@ -107520,7 +107541,8 @@ return {
  [10392] = {
   ["main"] = "Magi: Sinbad no Bouken",
   ["official"] = {
-   [1] = "マギ シンドバッドの冒険",
+   [1] = "Маги: Приключенията на Синбад",
+   [2] = "マギ シンドバッドの冒険",
    },
   ["short"] = {
    },
@@ -107618,13 +107640,15 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Токийско чудовище",
+   [1] = "Токийски гул",
+   [2] = "Токийско чудовище",
    },
   },
  [10402] = {
   ["main"] = "Kuroshitsuji: Book of Circus",
   ["official"] = {
-   [1] = "黒執事 Book of Circus",
+   [1] = "Mroczny kamerdyner III",
+   [2] = "黒執事 Book of Circus",
    },
   ["short"] = {
    },
@@ -107649,6 +107673,7 @@ return {
    [1] = "普通の女子校生が【ろこどる】やってみた.",
    },
   ["short"] = {
+   [1] = "Locodol",
    },
   ["syn"] = {
    },
@@ -107728,6 +107753,7 @@ return {
   ["main"] = "Free! Eternal Summer",
   ["official"] = {
    [1] = "Free! Eternal Summer",
+   [2] = "Свободен! Вечно гей лято",
    },
   ["short"] = {
    },
@@ -107887,7 +107913,7 @@ return {
    },
   ["syn"] = {
    [1] = "Blade and Soul",
-   [2] = "Душа и Острие",
+   [2] = "Душа и острие",
    [3] = "ブレイドアンドソウル",
    [4] = "ブレイド＆ソウル",
    },
@@ -108420,7 +108446,8 @@ return {
  [10517] = {
   ["main"] = "Shounen Hollywood: Holly Stage for 49",
   ["official"] = {
-   [1] = "少年ハリウッド -HOLLY STAGE FOR 49-",
+   [1] = "Shonen Hollywood: Holly Stage for 49",
+   [2] = "少年ハリウッド -HOLLY STAGE FOR 49-",
    },
   ["short"] = {
    },
@@ -108602,8 +108629,9 @@ return {
    },
   ["syn"] = {
    [1] = "Terror in Tokyo",
-   [2] = "Ехото на терора",
-   [3] = "Терористичен екот",
+   [2] = "Екот на терор",
+   [3] = "Ехото на терора",
+   [4] = "Терористичен екот",
    },
   },
  [10538] = {
@@ -109029,9 +109057,9 @@ return {
    },
   },
  [10588] = {
-  ["main"] = "Ninja Slayer",
+  ["main"] = "Ninja Slayer From Animation",
   ["official"] = {
-   [1] = "ニンジャスレイヤー",
+   [1] = "ニンジャスレイヤー フロムアニメイシヨン",
    },
   ["short"] = {
    },
@@ -109940,16 +109968,6 @@ return {
   ["syn"] = {
    },
   },
- [10701] = {
-  ["main"] = "Mekakucity V`s",
-  ["official"] = {
-   [1] = "MEKAKUCITY V`s",
-   },
-  ["short"] = {
-   },
-  ["syn"] = {
-   },
-  },
  [10702] = {
   ["main"] = "Ansatsu Kyoushitsu (2015)",
   ["official"] = {
@@ -109958,6 +109976,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Assassination Classroom (2015)",
    },
   },
  [10704] = {
@@ -110001,9 +110020,9 @@ return {
    },
   },
  [10708] = {
-  ["main"] = "Kidou Senshi Gundam-san",
+  ["main"] = "Gundam-san",
   ["official"] = {
-   [1] = "機動戦士ガンダムさん",
+   [1] = "ガンダムさん",
    },
   ["short"] = {
    },
@@ -110033,7 +110052,7 @@ return {
  [10712] = {
   ["main"] = "Nyanda? Full",
   ["official"] = {
-   [1] = "ニャンだ？フル",
+   [1] = "ニャンだ?フル",
    },
   ["short"] = {
    },
@@ -110041,9 +110060,160 @@ return {
    },
   },
  [10713] = {
-  ["main"] = "Sidonia no Kishi 2",
+  ["main"] = "Sidonia no Kishi: Daikyuu Wakusei Seneki",
   ["official"] = {
-   [1] = "シドニアの騎士 2",
+   [1] = "シドニアの騎士 第九惑星戦役",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10714] = {
+  ["main"] = "Kaitou Joker",
+  ["official"] = {
+   [1] = "怪盗ジョーカー",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Mysterious Joker",
+   },
+  },
+ [10715] = {
+  ["main"] = "Gekijouban Aoki Hagane no Arpeggio",
+  ["official"] = {
+   [1] = "劇場版 蒼き鋼のアルペジオ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10716] = {
+  ["main"] = "Ane Kyun!",
+  ["official"] = {
+   [1] = "姉キュン!",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10717] = {
+  ["main"] = "Yami Shibai 2",
+  ["official"] = {
+   [1] = "闇芝居 2",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10718] = {
+  ["main"] = "Furifure The Animation",
+  ["official"] = {
+   [1] = "フリフレ THE ANIMATION",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10719] = {
+  ["main"] = "Agukaru Agriculture Angel Baraki: Play with Ibaraki Hen",
+  ["official"] = {
+   [1] = "あぐかる Agriculture Angel BARAKI PLAY WITH IBARAKI編",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10720] = {
+  ["main"] = "Gekijouban Love Live!",
+  ["official"] = {
+   [1] = "劇場版 ラブライブ!",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10721] = {
+  ["main"] = "Eiga Happiness Charge Precure! Ningyou no Kuni no Ballerina",
+  ["official"] = {
+   [1] = "映画ハピネスチャージプリキュア! 人形の国のバレリーナ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10722] = {
+  ["main"] = "Elite Jack!!",
+  ["official"] = {
+   [1] = "エリートジャック!!",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10725] = {
+  ["main"] = "Akatsuki no Yona",
+  ["official"] = {
+   [1] = "暁のヨナ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10726] = {
+  ["main"] = "Gekijouban Kyoukai no Kanata",
+  ["official"] = {
+   [1] = "劇場版 境界の彼方",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10727] = {
+  ["main"] = "Ai: Tenchi Muyo!",
+  ["official"] = {
+   [1] = "愛・天地無用！",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10728] = {
+  ["main"] = "Bakumatsu Rock: Mystery! Onsen Kaijiken ze yo!!",
+  ["official"] = {
+   [1] = "幕末Rock 湯煙推理劇[ミステリー]! 温泉怪事件ぜよ!!",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10729] = {
+  ["main"] = "Ore ga Ojou-sama Gakkou ni \"Shomin Sample\" Toshite Rachirareta Ken",
+  ["official"] = {
+   [1] = "俺がお嬢様学校に「庶民サンプル」として拉致られた件",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10730] = {
+  ["main"] = "The Bathroom",
+  ["official"] = {
+   [1] = "ザ・バスルーム",
    },
   ["short"] = {
    },
