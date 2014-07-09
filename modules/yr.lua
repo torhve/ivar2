@@ -220,8 +220,10 @@ local getPlace = function(input)
 
 	local iter, vm = selectStmt:nrows()
 	local place = iter(vm)
-	place.name = trim(place.name)
-	place.url = trim(place.url)
+    if(place) then
+        place.name = trim(place.name)
+        place.url = trim(place.url)
+    end
 
 	db:close()
 	return place
@@ -233,7 +235,6 @@ return {
 		['^%pyr(7?) (.+)$'] = function(self, source, destination, seven, input)
 			input = trim(input):lower()
 			local place = getPlace(input)
-
 
 			if(place) then
 				simplehttp(
@@ -314,10 +315,8 @@ return {
 			place = getPlace(input)
 
 			if(place) then
-				-- use nynorsk text
-				local url = place.url:gsub('/place/', '/stad/')
 				simplehttp(
-					url,
+					place.url,
 					function(data)
 						say(handleObservationOutput(self, source, destination, data))
 					end
@@ -336,10 +335,8 @@ return {
 			place = getPlace(place)
 
 			if(place) then
-				-- use nynorsk text
-				local url = place.url:gsub('/place/', '/stad/')
 				simplehttp(
-					url,
+					place.url,
 					function(data)
 						say(handleObservationOutput(self, source, destination, data))
 					end
