@@ -106,7 +106,7 @@ local handleOutput = function(source, destination, seven, data, city, try)
 	local location = data:match("<location>(.-)</location>")
 	if(not location and not try) then
 		simplehttp(
-			("http://yr.no/stad/%s/%s/%s~%s/varsel.xml"):format(
+			("http://yr.no/place/%s/%s/%s~%s/varsel.xml"):format(
 				urlEncode(city.countryName),
 				urlEncode(city.adminName1),
 				urlEncode(city.toponymName),
@@ -220,8 +220,10 @@ local getPlace = function(input)
 
 	local iter, vm = selectStmt:nrows()
 	local place = iter(vm)
-	place.name = trim(place.name)
-	place.url = trim(place.url)
+    if(place) then
+        place.name = trim(place.name)
+        place.url = trim(place.url)
+    end
 
 	db:close()
 	return place
@@ -234,12 +236,9 @@ return {
 			input = trim(input):lower()
 			local place = getPlace(input)
 
-
 			if(place) then
-				-- use nynorsk text
-				local url = place.url:gsub('/place/', '/stad/')
 				simplehttp(
-					url,
+					place.url,
 					function(data)
 						handleOutput(source, destination, seven == '7', data)
 					end
@@ -297,7 +296,7 @@ return {
 						if(city.adminName1 == "") then city.adminName1 = "Other" end
 
 						simplehttp(
-							("http://yr.no/stad/%s/%s/%s/varsel.xml"):format(
+							("http://yr.no/place/%s/%s/%s/varsel.xml"):format(
 								urlEncode(city.countryName),
 								urlEncode(city.adminName1),
 								urlEncode(city.toponymName)
@@ -316,10 +315,8 @@ return {
 			place = getPlace(input)
 
 			if(place) then
-				-- use nynorsk text
-				local url = place.url:gsub('/place/', '/stad/')
 				simplehttp(
-					url,
+					place.url,
 					function(data)
 						say(handleObservationOutput(self, source, destination, data))
 					end
@@ -338,10 +335,8 @@ return {
 			place = getPlace(place)
 
 			if(place) then
-				-- use nynorsk text
-				local url = place.url:gsub('/place/', '/stad/')
 				simplehttp(
-					url,
+					place.url,
 					function(data)
 						say(handleObservationOutput(self, source, destination, data))
 					end
