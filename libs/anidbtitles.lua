@@ -14446,11 +14446,12 @@ return {
    [1] = "DBZ Movie 11",
    },
   ["syn"] = {
-   [1] = "Dragon Ball Z 11 - Bio Broly",
-   [2] = "Dragon Ball Z: Bio-Brolly",
-   [3] = "Dragon Ball Z: L`irriducibile bio-combattente",
-   [4] = "Dragon Ball Z: Super Soldiers Annihilate!! The Winner Will Be Me",
-   [5] = "ドラゴンボールZ 超戦士撃破!! 勝つのはオレだ",
+   [1] = "Dragon Ball Z - Ataque do Super Guerreiro",
+   [2] = "Dragon Ball Z 11 - Bio Broly",
+   [3] = "Dragon Ball Z: Bio-Brolly",
+   [4] = "Dragon Ball Z: L`irriducibile bio-combattente",
+   [5] = "Dragon Ball Z: Super Soldiers Annihilate!! The Winner Will Be Me",
+   [6] = "ドラゴンボールZ 超戦士撃破!! 勝つのはオレだ",
    },
   },
  [907] = {
@@ -16885,10 +16886,11 @@ return {
    [1] = "DBZ Movie 10",
    },
   ["syn"] = {
-   [1] = "Dragon Ball Z 10 - Le retour de Broly",
-   [2] = "Dragon Ball Z: Dangerous Duo! Super Soldiers Never Sleep",
-   [3] = "Dragon Ball Z: Sfida alla leggenda",
-   [4] = "ドラゴンボールZ 危険なふたり! 超戦士はねむれない",
+   [1] = "Dragon Ball Z - Rivais Perigosos",
+   [2] = "Dragon Ball Z 10 - Le retour de Broly",
+   [3] = "Dragon Ball Z: Dangerous Duo! Super Soldiers Never Sleep",
+   [4] = "Dragon Ball Z: Sfida alla leggenda",
+   [5] = "ドラゴンボールZ 危険なふたり! 超戦士はねむれない",
    },
   },
  [1071] = {
@@ -24744,9 +24746,10 @@ return {
    },
   },
  [1690] = {
-  ["main"] = "Bakuen Campus Guardress",
+  ["main"] = "Bakuen Campus Guardless",
   ["official"] = {
-   [1] = "爆炎CAMPUSガードレス",
+   [1] = "Bursting Campus Guardless",
+   [2] = "爆炎CAMPUSガードレス",
    },
   ["short"] = {
    [1] = "guardress",
@@ -66095,11 +66098,11 @@ return {
   ["official"] = {
    [1] = "Usavich",
    [2] = "Усавич",
+   [3] = "ウサビッチ",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "ウサビッチ",
    },
   },
  [5920] = {
@@ -69888,11 +69891,12 @@ return {
    [3] = "De Melancholie van Haruhi Suzumiya",
    [4] = "Haruhi S2",
    [5] = "La mélancolie de Haruhi Suzumiya (2009)",
-   [6] = "Melancholia Haruhi Suzumiyi (2009)",
-   [7] = "The Melancholy of Haruhi Suzumiya 2",
-   [8] = "Меланхолия Харухи Судзумии (2009)",
-   [9] = "Меланхолія Харухі Судзумії (2009)",
-   [10] = "كآبة هاروهي سوزوميا 2",
+   [6] = "Melancholia Haruhi Suzumii (2009)",
+   [7] = "Melancholia Haruhi Suzumiyi (2009)",
+   [8] = "The Melancholy of Haruhi Suzumiya 2",
+   [9] = "Меланхолия Харухи Судзумии (2009)",
+   [10] = "Меланхолія Харухі Судзумії (2009)",
+   [11] = "كآبة هاروهي سوزوميا 2",
    },
   },
  [6368] = {
@@ -75225,6 +75229,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "びーるばんざい",
    },
   },
  [6943] = {
@@ -85162,7 +85167,7 @@ return {
    },
   },
  [7944] = {
-  ["main"] = "Agukaru",
+  ["main"] = "Agukaru: Agriculture Angel Baraki",
   ["official"] = {
    [1] = "あぐかる Agriculture Angel BARAKI",
    },
@@ -92395,7 +92400,9 @@ return {
    [2] = "هنر شمشيرزني آنلاين",
    },
   ["syn"] = {
-   [1] = "فن السيف عبر الإنترنت",
+   [1] = "Sword Art Online: Aincrad",
+   [2] = "Sword Art Online: Fairy Dance",
+   [3] = "فن السيف عبر الإنترنت",
    },
   },
  [8693] = {
@@ -94444,7 +94451,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Юмористки",
+   [1] = "Женская логика",
+   [2] = "Юмористки",
    },
   },
  [8901] = {
@@ -96440,12 +96448,14 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Psycho Pass",
-   [2] = "Психо-пас",
-   [3] = "Психо-паспорт",
-   [4] = "Психопаспорт",
-   [5] = "サイコパス",
-   [6] = "心理测量者",
+   [1] = "PSYCHO-PASS 新編集版",
+   [2] = "Psycho Pass",
+   [3] = "Psycho-Pass Shin Henshuu-ban",
+   [4] = "Психо-пас",
+   [5] = "Психо-паспорт",
+   [6] = "Психопаспорт",
+   [7] = "サイコパス",
+   [8] = "心理测量者",
    },
   },
  [9128] = {
@@ -102520,7 +102530,7 @@ return {
  [9787] = {
   ["main"] = "Ore no Nounai Sentakushi ga, Gakuen Lovecome o Zenryoku de Jama Shiteiru",
   ["official"] = {
-   [1] = "My Mental Choices are Completely Interfering with my School Romantic Comedy",
+   [1] = "My Mental Choices Are Completely Interfering with My School Romantic Comedy",
    [2] = "俺の脳内選択肢が, 学園ラブコメを全力で邪魔している",
    [3] = "我的脑内恋碍选项",
    },
@@ -103346,7 +103356,8 @@ return {
  [9880] = {
   ["main"] = "Tokyo ESP",
   ["official"] = {
-   [1] = "東京ESP",
+   [1] = "Tokyo ESP",
+   [2] = "東京ESP",
    },
   ["short"] = {
    },
@@ -104411,7 +104422,8 @@ return {
  [9999] = {
   ["main"] = "Seirei Tsukai no Blade Dance",
   ["official"] = {
-   [1] = "精霊使いの剣舞",
+   [1] = "Bladedance of Elementalers",
+   [2] = "精霊使いの剣舞",
    },
   ["short"] = {
    },
@@ -104725,7 +104737,8 @@ return {
  [10041] = {
   ["main"] = "Sabagebu!",
   ["official"] = {
-   [1] = "さばげぶっ!",
+   [1] = "Sabagebu! Survival Game Club!",
+   [2] = "さばげぶっ!",
    },
   ["short"] = {
    },
@@ -105269,11 +105282,15 @@ return {
  [10111] = {
   ["main"] = "Barakamon",
   ["official"] = {
-   [1] = "ばらかもん",
+   [1] = "Barakamon",
+   [2] = "ばらかもん",
+   [3] = "元气囝仔",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Баракамон",
+   [2] = "Веселба",
    },
   },
  [10113] = {
@@ -106150,6 +106167,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "NouCome OVA",
    },
   },
  [10209] = {
@@ -106171,7 +106189,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "La Corda d`Oro Blue Sky",
+   [1] = "Kiniro no Chord Blue Sky",
+   [2] = "La Corda d`Oro Blue Sky",
    },
   },
  [10211] = {
@@ -107243,6 +107262,7 @@ return {
   ["main"] = "Rail Wars!",
   ["official"] = {
    [1] = "RAIL WARS!",
+   [2] = "Rail Wars!",
    },
   ["short"] = {
    },
@@ -107398,8 +107418,11 @@ return {
   ["short"] = {
    [1] = "SAO 2",
    [2] = "SAO2",
+   [3] = "SAOII",
    },
   ["syn"] = {
+   [1] = "Sword Art Online 2",
+   [2] = "Sword Art Online II: Phantom Bullet",
    },
   },
  [10378] = {
@@ -107464,15 +107487,16 @@ return {
  [10385] = {
   ["main"] = "Ao Haru Ride",
   ["official"] = {
-   [1] = "アオハライド",
+   [1] = "Blue Spring Ride",
+   [2] = "アオハライド",
    },
   ["short"] = {
    [1] = "aoha",
    },
   ["syn"] = {
    [1] = "Aoharaido",
-   [2] = "Blue Spring Ride",
-   [3] = "Youth Ride",
+   [2] = "Youth Ride",
+   [3] = "Пътят на младостта",
    },
   },
  [10386] = {
@@ -107635,7 +107659,8 @@ return {
   ["main"] = "Tokyo Ghoul",
   ["official"] = {
    [1] = "Tokyo Ghoul",
-   [2] = "東京喰種[トウキョウグール]",
+   [2] = "东京喰种",
+   [3] = "東京喰種[トウキョウグール]",
    },
   ["short"] = {
    },
@@ -107647,8 +107672,9 @@ return {
  [10402] = {
   ["main"] = "Kuroshitsuji: Book of Circus",
   ["official"] = {
-   [1] = "Mroczny kamerdyner III",
-   [2] = "黒執事 Book of Circus",
+   [1] = "Black Butler: Book of Circus",
+   [2] = "Mroczny kamerdyner III",
+   [3] = "黒執事 Book of Circus",
    },
   ["short"] = {
    },
@@ -107670,7 +107696,8 @@ return {
  [10404] = {
   ["main"] = "Futsuu no Joshikousei ga [Locodol] Yattemita.",
   ["official"] = {
-   [1] = "普通の女子校生が【ろこどる】やってみた.",
+   [1] = "Locodol",
+   [2] = "普通の女子校生が【ろこどる】やってみた.",
    },
   ["short"] = {
    [1] = "Locodol",
@@ -107701,7 +107728,9 @@ return {
  [10407] = {
   ["main"] = "Akame ga Kill!",
   ["official"] = {
-   [1] = "アカメが斬る!",
+   [1] = "Akame ga Kill!",
+   [2] = "Red Eyes Sword - Akame ga Kill",
+   [3] = "アカメが斬る!",
    },
   ["short"] = {
    },
@@ -107936,6 +107965,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Fusawashii Basho",
+   [2] = "ふさわしい場所",
    },
   },
  [10437] = {
@@ -108033,12 +108064,14 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Алдной.Генезис",
    },
   },
  [10446] = {
   ["main"] = "Jinsei",
   ["official"] = {
-   [1] = "人生",
+   [1] = "La Bonne Vie",
+   [2] = "人生",
    },
   ["short"] = {
    },
@@ -108209,7 +108242,8 @@ return {
  [10480] = {
   ["main"] = "Rokujouma no Shinryakusha!?",
   ["official"] = {
-   [1] = "六畳間の侵略者!?",
+   [1] = "Invaders of the Rokujyoma!?",
+   [2] = "六畳間の侵略者!?",
    },
   ["short"] = {
    },
@@ -108260,7 +108294,8 @@ return {
  [10486] = {
   ["main"] = "Initial D Final Stage",
   ["official"] = {
-   [1] = "頭文字[イニシャル]D Final Stage",
+   [1] = "Initial D Final Stage",
+   [2] = "頭文字[イニシャル]D Final Stage",
    },
   ["short"] = {
    },
@@ -108268,9 +108303,9 @@ return {
    },
   },
  [10496] = {
-  ["main"] = "Francesca: Girls Be Ambitious",
+  ["main"] = "Francesca",
   ["official"] = {
-   [1] = "フランチェスカ Girls Be Ambitious",
+   [1] = "フランチェスカ",
    },
   ["short"] = {
    },
@@ -108340,7 +108375,8 @@ return {
  [10505] = {
   ["main"] = "Bakumatsu Rock",
   ["official"] = {
-   [1] = "幕末Rock",
+   [1] = "Samurai Jam: Bakumatsu Rock",
+   [2] = "幕末Rock",
    },
   ["short"] = {
    },
@@ -108350,7 +108386,8 @@ return {
  [10506] = {
   ["main"] = "Glasslip",
   ["official"] = {
-   [1] = "グラスリップ",
+   [1] = "Glasslip",
+   [2] = "グラスリップ",
    },
   ["short"] = {
    },
@@ -108596,6 +108633,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "The New St. Screw School Compensated Dating Diary",
    },
   },
  [10535] = {
@@ -108678,7 +108716,8 @@ return {
  [10542] = {
   ["main"] = "Gekkan Shoujo Nozaki-kun",
   ["official"] = {
-   [1] = "月刊少女野崎くん",
+   [1] = "Monthly Girls` Nozaki-kun",
+   [2] = "月刊少女野崎くん",
    },
   ["short"] = {
    },
@@ -108703,6 +108742,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Black Butler: Book of Murder",
    },
   },
  [10549] = {
@@ -108718,7 +108758,8 @@ return {
  [10550] = {
   ["main"] = "Shirogane no Ishi: Argevollen",
   ["official"] = {
-   [1] = "白銀の意思 アルジェヴォルン",
+   [1] = "Argevollen",
+   [2] = "白銀の意思 アルジェヴォルン",
    },
   ["short"] = {
    },
@@ -108983,6 +109024,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Ai-Mai-Mi - Mousou Catastrophie",
    },
   },
  [10581] = {
@@ -109248,6 +109290,7 @@ return {
    },
   ["syn"] = {
    [1] = "Shin Strange Plus",
+   [2] = "Shin Strange+",
    },
   },
  [10611] = {
@@ -109325,7 +109368,7 @@ return {
  [10620] = {
   ["main"] = "Reply Hamatora",
   ["official"] = {
-   [1] = "Re:␣ハマトラ",
+   [1] = "Re:␣ HAMATORA [リプライハマトラ]",
    },
   ["short"] = {
    },
@@ -109333,6 +109376,7 @@ return {
    [1] = "Hamatora 2",
    [2] = "Re: Hamatora",
    [3] = "Re：␣ハマトラ",
+   [4] = "リプライ ハマトラ",
    },
   },
  [10621] = {
@@ -109375,6 +109419,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "のぶながコンツェルト",
    },
   },
  [10625] = {
@@ -109692,9 +109737,9 @@ return {
    },
   },
  [10662] = {
-  ["main"] = "Kuroko no Baske 3",
+  ["main"] = "Kuroko no Baske (2015)",
   ["official"] = {
-   [1] = "黒子のバスケ 3",
+   [1] = "黒子のバスケ (2015)",
    },
   ["short"] = {
    },
@@ -109948,16 +109993,6 @@ return {
   ["syn"] = {
    },
   },
- [10699] = {
-  ["main"] = "Psycho-Pass Psychopaths Shin Henshuu-ban",
-  ["official"] = {
-   [1] = "PSYCHO-PASS サイコパス 新編集版",
-   },
-  ["short"] = {
-   },
-  ["syn"] = {
-   },
-  },
  [10700] = {
   ["main"] = "Spo-chan Taiketsu: Youkai Daikessen",
   ["official"] = {
@@ -110103,7 +110138,8 @@ return {
  [10717] = {
   ["main"] = "Yami Shibai 2",
   ["official"] = {
-   [1] = "闇芝居 2",
+   [1] = "Yamishibai: Japanese Ghost Stories 2",
+   [2] = "闇芝居 2",
    },
   ["short"] = {
    },
@@ -110121,7 +110157,7 @@ return {
    },
   },
  [10719] = {
-  ["main"] = "Agukaru Agriculture Angel Baraki: Play with Ibaraki Hen",
+  ["main"] = "Agukaru: Agriculture Angel Baraki - Play with Ibaraki Hen",
   ["official"] = {
    [1] = "あぐかる Agriculture Angel BARAKI PLAY WITH IBARAKI編",
    },
@@ -110214,6 +110250,57 @@ return {
   ["main"] = "The Bathroom",
   ["official"] = {
    [1] = "ザ・バスルーム",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10731] = {
+  ["main"] = "Kono Danshi, Sekka ni Nayandemasu.",
+  ["official"] = {
+   [1] = "この男子, 石化に悩んでます.",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10732] = {
+  ["main"] = "Go! Go! Kadendanshi (2014)",
+  ["official"] = {
+   [1] = "Go!Go!家電男子 (2014)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10733] = {
+  ["main"] = "Gangsta.",
+  ["official"] = {
+   [1] = "GANGSTA.",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "ギャングスタ",
+   },
+  },
+ [10734] = {
+  ["main"] = "Kumo no Ito",
+  ["official"] = {
+   [1] = "蜘蛛の糸",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10735] = {
+  ["main"] = "Dangobee Torimono Jou Ake: Goma no Maki",
+  ["official"] = {
+   [1] = "団子兵衛捕物帖開け―ごまの巻",
    },
   ["short"] = {
    },
