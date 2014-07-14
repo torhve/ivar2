@@ -34,7 +34,7 @@ local trim = function(s)
 	return (string.gsub(s, "^%s*(.-)%s*$", "%1"))
 end
 
-split = function(str, delim)
+local split = function(str, delim)
   if str == "" or str == nil then
     return { }
   end
