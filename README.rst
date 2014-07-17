@@ -19,6 +19,9 @@ Build the Dockerfile:
     cd scripts
     docker build -t torhve/ivar2 .
 
+
+Uncompress the required data files in cache directory.
+
 Configuration File
 ------------------
 
