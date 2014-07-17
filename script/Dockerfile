@@ -17,7 +17,6 @@ RUN    apt-get -y install luajit
 RUN    apt-get -y install luarocks
 RUN    apt-get -y install lua-sec
 RUN    apt-get -y install lua-cjson
-RUN    apt-get -y install lua-json
 RUN    apt-get -y install lua-logging
 RUN    apt-get -y install lua-iconv
 RUN    apt-get -y install lua-dbi-postgresql
@@ -29,6 +28,7 @@ RUN    luarocks install --server=http://rocks.moonscript.org moonscript
 RUN    luarocks install --server=http://rocks.moonscript.org date
 RUN    luarocks install --server=http://rocks.moonscript.org lsqlite3
 RUN    luarocks install --server=http://rocks.moonscript.org luabitop
+RUN    luarocks install --server=http://rocks.moonscript.org luajson
 RUN    luarocks install --server=http://rocks.moonscript.org redis-lua
 RUN    luarocks install "https://github.com/brimworks/lua-ev/raw/master/rockspec/lua-ev-scm-1.rockspec" LIBEV_INCDIR=/usr/include/ LIBEV_LIBDIR=/usr/lib/x86_64-linux-gnu/
 RUN    luarocks install "http://github.com/Neopallium/nixio/raw/master/nixio-scm-0.rockspec"
