@@ -754,8 +754,10 @@ function ivar2:Connect(config)
 		bindHost, bindPort = unpack(config.bind)
 	end
 
-	self:Log('info', 'Connecting to %s:%s.', config.host, config.port)
-	self.socket = connection.tcp(loop, self, config.host, config.port, bindHost, bindPort)
+	local uri = uri_mod.parse(self.config.uri)
+
+	self:Log('info', 'Connecting to %s:%s.', uri.host, uri.port)
+	self.socket = connection.tcp(loop, self, uri.host, uri.port, bindHost, bindPort)
 
 	if(not self.persist) then
 		-- Load persist library using config
