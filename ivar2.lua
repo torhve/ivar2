@@ -757,7 +757,12 @@ function ivar2:Connect(config)
 	local uri = uri_mod.parse(self.config.uri)
 
 	self:Log('info', 'Connecting to %s:%s.', uri.host, uri.port)
-	self.socket = connection.tcp(loop, self, uri.host, uri.port, bindHost, bindPort)
+	local addrinfo = socket.dns.getaddrinfo(uri.host)
+	if addrinfo and addrinfo[1] and addrinfo[1].family == 'inet6' then
+		self.socket = connection.tcp6(loop, self, uri.host, uri.port, bindHost, bindPort)
+	else
+		self.socket = connection.tcp(loop, self, uri.host, uri.port, bindHost, bindPort)
+	end
 
 	if(not self.persist) then
 		-- Load persist library using config
