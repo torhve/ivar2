@@ -26,6 +26,9 @@ Install required dependencies
     sudo luarocks install luabitop
     wget https://github.com/haste/lua-idn/raw/master/idn.lua
 
+
+Uncompress the required data files in cache directory.
+
 Configuration File
 ------------------
 
