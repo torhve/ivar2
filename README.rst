@@ -35,7 +35,7 @@ Create a bot config sort of like this
         nick = 'ivar2',
         autoReconnect = true,
         ident = 'ivar2',
-        uri = 'tcp://irc.efnet.no:6667/?laddr=my.host.name&lport=0',
+        uri = 'tcp://irc.efnet.no:6667/',
         realname = 'ivar',
         owners = {
             'nick!ident@my.host.name'
