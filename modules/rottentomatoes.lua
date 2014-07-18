@@ -53,7 +53,7 @@ local parseData = function(source, destination, data, search)
 	local ins = function(fmt, ...)
 		for i=1, select('#', ...) do
 			local val = select(i, ...)
-			if(type(val) == 'nil' or val == -1) then
+			if(type(val) == 'nil' or val == -1 or val == "") then
 				return
 			end
 		end
