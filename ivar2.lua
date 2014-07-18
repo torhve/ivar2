@@ -19,7 +19,6 @@ local moonstatus, moonscript = pcall(require, 'moonscript')
 moonscript = moonstatus and moonscript
 
 local connection = require'handler.connection'
-local uri_mod = require'handler.uri'
 local nixio = require'nixio'
 local ev = require'ev'
 local event = require 'event'
@@ -80,6 +79,8 @@ local events = {
 
 				if(source.nick == self.config.nick) then
 					self:Mode(chan, '')
+					-- Servers sends us our hostmask on joins, use that to set it
+					self.hostmask = source.mask
 				end
 
 				self.channels[chan].nicks[source.nick] = {
@@ -334,10 +335,7 @@ local client_mt = {
 				self:Send(string.format('PASS %s', self.config.password))
 			end
 			self:Nick(self.config.nick)
-			local uri = uri_mod.parse(self.config.uri)
-			local laddr = uri.query:match('laddr=(.+)&lport')
-			self:Send(string.format('USER %s %s blah :%s', self.config.ident, laddr, self.config.realname))
-			self.hostmask = string.format('%s!%s@%s', self.config.nick, self.config.ident, laddr)
+			self:Send(string.format('USER %s 0 * :%s', self.config.ident, self.config.realname))
 		else
 			self.updated = nil
 		end
@@ -741,9 +739,8 @@ function ivar2:Connect(config)
 	self.timeout = ev.Timer.new(self.timeoutFunc(self), 60*6, 60*6)
 	self.timeout:start(loop)
 
-	local uri = uri_mod.parse(config.uri)
-	self:Log('info', 'Connecting to %s:%s.', uri.host, uri.port)
-	self.socket = connection.uri(loop, self, config.uri)
+	self:Log('info', 'Connecting to %s.', self.config.uri)
+	self.socket = assert(connection.uri(loop, self, self.config.uri))
 
 	if(not self.persist) then
 		-- Load persist library using config
