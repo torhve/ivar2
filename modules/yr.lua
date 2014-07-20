@@ -1,24 +1,9 @@
-local simplehttp = require'simplehttp'
 local sql = require'lsqlite3'
 local iconv = require'iconv'
-local json = require'json'
 
 local utf2iso = iconv.new('iso-8859-15', 'utf-8')
 
 local days = { "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" }
-
-local urlEncode = function(str)
-	return str:gsub(
-		'([^%w ])',
-		function (c)
-			return string.format ("%%%02X", string.byte(c))
-		end
-	):gsub(' ', '_')
-end
-
-local trim = function(s)
-	return s:match('^%s*(.-)%s*$')
-end
 
 local parseDate = function(datestr)
 	local year, month, day, hour, min, sec = datestr:match("([^-]+)%-([^-]+)%-([^T]+)T([^:]+):([^:]+):(%d%d)")
@@ -96,20 +81,27 @@ local handleObservationOutput = function(self, source, destination, data)
 		local windSpeed = handleData("windSpeed", data)
 		if windSpeed then windSpeed = windSpeed.name else windSpeed = '' end
 		local temperature = handleData('temperature', data)
+        local time = temperature.time:match('T([0-9][0-9]:[0-9][0-9])')
 		if windDirection then windDirection = windDirection.name else windDirection = '' end
+        local color
+        if tonumber(temperature.value) > 0 then
+            color = ivar2.util.red
+        else
+            color = ivar2.util.blue
+        end
 		-- Use the first result
-		return '\002%s\002°C, %s %s (%s)', temperature.value, windDirection, windSpeed, name
+		return '%s°C, %s %s (%s, %s)', color(temperature.value), windDirection, windSpeed, name, time
 	end
 end
 
 local handleOutput = function(source, destination, seven, data, city, try)
 	local location = data:match("<location>(.-)</location>")
 	if(not location and not try) then
-		simplehttp(
+		ivar2.util.simplehttp(
 			("http://yr.no/place/%s/%s/%s~%s/varsel.xml"):format(
-				urlEncode(city.countryName),
-				urlEncode(city.adminName1),
-				urlEncode(city.toponymName),
+				ivar2.util.urlEncode(city.countryName),
+				ivar2.util.urlEncode(city.adminName1),
+				ivar2.util.urlEncode(city.toponymName),
 				city.geonameId
 			),
 			function(data)
@@ -203,14 +195,24 @@ local handleOutput = function(source, destination, seven, data, city, try)
 	ivar2:Msg('privmsg', destination, source, table.concat(out, " - "))
 end
 
-local getPlace = function(input)
-	input = trim(input):lower()
+local getPlace = function(self, source, destination, input)
+    local place = self.persist['yr:place:'..source.nick]
+    if(not place) then
+        if(not input) then
+            local patt = self:ChannelCommandPattern('^%pset yr <location>', "yr", destination):sub(1)
+            self:Msg('privmsg', destination, source, 'Usage: '..patt)
+            return
+        end
+    else
+        input = place
+    end
+	input = ivar2.util.trim(input):lower()
 	local inputISO = utf2iso:iconv(input)
 
 	local country
 	if(input:find(',', 1, true)) then
 		input, country = input:match('([^,]+),(.+)')
-		country = trim(country):upper()
+		country = ivar2.util.trim(country):upper()
 		inputISO, _ = input:match('([^,]+),(.+)')
 	end
 
@@ -221,8 +223,8 @@ local getPlace = function(input)
 	local iter, vm = selectStmt:nrows()
 	local place = iter(vm)
     if(place) then
-        place.name = trim(place.name)
-        place.url = trim(place.url)
+        place.name = ivar2.util.trim(place.name)
+        place.url = ivar2.util.trim(place.url)
     end
 
 	db:close()
@@ -232,12 +234,12 @@ end
 local urlBase = "http://api.geonames.org/hierarchyJSON?geonameId=%d&username=haste"
 return {
 	PRIVMSG = {
-		['^%pyr(7?) (.+)$'] = function(self, source, destination, seven, input)
-			input = trim(input):lower()
-			local place = getPlace(input)
+		['^%pyr(7?)%s*(.+)$'] = function(self, source, destination, seven, input)
+			input = ivar2.util.trim(input):lower()
+			local place = getPlace(self, source, destination, input)
 
 			if(place) then
-				simplehttp(
+				ivar2.util.simplehttp(
 					place.url,
 					function(data)
 						handleOutput(source, destination, seven == '7', data)
@@ -251,7 +253,7 @@ return {
 			local country
 			if(input:find(',', 1, true)) then
 				input, country = input:match('([^,]+),(.+)')
-				country = trim(country):upper()
+				country = ivar2.util.trim(country):upper()
 				inputISO, _ = input:match('([^,]+),(.+)')
 			end
 
@@ -288,18 +290,18 @@ return {
 			db:close()
 
 			if(place) then
-				simplehttp(
+				ivar2.util.simplehttp(
 					urlBase:format(place.geonameid),
 					function(data)
-						data = json.decode(data)
+						data = ivar2.util.json.decode(data)
 						local city = data.geonames[#data.geonames]
 						if(city.adminName1 == "") then city.adminName1 = "Other" end
 
-						simplehttp(
+						ivar2.util.simplehttp(
 							("http://yr.no/place/%s/%s/%s/varsel.xml"):format(
-								urlEncode(city.countryName),
-								urlEncode(city.adminName1),
-								urlEncode(city.toponymName)
+								ivar2.util.urlEncode(city.countryName),
+								ivar2.util.urlEncode(city.adminName1),
+								ivar2.util.urlEncode(city.toponymName)
 							),
 							function(data)
 								handleOutput(source, destination, seven == '7', data, city)
@@ -312,10 +314,10 @@ return {
 			end
 		end,
 		['^%ptemp (.+)$'] = function(self, source, destination, input)
-			place = getPlace(input)
+			local place = getPlace(self, source, destination, input)
 
 			if(place) then
-				simplehttp(
+				ivar2.util.simplehttp(
 					place.url,
 					function(data)
 						say(handleObservationOutput(self, source, destination, data))
@@ -325,17 +327,11 @@ return {
 			end
 		end,
 		['^%ptemp$'] = function(self, source, destination)
-			place = self.persist['yr:place:'..source.nick]
-			if(not place) then
-				local patt = self:ChannelCommandPattern('^%pset yr <location>', "yr", destination):sub(1)
-				reply('Usage: '..patt)
-				return
-			end
 
-			place = getPlace(place)
+			local place = getPlace(self, source, destination)
 
 			if(place) then
-				simplehttp(
+				ivar2.util.simplehttp(
 					place.url,
 					function(data)
 						say(handleObservationOutput(self, source, destination, data))
