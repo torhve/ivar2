@@ -1798,8 +1798,9 @@ return {
   ["official"] = {
    [1] = "Berserk",
    [2] = "Берсерк",
-   [3] = "นักรบวิปลาส",
-   [4] = "剣風伝奇ベルセルク",
+   [3] = "برسرک",
+   [4] = "นักรบวิปลาส",
+   [5] = "剣風伝奇ベルセルク",
    },
   ["short"] = {
    [1] = "KDB",
@@ -1811,8 +1812,9 @@ return {
    [4] = "Берсерк",
    [5] = "неустрашим войн",
    [6] = "ברזרק",
-   [7] = "بيرسيرك",
-   [8] = "เบอร์เซิร์ค",
+   [7] = "آشفته",
+   [8] = "بيرسيرك",
+   [9] = "เบอร์เซิร์ค",
    },
   },
  [99] = {
@@ -2381,9 +2383,10 @@ return {
    [1] = "Espíritu de Lucha",
    [2] = "Fighting Spirit",
    [3] = "Ippo le challenger",
-   [4] = "ก้าวแรกสู่สังเวียน",
-   [5] = "はじめの一歩 THE FIGHTING!",
-   [6] = "더 파이팅",
+   [4] = "Боен дух: Борбата!",
+   [5] = "ก้าวแรกสู่สังเวียน",
+   [6] = "はじめの一歩 THE FIGHTING!",
+   [7] = "더 파이팅",
    },
   ["short"] = {
    [1] = "HnI",
@@ -3224,10 +3227,11 @@ return {
    [1] = "A Rosa de Versalhes",
    [2] = "Lady Oscar",
    [3] = "Lady Oscar - Die Rose von Versailles",
-   [4] = "The Rose of Versailles",
-   [5] = "Versay`ın Gülü",
-   [6] = "ليدي أوسكار",
-   [7] = "ベルサイユのばら",
+   [4] = "Lady Oscar: La rosa de Versalles",
+   [5] = "The Rose of Versailles",
+   [6] = "Versay`ın Gülü",
+   [7] = "ليدي أوسكار",
+   [8] = "ベルサイユのばら",
    },
   ["short"] = {
    [1] = "LO",
@@ -3773,13 +3777,13 @@ return {
    [2] = "Fist of the North Star (1986)",
    [3] = "Ken - the Great Bearfist",
    [4] = "Ken le survivant - Le film",
-   [5] = "Юмрукът На Северната Звезда (1986)",
-   [6] = "北斗の拳 (1986)",
-   [7] = "북두의 권 - 세기말구세주전설",
+   [5] = "北斗の拳 (1986)",
+   [6] = "북두의 권 - 세기말구세주전설",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Юмрукът на северната звезда (1986)",
    },
   },
  [213] = {
@@ -7341,7 +7345,8 @@ return {
    [5] = "Lupin Sansei: Part I",
    [6] = "lupins1",
    [7] = "لوبن الثالث",
-   [8] = "鲁邦三世 (TV第1部)",
+   [8] = "لوپین سوم",
+   [9] = "鲁邦三世 (TV第1部)",
    },
   },
  [422] = {
@@ -13493,7 +13498,7 @@ return {
  [837] = {
   ["main"] = "D.C.: Da Capo",
   ["official"] = {
-   [1] = "D.C.～ダ・カーポ～",
+   [1] = "D.C.~ダ・カーポ~",
    },
   ["short"] = {
    [1] = "D.C.",
@@ -19866,13 +19871,14 @@ return {
    [1] = "Appleseed",
    [2] = "Appleseed (2004)",
    [3] = "Appleseed - A jövő harcosai",
-   [4] = "Appleseed - The Beginning - O Filme",
-   [5] = "Appleseed - The Movie",
-   [6] = "Omenansiemen",
-   [7] = "Яблочное зёрнышко",
-   [8] = "แอปเปิ้ลซีด เดอะมูวี่ สงครามล้างเผ่าพันธุ์มนุษย์จักรกล",
-   [9] = "アップルシード",
-   [10] = "애플씨드",
+   [4] = "Appleseed - The Beginning",
+   [5] = "Appleseed - The Beginning - O Filme",
+   [6] = "Appleseed - The Movie",
+   [7] = "Omenansiemen",
+   [8] = "Яблочное зёрнышко",
+   [9] = "แอปเปิ้ลซีด เดอะมูวี่ สงครามล้างเผ่าพันธุ์มนุษย์จักรกล",
+   [10] = "アップルシード",
+   [11] = "애플씨드",
    },
   ["short"] = {
    },
@@ -22801,6 +22807,7 @@ return {
    [2] = "La leyenda de los reyes dragones",
    [3] = "Legend of the Four Kings",
    [4] = "Sohryuden - Legend of the Dragon Kings",
+   [5] = "The Legend of the Four Kings",
    },
   },
  [1534] = {
@@ -38677,7 +38684,7 @@ return {
  [2832] = {
   ["main"] = "D.C.S.S: Da Capo Second Season",
   ["official"] = {
-   [1] = "D.C. ～ダ・カーポ～ セコンドシースン",
+   [1] = "D.C. ~ダ・カーポ~ セコンドシースン",
    },
   ["short"] = {
    [1] = "D.C. S.S.",
@@ -49762,9 +49769,9 @@ return {
    },
   },
  [4141] = {
-  ["main"] = "Ichigo 100%: Original DVD Anime",
+  ["main"] = "Ichigo 100% (2005)",
   ["official"] = {
-   [1] = "いちご100% オリジナルDVDアニメ",
+   [1] = "いちご100% (2005)",
    },
   ["short"] = {
    [1] = "i100 ova",
@@ -52740,8 +52747,9 @@ return {
   ["main"] = "Seirei no Moribito",
   ["official"] = {
    [1] = "Guardian of the Spirit",
-   [2] = "Moribito: Guardian of the Spirit",
-   [3] = "精霊の守り人",
+   [2] = "Moribito, guardián del Espíritu Sagrado",
+   [3] = "Moribito: Guardian of the Spirit",
+   [4] = "精霊の守り人",
    },
   ["short"] = {
    [1] = "Moribito",
@@ -54039,11 +54047,11 @@ return {
  [4563] = {
   ["main"] = "Death Note",
   ["official"] = {
-   [1] = "Death Note",
-   [2] = "Death Note - A halállista",
-   [3] = "Death Note - Carnetul morţii",
-   [4] = "Death Note - Zápisník smrti",
-   [5] = "Death Note(デスノート)",
+   [1] = "DEATH NOTE",
+   [2] = "Death Note",
+   [3] = "Death Note - A halállista",
+   [4] = "Death Note - Carnetul morţii",
+   [5] = "Death Note - Zápisník smrti",
    [6] = "El Libro De La Muerte",
    [7] = "Τετράδιο Θανάτου",
    [8] = "Бележник на Смъртта",
@@ -55714,6 +55722,7 @@ return {
   ["official"] = {
    [1] = "FREEDOM",
    [2] = "Freedom",
+   [3] = "آزادی",
    },
   ["short"] = {
    },
@@ -57402,8 +57411,9 @@ return {
   ["main"] = "Claymore",
   ["official"] = {
    [1] = "Claymore",
-   [2] = "クレイモア",
-   [3] = "클레이모어",
+   [2] = "کلیمور",
+   [3] = "クレイモア",
+   [4] = "클레이모어",
    },
   ["short"] = {
    },
@@ -57414,7 +57424,8 @@ return {
    [4] = "Клеймор",
    [5] = "Палаш",
    [6] = "קליימור",
-   [7] = "大剑",
+   [7] = "شمشیر دودمه",
+   [8] = "大剑",
    },
   },
  [4893] = {
@@ -61042,13 +61053,13 @@ return {
  [5258] = {
   ["main"] = "Umezu Kazuo no Noroi",
   ["official"] = {
-   [1] = "Проклятието на Кадзуо Умедзу",
-   [2] = "楳図かずおの呪い",
+   [1] = "楳図かずおの呪い",
    },
   ["short"] = {
    },
   ["syn"] = {
    [1] = "The Curse of Kazuo Umezu",
+   [2] = "Проклятието на Кадзуо Умедзу",
    },
   },
  [5259] = {
@@ -62048,7 +62059,7 @@ return {
  [5383] = {
   ["main"] = "Blue Drop: Tenshi-tachi no Gikyoku",
   ["official"] = {
-   [1] = "BLUE DROP ～天使達の戯曲～",
+   [1] = "BLUE DROP ~天使達の戯曲~",
    [2] = "Blue Drop",
    },
   ["short"] = {
@@ -62304,7 +62315,7 @@ return {
  [5419] = {
   ["main"] = "D.C. II: Da Capo II",
   ["official"] = {
-   [1] = "D.C.II ～ダ・カーポII～",
+   [1] = "D.C.II ~ダ・カーポII~",
    },
   ["short"] = {
    [1] = "DC II",
@@ -64190,7 +64201,7 @@ return {
  [5652] = {
   ["main"] = "D.C.II S.S.: Da Capo II Second Season",
   ["official"] = {
-   [1] = "D.C.II S.S. ～ダ・カーポII セカンドシーズン～",
+   [1] = "D.C.II S.S. ~ダ・カーポII セカンドシーズン~",
    },
   ["short"] = {
    [1] = "DC II SS",
@@ -64227,9 +64238,9 @@ return {
    },
   },
  [5658] = {
-  ["main"] = "Himitsu: The Revelation",
+  ["main"] = "Top Secret: The Revelation",
   ["official"] = {
-   [1] = "秘密: The Revelation",
+   [1] = "秘密[トップシークレット] The Revelation",
    },
   ["short"] = {
    [1] = "himitsu",
@@ -65478,7 +65489,7 @@ return {
    },
   },
  [5841] = {
-  ["main"] = "Clannad After Story",
+  ["main"] = "Clannad: After Story",
   ["official"] = {
    [1] = "CLANNAD ~AFTER STORY~",
    [2] = "CLANNAD ～AFTER STORY～",
@@ -66005,9 +66016,10 @@ return {
   ["official"] = {
    [1] = "TIGER x DRAGON!",
    [2] = "Toradora!",
-   [3] = "โทระโดระ: ยัยเสือใสกับนายหน้าโหด!",
-   [4] = "とらドラ!",
-   [5] = "토라도라!",
+   [3] = "ببر و اژدها",
+   [4] = "โทระโดระ: ยัยเสือใสกับนายหน้าโหด!",
+   [5] = "とらドラ!",
+   [6] = "토라도라!",
    },
   ["short"] = {
    [1] = "TxD",
@@ -81028,9 +81040,10 @@ return {
   ["official"] = {
    [1] = "Ore no Imoto ga Konna ni Kawaii Wake ga Nai (saison 1)",
    [2] = "Oreimo",
-   [3] = "俺の妹がこんなに可愛いわけがない",
-   [4] = "我的妹妹哪有这么可爱！",
-   [5] = "내 여동생이 이렇게 귀여울 리가 없어",
+   [3] = "Ну не может сестренка быть такой милой",
+   [4] = "俺の妹がこんなに可愛いわけがない",
+   [5] = "我的妹妹哪有这么可爱！",
+   [6] = "내 여동생이 이렇게 귀여울 리가 없어",
    },
   ["short"] = {
    [1] = "oreimo",
@@ -85621,11 +85634,12 @@ return {
   ["main"] = "Berserk: Ougon Jidai Hen",
   ["official"] = {
    [1] = "Berserk - L`epoca d`oro",
-   [2] = "Berserk: Das goldene Zeitalter",
-   [3] = "Berserk: The Golden Age Arc",
-   [4] = "Berserk: Zlatý věk",
-   [5] = "Берсерк: Золотой век",
-   [6] = "ベルセルク 黄金時代篇",
+   [2] = "Berserk - La Edad de Oro",
+   [3] = "Berserk: Das goldene Zeitalter",
+   [4] = "Berserk: The Golden Age Arc",
+   [5] = "Berserk: Zlatý věk",
+   [6] = "Берсерк: Золотой век",
+   [7] = "ベルセルク 黄金時代篇",
    },
   ["short"] = {
    },
@@ -88424,10 +88438,11 @@ return {
   ["main"] = "Momo e no Tegami",
   ["official"] = {
    [1] = "A Letter to Momo",
-   [2] = "Lettre à Momo",
-   [3] = "Una lettera per Momo",
-   [4] = "Письмо для Момо",
-   [5] = "ももへの手紙",
+   [2] = "Ein Brief an Momo",
+   [3] = "Lettre à Momo",
+   [4] = "Una lettera per Momo",
+   [5] = "Письмо для Момо",
+   [6] = "ももへの手紙",
    },
   ["short"] = {
    },
@@ -89193,6 +89208,7 @@ return {
   ["main"] = "Blood-C",
   ["official"] = {
    [1] = "BLOOD-C",
+   [2] = "Blood-C",
    },
   ["short"] = {
    },
@@ -92392,8 +92408,9 @@ return {
    [1] = "Sword Art Online",
    [2] = "Мастер меча онлайн",
    [3] = "فن السيف عبر الانترنت",
-   [4] = "ソードアート・オンライン",
-   [5] = "刀剑神域",
+   [4] = "هنر شمشیر زنی آنلاین",
+   [5] = "ソードアート・オンライン",
+   [6] = "刀剑神域",
    },
   ["short"] = {
    [1] = "SAO",
@@ -95513,7 +95530,9 @@ return {
   ["main"] = "Furusato Saisei Nippon no Mukashibanashi",
   ["official"] = {
    [1] = "Folktales from Japan",
-   [2] = "ふるさと再生 日本の昔ばなし",
+   [2] = "Historias Tradicionales Japonesas Para la Reconstrucción de los Pueblos",
+   [3] = "Nihon no Mukashi Banashi",
+   [4] = "ふるさと再生 日本の昔ばなし",
    },
   ["short"] = {
    },
@@ -98019,7 +98038,8 @@ return {
   ["main"] = "Bishoujo Senshi Sailor Moon Crystal",
   ["official"] = {
    [1] = "Pretty Guardian Sailor Moon Crystal",
-   [2] = "美少女戦士セーラームーン Crystal",
+   [2] = "Sailor Moon Crystal",
+   [3] = "美少女戦士セーラームーン Crystal",
    },
   ["short"] = {
    [1] = "SMC",
@@ -99178,12 +99198,13 @@ return {
  [9431] = {
   ["main"] = "Backstage Idol Story",
   ["official"] = {
-   [1] = "バックステージ・アイドル・ストーリー",
+   [1] = "Backstageidolstory",
    },
   ["short"] = {
    [1] = "BiS",
    },
   ["syn"] = {
+   [1] = "バックステージ・アイドル・ストーリー",
    },
   },
  [9432] = {
@@ -100103,15 +100124,15 @@ return {
    [10] = "Vinden stiger",
    [11] = "Wie der Wind sich hebt",
    [12] = "Ветер крепчает",
-   [13] = "風立ちぬ",
-   [14] = "바람이 분다",
+   [13] = "Вятър се надига",
+   [14] = "風立ちぬ",
+   [15] = "바람이 분다",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Вятър се надига",
-   [2] = "Вітер дужчає",
-   [3] = "Здійнявся вітер",
+   [1] = "Вітер дужчає",
+   [2] = "Здійнявся вітер",
    },
   },
  [9515] = {
@@ -100862,7 +100883,8 @@ return {
   ["main"] = "Yowamushi Pedal",
   ["official"] = {
    [1] = "En selle, Sakamichi !",
-   [2] = "弱虫ペダル",
+   [2] = "Плахият колоездач",
+   [3] = "弱虫ペダル",
    },
   ["short"] = {
    [1] = "yowapeda",
@@ -101665,8 +101687,9 @@ return {
   ["main"] = "Log Horizon",
   ["official"] = {
    [1] = "Log Horizon",
-   [2] = "ログ・ホライズン",
-   [3] = "记录的地平线",
+   [2] = "ورود به افق",
+   [3] = "ログ・ホライズン",
+   [4] = "记录的地平线",
    },
   ["short"] = {
    },
@@ -102744,9 +102767,9 @@ return {
    },
   },
  [9808] = {
-  ["main"] = "Sen`yuu. Dai 2 Ki",
+  ["main"] = "Sen`yuu. (2013)",
   ["official"] = {
-   [1] = "戦勇. 第2期",
+   [1] = "戦勇. (2013)",
    },
   ["short"] = {
    },
@@ -103362,13 +103385,15 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Паранормално усещане",
    },
   },
  [9881] = {
   ["main"] = "Dia no Ace",
   ["official"] = {
    [1] = "Ace of the Diamond",
-   [2] = "ダイヤのA[エース]",
+   [2] = "Диамантеният Ас",
+   [3] = "ダイヤのA[エース]",
    },
   ["short"] = {
    },
@@ -105140,6 +105165,7 @@ return {
  [10093] = {
   ["main"] = "Lies, Lies.",
   ["official"] = {
+   [1] = "LIES, LIES.",
    },
   ["short"] = {
    },
@@ -105283,8 +105309,9 @@ return {
   ["main"] = "Barakamon",
   ["official"] = {
    [1] = "Barakamon",
-   [2] = "ばらかもん",
-   [3] = "元气囝仔",
+   [2] = "باراکامون",
+   [3] = "ばらかもん",
+   [4] = "元气囝仔",
    },
   ["short"] = {
    },
@@ -105931,8 +105958,9 @@ return {
   ["official"] = {
    [1] = "The Irregular at Magic High School",
    [2] = "The irregular at magic high school",
-   [3] = "魔法科高中的劣等生",
-   [4] = "魔法科高校の劣等生 The irregular at magic high school",
+   [3] = "آشوب در دبیرستان جادو",
+   [4] = "魔法科高中的劣等生",
+   [5] = "魔法科高校の劣等生 The irregular at magic high school",
    },
   ["short"] = {
    [1] = "mahouka",
@@ -107206,14 +107234,13 @@ return {
    },
   },
  [10351] = {
-  ["main"] = "Hana Yamata",
+  ["main"] = "Hanayamata",
   ["official"] = {
    [1] = "ハナヤマタ",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Hanayamata",
    },
   },
  [10352] = {
@@ -107421,8 +107448,9 @@ return {
    [3] = "SAOII",
    },
   ["syn"] = {
-   [1] = "Sword Art Online 2",
-   [2] = "Sword Art Online II: Phantom Bullet",
+   [1] = "GGO",
+   [2] = "Sword Art Online 2",
+   [3] = "Sword Art Online II: Phantom Bullet",
    },
   },
  [10378] = {
@@ -107586,9 +107614,10 @@ return {
  [10395] = {
   ["main"] = "Soredemo Sekai wa Utsukushii",
   ["official"] = {
-   [1] = "The World Is Still Beautiful",
-   [2] = "それでも世界は美しい Still world is Beautiful",
-   [3] = "即使如此世界依然美麗",
+   [1] = "Soredemo Sekai wa Utsukushii",
+   [2] = "The World Is Still Beautiful",
+   [3] = "それでも世界は美しい Still world is Beautiful",
+   [4] = "即使如此世界依然美麗",
    },
   ["short"] = {
    [1] = "soreseka",
@@ -107659,8 +107688,9 @@ return {
   ["main"] = "Tokyo Ghoul",
   ["official"] = {
    [1] = "Tokyo Ghoul",
-   [2] = "东京喰种",
-   [3] = "東京喰種[トウキョウグール]",
+   [2] = "قول توکیو",
+   [3] = "东京喰种",
+   [4] = "東京喰種[トウキョウグール]",
    },
   ["short"] = {
    },
@@ -107730,12 +107760,16 @@ return {
   ["official"] = {
    [1] = "Akame ga Kill!",
    [2] = "Red Eyes Sword - Akame ga Kill",
-   [3] = "アカメが斬る!",
+   [3] = "Червенооката убийца",
+   [4] = "آکامه برای کشتن",
+   [5] = "アカメが斬る!",
+   [6] = "斩！赤红之瞳",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Убийцата Акаме",
+   [1] = "murder city",
+   [2] = "Убийцата Акаме",
    },
   },
  [10409] = {
@@ -107782,14 +107816,14 @@ return {
   ["main"] = "Free! Eternal Summer",
   ["official"] = {
    [1] = "Free! Eternal Summer",
-   [2] = "Свободен! Вечно гей лято",
    },
   ["short"] = {
    },
   ["syn"] = {
    [1] = "Free! 2",
    [2] = "Свобода! - Вечное лето",
-   [3] = "Свободен! Вечно лято",
+   [3] = "Свободен! Вечно гей лято",
+   [4] = "Свободен! Вечно лято",
    },
   },
  [10417] = {
@@ -108059,12 +108093,13 @@ return {
  [10445] = {
   ["main"] = "Aldnoah.Zero",
   ["official"] = {
-   [1] = "アルドノア・ゼロ",
+   [1] = "ALDNOAH.ZERO",
    },
   ["short"] = {
    },
   ["syn"] = {
    [1] = "Алдной.Генезис",
+   [2] = "アルドノア・ゼロ",
    },
   },
  [10446] = {
@@ -108202,7 +108237,7 @@ return {
  [10475] = {
   ["main"] = "Himegoto",
   ["official"] = {
-   [1] = "ひめゴト",
+   [1] = "ひめゴト SECRET PRINCESS HIMEGOTO",
    },
   ["short"] = {
    },
@@ -108661,7 +108696,8 @@ return {
   ["main"] = "Zankyou no Terror",
   ["official"] = {
    [1] = "Terror in Resonance",
-   [2] = "残響のテロル",
+   [2] = "恐怖残响",
+   [3] = "残響のテロル",
    },
   ["short"] = {
    },
@@ -108758,8 +108794,9 @@ return {
  [10550] = {
   ["main"] = "Shirogane no Ishi: Argevollen",
   ["official"] = {
-   [1] = "Argevollen",
-   [2] = "白銀の意思 アルジェヴォルン",
+   [1] = "ARGEVOLLEN",
+   [2] = "Argevollen",
+   [3] = "白銀の意思 アルジェヴォルン",
    },
   ["short"] = {
    },
@@ -108769,7 +108806,8 @@ return {
  [10551] = {
   ["main"] = "Log Horizon 2",
   ["official"] = {
-   [1] = "ログ・ホライズン 2",
+   [1] = "ورود به افق 2",
+   [2] = "ログ・ホライズン 2",
    },
   ["short"] = {
    },
@@ -108790,11 +108828,12 @@ return {
  [10554] = {
   ["main"] = "Dramatical Murder",
   ["official"] = {
-   [1] = "ドラマティカルマーダー",
+   [1] = "DRAMAtical Murder",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "ドラマティカルマーダー",
    },
   },
  [10555] = {
@@ -108920,12 +108959,13 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Passage of Time: Tokyo Station",
    },
   },
  [10571] = {
-  ["main"] = "Mushishi Zoku Shou 2",
+  ["main"] = "Mushishi Zoku Shou (2014)",
   ["official"] = {
-   [1] = "蟲師 続章 2",
+   [1] = "蟲師 続章 (2014)",
    },
   ["short"] = {
    },
@@ -109240,9 +109280,9 @@ return {
    },
   },
  [10603] = {
-  ["main"] = "Kin`iro Mosaic 2",
+  ["main"] = "Hello!! Kin`iro Mosaic",
   ["official"] = {
-   [1] = "きんいろモザイク 2",
+   [1] = "ハロー!! きんいろモザイク",
    },
   ["short"] = {
    },
@@ -109253,7 +109293,8 @@ return {
  [10605] = {
   ["main"] = "Tuzki: Love Assassin",
   ["official"] = {
-   [1] = "Tuzki: LOVE ASSASSIN",
+   [1] = "TUZKI 愛之刺客 LOVE ASSASSIN",
+   [2] = "Tuzki: LOVE ASSASSIN",
    },
   ["short"] = {
    },
@@ -109274,6 +109315,7 @@ return {
   ["main"] = "Majimoji Rurumo",
   ["official"] = {
    [1] = "まじもじるるも",
+   [2] = "修业魔女璐璐萌",
    },
   ["short"] = {
    },
@@ -109848,9 +109890,9 @@ return {
    },
   },
  [10681] = {
-  ["main"] = "Gundam Build Fighters (2014)",
+  ["main"] = "Gundam Build Fighters Try",
   ["official"] = {
-   [1] = "ガンダムビルドファイターズ (2014)",
+   [1] = "ガンダムビルドファイターズトライ",
    },
   ["short"] = {
    },
@@ -110022,6 +110064,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Residence of Obscene Art",
    },
   },
  [10705] = {
@@ -110219,7 +110262,7 @@ return {
  [10727] = {
   ["main"] = "Ai: Tenchi Muyo!",
   ["official"] = {
-   [1] = "愛・天地無用！",
+   [1] = "愛・天地無用!",
    },
   ["short"] = {
    },
@@ -110301,6 +110344,76 @@ return {
   ["main"] = "Dangobee Torimono Jou Ake: Goma no Maki",
   ["official"] = {
    [1] = "団子兵衛捕物帖開け―ごまの巻",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10736] = {
+  ["main"] = "Kuusen Madoushi Kouhosei no Kyoukan",
+  ["official"] = {
+   [1] = "空戦魔導士候補生の教官",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10737] = {
+  ["main"] = "Eiga Doraemon: Nobita no Space Heroes",
+  ["official"] = {
+   [1] = "映画ドラえもん のび太の宇宙英雄記[スペースヒーローズ]",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10739] = {
+  ["main"] = "Dia no Ace (2014)",
+  ["official"] = {
+   [1] = "ダイヤのA (2014)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10740] = {
+  ["main"] = "Dream 9 Toriko & One Piece & Dragon Ball Z Super Collaboration Special",
+  ["official"] = {
+   [1] = "ドリーム9 トリコ&ワンピース&ドラゴンボールZ 超コラボスペシャル!!",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10741] = {
+  ["main"] = "Kyokugen Dasshutsu ADV: Zennin Shibou Death",
+  ["official"] = {
+   [1] = "極限脱出ADV 善人シボウデス",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10742] = {
+  ["main"] = "Dragon Ball Z (2015)",
+  ["official"] = {
+   [1] = "ドラゴンボールZ (2015)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10743] = {
+  ["main"] = "Moon Pride",
+  ["official"] = {
+   [1] = "M­OON PRIDE",
    },
   ["short"] = {
    },
