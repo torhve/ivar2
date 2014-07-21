@@ -196,15 +196,15 @@ local handleOutput = function(source, destination, seven, data, city, try)
 end
 
 local getPlace = function(self, source, destination, input)
-    local place = self.persist['yr:place:'..source.nick]
-    if(not place) then
-        if(not input) then
+    if(not input) then
+        local place = self.persist['yr:place:'..source.nick]
+        if(not place) then
             local patt = self:ChannelCommandPattern('^%pset yr <location>', "yr", destination):sub(1)
             self:Msg('privmsg', destination, source, 'Usage: '..patt)
             return
+        else
+            input = place
         end
-    else
-        input = place
     end
 	input = ivar2.util.trim(input):lower()
 	local inputISO = utf2iso:iconv(input)
