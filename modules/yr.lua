@@ -196,7 +196,7 @@ local handleOutput = function(source, destination, seven, data, city, try)
 end
 
 local getPlace = function(self, source, destination, input)
-    if(not input) then
+    if(not input or input == '') then
         local place = self.persist['yr:place:'..source.nick]
         if(not place) then
             local patt = self:ChannelCommandPattern('^%pset yr <location>', "yr", destination):sub(1)
@@ -234,7 +234,7 @@ end
 local urlBase = "http://api.geonames.org/hierarchyJSON?geonameId=%d&username=haste"
 return {
 	PRIVMSG = {
-		['^%pyr(7?)%s*(.+)$'] = function(self, source, destination, seven, input)
+		['^%pyr(7?)%s*(.*)$'] = function(self, source, destination, seven, input)
 			input = ivar2.util.trim(input):lower()
 			local place = getPlace(self, source, destination, input)
 
