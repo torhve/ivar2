@@ -9824,12 +9824,11 @@ return {
   ["official"] = {
    [1] = "Galaksi Kahramanları",
    [2] = "Heldensagen vom Kosmosinsel 銀河英雄伝説",
-   [3] = "La leyenda de los héroes de la galaxia",
-   [4] = "Les héros de la galaxie",
-   [5] = "افسانه قهرمانان کهکشانی",
-   [6] = "حرب الكواكب",
-   [7] = "银河英雄传说",
-   [8] = "은하영웅전설",
+   [3] = "Les héros de la galaxie",
+   [4] = "افسانه قهرمانان کهکشانی",
+   [5] = "حرب الكواكب",
+   [6] = "银河英雄传说",
+   [7] = "은하영웅전설",
    },
   ["short"] = {
    [1] = "GED",
@@ -9847,13 +9846,14 @@ return {
   ["syn"] = {
    [1] = "Heldensagen vom Kosmosinsel",
    [2] = "La Leggenda Degli Eroi Della Galassia",
-   [3] = "Legend of Galactic Heroes",
-   [4] = "Legend of the Galactic Heroes",
-   [5] = "Legenda galaktycznych bohaterów",
-   [6] = "Галактична історія героїв",
-   [7] = "Легенда о героях галактики",
-   [8] = "Легендата за галактичните герои",
-   [9] = "أسطورة أبطال المجرة",
+   [3] = "La leyenda de los héroes de la galaxia",
+   [4] = "Legend of Galactic Heroes",
+   [5] = "Legend of the Galactic Heroes",
+   [6] = "Legenda galaktycznych bohaterów",
+   [7] = "Галактична історія героїв",
+   [8] = "Легенда о героях галактики",
+   [9] = "Легендата за галактичните герои",
+   [10] = "أسطورة أبطال المجرة",
    },
   },
  [585] = {
@@ -17525,7 +17525,8 @@ return {
  [1119] = {
   ["main"] = "Dororo to Hyakkimaru",
   ["official"] = {
-   [1] = "どろろと百鬼丸",
+   [1] = "Dororo",
+   [2] = "どろろと百鬼丸",
    },
   ["short"] = {
    },
@@ -26218,7 +26219,8 @@ return {
   ["main"] = "Toushi Gordian",
   ["official"] = {
    [1] = "Gordian",
-   [2] = "闘士ゴーディアン",
+   [2] = "The Warrior, Gordian",
+   [3] = "闘士ゴーディアン",
    },
   ["short"] = {
    },
@@ -30590,8 +30592,7 @@ return {
  [2154] = {
   ["main"] = "Aoki Ryuusei SPT Layzner",
   ["official"] = {
-   [1] = "SPT Layzner",
-   [2] = "蒼き流星SPTレイズナー",
+   [1] = "蒼き流星SPTレイズナー",
    },
   ["short"] = {
    [1] = "Layzner",
@@ -30599,6 +30600,7 @@ return {
   ["syn"] = {
    [1] = "Blue Comet SPT Layzner",
    [2] = "Layzner Super Powered Tracer",
+   [3] = "SPT Layzner",
    },
   },
  [2155] = {
@@ -42262,8 +42264,9 @@ return {
   ["main"] = "Mai-Otome",
   ["official"] = {
    [1] = "My-OTOME",
-   [2] = "ไม-乙-HiME-โอโตเมะ ศึกอัญมณีสาวน้อยแห่งดวงดาว",
-   [3] = "舞-乙HiME",
+   [2] = "My-Otome",
+   [3] = "ไม-乙-HiME-โอโตเมะ ศึกอัญมณีสาวน้อยแห่งดวงดาว",
+   [4] = "舞-乙HiME",
    },
   ["short"] = {
    [1] = "otome",
@@ -68516,9 +68519,10 @@ return {
  [6211] = {
   ["main"] = "Kurokami The Animation",
   ["official"] = {
-   [1] = "Kurokami The Animation",
-   [2] = "Темная богиня",
-   [3] = "黒神 The Animation",
+   [1] = "Kurokami",
+   [2] = "Kurokami The Animation",
+   [3] = "Темная богиня",
+   [4] = "黒神 The Animation",
    },
   ["short"] = {
    },
@@ -96463,6 +96467,7 @@ return {
   ["official"] = {
    [1] = "PSYCHO-PASS",
    [2] = "Psycho-Pass",
+   [3] = "Психо-паспорт",
    },
   ["short"] = {
    },
@@ -96471,10 +96476,9 @@ return {
    [2] = "Psycho Pass",
    [3] = "Psycho-Pass Shin Henshuu-ban",
    [4] = "Психо-пас",
-   [5] = "Психо-паспорт",
-   [6] = "Психопаспорт",
-   [7] = "サイコパス",
-   [8] = "心理测量者",
+   [5] = "Психопаспорт",
+   [6] = "サイコパス",
+   [7] = "心理测量者",
    },
   },
  [9128] = {
@@ -98269,6 +98273,7 @@ return {
   ["main"] = "RDG: Red Data Girl",
   ["official"] = {
    [1] = "RDG レッドデータガール",
+   [2] = "RDG: Red Data Girl",
    },
   ["short"] = {
    },
@@ -102072,6 +102077,7 @@ return {
    [3] = "悠哉日常大王",
    },
   ["short"] = {
+   [1] = "nnb",
    },
   ["syn"] = {
    },
@@ -103380,7 +103386,8 @@ return {
   ["main"] = "Tokyo ESP",
   ["official"] = {
    [1] = "Tokyo ESP",
-   [2] = "東京ESP",
+   [2] = "东京ESP",
+   [3] = "東京ESP",
    },
   ["short"] = {
    },
@@ -104087,6 +104094,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Cool-Headed Hoozuki",
    },
   },
  [9956] = {
@@ -104447,13 +104455,13 @@ return {
  [9999] = {
   ["main"] = "Seirei Tsukai no Blade Dance",
   ["official"] = {
-   [1] = "Bladedance of Elementalers",
-   [2] = "精霊使いの剣舞",
+   [1] = "Blade Dance of Elementalers",
+   [2] = "精灵使的剑舞",
+   [3] = "精霊使いの剣舞",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Blade Dance of Elementalers",
    },
   },
  [10000] = {
@@ -104634,7 +104642,8 @@ return {
   ["main"] = "Sword Art Online: Extra Edition",
   ["official"] = {
    [1] = "Sword Art Online Extra Edition",
-   [2] = "ソードアート・オンライン Extra Edition",
+   [2] = "هنر شمشیرزنی آنلاین: ویرایش اضافی",
+   [3] = "ソードアート・オンライン Extra Edition",
    },
   ["short"] = {
    [1] = "SAOEE",
@@ -104950,12 +104959,12 @@ return {
  [10065] = {
   ["main"] = "Psycho-Pass 2",
   ["official"] = {
-   [1] = "サイコパス 2",
+   [1] = "Психо-паспорт 2",
+   [2] = "サイコパス 2",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Психо-паспорт 2",
    },
   },
  [10066] = {
@@ -107449,8 +107458,9 @@ return {
    },
   ["syn"] = {
    [1] = "GGO",
-   [2] = "Sword Art Online 2",
-   [3] = "Sword Art Online II: Phantom Bullet",
+   [2] = "Gun Art Online",
+   [3] = "Sword Art Online 2",
+   [4] = "Sword Art Online II: Phantom Bullet",
    },
   },
  [10378] = {
@@ -107716,7 +107726,8 @@ return {
  [10403] = {
   ["main"] = "Momo Kyun Sword",
   ["official"] = {
-   [1] = "モモキュンソード",
+   [1] = "Momo Kyun Sword",
+   [2] = "モモキュンソード",
    },
   ["short"] = {
    },
@@ -107761,7 +107772,7 @@ return {
    [1] = "Akame ga Kill!",
    [2] = "Red Eyes Sword - Akame ga Kill",
    [3] = "Червенооката убийца",
-   [4] = "آکامه برای کشتن",
+   [4] = "قاتل قرمز",
    [5] = "アカメが斬る!",
    [6] = "斩！赤红之瞳",
    },
@@ -107869,6 +107880,7 @@ return {
   ["syn"] = {
    [1] = "Ronia the Robber`s Daughter",
    [2] = "Ronja Räubertochter",
+   [3] = "Роня - дъщерята на разбойника",
    },
   },
  [10422] = {
@@ -108032,8 +108044,9 @@ return {
    },
   ["syn"] = {
    [1] = "Тера Формарс",
-   [2] = "Тераформарсяване",
-   [3] = "テラフォーマーズ",
+   [2] = "Тераформар",
+   [3] = "Тераформарсяване",
+   [4] = "テラフォーマーズ",
    },
   },
  [10440] = {
@@ -108103,10 +108116,11 @@ return {
    },
   },
  [10446] = {
-  ["main"] = "Jinsei",
+  ["main"] = "Jinsei: Jinsei Soudan TV Animation",
   ["official"] = {
    [1] = "La Bonne Vie",
    [2] = "人生",
+   [3] = "人生 「人生相談テレビアニメーション」",
    },
   ["short"] = {
    },
@@ -108970,6 +108984,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Мушиши 2 (2014)",
    },
   },
  [10572] = {
@@ -109610,6 +109625,7 @@ return {
  [10640] = {
   ["main"] = "C.L.A.Y.",
   ["official"] = {
+   [1] = "C.L.A.Y.",
    },
   ["short"] = {
    },
@@ -109644,6 +109660,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Плахият колоездач 2",
    },
   },
  [10644] = {
@@ -110380,16 +110397,6 @@ return {
   ["syn"] = {
    },
   },
- [10740] = {
-  ["main"] = "Dream 9 Toriko & One Piece & Dragon Ball Z Super Collaboration Special",
-  ["official"] = {
-   [1] = "ドリーム9 トリコ&ワンピース&ドラゴンボールZ 超コラボスペシャル!!",
-   },
-  ["short"] = {
-   },
-  ["syn"] = {
-   },
-  },
  [10741] = {
   ["main"] = "Kyokugen Dasshutsu ADV: Zennin Shibou Death",
   ["official"] = {
@@ -110414,6 +110421,76 @@ return {
   ["main"] = "Moon Pride",
   ["official"] = {
    [1] = "M­OON PRIDE",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10744] = {
+  ["main"] = "Madan no Ou to Vanadis",
+  ["official"] = {
+   [1] = "魔弾の王と戦姫[ヴァナディース]",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10745] = {
+  ["main"] = "Absolute Duo",
+  ["official"] = {
+   [1] = "アブソリュート・デュオ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10746] = {
+  ["main"] = "Pocket Monsters XY: Koukoku no Princess Diancie",
+  ["official"] = {
+   [1] = "鉱国のプリンセス ディアンシー",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10747] = {
+  ["main"] = "Chain Chronicle",
+  ["official"] = {
+   [1] = "チェインクロニクル",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10748] = {
+  ["main"] = "Master of Torque Season 2",
+  ["official"] = {
+   [1] = "マスター・オブ・トルク Season 2",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10749] = {
+  ["main"] = "Magic Kaito (2014)",
+  ["official"] = {
+   [1] = "まじっく快斗 (2014)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10750] = {
+  ["main"] = "Yuuki Yuuna wa Yuusha de Aru",
+  ["official"] = {
+   [1] = "結城友奈は勇者である",
    },
   ["short"] = {
    },
