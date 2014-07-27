@@ -44,6 +44,22 @@ local function outputTweet(self, source, destination, info)
     -- replace newlines with spaces
     tweet = tweet:gsub('\n', ' ')
 
+	-- replace shortened URLs with their original
+	for _, url in pairs(info.entities.urls) do
+		tweet = tweet:gsub(url.url, url.expanded.url)
+	end
+
+	-- replace shortened media URLs with their original
+	local counter = 0
+	for _, media in pairs(info.extended_entities.media) do
+		if counter == 0 then
+			tweet = tweet:gsub(media.url, media.expanded_url .. ' ' .. media.media_url)
+		else
+			tweet = tweet .. " " .. media.media_url
+		end
+		counter = counter + 1
+	end
+
     local out = {}
     if(name == screen_name) then
         table.insert(out, string.format('\002%s\002:', name))
