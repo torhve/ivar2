@@ -1,7 +1,9 @@
+-- vim: set noexpandtab:
 local sql = require'lsqlite3'
 local iconv = require'iconv'
 
 local utf2iso = iconv.new('iso-8859-15', 'utf-8')
+local iso2utf = iconv.new('utf-8', 'iso-8859-15')
 
 local days = { "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" }
 
@@ -195,6 +197,15 @@ local handleOutput = function(source, destination, seven, data, city, try)
 	ivar2:Msg('privmsg', destination, source, table.concat(out, " - "))
 end
 
+local getUrl = function(self, source, destination, place)
+	local lang = self.persist['yr:lang:'..source.nick]
+	if(not lang) then
+		return place.url
+	else
+		return place.url:gsub('/place/', '/'..lang..'/')
+	end
+end
+
 local getPlace = function(self, source, destination, input)
     if(not input or input == '') then
         local place = self.persist['yr:place:'..source.nick]
@@ -240,7 +251,7 @@ return {
 
 			if(place) then
 				ivar2.util.simplehttp(
-					place.url,
+					getUrl(self, source, destination, place),
 					function(data)
 						handleOutput(source, destination, seven == '7', data)
 					end
@@ -318,7 +329,7 @@ return {
 
 			if(place) then
 				ivar2.util.simplehttp(
-					place.url,
+					getUrl(self, source, destination, place),
 					function(data)
 						say(handleObservationOutput(self, source, destination, data))
 					end
@@ -332,7 +343,7 @@ return {
 
 			if(place) then
 				ivar2.util.simplehttp(
-					place.url,
+					getUrl(self, source, destination, place),
 					function(data)
 						say(handleObservationOutput(self, source, destination, data))
 					end
@@ -344,6 +355,24 @@ return {
 		['^%pset yr (.+)$'] = function(self, source, destination, location)
 			self.persist['yr:place:'..source.nick] = location
 			reply('Location set to %s', location)
+		end,
+		['^%pset yrlang (.+)$'] = function(self, source, destination, lang)
+			lang = ivar2.util.trim(lang:lower())
+			local langISO = iso2utf:iconv(lang)
+			print(lang, langISO)
+			if(lang == 'nynorsk' or lang == 'bokmål' or lang == 'english' or langISO == 'bokmål') then
+				if(lang == 'nynorsk') then
+					lang = 'stad'
+				elseif(lang == 'bokmål' or langISO == 'bokmål') then
+					lang = 'sted'
+				elseif(lang == 'english') then
+					lang = 'place'
+				end
+				self.persist['yr:lang:'..source.nick] = lang
+				reply('I shall not forget. I am good at remembering things.')
+			else
+				reply('Unknown language: %s, use bokmål, nynorsk, english', lang)
+			end
 		end,
 	}
 }
