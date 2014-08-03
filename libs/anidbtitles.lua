@@ -14666,8 +14666,9 @@ return {
    [3] = "Pokémon Heroes - Der Film",
    [4] = "Pokémon Heroes - Latios & Latias",
    [5] = "Pokémon Heroes: Latios & Latias",
-   [6] = "Πόκεμον: Ήρωες",
-   [7] = "ポケットモンスター 水の都の護神 ラティアスとラティオス",
+   [6] = "Pokémon V: Heróis",
+   [7] = "Πόκεμον: Ήρωες",
+   [8] = "ポケットモンスター 水の都の護神 ラティアスとラティオス",
    },
   ["short"] = {
    },
@@ -22582,8 +22583,9 @@ return {
  [1517] = {
   ["main"] = "Gokuu no Daibouken",
   ["official"] = {
-   [1] = "The Monkey - Le grandi avventure di Goku",
-   [2] = "悟空の大冒険",
+   [1] = "Goku`s Adventure",
+   [2] = "The Monkey - Le grandi avventure di Goku",
+   [3] = "悟空の大冒険",
    },
   ["short"] = {
    },
@@ -23210,11 +23212,11 @@ return {
  [1561] = {
   ["main"] = "Shinzou Ningen Casshern",
   ["official"] = {
-   [1] = "Kyashan il ragazzo androide",
-   [2] = "新造人間キャシャーン",
+   [1] = "Casshan",
+   [2] = "Kyashan il ragazzo androide",
+   [3] = "新造人間キャシャーン",
    },
   ["short"] = {
-   [1] = "Casshan",
    },
   ["syn"] = {
    [1] = "Newly Made Human Cashan",
@@ -26021,13 +26023,14 @@ return {
    [1] = "Pokemon: Jirachi Wish Maker",
    [2] = "Pokemonai: Džiračis - norų valdovas",
    [3] = "Pokémon 6 - Jirachi co plní přání",
-   [4] = "Pokémon 6 - Jirachi: Wishmaker - Der Film",
-   [5] = "Pokémon 6. - Kívánj valamit!",
-   [6] = "Pokémon Jirachi-toiveentäyttäjä",
-   [7] = "Pokémon: Jirachi - Spełnione marzenia",
-   [8] = "Τζιράτσι ο Ευχοποιός",
-   [9] = "Покемон: Джирачи - исполнитель желаний",
-   [10] = "ポケットモンスター アドバンスジェネレーション 七夜の願い星ジラーチ",
+   [4] = "Pokémon 6 - Jirachi: Mestre dos Desejos",
+   [5] = "Pokémon 6 - Jirachi: Wishmaker - Der Film",
+   [6] = "Pokémon 6. - Kívánj valamit!",
+   [7] = "Pokémon Jirachi-toiveentäyttäjä",
+   [8] = "Pokémon: Jirachi - Spełnione marzenia",
+   [9] = "Τζιράτσι ο Ευχοποιός",
+   [10] = "Покемон: Джирачи - исполнитель желаний",
+   [11] = "ポケットモンスター アドバンスジェネレーション 七夜の願い星ジラーチ",
    },
   ["short"] = {
    },
@@ -29208,10 +29211,10 @@ return {
    },
   },
  [2046] = {
-  ["main"] = "Hanaukyou Maid Tai (2001)",
+  ["main"] = "Hanaukyou Maid Tai OVA",
   ["official"] = {
    [1] = "Hanaukyo Maids (2001)",
-   [2] = "花右京ﾒｲﾄﾞ隊 (2001)",
+   [2] = "花右京ﾒｲﾄﾞ隊 OVA",
    },
   ["short"] = {
    },
@@ -37123,6 +37126,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "UFO Warrior Dai Apolon",
    },
   },
  [2704] = {
@@ -38072,6 +38076,7 @@ return {
  [2780] = {
   ["main"] = "Daicon III & IV Opening Animation",
   ["official"] = {
+   [1] = "DAICON III & IV OPENING ANIMATION",
    },
   ["short"] = {
    [1] = "Daicon",
@@ -42205,14 +42210,14 @@ return {
  [3208] = {
   ["main"] = "F",
   ["official"] = {
-   [1] = "F-エフ",
-   [2] = "F. A Todo Gas",
+   [1] = "F - Motori in pista",
+   [2] = "F-エフ",
+   [3] = "F. A Todo Gas",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Motori in pista - F",
-   [2] = "Гонщик Формулы",
+   [1] = "Гонщик Формулы",
    },
   },
  [3209] = {
@@ -43116,8 +43121,9 @@ return {
    [1] = "Fate Stay Night",
    [2] = "Судьба: Ночь Схватки",
    [3] = "Съдба/Нощна битка",
-   [4] = "قسمت / رہو نائٹ",
-   [5] = "フェイト/ステイナイト",
+   [4] = "Съдба/Под булото на нощта",
+   [5] = "قسمت / رہو نائٹ",
+   [6] = "フェイト/ステイナイト",
    },
   },
  [3349] = {
@@ -47231,9 +47237,10 @@ return {
    [4] = "La légende de Blanche-Neige",
    [5] = "Schneewittchen",
    [6] = "Η Χιονάτη και οι 7 Νάνοι",
-   [7] = "שלגיה",
-   [8] = "فلة والأقزام السبعة",
-   [9] = "白雪姫の伝説",
+   [7] = "Легенда о принцессе Белоснежке",
+   [8] = "שלגיה",
+   [9] = "فلة والأقزام السبعة",
+   [10] = "白雪姫の伝説",
    },
   ["short"] = {
    },
@@ -52142,8 +52149,9 @@ return {
   ["main"] = "Dennou Coil",
   ["official"] = {
    [1] = "Cyber Coil",
-   [2] = "سایبر کویل",
-   [3] = "電脳コイル",
+   [2] = "Denno Coil",
+   [3] = "سایبر کویل",
+   [4] = "電脳コイル",
    },
   ["short"] = {
    [1] = "DenCo",
@@ -55126,7 +55134,7 @@ return {
    },
   },
  [4657] = {
-  ["main"] = "Futari Gurashi",
+  ["main"] = "Futarigurashi",
   ["official"] = {
    [1] = "ふたり暮らし",
    },
@@ -88184,9 +88192,9 @@ return {
    },
   },
  [8248] = {
-  ["main"] = "Qingcong",
+  ["main"] = "Qingcong: Youth",
   ["official"] = {
-   [1] = "青葱",
+   [1] = "青葱 youth",
    },
   ["short"] = {
    },
@@ -93690,7 +93698,8 @@ return {
   ["main"] = "Gekijouban Pocket Monsters: Best Wishes! - Kyurem vs Seikenshi Keldeo",
   ["official"] = {
    [1] = "Pokemon the Movie: Kyurem vs. The Sword of Justice",
-   [2] = "劇場版 ポケットモンスター ベストウイッシュ キュレムVS聖剣士 ケルディオ",
+   [2] = "Pokémon o Filme: Kyurem Contra a Espada da Justiça",
+   [3] = "劇場版 ポケットモンスター ベストウイッシュ キュレムVS聖剣士 ケルディオ",
    },
   ["short"] = {
    },
@@ -94663,9 +94672,9 @@ return {
    },
   },
  [8925] = {
-  ["main"] = "High School DxD (2012)",
+  ["main"] = "High School DxD OAD",
   ["official"] = {
-   [1] = "ハイスクールDxD (2012)",
+   [1] = "ハイスクールDxD OAD",
    },
   ["short"] = {
    },
@@ -97138,16 +97147,6 @@ return {
    [2] = "Тацүми",
    },
   },
- [9203] = {
-  ["main"] = "Mononokuma",
-  ["official"] = {
-   [1] = "もののくま",
-   },
-  ["short"] = {
-   },
-  ["syn"] = {
-   },
-  },
  [9205] = {
   ["main"] = "Junkers Come Here: Memories of You",
   ["official"] = {
@@ -97548,7 +97547,7 @@ return {
   ["main"] = "Yama no Susume",
   ["official"] = {
    [1] = "Encouragement of Climb",
-   [2] = "ヤマノススメ",
+   [2] = "ヤマノススメ Encouragement of Climb",
    [3] = "야마노스스메",
    },
   ["short"] = {
@@ -98144,16 +98143,17 @@ return {
  [9314] = {
   ["main"] = "Dragon Ball Z: Kami to Kami",
   ["official"] = {
-   [1] = "Dragon Ball Z: A Batalha dos Deuses",
-   [2] = "Dragon Ball Z: Battle of Gods",
-   [3] = "Dragon Ball Z: La Batalla de los Dioses",
-   [4] = "ドラゴンボールZ 神と神 Battle of Gods",
+   [1] = "DRAGON BALL Z 神と神 BATTLE OF GODS",
+   [2] = "Dragon Ball Z: A Batalha dos Deuses",
+   [3] = "Dragon Ball Z: Battle of Gods",
+   [4] = "Dragon Ball Z: La Batalla de los Dioses",
    },
   ["short"] = {
    [1] = "DBZ Movie 14",
    },
   ["syn"] = {
    [1] = "Dragon Ball Z: God vs. God",
+   [2] = "ドラゴンボールZ 神と神",
    },
   },
  [9316] = {
@@ -100592,7 +100592,8 @@ return {
   ["main"] = "Gekijouban Pocket Monsters: Best Wishes! - Shinsoku no Genosect: Mewtwo Kakusei",
   ["official"] = {
    [1] = "Pokemon the Movie: Genesect and the Legend Awakened",
-   [2] = "劇場版 ポケットモンスター ベストウイッシュ 神速のゲノセクト ミュウツー覚醒",
+   [2] = "Pokémon o Filme: Genesect e a Lenda Revelada",
+   [3] = "劇場版 ポケットモンスター ベストウイッシュ 神速のゲノセクト ミュウツー覚醒",
    },
   ["short"] = {
    },
@@ -100845,9 +100846,9 @@ return {
    },
   },
  [9588] = {
-  ["main"] = "Gekijouban Naruto",
+  ["main"] = "The Last: Naruto the Movie",
   ["official"] = {
-   [1] = "劇場版NARUTO-ナルト-",
+   [1] = "THE LAST NARUTO THE MOVIE",
    },
   ["short"] = {
    },
@@ -101777,12 +101778,12 @@ return {
    },
   },
  [9687] = {
-  ["main"] = "Captain Harlock (2013)",
+  ["main"] = "Space Pirate Captain Harlock",
   ["official"] = {
    [1] = "Căpitanul Harlock: Pirat Spațial",
-   [2] = "Space Pirate Captain Harlock",
-   [3] = "Космический пират Харлок",
-   [4] = "キャプテンハーロック (2013)",
+   [2] = "SPACE PIRATE CAPTAIN HARLOCK",
+   [3] = "Space Pirate Captain Harlock",
+   [4] = "Космический пират Харлок",
    },
   ["short"] = {
    },
@@ -101895,7 +101896,7 @@ return {
  [9704] = {
   ["main"] = "Doukoku no Nightmare",
   ["official"] = {
-   [1] = "慟哭のナイトメア",
+   [1] = "慟哭のナイトメア WAILING NIGHTMARE",
    },
   ["short"] = {
    },
@@ -103588,9 +103589,9 @@ return {
    },
   },
  [9900] = {
-  ["main"] = "Fate/Kaleid Liner Prisma Illya: Undoukai de Dance!",
+  ["main"] = "Fate/Kaleid Liner Prisma Illya (2014)",
   ["official"] = {
-   [1] = "Fate/kaleid liner プリズマ☆イリヤ 運動会 DE ダンス!",
+   [1] = "Fate/kaleid liner プリズマ☆イリヤ (2014)",
    },
   ["short"] = {
    [1] = "Fate Kaleid OVA",
@@ -104269,11 +104270,13 @@ return {
   ["short"] = {
    [1] = "F/SN 2014",
    [2] = "FSN 2014",
+   [3] = "FSN UBW 2014",
    },
   ["syn"] = {
    [1] = "Fate Stay Night 2014",
-   [2] = "Съдба/Под булото на нощта (2014)",
-   [3] = "フェイト/ステイナイト (2014)",
+   [2] = "Fate/stay night: Unlimited Blade Works (2014)",
+   [3] = "Съдба/Под булото на нощта (2014)",
+   [4] = "フェイト/ステイナイト (2014)",
    },
   },
  [9979] = {
@@ -105547,6 +105550,7 @@ return {
   ["official"] = {
    [1] = "Soni-Ani: Super Sonico the Animation",
    [2] = "そにアニ SUPER SONICO THE ANIMATION",
+   [3] = "超级索尼子",
    },
   ["short"] = {
    },
@@ -106686,10 +106690,10 @@ return {
    },
   },
  [10272] = {
-  ["main"] = "Kiseijuu",
+  ["main"] = "Kiseijuu: Sei no Kakuritsu",
   ["official"] = {
    [1] = "Паразит",
-   [2] = "寄生獣",
+   [2] = "寄生獣 セイの格率",
    },
   ["short"] = {
    },
@@ -106887,7 +106891,7 @@ return {
  [10293] = {
   ["main"] = "Yama no Susume: Second Season",
   ["official"] = {
-   [1] = "ヤマノススメ セカンドシーズン",
+   [1] = "ヤマノススメ Encouragement of Climb セカンドシーズン",
    },
   ["short"] = {
    },
@@ -107447,9 +107451,11 @@ return {
  [10376] = {
   ["main"] = "Sword Art Online II",
   ["official"] = {
-   [1] = "Sword Art Online II",
-   [2] = "هنر شمشیر زنی انلاین",
-   [3] = "ソードアート・オンラインII",
+   [1] = "Sword Art Online 2: Phantom Bullet",
+   [2] = "Sword Art Online II",
+   [3] = "هنر تیراندازی آنلاین",
+   [4] = "هنر شمشیر زنی انلاین",
+   [5] = "ソードアート・オンラインII",
    },
   ["short"] = {
    [1] = "SAO 2",
@@ -107759,7 +107765,8 @@ return {
  [10406] = {
   ["main"] = "Sengoku Basara: Judge End",
   ["official"] = {
-   [1] = "戦国BASARA Judge End",
+   [1] = "Sengoku Basara: Judge End",
+   [2] = "戦国BASARA Judge End",
    },
   ["short"] = {
    },
@@ -108060,9 +108067,9 @@ return {
    },
   },
  [10441] = {
-  ["main"] = "Trinity Seven: 7-nin no Masho Tsukai",
+  ["main"] = "Trinity Seven",
   ["official"] = {
-   [1] = "トリニティセブン 7人の魔書使い",
+   [1] = "トリニティセブン",
    },
   ["short"] = {
    },
@@ -108107,6 +108114,7 @@ return {
   ["main"] = "Aldnoah.Zero",
   ["official"] = {
    [1] = "ALDNOAH.ZERO",
+   [2] = "Aldnoah.Zero",
    },
   ["short"] = {
    },
@@ -108116,11 +108124,11 @@ return {
    },
   },
  [10446] = {
-  ["main"] = "Jinsei: Jinsei Soudan TV Animation",
+  ["main"] = "Jinsei Soudan TV Animation: Jinsei",
   ["official"] = {
    [1] = "La Bonne Vie",
    [2] = "人生",
-   [3] = "人生 「人生相談テレビアニメーション」",
+   [3] = "人生相談テレビアニメーション「人生」",
    },
   ["short"] = {
    },
@@ -108154,6 +108162,8 @@ return {
    [2] = "ドラゴンボール改 (2014)",
    },
   ["short"] = {
+   [1] = "dbk2",
+   [2] = "dbkai2",
    },
   ["syn"] = {
    [1] = "Dragon Ball Kai: Majin Buu Saga",
@@ -108354,11 +108364,12 @@ return {
  [10496] = {
   ["main"] = "Francesca",
   ["official"] = {
-   [1] = "フランチェスカ",
+   [1] = "francesca",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "フランチェスカ",
    },
   },
  [10498] = {
@@ -108508,14 +108519,14 @@ return {
  [10514] = {
   ["main"] = "M3: Sono Kuroki Hagane",
   ["official"] = {
-   [1] = "M3 ~ソノ黒キ鋼~",
-   [2] = "M3～黑色钢铁～",
+   [1] = "M3 the dark metal",
+   [2] = "M3 ~ソノ黒キ鋼~",
+   [3] = "M3～黑色钢铁～",
    },
   ["short"] = {
    },
   ["syn"] = {
    [1] = "M3 - Sono Kuroki Hagane",
-   [2] = "M3 the dark metal",
    },
   },
  [10515] = {
@@ -109227,7 +109238,8 @@ return {
  [10596] = {
   ["main"] = "Nanatsu no Taizai: The Seven Deadly Sins",
   ["official"] = {
-   [1] = "七つの大罪 The Seven Deadly Sins",
+   [1] = "Седемте смъртни гряха",
+   [2] = "七つの大罪 The Seven Deadly Sins",
    },
   ["short"] = {
    },
@@ -110095,9 +110107,9 @@ return {
    },
   },
  [10706] = {
-  ["main"] = "Madonna: Kanjuku Body Collection",
+  ["main"] = "Madonna: Kanjuku Body Collection The Animation",
   ["official"] = {
-   [1] = "マドンナ ~完熟ボディCollection~",
+   [1] = "マドンナ ~完熟ボディCollection~ THE ANIMATION",
    },
   ["short"] = {
    },
@@ -110277,7 +110289,7 @@ return {
    },
   },
  [10727] = {
-  ["main"] = "Ai: Tenchi Muyo!",
+  ["main"] = "Ai Tenchi Muyou!",
   ["official"] = {
    [1] = "愛・天地無用!",
    },
@@ -110491,6 +110503,134 @@ return {
   ["main"] = "Yuuki Yuuna wa Yuusha de Aru",
   ["official"] = {
    [1] = "結城友奈は勇者である",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10751] = {
+  ["main"] = "Military!",
+  ["official"] = {
+   [1] = "みりたり!",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Miritari!",
+   },
+  },
+ [10755] = {
+  ["main"] = "Fate/Stay Night: Heaven`s Feel",
+  ["official"] = {
+   [1] = "Fate/stay night: Heaven`s Feel",
+   },
+  ["short"] = {
+   [1] = "FSN HF",
+   },
+  ["syn"] = {
+   },
+  },
+ [10756] = {
+  ["main"] = "Niku Mesu R30: Nikuyoku ni Ochita Mesu-tachi The Animation",
+  ["official"] = {
+   [1] = "肉牝R30 ~肉欲に堕ちた牝たち~ THE ANIMATION",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10757] = {
+  ["main"] = "Boy Meets Harem The Animation",
+  ["official"] = {
+   [1] = "ボーイ・ミーツ・ハーレム THE ANIMATION",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10758] = {
+  ["main"] = "Mugen Kouro",
+  ["official"] = {
+   [1] = "無限航路",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10759] = {
+  ["main"] = "Junjou Romantica 3",
+  ["official"] = {
+   [1] = "純情ロマンチカ 3",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10760] = {
+  ["main"] = "Fate/Stay Night (2015)",
+  ["official"] = {
+   [1] = "Fate/stay night (2015)",
+   },
+  ["short"] = {
+   [1] = "F/SN 2015",
+   [2] = "FSN 2015",
+   [3] = "FSN UBW 2015",
+   },
+  ["syn"] = {
+   [1] = "Fate Stay Night 2015",
+   [2] = "Fate/stay night: Unlimited Blade Works (2015)",
+   [3] = "フェイト/ステイナイト (2015)",
+   },
+  },
+ [10761] = {
+  ["main"] = "Seitokai Yakuindomo * OAD",
+  ["official"] = {
+   [1] = "生徒会役員共＊ OAD",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10762] = {
+  ["main"] = "Tensai Bakavon: Yomigaeru Flanders no Inu",
+  ["official"] = {
+   [1] = "天才バカヴォン ~蘇るフランダースの犬~",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10763] = {
+  ["main"] = "Kami-sama Hajimemashita 2",
+  ["official"] = {
+   [1] = "神様はじめました 2",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10764] = {
+  ["main"] = "Digimon Adventure (2015)",
+  ["official"] = {
+   [1] = "デジモンアドベンチャー (2015)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10765] = {
+  ["main"] = "Hyakka Ryouran (2014)",
+  ["official"] = {
+   [1] = "百花繚乱 (2014)",
    },
   ["short"] = {
    },
