@@ -46,7 +46,7 @@ local function outputTweet(say, source, destination, info)
 
 	-- replace shortened URLs with their original
 	for _, url in pairs(info.entities.urls) do
-		tweet = tweet:gsub(url.url, url.expanded.url)
+		tweet = tweet:gsub(url.url, url.expanded_url)
 	end
 
 	-- replace shortened media URLs with their original
