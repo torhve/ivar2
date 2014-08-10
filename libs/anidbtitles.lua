@@ -4212,12 +4212,13 @@ return {
    [6] = "Sailor Moon",
    [7] = "Sailor Moon: Het meisje met de macht van de maannevel",
    [8] = "Varázslatos álmok",
-   [9] = "Сейлър Муун",
-   [10] = "סיילור מון",
-   [11] = "เซเลอร์มูน",
-   [12] = "美少女战士",
-   [13] = "美少女戦士セーラームーン",
-   [14] = "달의 요정 세일러문",
+   [9] = "Сейлормун: луна в матроске",
+   [10] = "Сейлър Муун",
+   [11] = "סיילור מון",
+   [12] = "เซเลอร์มูน",
+   [13] = "美少女战士",
+   [14] = "美少女戦士セーラームーン",
+   [15] = "달의 요정 세일러문",
    },
   ["short"] = {
    [1] = "SM",
@@ -4235,10 +4236,9 @@ return {
    [7] = "Sailormoon: Het meisje met de macht van de maannevel",
    [8] = "sm1",
    [9] = "Красавица-воин Сейлор Мун",
-   [10] = "Сейлормун – Луна в матроске",
-   [11] = "بحار القمر",
-   [12] = "جنگنده زیبا، سیلرمون",
-   [13] = "미소녀 전사 세일러문",
+   [10] = "بحار القمر",
+   [11] = "جنگنده زیبا، سیلرمون",
+   [12] = "미소녀 전사 세일러문",
    },
   },
  [236] = {
@@ -35380,9 +35380,10 @@ return {
    [3] = "Sailor Moon S",
    [4] = "Sailor Moon e il Cristallo del Cuore",
    [5] = "Varázslatos álmok S",
-   [6] = "เซเลอร์มูน S",
-   [7] = "美少女战士S",
-   [8] = "美少女戦士セーラームーン S",
+   [6] = "Сейлормун - супервоин",
+   [7] = "เซเลอร์มูน S",
+   [8] = "美少女战士S",
+   [9] = "美少女戦士セーラームーン S",
    },
   ["short"] = {
    [1] = "SM S",
@@ -35401,9 +35402,10 @@ return {
    [3] = "Sailor Moon R",
    [4] = "Sailor Moon, la Luna splende",
    [5] = "Varázslatos álmok R",
-   [6] = "เซเลอร์มูน R",
-   [7] = "美少女战士R",
-   [8] = "美少女戦士セーラームーン R",
+   [6] = "Сейлормун снова с нами",
+   [7] = "เซเลอร์มูน R",
+   [8] = "美少女战士R",
+   [9] = "美少女戦士セーラームーン R",
    },
   ["short"] = {
    [1] = "SM R",
@@ -35421,8 +35423,9 @@ return {
    [4] = "Sailor Moon SuperS",
    [5] = "Sailor Moon e il mistero dei sogni",
    [6] = "Varázslatos Álmok Super S",
-   [7] = "เซเลอร์มูน SuperS",
-   [8] = "美少女戦士セーラームーンSuperS",
+   [7] = "Сейлормун",
+   [8] = "เซเลอร์มูน SuperS",
+   [9] = "美少女戦士セーラームーンSuperS",
    },
   ["short"] = {
    [1] = "SMSS",
@@ -48483,8 +48486,9 @@ return {
    [1] = "XXXホリック",
    [2] = "xxxHOLiC TV",
    [3] = "xxxГолік",
-   [4] = "Триплексоголик",
-   [5] = "โฮลิค",
+   [4] = "Пристрастяване",
+   [5] = "Триплексоголик",
+   [6] = "โฮลิค",
    },
   },
  [4033] = {
@@ -70830,13 +70834,16 @@ return {
    },
   },
  [6477] = {
-  ["main"] = "Kimochiii Koto Shite Kudasai",
+  ["main"] = "Super Erotic Anime",
   ["official"] = {
-   [1] = "気持ちいい事して下さい",
+   [1] = "スーパーエロティックアニメ",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Kimochiii Koto Shite Kudasai",
+   [2] = "セーラームーン美恵ちゃん VS セーラームーン祐ちゃん洋ちゃん",
+   [3] = "気持ちいい事して下さい",
    },
   },
  [6479] = {
@@ -91780,12 +91787,12 @@ return {
    [1] = "幻想万華鏡 ~The Memories Of Phantasm~",
    },
   ["short"] = {
-   [1] = "Kalejdoskop Iluzji",
    },
   ["syn"] = {
-   [1] = "Touhou Gensou Mangekyou: The Memories of Phantasm",
-   [2] = "Тохо - Калейдоскоп Фантазии",
-   [3] = "Тохо - Спомените на призрака",
+   [1] = "Kalejdoskop Iluzji",
+   [2] = "Touhou Gensou Mangekyou: The Memories of Phantasm",
+   [3] = "Тохо - Калейдоскоп Фантазии",
+   [4] = "Тохо - Спомените на призрака",
    },
   },
  [8625] = {
@@ -92359,7 +92366,7 @@ return {
    },
   },
  [8686] = {
-  ["main"] = "Papa no Iukoto o Kikinasai!",
+  ["main"] = "Papa no Iu Koto o Kikinasai!",
   ["official"] = {
    [1] = "Listen to Me, Girls. I Am Your Father!",
    [2] = "パパのいうことを聞きなさい!",
@@ -92806,6 +92813,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "TYLOR The Irresponsible Captain[新]",
    },
   },
  [8733] = {
@@ -98215,7 +98223,8 @@ return {
  [9323] = {
   ["main"] = "Gekijouban Hunter x Hunter: Phantom Rouge",
   ["official"] = {
-   [1] = "劇場版 HUNTERxHUNTER 緋色の幻影[ファントム・ルージュ]",
+   [1] = "Hunter x Hunter: Phantom Rouge",
+   [2] = "劇場版 HUNTERxHUNTER 緋色の幻影[ファントム・ルージュ]",
    },
   ["short"] = {
    },
@@ -100148,7 +100157,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "The Tale of Princess Kaguya",
+   [1] = "Kaguya-hime no Monogatari",
+   [2] = "The Tale of Princess Kaguya",
    },
   },
  [9516] = {
@@ -102049,7 +102059,7 @@ return {
    },
   },
  [9720] = {
-  ["main"] = "Papa no Iukoto o Kikinasai! OAD",
+  ["main"] = "Papa no Iu Koto o Kikinasai! OAD",
   ["official"] = {
    [1] = "パパのいうことを聞きなさい! OAD",
    [2] = "要听爸爸的话！ OAD",
@@ -104589,7 +104599,8 @@ return {
  [10012] = {
   ["main"] = "Gekijouban Hunter x Hunter: The Last Mission",
   ["official"] = {
-   [1] = "劇場版 HUNTERxHUNTER THE LAST MISSION",
+   [1] = "Hunter x Hunter: The Last Mission",
+   [2] = "劇場版 HUNTERxHUNTER THE LAST MISSION",
    },
   ["short"] = {
    [1] = "HxH Last Mission",
@@ -107467,6 +107478,7 @@ return {
    [2] = "Gun Art Online",
    [3] = "Sword Art Online 2",
    [4] = "Sword Art Online II: Phantom Bullet",
+   [5] = "هنر شمشیر زنی آنلاین 2 : گلوله فانتوم",
    },
   },
  [10378] = {
@@ -107613,6 +107625,7 @@ return {
    [2] = "マギ シンドバッドの冒険",
    },
   ["short"] = {
+   [1] = "Magi: Adventure of Sinbad",
    },
   ["syn"] = {
    },
@@ -109665,9 +109678,9 @@ return {
    },
   },
  [10643] = {
-  ["main"] = "Yowamushi Pedal 2",
+  ["main"] = "Yowamushi Pedal: Grande Road",
   ["official"] = {
-   [1] = "弱虫ペダル 2",
+   [1] = "弱虫ペダルGRANDE ROAD",
    },
   ["short"] = {
    },
@@ -110610,7 +110623,7 @@ return {
  [10763] = {
   ["main"] = "Kami-sama Hajimemashita 2",
   ["official"] = {
-   [1] = "神様はじめました 2",
+   [1] = "神様はじめました◎",
    },
   ["short"] = {
    },
@@ -110631,6 +110644,67 @@ return {
   ["main"] = "Hyakka Ryouran (2014)",
   ["official"] = {
    [1] = "百花繚乱 (2014)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10766] = {
+  ["main"] = "Cross Ange: Tenshi to Ryuu no Rondo",
+  ["official"] = {
+   [1] = "クロスアンジュ 天使と竜の輪舞[ロンド]",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10767] = {
+  ["main"] = "Tamayura Kanketsuhen",
+  ["official"] = {
+   [1] = "たまゆら 完結編",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10768] = {
+  ["main"] = "Prison School",
+  ["official"] = {
+   [1] = "監獄学園[プリズンスクール]",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Kangoku Gakuen",
+   },
+  },
+ [10769] = {
+  ["main"] = "Yowamushi Pedal Re:Ride",
+  ["official"] = {
+   [1] = "弱虫ペダル Re:RIDE",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10770] = {
+  ["main"] = "Mahou Shoujo: Ore",
+  ["official"] = {
+   [1] = "魔法少女 俺",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10771] = {
+  ["main"] = "Sakura Capusule",
+  ["official"] = {
+   [1] = "サクラカプセル",
    },
   ["short"] = {
    },
