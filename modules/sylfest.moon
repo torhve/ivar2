@@ -12,7 +12,7 @@ word = R('az') + R('AZ') + S('æøåÆØÅ')
 -- With an '
 apo = P "'"
 -- With bad endings
-bend = P("en") + P("ene") + P("et") + P("ing") + P("ar") + P("ane")
+bend = P("ene") + P("en") + P("et") + P("ing") + P("ar") + P("ane") + P("er")
 -- Separated by or line end
 wend = S(',. ') + P(-1)
 -- Linestart exceptions
