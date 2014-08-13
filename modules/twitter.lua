@@ -40,25 +40,27 @@ local function outputTweet(say, source, destination, info)
     else
         tweet = html2unicode(info.text)
     end
-    
+
     -- replace newlines with spaces
     tweet = tweet:gsub('\n', ' ')
 
-	-- replace shortened URLs with their original
-	for _, url in pairs(info.entities.urls) do
-		tweet = tweet:gsub(url.url, url.expanded_url)
-	end
+    -- replace shortened URLs with their original
+    for _, url in pairs(info.entities.urls) do
+        tweet = tweet:gsub(url.url, url.expanded_url)
+    end
 
-	-- replace shortened media URLs with their original
-	local counter = 0
-	for _, media in pairs(info.extended_entities.media) do
-		if counter == 0 then
-			tweet = tweet:gsub(media.url, media.expanded_url .. ' ' .. media.media_url)
-		else
-			tweet = tweet .. " " .. media.media_url
-		end
-		counter = counter + 1
-	end
+    -- replace shortened media URLs with their original
+    local counter = 0
+    if(info.extended_entities ~= nil) then
+        for _, media in pairs(info.extended_entities.media) do
+            if counter == 0 then
+                tweet = tweet:gsub(media.url, media.expanded_url .. ' ' .. media.media_url)
+            else
+                tweet = tweet .. " " .. media.media_url
+            end
+            counter = counter + 1
+        end
+    end
 
     local out = {}
     if(name == screen_name) then
