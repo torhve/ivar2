@@ -50,13 +50,15 @@ customHosts['twitter%.com'] = function(queue, info)
 
 			-- replace shortened media URLs with their original
 			local counter = 0
-			for _, media in pairs(info.extended_entities.media) do
-				if counter == 0 then
-					tweet = tweet:gsub(media.url, media.expanded_url .. ' ' .. media.media_url)
-				else
-					tweet = tweet .. " " .. media.media_url
+			if(info.extended_entities ~= nil) then
+				for _, media in pairs(info.extended_entities.media) do
+					if counter == 0 then
+						tweet = tweet:gsub(media.url, media.expanded_url .. ' ' .. media.media_url)
+					else
+						tweet = tweet .. " " .. media.media_url
+					end
+					counter = counter + 1
 				end
-				counter = counter + 1
 			end
 
 			local out = {}
