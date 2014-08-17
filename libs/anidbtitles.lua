@@ -7874,14 +7874,14 @@ return {
   ["main"] = "Tokyo Babylon",
   ["official"] = {
    [1] = "Tokyo Babylone",
-   [2] = "東京バビロン",
+   [2] = "東京BABYLON",
    },
   ["short"] = {
    },
   ["syn"] = {
    [1] = "Tokyo Babylon",
    [2] = "Toukyou Babylon",
-   [3] = "東京BABYLON",
+   [3] = "東京バビロン",
    },
   },
  [458] = {
@@ -21666,8 +21666,9 @@ return {
   ["official"] = {
    [1] = "La magia de Emi",
    [2] = "Magica Magica Emi",
-   [3] = "Émi Magique",
-   [4] = "魔法のスター マジカルエミ",
+   [3] = "Star Magician Magical Emi",
+   [4] = "Émi Magique",
+   [5] = "魔法のスター マジカルエミ",
    },
   ["short"] = {
    },
@@ -21847,8 +21848,9 @@ return {
   ["main"] = "Ashita no Joe 2",
   ["official"] = {
    [1] = "Ashita no Joe 2",
-   [2] = "جو البطل",
-   [3] = "あしたのジョー2",
+   [2] = "Champion Joe 2",
+   [3] = "جو البطل",
+   [4] = "あしたのジョー2",
    },
   ["short"] = {
    },
@@ -29213,13 +29215,13 @@ return {
  [2046] = {
   ["main"] = "Hanaukyou Maid Tai OVA",
   ["official"] = {
-   [1] = "Hanaukyo Maids (2001)",
-   [2] = "花右京ﾒｲﾄﾞ隊 OVA",
+   [1] = "花右京ﾒｲﾄﾞ隊 OVA",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Maids in Hanaukyo (2001)",
+   [1] = "Hanaukyo Maids OVA",
+   [2] = "Maids in Hanaukyo OVA",
    },
   },
  [2047] = {
@@ -33057,7 +33059,7 @@ return {
    },
   },
  [2337] = {
-  ["main"] = "Captain Tsubasa: Europe Daikessen",
+  ["main"] = "Captain Tsubasa: Europa Daikessen",
   ["official"] = {
    [1] = "Capitão Tsubasa: European Challenge",
    [2] = "Captain Tsubasa - Soccer Boys Europe Finals",
@@ -45073,11 +45075,12 @@ return {
    [2] = "Ноеін",
    },
   ["syn"] = {
-   [1] = "Noein 到另一个你的身边去",
-   [2] = "Noein: Diğer `Sen`e Doğru",
-   [3] = "Noein: toward another you",
-   [4] = "Ноэйн",
-   [5] = "到另一个你的身边去",
+   [1] = "Noein",
+   [2] = "Noein 到另一个你的身边去",
+   [3] = "Noein: Diğer `Sen`e Doğru",
+   [4] = "Noein: toward another you",
+   [5] = "Ноэйн",
+   [6] = "到另一个你的身边去",
    },
   },
  [3513] = {
@@ -51963,7 +51966,7 @@ return {
    },
   },
  [4323] = {
-  ["main"] = "Furakappa",
+  ["main"] = "Hula Kapper",
   ["official"] = {
    [1] = "フラカッパー",
    },
@@ -63570,13 +63573,15 @@ return {
    },
   },
  [5565] = {
-  ["main"] = "Seishun Fuufu Monogatari Koiko no Mainichi",
+  ["main"] = "Koiko no Mainichi",
   ["official"] = {
-   [1] = "青春夫婦物語 恋子の毎日",
+   [1] = "恋子の毎日",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Seishun Fuufu Monogatari: Koiko no Mainichi",
+   [2] = "青春夫婦物語　恋子の毎日",
    },
   },
  [5568] = {
@@ -80665,6 +80670,7 @@ return {
    [2] = "Princezna a pilot",
    [3] = "The Princess and the Pilot",
    [4] = "とある飛空士への追憶",
+   [5] = "對某飛行員的追憶",
    },
   ["short"] = {
    },
@@ -82429,7 +82435,7 @@ return {
  [7666] = {
   ["main"] = "Gekijouban Bleach: Jigoku-hen",
   ["official"] = {
-   [1] = "Bleach The Movie 4: Hell Verse",
+   [1] = "Bleach the Movie 4: Hell Verse",
    [2] = "劇場版 BLEACH 地獄篇",
    },
   ["short"] = {
@@ -94100,9 +94106,10 @@ return {
  [8861] = {
   ["main"] = "Campione! Matsurowanu Kamigami to Kamigoroshi no Maou",
   ["official"] = {
-   [1] = "Campione!",
-   [2] = "カンピオーネ! ~まつろわぬ神々と神殺しの魔王~",
-   [3] = "弑神者",
+   [1] = "!کامپیونه",
+   [2] = "Campione!",
+   [3] = "カンピオーネ! ~まつろわぬ神々と神殺しの魔王~",
+   [4] = "弑神者",
    },
   ["short"] = {
    },
@@ -95705,6 +95712,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Uchuu Kyoudai: Apo`s Dream",
    },
   },
  [9033] = {
@@ -100137,10 +100145,11 @@ return {
    [9] = "Vidas ao Vento",
    [10] = "Vinden stiger",
    [11] = "Wie der Wind sich hebt",
-   [12] = "Ветер крепчает",
-   [13] = "Вятър се надига",
-   [14] = "風立ちぬ",
-   [15] = "바람이 분다",
+   [12] = "Zrywa się wiatr",
+   [13] = "Ветер крепчает",
+   [14] = "Вятър се надига",
+   [15] = "風立ちぬ",
+   [16] = "바람이 분다",
    },
   ["short"] = {
    },
@@ -100172,11 +100181,12 @@ return {
    },
   },
  [9517] = {
-  ["main"] = "Dog Days 3",
+  ["main"] = "Dog Days``",
   ["official"] = {
-   [1] = "DOG DAYS 3",
+   [1] = "DOG DAYS``",
    },
   ["short"] = {
+   [1] = "dd3",
    },
   ["syn"] = {
    },
@@ -100426,13 +100436,14 @@ return {
    [1] = "Ataque a los Titanes",
    [2] = "Ataque dos Titãs",
    [3] = "Attack on Titan",
-   [4] = "L`attaque des Titans",
-   [5] = "الهجوم على العمالقة",
-   [6] = "حمله به تایتان",
-   [7] = "进击的巨人",
-   [8] = "進撃の巨人 attack on titan",
-   [9] = "進擊的巨人",
-   [10] = "진격의 거인",
+   [4] = "L`attacco dei Giganti",
+   [5] = "L`attaque des Titans",
+   [6] = "الهجوم على العمالقة",
+   [7] = "حمله به تایتان",
+   [8] = "进击的巨人",
+   [9] = "進撃の巨人 attack on titan",
+   [10] = "進擊的巨人",
+   [11] = "진격의 거인",
    },
   ["short"] = {
    [1] = "AoT",
@@ -103403,7 +103414,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Паранормално усещане",
+   [1] = "Град на мистерии",
+   [2] = "Паранормално усещане",
    },
   },
  [9881] = {
@@ -106871,11 +106883,14 @@ return {
  [10290] = {
   ["main"] = "Meitantei Conan: Ijigen no Sniper",
   ["official"] = {
-   [1] = "名探偵コナン・異次元の狙撃手[スナイパー]",
+   [1] = "Case Closed: Dimensional Sniper",
+   [2] = "名探偵コナン・異次元の狙撃手[スナイパー]",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Detective Conan Movie 18: The Sniper from Another Dimension",
+   [2] = "المحقق كونان: القناص من بعد آخر",
    },
   },
  [10291] = {
@@ -107081,6 +107096,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Yuki`s Sun",
    },
   },
  [10315] = {
@@ -107265,6 +107281,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "花八岐",
    },
   },
  [10352] = {
@@ -108128,6 +108145,7 @@ return {
   ["official"] = {
    [1] = "ALDNOAH.ZERO",
    [2] = "Aldnoah.Zero",
+   [3] = "آلدنواح.صفر",
    },
   ["short"] = {
    },
@@ -108595,9 +108613,9 @@ return {
    },
   },
  [10523] = {
-  ["main"] = "Durarara!! 2",
+  ["main"] = "Durarara!!x2",
   ["official"] = {
-   [1] = "デュラララ!! 2",
+   [1] = "デュラララ!!x2",
    },
   ["short"] = {
    },
@@ -108663,6 +108681,7 @@ return {
    [1] = "繰繰れ! コックリさん",
    },
   ["short"] = {
+   [1] = "gugukoku",
    },
   ["syn"] = {
    },
@@ -108734,8 +108753,9 @@ return {
   ["main"] = "Zankyou no Terror",
   ["official"] = {
    [1] = "Terror in Resonance",
-   [2] = "恐怖残响",
-   [3] = "残響のテロル",
+   [2] = "ترور در رزونانس",
+   [3] = "东京残响",
+   [4] = "残響のテロル",
    },
   ["short"] = {
    },
@@ -109638,9 +109658,9 @@ return {
    },
   },
  [10639] = {
-  ["main"] = "Hitsugi no Chaika 2",
+  ["main"] = "Hitsugi no Chaika: Avenging Battle",
   ["official"] = {
-   [1] = "棺姫のチャイカ 2",
+   [1] = "棺姫のチャイカ AVENGING BATTLE",
    },
   ["short"] = {
    },
@@ -109680,7 +109700,7 @@ return {
  [10643] = {
   ["main"] = "Yowamushi Pedal: Grande Road",
   ["official"] = {
-   [1] = "弱虫ペダルGRANDE ROAD",
+   [1] = "弱虫ペダル GRANDE ROAD",
    },
   ["short"] = {
    },
@@ -110705,6 +110725,258 @@ return {
   ["main"] = "Sakura Capusule",
   ["official"] = {
    [1] = "サクラカプセル",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10773] = {
+  ["main"] = "Shouwa Genroku Rakugo Shinjuu",
+  ["official"] = {
+   [1] = "昭和元禄落語心中",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10774] = {
+  ["main"] = "Shuukan Storyland",
+  ["official"] = {
+   [1] = "週刊ストーリーランド",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10775] = {
+  ["main"] = "Demonion",
+  ["official"] = {
+   [1] = "デモニオン",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10776] = {
+  ["main"] = "Kurumiwari Ningyou (2014)",
+  ["official"] = {
+   [1] = "くるみ割り人形 (2014)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10777] = {
+  ["main"] = "Kuinaki Sentaku",
+  ["official"] = {
+   [1] = "悔いなき選択",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10778] = {
+  ["main"] = "Zephyr",
+  ["official"] = {
+   [1] = "ZEPHYR",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10779] = {
+  ["main"] = "Shirobako",
+  ["official"] = {
+   [1] = "SHIROBAKO",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10780] = {
+  ["main"] = "Bonjour: Koiaji Patisserie",
+  ["official"] = {
+   [1] = "Bonjour♪恋味パティスリー",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10781] = {
+  ["main"] = "Toukiden Kiwami",
+  ["official"] = {
+   [1] = "討鬼伝 極",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10782] = {
+  ["main"] = "Re-Kan!",
+  ["official"] = {
+   [1] = "レーカン!",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10783] = {
+  ["main"] = "Gekijouban PriPara",
+  ["official"] = {
+   [1] = "劇場版 プリパラ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10784] = {
+  ["main"] = "The Rolling Girls",
+  ["official"] = {
+   [1] = "THE ROLLING GIRLS",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10785] = {
+  ["main"] = "Wake Up Girl Zoo!",
+  ["official"] = {
+   [1] = "うぇいくあっぷがーるZOO!",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10786] = {
+  ["main"] = "Ginga Jinpuu Jinraiger",
+  ["official"] = {
+   [1] = "銀河神風ジンライガー",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10787] = {
+  ["main"] = "Koori no Kuni no Misuke",
+  ["official"] = {
+   [1] = "氷の国のミースケ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10790] = {
+  ["main"] = "Shin Doha Kokusai Kuukou",
+  ["official"] = {
+   [1] = "新ドーハ国際空港",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10791] = {
+  ["main"] = "Sri Lanka Kousokudouro",
+  ["official"] = {
+   [1] = "スリランカ高速道路",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10792] = {
+  ["main"] = "Vietnam Noi Bai Kuukou",
+  ["official"] = {
+   [1] = "ベトナム ノイバイ空港",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10793] = {
+  ["main"] = "Oppai Gakuen Marching Band Bu!",
+  ["official"] = {
+   [1] = "おっぱい学園マーチングバンド部!",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10794] = {
+  ["main"] = "Yume ga Kanau Basho",
+  ["official"] = {
+   [1] = "夢がかなう場所",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10795] = {
+  ["main"] = "Mahou Shoujo Lyrical Nanoha Vivid",
+  ["official"] = {
+   [1] = "魔法少女リリカルなのはViVid",
+   },
+  ["short"] = {
+   [1] = "Nanoha ViVid",
+   },
+  ["syn"] = {
+   [1] = "Magical Girl Lyrical Nanoha Vivid",
+   [2] = "魔法少女リリカルなのは ViVid",
+   },
+  },
+ [10796] = {
+  ["main"] = "Young-sim",
+  ["official"] = {
+   [1] = "영심이",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10798] = {
+  ["main"] = "Minna Atsumare! Falcom Gakuen 2",
+  ["official"] = {
+   [1] = "みんな集まれ! ファルコム学園 2",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10799] = {
+  ["main"] = "Flying Superboard",
+  ["official"] = {
+   [1] = "날아라 슈퍼보드",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10800] = {
+  ["main"] = "Under the Dog",
+  ["official"] = {
    },
   ["short"] = {
    },
