@@ -95,10 +95,10 @@ return {
    },
   },
  [6] = {
-  ["main"] = "Seikai no Danshou",
+  ["main"] = "Seikai no Danshou: Tanjou",
   ["official"] = {
    [1] = "Crest of the Stars: Birth",
-   [2] = "星界の断章",
+   [2] = "星界の断章 誕生",
    },
   ["short"] = {
    [1] = "SnD",
@@ -969,8 +969,9 @@ return {
   ["official"] = {
    [1] = "Trigun",
    [2] = "Ο Άνθρωπος των 60 Εκατομμυρίων Δολαρίων",
-   [3] = "トライガン",
-   [4] = "트라이건",
+   [3] = "Триган",
+   [4] = "トライガン",
+   [5] = "트라이건",
    },
   ["short"] = {
    },
@@ -5069,8 +5070,9 @@ return {
   ["main"] = "Kodomo no Omocha",
   ["official"] = {
    [1] = "Kodocha",
-   [2] = "Rossana",
-   [3] = "こどものおもちゃ",
+   [2] = "Kodomo no omocha",
+   [3] = "Rossana",
+   [4] = "こどものおもちゃ",
    },
   ["short"] = {
    [1] = "KnO",
@@ -10318,8 +10320,9 @@ return {
    [4] = "Les aventures de Sherlock Holmes",
    [5] = "Sherlock Holmes, a mesterkopó",
    [6] = "Sherlock Hound",
-   [7] = "شارلوك هولمز",
-   [8] = "名探偵ホームズ",
+   [7] = "Sherlock Koira",
+   [8] = "شارلوك هولمز",
+   [9] = "名探偵ホームズ",
    },
   ["short"] = {
    [1] = "holmes",
@@ -46527,7 +46530,7 @@ return {
    },
   },
  [3627] = {
-  ["main"] = "Paris no Isabel",
+  ["main"] = "Paris no Isabelle",
   ["official"] = {
    [1] = "Isabelle de Paris",
    [2] = "ريناد",
@@ -46539,7 +46542,7 @@ return {
   ["syn"] = {
    [1] = "Isabelle of Paris",
    [2] = "Pari no Isaberu",
-   [3] = "Paris no Isabelle",
+   [3] = "Paris no Isabel",
    },
   },
  [3628] = {
@@ -48771,13 +48774,13 @@ return {
  [4055] = {
   ["main"] = "Momotarou: Umi no Shinpei",
   ["official"] = {
-   [1] = "Momotaro - Divine Soldiers of the Sea",
-   [2] = "Momotaro, le divin soldat de la mer",
-   [3] = "桃太郎 海の神兵",
+   [1] = "Momotaro, le divin soldat de la mer",
+   [2] = "桃太郎 海の神兵",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Momotaro: Divine Soldiers of the Sea",
    },
   },
  [4056] = {
@@ -61437,6 +61440,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Sabu and Ichi`s Detective Tales",
    },
   },
  [5295] = {
@@ -71132,7 +71136,8 @@ return {
   ["main"] = "Kidou Senshi Gundam Unicorn",
   ["official"] = {
    [1] = "Mobile Suit Gundam Unicorn",
-   [2] = "機動戦士ガンダムUC (ユニコーン)",
+   [2] = "机动战士敢达 UC",
+   [3] = "機動戦士ガンダムUC (ユニコーン)",
    },
   ["short"] = {
    [1] = "gundam unicorn",
@@ -73329,12 +73334,12 @@ return {
   ["main"] = "Ultraman USA",
   ["official"] = {
    [1] = "Ultraman, comeza a aventura",
-   [2] = "ウルトラマンUSA",
+   [2] = "Ultraman: The Adventure Begins",
+   [3] = "ウルトラマンUSA",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Ultraman: The Adventure Begins",
    },
   },
  [6750] = {
@@ -77977,11 +77982,12 @@ return {
  [7210] = {
   ["main"] = "Idol Ace",
   ["official"] = {
-   [1] = "アイドルA",
+   [1] = "アイドルA[エース]",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Idol A",
    },
   },
  [7213] = {
@@ -87119,18 +87125,19 @@ return {
  [8141] = {
   ["main"] = "Coquelicot-zaka kara",
   ["official"] = {
-   [1] = "Der Mohnblumenberg",
-   [2] = "From Up On Poppy Hill",
-   [3] = "Kukkulan tyttö, sataman poika",
-   [4] = "La Colina de las Amapolas",
-   [5] = "La collina dei papaveri",
-   [6] = "La colline aux coquelicots",
-   [7] = "Makowe wzgórze",
-   [8] = "Oppe på Valmuebakken",
-   [9] = "Uppe på vallmokullen",
-   [10] = "От върха на маковия хълм",
-   [11] = "Со склонов Кокурико",
-   [12] = "コクリコ坂から",
+   [1] = "Da Colina Kokuriko",
+   [2] = "Der Mohnblumenberg",
+   [3] = "From Up On Poppy Hill",
+   [4] = "Kukkulan tyttö, sataman poika",
+   [5] = "La Colina de las Amapolas",
+   [6] = "La collina dei papaveri",
+   [7] = "La colline aux coquelicots",
+   [8] = "Makowe wzgórze",
+   [9] = "Oppe på Valmuebakken",
+   [10] = "Uppe på vallmokullen",
+   [11] = "От върха на маковия хълм",
+   [12] = "Со склонов Кокурико",
+   [13] = "コクリコ坂から",
    },
   ["short"] = {
    },
@@ -100148,8 +100155,9 @@ return {
    [12] = "Zrywa się wiatr",
    [13] = "Ветер крепчает",
    [14] = "Вятър се надига",
-   [15] = "風立ちぬ",
-   [16] = "바람이 분다",
+   [15] = "起风了",
+   [16] = "風立ちぬ",
+   [17] = "바람이 분다",
    },
   ["short"] = {
    },
@@ -101801,10 +101809,11 @@ return {
  [9687] = {
   ["main"] = "Space Pirate Captain Harlock",
   ["official"] = {
-   [1] = "Căpitanul Harlock: Pirat Spațial",
-   [2] = "SPACE PIRATE CAPTAIN HARLOCK",
-   [3] = "Space Pirate Captain Harlock",
-   [4] = "Космический пират Харлок",
+   [1] = "Capitão Harlock: Pirata do Espaço",
+   [2] = "Căpitanul Harlock: Pirat Spațial",
+   [3] = "SPACE PIRATE CAPTAIN HARLOCK",
+   [4] = "Space Pirate Captain Harlock",
+   [5] = "Космический пират Харлок",
    },
   ["short"] = {
    },
@@ -103422,8 +103431,7 @@ return {
   ["main"] = "Dia no Ace",
   ["official"] = {
    [1] = "Ace of the Diamond",
-   [2] = "Диамантеният Ас",
-   [3] = "ダイヤのA[エース]",
+   [2] = "ダイヤのA[エース]",
    },
   ["short"] = {
    },
@@ -103432,6 +103440,7 @@ return {
    [2] = "Daiya no A",
    [3] = "Daiya no Ace",
    [4] = "Diamond no Ace",
+   [5] = "Диамантеният ас",
    },
   },
  [9882] = {
@@ -103611,9 +103620,9 @@ return {
    },
   },
  [9900] = {
-  ["main"] = "Fate/Kaleid Liner Prisma Illya (2014)",
+  ["main"] = "Fate/Kaleid Liner Prisma Illya: Undoukai de Dance!",
   ["official"] = {
-   [1] = "Fate/kaleid liner プリズマ☆イリヤ (2014)",
+   [1] = "Fate/kaleid liner プリズマ☆イリヤ 運動会 DE ダンス!",
    },
   ["short"] = {
    [1] = "Fate Kaleid OVA",
@@ -104466,7 +104475,7 @@ return {
   ["official"] = {
    [1] = "No Game No Life",
    [2] = "ノーゲーム・ノーライフ",
-   [3] = "不游戏无人生",
+   [3] = "游戏人生",
    [4] = "노 게임 노 라이프",
    },
   ["short"] = {
@@ -104578,6 +104587,7 @@ return {
    [1] = "ガールズ&パンツァー これが本当のアンツィオ戦です!",
    },
   ["short"] = {
+   [1] = "GuP Anzio OVA",
    },
   ["syn"] = {
    },
@@ -105981,8 +105991,9 @@ return {
   ["main"] = "Black Bullet",
   ["official"] = {
    [1] = "Black Bullet",
-   [2] = "ブラック・ブレット",
-   [3] = "黑色子弹",
+   [2] = "Чёрная Пуля",
+   [3] = "ブラック・ブレット",
+   [4] = "黑色子弹",
    },
   ["short"] = {
    },
@@ -106153,7 +106164,8 @@ return {
    [3] = "Kuro no Sumika Chronus",
    [4] = "Wakate Animator Ikusei Project 2014 4",
    [5] = "Young Animator Training Project 2014 4",
-   [6] = "若手アニメーター育成プロジェクト 2014 4",
+   [6] = "Вестники смерти - Хронус",
+   [7] = "若手アニメーター育成プロジェクト 2014 4",
    },
   },
  [10202] = {
@@ -106613,6 +106625,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Crayon Shin-chan Movie 22",
    },
   },
  [10253] = {
@@ -106740,7 +106753,8 @@ return {
  [10274] = {
   ["main"] = "Mushishi Tokubetsu Hen: Hihamu Kage",
   ["official"] = {
-   [1] = "蟲師 特別篇 日蝕む翳",
+   [1] = "虫师 蚀日之翳",
+   [2] = "蟲師 特別篇 日蝕む翳",
    },
   ["short"] = {
    },
@@ -107482,8 +107496,7 @@ return {
    [1] = "Sword Art Online 2: Phantom Bullet",
    [2] = "Sword Art Online II",
    [3] = "هنر تیراندازی آنلاین",
-   [4] = "هنر شمشیر زنی انلاین",
-   [5] = "ソードアート・オンラインII",
+   [4] = "ソードアート・オンラインII",
    },
   ["short"] = {
    [1] = "SAO 2",
@@ -107491,11 +107504,12 @@ return {
    [3] = "SAOII",
    },
   ["syn"] = {
-   [1] = "GGO",
-   [2] = "Gun Art Online",
-   [3] = "Sword Art Online 2",
-   [4] = "Sword Art Online II: Phantom Bullet",
-   [5] = "هنر شمشیر زنی آنلاین 2 : گلوله فانتوم",
+   [1] = "2 هنر شمشیرزنی آنلاین",
+   [2] = "GGO",
+   [3] = "Gun Art Online",
+   [4] = "Sword Art Online 2",
+   [5] = "Sword Art Online II: Phantom Bullet",
+   [6] = "هنر شمشیر زنی آنلاین 2 : گلوله فانتوم",
    },
   },
  [10378] = {
@@ -107543,7 +107557,8 @@ return {
   ["main"] = "Mushishi Zoku Shou",
   ["official"] = {
    [1] = "Mushi-Shi: Next Passage",
-   [2] = "蟲師 続章",
+   [2] = "虫师 续章",
+   [3] = "蟲師 続章",
    },
   ["short"] = {
    [1] = "Mushishi S2",
@@ -107722,6 +107737,7 @@ return {
    [2] = "Ping Pong the Animation",
    [3] = "Пинг-понг анимацията",
    [4] = "ピンポン THE ANIMATION",
+   [5] = "乒乓 THE ANIMATION",
    },
   ["short"] = {
    [1] = "pingpong",
@@ -107736,7 +107752,7 @@ return {
    [1] = "Tokyo Ghoul",
    [2] = "قول توکیو",
    [3] = "东京喰种",
-   [4] = "東京喰種[トウキョウグール]",
+   [4] = "東京喰種[トーキョーグール] Tokyo Ghoul",
    },
   ["short"] = {
    },
@@ -108070,6 +108086,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Seiken Tsukai no Kinju Eishou",
    },
   },
  [10439] = {
@@ -108782,6 +108799,7 @@ return {
    [1] = "四月は君の嘘",
    },
   ["short"] = {
+   [1] = "kimiuso",
    },
   ["syn"] = {
    },
@@ -109271,8 +109289,9 @@ return {
  [10596] = {
   ["main"] = "Nanatsu no Taizai: The Seven Deadly Sins",
   ["official"] = {
-   [1] = "Седемте смъртни гряха",
-   [2] = "七つの大罪 The Seven Deadly Sins",
+   [1] = "Seven Deadly Sins",
+   [2] = "Седемте смъртни гряха",
+   [3] = "七つの大罪 The Seven Deadly Sins",
    },
   ["short"] = {
    },
@@ -109882,7 +109901,7 @@ return {
    },
   },
  [10667] = {
-  ["main"] = "Hozuki no Reitetsu OAD",
+  ["main"] = "Hoozuki no Reitetsu OAD",
   ["official"] = {
    [1] = "鬼灯の冷徹 OAD",
    },
@@ -110177,6 +110196,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Girl Friend Beta",
    },
   },
  [10710] = {
@@ -110538,6 +110558,7 @@ return {
    [1] = "結城友奈は勇者である",
    },
   ["short"] = {
+   [1] = "yuyuyu",
    },
   ["syn"] = {
    },
@@ -110807,6 +110828,7 @@ return {
    [1] = "Bonjour♪恋味パティスリー",
    },
   ["short"] = {
+   [1] = "bonkoi",
    },
   ["syn"] = {
    },
@@ -110977,6 +110999,56 @@ return {
  [10800] = {
   ["main"] = "Under the Dog",
   ["official"] = {
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10803] = {
+  ["main"] = "Haiyore! Nyaruko-san F",
+  ["official"] = {
+   [1] = "這いよれ! ニャル子さんF",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10804] = {
+  ["main"] = "Fate/Kaleid Liner Prisma Illya Zwei! (2015)",
+  ["official"] = {
+   [1] = "Fate/kaleid liner プリズマ☆イリヤ 2wei! (2015)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10807] = {
+  ["main"] = "Samurai Hormone The Animation",
+  ["official"] = {
+   [1] = "サムライホルモン THE ANIMATION",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10808] = {
+  ["main"] = "Fuusen Inu Tinny",
+  ["official"] = {
+   [1] = "ふうせんいぬティニー",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10809] = {
+  ["main"] = "Brothers Conflict (2014)",
+  ["official"] = {
+   [1] = "BROTHERS CONFLICT (2014)",
    },
   ["short"] = {
    },
