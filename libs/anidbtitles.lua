@@ -8878,8 +8878,7 @@ return {
    [2] = "Nadja Applefield",
    [3] = "Nadja Applefields",
    [4] = "Nadja del mañana",
-   [5] = "Tomorrow`s Nadja",
-   [6] = "明日のナージャ",
+   [5] = "明日のナージャ",
    },
   ["short"] = {
    [1] = "Nadja",
@@ -8887,8 +8886,9 @@ return {
    },
   ["syn"] = {
    [1] = "Nadja of Tomorrow",
-   [2] = "نادجا الغد",
-   [3] = "明日的娜嘉",
+   [2] = "Tomorrow`s Nadja",
+   [3] = "نادجا الغد",
+   [4] = "明日的娜嘉",
    },
   },
  [521] = {
@@ -12770,18 +12770,19 @@ return {
    [4] = "Sinbad de Zeeman",
    [5] = "Sinbad le marin",
    [6] = "Sindbad",
-   [7] = "Szindbád",
-   [8] = "Σεβάχ ο Θαλασσινός",
-   [9] = "ماجراهای سندباد",
-   [10] = "مغامرات سندباد",
-   [11] = "アラビアンナイト シンドバットの冒険",
+   [7] = "Sindbad the Sailor",
+   [8] = "Szindbád",
+   [9] = "Σεβάχ ο Θαλασσινός",
+   [10] = "ماجراهای سندباد",
+   [11] = "مغامرات سندباد",
+   [12] = "アラビアンナイト シンドバットの冒険",
    },
   ["short"] = {
    [1] = "Sindbad",
    },
   ["syn"] = {
-   [1] = "Przygody Sindbada Żeglarza",
-   [2] = "Sindbad the Sailor",
+   [1] = "Arabian Nights: Sinbad`s Adventures",
+   [2] = "Przygody Sindbada Żeglarza",
    [3] = "The Arabian Nights: Adventures of Sinbad",
    },
   },
@@ -20980,9 +20981,10 @@ return {
    [5] = "Super Cerdita",
    [6] = "Super Pig",
    [7] = "Superświnka",
-   [8] = "סופר פיג",
-   [9] = "บูริน หมูอวกาศ",
-   [10] = "愛と勇気のピッグガール とんでぶーりん",
+   [8] = "Супер поросенок",
+   [9] = "סופר פיג",
+   [10] = "บูริน หมูอวกาศ",
+   [11] = "愛と勇気のピッグガール とんでぶーりん",
    },
   ["short"] = {
    },
@@ -26139,7 +26141,7 @@ return {
   ["main"] = "Kerokko Demetan",
   ["official"] = {
    [1] = "Abenteuer am Regenbogenteich",
-   [2] = "Adventures On Rainbow Pond",
+   [2] = "Adventures on Rainbow Pond",
    [3] = "Demetan: de Kikkerjongen",
    [4] = "Démétan la petite grenouille",
    [5] = "La Banda Dei Ranocchi",
@@ -30703,6 +30705,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "纹样传说",
    },
   },
  [2165] = {
@@ -31437,7 +31440,7 @@ return {
    },
   },
  [2215] = {
-  ["main"] = "Ali Baba to 40-hiki no Touzoku",
+  ["main"] = "Ali Baba to Yonjuppiki no Touzoku",
   ["official"] = {
    [1] = "Alibaba und die 40 Räuber",
    [2] = "Alí Babá y los 40 ladrones",
@@ -31446,13 +31449,11 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Ali Baba to Yonju-hiki no Touzoku",
-   [2] = "Ali Baba to Yonjuppiki no Touzoku",
-   [3] = "Ali Cats und der fliegende Professor",
-   [4] = "Alibaba and the Forty Theives",
-   [5] = "Alibaba`s Revenge",
-   [6] = "Али-Баба и 40 разбойников",
-   [7] = "علي بابا والأربعين حرامي",
+   [1] = "Ali Cats und der fliegende Professor",
+   [2] = "Alibaba and the Forty Theives",
+   [3] = "Alibaba`s Revenge",
+   [4] = "Али-Баба и 40 разбойников",
+   [5] = "علي بابا والأربعين حرامي",
    },
   },
  [2216] = {
@@ -33627,7 +33628,7 @@ return {
  [2382] = {
   ["main"] = "Cat Ninden Teyandee",
   ["official"] = {
-   [1] = "Los Gatos Samurai",
+   [1] = "Los gatos samurái",
    [2] = "Os Gatos Samurai",
    [3] = "Samourai Pizza Cats",
    [4] = "Samurai Pizza Cats",
@@ -33640,11 +33641,10 @@ return {
    [1] = "SPC",
    },
   ["syn"] = {
-   [1] = "Kyatto-Ninden Teyandee",
-   [2] = "Legendary Ninja Cats",
-   [3] = "Os Gatos Samurai Pizza",
-   [4] = "История кошек-ниндзя",
-   [5] = "Коты-Самураи",
+   [1] = "Legendary Ninja Cats",
+   [2] = "Os Gatos Samurai Pizza",
+   [3] = "История кошек-ниндзя",
+   [4] = "Коты-Самураи",
    },
   },
  [2383] = {
@@ -39271,12 +39271,13 @@ return {
   ["main"] = "Wonder Three",
   ["official"] = {
    [1] = "The Amazing 3",
-   [2] = "W3(ワンダースリー)",
+   [2] = "W3[ワンダースリー]",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "W3",
+   [1] = "The Amazing Three",
+   [2] = "W3",
    },
   },
  [2877] = {
@@ -42218,9 +42219,9 @@ return {
  [3208] = {
   ["main"] = "F",
   ["official"] = {
-   [1] = "F - Motori in pista",
-   [2] = "F-エフ",
-   [3] = "F. A Todo Gas",
+   [1] = "F-エフ",
+   [2] = "F. A Todo Gas",
+   [3] = "F: Motori in Pista",
    },
   ["short"] = {
    },
@@ -44168,8 +44169,9 @@ return {
   ["official"] = {
    [1] = "Mushi-Shi",
    [2] = "Mushishi",
-   [3] = "蟲師",
-   [4] = "충사",
+   [3] = "虫师",
+   [4] = "蟲師",
+   [5] = "충사",
    },
   ["short"] = {
    [1] = "Mushi",
@@ -44188,8 +44190,7 @@ return {
    [11] = "מושישי",
    [12] = "موشيشي",
    [13] = "กีฏจารย์กับอาถรรพ์แมลงพิสดาร",
-   [14] = "虫师",
-   [15] = "무시시",
+   [14] = "무시시",
    },
   },
  [3434] = {
@@ -45609,7 +45610,7 @@ return {
    },
   },
  [3560] = {
-  ["main"] = "Captain Tsubasa: Ayaushi! Zen Nihon Jr.",
+  ["main"] = "Captain Tsubasa: Ayaushi! Zen Nippon Jr.",
   ["official"] = {
    [1] = "Campeões: Oliver e Benji - O Jogo da Vingança",
    [2] = "Olive et Tom - Le défi européen : la revanche",
@@ -49592,10 +49593,11 @@ return {
  [4121] = {
   ["main"] = "NHK ni Youkoso!",
   ["official"] = {
-   [1] = "NHKにようこそ!",
-   [2] = "Welcome to the N-H-K",
-   [3] = "Welcome to the N.H.K",
-   [4] = "สมาคมคนหนีโลก",
+   [1] = "!به ان اچ کی خوش آمدید",
+   [2] = "NHKにようこそ!",
+   [3] = "Welcome to the N-H-K",
+   [4] = "Welcome to the N.H.K",
+   [5] = "สมาคมคนหนีโลก",
    },
   ["short"] = {
    [1] = "nhk",
@@ -59334,6 +59336,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Space Boy Soran",
    },
   },
  [5075] = {
@@ -59344,6 +59347,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Space Boy Soran (1965)",
    },
   },
  [5076] = {
@@ -71520,7 +71524,8 @@ return {
  [6561] = {
   ["main"] = "Choukou Sennin Haruka",
   ["official"] = {
-   [1] = "超昂閃忍ハルカ",
+   [1] = "Righteous Ninja Haruka",
+   [2] = "超昂閃忍ハルカ",
    },
   ["short"] = {
    },
@@ -84352,7 +84357,7 @@ return {
    },
   },
  [7854] = {
-  ["main"] = "Hello Kitty no Sambiki no Kobuta",
+  ["main"] = "Hello Kitty no Sanbiki no Kobuta",
   ["official"] = {
    [1] = "Hello Kitty, Mimmy and Dear Daniel in the Three Little Pigs",
    [2] = "ハローキティの3匹の子ぶた",
@@ -84725,7 +84730,7 @@ return {
    [1] = "Pokemon Nero & Bianco",
    [2] = "Pokemon: Black & White",
    [3] = "Pokemon: Czerń i Biel",
-   [4] = "Pokémon Preto e Branco",
+   [4] = "Pokémon: Preto e Branco",
    [5] = "ポケットモンスター ベストウイッシュ",
    },
   ["short"] = {
@@ -91076,6 +91081,7 @@ return {
    },
   ["short"] = {
    [1] = "HxH 2011",
+   [2] = "hxh2",
    },
   ["syn"] = {
    [1] = "Hunter X Hunter",
@@ -93795,11 +93801,12 @@ return {
    [2] = "Djeca vukovi",
    [3] = "Les enfants loups - Ame & Yuki",
    [4] = "Vlčí děti",
-   [5] = "Wolf Children",
-   [6] = "Wolf Children - Los Niños Lobo",
-   [7] = "Волчьи дети Амэ и Юки",
-   [8] = "おおかみこどもの雨と雪",
-   [9] = "狼的孩子雨和雪",
+   [5] = "Wilcze dzieci",
+   [6] = "Wolf Children",
+   [7] = "Wolf Children - Los Niños Lobo",
+   [8] = "Волчьи дети Амэ и Юки",
+   [9] = "おおかみこどもの雨と雪",
+   [10] = "狼的孩子雨和雪",
    },
   ["short"] = {
    [1] = "Wolfskinder",
@@ -94817,7 +94824,8 @@ return {
  [8937] = {
   ["main"] = "Asura",
   ["official"] = {
-   [1] = "アシュラ",
+   [1] = "Асура",
+   [2] = "アシュラ",
    },
   ["short"] = {
    },
@@ -95421,11 +95429,13 @@ return {
   ["official"] = {
    [1] = "From the New World",
    [2] = "Shin Sekai Yori: Do Novo Mundo",
-   [3] = "新世界より",
-   [4] = "来自新世界",
+   [3] = "Из Нового Света",
+   [4] = "新世界より",
+   [5] = "来自新世界",
    },
   ["short"] = {
-   [1] = "SSY",
+   [1] = "FTNW",
+   [2] = "SSY",
    },
   ["syn"] = {
    [1] = "Iš naujojo pasaulio",
@@ -96224,7 +96234,7 @@ return {
    },
   },
  [9089] = {
-  ["main"] = "Little Charo: Touhoku-hen",
+  ["main"] = "Little Charo: Touhoku Hen",
   ["official"] = {
    [1] = "リトル・チャロ東北編",
    },
@@ -97191,8 +97201,9 @@ return {
    },
   ["syn"] = {
    [1] = "Boku wa Tomodachi ga Sukunai Add-on Disc",
-   [2] = "僕は友達が少ない あどおんでぃすく",
-   [3] = "我的朋友很少 ova",
+   [2] = "Haganai: Add-on Disc",
+   [3] = "僕は友達が少ない あどおんでぃすく",
+   [4] = "我的朋友很少 ova",
    },
   },
  [9207] = {
@@ -99510,7 +99521,8 @@ return {
  [9456] = {
   ["main"] = "Saint Onii-san (2012)",
   ["official"] = {
-   [1] = "聖☆おにいさん (2012)",
+   [1] = "Светите братя",
+   [2] = "聖☆おにいさん (2012)",
    },
   ["short"] = {
    },
@@ -99993,7 +100005,7 @@ return {
    },
   },
  [9500] = {
-  ["main"] = "Gekijouban Shimajirou to Fufu no Daibouken: Sukue! Nana-iro no Hana",
+  ["main"] = "Gekijouban Shimajirou to Fufu no Daibouken: Sukue! Nanairo no Hana",
   ["official"] = {
    [1] = "劇場版 しまじろうと フフの だいぼうけん ~すくえ! 七色の花~",
    },
@@ -100463,12 +100475,13 @@ return {
    [1] = "Advancing Giants",
    [2] = "Atacul Titanilor",
    [3] = "Shingeki no Kyojin TV",
-   [4] = "Атака Титанів",
-   [5] = "Вторжение Гигантов",
-   [6] = "На бій проти титанів",
-   [7] = "Нашествие на гиганти",
-   [8] = "Поход срещу титаните",
-   [9] = "מתקפת הטיטאנים",
+   [4] = "Η Επίθεση των Τιτάνων",
+   [5] = "Атака Титанів",
+   [6] = "Вторжение Гигантов",
+   [7] = "На бій проти титанів",
+   [8] = "Нашествие на гиганти",
+   [9] = "Поход срещу титаните",
+   [10] = "מתקפת הטיטאנים",
    },
   },
  [9542] = {
@@ -100918,15 +100931,15 @@ return {
   ["main"] = "Yowamushi Pedal",
   ["official"] = {
    [1] = "En selle, Sakamichi !",
-   [2] = "Плахият колоездач",
-   [3] = "弱虫ペダル",
+   [2] = "弱虫ペダル",
    },
   ["short"] = {
    [1] = "yowapeda",
    },
   ["syn"] = {
    [1] = "Плахият велосипедист",
-   [2] = "Трусливый Велосипедист",
+   [2] = "Плахият колоездач",
+   [3] = "Трусливый Велосипедист",
    },
   },
  [9592] = {
@@ -101643,7 +101656,7 @@ return {
    },
   },
  [9667] = {
-  ["main"] = "Tetsujin 28-gou Gao!",
+  ["main"] = "Tetsujin 28 Gou Gao!",
   ["official"] = {
    [1] = "鉄人28号ガオ!",
    },
@@ -103674,6 +103687,7 @@ return {
   ["main"] = "Love Stage!!",
   ["official"] = {
    [1] = "LOVE STAGE!!",
+   [2] = "Любовна сцена!!",
    },
   ["short"] = {
    [1] = "ラブステ",
@@ -104474,9 +104488,10 @@ return {
   ["main"] = "No Game No Life",
   ["official"] = {
    [1] = "No Game No Life",
-   [2] = "ノーゲーム・ノーライフ",
-   [3] = "游戏人生",
-   [4] = "노 게임 노 라이프",
+   [2] = "Игра на выживание (2014)",
+   [3] = "ノーゲーム・ノーライフ",
+   [4] = "游戏人生",
+   [5] = "노 게임 노 라이프",
    },
   ["short"] = {
    [1] = "NGNL",
@@ -104622,7 +104637,7 @@ return {
   ["main"] = "Gekijouban Hunter x Hunter: The Last Mission",
   ["official"] = {
    [1] = "Hunter x Hunter: The Last Mission",
-   [2] = "劇場版 HUNTERxHUNTER THE LAST MISSION",
+   [2] = "劇場版 HUNTERxHUNTER The LAST MISSION",
    },
   ["short"] = {
    [1] = "HxH Last Mission",
@@ -104837,9 +104852,9 @@ return {
    },
   },
  [10046] = {
-  ["main"] = "Hanamonogatari",
+  ["main"] = "Hanamonogatari: Suruga Devil",
   ["official"] = {
-   [1] = "花物語",
+   [1] = "花物語 するがデビル",
    [2] = "花物语",
    },
   ["short"] = {
@@ -104965,7 +104980,8 @@ return {
  [10060] = {
   ["main"] = "Aoki Uru",
   ["official"] = {
-   [1] = "蒼きウル",
+   [1] = "Blue Uru",
+   [2] = "蒼きウル",
    },
   ["short"] = {
    },
@@ -107195,16 +107211,6 @@ return {
   ["syn"] = {
    },
   },
- [10324] = {
-  ["main"] = "Nagato Yuki-chan no Shoushitsu",
-  ["official"] = {
-   [1] = "長門有希ちゃんの消失",
-   },
-  ["short"] = {
-   },
-  ["syn"] = {
-   },
-  },
  [10325] = {
   ["main"] = "Mitsuwano",
   ["official"] = {
@@ -107440,7 +107446,7 @@ return {
  [10369] = {
   ["main"] = "Chou Akuukan Bouheki Cheese Neapolitan",
   ["official"] = {
-   [1] = "超亜空間防壁チーズ・ナポリタン",
+   [1] = "超亜空間防壁チーズ・ナポリタン Cheese Neapolitan",
    },
   ["short"] = {
    },
@@ -107750,15 +107756,15 @@ return {
   ["main"] = "Tokyo Ghoul",
   ["official"] = {
    [1] = "Tokyo Ghoul",
-   [2] = "قول توکیو",
-   [3] = "东京喰种",
-   [4] = "東京喰種[トーキョーグール] Tokyo Ghoul",
+   [2] = "东京喰种",
+   [3] = "東京喰種[トーキョーグール] Tokyo Ghoul",
    },
   ["short"] = {
    },
   ["syn"] = {
    [1] = "Токийски гул",
    [2] = "Токийско чудовище",
+   [3] = "غول توکیو",
    },
   },
  [10402] = {
@@ -108165,6 +108171,7 @@ return {
    [3] = "آلدنواح.صفر",
    },
   ["short"] = {
+   [1] = "A.Z",
    },
   ["syn"] = {
    [1] = "Алдной.Генезис",
@@ -108242,14 +108249,15 @@ return {
    },
   },
  [10456] = {
-  ["main"] = "Terra Formars: Bugs2 2599",
+  ["main"] = "Terra Formars OAD",
   ["official"] = {
-   [1] = "TERRA FORMARS BUGS2 2599",
+   [1] = "TERRA FORMARS OAD",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "テラフォーマーズ OVA",
+   [1] = "Terra Formars Bugs2 2599",
+   [2] = "テラフォーマーズ OVA",
    },
   },
  [10457] = {
@@ -108417,7 +108425,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "フランチェスカ",
+   [1] = "Francesca: Girls Be Ambitious",
+   [2] = "フランチェスカ",
    },
   },
  [10498] = {
@@ -108732,6 +108741,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "A School Where Love Is Unnecessary",
    },
   },
  [10534] = {
@@ -109148,16 +109158,6 @@ return {
   ["main"] = "Sore Ike! Anpanman: Ringo Bouya to Minna no Negai",
   ["official"] = {
    [1] = "それいけ! アンパンマン りんごぼうやとみんなの願い",
-   },
-  ["short"] = {
-   },
-  ["syn"] = {
-   },
-  },
- [10582] = {
-  ["main"] = "Ryoutei no Aji: Tappuri Otoku",
-  ["official"] = {
-   [1] = "料亭の味 たっぷりお徳",
    },
   ["short"] = {
    },
@@ -109928,6 +109928,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Nozomi x Kimio",
    },
   },
  [10673] = {
@@ -109953,7 +109954,8 @@ return {
  [10676] = {
   ["main"] = "Danna ga Nani o Itteiru ka Wakaranai Ken",
   ["official"] = {
-   [1] = "旦那が何を言っているかわからない件",
+   [1] = "I Can`t Understand What My Husband Is Saying",
+   [2] = "旦那が何を言っているかわからない件",
    },
   ["short"] = {
    },
@@ -110543,9 +110545,9 @@ return {
    },
   },
  [10749] = {
-  ["main"] = "Magic Kaito (2014)",
+  ["main"] = "Magic Kaito 1412",
   ["official"] = {
-   [1] = "まじっく快斗 (2014)",
+   [1] = "まじっく快斗1412",
    },
   ["short"] = {
    },
@@ -110903,50 +110905,10 @@ return {
   ["syn"] = {
    },
   },
- [10790] = {
-  ["main"] = "Shin Doha Kokusai Kuukou",
-  ["official"] = {
-   [1] = "新ドーハ国際空港",
-   },
-  ["short"] = {
-   },
-  ["syn"] = {
-   },
-  },
- [10791] = {
-  ["main"] = "Sri Lanka Kousokudouro",
-  ["official"] = {
-   [1] = "スリランカ高速道路",
-   },
-  ["short"] = {
-   },
-  ["syn"] = {
-   },
-  },
- [10792] = {
-  ["main"] = "Vietnam Noi Bai Kuukou",
-  ["official"] = {
-   [1] = "ベトナム ノイバイ空港",
-   },
-  ["short"] = {
-   },
-  ["syn"] = {
-   },
-  },
  [10793] = {
   ["main"] = "Oppai Gakuen Marching Band Bu!",
   ["official"] = {
    [1] = "おっぱい学園マーチングバンド部!",
-   },
-  ["short"] = {
-   },
-  ["syn"] = {
-   },
-  },
- [10794] = {
-  ["main"] = "Yume ga Kanau Basho",
-  ["official"] = {
-   [1] = "夢がかなう場所",
    },
   ["short"] = {
    },
@@ -110987,13 +110949,14 @@ return {
    },
   },
  [10799] = {
-  ["main"] = "Flying Superboard",
+  ["main"] = "Narara Superboard",
   ["official"] = {
    [1] = "날아라 슈퍼보드",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Flying Superboard",
    },
   },
  [10800] = {
@@ -111049,6 +111012,88 @@ return {
   ["main"] = "Brothers Conflict (2014)",
   ["official"] = {
    [1] = "BROTHERS CONFLICT (2014)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10810] = {
+  ["main"] = "Seitokai Yakuindomo * OVA",
+  ["official"] = {
+   [1] = "生徒会役員共＊ OVA",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10811] = {
+  ["main"] = "Yuri Kuma Arashi",
+  ["official"] = {
+   [1] = "ユリ熊嵐",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Yurikuma Arashi",
+   },
+  },
+ [10812] = {
+  ["main"] = "Ikkitousen: Extravaganza Epoch",
+  ["official"] = {
+   [1] = "一騎当千 Extravaganza Epoch",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10813] = {
+  ["main"] = "Owari no Seraph",
+  ["official"] = {
+   [1] = "終わりのセラフ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Seraph of the End",
+   },
+  },
+ [10814] = {
+  ["main"] = "Tribe Cool Crew",
+  ["official"] = {
+   [1] = "トライブクルクル",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10815] = {
+  ["main"] = "Nagato Yuki-chan no Shoushitsu",
+  ["official"] = {
+   [1] = "長門有希ちゃんの消失",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10816] = {
+  ["main"] = "Over Lord",
+  ["official"] = {
+   [1] = "オーバーロード",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10817] = {
+  ["main"] = "Ao no Exorcist Specials",
+  ["official"] = {
+   [1] = "青の祓魔師(エクソシスト) 裏エク",
    },
   ["short"] = {
    },
