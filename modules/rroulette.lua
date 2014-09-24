@@ -96,11 +96,11 @@ return {
 			table.sort(stats, function(a,b) return a.ratio < b.ratio end)
 
 			local out = {}
-			for i=1, math.min(#stats, 5) do
+			for i=1, #stats do
 				table.insert(out, string.format('%s (%.1f%%)', stats[i].nick, (1 - stats[i].ratio) * 100))
 			end
 
-			say('Survival rate: %s', table.concat(out, ', '))
+			say('Survival rate: %s', ivar2.util.nonickalert(self.channels[destination].nicks, table.concat(out, ', ')))
 		end,
 	}
 }
