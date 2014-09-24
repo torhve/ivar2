@@ -48,6 +48,67 @@ local split = function(str, delim)
   return _accum_0
 end
 
+local translateWords = function(str, callback, fixCase, nickpat)
+	-- Usage: etc.translateWords(s ,callback) the callback can return new word, false to skip, or nil to keep the same word.
+	local str = assert(str)
+	local callback = assert(callback, "Callback expected")
+	local fixCase = fixCase == nil or fixCase == true
+	local nickpat = nickpat
+
+	local prev = 1
+	local result = ""
+	local pat = "()([%w'%-]+)()"
+	if nickpat then
+	  pat = "()([%w_'%-%{%}%[%]`%^]+)()"
+	end
+	for wpos, w, wposEnd in str:gmatch(pat) do
+	  local wnew = callback(w)
+	  if wnew ~= false then
+		result = result .. str:sub(prev, wpos - 1)
+		if wnew then
+		  if fixCase then
+			if w == w:lower() then
+			elseif w == w:upper() then
+			  wnew = wnew:upper()
+			elseif w:sub(1, 1) == w:sub(1, 1):upper() then
+			  wnew = wnew:sub(1, 1):upper() .. wnew:sub(2)
+			end
+		  end
+		  result = result .. wnew
+		else
+		  result = result .. w
+		end
+		if not wnew then
+		  wnew = w
+		end
+	  end
+	  prev = wposEnd
+	end
+	result = result .. str:sub(prev)
+	return result
+end
+
+local nonickalert = function(nicklist, str)
+	-- U+200B, ZERO WIDTH SPACE: "\226\128\139"
+	local s = str or ''
+	local nl = nicklist -- nicklist
+	local zwsp = "\226\128\142" -- LTR
+
+	nl = nl or {}
+
+	local nlkeys = {}
+	for nick, t in pairs(nicklist) do
+	  nlkeys[nick:lower()] = true
+	end
+
+	return translateWords(s, function(x)
+		if nlkeys[x:lower()] then
+			return x:sub(1, 1) .. zwsp .. x:sub(2)
+		end
+	end, nil, true)
+
+end
+
 return {
 	bold=bold,
 	underline=underline,
@@ -108,4 +169,6 @@ return {
 	lightgray=function(s)
 		return color(s, 15)
 	end,
+	nonickalert=nonickalert,
+	translateWords=translateWords,
 }
