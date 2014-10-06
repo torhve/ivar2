@@ -14,7 +14,7 @@ apo = P "'"
 -- With bad endings
 bend = P("ene") + P("en") + P("et") + P("ing") + P("ar") + P("ane") + P("er")
 -- Separated by or line end
-wend = S(',. ') + P(-1)
+wend = S(',.? ') + P(-1)
 -- Linestart exceptions
 bstart = maybe(P(' ')) * S[["'-]]
 
@@ -28,6 +28,6 @@ PRIVMSG:
   ".*'.*": (source, destination, line) =>
     matches = fullpatt\match(line)
     if matches
-      reply "Sylfest likar ikkje: %s", concat(matches, ', ')
+      say "Sylfest likar ikkje: %s", concat(matches, ', ')
 
 
