@@ -83,16 +83,19 @@ local handleObservationOutput = function(self, source, destination, data)
 		local windSpeed = handleData("windSpeed", data)
 		if windSpeed then windSpeed = windSpeed.name else windSpeed = '' end
 		local temperature = handleData('temperature', data)
-        local time = temperature.time:match('T([0-9][0-9]:[0-9][0-9])')
-		if windDirection then windDirection = windDirection.name else windDirection = '' end
-        local color
-        if tonumber(temperature.value) > 0 then
-            color = ivar2.util.red
-        else
-            color = ivar2.util.blue
-        end
-		-- Use the first result
-		return '%s°C, %s %s (%s, %s)', color(temperature.value), windDirection, windSpeed, name, time
+		-- Continue to next observation if no temperature
+		if temperature then
+			local time = temperature.time:match('T([0-9][0-9]:[0-9][0-9])')
+			if windDirection then windDirection = windDirection.name else windDirection = '' end
+			local color
+			if tonumber(temperature.value) > 0 then
+				color = ivar2.util.red
+			else
+				color = ivar2.util.blue
+			end
+			-- Use the first result
+			return '%s°C, %s %s (%s, %s)', color(temperature.value), windDirection, windSpeed, name, time
+		end
 	end
 end
 
