@@ -13,8 +13,14 @@ local openDb = function()
     return dbh
 end
 
+local function url_to_pattern(str)
+    str = str:gsub('^https?://', 'http%%://')
+    return str
+end
+
 -- check for existing url
 local checkOlds = function(dbh, source, destination, url) 
+    local url = url_to_pattern(url)
 
     -- create a select handle
     local sth = assert(dbh:prepare([[
@@ -24,12 +30,12 @@ local checkOlds = function(dbh, source, destination, url)
                 nick
             FROM urls
             WHERE 
-                url=? 
+                url LIKE ? 
             AND
-                channel=?
+                channel = ?
             ORDER BY time ASC
         ]]
-        ))
+    ))
 
     -- execute select with a url bound to variable
     sth:execute(url, destination)
@@ -54,6 +60,7 @@ local checkOlds = function(dbh, source, destination, url)
             ago = row[2]
             nick = row[3]
             when = when .. ', ' .. ago .. ' ago'
+            return nick, count, ago
         end
     end
 
