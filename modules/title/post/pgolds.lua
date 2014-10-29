@@ -18,12 +18,27 @@ local function url_to_pattern(str)
     return str
 end
 
+local function extract_youtube_id(str)
+    local patterns = {
+        "https?://www%.youtube%.com/watch%?.*v=([%d%a_%-]+)",
+        "https?://youtube%.com/watch%?.*v=([%d%a_%-]+)",
+        "https?://youtu.be/([%d%a_%-]+)",
+        "https?://youtube.com/v/([%d%a_%-]+)",
+        "https?://www.youtube.com/v/([%d%a_%-]+)"
+    }
+    for _,pattern in ipairs(patterns) do
+        local video_id = string.match(str, pattern)
+        if video_id ~= nil and string.len(video_id) < 20 then
+            return video_id
+        end
+    end
+end
+
 -- check for existing url
 local checkOlds = function(dbh, source, destination, url) 
-    local url = url_to_pattern(url)
 
     -- create a select handle
-    local sth = assert(dbh:prepare([[
+    local query = [[
             SELECT 
                 date_trunc('second', time),
                 date_trunc('second', age(now(), date_trunc('second', time))),
@@ -34,8 +49,16 @@ local checkOlds = function(dbh, source, destination, url)
             AND
                 channel = ?
             ORDER BY time ASC
-        ]]
-    ))
+    ]]
+
+    -- Check for youtube ID
+    local vid = extract_youtube_id(url)
+    if vid ~= nil then
+        local pattern = 'youtu*be(.com)v='..vid;
+        url = '%youtube.com%v='..vid..'%'
+    end
+    local url = url_to_pattern(url)
+    local sth = assert(dbh:prepare(query))
 
     -- execute select with a url bound to variable
     sth:execute(url, destination)
