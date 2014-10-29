@@ -1,65 +1,42 @@
 local date = require'date'
 local ev = require'ev'
-require'tokyocabinet'
-local notes = tokyocabinet.hdbnew()
+local notes = ivar2.persist
 
 local handleOutput = function(self, source, destination)
 	-- Only accept notes on channels.
 	if(destination:sub(1,1) ~= '#') then return end
 
-	notes:open('cache/notes', notes.OWRITER + notes.OCREAT)
-
 	local nick = source.nick
-	local key = destination .. ':' .. nick:lower()
-	local numNotes = tonumber(notes:get(key .. ':n'))
-	if(not numNotes) then return notes:close() end
+	local key = 'notes:' .. destination .. ':' .. nick:lower()
+	local nick_notes = notes[key]
+	local numNotes = tonumber(#nick_notes)
+	if(not numNotes or numNotes == 0) then return end
 
 	for i = 1, numNotes do
-		local base = key ..':' .. i
-		local note = notes:get(base)
-		local time = tonumber(notes:get(base .. ':time'))
-		local from = notes:get(base .. ':from')
+		local note = nick_notes[i]
+		local time = tonumber(note.time)
+		local from = note.from
 
-		self:Msg('privmsg', destination, source, "%s: %s left a note %s ago: %s", nick, from, date.relativeTimeShort(time), note)
+		self:Msg('privmsg', destination, source, "%s: %s left a note %s ago: %s", nick, from, date.relativeTimeShort(time), note.message)
 
-		notes:out(base)
-		notes:out(base .. ':time')
-		notes:out(base .. ':from')
 	end
 
-	local globalNumNotes = tonumber(notes:get('global:' .. nick:lower()))
+	local globalNumNotes = tonumber(notes['global:' .. nick:lower()])
 	if(globalNumNotes) then
-		notes:put('global:' .. nick:lower(), globalNumNotes - numNotes)
+		note['global:' .. nick:lower()] = globalNumNotes - numNotes
 	end
 
-	notes:out(key .. ':n')
-	notes:close()
+	notes[key] = {}
+
 end
 
 return {
 	NICK = {
 		function(self, source, nick)
-			notes:open('cache/notes')
-
-			if(not notes:get('global:' .. nick:lower())) then return notes:close() end
-			-- We have to fetch out, ALL THE RECORDS.
-			local set = notes:fwmkeys('#')
-			notes:close()
-
-			local channels = {}
-			for _, key in next, set do
-				local channel, recipient = key:match('^([^:]+):([^:]+)')
-				if(nick == recipient) then
-					channels[channel] = true
-				end
-			end
-
-			if(not next(channels)) then return end
+			if(not notes['global:' .. nick:lower()]) then return end
 			-- source still contains the old nick.
 			source.nick = nick
-			for channel in next, channels do
-				handleOutput(self, source, channel)
-			end
+			handleOutput(self, source, channel)
 		end,
 	},
 
@@ -78,24 +55,26 @@ return {
 			-- Only accept notes on channels.
 			if(destination:sub(1,1) ~= '#') then return end
 
-			notes:open('cache/notes', notes.OWRITER + notes.OCREAT)
-			local globalNumNotes = tonumber(notes:get('global:' .. recipient:lower())) or 0
+			local globalNumNotes = tonumber(notes['global:' .. recipient:lower()]) or 0
 			if(globalNumNotes >= 5) then
-				notes:close()
-				return self:Msg('privmsg', destination, source, "I'm sorry, Dave. I'm afraid I can't do that.")
+				say("I'm sorry, Dave. I'm afraid I can't do that. Too many notes.")
 			else
 				self:Notice(source.nick, "%s will be notified!", recipient)
 			end
 
-			local key = destination .. ':' .. recipient:lower()
-			local slot = (tonumber(notes:get(key .. ':n')) or 0) + 1
+			local key = 'notes:' .. destination .. ':' .. recipient:lower()
+			local nick_notes = notes[key] or {}
 
-			notes:put(key .. ':' .. slot, message)
-			notes:put(key .. ':' .. slot .. ':time', os.time())
-			notes:put(key .. ':' .. slot .. ':from', source.nick)
-			notes:put(key .. ':n', slot)
-			notes:put('global:' .. recipient:lower(), globalNumNotes + 1)
-			notes:close()
+			local note = {
+				message = message,
+				time = os.time(),
+				from = source.nick,
+			}
+			table.insert(nick_notes, note)
+			notes[key] = nick_notes
+
+			notes['global:' .. recipient:lower()] = globalNumNotes + 1
+
 		end
 	}
 }
