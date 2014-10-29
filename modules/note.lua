@@ -21,12 +21,13 @@ local handleOutput = function(self, source, destination)
 
 	end
 
+	notes[key] = {}
+
 	local globalNumNotes = tonumber(notes['global:' .. nick:lower()])
 	if(globalNumNotes) then
-		note['global:' .. nick:lower()] = globalNumNotes - numNotes
+		notes['global:' .. nick:lower()] = globalNumNotes - numNotes
 	end
 
-	notes[key] = {}
 
 end
 
