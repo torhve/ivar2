@@ -2316,7 +2316,7 @@ return {
  [125] = {
   ["main"] = "Groove Adventure Rave",
   ["official"] = {
-   [1] = "GROOVE ADVENTURE RAVE [レイヴ]",
+   [1] = "GROOVE ADVENTURE RAVE",
    [2] = "Rave",
    [3] = "Rave Master",
    },
@@ -2324,12 +2324,12 @@ return {
    [1] = "GAR",
    },
   ["syn"] = {
-   [1] = "GROOVE ADVENTURE RAVE",
-   [2] = "RAVE",
-   [3] = "RAVE мастер",
-   [4] = "the groove adventure RAVE",
-   [5] = "Пътешествието на Рейв",
-   [6] = "Рэйв Мастер",
+   [1] = "RAVE",
+   [2] = "RAVE мастер",
+   [3] = "the groove adventure RAVE",
+   [4] = "Пътешествието на Рейв",
+   [5] = "Рэйв Мастер",
+   [6] = "レイヴ",
    },
   },
  [126] = {
@@ -2442,10 +2442,9 @@ return {
   ["official"] = {
    [1] = "Hunter X Hunter",
    [2] = "Hunter x Hunter",
-   [3] = "Hunter x Hunter (1999)",
-   [4] = "القناص",
-   [5] = "ฮันเตอร์ x ฮันเตอร์",
-   [6] = "ハンター×ハンター (1999)",
+   [3] = "القناص",
+   [4] = "ฮันเตอร์ x ฮันเตอร์",
+   [5] = "ハンター×ハンター (1999)",
    },
   ["short"] = {
    [1] = "HxH",
@@ -35470,8 +35469,9 @@ return {
    [1] = "Czarodziejka z Księżyca: Sailor Moon Sailor Stars",
    [2] = "Petali di stelle per Sailor Moon",
    [3] = "Sailor Moon Sailor Stars",
-   [4] = "เซเลอร์มูน เซเลอร์สตาร์ส",
-   [5] = "美少女戦士セーラームーン セーラースターズ",
+   [4] = "Сейлор Мун",
+   [5] = "เซเลอร์มูน เซเลอร์สตาร์ส",
+   [6] = "美少女戦士セーラームーン セーラースターズ",
    },
   ["short"] = {
    [1] = "Sailor Stars",
@@ -47837,9 +47837,9 @@ return {
    },
   },
  [3972] = {
-  ["main"] = "Captain Tsubasa: Saikyou no Teki! Holland Youth",
+  ["main"] = "Captain Tsubasa: Saikyou no Teki! Holanda Youth",
   ["official"] = {
-   [1] = "キャプテン翼 「最強の敵! オランダユース」",
+   [1] = "キャプテン翼 最強の敵! オランダユース",
    },
   ["short"] = {
    },
@@ -50305,16 +50305,6 @@ return {
    },
   ["syn"] = {
    [1] = "金曜ロードショー オープニング映像",
-   },
-  },
- [4175] = {
-  ["main"] = "House Foods: Ouchi de Tabeyou",
-  ["official"] = {
-   [1] = "ハウス食品『おうちで食べよう.』",
-   },
-  ["short"] = {
-   },
-  ["syn"] = {
    },
   },
  [4176] = {
@@ -53098,7 +53088,8 @@ return {
  [4434] = {
   ["main"] = "California Crisis: Tsuigeki no Hibana",
   ["official"] = {
-   [1] = "カリフォルニア・クライシス 追撃の銃火[ひばな]",
+   [1] = "Криза в Калифорния",
+   [2] = "カリフォルニア・クライシス 追撃の銃火[ひばな]",
    },
   ["short"] = {
    },
@@ -68761,7 +68752,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "헬터 스켈터 백탁의 마을",
+   [1] = "Helter Skelter: The White-Stained Village",
+   [2] = "헬터 스켈터 백탁의 마을",
    },
   },
  [6233] = {
@@ -75199,7 +75191,7 @@ return {
    },
   },
  [6929] = {
-  ["main"] = "Mikanbun",
+  ["main"] = "Mikanbune",
   ["official"] = {
    [1] = "みかん船",
    },
@@ -91309,8 +91301,7 @@ return {
    },
   ["syn"] = {
    [1] = "Inu x Boku SS",
-   [2] = "Фашист и его собака",
-   [3] = "سگ و من: سرویس مخفی",
+   [2] = "سگ و من: سرویس مخفی",
    },
   },
  [8565] = {
@@ -92609,7 +92600,7 @@ return {
   ["main"] = "Saki: Achiga-hen - Episode of Side-A",
   ["official"] = {
    [1] = "Saki Episode of Side A",
-   [2] = "咲-Saki-阿知賀編 episode of side-A",
+   [2] = "咲 阿知賀編 episode of side-A",
    [3] = "天才麻将少女 阿知贺篇 episode of side-A",
    },
   ["short"] = {
@@ -97547,8 +97538,9 @@ return {
  [9242] = {
   ["main"] = "Vividred Operation",
   ["official"] = {
-   [1] = "ビビッドレッド・オペレーション",
-   [2] = "비비드 레드 오퍼레이션",
+   [1] = "Vividred Operation",
+   [2] = "ビビッドレッド・オペレーション",
+   [3] = "비비드 레드 오퍼레이션",
    },
   ["short"] = {
    [1] = "vividred",
@@ -99989,7 +99981,7 @@ return {
  [9490] = {
   ["main"] = "Saki: Zenkoku Hen",
   ["official"] = {
-   [1] = "咲 -Saki- 全国編",
+   [1] = "咲 全国編",
    [2] = "天才麻将少女 全国篇",
    },
   ["short"] = {
@@ -102792,8 +102784,7 @@ return {
   ["main"] = "Sekai de Ichiban Tsuyoku Naritai!",
   ["official"] = {
    [1] = "Wanna Be the Strongest in the World!",
-   [2] = "Wanna be the Strongest in the World",
-   [3] = "世界でいちばん強くなりたい!",
+   [2] = "世界でいちばん強くなりたい!",
    },
   ["short"] = {
    [1] = "Sekatsuyo",
@@ -103285,7 +103276,8 @@ return {
  [9854] = {
   ["main"] = "Gifuu Doudou!! Kanetsugu to Keiji",
   ["official"] = {
-   [1] = "義風堂々!! 兼続と慶次",
+   [1] = "Gifu Dodo !! Kanetsugu et Keiji",
+   [2] = "義風堂々!! 兼続と慶次",
    },
   ["short"] = {
    },
@@ -104868,8 +104860,9 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Космическото Конте",
-   [2] = "Космо Денді",
+   [1] = "Космический Денди",
+   [2] = "Космическото Конте",
+   [3] = "Космо Денді",
    },
   },
  [10031] = {
@@ -106883,9 +106876,10 @@ return {
   ["main"] = "Kiseijuu: Sei no Kakuritsu",
   ["official"] = {
    [1] = "Parasyte - the maxim",
-   [2] = "Паразит",
-   [3] = "寄生兽 生命的准则",
-   [4] = "寄生獣 セイの格率",
+   [2] = "Parasyte -the maxim-",
+   [3] = "Паразит",
+   [4] = "寄生兽 生命的准则",
+   [5] = "寄生獣 セイの格率",
    },
   ["short"] = {
    },
@@ -107377,6 +107371,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Tamako Market Movie",
    },
   },
  [10329] = {
@@ -108251,15 +108246,16 @@ return {
   ["main"] = "Terra Formars",
   ["official"] = {
    [1] = "TERRA FORMARS",
+   [2] = "TERRAFORMARS",
+   [3] = "Terraformars",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "TERRAFORMARS",
-   [2] = "Тера Формарс",
-   [3] = "Тераформар",
-   [4] = "Тераформарсяване",
-   [5] = "テラフォーマーズ",
+   [1] = "Тера Формарс",
+   [2] = "Тераформар",
+   [3] = "Тераформарсяване",
+   [4] = "テラフォーマーズ",
    },
   },
  [10440] = {
@@ -108883,7 +108879,8 @@ return {
  [10531] = {
   ["main"] = "Gundam G no Reconguista",
   ["official"] = {
-   [1] = "ガンダム Gのレコンギスタ",
+   [1] = "Gundam reconguista in G",
+   [2] = "ガンダム Gのレコンギスタ",
    },
   ["short"] = {
    },
@@ -109082,7 +109079,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Космическото конте 2",
+   [1] = "Космический Денди 2",
+   [2] = "Космическото конте 2",
    },
   },
  [10554] = {
@@ -109436,7 +109434,8 @@ return {
  [10592] = {
   ["main"] = "Hi Scoool! Seha Girl",
   ["official"] = {
-   [1] = "Hi☆sCoool! セハガール",
+   [1] = "Hi-sCool! Seha Girls",
+   [2] = "Hi☆sCoool! セハガール",
    },
   ["short"] = {
    },
@@ -109827,7 +109826,8 @@ return {
  [10635] = {
   ["main"] = "Orenchi no Furo Jijou",
   ["official"] = {
-   [1] = "オレん家のフロ事情",
+   [1] = "Orenchi no Furo Jijo",
+   [2] = "オレん家のフロ事情",
    },
   ["short"] = {
    [1] = "orefuro",
@@ -110821,9 +110821,9 @@ return {
    },
   },
  [10760] = {
-  ["main"] = "Fate/Stay Night (2015)",
+  ["main"] = "Fate/Stay Night: Unlimited Blade Works (2015)",
   ["official"] = {
-   [1] = "Fate/stay night (2015)",
+   [1] = "Fate/stay night [Unlimited Blade Works] (2015)",
    },
   ["short"] = {
    [1] = "F/SN 2015",
@@ -110832,9 +110832,8 @@ return {
    },
   ["syn"] = {
    [1] = "Fate Stay Night 2015",
-   [2] = "Fate/stay night: Unlimited Blade Works (2015)",
-   [3] = "ubwtv2",
-   [4] = "フェイト/ステイナイト (2015)",
+   [2] = "ubwtv2",
+   [3] = "フェイト/ステイナイト (2015)",
    },
   },
  [10761] = {
@@ -111014,8 +111013,9 @@ return {
  [10780] = {
   ["main"] = "Bonjour: Koiaji Patisserie",
   ["official"] = {
-   [1] = "Bonjour Sweet Love Patisserie",
-   [2] = "Bonjour♪恋味パティスリー",
+   [1] = "BONJOUR♪Sweet Love Patisserie",
+   [2] = "Bonjour Sweet Love Patisserie",
+   [3] = "Bonjour♪恋味パティスリー",
    },
   ["short"] = {
    [1] = "bonkoi",
@@ -111131,9 +111131,9 @@ return {
    },
   },
  [10798] = {
-  ["main"] = "Minna Atsumare! Falcom Gakuen 2",
+  ["main"] = "Minna Atsumare! Falcom Gakuen SC",
   ["official"] = {
-   [1] = "みんな集まれ! ファルコム学園 2",
+   [1] = "みんな集まれ! ファルコム学園SC",
    },
   ["short"] = {
    },
@@ -111915,6 +111915,116 @@ return {
  [10895] = {
   ["main"] = "Gintama JUMP FESTA Anime Tour 2005",
   ["official"] = {
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10896] = {
+  ["main"] = "Nihon Animator Mihon`ichi",
+  ["official"] = {
+   [1] = "日本アニメ（ーター）見本市",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10897] = {
+  ["main"] = "Yoru no Yatterman",
+  ["official"] = {
+   [1] = "夜ノヤッターマン",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10898] = {
+  ["main"] = "Kokoro no Chikara",
+  ["official"] = {
+   [1] = "心の力",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10899] = {
+  ["main"] = "Numa no Taishou",
+  ["official"] = {
+   [1] = "沼の大将",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10900] = {
+  ["main"] = "Buta no Gotoki Sanzoku ni Torawarete Shojo o Ubawareru Kyonyuu Himekishi & Onna Senshi: Zettai Chinpo Nanka ni Maketari Shinai!! The Animation",
+  ["official"] = {
+   [1] = "豚の如き山賊に捕らわれて処女を奪われる巨乳姫騎士&女戦士 ~絶対チ●ポなんかに負けたりしない!!~ THE ANIMATION",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10901] = {
+  ["main"] = "Shokugeki no Souma",
+  ["official"] = {
+   [1] = "食戟のソーマ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10902] = {
+  ["main"] = "Ketsuekigata-kun! 2",
+  ["official"] = {
+   [1] = "血液型くん! 2",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10903] = {
+  ["main"] = "Go! Princess Precure",
+  ["official"] = {
+   [1] = "Go! プリンセスプリキュア",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10904] = {
+  ["main"] = "Etotama (Eto Tamashii)",
+  ["official"] = {
+   [1] = "えとたま（干支魂）",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10905] = {
+  ["main"] = "Death Parade",
+  ["official"] = {
+   [1] = "デス・パレード",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10906] = {
+  ["main"] = "Kekkai Sensen (2015)",
+  ["official"] = {
+   [1] = "血界戦線 (2015)",
    },
   ["short"] = {
    },
