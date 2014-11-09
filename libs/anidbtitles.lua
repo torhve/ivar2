@@ -11119,6 +11119,7 @@ return {
    },
   ["syn"] = {
    [1] = "Season Heat",
+   [2] = "키스로부터",
    },
   },
  [672] = {
@@ -22898,8 +22899,7 @@ return {
    [1] = "Monster",
    [2] = "Monstre",
    [3] = "O Monstro",
-   [4] = "Potwór",
-   [5] = "モンスター",
+   [4] = "モンスター",
    },
   ["short"] = {
    [1] = "Monster TV",
@@ -22910,9 +22910,11 @@ return {
    [3] = "Monstro",
    [4] = "Monstrul",
    [5] = "Naoki Urasawa`s MONSTER",
-   [6] = "Монстр",
-   [7] = "Чудовище",
-   [8] = "وحش",
+   [6] = "Potwór",
+   [7] = "Монстр",
+   [8] = "Чудовище",
+   [9] = "هیولا",
+   [10] = "وحش",
    },
   },
  [1540] = {
@@ -29024,7 +29026,7 @@ return {
   ["syn"] = {
    [1] = "The Offering of the Shrike",
    [2] = "百舌鳥の贄",
-   [3] = "모즈의 지",
+   [3] = "일회용 노예",
    },
   },
  [2029] = {
@@ -36438,8 +36440,9 @@ return {
  [2640] = {
   ["main"] = "Birth",
   ["official"] = {
-   [1] = "Świat Talizmanu",
-   [2] = "バース",
+   [1] = "Birth: A War of Two Worlds",
+   [2] = "Świat Talizmanu",
+   [3] = "バース",
    },
   ["short"] = {
    },
@@ -38674,19 +38677,17 @@ return {
    },
   },
  [2829] = {
-  ["main"] = "Fushigi-boshi no Futago Hime",
+  ["main"] = "Fushigiboshi no Futago Hime",
   ["official"] = {
    [1] = "As Princesas Gémeas do Planeta Maravilha",
    [2] = "Twin Princess - Principesse gemelle",
    [3] = "ふしぎ星の☆ふたご姫",
    },
   ["short"] = {
-   [1] = "Fushigiboshi",
-   [2] = "Futago Hime",
+   [1] = "Futago Hime",
    },
   ["syn"] = {
-   [1] = "Fushigi Hoshi no Futago Hime",
-   [2] = "Twin Princesses of the Mysterious Star",
+   [1] = "Twin Princesses of the Mysterious Star",
    },
   },
  [2830] = {
@@ -42912,7 +42913,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "I and Myself: The Two Lottes",
+   [1] = "Das doppelte Lottchen",
+   [2] = "I and Myself: The Two Lottes",
    },
   },
  [3326] = {
@@ -43015,6 +43017,7 @@ return {
    },
   ["syn"] = {
    [1] = "Shudan Chikan Densha",
+   [2] = "집단 치한 전차",
    },
   },
  [3337] = {
@@ -51564,7 +51567,7 @@ return {
    },
   },
  [4278] = {
-  ["main"] = "Fushigi-boshi no Futago Hime Gyu!",
+  ["main"] = "Fushigiboshi no Futago Hime Gyu!",
   ["official"] = {
    [1] = "ふしぎ星の☆ふたご姫 Gyu!",
    },
@@ -57050,7 +57053,8 @@ return {
    },
   ["syn"] = {
    [1] = "Futari wa Pretty Cure Splash Star Tick Tack Kiki Ippatsu!",
-   [2] = "Pretty Cure Splash Star Tic-Tac Crisis Hanging by a Thin Thread!",
+   [2] = "Futari wa Pretty Cure Splash☆Star",
+   [3] = "Pretty Cure Splash Star Tic-Tac Crisis Hanging by a Thin Thread!",
    },
   },
  [4845] = {
@@ -60412,6 +60416,7 @@ return {
    [1] = "muteking",
    },
   ["syn"] = {
+   [1] = "Dashing Warrior Muteking",
    },
   },
  [5173] = {
@@ -68313,6 +68318,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "McDull, Prince de la Bun",
    },
   },
  [6181] = {
@@ -74382,14 +74388,14 @@ return {
    },
   },
  [6847] = {
-  ["main"] = "Baghdad-jou no Touzoku",
+  ["main"] = "Baguda-jou no Touzoku",
   ["official"] = {
    [1] = "馬具田城の盗賊",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Baguda-jou no Touzoku",
+   [1] = "Baghdad-jou no Touzoku",
    [2] = "Burglars of Baghdad Castle",
    },
   },
@@ -80560,7 +80566,7 @@ return {
    },
   },
  [7461] = {
-  ["main"] = "Ginmaku Hetalia: Axis Powers - Paint it, White (Shiroku Nure!)",
+  ["main"] = "Ginmaku Hetalia: Axis Powers - Paint It, White (Shiroku Nure!)",
   ["official"] = {
    [1] = "Hetalia: Axis Powers - Paint It, White!",
    [2] = "銀幕ヘタリア Axis Powers Paint it, White(白くぬれ!)",
@@ -81572,7 +81578,8 @@ return {
    [1] = "Evangelion 3.0",
    [2] = "Evangelion Shin Gekijouban: Quickening",
    [3] = "Evangelion: 3.0 You Can (Not) Redo.",
-   [4] = "Rebuild of Evangelion: 3.0",
+   [4] = "Evangelion: 3.33 You Can (Not) Redo",
+   [5] = "Rebuild of Evangelion: 3.0",
    },
   },
  [7566] = {
@@ -87989,6 +87996,7 @@ return {
   ["syn"] = {
    [1] = "Mai Dou: Xiang Dang Dang",
    [2] = "McDull: Kung Fu Ding Ding Dong",
+   [3] = "麥兜響噹噹",
    },
   },
  [8218] = {
@@ -88220,7 +88228,8 @@ return {
   ["syn"] = {
    [1] = "Kaiji Season 2",
    [2] = "Suffering Outcast Kaiji: Maverick Arc",
-   [3] = "The Suffering Pariah Kaiji: Maverick Arc",
+   [3] = "The Suffering Pariah Kaiji: Backslide Arc",
+   [4] = "The Suffering Pariah Kaiji: Maverick Arc",
    },
   },
  [8243] = {
@@ -93809,7 +93818,8 @@ return {
  [8827] = {
   ["main"] = "Hanasaku Iroha: Home Sweet Home",
   ["official"] = {
-   [1] = "花咲くいろは HOME SWEET HOME",
+   [1] = "Hanasaku Iroha The Movie: Home Sweet Home",
+   [2] = "花咲くいろは HOME SWEET HOME",
    },
   ["short"] = {
    },
@@ -96590,7 +96600,6 @@ return {
   ["official"] = {
    [1] = "PSYCHO-PASS",
    [2] = "Psycho-Pass",
-   [3] = "Психо-паспорт",
    },
   ["short"] = {
    },
@@ -96599,9 +96608,10 @@ return {
    [2] = "Psycho Pass",
    [3] = "Psycho-Pass Shin Henshuu-ban",
    [4] = "Психо-пас",
-   [5] = "Психопаспорт",
-   [6] = "サイコパス",
-   [7] = "心理测量者",
+   [5] = "Психо-паспорт",
+   [6] = "Психопаспорт",
+   [7] = "サイコパス",
+   [8] = "心理测量者",
    },
   },
  [9128] = {
@@ -100271,7 +100281,8 @@ return {
  [9515] = {
   ["main"] = "Kaguya Hime no Monogatari",
   ["official"] = {
-   [1] = "かぐや姫の物語",
+   [1] = "The Tale of the Princess Kaguya",
+   [2] = "かぐや姫の物語",
    },
   ["short"] = {
    },
@@ -102904,8 +102915,9 @@ return {
    [1] = "Magi - The Kingdom of Magic",
    [2] = "Magi 2, The Kingdom of Magic",
    [3] = "Magi: The Kingdom of Magic",
-   [4] = "ماگی : پادشاهی سحر و جادو",
-   [5] = "マギ The kingdom of magic",
+   [4] = "Маги - Кралство на магия",
+   [5] = "ماگی : پادشاهی سحر و جادو",
+   [6] = "マギ The kingdom of magic",
    },
   ["short"] = {
    [1] = "Magi 2",
@@ -104769,13 +104781,14 @@ return {
  [10016] = {
   ["main"] = "GJ-bu@",
   ["official"] = {
-   [1] = "GJ部＠",
+   [1] = "GJ部@",
    [2] = "GJ부@",
    },
   ["short"] = {
    },
   ["syn"] = {
    [1] = "GJ Club@",
+   [2] = "GJ部＠",
    },
   },
  [10020] = {
@@ -105114,11 +105127,12 @@ return {
    },
   },
  [10064] = {
-  ["main"] = "Watashi ga Motenai no wa Dou Kangaete mo Omaera ga Warui! (2014)",
+  ["main"] = "Watashi ga Motenai no wa Dou Kangaete mo Omaera ga Warui!: Motenai shi, Nazo Meite Miru",
   ["official"] = {
-   [1] = "私がモテないのはどう考えてもお前らが悪い! (2014)",
+   [1] = "私がモテないのはどう考えてもお前らが悪い! モテないし, 謎めいてみる",
    },
   ["short"] = {
+   [1] = "watamote OVA",
    },
   ["syn"] = {
    },
@@ -106877,16 +106891,16 @@ return {
   ["official"] = {
    [1] = "Parasyte - the maxim",
    [2] = "Parasyte -the maxim-",
-   [3] = "Паразит",
-   [4] = "寄生兽 生命的准则",
-   [5] = "寄生獣 セイの格率",
+   [3] = "寄生兽 生命的准则",
+   [4] = "寄生獣 セイの格率",
    },
   ["short"] = {
    },
   ["syn"] = {
    [1] = "Parasyte",
    [2] = "Parazit: Mravní zásady života",
-   [3] = "Паразит: Основно правило",
+   [3] = "Паразит",
+   [4] = "Паразит: Основно правило",
    },
   },
  [10273] = {
@@ -107073,9 +107087,9 @@ return {
    },
   },
  [10292] = {
-  ["main"] = "Uta no Prince-sama (2015)",
+  ["main"] = "Uta no Prince-sama: Maji Love Revolutions",
   ["official"] = {
-   [1] = "うたの☆プリンスさまっ♪ (2015)",
+   [1] = "うたの☆プリンスさまっ♪ マジLOVEレボリューションズ",
    },
   ["short"] = {
    },
@@ -109041,8 +109055,10 @@ return {
    [1] = "翠星のガルガンティア~めぐる航路, 遥か~",
    },
   ["short"] = {
+   [1] = "Gargantia OVA",
    },
   ["syn"] = {
+   [1] = "Suisei no Gargantia OVA",
    },
   },
  [10550] = {
@@ -109060,9 +109076,10 @@ return {
  [10551] = {
   ["main"] = "Log Horizon (2014)",
   ["official"] = {
-   [1] = "ورود به افق 2",
-   [2] = "ログ・ホライズン (2014)",
-   [3] = "记录的地平线 (2014)",
+   [1] = "Log Horizon 2",
+   [2] = "ورود به افق 2",
+   [3] = "ログ・ホライズン (2014)",
+   [4] = "记录的地平线 (2014)",
    },
   ["short"] = {
    },
@@ -109403,12 +109420,12 @@ return {
  [10589] = {
   ["main"] = "Ookami Shoujo to Kuro Ouji",
   ["official"] = {
-   [1] = "オオカミ少女と黒王子",
+   [1] = "Wolf Girl & Black Prince",
+   [2] = "オオカミ少女と黒王子",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Wolf Girl & Black Prince",
    },
   },
  [10590] = {
@@ -110138,7 +110155,8 @@ return {
  [10676] = {
   ["main"] = "Danna ga Nani o Itteiruka Wakaranai Ken",
   ["official"] = {
-   [1] = "旦那が何を言っているかわからない件",
+   [1] = "Ik Begrijp Maar Niet Waar Mijn Man Het Over Heeft",
+   [2] = "旦那が何を言っているかわからない件",
    },
   ["short"] = {
    },
@@ -110518,6 +110536,7 @@ return {
    [3] = "暁のヨナ -The girl standing in the blush of dawn-",
    },
   ["short"] = {
+   [1] = "Akatsuki no Yona",
    },
   ["syn"] = {
    },
@@ -111004,6 +111023,7 @@ return {
   ["main"] = "Shirobako",
   ["official"] = {
    [1] = "SHIROBAKO",
+   [2] = "Shirobako",
    },
   ["short"] = {
    },
@@ -111464,6 +111484,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Gods Eater",
    },
   },
  [10843] = {
@@ -111613,7 +111634,7 @@ return {
  [10861] = {
   ["main"] = "Kuiba III",
   ["official"] = {
-   [1] = "魁拔Ⅲ",
+   [1] = "魁拔III战神崛起",
    },
   ["short"] = {
    },
@@ -111621,23 +111642,25 @@ return {
    },
   },
  [10862] = {
-  ["main"] = "McDull, The Pork Of Music",
+  ["main"] = "Mak Dau Dang Dang Ban wo Xin",
   ["official"] = {
    [1] = "麥兜噹噹伴我心",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "McDull: The Pork of Music",
    },
   },
  [10863] = {
-  ["main"] = "McDull, Me & My Mum",
+  ["main"] = "Mak Dau wo He wo Mama",
   ["official"] = {
-   [1] = "麦兜我和我妈妈",
+   [1] = "麥兜我和我媽媽",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "McDull: Me & My Mum",
    },
   },
  [10864] = {
@@ -111786,6 +111809,7 @@ return {
   ["main"] = "Hana no Kage",
   ["official"] = {
    [1] = "Shadow of the Cherry Blossoms",
+   [2] = "花の翳",
    },
   ["short"] = {
    },
@@ -111912,15 +111936,6 @@ return {
   ["syn"] = {
    },
   },
- [10895] = {
-  ["main"] = "Gintama JUMP FESTA Anime Tour 2005",
-  ["official"] = {
-   },
-  ["short"] = {
-   },
-  ["syn"] = {
-   },
-  },
  [10896] = {
   ["main"] = "Nihon Animator Mihon`ichi",
   ["official"] = {
@@ -112002,9 +112017,9 @@ return {
    },
   },
  [10904] = {
-  ["main"] = "Etotama (Eto Tamashii)",
+  ["main"] = "Etotama: Eto Tamashii",
   ["official"] = {
-   [1] = "えとたま（干支魂）",
+   [1] = "えとたま 干支魂",
    },
   ["short"] = {
    },
@@ -112025,6 +112040,157 @@ return {
   ["main"] = "Kekkai Sensen (2015)",
   ["official"] = {
    [1] = "血界戦線 (2015)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10907] = {
+  ["main"] = "Fastening Days",
+  ["official"] = {
+   [1] = "FASTENING DAYS",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10908] = {
+  ["main"] = "God Eater Promotion",
+  ["official"] = {
+   [1] = "GOD EATER プロモーション",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "God Eater: Prologue",
+   [2] = "Gods Eater: Prologue",
+   },
+  },
+ [10909] = {
+  ["main"] = "Pankis! 2 Jigen",
+  ["official"] = {
+   [1] = "ぱんきす! 2次元",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10910] = {
+  ["main"] = "Arslan Senki 2",
+  ["official"] = {
+   [1] = "アルスラーン戦記 THE HEROIC LEGEND OF ARSLAN",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10912] = {
+  ["main"] = "Mix Master Final Force",
+  ["official"] = {
+   [1] = "최강 합체 믹스마스터",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10913] = {
+  ["main"] = "Sengoku Musou",
+  ["official"] = {
+   [1] = "戦国無双",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10914] = {
+  ["main"] = "Trinity Seven (2015)",
+  ["official"] = {
+   [1] = "トリニティセブン (2015)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10915] = {
+  ["main"] = "Kanojo wa Dare to demo Sex Suru.",
+  ["official"] = {
+   [1] = "彼女は誰とでもセックスする.",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10916] = {
+  ["main"] = "Shimajirou to Ookinaki",
+  ["official"] = {
+   [1] = "しまじろうと おおきなき",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10917] = {
+  ["main"] = "Gintama (2015)",
+  ["official"] = {
+   [1] = "銀魂 (2015)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10918] = {
+  ["main"] = "Ore Monogatari!!",
+  ["official"] = {
+   [1] = "俺物語!!",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10919] = {
+  ["main"] = "Ookami Shoujo to Kuro Ouji (2015)",
+  ["official"] = {
+   [1] = "オオカミ少女と黒王子 (2015)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10920] = {
+  ["main"] = "Oni Chichi 2: Harvest",
+  ["official"] = {
+   [1] = "鬼父2 -harvest-",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10921] = {
+  ["main"] = "Shingeki no Kyojin: Kuinaki Sentaku",
+  ["official"] = {
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10922] = {
+  ["main"] = "Koi Maguwai",
+  ["official"] = {
+   [1] = "恋まぐわい",
    },
   ["short"] = {
    },
