@@ -752,11 +752,10 @@ function ivar2:Connect(config)
 
 	if(not self.persist) then
 		-- Load persist library using config
-		self.persist = require('persist')({
-			url = config.redishost or 'localhost',
-			port = config.redisport or 6379,
+		self.persist = require(config.persistbackend or 'sqlpersist')({
+			path = config.kvsqlpath or 'cache/keyvaluestore.sqlite3',
 			verbose = false,
-			namespace = config.redisnamespace or 'ivar2',
+			namespace = 'ivar2',
 			clear = false
 		})
 	end
