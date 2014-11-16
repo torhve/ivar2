@@ -1005,8 +1005,9 @@ return {
  [55] = {
   ["main"] = "eX-Driver",
   ["official"] = {
-   [1] = "éX-Driver",
-   [2] = "エクスドライバー",
+   [1] = "eX-Driver",
+   [2] = "éX-Driver",
+   [3] = "エクスドライバー",
    },
   ["short"] = {
    [1] = "ex-D",
@@ -11054,6 +11055,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "음수학원: 라 블루 걸",
    },
   },
  [664] = {
@@ -11200,6 +11202,7 @@ return {
    [1] = "KNG",
    },
   ["syn"] = {
+   [1] = "카라쿠리 닌자걸",
    },
   },
  [678] = {
@@ -12050,6 +12053,7 @@ return {
    [1] = "Jahr 2039 Sex Inferno",
    [2] = "Meilės Bangos",
    [3] = "Волна любви",
+   [4] = "러브 웨이브",
    },
   },
  [735] = {
@@ -13475,9 +13479,8 @@ return {
  [834] = {
   ["main"] = "Green Green (2003)",
   ["official"] = {
-   [1] = "Green Green",
-   [2] = "Жаркое лето",
-   [3] = "グリーングリーン (2003)",
+   [1] = "Жаркое лето",
+   [2] = "グリーングリーン (2003)",
    },
   ["short"] = {
    [1] = "GGTV",
@@ -30858,6 +30861,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "망상 엘리베이터",
    },
   },
  [2174] = {
@@ -42340,6 +42344,7 @@ return {
    [1] = "Bomb Milk Sisters",
    [2] = "Explosive Bust Sisters",
    [3] = "Invasion of the Boobie Snatchers",
+   [4] = "폭유자매",
    },
   },
  [3219] = {
@@ -49199,7 +49204,7 @@ return {
    },
   },
  [4087] = {
-  ["main"] = "Sun Ukun: Uproar in Heaven",
+  ["main"] = "Da nao tien gong",
   ["official"] = {
    [1] = "Der König der Affen",
    [2] = "Le roi des singes contre le palais céleste",
@@ -49210,14 +49215,16 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Da nao tien gong",
-   [2] = "Da no tien gu",
-   [3] = "Havoc in Heaven",
-   [4] = "Sun Wou Kong",
-   [5] = "Sun wu kong",
-   [6] = "The Monkey King",
-   [7] = "The Monkey King - Havoc in Heaven",
-   [8] = "Uproar in Heaven",
+   [1] = "Da no tien gu",
+   [2] = "Havoc in Heaven",
+   [3] = "Ooabare Songokuu",
+   [4] = "Sun Ukun: Uproar in Heaven",
+   [5] = "Sun Wou Kong",
+   [6] = "Sun wu kong",
+   [7] = "The Monkey King",
+   [8] = "The Monkey King - Havoc in Heaven",
+   [9] = "Uproar in Heaven",
+   [10] = "大暴れ孫悟空",
    },
   },
  [4088] = {
@@ -50052,6 +50059,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "누나와 보잉",
    },
   },
  [4153] = {
@@ -57684,13 +57692,19 @@ return {
    },
   },
  [4907] = {
-  ["main"] = "Sun Ukun: The Monkey King Conquers the Demon",
+  ["main"] = "Jin Hou Jiang Yao",
   ["official"] = {
+   [1] = "金猴降妖",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Сунь Укун: Царь обезьян побеждает демонов",
+   [1] = "Monkey King Conquers the Demon",
+   [2] = "Saiyuuki Songokuu Tai Hakkotsu Fujin",
+   [3] = "Sun Ukun: The Monkey King Conquers the Demon",
+   [4] = "The Monkey King and the Skeleton Ghost",
+   [5] = "Сунь Укун: Царь обезьян побеждает демонов",
+   [6] = "西遊記 孫悟空対白骨婦人",
    },
   },
  [4909] = {
@@ -60149,7 +60163,7 @@ return {
   ["main"] = "Dokidoki Oyako Lesson: Oshiete H na Obenkyou",
   ["official"] = {
    [1] = "Learning the Hard Way",
-   [2] = "ドキドキ母娘レッスン~教えてHなお勉強~",
+   [2] = "ドキドキ母娘レッスン~教えて♪Hなお勉強~",
    },
   ["short"] = {
    },
@@ -64501,7 +64515,7 @@ return {
    },
   },
  [5683] = {
-  ["main"] = "Sparkling Red Star",
+  ["main"] = "Shanshan de Hongxing",
   ["official"] = {
    [1] = "L`étoile rouge",
    [2] = "闪闪的红星",
@@ -64509,6 +64523,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Sparkling Red Star",
    },
   },
  [5685] = {
@@ -65279,13 +65294,13 @@ return {
  [5796] = {
   ["main"] = "My Melody no Akazukin",
   ["official"] = {
-   [1] = "My Melody`s Little Red Riding Hood",
-   [2] = "マイメロディの赤ずきん",
+   [1] = "マイメロディの赤ずきん",
    },
   ["short"] = {
    },
   ["syn"] = {
    [1] = "Hello Kitty`s Animation Theater 3b",
+   [2] = "My Melody`s Little Red Riding Hood",
    },
   },
  [5800] = {
@@ -80840,9 +80855,8 @@ return {
  [7490] = {
   ["main"] = "Sengoku Basara Ni",
   ["official"] = {
-   [1] = "Sengoku Basara 2",
-   [2] = "Sengoku Basara: Samurai Kings 2",
-   [3] = "戦国BASARA弐",
+   [1] = "Sengoku Basara: Samurai Kings 2",
+   [2] = "戦国BASARA弐",
    },
   ["short"] = {
    },
@@ -83856,6 +83870,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "けろけろけろっぴの恐竜が出た",
    },
   },
  [7797] = {
@@ -85109,7 +85124,8 @@ return {
  [7927] = {
   ["main"] = "Tie Shan Gongzhu",
   ["official"] = {
-   [1] = "铁扇公主",
+   [1] = "鐵扇公主",
+   [2] = "铁扇公主",
    },
   ["short"] = {
    },
@@ -85566,7 +85582,9 @@ return {
  [7973] = {
   ["main"] = "Aa! Megami-sama! (2011)",
   ["official"] = {
-   [1] = "ああっ女神さまっ (2011)",
+   [1] = "Aa! Megami-sama! Itsumo Futari de",
+   [2] = "Ah! My Goddess: Always the Two of Us",
+   [3] = "ああっ女神さまっ (2011)",
    },
   ["short"] = {
    },
@@ -90045,12 +90063,12 @@ return {
  [8425] = {
   ["main"] = "Sojunghan Nal-ui Kkum",
   ["official"] = {
-   [1] = "소중한 날의 꿈 Green Days",
+   [1] = "Green Days: Dinosaur and I",
+   [2] = "소중한 날의 꿈",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Green Days",
    },
   },
  [8426] = {
@@ -96604,14 +96622,15 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "PSYCHO-PASS 新編集版",
-   [2] = "Psycho Pass",
-   [3] = "Psycho-Pass Shin Henshuu-ban",
-   [4] = "Психо-пас",
-   [5] = "Психо-паспорт",
-   [6] = "Психопаспорт",
-   [7] = "サイコパス",
-   [8] = "心理测量者",
+   [1] = "PP1",
+   [2] = "PSYCHO-PASS 新編集版",
+   [3] = "Psycho Pass",
+   [4] = "Psycho-Pass Shin Henshuu-ban",
+   [5] = "Психо-пас",
+   [6] = "Психо-паспорт",
+   [7] = "Психопаспорт",
+   [8] = "サイコパス",
+   [9] = "心理测量者",
    },
   },
  [9128] = {
@@ -102623,6 +102642,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Удар крови",
    },
   },
  [9774] = {
@@ -103554,8 +103574,9 @@ return {
  [9881] = {
   ["main"] = "Dia no Ace",
   ["official"] = {
-   [1] = "Ace of the Diamond",
-   [2] = "ダイヤのA[エース]",
+   [1] = "Ace of Diamond",
+   [2] = "Ace of the Diamond",
+   [3] = "ダイヤのA[エース]",
    },
   ["short"] = {
    },
@@ -104004,6 +104025,7 @@ return {
    [2] = "ラブライブ! School idol project (2014)",
    },
   ["short"] = {
+   [1] = "LL!2",
    },
   ["syn"] = {
    [1] = "Love Live! 2",
@@ -105148,6 +105170,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "PP2",
    },
   },
  [10066] = {
@@ -105530,15 +105553,14 @@ return {
  [10114] = {
   ["main"] = "Bayonetta: Bloody Fate",
   ["official"] = {
-   [1] = "BAYONETTA BLOODYFATE",
+   [1] = "BAYONETTA BLOODY FATE",
    [2] = "Bayonetta Bloody Fate",
    [3] = "Bayonetta: Bloody Fate",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "BAYONETTA Bloody Fate",
-   [2] = "ベヨネッタ ブラッディフェイト",
+   [1] = "ベヨネッタ ブラッディフェイト",
    },
   },
  [10115] = {
@@ -106646,6 +106668,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Legend of the Sacred Stone",
    },
   },
  [10240] = {
@@ -106716,14 +106739,17 @@ return {
    },
   },
  [10246] = {
-  ["main"] = "Kaduu Wang Miksuu Mastaa",
+  ["main"] = "Card Wang Mix Master",
   ["official"] = {
-   [1] = "Card Wang Mix Master",
-   [2] = "카드왕 믹스 마스터",
+   [1] = "카드왕 믹스 마스터",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Card Ou Mix Master",
+   [2] = "Mix Master: King of Cards",
+   [3] = "カードおう ミックスマスター",
+   [4] = "カード王 ミックスマスター",
    },
   },
  [10247] = {
@@ -107628,14 +107654,14 @@ return {
   ["official"] = {
    [1] = "Rage of Bahamut: Genesis",
    [2] = "Shingeki no Bahamut",
-   [3] = "Гневът на Бахамут: Началото",
-   [4] = "巴哈姆特之怒 GENESIS",
-   [5] = "神撃のバハムート GENESIS",
+   [3] = "巴哈姆特之怒 GENESIS",
+   [4] = "神撃のバハムート GENESIS",
    },
   ["short"] = {
    [1] = "SnB Genesis",
    },
   ["syn"] = {
+   [1] = "Гневът на Бахамут: Началото",
    },
   },
  [10374] = {
@@ -108639,7 +108665,8 @@ return {
  [10502] = {
   ["main"] = "Furueru Kuchibiru",
   ["official"] = {
-   [1] = "フルエルクチビル",
+   [1] = "Fuzzy Lips",
+   [2] = "フルエルクチビル",
    },
   ["short"] = {
    },
@@ -108998,7 +109025,7 @@ return {
  [10540] = {
   ["main"] = "Gyakusatsu Kikan",
   ["official"] = {
-   [1] = "虐殺器官",
+   [1] = "虐殺器官 GENOCIDAL ORGAN",
    },
   ["short"] = {
    },
@@ -110095,6 +110122,7 @@ return {
    [1] = "テイルズ オブ ゼスティリア ~導師の夜明け~",
    },
   ["short"] = {
+   [1] = "TOZ",
    },
   ["syn"] = {
    },
@@ -110822,7 +110850,7 @@ return {
  [10758] = {
   ["main"] = "Mugen Kouro",
   ["official"] = {
-   [1] = "無限航路",
+   [1] = "無限航路 Infinite Space",
    },
   ["short"] = {
    },
@@ -110896,9 +110924,9 @@ return {
    },
   },
  [10765] = {
-  ["main"] = "Hyakka Ryouran (2014)",
+  ["main"] = "Hyakka Ryouran: Samurai After",
   ["official"] = {
-   [1] = "百花繚乱 (2014)",
+   [1] = "百花繚乱 サムライアフター",
    },
   ["short"] = {
    },
@@ -111240,6 +111268,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Seitokai Yakuindomo 2#15",
    },
   },
  [10811] = {
@@ -111250,7 +111279,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Yurikuma Arashi",
+   [1] = "Love Bullet - Yurikuma Arashi",
+   [2] = "Yurikuma Arashi",
    },
   },
  [10812] = {
@@ -111944,6 +111974,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Japan Animator Expo Short Films",
    },
   },
  [10897] = {
@@ -112178,19 +112209,122 @@ return {
   ["syn"] = {
    },
   },
- [10921] = {
-  ["main"] = "Shingeki no Kyojin: Kuinaki Sentaku",
+ [10922] = {
+  ["main"] = "Koi Maguwai",
   ["official"] = {
+   [1] = "恋まぐわい",
    },
   ["short"] = {
    },
   ["syn"] = {
    },
   },
- [10922] = {
-  ["main"] = "Koi Maguwai",
+ [10924] = {
+  ["main"] = "Ansatsu Kyoushitsu Episode 0: Deai no Jikan",
   ["official"] = {
-   [1] = "恋まぐわい",
+   [1] = "暗殺教室 episode:0 出会いの時間",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10925] = {
+  ["main"] = "Tsukiuta.",
+  ["official"] = {
+   [1] = "ツキウタ。",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10926] = {
+  ["main"] = "Kana Kana Kazoku",
+  ["official"] = {
+   [1] = "かなかなかぞく",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10927] = {
+  ["main"] = "Kaseifu ga Ita.",
+  ["official"] = {
+   [1] = "カセイフがイタ.",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10928] = {
+  ["main"] = "Choujikuu Robo Meguru",
+  ["official"] = {
+   [1] = "超時空ロボ MEGURU",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10929] = {
+  ["main"] = "K (2015)",
+  ["official"] = {
+   [1] = "K (2015)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10930] = {
+  ["main"] = "My Melody no Ookami-san ni Ki o Tsukete",
+  ["official"] = {
+   [1] = "マイメロディのオオカミさんにきをつけて",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10931] = {
+  ["main"] = "Joukamachi no Dandelion",
+  ["official"] = {
+   [1] = "城下町のダンデライオン",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10932] = {
+  ["main"] = "Harmony",
+  ["official"] = {
+   [1] = "&lt;harmony/&gt;",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "ハーモニー",
+   },
+  },
+ [10934] = {
+  ["main"] = "Ao no Kanata no Four Rhythm",
+  ["official"] = {
+   [1] = "蒼の彼方のフォーリズム",
+   },
+  ["short"] = {
+   [1] = "aokana",
+   },
+  ["syn"] = {
+   },
+  },
+ [10935] = {
+  ["main"] = "Q Transformers: Kaette Kita Convoy no Nazo",
+  ["official"] = {
+   [1] = "キュートランスフォーマー 帰ってきたコンボイの謎",
    },
   ["short"] = {
    },
