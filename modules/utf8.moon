@@ -98,3 +98,6 @@ PRIVMSG:
     say remap(maps.bi, arg)
   '^%pboldscript (.+)$': (source, destination, arg) =>
     say remap(maps.bs, arg)
+  '^%putfuk (.+)$': (source, destination, arg) =>
+    keys = [x for x,_ in pairs(maps)]
+    say table.concat([remap(maps[keys[math.random(#keys)]], letter) for letter in codepoints(arg)])
