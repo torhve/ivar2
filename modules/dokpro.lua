@@ -1,75 +1,11 @@
-local simplehttp = require'simplehttp'
-local html2unicode = require'html'
-local iconv = require"iconv"
-local iso2utf = iconv.new("utf-8", "iso-8859-15")
-local utf2iso = iconv.new('iso-8859-15', 'utf-8')
-
-local customEntities = {
-	oogon = 'ǫ',
-}
-
-local decodeHTMLentity = function(str)
-	return html2unicode((str:gsub("&(%w+);", customEntities)))
-end
-
-local urlEncode = function(str)
-	return str:gsub(
-		'([^%w ])',
-		function (c)
-			return string.format ("%%%02X", string.byte(c))
-		end
-	):gsub(' ', '+')
-end
+local htmlparser = require'htmlparser'
 
 local trim = function(s)
+	if not s then return nil end
 	return s:match('^()%s*$') and '' or s:match('^%s*(.*%S)')
 end
 
-local limitOutput = function(str)
-	local limit = 100
-	if(#str > limit) then
-		str = str:sub(1, limit)
-		if(#str == limit) then
-			-- Clip it at the last space:
-			str = str:match('^.* ') .. '…'
-		end
-	end
-
-	return str
-end
-
-local parseLine = function(data)
-	local entry = {
-		lookup = {},
-		examples = {},
-	}
-
-	local insertAt
-	for td in data:gmatch('<td[^>]->(.-)</td>') do
-		-- Strip away HTML.
-		local line = trim(td:gsub('<span class="b">([^%d]-)</span>', '%1'):gsub('</?[%w:]+[^>]-/?>', ''))
-		line = decodeHTMLentity(line:gsub('%s%s+', ' '))
-
-		if(#line > 0) then
-			if(tonumber(line)) then
-				insertAt = tonumber(line)
-			elseif(not line:match('%s+')) then
-				table.insert(entry.lookup, line)
-			elseif(insertAt) then
-				entry.examples[insertAt] = line
-				insertAt = nil
-			else
-				entry.meaning = line
-			end
-		end
-	end
-
-	return entry
-end
-
 local parseData = function(data)
-	data = iso2utf:iconv(data)
-
 	if(data:match('ordboksdatabasene')) then
 		return nil, 'Service down. :('
 	end
@@ -79,36 +15,73 @@ local parseData = function(data)
 	data = data:gsub('\r', ''):match('<div id="kolonne_enkel"[^>]+>(.-)<div id="slutt">'):gsub('&nbsp;', '')
 
 	local words = {}
-	if(data:match('liten_ordliste')) then
-		for entryData in data:gmatch('<table class="liten_ordliste">([^\n]+)') do
-			table.insert(words, parseLine(entryData))
+	local lookup = data:match('>([^<]+)</a>')
+	data = data:match('(<span class="oppslagsord b".->.-)</td>')
+
+	if(data) then
+		local doc = htmlparser.parsestr(data)
+		local word = doc[1][1]
+		-- Workaround for mis matched word (partial match)
+		if type(word) == type({}) then
+			word = doc[1][1][1]
 		end
-	else
-		local lookup = data:match('>([^<]+)</a>')
-		data = data:match('(<td><span class="b">[^\n]+)')
-		if(data) then
-			local entry = parseLine(data)
-			if(entry) then
-				table.insert(entry.lookup, lookup)
-				table.insert(words, entry)
+		local entry = { 
+			lookup = {},
+			meaning = {},
+			examples = {},
+		}
+		local text = {}
+		-- Here be dragons. This is why we can't have nice things
+		for _, w in pairs(doc) do
+			if _ ~= '_tag' then 
+				if type(w) == type("") then
+					table.insert(text, w)
+				elseif type(w) == type({}) then
+					if w['_attr'] and w['_attr'].class == 'oppsgramordklasse' then
+						table.insert(text, ivar2.util.italic(w[1]))
+					-- Extract definitions
+					elseif w['_attr'] ~= nil and w['_attr']['class'] == 'utvidet' then
+						for _, t in pairs(w) do
+							if type(t) == type("") and t ~= "span" then
+								table.insert(text, t)
+							elseif type(w) == type({}) then
+								if t['_attr'] ~= nil and t['_attr']['class'] == 'tydingC kompakt' then
+									for _, f in pairs(t) do
+										if type(f) == type("") and f ~= 'span' then
+											table.insert(text, f)
+										elseif type(f[1]) == type("") and trim(f[1]) ~= "" then
+											table.insert(text, string.format("[%s]", ivar2.util.bold(f[1])))
+										end
+									end
+								end
+							end
+						end
+					elseif type(w[1]) == type("") then
+						if w[1] ~= word then
+							table.insert(text, w[1])
+						end
+					end
+				end
 			end
 		end
+		entry.meaning = trim(table.concat(text))
+		table.insert(entry.lookup, word)
+		table.insert(words, entry)
 	end
 
 	return words
 end
 
-local handleInput = function(self, source, destination, word)
-	local query = urlEncode(utf2iso:iconv(word))
-	simplehttp(
-		"http://www.nob-ordbok.uio.no/perl/ordbok.cgi?ordbok=bokmaal&bokmaal=+&OPP=" .. query,
+local handleInput = function(self, source, destination, word, ordbok)
+	if not ordbok then ordbok = 'bokmaal' end
+	local query = ivar2.util.urlEncode(word)
+	ivar2.util.simplehttp(
+		"http://www.nob-ordbok.uio.no/perl/ordbok.cgi?ordbok="..ordbok.."&"..ordbok.."=+&OPP=" .. query,
 
 		function(data)
 			local words, err = parseData(data)
 			local out = {}
 			if(words) then
-				local msgLimit = (512 - 16 - 65 - 10) - #self.config.nick - #destination
-				-- size of the word + x0 url.
 				local n =  #word + 23
 				for i=1, #words do
 					local word = words[i]
@@ -123,20 +96,16 @@ local handleInput = function(self, source, destination, word)
 					end
 
 					if(definition) then
-						local message = string.format('\002[%s]\002: %s', lookup, limitOutput(definition))
+						local message = string.format('\002[%s]\002: %s', lookup, definition)
 
 						n = n + #message
-						if(n < msgLimit) then
-							table.insert(out, message)
-						else
-							break
-						end
+						table.insert(out, message)
 					end
 				end
 			end
 
 			if(#out > 0) then
-				self:Msg('privmsg', destination, source, '%s | http://x0.no/dokpro/%s', table.concat(out, ', '), urlEncode(word))
+				self:Msg('privmsg', destination, source, '%s', table.concat(out, ', '))
 			else
 				self:Msg('privmsg', destination, source, '%s: %s', source.nick, err or 'Du suger, prøv igjen.')
 			end
@@ -148,5 +117,9 @@ return {
 	PRIVMSG = {
 		['^%pdokpro (.+)$'] = handleInput,
 		['^%pordbok (.+)$'] = handleInput,
+		['^%pbokmål (.+)$'] = handleInput,
+		['^%pnynorsk (.+)$'] = function(self, source, destination, word) 
+			handleInput(self, source, destination, word, 'nynorsk')
+		end
 	},
 }
