@@ -32183,6 +32183,7 @@ return {
    },
   ["syn"] = {
    [1] = "Dr. Slump ほよよ! 宇宙大冒険 (スペース・アドベンチャー)",
+   [2] = "Dr. Slump: Hoyoyo! Space Adventure",
    },
   },
  [2274] = {
@@ -37770,12 +37771,12 @@ return {
   ["main"] = "Maple Colors",
   ["official"] = {
    [1] = "Maple Colors",
-   [2] = "メイプル カラーズ",
    },
   ["short"] = {
    },
   ["syn"] = {
    [1] = "Maple Colours",
+   [2] = "メイプル カラーズ",
    },
   },
  [2748] = {
@@ -38367,9 +38368,7 @@ return {
    [2] = "魔界天使ジブリール",
    },
   ["short"] = {
-   [1] = "Djibril",
-   [2] = "Jibril",
-   [3] = "Jiburiru",
+   [1] = "Jibril",
    },
   ["syn"] = {
    [1] = "Jiburiru: The Devil Angel",
@@ -45659,6 +45658,7 @@ return {
    [1] = "Captain Tsubasa - Le défi européen II",
    [2] = "Captain Tsubasa MOVIE (1985 Winter)",
    [3] = "Captain Tsubasa movie 2",
+   [4] = "Captain Tsubasa: The Japanese Youth Selection Is in Danger",
    },
   },
  [3561] = {
@@ -50745,6 +50745,7 @@ return {
    [1] = "Mission in Porno Naked Nurse",
    [2] = "Vidurnakčio Smogikės",
    [3] = "Yosho",
+   [4] = "요섭",
    },
   },
  [4205] = {
@@ -57749,8 +57750,9 @@ return {
  [4915] = {
   ["main"] = "Zero no Tsukaima: Futatsuki no Kishi",
   ["official"] = {
-   [1] = "ゼロの使い魔 ~双月の騎士~",
-   [2] = "제로의 사역마: 쌍월의 기사",
+   [1] = "The Familiar of Zero: Knight of the Twin Moons",
+   [2] = "ゼロの使い魔 ~双月の騎士~",
+   [3] = "제로의 사역마: 쌍월의 기사",
    },
   ["short"] = {
    [1] = "FoZ 2",
@@ -71402,7 +71404,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "ドラゴンボールZ あつまれ! 悟空ワールド",
+   [1] = "DRAGON BALL Z Viva! Goku World",
+   [2] = "ドラゴンボールZ あつまれ! 悟空ワールド",
    },
   },
  [6542] = {
@@ -72519,7 +72522,8 @@ return {
   ["syn"] = {
    [1] = "Macross Frontier the MOVIE ~The False Diva~",
    [2] = "Macross Frontier: Itsuwari no Utahime",
-   [3] = "Macross Frontier: The Songstress of Lies",
+   [3] = "Macross Frontier: The False Diva",
+   [4] = "Macross Frontier: The Songstress of Lies",
    },
   },
  [6657] = {
@@ -85582,9 +85586,7 @@ return {
  [7973] = {
   ["main"] = "Aa! Megami-sama! (2011)",
   ["official"] = {
-   [1] = "Aa! Megami-sama! Itsumo Futari de",
-   [2] = "Ah! My Goddess: Always the Two of Us",
-   [3] = "ああっ女神さまっ (2011)",
+   [1] = "ああっ女神さまっ (2011)",
    },
   ["short"] = {
    },
@@ -87617,11 +87619,11 @@ return {
   ["main"] = "Dragon Ball: Super Saiya-jin Zetsumetsu Keikaku",
   ["official"] = {
    [1] = "DRAGON BALL 超[スーパー]サイヤ人絶滅計画",
+   [2] = "Dragon Ball: Plan to Eradicate the Super Saiyans",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Dragon Ball: Plan to Eradicate the Super Saiyans",
    },
   },
  [8173] = {
@@ -93675,6 +93677,7 @@ return {
   ["main"] = "Dragon Ball: Episode of Bardock",
   ["official"] = {
    [1] = "DRAGON BALL EPISODE of BARDOCK",
+   [2] = "Dragon Ball: Episode of Bardock",
    },
   ["short"] = {
    },
@@ -95754,9 +95757,10 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Naruto Shippuuden Movie 6",
-   [2] = "Naruto Shippuuden Movie 6 - Road to Ninja",
-   [3] = "ロード・トゥ・ニンジャ ナルト・ザ・ムービー",
+   [1] = "Gekijouban Naruto Shippuuden: Road to Ninja",
+   [2] = "Naruto Shippuuden Movie 6",
+   [3] = "Naruto Shippuuden Movie 6 - Road to Ninja",
+   [4] = "ロード・トゥ・ニンジャ ナルト・ザ・ムービー",
    },
   },
  [9025] = {
@@ -96263,8 +96267,9 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Shinpi no Hou",
-   [2] = "神秘の法",
+   [1] = "Happy Science Movie 6",
+   [2] = "Shinpi no Hou",
+   [3] = "神秘の法",
    },
   },
  [9082] = {
@@ -99423,11 +99428,12 @@ return {
  [9437] = {
   ["main"] = "Cardfight!! Vanguard: Link Joker Hen",
   ["official"] = {
-   [1] = "カードファイト!! ヴァンガード リンクジョーカー編",
+   [1] = "CARDFIGHT!! ヴァンガード リンクジョーカー編",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "カードファイト!! ヴァンガード リンクジョーカー編",
    },
   },
  [9439] = {
@@ -100300,8 +100306,10 @@ return {
  [9515] = {
   ["main"] = "Kaguya Hime no Monogatari",
   ["official"] = {
-   [1] = "The Tale of the Princess Kaguya",
-   [2] = "かぐや姫の物語",
+   [1] = "Die Legende der Prinzessin Kaguya",
+   [2] = "Le Conte de la princesse Kaguya",
+   [3] = "The Tale of the Princess Kaguya",
+   [4] = "かぐや姫の物語",
    },
   ["short"] = {
    },
@@ -103193,6 +103201,7 @@ return {
    [1] = "lupicona-movie",
    },
   ["syn"] = {
+   [1] = "Lupin the 3rd vs. Detective Conan",
    },
   },
  [9842] = {
@@ -103821,7 +103830,8 @@ return {
   ["main"] = "Love Stage!!",
   ["official"] = {
    [1] = "LOVE STAGE!!",
-   [2] = "Любовна сцена!!",
+   [2] = "Love Stage!!",
+   [3] = "Любовна сцена!!",
    },
   ["short"] = {
    [1] = "ラブステ",
@@ -104583,6 +104593,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Kuroko`s Basketball: Idiots Can`t Win",
    },
   },
  [9992] = {
@@ -107147,8 +107158,9 @@ return {
  [10295] = {
   ["main"] = "Mangaka-san to Assistant-san to The Animation",
   ["official"] = {
-   [1] = "The Comic Artist and His Assistants",
-   [2] = "マンガ家さんとアシスタントさんと THE ANIMATION THE COMIC ARTIST AND ASSISTANTS",
+   [1] = "Mangaka-san to Assistant-san to",
+   [2] = "The Comic Artist and His Assistants",
+   [3] = "マンガ家さんとアシスタントさんと THE ANIMATION THE COMIC ARTIST AND ASSISTANTS",
    },
   ["short"] = {
    },
@@ -108571,11 +108583,12 @@ return {
  [10483] = {
   ["main"] = "Cardfight!! Vanguard: Legion Mate Hen",
   ["official"] = {
-   [1] = "カードファイト!! ヴァンガード レギオンメイト編",
+   [1] = "CARDFIGHT!! ヴァンガード レギオンメイト編",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "カードファイト!! ヴァンガード レギオンメイト編",
    },
   },
  [10484] = {
@@ -108665,12 +108678,12 @@ return {
  [10502] = {
   ["main"] = "Furueru Kuchibiru",
   ["official"] = {
-   [1] = "Fuzzy Lips",
-   [2] = "フルエルクチビル",
+   [1] = "フルエルクチビル",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Fuzzy Lips",
    },
   },
  [10504] = {
@@ -108902,6 +108915,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "The Testament of Sister New Devil",
    },
   },
  [10530] = {
@@ -110194,9 +110208,9 @@ return {
    },
   },
  [10680] = {
-  ["main"] = "Eiga Youkai Watch",
+  ["main"] = "Eiga Youkai Watch: Tanjou no Himitsu Da Nyan!",
   ["official"] = {
-   [1] = "映画 妖怪ウォッチ",
+   [1] = "映画 妖怪ウォッチ 誕生の秘密だニャン!",
    },
   ["short"] = {
    },
@@ -110711,9 +110725,9 @@ return {
    },
   },
  [10742] = {
-  ["main"] = "Dragon Ball Z (2015)",
+  ["main"] = "Dragon Ball Z: Fukkatsu no F",
   ["official"] = {
-   [1] = "ドラゴンボールZ (2015)",
+   [1] = "ドラゴンボールZ 復活の「F」",
    },
   ["short"] = {
    },
@@ -111738,11 +111752,12 @@ return {
  [10869] = {
   ["main"] = "Cardfight!! Vanguard G",
   ["official"] = {
-   [1] = "カードファイト!! ヴァンガードG",
+   [1] = "CARDFIGHT!! ヴァンガードG",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "カードファイト!! ヴァンガードG",
    },
   },
  [10871] = {
@@ -111975,6 +111990,8 @@ return {
    },
   ["syn"] = {
    [1] = "Japan Animator Expo Short Films",
+   [2] = "Japan Animator`s Exhibition",
+   [3] = "Nihon Animator Mihonichi",
    },
   },
  [10897] = {
@@ -112325,6 +112342,86 @@ return {
   ["main"] = "Q Transformers: Kaette Kita Convoy no Nazo",
   ["official"] = {
    [1] = "キュートランスフォーマー 帰ってきたコンボイの謎",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10936] = {
+  ["main"] = "Kyoukai no Rinne",
+  ["official"] = {
+   [1] = "境界のRINNE",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10937] = {
+  ["main"] = "Koe no Katachi",
+  ["official"] = {
+   [1] = "聲の形",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10938] = {
+  ["main"] = "Rokka no Yuusha",
+  ["official"] = {
+   [1] = "六花の勇者",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10939] = {
+  ["main"] = "Gekijouban Sidonia no Kishi",
+  ["official"] = {
+   [1] = "劇場版 シドニアの騎士",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10941] = {
+  ["main"] = "Eiga Precure All Stars: Haru no Carnival",
+  ["official"] = {
+   [1] = "映画プリキュアオールスターズ 春のカーニバル♪",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10942] = {
+  ["main"] = "Ikenai Koto The Animation",
+  ["official"] = {
+   [1] = "イケナイコト THE ANIMATION",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10943] = {
+  ["main"] = "Nosewasure",
+  ["official"] = {
+   [1] = "のせわすれ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10944] = {
+  ["main"] = "Shingeki no Kyojin (2016)",
+  ["official"] = {
+   [1] = "進撃の巨人 (2016)",
    },
   ["short"] = {
    },
