@@ -1502,9 +1502,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Dual! Parare Runrun Monogatari",
-   [2] = "Dual! Una Historia Paralela",
-   [3] = "Опасные приключения в параллельной реальности",
+   [1] = "Dual! Una Historia Paralela",
+   [2] = "Опасные приключения в параллельной реальности",
    },
   },
  [83] = {
@@ -8017,15 +8016,16 @@ return {
    },
   },
  [465] = {
-  ["main"] = "Seiden RG Veda",
+  ["main"] = "RG Veda",
   ["official"] = {
    [1] = "RG VEDA",
    [2] = "RG Veda",
-   [3] = "聖伝",
+   [3] = "聖伝[RG VEDA]",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Seiden",
    },
   },
  [466] = {
@@ -15590,7 +15590,7 @@ return {
    [2] = "Lupin III: Il pericolo è il mio mestiere",
    [3] = "Lupin III: Voyage to Danger",
    [4] = "Lupin the 3rd: Voyage To Danger",
-   [5] = "「ルパン三世」 ルパン暗殺指令",
+   [5] = "ルパン三世 ルパン暗殺指令",
    },
   ["short"] = {
    },
@@ -18163,6 +18163,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "내츄럴",
    },
   },
  [1170] = {
@@ -25472,6 +25473,7 @@ return {
    },
   ["syn"] = {
    [1] = "Last Kunoichi",
+   [2] = "쿠노이치",
    },
   },
  [1753] = {
@@ -26690,6 +26692,7 @@ return {
   ["syn"] = {
    [1] = "Family Restaurant Warrior Pudding",
    [2] = "Schutzpatron Pudding",
+   [3] = "파미레스 전사 푸링",
    },
   },
  [1845] = {
@@ -29366,6 +29369,7 @@ return {
    },
   ["syn"] = {
    [1] = "シンカン",
+   [2] = "신칸",
    },
   },
  [2055] = {
@@ -30875,6 +30879,7 @@ return {
   ["syn"] = {
    [1] = "Inyoku Emaki: Yukiyo ni Hime wa Okasareru",
    [2] = "淫欲絵巻~雪夜に姫は犯される~",
+   [3] = "눈 오는 밤 이야기",
    },
   },
  [2175] = {
@@ -33576,7 +33581,7 @@ return {
    [1] = "Bienvenue à l’ île de la jouissance",
    [2] = "Fruits Cup",
    [3] = "Yogusettai",
-   [4] = "優遇接待~孤島の極楽へようこそ~",
+   [4] = "優遇接待 孤島の極楽へようこそ",
    },
   ["short"] = {
    },
@@ -35049,6 +35054,7 @@ return {
    [1] = "Elder Brother`s Wife",
    [2] = "La Esposa de mi Hermano",
    [3] = "My Brothers Wife",
+   [4] = "형수",
    },
   },
  [2508] = {
@@ -35172,6 +35178,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "독점",
    },
   },
  [2518] = {
@@ -35197,6 +35204,7 @@ return {
    },
   ["syn"] = {
    [1] = "Obscene Prison Ward",
+   [2] = "음옥병동",
    },
   },
  [2520] = {
@@ -39502,12 +39510,12 @@ return {
   ["main"] = "Sensitive Pornograph",
   ["official"] = {
    [1] = "Sensitive Pornograph",
-   [2] = "センシティブ・ポルノグラフ",
    },
   ["short"] = {
    },
   ["syn"] = {
    [1] = "Jausminga Pornografija",
+   [2] = "センシティブ・ポルノグラフ",
    },
   },
  [2899] = {
@@ -42707,6 +42715,7 @@ return {
    [1] = "Rhythmic Gymnastics",
    [2] = "Shin Shintaisou",
    [3] = "Shintaisou Kari 2",
+   [4] = "신체조(진)",
    },
   },
  [3311] = {
@@ -44751,8 +44760,7 @@ return {
    },
   ["syn"] = {
    [1] = "Ki ni Naru Roommate",
-   [2] = "Roommate",
-   [3] = "신경쓰이는 룸메이트",
+   [2] = "신경쓰이는 룸메이트",
    },
   },
  [3481] = {
@@ -49086,6 +49094,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "처녀 경매",
    },
   },
  [4078] = {
@@ -49100,6 +49109,7 @@ return {
   ["syn"] = {
    [1] = "Hitoduma Kasumi-san",
    [2] = "Kasumi - Heimliche Liebe",
+   [3] = "유부녀 카스미씨",
    },
   },
  [4079] = {
@@ -51847,7 +51857,7 @@ return {
  [4306] = {
   ["main"] = "Shachiku: Kuruma no Naka de Kattemasu",
   ["official"] = {
-   [1] = "車畜~車の中で飼ってます~",
+   [1] = "車畜[しゃちく]~車の中で飼ってます~",
    },
   ["short"] = {
    },
@@ -52151,12 +52161,13 @@ return {
   ["main"] = "Imouto",
   ["official"] = {
    [1] = "Sex Exchange",
-   [2] = "義妹 [いもうと]",
+   [2] = "義妹[いもうと]",
    },
   ["short"] = {
    },
   ["syn"] = {
    [1] = "Gimai Imouto",
+   [2] = "의매",
    },
   },
  [4338] = {
@@ -56107,7 +56118,7 @@ return {
   ["main"] = "Imouto Twins",
   ["official"] = {
    [1] = "Sex Exchange (2)",
-   [2] = "義妹×2 いもうとツインズ",
+   [2] = "義妹×2[いもうとツインズ]",
    },
   ["short"] = {
    },
@@ -64988,7 +64999,7 @@ return {
  [5750] = {
   ["main"] = "Tennis no Ouji-sama: Zenkoku Taikai Hen - Final",
   ["official"] = {
-   [1] = "テニスの王子様 Original Video Animation 全国大会編 Final",
+   [1] = "テニスの王子様 Original Video Animation 全国大会篇 Final",
    },
   ["short"] = {
    },
@@ -66421,6 +66432,7 @@ return {
    },
   ["syn"] = {
    [1] = "Eien no Filena",
+   [2] = "Eternal Filena",
    },
   },
  [5944] = {
@@ -78017,16 +78029,17 @@ return {
    },
   },
  [7206] = {
-  ["main"] = "Fate/Stay Night TV Reproduction",
+  ["main"] = "Fate/Stay Night (2010)",
   ["official"] = {
-   [1] = "Fate/stay night TV Reproduction",
-   [2] = "Fate/stay night TV reproduction",
+   [1] = "Fate/stay night (2010)",
+   [2] = "Fate/stay night TV Reproduction",
    },
   ["short"] = {
    [1] = "fsnr",
    },
   ["syn"] = {
    [1] = "Съдба/Нощна битка: телевизионна репродукция",
+   [2] = "フェイト/ステイナイト (2010)",
    },
   },
  [7207] = {
@@ -79649,9 +79662,9 @@ return {
    },
   },
  [7360] = {
-  ["main"] = "Kaba Enshou no Doubutsu Nikki",
+  ["main"] = "Kaba Enshou no Doubutsuen Nikki",
   ["official"] = {
-   [1] = "カバ園長の動物日記",
+   [1] = "カバ園長の動物園日記",
    },
   ["short"] = {
    },
@@ -92626,7 +92639,7 @@ return {
    },
   },
  [8701] = {
-  ["main"] = "Saki: Achiga-hen - Episode of Side-A",
+  ["main"] = "Saki: Achiga Hen - Episode of Side-A",
   ["official"] = {
    [1] = "Saki Episode of Side A",
    [2] = "咲 阿知賀編 episode of side-A",
@@ -100299,8 +100312,9 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Вітер дужчає",
-   [2] = "Здійнявся вітер",
+   [1] = "Вятърът на промяната",
+   [2] = "Вітер дужчає",
+   [3] = "Здійнявся вітер",
    },
   },
  [9515] = {
@@ -108694,6 +108708,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Natural Love Colored Alcohol",
    },
   },
  [10505] = {
@@ -109065,6 +109080,7 @@ return {
    [3] = "月刊少女野崎君",
    },
   ["short"] = {
+   [1] = "Nozaki-kun",
    },
   ["syn"] = {
    },
@@ -109529,8 +109545,9 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Seven Deadly Sins",
-   [2] = "Седемте смъртни гряха",
+   [1] = "Nanatsu no Taizai - The Seven Deadly Sins",
+   [2] = "Seven Deadly Sins",
+   [3] = "Седемте смъртни гряха",
    },
   },
  [10597] = {
@@ -109694,7 +109711,7 @@ return {
  [10617] = {
   ["main"] = "Gekijouban Cardfight!! Vanguard: Neon Messiah",
   ["official"] = {
-   [1] = "劇場版 CARDFIGHT!! ヴァンガード ネオンメイサイア",
+   [1] = "劇場版 CARDFIGHT!! ヴァンガード ネオンメサイア",
    },
   ["short"] = {
    },
@@ -110456,6 +110473,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Unlimited Fafnir",
    },
   },
  [10712] = {
@@ -110584,9 +110602,9 @@ return {
    },
   },
  [10726] = {
-  ["main"] = "Gekijouban Kyoukai no Kanata",
+  ["main"] = "Gekijouban Kyoukai no Kanata: I`ll Be Here",
   ["official"] = {
-   [1] = "劇場版 境界の彼方",
+   [1] = "劇場版 境界の彼方-I`LL BE HERE-",
    },
   ["short"] = {
    },
@@ -112422,6 +112440,117 @@ return {
   ["main"] = "Shingeki no Kyojin (2016)",
   ["official"] = {
    [1] = "進撃の巨人 (2016)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10946] = {
+  ["main"] = "Pac-World",
+  ["official"] = {
+   [1] = "Pac-Man and the Ghostly Adventures",
+   [2] = "パックワールド",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10947] = {
+  ["main"] = "Hetalia: The World Twinkle",
+  ["official"] = {
+   [1] = "ヘタリア The World Twinkle",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10948] = {
+  ["main"] = "Punchline",
+  ["official"] = {
+   [1] = "パンチライン",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10949] = {
+  ["main"] = "Ranpo Kitan Game of Laplace",
+  ["official"] = {
+   [1] = "乱歩奇譚 Game of Laplace",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10950] = {
+  ["main"] = "Subete ga F ni Naru",
+  ["official"] = {
+   [1] = "すべてがFになる",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10951] = {
+  ["main"] = "Koutetsujou no Kabaneri",
+  ["official"] = {
+   [1] = "甲鉄城のカバネリ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10952] = {
+  ["main"] = "Shisha no Teikoku",
+  ["official"] = {
+   [1] = "屍者の帝国 The Empire of Corpses",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10953] = {
+  ["main"] = "Meitantei Conan (2015)",
+  ["official"] = {
+   [1] = "名探偵コナン (2015)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10954] = {
+  ["main"] = "Haikyuu!! (2015)",
+  ["official"] = {
+   [1] = "ハイキュー!! (2015)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10955] = {
+  ["main"] = "Yamada-kun to 7-nin no Majo (2015)",
+  ["official"] = {
+   [1] = "山田くんと7人の魔女 (2015)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10956] = {
+  ["main"] = "Kimi to Boku (Everlasting Heart)",
+  ["official"] = {
+   [1] = "キミとボク",
    },
   ["short"] = {
    },
