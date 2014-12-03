@@ -9,6 +9,7 @@ local handleOutput = function(self, source, destination)
 	local nick = source.nick
 	local key = 'notes:' .. destination .. ':' .. nick:lower()
 	local nick_notes = notes[key]
+	if(not nick_notes) then return end
 	local numNotes = tonumber(#nick_notes)
 	if(not numNotes or numNotes == 0) then return end
 
