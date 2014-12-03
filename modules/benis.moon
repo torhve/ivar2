@@ -5,7 +5,6 @@ reduce = (fun, list, def) ->
   return def
 
 rand = math.random
-tconc = table.concat
 
 benisify = (s) ->
   reduce (acc, f) ->
@@ -55,4 +54,3 @@ benisify = (s) ->
 PRIVMSG:
   '^%pbenis (.*)$':(source, destination, arg) =>
     say(benisify(arg))
-
