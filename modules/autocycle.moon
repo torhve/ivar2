@@ -4,6 +4,10 @@ cycleNeeded = (source, destination, arg) =>
     return
   -- Check if we are the last nick in the channel
   counter = 0
+  unless @channels[destination]
+    return
+  unless @channels[destination].nicks
+    return
   for nick, meta in pairs @channels[destination].nicks
     if nick == @config.nick
       -- Check if we have op
