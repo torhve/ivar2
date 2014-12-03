@@ -25,32 +25,56 @@ local parseData = function(data)
 		if type(word) == type({}) then
 			word = doc[1][1][1]
 		end
+		-- First entry
 		local entry = { 
 			lookup = {},
 			meaning = {},
 			examples = {},
 		}
-		local text = {}
+		local addentry = function(lookup)
+			entry = { 
+				lookup = {},
+				meaning = {},
+				examples = {},
+			}
+			table.insert(entry.lookup, lookup)
+			table.insert(words, entry)
+		end
+		local add = function(item)
+			if not item then return end
+			table.insert(entry.meaning, item)
+		end
 		-- Here be dragons. This is why we can't have nice things
 		for _, w in pairs(doc) do
 			if _ ~= '_tag' then 
 				if type(w) == type("") then
-					table.insert(text, w)
+					add(w)
 				elseif type(w) == type({}) then
 					if w['_attr'] and w['_attr'].class == 'oppsgramordklasse' then
-						table.insert(text, ivar2.util.italic(w[1]))
+						add(ivar2.util.italic(w[1]))
+					elseif w['_attr'] and w['_attr'].class == 'oppslagsord b' then
+						local lookup = {}
+						for _, t in pairs(w) do
+							if type(t) == type("") and t ~= "span" then
+								table.insert(lookup, t)
+							elseif type(t[1]) == type("") and t[1] ~= "span" then
+								table.insert(lookup, t[1])
+							end
+						end
+						addentry(table.concat(lookup))
 					-- Extract definitions
 					elseif w['_attr'] ~= nil and w['_attr']['class'] == 'utvidet' then
 						for _, t in pairs(w) do
 							if type(t) == type("") and t ~= "span" then
-								table.insert(text, t)
+								-- Utvidet + kompakt leads to dupes.
+								-- add(t)
 							elseif type(w) == type({}) then
 								if t['_attr'] ~= nil and t['_attr']['class'] == 'tydingC kompakt' then
 									for _, f in pairs(t) do
 										if type(f) == type("") and f ~= 'span' then
-											table.insert(text, f)
+											add(f)
 										elseif type(f[1]) == type("") and trim(f[1]) ~= "" then
-											table.insert(text, string.format("[%s]", ivar2.util.bold(f[1])))
+											add(string.format("[%s]", ivar2.util.bold(f[1])))
 										end
 									end
 								end
@@ -58,15 +82,15 @@ local parseData = function(data)
 						end
 					elseif type(w[1]) == type("") then
 						if w[1] ~= word then
-							table.insert(text, w[1])
+							add(w[1])
 						end
 					end
 				end
 			end
 		end
-		entry.meaning = trim(table.concat(text))
-		table.insert(entry.lookup, word)
-		table.insert(words, entry)
+		for _,entry in pairs(words) do
+			entry.meaning = trim(table.concat(entry.meaning))
+		end
 	end
 
 	return words
