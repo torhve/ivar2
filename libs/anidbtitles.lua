@@ -17904,7 +17904,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Psycho Diver Masei Rakuryu",
+   [1] = "Psycho Diver",
+   [2] = "Psycho Diver Masei Rakuryu",
    },
   },
  [1148] = {
@@ -52171,7 +52172,7 @@ return {
    },
   },
  [4338] = {
-  ["main"] = "Sarugetchu: On Air",
+  ["main"] = "Sarugecchu: On Air",
   ["official"] = {
    [1] = "Ape Escape",
    [2] = "サルゲッチュ ~オンエアー~",
@@ -61870,6 +61871,7 @@ return {
   ["official"] = {
    [1] = "The Melancholy of Haruhi-chan Suzumiya",
    [2] = "涼宮ハルヒちゃんの憂鬱",
+   [3] = "스즈미야 하루히짱의 우울",
    },
   ["short"] = {
    [1] = "Haruhi-chan",
@@ -70078,6 +70080,7 @@ return {
   ["official"] = {
    [1] = "Nyoron! Churuya-San",
    [2] = "にょろーんちゅるやさん",
+   [3] = "뇨-롱 츄루아씨",
    },
   ["short"] = {
    [1] = "nyoron",
@@ -78174,6 +78177,7 @@ return {
    [4] = "Исчезновение Харухи Судзумии",
    [5] = "凉宫春日的消失",
    [6] = "涼宮ハルヒの消失",
+   [7] = "스즈미야 하루히의 소실",
    },
   ["short"] = {
    [1] = "haruhi movie",
@@ -89559,6 +89563,7 @@ return {
   ["official"] = {
    [1] = "Ro-Kyu-Bu: Fast Break!",
    [2] = "ロウきゅーぶ!",
+   [3] = "로큐브!",
    },
   ["short"] = {
    [1] = "rkb",
@@ -94174,16 +94179,6 @@ return {
    [8] = "冰果",
    },
   },
- [8856] = {
-  ["main"] = "Bosporus Kaikyou Tunnel",
-  ["official"] = {
-   [1] = "ボスポラス海峡トンネル",
-   },
-  ["short"] = {
-   },
-  ["syn"] = {
-   },
-  },
  [8857] = {
   ["main"] = "Sakasama no Patema",
   ["official"] = {
@@ -95083,6 +95078,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "과학적인 녀석들",
    },
   },
  [8950] = {
@@ -99791,6 +99787,7 @@ return {
   ["main"] = "Rou Kyuu Bu! Tomoka no Ichigo Sunday",
   ["official"] = {
    [1] = "ロウきゅーぶ! 智花のいちごサンデー",
+   [2] = "로큐브! 토모카의 딸기 선데이",
    },
   ["short"] = {
    [1] = "RKB OVA",
@@ -99975,6 +99972,7 @@ return {
   ["main"] = "Rou Kyuu Bu! SS",
   ["official"] = {
    [1] = "ロウきゅーぶ! SS",
+   [2] = "로큐브! SS",
    },
   ["short"] = {
    [1] = "rkb2",
@@ -103710,7 +103708,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Рицарите на Сидония",
+   [1] = "Лицарі Сідонії",
+   [2] = "Рицарите на Сидония",
    },
   },
  [9893] = {
@@ -106170,6 +106169,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Maria the Virgin Witch",
    },
   },
  [10179] = {
@@ -107228,7 +107228,7 @@ return {
  [10300] = {
   ["main"] = "Naisho no Wakana-san",
   ["official"] = {
-   [1] = "ナイショの若菜さん",
+   [1] = "ナイショの若菜さん♥",
    },
   ["short"] = {
    },
@@ -107795,7 +107795,8 @@ return {
   ["syn"] = {
    [1] = "Aoharaido",
    [2] = "Youth Ride",
-   [3] = "Пътят на младостта",
+   [3] = "Неудержимая юность",
+   [4] = "Пътят на младостта",
    },
   },
  [10386] = {
@@ -109940,6 +109941,7 @@ return {
    },
   ["syn"] = {
    [1] = "Chaika 2",
+   [2] = "Chaika 2: Avenging Battle",
    },
   },
  [10640] = {
@@ -110332,9 +110334,9 @@ return {
    },
   },
  [10691] = {
-  ["main"] = "High School DxD 3",
+  ["main"] = "High School DxD Born",
   ["official"] = {
-   [1] = "ハイスクールDxD 3",
+   [1] = "ハイスクールDxD BorN",
    },
   ["short"] = {
    },
@@ -110461,8 +110463,11 @@ return {
    [2] = "ガールフレンド(仮)",
    },
   ["short"] = {
+   [1] = "GF Beta",
+   [2] = "GF Kari",
    },
   ["syn"] = {
+   [1] = "Girlfriend Beta",
    },
   },
  [10710] = {
@@ -111124,9 +111129,9 @@ return {
    },
   },
  [10783] = {
-  ["main"] = "Gekijouban PriPara",
+  ["main"] = "Gekijouban PriPara: Minna Atsumare! Prism Tours",
   ["official"] = {
-   [1] = "劇場版 プリパラ",
+   [1] = "劇場版プリパラ みーんなあつまれ! プリズム☆ツアーズ",
    },
   ["short"] = {
    },
@@ -111351,6 +111356,7 @@ return {
   ["main"] = "Nagato Yuki-chan no Shoushitsu",
   ["official"] = {
    [1] = "長門有希ちゃんの消失",
+   [2] = "나가토 유키짱의 소실",
    },
   ["short"] = {
    },
@@ -111819,13 +111825,16 @@ return {
    },
   },
  [10875] = {
-  ["main"] = "Tokyo Ghoul (2015)",
+  ["main"] = "Tokyo Ghoul A",
   ["official"] = {
-   [1] = "東京喰種 (2015)",
+   [1] = "√A توکیو غول",
+   [2] = "東京喰種√A",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "A توکیو غول ریشه",
+   [2] = "Tokyo Ghoul √A",
    },
   },
  [10876] = {
@@ -112478,7 +112487,7 @@ return {
    },
   },
  [10949] = {
-  ["main"] = "Ranpo Kitan Game of Laplace",
+  ["main"] = "Ranpo Kitan: Game of Laplace",
   ["official"] = {
    [1] = "乱歩奇譚 Game of Laplace",
    },
@@ -112518,9 +112527,9 @@ return {
    },
   },
  [10953] = {
-  ["main"] = "Meitantei Conan (2015)",
+  ["main"] = "Meitantei Conan: Gouka no Himawari",
   ["official"] = {
-   [1] = "名探偵コナン (2015)",
+   [1] = "名探偵コナン・業火の向日葵",
    },
   ["short"] = {
    },
@@ -112548,9 +112557,70 @@ return {
    },
   },
  [10956] = {
-  ["main"] = "Kimi to Boku (Everlasting Heart)",
+  ["main"] = "Kimi to Boku",
   ["official"] = {
-   [1] = "キミとボク",
+   [1] = "Everlasting Heart",
+   [2] = "キミとボク",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10957] = {
+  ["main"] = "Isuca OAD",
+  ["official"] = {
+   [1] = "ISUCA OAD",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10958] = {
+  ["main"] = "Houkago no Pleiades TV",
+  ["official"] = {
+   [1] = "放課後のプレアデス TV",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10959] = {
+  ["main"] = "Kokoro ga Sakebitagatterunda.",
+  ["official"] = {
+   [1] = "心が叫びたがってるんだ。",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10960] = {
+  ["main"] = "Shouwa Genroku Rakugo Shinjuu TV",
+  ["official"] = {
+   [1] = "昭和元禄落語心中 TV",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10961] = {
+  ["main"] = "Gekijouban Naruto (2015)",
+  ["official"] = {
+   [1] = "劇場版 NARUTO (2015)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10962] = {
+  ["main"] = "Ange Vierge",
+  ["official"] = {
+   [1] = "アンジュ・ヴィエルジュ",
    },
   ["short"] = {
    },
