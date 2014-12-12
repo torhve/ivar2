@@ -55,6 +55,7 @@ local fetchInformation = function(queue, vid)
 		url,
 		function(data)
 			local info = json.decode(data)
+			if not info.items then return end
 			local video = info.items[1]
 			local title = video.snippet.title
 			local uploader = video.snippet.channelTitle
