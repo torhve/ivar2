@@ -31,7 +31,7 @@ local handleMessage = function(nick, destination, msg, update)
 			string.gsub,
 			db[nick][destination],
 			toLuaPattern(match),
-			toLuaPattern(replace),
+			ivar2.util.underline(toLuaPattern(replace)),
 			flags
 		)
 
@@ -52,7 +52,7 @@ return {
 		['^s/(.+)$'] = function(self, source, destination, message)
 			local out = handleMessage(source.nick, destination, message, true)
 			if(out) then
-				say('%s meant: %s', source.nick, out)
+				say('<%s> %s', source.nick, out)
 			end
 		end,
 
