@@ -19,7 +19,7 @@ local lookup = function(self, source, destination, id)
 
 		function(data)
 			if(data:find("Could not find this book.", 1, true)) then
-				return self:Msg('privmsg', destination, sourcee, "Found no book with that id.")
+				return self:Msg('privmsg', destination, source, "Found no book with that id.")
 			end
 
 			local id = data:match("<id>([^>]+)</id>")
