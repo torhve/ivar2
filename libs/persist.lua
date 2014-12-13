@@ -1,8 +1,8 @@
--- Persist from 
+-- Persist from
 -- https://github.com/clementfarabet/persist
 
 local redis = require'redis' -- luarocks install lua-redis
-local json = require 'json'
+local json = require 'cjson'
 require'logging.console'
 local log = logging.console()
 
