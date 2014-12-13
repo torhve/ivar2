@@ -21,7 +21,7 @@ local parseData = function(data)
 		local doc = htmlparser.parsestr(data)
 		local word = doc[1][1]
 		-- Workaround for mis matched word (partial match)
-		if type(word) == type({}) then
+		if type(word) == "table" then
 			word = doc[1][1][1]
 		end
 		-- First entry
@@ -46,17 +46,17 @@ local parseData = function(data)
 		-- Here be dragons. This is why we can't have nice things
 		for _, w in pairs(doc) do
 			if _ ~= '_tag' then
-				if type(w) == type("") then
+				if type(w) == "string" then
 					add(w)
-				elseif type(w) == type({}) then
+				elseif type(w) == "table" then
 					if w['_attr'] and w['_attr'].class == 'oppsgramordklasse' then
 						add(ivar2.util.underline(w[1]))
 					elseif w['_attr'] and w['_attr'].class == 'oppslagsord b' then
 						local lookup = {}
 						for _, t in pairs(w) do
-							if type(t) == type("") and t ~= "span" then
+							if type(t) == "string" and t ~= "span" then
 								table.insert(lookup, t)
-							elseif type(t[1]) == type("") and t[1] ~= "span" then
+							elseif type(t[1]) == "string" and t[1] ~= "span" then
 								table.insert(lookup, t[1])
 							end
 						end
@@ -64,22 +64,22 @@ local parseData = function(data)
 					-- Extract definitions
 					elseif w['_attr'] ~= nil and w['_attr']['class'] == 'utvidet' then
 						for _, t in pairs(w) do
-							if type(t) == type("") and t ~= "span" then
+							if type(t) == "string" and t ~= "span" then
 								-- Utvidet + kompakt leads to dupes.
 								-- add(t)
-							elseif type(w) == type({}) then
+							elseif type(w) == "table" then
 								if t['_attr'] ~= nil and t['_attr']['class'] == 'tydingC kompakt' then
 									for _, f in pairs(t) do
-										if type(f) == type("") and f ~= 'span' then
+										if type(f) == "string" and f ~= 'span' then
 											add(f)
-										elseif type(f[1]) == type("") and trim(f[1]) ~= "" then
+										elseif type(f[1]) == "string" and trim(f[1]) ~= "" then
 											add(string.format("[%s]", ivar2.util.bold(f[1])))
 										end
 									end
 								end
 							end
 						end
-					elseif type(w[1]) == type("") then
+					elseif type(w[1]) == "string" then
 						if w[1] ~= word then
 							add(w[1])
 						end
