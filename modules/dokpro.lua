@@ -5,6 +5,16 @@ local trim = function(s)
 	return s:match('^()%s*$') and '' or s:match('^%s*(.*%S)')
 end
 
+local wordClass = {
+	f = 'substantiv',
+	m = 'substantiv',
+	n = 'substantiv',
+
+	a = 'adjektiv',
+
+	v = 'verb',
+}
+
 local parseData = function(data)
 	if(data:match('ordboksdatabasene')) then
 		return nil, 'Service down. :('
@@ -51,7 +61,9 @@ local parseData = function(data)
 					add(w)
 				elseif type(w) == "table" then
 					if w['_attr'] and w['_attr'].class == 'oppsgramordklasse' then
-						add(ivar2.util.underline(w[1]))
+						local class = wordClass[w[1]:sub(1, 1)] or w[1]
+
+						add(ivar2.util.underline(class))
 					elseif w['_attr'] and w['_attr'].class == 'oppslagsord b' then
 						local lookup = {}
 						for _, t in pairs(w) do
