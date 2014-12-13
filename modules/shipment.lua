@@ -1,8 +1,7 @@
+local util = require'util'
 local ev = require'ev'
-local simplehttp = require'simplehttp'
-local json = require'json'
-local math = require'math'
-local os = require'os'
+local simplehttp = util.simplehttp
+local json = util.json
 
 local apiurl = 'http://sporing.bring.no/sporing.json?q=%s&%s'
 
