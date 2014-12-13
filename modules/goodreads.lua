@@ -1,13 +1,6 @@
-local simplehttp = require'simplehttp'
-
-local urlEncode = function(str)
-	return str:gsub(
-		'([^%w ])',
-		function (c)
-			return string.format ("%%%02X", string.byte(c))
-		end
-	):gsub(' ', '+')
-end
+local util = require'util'
+local simplehttp = util.simplehttp
+local urlEncode = util.urlEncode
 
 local blacklistedShelves = {
 	['series'] = true,
