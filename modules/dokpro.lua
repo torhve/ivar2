@@ -50,7 +50,7 @@ local parseData = function(data)
 					add(w)
 				elseif type(w) == type({}) then
 					if w['_attr'] and w['_attr'].class == 'oppsgramordklasse' then
-						add(ivar2.util.italic(w[1]))
+						add(ivar2.util.underline(w[1]))
 					elseif w['_attr'] and w['_attr'].class == 'oppslagsord b' then
 						local lookup = {}
 						for _, t in pairs(w) do
