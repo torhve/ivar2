@@ -1,8 +1,7 @@
 local ev = require'ev'
-local simplehttp = require'simplehttp'
-local json = require'json'
-local math = require'math'
-local os = require'os'
+local util = require'util'
+local simplehttp = util.simplehttp
+local json = util.json
 
 local apiurl = 'http://www.tollpost.no/XMLServer/rest/trackandtrace/%s'
 
