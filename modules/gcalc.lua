@@ -3,15 +3,6 @@ local simplehttp = util.simplehttp
 local urlEncode = util.urlEncode
 local html2unicode = require'html'
 
-local urlEncode = function(str)
-	return str:gsub(
-		'([^%w ])',
-		function (c)
-			return string.format ("%%%02X", string.byte(c))
-		end
-	):gsub(' ', '+')
-end
-
 local parseData = function(say, source, destination, data)
 	local ans = data:match('<h2 class="r".->(.-)</h2>')
 	if(ans) then
