@@ -1,6 +1,6 @@
-json = require'json'
-simplehttp = require'simplehttp'
-math = require'math'
+util = require'util'
+json = util.json
+simplehttp = util.simplehttp
 
 pick = (data) ->
   children = data.data.children
