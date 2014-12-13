@@ -22,14 +22,13 @@ local split = function(str, pattern)
 end
 
 local function titlecase(str)
-    local buf = {}
-    for word in string.gfind(str, "%S+") do          
-        local first, rest = string.sub(word, 1, 1), string.sub(word, 2)
-        table.insert(buf, string.upper(first) .. string.lower(rest))
-    end    
-    return table.concat(buf, " ")
+	local buf = {}
+	for word in string.gfind(str, "%S+") do
+		local first, rest = string.sub(word, 1, 1), string.sub(word, 2)
+		table.insert(buf, string.upper(first) .. string.lower(rest))
+	end
+	return table.concat(buf, " ")
 end
-
 
 local eventHandler = function(event)
 	if not event then return nil end
@@ -55,32 +54,32 @@ local shipmentTrack = function(self, source, destination, pid, alias)
 	local runningTimer = self.timers[id]
 	if(runningTimer) then
 		-- cancel existing timer
-	    self:Notice(nick, "Canceling existing tracking for alias %s.", alias)
+		self:Notice(nick, "Canceling existing tracking for alias %s.", alias)
 		self.shipmentEvents[id] = -1
 		runningTimer:stop(ivar2.Loop)
 	end
 
 	-- Store the eventcount in the ivar2 global
 	-- if the eventcount increases it means new events on the shipment happened.
-	local eventCount = self.shipmentEvents[id] 
-	if not eventCount then 
+	local eventCount = self.shipmentEvents[id]
+	if not eventCount then
 		self.shipmentEvents[id] = -1
 	end
 
 	local timer = ev.Timer.new(
 		function(loop, timer, revents)
-			simplehttp(string.format(apiurl, pid), function(data) 
+			simplehttp(string.format(apiurl, pid), function(data)
 				local info = json.decode(data)
 				local root = info['TrackingInformationResponse']
 				local cs = root['shipments']
-				if not cs[1] then 
-					if self.shipmentEvents[id] == -1 then 
+				if not cs[1] then
+					if self.shipmentEvents[id] == -1 then
 						say('%s: Found nothing for shipment %s', nick, pid)
 					end
 					self.shipmentEvents[id] = 0
 					return
-				else 
-					cs = cs[1] 
+				else
+					cs = cs[1]
 				end
 				local out = {}
 				local items = cs['items'][1]
@@ -89,7 +88,7 @@ local shipmentTrack = function(self, source, destination, pid, alias)
 				local newEventCount = #events
 
 				print('id:',id,'new:',newEventCount,'old:',self.shipmentEvents[id])
-				if newEventCount < self.shipmentEvents[id] then 
+				if newEventCount < self.shipmentEvents[id] then
 					-- We can never go backwards
 					return
 				end
@@ -118,15 +117,15 @@ end
 
 local shipmentLocate = function(self, source, destination, pid)
 	local nick = source.nick
-	simplehttp(string.format(apiurl, pid), function(data) 
+	simplehttp(string.format(apiurl, pid), function(data)
 		local info = json.decode(data)
 		local root = info['TrackingInformationResponse']
 		local cs = root['shipments']
-		if not cs[1] then 
+		if not cs[1] then
 			say('%s: Found nothing for shipment %s', nick, pid)
 			return
-		else 
-			cs = cs[1] 
+		else
+			cs = cs[1]
 		end
 		local out = {}
 		local items = cs['items'][1]
