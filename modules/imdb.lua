@@ -1,5 +1,7 @@
-local simplehttp = require'simplehttp'
-local json = require'json'
+local util = require'util'
+local simplehttp = util.simplehttp
+local json = util.json
+local urlEncode = util.urlEncode
 
 local utify8 = function(str)
 	str = str:gsub("\\u(....)", function(n)
@@ -15,15 +17,6 @@ local utify8 = function(str)
 	end)
 
 	return str
-end
-
-local urlEncode = function(str)
-	return str:gsub(
-		'([^%w ])',
-		function (c)
-			return string.format ("%%%02X", string.byte(c))
-		end
-	):gsub(' ', '+')
 end
 
 local parseData = function(source, destination, data)
