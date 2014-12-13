@@ -58,7 +58,6 @@ local parseTopArtists = function(source, destination, data)
 		info['@attr'].user,
 		table.concat(out, ', '),
 		info['@attr'].user
-	
 end
 
 local parseRecentTracks = function(source, destination, data)
