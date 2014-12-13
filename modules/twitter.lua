@@ -119,7 +119,7 @@ local function tFollowing(self, source, destination)
         table.insert(out, row[1])
     end
     db:close()
-    if #out > 0 then 
+    if #out > 0 then
         self:Msg('privmsg', destination, source, 'Following: %s', table.concat(out, ', '))
     else
         self:Msg('privmsg', destination, source, 'Not following.')
@@ -157,7 +157,7 @@ local function tPoll(self)
             function(data)
                 local info = json.decode(data)
                 local tweet = info[1]
-                if tweet then 
+                if tweet then
                     saveSince(tweet)
 
                     local destinations = {}
@@ -175,7 +175,6 @@ local function tPoll(self)
                 end
             end
         )
-        
     end
     db:close()
 end
