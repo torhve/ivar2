@@ -1,5 +1,6 @@
-local simplehttp = require'simplehttp'
-local json = require'json'
+local util = require'util'
+local simplehttp = util.simplehttp
+local json = util.json
 
 customHosts['^github%.com'] = function(queue, info)
     local query = info.query
