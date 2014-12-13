@@ -1,4 +1,6 @@
-local simplehttp = require'simplehttp'
+local util = require'util'
+local simplehttp = util.simplehttp
+local json = util.json
 local date = require'date'
 
 local parseDuration
@@ -52,7 +54,7 @@ local fetchInformation = function(queue, vid)
 	simplehttp(
 		url,
 		function(data)
-			local info = ivar2.util.json.decode(data)
+			local info = json.decode(data)
 			if not info.items then return end
 			local video = info.items[1]
 			local title = video.snippet.title
