@@ -1,7 +1,7 @@
 -- Module to display and/or search twitch.tv streams
-
-local simplehttp = require'simplehttp'
-local json = require'json'
+local util = require'util'
+local simplehttp = util.simplehttp
+local json = util.json
 
 local parseData = function(self, source, destination, data, search)
 	data = json.decode(data)
