@@ -7,7 +7,7 @@ local parseData = function(self, source, destination, data, search)
 	data = json.decode(data)
 
 	local streams = {}
-	local addStream = function(name, viewers, game) 
+	local addStream = function(name, viewers, game)
 		table.insert(streams, {
 			name=name,
 			viewers=viewers,
@@ -20,7 +20,7 @@ local parseData = function(self, source, destination, data, search)
 		local name = this.channel.display_name
 		local viewers = this.viewers
 		local game = this.game
-		if search then 
+		if search then
 			if string.find(name:lower(), search:lower()) or string.find(game:lower(), search:lower()) then
 				addStream(name, viewers, game)
 			end
