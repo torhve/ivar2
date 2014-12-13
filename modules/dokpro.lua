@@ -15,6 +15,21 @@ local wordClass = {
 	v = 'verb',
 }
 
+local removeDuplicates = function(tbl)
+	local done = {}
+	local out = {}
+
+	for i=1, #tbl do
+		local v = tbl[i]
+		if(not done[v]) then
+			done[v] = true
+			table.insert(out, v)
+		end
+	end
+
+	return out
+end
+
 local parseData = function(data)
 	if(data:match('ordboksdatabasene')) then
 		return nil, 'Service down. :('
@@ -100,6 +115,10 @@ local parseData = function(data)
 				end
 			end
 		end
+
+		-- Remove duplicate entries (such as word classes)
+		entry.meaning = removeDuplicates(entry.meaning)
+
 		for _,entry in pairs(words) do
 			entry.meaning = trim(table.concat(entry.meaning))
 		end
