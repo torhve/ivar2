@@ -1,15 +1,8 @@
-local simplehttp = require'simplehttp'
+local util = require'util'
+local simplehttp = util.simplehttp
+local urlEncode = util.urlEncode
 local html2unicode = require'html'
 local date = require'date'
-
-local urlEncode = function(str)
-	return str:gsub(
-		'([^%w ])',
-		function (c)
-			return string.format ("%%%02X", string.byte(c))
-		end
-	):gsub(' ', '+')
-end
 
 local monthName = {
 	Jan = '01',
