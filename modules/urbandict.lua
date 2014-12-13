@@ -1,18 +1,8 @@
-local simplehttp = require'simplehttp'
-local json = require'json'
-
-local trim = function(s)
-	return (string.gsub(s, "^%s*(.-)%s*$", "%1"))
-end
-
-local urlEncode = function(str)
-	return str:gsub(
-		'([^%w ])',
-		function (c)
-			return string.format ("%%%02X", string.byte(c))
-		end
-	):gsub(' ', '+')
-end
+local util = require'util'
+local simplehttp = util.simplehttp
+local json = util.json
+local trim = util.trim
+local urlEncode = util.urlEncode
 
 local parseJSON = function(data)
 	data = json.decode(data)
