@@ -1,7 +1,8 @@
 -- http://developer.spotify.com/en/metadata-api/overview/
 
-local simplehttp = require'simplehttp'
-local json = require'json'
+local util = require'util'
+local simplehttp = util.simplehttp
+local json = util.json
 require'logging.console'
 
 local log = logging.console()
