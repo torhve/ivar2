@@ -1,5 +1,6 @@
-local simplehttp = require'simplehttp'
-local json = require'cjson'
+local util = require'util'
+local simplehttp = util.simplehttp
+local json = util.json
 local html2unicode = require'html'
 local base64 = require 'base64'
 local sql = require'lsqlite3'
