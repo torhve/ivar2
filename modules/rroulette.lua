@@ -64,7 +64,6 @@ return {
 			rr['rr:'..destination] = (chamber * 10) + bullet
 			rr['rr:'..deathKey] = deaths
 			rr['rr:'..attemptKey] = attempts
-
 		end,
 
 		['^%prrstat$'] = function(self, source, destination)
