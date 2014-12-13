@@ -48,28 +48,28 @@ local shipmentTrack = function(self, source, destination, message)
 	local runningTimer = self.timers[id]
 	if(runningTimer) then
 		-- cancel existing timer
-	    self:Notice(nick, "Canceling existing tracking for alias %s.", alias)
+		self:Notice(nick, "Canceling existing tracking for alias %s.", alias)
 		self.shipmentEvents[id] = -1
 		runningTimer:stop(ivar2.Loop)
 	end
 
 	-- Store the eventcount in the ivar2 global
 	-- if the eventcount increases it means new events on the shipment happened.
-	local eventCount = self.shipmentEvents[id] 
-	if not eventCount then 
+	local eventCount = self.shipmentEvents[id]
+	if not eventCount then
 		self.shipmentEvents[id] = -1
 	end
 
 	local timer = ev.Timer.new(
 		function(loop, timer, revents)
-			simplehttp(string.format(apiurl, pid, getCacheBust()), function(data) 
+			simplehttp(string.format(apiurl, pid, getCacheBust()), function(data)
 				local info = json.decode(data)
 				local cs = info.consignmentSet
 				if not cs[1] then return else cs = cs[1] end
 				local err = cs['error']
 				if err then
 					local errmsg = err['message']
-					if self.shipmentEvents[id] == -1 then 
+					if self.shipmentEvents[id] == -1 then
 						say('%s: \002%s\002 %s', nick, alias, errmsg)
 					end
 					self.shipmentEvents[id] = 0
@@ -80,8 +80,8 @@ local shipmentTrack = function(self, source, destination, message)
 				local newEventCount = #eventset
 				local out = {}
 				--print('id:',id,'new:',newEventCount,'old:',self.shipmentEvents[id])
-				if newEventCount < self.shipmentEvents[id] 
-					then newEventCount = self.shipmentEvents[id] 
+				if newEventCount < self.shipmentEvents[id]
+					then newEventCount = self.shipmentEvents[id]
 				end
 				for i=self.shipmentEvents[id]+1,newEventCount do
 					--print('loop:',i)
@@ -112,7 +112,7 @@ end
 
 local shipmentLocate = function(self, source, destination, pid)
 	local nick = source.nick
-	simplehttp(string.format(apiurl, pid, getCacheBust()), function(data) 
+	simplehttp(string.format(apiurl, pid, getCacheBust()), function(data)
 		local info = json.decode(data)
 		local cs = info.consignmentSet
 		if not cs[1] then return else cs = cs[1] end
