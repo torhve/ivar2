@@ -1,5 +1,6 @@
-json = require 'json'
-simplehttp = require 'simplehttp'
+util = require 'util'
+json = util.json
+simplehttp = util.simplehttp
 
 urlEncode = (str, space) ->
   space = space or '+'
