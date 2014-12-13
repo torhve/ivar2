@@ -26,13 +26,13 @@ local parseData = function(data)
 			word = doc[1][1][1]
 		end
 		-- First entry
-		local entry = { 
+		local entry = {
 			lookup = {},
 			meaning = {},
 			examples = {},
 		}
 		local addentry = function(lookup)
-			entry = { 
+			entry = {
 				lookup = {},
 				meaning = {},
 				examples = {},
@@ -46,7 +46,7 @@ local parseData = function(data)
 		end
 		-- Here be dragons. This is why we can't have nice things
 		for _, w in pairs(doc) do
-			if _ ~= '_tag' then 
+			if _ ~= '_tag' then
 				if type(w) == type("") then
 					add(w)
 				elseif type(w) == type({}) then
@@ -142,7 +142,7 @@ return {
 		['^%pdokpro (.+)$'] = handleInput,
 		['^%pordbok (.+)$'] = handleInput,
 		['^%pbokmål (.+)$'] = handleInput,
-		['^%pnynorsk (.+)$'] = function(self, source, destination, word) 
+		['^%pnynorsk (.+)$'] = function(self, source, destination, word)
 			handleInput(self, source, destination, word, 'nynorsk')
 		end
 	},
