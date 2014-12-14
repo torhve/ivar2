@@ -1,16 +1,39 @@
-local os = require 'os'
-local iconv = require'iconv'
 local dbi = require 'DBI'
 require'logging.console'
 local log = logging.console()
 
+-- Connection handle
+local conn = false
+
 
 -- Open connection to the postgresql database using DBI lib and ivar2 global config
-local openDb = function() 
-    -- TODO save/cache connection
+local connect = function() 
+    local dbh, err = DBI.Connect('PostgreSQL', ivar2.config.dbname, ivar2.config.dbuser, ivar2.config.dbpass, ivar2.config.dbhost, ivar2.config.dbport)
+    if not dbh then
+        log:error("Unable to connect to DB: %s", err)
+        return
+    end
+    conn = dbh
+end
 
-    local dbh = DBI.Connect('PostgreSQL', ivar2.config.dbname, ivar2.config.dbuser, ivar2.config.dbpass, ivar2.config.dbhost, ivar2.config.dbport)
-    return dbh
+local openDb = function()
+    if not conn then
+        connect()
+    end
+
+    -- Check if connection is alive
+    local alive = conn:ping()
+    if not alive then
+        connect()
+    end
+
+    local success, err = DBI.Do(conn, 'SELECT NOW()')
+    if not success then
+        log:error("SQL Connection: %s", err)
+        connect()
+    end
+
+    return conn
 end
 
 local function url_to_pattern(str)
@@ -39,13 +62,13 @@ local checkOlds = function(dbh, source, destination, url)
 
     -- create a select handle
     local query = [[
-            SELECT 
+            SELECT
                 date_trunc('second', time),
                 date_trunc('second', age(now(), date_trunc('second', time))),
                 nick
             FROM urls
-            WHERE 
-                url LIKE ? 
+            WHERE
+                url LIKE ?
             AND
                 channel = ?
             ORDER BY time ASC
@@ -99,7 +122,7 @@ local dbLogUrl = function(dbh, source, destination, url, msg)
 
     -- check status of the connection
     -- local alive = dbh:ping()
-    
+
     -- create a handle for an insert
     local insert = dbh:prepare('INSERT INTO urls(nick,channel,url,message) values(?,?,?,?)')
 
