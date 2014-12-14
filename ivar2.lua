@@ -501,13 +501,15 @@ function ivar2:DispatchCommand(command, argument, source, destination)
 					-- Ex: !joke|!translate en no|!gay
 					local cutarg
 					local remainder = false
-					local cutoff = argument:find('|')
-					if cutoff then
-						cutarg = argument:sub(0,cutoff-1)
-						remainder = argument:sub(cutoff+1)
+
+					local pipeStart, pipeEnd = argument:match('()%s*|%s*()')
+					if(pipeStart and pipeEnd) then
+						cutarg = argument:sub(0,pipeStart-1)
+						remainder = argument:sub(pipeEnd)
 					else
 						cutarg = argument
 					end
+
 					if(cutarg:match(channelPattern)) then
 						success, message = self:ModuleCall(callback, source, destination, remainder, cutarg:match(channelPattern))
 					end
@@ -651,16 +653,19 @@ end
 function ivar2:CommandSplitter(command)
 	local first
 	local remainder = ''
-	local cutoff = command:find('|')
-	if cutoff then
-		first = command:sub(0,cutoff-1)
-		remainder = command:sub(cutoff+1)
+
+	local pipeStart, pipeEnd = command:match('()%s*|%s*()')
+	if(pipeStart and pipeEnd) then
+		first = command:sub(0,pipeStart-1)
+		remainder = command:sub(pipeEnd)
 	else
 		first = command
 	end
+
 	if remainder ~= '' then
 		self:Log('debug', 'Splitting command: %s into %s and %s', command, first, remainder)
 	end
+
 	return first, remainder
 end
 
@@ -675,7 +680,6 @@ function ivar2:ModuleCall(func, source, destination, remainder, ...)
 			if(not remainder) then
 				self:Say(destination, source, output)
 			else
-				--FIXME mabe do some whitespace trimming ?
 				local command, remainder = self:CommandSplitter(remainder)
 				local newline = command .. " " .. output
 				if remainder ~= '' then
