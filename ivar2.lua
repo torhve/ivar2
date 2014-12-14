@@ -419,10 +419,9 @@ function ivar2:Notice(destination, format, ...)
 end
 
 function ivar2:Privmsg(destination, format, ...)
-
 	local message, extra = IrcMessageSplit(destination, safeFormat(format, ...))
 	-- Save the potential extra stuff from the split into the more container
-	ivar2.more[destination] = extra 
+	ivar2.more[destination] = extra
 	return self:Send('PRIVMSG %s :%s', destination, message)
 end
 
@@ -663,7 +662,7 @@ end
 function ivar2:ModuleCall(func, source, destination, remainder, arg, ...)
 	-- Construct a environment for each callback that provide some helper
 	-- functions and utilities for the modules
-	
+
 	local env = {
 		ivar2 = self,
 		say = function(str, ...)
@@ -689,7 +688,6 @@ function ivar2:ModuleCall(func, source, destination, remainder, arg, ...)
 
 	return pcall(func, self, source, destination, arg, ...)
 end
-
 
 function ivar2:Events()
 	return events
