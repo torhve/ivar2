@@ -1,9 +1,8 @@
-local simplehttp = require'simplehttp'
+local util = require'util'
+local simplehttp = util.simplehttp
+local trim = util.trim
 
 local cache = {}
-local trim = function(s)
-	return s:match('^%s*(.-)%s*$')
-end
 
 local pattern = ('<td[^>]*>([^\n]+)\n[^<]+'):rep(10)
 local parseData = function(data)

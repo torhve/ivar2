@@ -9,9 +9,11 @@
 --     ...
 -- }
 
+local util = require'util'
 local x0 = require'x0'
-local simplehttp = require'simplehttp'
-local json = require'json'
+local simplehttp = util.simplehttp
+local json = util.json
+local urlEncode = util.urlEncode
 local html2unicode = require'html'
 
 local utify8 = function(str)
@@ -28,15 +30,6 @@ local utify8 = function(str)
 	end)
 
 	return str
-end
-
-local urlEncode = function(str)
-	return str:gsub(
-		'([^%w ])',
-		function (c)
-			return string.format ("%%%02X", string.byte(c))
-		end
-	):gsub(' ', '+')
 end
 
 local outFormat = '\002%s\002 <%s>'

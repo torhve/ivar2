@@ -1,5 +1,7 @@
-local simplehttp = require'simplehttp'
-local json = require'json'
+local util = require'util'
+local simplehttp = util.simplehttp
+local json = util.json
+local urlEncode = util.urlEncode
 
 local utify8 = function(str)
 	str = str:gsub("\\u(....)", function(n)
@@ -17,49 +19,40 @@ local utify8 = function(str)
 	return str
 end
 
-local urlEncode = function(str)
-	return str:gsub(
-		'([^%w ])',
-		function (c)
-			return string.format ("%%%02X", string.byte(c))
-		end
-	):gsub(' ', '+')
-end
-
 local parseData = function(source, destination, data)
 	data = utify8(data)
 	data = json.decode(data)
+	local search = data.Search
 
-	if(data and not data.error) then
+	if(data and not data.Error) then
 		local out = {}
-		data = data[1]
 
-		if(data.title) then
-			table.insert(out, string.format("\002%s\002", data.title))
+		if(data.Title) then
+			table.insert(out, string.format("\002%s\002", data.Title))
 		end
 
-		if(data.year) then
-			table.insert(out, string.format("(%d) -", data.year))
+		if(data.Year) then
+			table.insert(out, string.format("(%d) -", data.Year))
 		end
 
-		if(data.runtime and data.rated and data.type) then
-			table.insert(out, string.format("%s/%s/%s,", data.rated, data.type, data.runtime[1]))
+		if(data.Runtime and data.Rated and data.Type) then
+			table.insert(out, string.format("%s/%s/%s,", data.Rated, data.Type, data.Runtime))
 		end
 
-		if(data.rating) then
-			table.insert(out, string.format("%s rating", data.rating))
+		if(data.imdbRating) then
+			table.insert(out, string.format("%s rating", data.imdbRating))
 		end
 
-		if(data.genres) then
-			table.insert(out, string.format("/ %s", table.concat(data.genres, ', ')))
+		if(data.Genre) then
+			table.insert(out, string.format("/ %s", data.Genre))
 		end
 
-		if(data.plot_simple) then
-			table.insert(out, string.format("- %s", data.plot_simple))
+		if(data.Plot) then
+			table.insert(out, string.format("- %s", data.Plot))
 		end
 
-		if(data.imdb_id) then
-			table.insert(out, string.format("| http://imdb.com/title/%s", data.imdb_id))
+		if(data.imdbID) then
+			table.insert(out, string.format("| http://imdb.com/title/%s", data.imdbID))
 		end
 
 		say(table.concat(out, ' '))
@@ -68,7 +61,7 @@ local parseData = function(source, destination, data)
 	end
 end
 
-local urlFormat = 'http://imdbapi.org/?q=%s'
+local urlFormat = 'http://omdbapi.com/?t=%s'
 local handler = function(self, source, destination, input)
 	local search = urlEncode(input)
 

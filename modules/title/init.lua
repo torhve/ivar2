@@ -1,3 +1,6 @@
+local util = require'util'
+local simplehttp = util.simplehttp
+local trim = util.trim
 local iconv = require"iconv"
 local uri = require"handler.uri"
 
@@ -24,10 +27,6 @@ local translateCharset = {
 	['ks_c_5601-1987'] = 'euc-kr',
 	['ksc_5601'] = 'euc-kr',
 }
-
-local trim = function(str)
-	return str:match('^%s*(.-)%s*$')
-end
 
 -- RFC 2396, section 1.6, 2.2, 2.3 and 2.4.1.
 local smartEscape = function(str)

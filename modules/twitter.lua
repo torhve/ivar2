@@ -174,7 +174,6 @@ local function tPoll(self)
                 end
             end
         )
-        
     end
     db:close()
 end
