@@ -659,7 +659,7 @@ function ivar2:CommandSplitter(command)
 	return first, remainder
 end
 
-function ivar2:ModuleCall(func, source, destination, remainder, arg, ...)
+function ivar2:ModuleCall(func, source, destination, remainder, ...)
 	-- Construct a environment for each callback that provide some helper
 	-- functions and utilities for the modules
 
@@ -686,7 +686,7 @@ function ivar2:ModuleCall(func, source, destination, remainder, arg, ...)
 	local proxy = setmetatable(env, {__index = _G })
 	setfenv(func, env)
 
-	return pcall(func, self, source, destination, arg, ...)
+	return pcall(func, self, source, destination, ...)
 end
 
 function ivar2:Events()
