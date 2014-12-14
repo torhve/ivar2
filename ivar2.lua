@@ -295,6 +295,7 @@ end
 
 local IrcMessageSplit = function(destination, message)
 	local extra
+	local out
 	local hostmask = ivar2.hostmask
 	local msgtype = 'privmsg'
 	local trail = ' (…)'
@@ -302,7 +303,7 @@ local IrcMessageSplit = function(destination, message)
 	out = ""
 	extra = ""
 	if #message > cutoff then
-		count = 0
+		local count = 0
 		-- Iterate over valid utf8 string so we don't cut off in the middle
 		-- of a utf8 codepoint
 		for c in message:gmatch"([%z\1-\127\194-\244][\128-\191]*)" do
