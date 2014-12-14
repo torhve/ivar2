@@ -29,7 +29,7 @@ return {
 	PRIVMSG = {
 		['^%p8ball(.+)$'] = function(self, source, destination)
 			local seed = math.random(1, #response)
-			self:Msg('privmsg', destination, source, "%s: %s", source.nick, response[seed])
+			say("%s: %s", source.nick, response[seed])
 		end,
 	},
 }
