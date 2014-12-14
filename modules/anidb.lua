@@ -154,11 +154,11 @@ local handleXML = function(xml)
 	)
 end
 
-local doLookup = function(destination, source, aid)
+local doLookup = function(say, source, aid)
 	-- Is it fresh and present in our cache?
 	if(anidb["anidb:" ..aid] and tonumber(anidb["anidb:" .. aid .. ':time']) > os.time()) then
 		log:debug(string.format('anidb: Fetching %d from cache.', aid))
-		ivar2:Msg('privmsg', destination, source, anidb["anidb:" .. aid])
+		say(anidb["anidb:" .. aid])
 		return
 	else
 		log:info(string.format('anidb: Requesting information on %d.', aid))
@@ -169,13 +169,13 @@ local doLookup = function(destination, source, aid)
 				local xml = zlib.inflate() (data)
 				local output = html2unicode(handleXML(xml))
 				if(output:sub(1,5) == 'Error') then
-					ivar2:Msg('privmsg', destination, source, '%s: %s', source.nick, output)
+					say('%s: %s', source.nick, output)
 				else
 					anidb["anidb:" .. aid] = output
 					-- Keep it for one day.
 					anidb["anidb:" .. aid .. ':time'] = os.time() + 86400
 
-					ivar2:Msg('privmsg', destination, source, output)
+					say(output)
 				end
 			end,
 			-- We have to close the socket ourselves if we want to stream it.
@@ -192,15 +192,15 @@ return {
 
 			local aid = tonumber(anime)
 			if(aid) then
-				return doLookup(destination, source, aid)
+				return doLookup(say, source, aid)
 			end
 
 			local results = anidbSearch.lookup(trim(anime))
 			local numResults = #results
 			if(numResults == 0) then
-				return self:Msg('privmsg', destination, source, 'No matches found :-(.')
+				return say('No matches found :-(.')
 			elseif(numResults == 1) then
-				return doLookup(destination, source, results[1].aid)
+				return doLookup(say, source, results[1].aid)
 			else
 				do
 					local w1000 = {}
@@ -212,7 +212,7 @@ return {
 					end
 
 					if(#w1000 == 1) then
-						return doLookup(destination, source, w1000[1])
+						return doLookup(say, source, w1000[1])
 					end
 				end
 
@@ -226,10 +226,7 @@ return {
 						table.insert(out, string.format('\002[%s]\002 %s', aid, title))
 					end
 
-					return self:Msg(
-						'privmsg', destination, source,
-						table.concat(self:LimitOutput(destination, out, 1), ' ')
-					)
+					return say(table.concat(self:LimitOutput(destination, out, 1), ' '))
 				end
 			end
 		end,
