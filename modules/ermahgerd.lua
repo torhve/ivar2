@@ -99,7 +99,7 @@ local handle = function(self, source, destination, text)
 		end
 	end
 
-	self:Msg("privmsg", destination, source, table.concat(translated, " "))
+	say(table.concat(translated, " "))
 end
 
 return {
