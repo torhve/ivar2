@@ -1,4 +1,6 @@
-local simplehttp = require'simplehttp'
+local util = require'util'
+local simplehttp = util.simplehttp
+local urlEncode = util.urlEncode
 local html2unicode = require'html'
 
 local urlEncode = function(str)

@@ -1,5 +1,6 @@
-local simplehttp = require'simplehttp'
-local json = require'json'
+local util = require'util'
+local simplehttp = util.simplehttp
+local json = util.json
 
 local utify8 = function(str)
 	str = str:gsub("\\u(....)", function(n)

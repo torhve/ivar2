@@ -1,18 +1,11 @@
-local simplehttp = require'simplehttp'
-local json = require'json'
+local util = require'util'
+local simplehttp = util.simplehttp
+local json = util.json
+local urlEncode = util.urlEncode
 
 local headers = {
 	['api_key'] = ivar2.config.wordnikAPIKey
 }
-
-local urlEncode = function(str)
-	return str:gsub(
-		'([^%w ])',
-		function (c)
-			return string.format ("%%%02X", string.byte(c))
-		end
-	):gsub(' ', '+')
-end
 
 local outFormat = '\002%s\002 <%s>'
 local parseData = function(source, destination, data)
