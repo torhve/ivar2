@@ -2,7 +2,6 @@ local simplehttp = require'simplehttp'
 local zlib = require'zlib'
 local anidbSearch = require'anidbsearch'
 local html2unicode = require'html'
-require'tokyocabinet'
 require'logging.console'
 
 local catWhitelist = {
@@ -41,7 +40,7 @@ local catWhitelist = {
 }
 
 local log = logging.console()
-local anidb = tokyocabinet.hdbnew()
+local anidb = ivar2.persist
 
 local trim = function(s)
 	return s:match('^%s*(.-)%s*$')
@@ -156,16 +155,12 @@ local handleXML = function(xml)
 end
 
 local doLookup = function(destination, source, aid)
-	anidb:open('cache/anidb', anidb.OWRITER + anidb.OCREAT)
-
 	-- Is it fresh and present in our cache?
-	if(anidb[aid] and tonumber(anidb[aid .. ':time']) > os.time()) then
+	if(anidb["anidb:" ..aid] and tonumber(anidb["anidb:" .. aid .. ':time']) > os.time()) then
 		log:debug(string.format('anidb: Fetching %d from cache.', aid))
-		ivar2:Msg('privmsg', destination, source, anidb[aid])
-		anidb:close()
+		ivar2:Msg('privmsg', destination, source, anidb["anidb:" .. aid])
 		return
 	else
-		anidb:close()
 		log:info(string.format('anidb: Requesting information on %d.', aid))
 
 		simplehttp(
@@ -176,11 +171,9 @@ local doLookup = function(destination, source, aid)
 				if(output:sub(1,5) == 'Error') then
 					ivar2:Msg('privmsg', destination, source, '%s: %s', source.nick, output)
 				else
-					anidb:open('cache/anidb', anidb.OWRITER + anidb.OCREAT)
-					anidb:put(aid, output)
+					anidb["anidb:" .. aid] = output
 					-- Keep it for one day.
-					anidb:put(aid .. ':time', os.time() + 86400)
-					anidb:close()
+					anidb["anidb:" .. aid .. ':time'] = os.time() + 86400
 
 					ivar2:Msg('privmsg', destination, source, output)
 				end
@@ -194,9 +187,6 @@ end
 return {
 	PRIVMSG = {
 		['^%panidb (.+)$'] = function(self, source, destination, anime)
-			-- Force a close in-case we didn't get to earlier.
-			anidb:close()
-
 			-- Relaod the DB.
 			anidbSearch.reload()
 
