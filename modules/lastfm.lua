@@ -2,22 +2,6 @@ local util = require'util'
 local simplehttp = util.simplehttp
 local json = util.json
 
-local utify8 = function(str)
-	str = str:gsub("\\u(....)", function(n)
-		n = tonumber(n, 16)
-
-		if(n < 128) then
-			return string.char(n)
-		elseif(n < 2048) then
-			return string.char(192 + ((n - (n % 64)) / 64), 128 + (n % 64))
-		else
-			return string.char(224 + ((n - (n % 4096)) / 4096), 128 + (((n % 4096) - (n % 64)) / 64), 128 + (n % 64))
-		end
-	end)
-
-	return str
-end
-
 local APIBase = 'http://ws.audioscrobbler.com/2.0/?format=json&api_key=' .. ivar2.config.lastfmAPIKey
 
 local buildQuery = function(param)
@@ -32,7 +16,7 @@ end
 
 local pattern = ('<td>[^<]+</td><td>([^<]+)</td>'):rep(3) .. '<td>([^<]+)</td>'
 local parseTopArtists = function(source, destination, data)
-	local response = json.decode(utify8(data))
+	local response = json.decode(data)
 	if(response.error) then
 		return response.message
 	end
@@ -61,7 +45,7 @@ local parseTopArtists = function(source, destination, data)
 end
 
 local parseRecentTracks = function(source, destination, data)
-	local response = json.decode(utify8(data))
+	local response = json.decode(data)
 	if(response.error) then
 		return response.message
 	end
