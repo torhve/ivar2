@@ -73,7 +73,7 @@ local parseRecentTracks = function(source, destination, data)
 	end
 
 	table.insert(out, track.name)
-    table.insert(out, string.format(' %s', '♫♪'))
+	table.insert(out, '♫♪')
 
 	return table.concat(out, ' ')
 end
