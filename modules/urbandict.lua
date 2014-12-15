@@ -28,7 +28,6 @@ local handler = function(self, source, destination, input)
 				end
 
 				say(string.format('%s: %s', source.nick, result))
-				self:Msg('privmsg', destination, source, string.format('%s: %s', source.nick, result))
 			else
 				say(string.format("%s: %s is bad and you should feel bad.", source.nick, input))
 			end
