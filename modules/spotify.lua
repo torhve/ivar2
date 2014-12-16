@@ -7,22 +7,6 @@ require'logging.console'
 local log = logging.console()
 local spotify = ivar2.persist
 
-local utify8 = function(str)
-	str = str:gsub("\\u(....)", function(n)
-		n = tonumber(n, 16)
-
-		if(n < 128) then
-			return string.char(n)
-		elseif(n < 2048) then
-			return string.char(192 + ((n - (n % 64)) / 64), 128 + (n % 64))
-		else
-			return string.char(224 + ((n - (n % 4096)) / 4096), 128 + (((n % 4096) - (n % 64)) / 64), 128 + (n % 64))
-		end
-	end)
-
-	return str
-end
-
 local validType = {
 	track = true,
 	album = true,
@@ -33,12 +17,12 @@ local handlers = {
 	track = function(json)
 		if(json.description) then return nil, json.description end
 
-		local title = utify8(json.track.name)
-		local album = utify8(json.track.album.name)
+		local title = json.track.name
+		local album = json.track.album.name
 
 		local artists = {}
 		for _, artist in ipairs(json.track.artists) do
-			table.insert(artists, utify8(artist.name))
+			table.insert(artists, artist.name)
 		end
 
 		return true, string.format('%s - [%s] %s', table.concat(artists, ', '), album, title)
@@ -47,8 +31,8 @@ local handlers = {
 	album = function(json)
 		if(json.description) then return json.description end
 
-		local artist = utify8(json.album.artist)
-		local album = utify8(json.album.name)
+		local artist = json.album.artist
+		local album = json.album.name
 
 		return true, string.format('%s - %s', artist, album)
 	end,
@@ -56,7 +40,7 @@ local handlers = {
 	artist = function(json)
 		if(json.description) then return json.description end
 
-		return true, utify8(json.artist.name)
+		return true, json.artist.name
 	end,
 }
 
