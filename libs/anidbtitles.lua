@@ -37116,7 +37116,7 @@ return {
    },
   },
  [2698] = {
-  ["main"] = "Tenkuu Danzato Skelter Heaven",
+  ["main"] = "Tenkuu Danzai Skelter Heaven",
   ["official"] = {
    [1] = "天空断罪スケルターヘブン",
    },
@@ -64540,6 +64540,7 @@ return {
    },
   ["syn"] = {
    [1] = "Sparkling Red Star",
+   [2] = "Сияющая красная звезда",
    },
   },
  [5685] = {
@@ -104434,7 +104435,7 @@ return {
  [9973] = {
   ["main"] = "Hitsugi no Chaika",
   ["official"] = {
-   [1] = "Chaika the Coffin Princess",
+   [1] = "Chaika: The Coffin Princess",
    [2] = "棺姫のチャイカ",
    [3] = "棺姬嘉依卡",
    },
@@ -106975,8 +106976,9 @@ return {
    },
   ["syn"] = {
    [1] = "Mushi-shi Special Episode: The Shadow That Devours the Sun",
-   [2] = "Mushishi Tokubetsu-hen - Hihamukage",
-   [3] = "Мушіші, спеціальний випуск: Тінь, що поглинає сонце",
+   [2] = "Mushishi Special",
+   [3] = "Mushishi Tokubetsu-hen - Hihamukage",
+   [4] = "Мушіші, спеціальний випуск: Тінь, що поглинає сонце",
    },
   },
  [10276] = {
@@ -107716,7 +107718,7 @@ return {
    [2] = "Gun Art Online",
    [3] = "Sword Art Online 2",
    [4] = "Sword Art Online II: Calibur",
-   [5] = "Sword Art Online II: Mother`s Rosary",
+   [5] = "Sword Art Online II: Mother`s Rosario",
    [6] = "Sword Art Online II: Phantom Bullet",
    [7] = "هنر شمشیر زنی آنلاین 2 : گلوله فانتوم",
    },
@@ -108750,6 +108752,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Sucker Announcer",
    },
   },
  [10509] = {
@@ -109930,7 +109933,7 @@ return {
  [10639] = {
   ["main"] = "Hitsugi no Chaika: Avenging Battle",
   ["official"] = {
-   [1] = "Chaika the Coffin Princess: Avenging Battle",
+   [1] = "Chaika: The Coffin Princess - Avenging Battle",
    [2] = "棺姫のチャイカ AVENGING BATTLE",
    },
   ["short"] = {
@@ -110218,6 +110221,152 @@ return {
   ["main"] = "Danna ga Nani o Itteiru ka Wakaranai Ken",
   ["official"] = {
    [1] = "旦那が何を言っているかわからない件",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10963] = {
+  ["main"] = "Gekijouban Yuu Gi Ou",
+  ["official"] = {
+   [1] = "劇場版 遊☆戯☆王",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10964] = {
+  ["main"] = "Futabu!!",
+  ["official"] = {
+   [1] = "ふた部!!",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10965] = {
+  ["main"] = "Gunslinger Stratos The Animation",
+  ["official"] = {
+   [1] = "Gunslinger Stratos -THE ANIMATION-",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "ガンスリンガー ストラトス",
+   [2] = "ガンスリンガーストラトス",
+   },
+  },
+ [10966] = {
+  ["main"] = "Pokemon the Movie XY 2015",
+  ["official"] = {
+   [1] = "Pokemon the movie XY 2015",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "ポケモン・ザ・ムービーXY",
+   },
+  },
+ [10967] = {
+  ["main"] = "Bakemono no Ko",
+  ["official"] = {
+   [1] = "バケモノの子",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "The Boy and the Beast",
+   },
+  },
+ [10968] = {
+  ["main"] = "The Idolmaster: Cinderella Girls - 2 Shuunen Kinen PV",
+  ["official"] = {
+   [1] = "THE iDOLM@STER シンデレラガールズ 2周年記念PV",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Onegai! Cinderella",
+   },
+  },
+ [10969] = {
+  ["main"] = "Mikagura Gakuen Kumikyoku",
+  ["official"] = {
+   [1] = "ミカグラ学園組曲",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10970] = {
+  ["main"] = "Oku-sama ga Seito Kaichou!",
+  ["official"] = {
+   [1] = "おくさまが生徒会長!",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10971] = {
+  ["main"] = "Chain Chronicle",
+  ["official"] = {
+   [1] = "チェインクロニクル",
+   },
+  ["short"] = {
+   [1] = "チェンクロ",
+   },
+  ["syn"] = {
+   },
+  },
+ [10972] = {
+  ["main"] = "Himouto! Umaru-chan",
+  ["official"] = {
+   [1] = "干物妹! うまるちゃん",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10973] = {
+  ["main"] = "PriPara (2015)",
+  ["official"] = {
+   [1] = "プリパラ (2015)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10974] = {
+  ["main"] = "Tesagure! Bukatsumono Spin-off Purupurun Sharumu to Asobou",
+  ["official"] = {
+   [1] = "てさぐれ! 部活もの すぴんおふ プルプルんシャルムと遊ぼう",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10975] = {
+  ["main"] = "Shabura Rental: Ecchi na Onee-san to no Eroero Rental Obenkyou The Animation",
+  ["official"] = {
+   [1] = "しゃぶらレンタル ~エッチなおねえさんとのエロエロレンタルお勉強~ THE ANIMATION",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10976] = {
+  ["main"] = "Toubousha Mouri Kogorou",
+  ["official"] = {
+   [1] = "逃亡者・毛利小五郎",
    },
   ["short"] = {
    },
