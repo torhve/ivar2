@@ -22,7 +22,6 @@ local readGitLog = function()
 	local logs = split(cl, '\030')
 	for i=1, #logs do
 		local entry = logs[i]
-        print(entry)
 		local relTime, logEntry, files = entry:match('([^\031]+)\031([^\031]+)\031(.*)')
 		files = split(files:sub(3, -4), ',')
 		logs[i] = {time = relTime, log = logEntry, files = files}
