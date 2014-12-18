@@ -1,4 +1,5 @@
 require'logging.console'
+local uv = require'luv'
 local log = logging.console()
 
 local join = function(self, channel, data)
@@ -23,21 +24,17 @@ return {
 				if(not self.timers) then self.timers = {} end
 
 				if(not self.timers[timerName]) then
-					local timer = ev.Timer.new(
-						function(loop, timer, revents)
-							for channel, data in next, self.config.channels do
-								if(not self.channels[channel]) then
-									log:info(string.format('Automatically rejoining %s.', channel))
-									join(self, channel, data)
-								end
+					local timer = uv.new_timer()
+					uv.timer_start(timer, 60, 60, function()
+						for channel, data in next, self.config.channels do
+							if(not self.channels[channel]) then
+								log:info(string.format('Automatically rejoining %s.', channel))
+								join(self, channel, data)
 							end
-						end,
-						60,
-						60
-					)
+						end
+					end)
 
 					self.timers[timerName] = timer
-					timer:start(self.Loop)
 				end
 			end
 		end,
