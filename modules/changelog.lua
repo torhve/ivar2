@@ -22,6 +22,7 @@ local readGitLog = function()
 	local logs = split(cl, '\030')
 	for i=1, #logs do
 		local entry = logs[i]
+        print(entry)
 		local relTime, logEntry, files = entry:match('([^\031]+)\031([^\031]+)\031(.*)')
 		files = split(files:sub(3, -4), ',')
 		logs[i] = {time = relTime, log = logEntry, files = files}
@@ -37,7 +38,7 @@ local getModuleString = function(files)
 		table.insert(touched, name)
 	end
 
-	return '[' .. table.concat(touched, ',') .. ']'
+	return ivar2.util.bold('[' .. table.concat(touched, ',') .. ']')
 end
 
 return {
@@ -48,12 +49,12 @@ return {
 				local total = #cl
 				local entry = cl[tonumber(num)]
 				if(entry) then
-					self:Msg('privmsg', destination, source, '%s: (%d/%d) %s %s | %s', source.nick, tonumber(num), total, getModuleString(entry.files), entry.time, entry.log)
+					say('(%d/%d) %s %s | %s', tonumber(num), total, getModuleString(entry.files), entry.time, entry.log)
 				end
 			else
 				local total = #cl
 				local entry = cl[1]
-				self:Msg('privmsg', destination, source, '%s: (%d/%d) %s %s | %s', source.nick, 1, total, getModuleString(entry.files), entry.time, entry.log)
+				say('(%d/%d) %s %s | %s', 1, total, getModuleString(entry.files), entry.time, entry.log)
 			end
 		end
 	}
