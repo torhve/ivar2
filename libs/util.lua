@@ -17,6 +17,18 @@ local reverse = function(s)
 	return string.format("\018%s\018", s)
 end
 
+local rot13 = function(s)
+	local byte_a, byte_A = string.byte('a'), string.byte('A')
+	return (string.gsub((s or ''), "[%a]",
+	function (char)
+		local offset = (char < 'a') and byte_A or byte_a
+		local b = string.byte(char) - offset -- 0 to 25
+		b = ((b + 13) % 26) + offset -- Rotate
+		return string.char(b)
+	end
+	))
+end
+
 local color = function(s, color)
 	return string.format("\03%02d%s%s", color, s, reset())
 end
@@ -119,6 +131,7 @@ return {
 	urlEncode=urlEncode,
 	trim=trim,
 	split=split,
+	rot13=rot13,
 	json = require'cjson',
 	simplehttp = require'simplehttp',
 	white=function(s)
