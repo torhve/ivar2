@@ -61,8 +61,10 @@ local function handleSearch(self, source, destination, name)
 
     db:close()
 
-    if(#out) then
+    if #out > 0 then
         say(table.concat(out, ', '))
+    else
+        say('No match. ಠ_ಠ')
     end
 end
 
@@ -78,15 +80,17 @@ local function handleSearchShort(self, source, destination, name)
 
     db:close()
 
-    if(#out) then
+    if #out > 0 then
         say(table.concat(out, ''))
+    else
+        say('No match. ಠ_ಠ')
     end
 end
 
 local function handleLookup(self, source, destination, str)
     local db = sql.open("cache/unicode.sql")
     local out = {}
-    for uchar in string.gfind(str, "([%z\1-\127\194-\244][\128-\191]*)") do
+    for uchar in string.gmatch(str, "([%z\1-\127\194-\244][\128-\191]*)") do
         uchar = fromUtf8(uchar)
         if uchar then 
             local cp = string.format('%04x', uchar)
@@ -101,8 +105,10 @@ local function handleLookup(self, source, destination, str)
 
     db:close()
 
-    if(#out) then
+    if #out > 0 then
         say(table.concat(out, ', '))
+    else
+        say('No match. ಠ_ಠ')
     end
 end
 
