@@ -25,7 +25,7 @@ maps = {}
 for charmap, chars in pairs charmaps
   i = 1
   maps[charmap] = {}
-  for uchar in string.gfind(chars, "([%z\1-\127\194-\244][\128-\191]*)")
+  for uchar in string.gmatch(chars, "([%z\1-\127\194-\244][\128-\191]*)")
     maps[charmap][an\sub(i,i)] = uchar
     i = i +1
 
