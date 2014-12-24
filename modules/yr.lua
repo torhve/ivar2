@@ -81,7 +81,8 @@ local handleObservationOutput = function(self, source, destination, data)
 	for stno, sttype, name, distance, lat, lon, source, data in tabular:gmatch([[<weatherstation stno="([^"]+)" sttype="([^"]+)" name="([^"]+)" distance="([^"]+)" lat="([^"]+)" lon="([^"]+)" source="([^"]+)">(.-)</weatherstation]]) do
 		local windDirection = handleData('windDirection', data)
 		local windSpeed = handleData("windSpeed", data)
-		if windSpeed then windSpeed = windSpeed.name else windSpeed = '' end
+		if windSpeedname then windSpeedname = windSpeed.name else windSpeedname = '' end
+		if windSpeed then windSpeed = windSpeed.mps else windSpeed = '' end
 		local temperature = handleData('temperature', data)
 		-- Continue to next observation if no temperature
 		if temperature then
@@ -94,7 +95,7 @@ local handleObservationOutput = function(self, source, destination, data)
 				color = ivar2.util.blue
 			end
 			-- Use the first result
-			return '%s°C, %s %s (%s, %s)', color(temperature.value), windDirection, windSpeed, name, time
+			return '%s °C (feels like %s °C), %s %s (%s, %s)', color(temperature.value), color(feelsLike(temperature.value, windSpeed)), windDirection, windSpeedname, name, time
 		end
 	end
 end
@@ -362,7 +363,6 @@ return {
 		['^%pset yrlang (.+)$'] = function(self, source, destination, lang)
 			lang = ivar2.util.trim(lang:lower())
 			local langISO = iso2utf:iconv(lang)
-			print(lang, langISO)
 			if(lang == 'nynorsk' or lang == 'bokmål' or lang == 'english' or langISO == 'bokmål') then
 				if(lang == 'nynorsk') then
 					lang = 'stad'
