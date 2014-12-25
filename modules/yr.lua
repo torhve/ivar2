@@ -7,6 +7,13 @@ local iso2utf = iconv.new('utf-8', 'iso-8859-15')
 
 local days = { "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" }
 
+local lower = string.lower
+
+-- patch string.lower
+string.lower = function(s)
+	return lower(s):gsub('Æ','æ'):gsub('Ø','ø'):gsub('Å','å')
+end
+
 local parseDate = function(datestr)
 	local year, month, day, hour, min, sec = datestr:match("([^-]+)%-([^-]+)%-([^T]+)T([^:]+):([^:]+):(%d%d)")
 	return os.time{
@@ -20,6 +27,7 @@ local parseDate = function(datestr)
 end
 
 local feelsLike = function(celsius, wind)
+	if not tonumber(wind) then return celsius end
 	local V = wind * 3.6
 	return math.floor(13.12 + 0.6215 * celsius - 11.37 * V^0.16 + 0.3965 * celsius * V^0.16 + .5)
 end
@@ -81,7 +89,7 @@ local handleObservationOutput = function(self, source, destination, data)
 	for stno, sttype, name, distance, lat, lon, source, data in tabular:gmatch([[<weatherstation stno="([^"]+)" sttype="([^"]+)" name="([^"]+)" distance="([^"]+)" lat="([^"]+)" lon="([^"]+)" source="([^"]+)">(.-)</weatherstation]]) do
 		local windDirection = handleData('windDirection', data)
 		local windSpeed = handleData("windSpeed", data)
-		if windSpeedname then windSpeedname = windSpeed.name else windSpeedname = '' end
+		if windSpeed then windSpeedname = windSpeed.name else windSpeedname = '' end
 		if windSpeed then windSpeed = windSpeed.mps else windSpeed = '' end
 		local temperature = handleData('temperature', data)
 		-- Continue to next observation if no temperature
