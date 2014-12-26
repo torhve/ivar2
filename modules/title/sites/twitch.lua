@@ -31,6 +31,7 @@ customHosts['twitch%.tv'] = function(queue, info)
 		url,
 
 		function(data, url, response)
+            print('data: ', data)
 			local resp = json.decode(data)
 
 			local out = {}

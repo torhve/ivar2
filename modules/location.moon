@@ -1,26 +1,21 @@
-json = require'json'
-simplehttp = require'simplehttp'
-httpserver = require'handler.http.server'
-ev = require'ev'
+{:json, :simplehttp} = require'util'
+http = require 'uv.http'
 
-loop = ev.Loop.default
 
-on_data = (req, resp, data) ->
-  --print('---- start request body')
-  --io.write(data) if data
-  --print('---- end request body')
-  return
+on_request = (req) ->
+  --print('---- start request headers: method =' .. req.method .. ', url = ' .. req.url)
+  --for k,v in pairs(req.headers)
+  --  print(k .. ": " .. v)
 
-on_finished = (req, resp) ->
-  channel = req.url\match('channel=(.+)')
+  --print('---- end request headers')
+  -- check for '/favicon.ico' requests.
+  if req.path\lower() == '/favicon.ico'
+    -- return 404 Not found error
+    return { status:404, body: 'File not found.' }
+
+  channel = req.query\match('channel=(.+)')
   unless channel
-    html = 'Invalid channel'
-    resp\set_status(404)
-    resp\set_header('Content-Type', 'text/html')
-    resp\set_header('Content-Length', #html)
-    resp\set_body(html)
-    resp\send()
-    return
+    return {status:404, body:'Invalid channel'}
   else
     channel = '#'..channel
 
@@ -62,13 +57,7 @@ on_finished = (req, resp) ->
       markerdata[#markerdata + 1] = marker
 
   if #markerdata == 0 then
-    html = 'Invalid channel'
-    resp\set_status(404)
-    resp\set_header('Content-Type', 'text/html')
-    resp\set_header('Content-Length', #html)
-    resp\set_body(html)
-    resp\send()
-    return
+    return {status:404, body:'Invalid channel'}
 
   html ..= [[
   var map = new google.maps.Map(document.getElementById("map"), {
@@ -77,22 +66,22 @@ on_finished = (req, resp) ->
   });
   var infoWindow = null;
   var markers = [];
-  
+
   function makeInfoWindow(info) {
     return new google.maps.InfoWindow({
       content: makeMarkerDiv(info)
     });
   }
-  
+
   function makeMarkerDiv(h) {
     return "<div style='line-height:1.35;overflow:hidden;white-space:nowrap'>" + h + "</div>";
   }
-  
+
   function makeMarkerInfo(m) {
     return "<strong>" + m.get("account") + " on " + m.get("channel") + "</strong> " +
       m.get("formattedAddress");
   }
-  
+
   function dismiss() {
     if (infoWindow !== null) {
       infoWindow.close();
@@ -127,71 +116,48 @@ on_finished = (req, resp) ->
   });
   google.maps.event.addListener(mc, "mouseout", dismiss);
   google.maps.event.addListener(mc, "click", dismiss);
-  
+
   </script>
   </body>
   </html>
   ]]
-  --print('---- request finished, send response')
-  resp\set_status(200)
-  resp\set_header('Content-Type', 'text/html')
-  resp\set_header('Content-Length', #html)
-  resp\set_body(html)
-  resp\send()
+  return {
+    status: 200
+    headers: {
+      "Content-Type": 'text/html'
+      "Content-Length": #html
+    }
+    body: html
+  }
 
-on_response_sent = (resp) ->
-  return
-
-on_request = (server, req, resp) ->
-  --print('---- start request headers: method =' .. req.method .. ', url = ' .. req.url)
-  --for k,v in pairs(req.headers)
-  --  print(k .. ": " .. v)
-  
-  --print('---- end request headers')
-  -- check for '/favicon.ico' requests.
-  if req.url\lower() == '/favicon.ico'
-    -- return 404 Not found error
-    resp\set_status(404)
-    resp\send()
-    return
-  -- add callbacks to request.
-  req.on_data = on_data
-  req.on_finished = on_finished
-  -- add response callbacks.
-  resp.on_response_sent = on_response_sent
+on_error = (req, err) ->
+  print req, err
 
 
 -- Check for already running server
 if ivar2.webserver == nil
-  print '---- Starting webserver ---- '
-  ivar2.webserver = httpserver.new loop, { 
-    name: "ivar2-HTTPServer/0.0.1",
-    on_request: on_request,
-    request_head_timeout: 1.0,
-    request_body_timeout: 1.0,
-    write_timeout: 10.0,
-    keep_alive_timeout: 1.0,
-    max_keep_alive_requests: 10,
-  }
-
-  ivar2.webserver\listen_uri "tcp://0.0.0.0:#{ivar2.config.webserverport}/"
+  ivar2\Log('info', '---- Starting webserver ---- ')
+  -- FIXME webserverport
+  ivar2.webserver = http.listen('0.0.0.0', ivar2.config.webserverport, on_request, on_error)
 else
   -- Swap out the request handler with the reloaded one
-  ivar2.webserver.on_request = on_request
+  ivar2.webserver\close()
+  --FIXME ivar2.config.webserverhost
+  ivar2.webserver = http.listen('0.0.0.0', ivar2.config.webserverport, on_request, on_error)
 
 urlEncode = (str, space) ->
-	space = space or '+'
+  space = space or '+'
 
-	str = str\gsub '([^%w ])', (c) ->
-        string.format  "%%%02X", string.byte(c) 
-	return str\gsub(' ', space)
+  str = str\gsub '([^%w ])', (c) ->
+    string.format  "%%%02X", string.byte(c) 
+  return str\gsub(' ', space)
 
 lookup = (address, cb) ->
   API_URL = 'http://maps.googleapis.com/maps/api/geocode/json'
   url = API_URL .. '?address=' .. urlEncode(address) .. '&sensor=false' .. '&language=en-GB'
 
   simplehttp url, (data) ->
-      parsedData = json.decode data 
+      parsedData = json.decode data
       if parsedData.status ~= 'OK'
         return false, parsedData.status or 'unknown API error'
 
@@ -200,7 +166,7 @@ lookup = (address, cb) ->
 
       findComponent = (field, ...) ->
         n = select('#', ...)
-        for i=1, n 
+        for i=1, n
           searchType = select(i, ...)
           for _, component in ipairs(location.address_components)
             for _, type in ipairs(component.types)

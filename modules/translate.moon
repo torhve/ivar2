@@ -1,6 +1,5 @@
 -- google translate
-json = require'json'
-simplehttp = require'simplehttp'
+{:json, :simplehttp} = require'util'
 
 languages =
   "af": "Afrikaans",

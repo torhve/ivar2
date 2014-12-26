@@ -1,8 +1,8 @@
 local ivar2 = ...
 
-local nixio = require'nixio'
-local ev = require'ev'
-
+local posix = require'posix'
+local fs = require'uv.fs'
+local timer = require'uv.timer'
 
 local stripExtension = function(path)
 	local i = path:match( ".+()%.%w+$" )
@@ -11,7 +11,7 @@ local stripExtension = function(path)
 end
 
 -- Use the config file name as a base
-local fileName = stripExtension(nixio.fs.basename(ivar2.config.configFile))
+local fileName = stripExtension(fs.basename(ivar2.config.configFile))
 
 local commands = {
 	['>'] = function(lua)
@@ -83,21 +83,23 @@ local commands = {
 }
 
 -- Might fail, but mkfifo doesn't care if the pipe already exists.
-nixio.fs.unlink(fileName)
+pcall(function() fs.unlink(fileName) end)
 
-local watcher = ev.Stat.new(function(loop, stat, revents)
-	for line in io.lines() do
-		local command, argument  = line:match('^(%S+) ?(.*)$')
-		if(commands[command]) then
-			pcall(commands[command], argument)
-		end
-	end
-end, fileName)
-
-nixio.fs.mkfifo(fileName, 600)
+posix.mkfifo(fileName)
+posix.chmod(fileName, 600)
 
 -- Calling io.input() on a fifo will lock us until the first event happens.
-os.execute(string.format('sleep .1 && touch %q &', fileName))
-io.input(fileName)
+--os.execute(string.format('sleep .1 && touch %q &', fileName))
+--io.input(fileName)
+timer.every(1000, function()
+    local watcher = fs.open(fileName)
+    local data = watcher:read()
+    print('read data:', data)
+    local command, argument  = data:match('^(%S+) ?(.*)$')
+    if(commands[command]) then
+        pcall(commands[command], argument)
+    end
+    watcher:close()
+end)
 
-return watcher
+return true

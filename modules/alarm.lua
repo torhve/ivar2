@@ -1,5 +1,3 @@
-local ev = require'ev'
-
 if(not ivar2.timers) then ivar2.timers = {} end
 
 local dateFormat = '%Y-%m-%d %X %Z'
@@ -106,15 +104,13 @@ local alarm = function(self, source, destination, message)
 		end
 
 		-- message is probably changed.
-		runningTimer:stop(ivar2.Loop)
+		-- FIXME runningTimer:stop(ivar2.Loop)
 	end
 
-	local timer = ev.Timer.new(
-		function(loop, timer, revents)
+	local timer = self.timer.set(duration, function()
 			if(#message == 0) then message = 'Timer finished.' end
 			say('%s: %s', nick, message or 'Timer finished.')
-		end,
-		duration
+		end
 	)
 
 	if(#message > 0) then timer.message = message end
@@ -123,7 +119,6 @@ local alarm = function(self, source, destination, message)
 	self:Notice(nick, "I'll poke you at %s.", os.date(dateFormat, timer.utimestamp))
 
 	self.timers[id] = timer
-	timer:start(ivar2.Loop)
 end
 
 return {

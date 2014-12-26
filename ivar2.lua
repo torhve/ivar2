@@ -18,30 +18,38 @@ local configFile, reload = ...
 local moonstatus, moonscript = pcall(require, 'moonscript')
 moonscript = moonstatus and moonscript
 
-local connection = require'handler.connection'
-local nixio = require'nixio'
-local ev = require'ev'
 local event = require 'event'
 local util = require 'util'
 require'logging.console'
 
 local log = logging.console()
-local loop = ev.Loop.default
+
+--require 'uv/util/strict' -- Checks for global usage
+local tcp = require 'uv.tcp'
+local loop = require 'uv.loop'
+local timer = require 'uv.timer'
+local join = require 'uv/util/join'
+local url = require 'uv.url'
+local fs = require 'uv.fs'
+local uv_timer_t = require 'uv/ctypes/uv_timer_t'
 
 local ivar2 = {
 	ignores = {},
 	Loop = loop,
 	event = event,
+	timer = timer,
 	channels = {},
 	more = {},
 	util = util,
-
-	timeoutFunc = function(ivar2)
-		return function(loop, timer, revents)
-			ivar2:Log('error', 'Socket stalled for 6 minutes.')
-			if(ivar2.config.autoReconnect) then
-				ivar2:Reconnect()
-			end
+	handle_error = function(self, err)
+		self:Log('error', err)
+		if(self.config.autoReconnect) then
+			self:Log('info', 'Lost connection to server. Reconnecting in 60 seconds.')
+			self.timer.set(60*1000, function()
+				self:Reconnect()
+			end)
+		else
+			loop:close()
 		end
 	end,
 }
@@ -262,13 +270,9 @@ local events = {
 						break
 					end
 				end
-
-				ev.Timer.new(
-					function(loop, timer, revents)
-						self:Join(chan, password)
-					end,
-					30
-				):start(loop)
+				self.timer.set(30 * 1000, function()
+					self:Join(chan, password)
+				end)
 			end,
 		},
 	},
@@ -318,40 +322,6 @@ local IrcMessageSplit = function(destination, message)
 	return message, extra
 end
 
-local client_mt = {
-	handle_error = function(self, err)
-		self:Log('error', err)
-		if(self.config.autoReconnect) then
-			self:Log('info', 'Lost connection to server. Reconnecting in 60 seconds.')
-			ev.Timer.new(
-				function(loop, timer, revents)
-					self:Reconnect()
-				end,
-				60
-			):start(loop)
-		else
-			loop:unloop()
-		end
-	end,
-
-	handle_connected = function(self)
-		if(not self.updated) then
-			if self.config.password then
-				self:Send(string.format('PASS %s', self.config.password))
-			end
-			self:Nick(self.config.nick)
-			self:Send(string.format('USER %s 0 * :%s', self.config.ident, self.config.realname))
-		else
-			self.updated = nil
-		end
-	end,
-
-	handle_data = function(self, data)
-		return self:ParseInput(data)
-	end,
-}
-client_mt.__index = client_mt
-setmetatable(ivar2, client_mt)
 
 function ivar2:Log(level, ...)
 	local message = safeFormat(...)
@@ -371,7 +341,7 @@ function ivar2:Send(format, ...)
 
 		self:Log('debug', message)
 
-		self.socket:send(message .. '\r\n')
+		self.socket:write(message .. '\r\n')
 	end
 end
 
@@ -607,9 +577,9 @@ function ivar2:LoadModule(moduleName)
 
 	for _,ending in pairs(endings) do
 		local fileName = 'modules/' .. moduleName .. ending
-		-- Check if file exist and is readable before we try to loadfile it
-		local access, errCode, accessError = nixio.fs.access(fileName, 'r')
-		if(access) then
+		-- Check if file exist before we try to loadfile it
+		local stat, err = pcall(function() return fs.stat(fileName) end)
+		if(stat) then
 			if(fileName:match('.lua')) then
 				moduleFile, moduleError = loadfile(fileName)
 			elseif(fileName:match('.moon') and moonscript) then
@@ -734,24 +704,15 @@ end
 function ivar2:Connect(config)
 	self.config = config
 
-	if(not self.control) then
-		self.control = assert(loadfile('core/control.lua'))(ivar2)
-		self.control:start(loop)
-	end
+	-- FIXME
+	--if(not self.control) then
+	--	self.control = assert(loadfile('core/control.lua'))(ivar2)
+	--	self.control:start(loop)
+	--end
 
 	if(not self.nma) then
 		self.nma = assert(loadfile('core/nma.lua'))(ivar2)
 	end
-
-	if(self.timeout) then
-		self.timeout:stop(loop)
-	end
-
-	self.timeout = ev.Timer.new(self.timeoutFunc(self), 60*6, 60*6)
-	self.timeout:start(loop)
-
-	self:Log('info', 'Connecting to %s.', self.config.uri)
-	self.socket = assert(connection.uri(loop, self, self.config.uri))
 
 	if(not self.persist) then
 		-- Load persist library using config
@@ -762,14 +723,38 @@ function ivar2:Connect(config)
 			clear = false
 		})
 	end
+
 	self:DisableAllModules()
 	self:LoadModules()
+
+	-- FIXME
+	timer.every(500, function()
+		self:Log('info', '!')
+	end)
+
+	self:Log('info', 'Connecting to %s.', self.config.uri)
+	-- FIXME uri parse
+	local parts = url.split(self.config.uri)
+	self.socket = tcp.connect(parts.host, parts.port)
+	while true do
+		local data = self.socket:read()
+		if(not self.updated) then
+			if self.config.password then
+				self:Send(string.format('PASS %s', self.config.password))
+			end
+			self:Nick(self.config.nick)
+			self:Send(string.format('USER %s 0 * :%s', self.config.ident, self.config.realname))
+			self.updated = true
+		end
+		self:ParseInput(data)
+	end
+	self.socket:close()
 end
 
 function ivar2:Reconnect()
 	self:Log('info', 'Reconnecting to servers.')
 
-	-- Doesn't exsist if connection.tcp() in :Connect() fails.
+	-- Doesn't exsist if connection in :Connect() fails.
 	if(self.socket) then
 		self.socket:close()
 	end
@@ -787,8 +772,9 @@ function ivar2:Reload()
 	if(not success) then
 		return self:Log('error', 'Unable to execute new core: %s.', message)
 	else
-		self.control:stop(self.Loop)
-		self.timeout:stop(self.Loop)
+		-- FIXME
+		--self.control:stop(self.Loop)
+		--self.timeout:stop(self.Loop)
 
 		message.webserver = self.webserver
 		message.persist = self.persist
@@ -824,23 +810,25 @@ function ivar2:Reload()
 
 		message:LoadModules()
 		message.updated = true
-		self.socket:sethandler(message)
 
 		self = message
 
 		self.nma = assert(loadfile('core/nma.lua'))(self)
-		self.control = assert(loadfile('core/control.lua'))(self)
-		self.control:start(loop)
+		-- FIXME
+		--self.control = assert(loadfile('core/control.lua'))(self)
+		--self.control:start(loop)
 
-		self.timeout = ev.Timer.new(self.timeoutFunc(self), 60*6, 60*6)
-		self.timeout:start(loop)
+		-- FIXME timeoutfunc needed ?
+		--self.timeout = ev.Timer.new(self.timeoutFunc(self), 60*6, 60*6)
+		--self.timeout:start(loop)
 
 		self:Log('info', 'Successfully update core.')
 	end
 end
 
 function ivar2:ParseInput(data)
-	self.timeout:again(loop)
+	-- Reset timeoutfunc, because we got some data
+	self.timeout:again()
 
 	if(self.overflow) then
 		data = self.overflow .. data
@@ -912,10 +900,37 @@ if(reload) then
 	return ivar2
 end
 
--- Attempt to create the cache folder.
-nixio.fs.mkdir('cache')
 local config = assert(loadfile(configFile))()
 -- Store the config file name in the config so it can be accessed later
 config.configFile = configFile
-ivar2:Connect(config)
-ivar2.Loop:loop()
+join(coroutine.create(function()
+	local success, err = pcall(function() 
+		ivar2:Connect(config)
+	end)
+	if not success then
+		ivar2:Log('error', err)
+		repeat
+			pcall(function()
+				ivar2:handle_error()
+			end)
+			timer.sleep(60*1000)
+		until ivar2.config.autoReconnect == false
+	end
+end))
+join(coroutine.create(function()
+	timer.every(500, function()
+		ivar2:Log('info', '?')
+	end)
+	ivar2.timeout = uv_timer_t()
+	ivar2.timeout:every(60*6 * 1000, function()
+		ivar2:Log('error', 'Socket stalled for 6 minutes.')
+		pcall(function()
+			if(ivar2.config.autoReconnect) then
+				ivar2:Reconnect()
+			end
+		end)
+	end)
+	ivar2.timeout:free()
+end))
+-- Start uv loop
+ivar2.Loop.run()

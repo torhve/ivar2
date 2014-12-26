@@ -276,17 +276,13 @@ if(runningTimer) then
     runningTimer:stop(ivar2.Loop)
 end
 
-local duration = 60
+local duration = 60 * 1000
 -- start new poller
-local timer = ev.Timer.new(
-    function(loop, timer, revents)
-        tPoll()
-    end,
-    5,
-    duration
-)
+local timer = ivar2.timer.every(duration, function()
+    tPoll()
+    -- FIXME reload timer?
+end)
 ivar2.timers[id] = timer
-timer:start(ivar2.Loop)
 
 
 return {

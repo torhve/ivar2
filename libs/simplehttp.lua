@@ -1,102 +1,81 @@
-local httpclient = require'handler.http.client'
-local uri = require"handler.uri"
+-- vim: set noexpandtab:
 local idn = require'idn'
-local ev = require'ev'
+--local uv = require 'uv'
+local http = require 'uv.http'
+-- uv doesn't know about IDN or non-ASCII.
+local uri = require'socket.url'
+--local uri = require 'uv.url'
+require'logging.console'
 
-local uri_parse = uri.parse
+local log = logging.console()
 
 local toIDN = function(url)
-	local info = uri_parse(url, nil, true)
+    print('beofre', url)
+  
+	local info = uri.parse(url)
 	info.host = idn.encode(info.host)
 
 	if(info.port) then
 		info.host = info.host .. ':' .. info.port
 	end
 
+	local query = ''
+	if(info.query) then
+		query = "?" .. info.query
+	end
+
 	return string.format(
-		'%s://%s%s%s',
+		'%s://%s%s%s%s',
 
 		info.scheme,
 		info.userinfo or '',
 		info.host,
-		info.path or ''
+		info.path or '',
+		query
 	)
 end
 
-local function simplehttp(url, callback, stream, limit, visited)
-	local sinkSize = 0
-	local sink = {}
+local function simplehttp(url, cb, stream, limit, visited)
 	local visited = visited or {}
-	local method = "GET"
-	local data = nil
-
-	local client = httpclient.new(ev.Loop.default)
 	if(type(url) == "table") then
-		if(url.headers) then
-			for k, v in next, url.headers do
-				client.headers[k] = v
-			end
-		end
-
-		if(url.method) then
-			method = url.method
-		end
-
-		if(url.data) then
-			data = url.data
-		end
-
-		url = url.url or url[1]
+		url.body = url.data
+	else
+		url = {url=url}
 	end
 
 	-- Add support for IDNs.
-	url = toIDN(url)
+	url.url = toIDN(url.url)
 
 	-- Prevent infinite loops!
-	if(visited[url]) then return end
-	visited[url] = true
+	if(visited[url.url]) then return end
+	visited[url.url] = true
 
-	client:request{
-		url = url,
-		method = method,
-		body = data,
-		stream_response = stream,
+	log:debug(string.format('Fetching URL: %s', url.url))
 
-		on_data = function(request, response, data)
-			if(request.is_cancelled) then return end
+	local response = http.request(url)
+	if(response.status == 301 or response.status == 302) then
+		local location = response.headers.Location
+		if(location:sub(1, 4) ~= 'http') then
+			local info = uri.parse(url)
+			location = string.format('%s://%s%s', info.scheme, info.host, location)
+		end
 
-			if(data) then
-				sinkSize = sinkSize + #data
-				sink[#sink + 1] = data
-				if(limit and sinkSize > limit) then
-					request.on_finished(request, response)
-					-- Cancel it
-					request:close()
-				end
-			end
-		end,
+		if(url.headers) then
+			location = {
+				url = location,
+				headers = url.headers
+			}
+		end
+		return simplehttp(location, cb, stream, limit, visited)
+	end
 
-		on_finished = function(request, response)
-			if(response.status_code == 301 or response.status_code == 302) then
-				local location = response.headers.Location
-				if(location:sub(1, 4) ~= 'http') then
-					local info = uri_parse(url)
-					location = string.format('%s://%s%s', info.scheme, info.host, location)
-				end
-
-				if(url.headers) then
-					location = {
-						url = location,
-						headers = url.headers
-					}
-				end
-
-				return simplehttp(location, callback, stream, limit, visited)
-			end
-
-			callback(table.concat(sink), url, response)
-		end,
-	}
+	-- If give a callback, call it, else return the data
+	if(cb) then
+		return cb(response.body, url, response)
+	else
+		return response.body, url, response
+	end
+	
 end
 
 return simplehttp

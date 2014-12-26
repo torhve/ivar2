@@ -2,11 +2,11 @@ local util = require'util'
 local simplehttp = util.simplehttp
 local trim = util.trim
 local iconv = require"iconv"
-local uri = require"handler.uri"
 
-local simplehttp = require'simplehttp'
+local fs = require'uv.fs'
+
+local uri = require'socket.url'
 local html2unicode = require'html'
-local nixio = require'nixio'
 
 local uri_parse = uri.parse
 local DL_LIMIT = 2^17
@@ -225,7 +225,7 @@ do
 		local path = 'modules/title/sites/'
 		_PROXY.customHosts = customHosts
 
-		for fn in nixio.fs.dir(path) do
+		for _,fn in pairs(fs.readdir(path)) do
 			loadFile('custom',  path, fn)
 		end
 
@@ -235,7 +235,7 @@ do
 	-- Custom post processing
 	do
 		local path = 'modules/title/post/'
-		for fn in nixio.fs.dir(path) do
+		for _,fn in pairs(fs.readdir(path)) do
 			local func = loadFile('post',  path, fn)
 			if(func) then
 				table.insert(customPost, func)
