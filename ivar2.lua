@@ -264,12 +264,9 @@ local events = {
 					end
 				end
 
-				ev.Timer.new(
-					function(loop, timer, revents)
-						self:Join(chan, password)
-					end,
-					30
-				):start(loop)
+				self:Timer('_join', 30, function(loop, timer, revents)
+					self:Join(chan, password)
+				end)
 			end,
 		},
 	},
@@ -324,12 +321,9 @@ local client_mt = {
 		self:Log('error', err)
 		if(self.config.autoReconnect) then
 			self:Log('info', 'Lost connection to server. Reconnecting in 60 seconds.')
-			ev.Timer.new(
-				function(loop, timer, revents)
-					self:Reconnect()
-				end,
-				60
-			):start(loop)
+			self:Timer('_reconnect', 60, function(loop, timer, revents)
+				self:Reconnect()
+			end)
 		else
 			loop:unloop()
 		end
@@ -765,8 +759,7 @@ function ivar2:Connect(config)
 		self.timeout:stop(loop)
 	end
 
-	self.timeout = ev.Timer.new(self.timeoutFunc(self), 60*6, 60*6)
-	self.timeout:start(loop)
+	self.timeout = self:Timer('_timeout', 60*6, 60*6, self.timeoutFunc(self))
 
 	self:Log('info', 'Connecting to %s.', self.config.uri)
 	self.socket = assert(connection.uri(loop, self, self.config.uri))
@@ -850,8 +843,7 @@ function ivar2:Reload()
 		self.control = assert(loadfile('core/control.lua'))(self)
 		self.control:start(loop)
 
-		self.timeout = ev.Timer.new(self.timeoutFunc(self), 60*6, 60*6)
-		self.timeout:start(loop)
+		self.timeout = self:Timer('_timeout', 60*6, 60*6, self.timeoutFunc(self))
 
 		self:Log('info', 'Successfully update core.')
 	end
