@@ -1,3 +1,4 @@
+-- vim: set noexpandtab:
 local verifyOwner = function(src)
 	for _, mask in next, ivar2.config.owners do
 		if(src.mask:match(mask)) then
@@ -69,9 +70,11 @@ return {
 
 			command = command:lower()
 			if(command == "list") then
+				local out = {}
 				for id,_ in pairs(self.timers) do
-					self:Msg('privmsg', destination, source, "Id: %s", id)
+					out[#out+1] = id
 				end
+				self:Msg('privmsg', destination, source, "Timer ids: %s", table.concat(out, ', '))
 			elseif command == "stop" then
 				self.timers[argument]:stop(self.Loop)
 				self.timers[argument] = nil
