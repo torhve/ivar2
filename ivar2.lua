@@ -34,6 +34,7 @@ local ivar2 = {
 	event = event,
 	channels = {},
 	more = {},
+	timers = {},
 	util = util,
 
 	timeoutFunc = function(ivar2)
@@ -729,6 +730,23 @@ function ivar2:UnregisterCommand(handlerName, pattern, event)
 	end
 	events[event][handlerName][pattern] = nil
 	self:Log('info', 'Clearing command with pattern: %s, in module %s.', pattern, handlerName)
+end
+
+function ivar2:Timer(id, interval, repeat_interval, callback)
+	-- Check if invoked with repeat interval or not
+	if not callback then
+		callback = repeat_interval
+		repeat_interval = nil
+	end
+	local timer = ev.Timer.new(callback, interval, repeat_interval)
+	timer:start(self.Loop)
+	-- Only allow one timer per id
+	-- Cancel any running
+	if(self.timers[id]) then
+		self.timers[id]:stop()
+	end
+	self.timers[id] = timer
+	return timer
 end
 
 function ivar2:Connect(config)
