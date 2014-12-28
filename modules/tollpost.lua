@@ -1,4 +1,3 @@
-local ev = require'ev'
 local util = require'util'
 local simplehttp = util.simplehttp
 local json = util.json
@@ -7,7 +6,6 @@ local apiurl = 'http://www.tollpost.no/XMLServer/rest/trackandtrace/%s'
 
 local duration = 60
 
-if(not ivar2.timers) then ivar2.timers = {} end
 -- Abuse the ivar2 global to store out ephemeral event data until we can get some persistant storage
 if(not ivar2.shipmentEvents) then ivar2.shipmentEvents = {} end
 
@@ -51,13 +49,6 @@ local shipmentTrack = function(self, source, destination, pid, alias)
 	local nick = source.nick
 
 	local id = pid .. nick
-	local runningTimer = self.timers[id]
-	if(runningTimer) then
-		-- cancel existing timer
-	    self:Notice(nick, "Canceling existing tracking for alias %s.", alias)
-		self.shipmentEvents[id] = -1
-		runningTimer:stop(ivar2.Loop)
-	end
 
 	-- Store the eventcount in the ivar2 global
 	-- if the eventcount increases it means new events on the shipment happened.
@@ -66,7 +57,7 @@ local shipmentTrack = function(self, source, destination, pid, alias)
 		self.shipmentEvents[id] = -1
 	end
 
-	local timer = ev.Timer.new(
+	local timer = self:Timer('tollpost', duration,
 		function(loop, timer, revents)
 			simplehttp(string.format(apiurl, pid), function(data) 
 				local info = json.decode(data)
@@ -106,13 +97,8 @@ local shipmentTrack = function(self, source, destination, pid, alias)
 				end
 				self.shipmentEvents[id] = newEventCount
 			end)
-		end,
-		1,
-		duration
-	)
+		end)
 
-	self.timers[id] = timer
-	timer:start(ivar2.Loop)
 end
 
 local shipmentLocate = function(self, source, destination, pid)
