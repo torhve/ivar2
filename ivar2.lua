@@ -300,7 +300,7 @@ local IrcMessageSplit = function(destination, message)
 	local hostmask = ivar2.hostmask
 	local msgtype = 'privmsg'
 	local trail = ' (…)'
-	local cutoff = 512 - 5 - #hostmask - #destination - #msgtype - #trail
+	local cutoff = 512 - 6 - #hostmask - #destination - #msgtype - #trail
 	out = ""
 	extra = ""
 	if #message > cutoff then
