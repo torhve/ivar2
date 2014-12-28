@@ -26,11 +26,10 @@ local util = require 'util'
 require'logging.console'
 
 local log = logging.console()
-local loop = ev.Loop.default
 
 local ivar2 = {
 	ignores = {},
-	Loop = loop,
+	Loop = ev.Loop.default,
 	event = event,
 	channels = {},
 	more = {},
@@ -325,7 +324,7 @@ local client_mt = {
 				self:Reconnect()
 			end)
 		else
-			loop:unloop()
+			self.Loop:unloop()
 		end
 	end,
 
@@ -748,7 +747,7 @@ function ivar2:Connect(config)
 
 	if(not self.control) then
 		self.control = assert(loadfile('core/control.lua'))(ivar2)
-		self.control:start(loop)
+		self.control:start(self.Loop)
 	end
 
 	if(not self.nma) then
@@ -756,13 +755,13 @@ function ivar2:Connect(config)
 	end
 
 	if(self.timeout) then
-		self.timeout:stop(loop)
+		self.timeout:stop(self.Loop)
 	end
 
 	self.timeout = self:Timer('_timeout', 60*6, 60*6, self.timeoutFunc(self))
 
 	self:Log('info', 'Connecting to %s.', self.config.uri)
-	self.socket = assert(connection.uri(loop, self, self.config.uri))
+	self.socket = assert(connection.uri(self.Loop, self, self.config.uri))
 
 	if(not self.persist) then
 		-- Load persist library using config
@@ -841,7 +840,7 @@ function ivar2:Reload()
 
 		self.nma = assert(loadfile('core/nma.lua'))(self)
 		self.control = assert(loadfile('core/control.lua'))(self)
-		self.control:start(loop)
+		self.control:start(self.Loop)
 
 		self.timeout = self:Timer('_timeout', 60*6, 60*6, self.timeoutFunc(self))
 
@@ -850,7 +849,7 @@ function ivar2:Reload()
 end
 
 function ivar2:ParseInput(data)
-	self.timeout:again(loop)
+	self.timeout:again(self.Loop)
 
 	if(self.overflow) then
 		data = self.overflow .. data
