@@ -9,8 +9,6 @@ local access_token
 local key = ivar2.config.twitterApiKey
 local secret = ivar2.config.twitterApiSecret
 
-if(not ivar2.timers) then ivar2.timers = {} end
-
 local function openDb()
     -- Create a new DB if non existant using the current network in the file path
     local dbfilename = string.format("cache/twitter.%s.db", ivar2.network)
@@ -138,7 +136,7 @@ local function saveSince(tweet)
 end
 
 
-local function tPoll(self)
+local function tPoll()
     local db = openDb()
     for row in db:nrows('SELECT DISTINCT twitter.screen_name, since_id FROM twitter JOIN last ON twitter.screen_name=last.screen_name') do
         local url = string.format('https://api.twitter.com/1.1/statuses/user_timeline.json?exclude_replies=true&screen_name=%s', row.screen_name)
@@ -268,26 +266,8 @@ end
 getToken()
 
 local id = 'twitterUpdater'
-local runningTimer = ivar2.timers[id]
-
--- stop any running timer
-if(runningTimer) then
-    -- cancel existing timer
-    runningTimer:stop(ivar2.Loop)
-end
-
 local duration = 60
--- start new poller
-local timer = ev.Timer.new(
-    function(loop, timer, revents)
-        tPoll()
-    end,
-    5,
-    duration
-)
-ivar2.timers[id] = timer
-timer:start(ivar2.Loop)
-
+local runningTimer = ivar2:Timer(id, duration, duration, tPoll)
 
 return {
     PRIVMSG = {
