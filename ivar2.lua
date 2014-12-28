@@ -736,7 +736,7 @@ function ivar2:Timer(id, interval, repeat_interval, callback)
 	-- Only allow one timer per id
 	-- Cancel any running
 	if(self.timers[id]) then
-		self.timers[id]:stop()
+		self.timers[id]:stop(self.Loop)
 	end
 	self.timers[id] = timer
 	return timer
