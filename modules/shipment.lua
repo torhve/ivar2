@@ -1,5 +1,4 @@
 local util = require'util'
-local ev = require'ev'
 local simplehttp = util.simplehttp
 local json = util.json
 
@@ -7,7 +6,6 @@ local apiurl = 'http://sporing.bring.no/sporing.json?q=%s&%s'
 
 local duration = 60
 
-if(not ivar2.timers) then ivar2.timers = {} end
 -- Abuse the ivar2 global to store out ephemeral event data until we can get some persistant storage
 if(not ivar2.shipmentEvents) then ivar2.shipmentEvents = {} end
 
@@ -45,13 +43,6 @@ local shipmentTrack = function(self, source, destination, message)
 	local alias = comps[2]
 
 	local id = pid .. nick
-	local runningTimer = self.timers[id]
-	if(runningTimer) then
-		-- cancel existing timer
-	    self:Notice(nick, "Canceling existing tracking for alias %s.", alias)
-		self.shipmentEvents[id] = -1
-		runningTimer:stop(ivar2.Loop)
-	end
 
 	-- Store the eventcount in the ivar2 global
 	-- if the eventcount increases it means new events on the shipment happened.
@@ -60,7 +51,7 @@ local shipmentTrack = function(self, source, destination, message)
 		self.shipmentEvents[id] = -1
 	end
 
-	local timer = ev.Timer.new(
+	local timer = self:Timer('shipment', duration,
 		function(loop, timer, revents)
 			simplehttp(string.format(apiurl, pid, getCacheBust()), function(data) 
 				local info = json.decode(data)
@@ -101,13 +92,7 @@ local shipmentTrack = function(self, source, destination, message)
 				end
 				self.shipmentEvents[id] = newEventCount
 			end)
-		end,
-		1,
-		duration
-	)
-
-	self.timers[id] = timer
-	timer:start(ivar2.Loop)
+		end)
 end
 
 local shipmentLocate = function(self, source, destination, pid)
