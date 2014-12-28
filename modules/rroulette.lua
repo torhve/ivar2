@@ -1,5 +1,3 @@
-local ev = require'ev'
-
 local rr = ivar2.persist
 
 if(not ivar2.timers) then ivar2.timers = {} end
@@ -44,19 +42,10 @@ return {
 				end
 
 				local src = 'Russian Roulette:' .. destination
-				if(self.timers[src]) then
-					self.timers[src]:again(self.Loop, 15 * 60)
-				else
-					local timer = ev.Timer.new(
-						function(loop, timer, revents)
-							local n = rr['rr:'..destination]
-							rr['rr:'..destination] = 60 + math.random(1,6)
-						end,
-						15 * 60
-					)
-					self.timers[src] = timer
-					timer:start(self.Loop)
-				end
+				local timer = self:Timer(src, 15*60, function(loop, timer, revents)
+					local n = rr['rr:'..destination]
+					rr['rr:'..destination] = 60 + math.random(1,6)
+				end)
 
 				say('Click. %d/6', chamber)
 			end
