@@ -1,5 +1,4 @@
-simplehttp = require'simplehttp'
-json = require'json'
+{:simplehttp, :json} = require'util'
 
 APIBase = 'http://yr.hveem.no/api/now'
 
