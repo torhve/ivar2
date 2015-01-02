@@ -23,6 +23,7 @@ local nixio = require'nixio'
 local ev = require'ev'
 local event = require 'event'
 local util = require 'util'
+local irc = require 'irc'
 require'logging.console'
 
 local log = logging.console()
@@ -174,7 +175,7 @@ local events = {
 			function(self, source, param, param2)
 				-- Sometimes param holds the values, sometimes param2 holds the values.
 				-- Check first param then check param2
-				if param then 
+				if param then
 					local network = param:match("NETWORK=([^ ]+)")
 					if(network) then
 						self.network = network
@@ -554,6 +555,8 @@ function ivar2:Unignore(mask)
 end
 
 function ivar2:IsIgnored(destination, source)
+	if(not destiation) then return false end
+	if(not source) then return false end
 	if(self.ignores[source]) then return true end
 
 	local channel = self.config.channels[destination]
@@ -826,6 +829,9 @@ function ivar2:Reload()
 		-- Reload utils
 		package.loaded.util = nil
 		message.util = require'util'
+		-- Reload irclib
+		package.loaded.irc = nil
+		irc = require'util'
 		message.network = self.network
 		message.hostmask = self.hostmask
 		message.maxNickLength = self.maxNickLength
@@ -863,56 +869,13 @@ function ivar2:ParseInput(data)
 			-- Strip of \r.
 			line = line:sub(1, -2)
 			self:Log('debug', line)
-
-			local source, command, destination, argument
-			if(line:sub(1, 1) ~= ':') then
-				command, argument = line:match'^(%S+) :(.*)'
-				if(command) then
-					self:DispatchCommand(command, argument, 'server')
-				end
-			elseif(line:sub(1, 1) == ':') then
-				if(not source) then
-					-- :<server> 000 <nick> <destination> :<argument>
-					source, command, destination, argument = line:match('^:(%S+) (%d%d%d) %S+ ([^%d]+[^:]+) :(.*)')
-				end
-				if(not source) then
-					-- :<server> 000 <nick> <int> :<argument>
-					source, command, argument = line:match('^:(%S+) (%d%d%d) [^:]+ (%d+ :.+)')
-					if(source) then argument = argument:gsub(':', '', 1) end
-				end
-				if(not source) then
-					-- :<server> 000 <nick> <argument> :<argument>
-					source, command, argument = line:match('^:(%S+) (%d%d%d) %S+ (.+) :.+$')
-				end
-				if(not source) then
-					-- :<server> 000 <nick> :<argument>
-					source, command, argument = line:match('^:(%S+) (%d%d%d) [^:]+ :(.*)')
-				end
-				if(not source) then
-					-- :<server> 000 <nick> <argument>
-					source, command, argument = line:match('^:(%S+) (%d%d%d) %S+ (.*)')
-				end
-				if(not source) then
-					-- :<server> <command> <destination> :<argument>
-					source, command, destination, argument = line:match('^:(%S+) (%u+) ([^:]+) :(.*)')
-				end
-				if(not source) then
-					-- :<source> <command> <destination> <argument>
-					source, command, destination, argument = line:match('^:(%S+) (%u+) (%S+) (.*)')
-				end
-				if(not source) then
-					-- :<source> <command> :<destination>
-					source, command, destination = line:match('^:(%S+) (%u+) :(.*)')
-				end
-				if(not source) then
-					-- :<source> <command> <destination>
-					source, command, destination = line:match('^:(%S+) (%u+) (.*)')
-				end
-
-				if(not self:IsIgnored(destination, source)) then
-					self:DispatchCommand(command, argument, source, destination)
-				end
+			local command, argument, source, destination = irc.parse(line)
+			if(not self:IsIgnored(destination, source)) then
+				self:DispatchCommand(command, argument, source, destination)
+			else
+				self:DispatchCommand(command, argument, source, destination)
 			end
+
 		end
 	end
 end
