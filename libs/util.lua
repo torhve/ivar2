@@ -71,30 +71,30 @@ local translateWords = function(str, callback, fixCase, nickpat)
 	local result = ""
 	local pat = "()([%w'%-]+)()"
 	if nickpat then
-	  pat = "()([%w_'%-%{%}%[%]`%^]+)()"
+		pat = "()([%w_'%-%{%}%[%]`%^]+)()"
 	end
 	for wpos, w, wposEnd in str:gmatch(pat) do
-	  local wnew = callback(w)
-	  if wnew ~= false then
-		result = result .. str:sub(prev, wpos - 1)
-		if wnew then
-		  if fixCase then
-			if w == w:lower() then
-			elseif w == w:upper() then
-			  wnew = wnew:upper()
-			elseif w:sub(1, 1) == w:sub(1, 1):upper() then
-			  wnew = wnew:sub(1, 1):upper() .. wnew:sub(2)
+		local wnew = callback(w)
+		if wnew ~= false then
+			result = result .. str:sub(prev, wpos - 1)
+			if wnew then
+				if fixCase then
+					if w == w:lower() then
+					elseif w == w:upper() then
+						wnew = wnew:upper()
+					elseif w:sub(1, 1) == w:sub(1, 1):upper() then
+						wnew = wnew:sub(1, 1):upper() .. wnew:sub(2)
+					end
+				end
+				result = result .. wnew
+			else
+				result = result .. w
 			end
-		  end
-		  result = result .. wnew
-		else
-		  result = result .. w
+			if not wnew then
+				wnew = w
+			end
 		end
-		if not wnew then
-		  wnew = w
-		end
-	  end
-	  prev = wposEnd
+		prev = wposEnd
 	end
 	result = result .. str:sub(prev)
 	return result
@@ -110,7 +110,7 @@ local nonickalert = function(nicklist, str)
 
 	local nlkeys = {}
 	for nick, t in pairs(nicklist) do
-	  nlkeys[nick:lower()] = true
+		nlkeys[nick:lower()] = true
 	end
 
 	return translateWords(s, function(x)
