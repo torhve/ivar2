@@ -82,6 +82,8 @@ PRIVMSG:
     say remap(maps.ud, arg)
   '^%pflip (.+)$': (source, destination, arg) =>
     say remap(maps.ud, arg)
+  '^%pthrow (.+)$': (source, destination, arg) =>
+    say "（╯°□°）╯︵ #{remap maps.ud, arg}"
   '^%pparanthesized (.+)$': (source, destination, arg) =>
     say remap(maps.pt, arg)
   '^%pnegcircle (.+)$': (source, destination, arg) =>
