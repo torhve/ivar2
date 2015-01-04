@@ -1,5 +1,7 @@
 -- ivar2 IRC module
 -- vim: set noexpandtab:
+local util = require'util'
+local utf8 = util.utf8
 
 local function parse(line)
     local source, command, destination, argument
@@ -66,6 +68,44 @@ local function parse(line)
     end
 end
 
+local split = function(hostmask, destination, message, trail)
+	if not message then return end
+	local msgtype = 'privmsg'
+	if not trail then
+		trail = ' (…)'
+	end
+	local extra
+	if not hostmask then hostmask = 'xxxxxxxxxxxxxxxxxxx' end
+	local cutoff = 512 - 6 - #hostmask - #destination - #msgtype - #trail
+	if #message > cutoff then
+		local len = 0
+		extra = {}
+		local out = {}
+		-- Iterate over valid utf8 string so we don't cut off in the middle
+		-- of a utf8 codepoint
+		for c in utf8.chars(message) do
+			if len <= cutoff then
+				-- Check if the length of the current char
+				-- fits inside the remaining space
+				local remainder = cutoff - len
+				if #c < remainder then
+					table.insert(out, c)
+				else
+					table.insert(extra, c)
+				end
+				len = len + #c
+			else
+				table.insert(extra, c)
+			end
+		end
+		out = table.concat(out)
+		extra = table.concat(extra)
+		message = out .. trail
+	end
+	return message, extra
+end
+
 return {
     parse=parse,
+	split=split,
 }

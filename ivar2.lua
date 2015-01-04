@@ -287,31 +287,6 @@ local tableHasValue = function(table, value)
 	end
 end
 
-local IrcMessageSplit = function(destination, message)
-	local extra
-	local out
-	local hostmask = ivar2.hostmask
-	local msgtype = 'privmsg'
-	local trail = ' (…)'
-	local cutoff = 512 - 6 - #hostmask - #destination - #msgtype - #trail
-	out = ""
-	extra = ""
-	if #message > cutoff then
-		local count = 0
-		-- Iterate over valid utf8 string so we don't cut off in the middle
-		-- of a utf8 codepoint
-		for c in message:gmatch"([%z\1-\127\194-\244][\128-\191]*)" do
-			if #out+1 < cutoff then
-				out = out..c
-			else
-				extra = extra..c
-			end
-		end
-		message = out .. trail
-	end
-	return message, extra
-end
-
 local client_mt = {
 	handle_error = function(self, err)
 		self:Log('error', err)
@@ -413,7 +388,7 @@ function ivar2:Notice(destination, format, ...)
 end
 
 function ivar2:Privmsg(destination, format, ...)
-	local message, extra = IrcMessageSplit(destination, safeFormat(format, ...))
+	local message, extra = irc.split(ivar2.hostmask, destination, safeFormat(format, ...), ivar2.config.splitMarker)
 	-- Save the potential extra stuff from the split into the more container
 	ivar2.more[destination] = extra
 	return self:Send('PRIVMSG %s :%s', destination, message)
