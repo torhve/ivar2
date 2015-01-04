@@ -526,7 +526,7 @@ function ivar2:Unignore(mask)
 end
 
 function ivar2:IsIgnored(destination, source)
-	if(not destiation) then return false end
+	if(not destination) then return false end
 	if(not source) then return false end
 	if(self.ignores[source]) then return true end
 
