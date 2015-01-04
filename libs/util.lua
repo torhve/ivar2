@@ -1,6 +1,9 @@
 -- ivar2 IRC utilities and more
 -- vim: set noexpandtab:
 
+local utf8 = {}
+utf8.pattern = "([%z\1-\127\194-\244][\128-\191]*)"
+
 local reset = function(s)
 	return '\015'
 end
@@ -120,6 +123,32 @@ local nonickalert = function(nicklist, str)
 	end, nil, true)
 
 end
+-- Return utf8 byte sequences
+utf8.chars = function(s)
+	return s:gmatch(utf8.pattern)
+end
+
+-- Return utf8 string length
+utf8.len = function(s)
+	-- count the number of non-continuing bytes
+	return select(2, s:gsub('[^\128-\193]', ''))
+end
+
+utf8.reverse = function(s)
+	-- reverse the individual greater-than-single-byte characters
+	s = s:gsub(utf8.pattern, function (c) return #c > 1 and c:reverse() end)
+	return s:reverse()
+end
+
+utf8.replace = function(s, map)
+	return s:gsub(utf8.pattern, map)
+end
+
+-- Very silly function, but helps for norwegians
+utf8.lower = function(s)
+	local res, c = string.lower(s):gsub('Æ','æ'):gsub('Ø','ø'):gsub('Å','å')
+	return res
+end
 
 return {
 	bold=bold,
@@ -184,4 +213,5 @@ return {
 	end,
 	nonickalert=nonickalert,
 	translateWords=translateWords,
+	utf8=utf8,
 }
