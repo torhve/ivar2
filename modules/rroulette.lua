@@ -1,7 +1,5 @@
 local rr = ivar2.persist
 
-if(not ivar2.timers) then ivar2.timers = {} end
-
 local getBullet = function(n)
 	return n % 10
 end
@@ -65,14 +63,14 @@ return {
 			local tmp = {}
 			for nick, key in next, nicks do
 				if(not tmp[nick]) then tmp[nick] = {} end
-				type = 'attempts'
-				res = tonumber(rr['rr:'..key..':'..type])
+				local rtype = 'attempts'
+				local res = tonumber(rr['rr:'..key..':'..rtype])
 				if not res then res = 0 end
-				tmp[nick][type] = res
-				type = 'deaths'
-				res = tonumber(rr['rr:'..key..':'..type])
+				tmp[nick][rtype] = res
+				rtype = 'deaths'
+				res = tonumber(rr['rr:'..key..':'..rtype])
 				if not res then res = 0 end
-				tmp[nick][type] = res
+				tmp[nick][rtype] = res
 			end
 
 			local stats = {}
