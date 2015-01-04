@@ -80,8 +80,8 @@ local parseRecentTracks = function(source, destination, data)
 end
 
 local getUser = function(source)
-	user = source.nick
-	puser = ivar2.persist['lastfm:'..user]
+	local user = source.nick
+	local puser = ivar2.persist['lastfm:'..user]
 	if puser then
 		user = puser
 	end
