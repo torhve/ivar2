@@ -1,5 +1,5 @@
+util = require'util'
 html2unicode = require'html'
-math = require'math'
 
 an = [[ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789,.?!"'`()[]{}<>&_]]
 charmaps = {
@@ -25,7 +25,7 @@ maps = {}
 for charmap, chars in pairs charmaps
   i = 1
   maps[charmap] = {}
-  for uchar in string.gmatch(chars, "([%z\1-\127\194-\244][\128-\191]*)")
+  for uchar in util.utf8.chars(chars)
     maps[charmap][an\sub(i,i)] = uchar
     i = i +1
 
@@ -79,11 +79,11 @@ PRIVMSG:
   '^%pzalgo (.+)$': (source, destination, arg) =>
     say zalgo(arg, 7)
   '^%pupsidedown (.+)$': (source, destination, arg) =>
-    say remap(maps.ud, arg)
+    say remap(maps.ud, util.utf8.reverse(arg))
   '^%pflip (.+)$': (source, destination, arg) =>
     say remap(maps.ud, arg)
   '^%pthrow (.+)$': (source, destination, arg) =>
-    say "（╯°□°）╯︵ #{remap maps.ud, arg}"
+    say "（╯°□°）╯︵ #{remap maps.ud, util.utf8.reverse(arg)}"
   '^%pparanthesized (.+)$': (source, destination, arg) =>
     say remap(maps.pt, arg)
   '^%pnegcircle (.+)$': (source, destination, arg) =>
