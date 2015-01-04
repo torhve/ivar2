@@ -1,10 +1,8 @@
 -- http://developer.spotify.com/en/metadata-api/overview/
+local util = ivar2.util
+local simplehttp = util.simplehttp
+local json = util.json
 
-local simplehttp = require'simplehttp'
-local json = require'json'
-require'logging.console'
-
-local log = logging.console()
 local spotify = ivar2.persist
 
 local validType = {
@@ -121,7 +119,7 @@ end
 -- http://ws.spotify.com/lookup/1/.json?uri=spotify:track:6NmXV4o6bmp704aPGyTVVG
 local fetchInformation = function(output, n, info)
 	if(spotify['spotify:'..info.uri] and tonumber(spotify['spotify:'.. info.uri .. ':timestamp']) > os.time()) then
-		log:debug(string.format('spotify: Fetching %s from cache.', info.uri))
+		ivar2:Log('debug', string.format('spotify: Fetching %s from cache.', info.uri))
 
 		info.info = spotify['spotify:'..info.uri]
 		output.handled[n] = info
@@ -129,7 +127,7 @@ local fetchInformation = function(output, n, info)
 
 		handleOutput(output)
 	else
-		log:info(string.format('spotify: Requesting information on %s.', info.uri))
+		ivar2:Log('info', string.format('spotify: Requesting information on %s.', info.uri))
 
 		simplehttp(
 			('http://ws.spotify.com/lookup/1/.json?uri=%s'):format(info.uri),
