@@ -89,7 +89,8 @@ local handleObservationOutput = function(self, source, destination, data)
 	for stno, sttype, name, distance, lat, lon, source, data in tabular:gmatch([[<weatherstation stno="([^"]+)" sttype="([^"]+)" name="([^"]+)" distance="([^"]+)" lat="([^"]+)" lon="([^"]+)" source="([^"]+)">(.-)</weatherstation]]) do
 		local windDirection = handleData('windDirection', data)
 		local windSpeed = handleData("windSpeed", data)
-		if windSpeed then windSpeedname = windSpeed.name else windSpeedname = '' end
+		local windSpeedname = ''
+		if windSpeed then windSpeedname = windSpeed.name end
 		if windSpeed then windSpeed = windSpeed.mps else windSpeed = '' end
 		local temperature = handleData('temperature', data)
 		-- Continue to next observation if no temperature
@@ -233,6 +234,7 @@ local getPlace = function(self, source, destination, input)
 	local inputISO = utf2iso:iconv(input)
 
 	local country
+	local _
 	if(input:find(',', 1, true)) then
 		input, country = input:match('([^,]+),(.+)')
 		country = ivar2.util.trim(country):upper()
@@ -274,6 +276,7 @@ return {
 			local inputISO = utf2iso:iconv(input)
 
 			local country
+			local _
 			if(input:find(',', 1, true)) then
 				input, country = input:match('([^,]+),(.+)')
 				country = ivar2.util.trim(country):upper()
