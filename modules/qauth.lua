@@ -49,6 +49,7 @@ return {
 				local type = config.type
 				local user = config.user
 				local passHash = config.hash
+				local hmac
 
 				local key = crypto.hash(type):update(string.format('%s:%s', user:lower(), passHash)):final()
 
