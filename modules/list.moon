@@ -5,7 +5,7 @@ listModules = (source, destination, arg) =>
     unless @IsModuleDisabled moduleName, destination
       table.insert out, moduleName
   if #out > 0
-    say "Modules: %s", table.concat(out, ', ')
+    say "Modules: %s", table.concat(out, ' ')
 
 listPatterns = (source, destination, moduleName) =>
   moduleTable = @Events!['PRIVMSG'][moduleName]
@@ -18,6 +18,9 @@ listPatterns = (source, destination, moduleName) =>
   out = {}
   for pattern, callback in next, moduleTable
     patt = @ChannelCommandPattern(pattern, moduleName, destination)
+    -- Make them prettier
+    patt = patt\gsub('%^%%p', '!')
+    patt = patt\gsub('%$$', '')
     table.insert out, patt
 
   if #out > 0
