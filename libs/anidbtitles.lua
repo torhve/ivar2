@@ -774,11 +774,12 @@ return {
    [4] = "Nadia: Secret of Blue Water",
    [5] = "Nadia: el Secret de l`Aigua Blau",
    [6] = "Nadia: el Secreto del Agua Azul",
-   [7] = "The Secret of Blue Water",
-   [8] = "Надя c загадочного моря",
-   [9] = "不可思议之海的娜迪娅",
-   [10] = "冒險少女娜汀亞",
-   [11] = "신비한 바다의 나디아",
+   [7] = "Nadja z tajemných moří",
+   [8] = "The Secret of Blue Water",
+   [9] = "Надя c загадочного моря",
+   [10] = "不可思议之海的娜迪娅",
+   [11] = "冒險少女娜汀亞",
+   [12] = "신비한 바다의 나디아",
    },
   },
  [42] = {
@@ -4654,12 +4655,12 @@ return {
    [1] = "Anılar",
    [2] = "Atsiminimai",
    [3] = "Emlékek",
-   [4] = "Memories",
-   [5] = "Memories - muistoja tulevaisuudesta",
-   [6] = "Recuerdos",
-   [7] = "Recuerdos peligrosos",
-   [8] = "Воспоминания о будущем",
-   [9] = "メモリーズ",
+   [4] = "MEMORIES",
+   [5] = "Memories",
+   [6] = "Memories - muistoja tulevaisuudesta",
+   [7] = "Recuerdos",
+   [8] = "Recuerdos peligrosos",
+   [9] = "Воспоминания о будущем",
    },
   ["short"] = {
    },
@@ -4669,9 +4670,10 @@ return {
    [3] = "Wspomnienia",
    [4] = "Спогади",
    [5] = "Спомени",
-   [6] = "回忆三部曲",
-   [7] = "回憶三部曲",
-   [8] = "메모리즈",
+   [6] = "メモリーズ",
+   [7] = "回忆三部曲",
+   [8] = "回憶三部曲",
+   [9] = "메모리즈",
    },
   },
  [263] = {
@@ -5030,7 +5032,8 @@ return {
   ["official"] = {
    [1] = "Project A-ko",
    [2] = "Projekt A-ko",
-   [3] = "プロジェクトA子",
+   [3] = "Proyecto A-ko",
+   [4] = "プロジェクトA子",
    },
   ["short"] = {
    [1] = "pako",
@@ -8808,19 +8811,19 @@ return {
  [516] = {
   ["main"] = "Princess Tutu",
   ["official"] = {
-   [1] = "Księżniczka Tutu",
-   [2] = "Princess Tutu",
-   [3] = "プリンセスチュチュ",
+   [1] = "Princess Tutu",
+   [2] = "プリンセスチュチュ",
    },
   ["short"] = {
    [1] = "tutu",
    },
   ["syn"] = {
-   [1] = "Prenses Tutu",
-   [2] = "Prinzessin Tutu",
-   [3] = "Принцесса Тютю",
-   [4] = "الأميرة توتو",
-   [5] = "پرنسس توتو",
+   [1] = "Księżniczka Tutu",
+   [2] = "Prenses Tutu",
+   [3] = "Prinzessin Tutu",
+   [4] = "Принцесса Тютю",
+   [5] = "الأميرة توتو",
+   [6] = "پرنسس توتو",
    },
   },
  [517] = {
@@ -9504,8 +9507,9 @@ return {
    [1] = "digimon2",
    },
   ["syn"] = {
-   [1] = "Digimon Zero Two",
-   [2] = "デジモン02",
+   [1] = "Digimon Adventure Zero Two",
+   [2] = "Digimon Zero Two",
+   [3] = "デジモン02",
    },
   },
  [562] = {
@@ -18001,6 +18005,7 @@ return {
    },
   ["syn"] = {
    [1] = "Daft Punk & Leiji Matsumoto`s INTERSTELLA 5555: The 5tory of the 5ecret 5tar 5ystem",
+   [2] = "SSSS",
    },
   },
  [1154] = {
@@ -65166,7 +65171,7 @@ return {
    },
   },
  [5779] = {
-  ["main"] = "Michiko to Hatchin",
+  ["main"] = "Michiko to Hacchin",
   ["official"] = {
    [1] = "Michiko & Hatchin",
    [2] = "Michiko e Hatchin",
@@ -65179,10 +65184,11 @@ return {
   ["syn"] = {
    [1] = "Michiko and Hatchin",
    [2] = "Michiko e Hatchin",
-   [3] = "Michiko İle Hatchin",
-   [4] = "Mičiko ir Hana",
-   [5] = "Мичико и Хатчин",
-   [6] = "道子与哈金",
+   [3] = "Michiko to Hatchin",
+   [4] = "Michiko İle Hatchin",
+   [5] = "Mičiko ir Hana",
+   [6] = "Мичико и Хатчин",
+   [7] = "道子与哈金",
    },
   },
  [5783] = {
@@ -71643,7 +71649,6 @@ return {
   ["official"] = {
    [1] = "Angel Beats!",
    [2] = "แองเจิลบีทส์ แผนพิชิตนางฟ้า",
-   [3] = "エンジェル ビーツ!",
    },
   ["short"] = {
    [1] = "AB!",
@@ -71654,8 +71659,9 @@ return {
    [3] = "Eņģeļa Pulss",
    [4] = "Ангельские ритмы!",
    [5] = "Пульс ангела!",
-   [6] = "天使的心跳",
-   [7] = "엔젤비트!, 엔젤비츠!",
+   [6] = "エンジェル ビーツ!",
+   [7] = "天使的心跳",
+   [8] = "엔젤비트!, 엔젤비츠!",
    },
   },
  [6566] = {
@@ -79715,7 +79721,8 @@ return {
   ["main"] = "Kuroshitsuji II",
   ["official"] = {
    [1] = "Black Butler II",
-   [2] = "黒執事II",
+   [2] = "خادم سیاه 2",
+   [3] = "黒執事II",
    },
   ["short"] = {
    },
@@ -87911,10 +87918,10 @@ return {
    },
   ["short"] = {
    [1] = "SYD 2011",
-   [2] = "SYD OVA",
+   [2] = "SYD OAD",
    },
   ["syn"] = {
-   [1] = "Seitokai Yakuindomo OVA",
+   [1] = "Seitokai Yakuindomo OAD",
    [2] = "Seitokai Yakuindomo: Kaette Kita",
    [3] = "Seitokai Yakuindomo: The Return of Seitokai Yakuindomo",
    },
@@ -92461,7 +92468,8 @@ return {
   ["main"] = "Kuroko no Baske",
   ["official"] = {
    [1] = "Kuroko`s Basketball",
-   [2] = "黒子のバスケ",
+   [2] = "kuroko no basket",
+   [3] = "黒子のバスケ",
    },
   ["short"] = {
    [1] = "Kurobas",
@@ -94596,7 +94604,7 @@ return {
   ["syn"] = {
    [1] = "Evangelion 3.0+1.0",
    [2] = "Evangelion 4.0",
-   [3] = "Evangelion Final",
+   [3] = "Evangelion: Final",
    [4] = "Rebuild of Evangelion: 4.0",
    [5] = "シン・エヴァンゲリオン劇場版𝄇",
    },
@@ -101087,9 +101095,10 @@ return {
    [1] = "yowapeda",
    },
   ["syn"] = {
-   [1] = "Плахият велосипедист",
-   [2] = "Плахият колоездач",
-   [3] = "Трусливый Велосипедист",
+   [1] = "Yowamushi Pedal",
+   [2] = "Плахият велосипедист",
+   [3] = "Плахият колоездач",
+   [4] = "Трусливый Велосипедист",
    },
   },
  [9592] = {
@@ -103468,6 +103477,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "JK and the Orc Corps: The Assault on Seijo Academy by Evil Demon Pigs",
    },
   },
  [9869] = {
@@ -104485,6 +104495,7 @@ return {
    [1] = "F/SN 2014",
    [2] = "FSN 2014",
    [3] = "FSN UBW 2014",
+   [4] = "[UBW] 2014",
    },
   ["syn"] = {
    [1] = "Fate Stay Night - Unlimited Blade Works",
@@ -106854,6 +106865,7 @@ return {
   ["main"] = "Stand By Me Doraemon",
   ["official"] = {
    [1] = "STAND BY ME ドラえもん",
+   [2] = "STAND BY ME 哆啦A夢",
    },
   ["short"] = {
    },
@@ -107996,7 +108008,8 @@ return {
   ["official"] = {
    [1] = "Black Butler: Book of Circus",
    [2] = "Mroczny kamerdyner III",
-   [3] = "黒執事 Book of Circus",
+   [3] = "خادم سیاه: کتاب سیرک",
+   [4] = "黒執事 Book of Circus",
    },
   ["short"] = {
    },
@@ -109119,7 +109132,8 @@ return {
  [10548] = {
   ["main"] = "Kuroshitsuji: Book of Murder",
   ["official"] = {
-   [1] = "黒執事 Book of Murder",
+   [1] = "خادم سیاه: کتاب قتل",
+   [2] = "黒執事 Book of Murder",
    },
   ["short"] = {
    },
@@ -109707,6 +109721,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Sacred Prostitutes The Animation",
    },
   },
  [10613] = {
@@ -110243,7 +110258,2424 @@ return {
  [10676] = {
   ["main"] = "Danna ga Nani o Itteiru ka Wakaranai Ken",
   ["official"] = {
-   [1] = "旦那が何を言っているかわからない件",
+   [1] = "Ik Begrijp Maar Niet Waar Mijn Man Het Over Heeft",
+   [2] = "旦那が何を言っているかわからない件",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Danna ga Nani wo Itteiru ka Wakaranai Ken",
+   [2] = "I Can`t Understand What My Husband Is Saying",
+   },
+  },
+ [10680] = {
+  ["main"] = "Eiga Youkai Watch: Tanjou no Himitsu Da Nyan!",
+  ["official"] = {
+   [1] = "映画 妖怪ウォッチ 誕生の秘密だニャン!",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10681] = {
+  ["main"] = "Gundam Build Fighters Try",
+  ["official"] = {
+   [1] = "ガンダムビルドファイターズトライ",
+   },
+  ["short"] = {
+   [1] = "gbft",
+   },
+  ["syn"] = {
+   },
+  },
+ [10683] = {
+  ["main"] = "Yamada-kun to 7-nin no Majo OAD",
+  ["official"] = {
+   [1] = "山田くんと7人の魔女 OAD",
+   },
+  ["short"] = {
+   [1] = "Yamajo",
+   [2] = "やまじょ",
+   },
+  ["syn"] = {
+   [1] = "Yamadakun to Nananin no Majo OAD",
+   },
+  },
+ [10684] = {
+  ["main"] = "Koufuku Graffiti",
+  ["official"] = {
+   [1] = "幸腹グラフィティ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Happy Cooking Graffiti",
+   },
+  },
+ [10685] = {
+  ["main"] = "World Fool News (2014)",
+  ["official"] = {
+   [1] = "ワールド フールニュース (2014)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10686] = {
+  ["main"] = "Yobai Suru Shichinin no Harame",
+  ["official"] = {
+   [1] = "夜這いする七人の孕女",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "夜這いする7人の孕女",
+   },
+  },
+ [10687] = {
+  ["main"] = "Kitsune no Homerun Ou",
+  ["official"] = {
+   [1] = "Seventh Inning Stretch",
+   [2] = "きつねのホームラン王",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10688] = {
+  ["main"] = "Gekijouban Date a Live: Mayuri Judgement",
+  ["official"] = {
+   [1] = "劇場版デート・ア・ライブ 万由里ジャッジメント",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10689] = {
+  ["main"] = "Keshikasu-kun",
+  ["official"] = {
+   [1] = "ケシカスくん",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10690] = {
+  ["main"] = "Shinrabanshou: Tenchishinmei no Shou",
+  ["official"] = {
+   [1] = "神羅万象~天地神明の章~",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10691] = {
+  ["main"] = "High School DxD Born",
+  ["official"] = {
+   [1] = "ハイスクールDxD BorN",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10692] = {
+  ["main"] = "Isuca",
+  ["official"] = {
+   [1] = "ISUCA",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10693] = {
+  ["main"] = "Miss Monochrome The Animation: Soccer Hen",
+  ["official"] = {
+   [1] = "ミス・モノクローム -The Animation- サッカー篇",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10697] = {
+  ["main"] = "Gakkou Gurashi!",
+  ["official"] = {
+   [1] = "がっこうぐらし!",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10698] = {
+  ["main"] = "Selector Spread WIXOSS",
+  ["official"] = {
+   [1] = "Selector Spread WIXOSS",
+   [2] = "Selector Spread Wixoss",
+   [3] = "selector spread WIXOSS",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10700] = {
+  ["main"] = "Spo-chan Taiketsu: Youkai Daikessen",
+  ["official"] = {
+   [1] = "スポチャン対決~妖怪大決戦~",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10702] = {
+  ["main"] = "Ansatsu Kyoushitsu (2015)",
+  ["official"] = {
+   [1] = "暗殺教室 (2015)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Assassination Classroom (2015)",
+   },
+  },
+ [10704] = {
+  ["main"] = "Inyutsu no Yakata The Animation",
+  ["official"] = {
+   [1] = "淫術の館 THE ANIMATION",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Residence of Obscene Art",
+   },
+  },
+ [10705] = {
+  ["main"] = "Kyonyuu Try! Tanki Shuuchuu Chichi Momi Lesson",
+  ["official"] = {
+   [1] = "巨乳トライ! -短期集中乳揉みレッスン-",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10706] = {
+  ["main"] = "Madonna: Kanjuku Body Collection The Animation",
+  ["official"] = {
+   [1] = "マドンナ ~完熟ボディCollection~ THE ANIMATION",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10707] = {
+  ["main"] = "Sumiko",
+  ["official"] = {
+   [1] = "スミ子",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10708] = {
+  ["main"] = "Gundam-san",
+  ["official"] = {
+   [1] = "ガンダムさん",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10709] = {
+  ["main"] = "Girlfriend (Kari)",
+  ["official"] = {
+   [1] = "Girl Friend Beta",
+   [2] = "ガールフレンド(仮)",
+   },
+  ["short"] = {
+   [1] = "GF Beta",
+   [2] = "GF Kari",
+   },
+  ["syn"] = {
+   [1] = "Girlfriend Beta",
+   },
+  },
+ [10710] = {
+  ["main"] = "Juuou Mujin no Fafnir",
+  ["official"] = {
+   [1] = "銃皇無尽のファフニール",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Unlimited Fafnir",
+   },
+  },
+ [10712] = {
+  ["main"] = "Nyanda? Full",
+  ["official"] = {
+   [1] = "ニャンだ?フル",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10713] = {
+  ["main"] = "Sidonia no Kishi: Daikyuu Wakusei Seneki",
+  ["official"] = {
+   [1] = "シドニアの騎士 第九惑星戦役",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10714] = {
+  ["main"] = "Kaitou Joker",
+  ["official"] = {
+   [1] = "怪盗ジョーカー",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Mysterious Joker",
+   },
+  },
+ [10715] = {
+  ["main"] = "Gekijouban Aoki Hagane no Arpeggio",
+  ["official"] = {
+   [1] = "劇場版 蒼き鋼のアルペジオ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10716] = {
+  ["main"] = "Ane Kyun!",
+  ["official"] = {
+   [1] = "姉キュン!",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10717] = {
+  ["main"] = "Yami Shibai 2",
+  ["official"] = {
+   [1] = "Yamishibai: Japanese Ghost Stories 2",
+   [2] = "闇芝居 2",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10718] = {
+  ["main"] = "Furifure The Animation",
+  ["official"] = {
+   [1] = "フリフレ THE ANIMATION",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10719] = {
+  ["main"] = "Agukaru: Agriculture Angel Baraki - Play with Ibaraki Hen",
+  ["official"] = {
+   [1] = "あぐかる Agriculture Angel BARAKI PLAY WITH IBARAKI編",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10720] = {
+  ["main"] = "Gekijouban Love Live!",
+  ["official"] = {
+   [1] = "劇場版 ラブライブ!",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10721] = {
+  ["main"] = "Eiga Happiness Charge Precure! Ningyou no Kuni no Ballerina",
+  ["official"] = {
+   [1] = "映画ハピネスチャージプリキュア! 人形の国のバレリーナ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10722] = {
+  ["main"] = "Elite Jack!!",
+  ["official"] = {
+   [1] = "エリートジャック!!",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10725] = {
+  ["main"] = "Akatsuki no Yona: The Girl Standing in the Blush of Dawn",
+  ["official"] = {
+   [1] = "Yona of the Dawn",
+   [2] = "Йон А - момичето на утринната свежест",
+   [3] = "暁のヨナ -The girl standing in the blush of dawn-",
+   },
+  ["short"] = {
+   [1] = "Akatsuki no Yona",
+   },
+  ["syn"] = {
+   },
+  },
+ [10726] = {
+  ["main"] = "Gekijouban Kyoukai no Kanata: I`ll Be Here",
+  ["official"] = {
+   [1] = "劇場版 境界の彼方-I`LL BE HERE-",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10727] = {
+  ["main"] = "Ai Tenchi Muyou!",
+  ["official"] = {
+   [1] = "愛・天地無用!",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10728] = {
+  ["main"] = "Bakumatsu Rock: Mystery! Onsen Kaijiken ze yo!!",
+  ["official"] = {
+   [1] = "幕末Rock 湯煙推理劇[ミステリー]! 温泉怪事件ぜよ!!",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10729] = {
+  ["main"] = "Ore ga Ojou-sama Gakkou ni \"Shomin Sample\" Toshite Rachirareta Ken",
+  ["official"] = {
+   [1] = "俺がお嬢様学校に「庶民サンプル」として拉致られた件",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10730] = {
+  ["main"] = "The Bathroom",
+  ["official"] = {
+   [1] = "ザ・バスルーム",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10731] = {
+  ["main"] = "Kono Danshi, Sekka ni Nayandemasu.",
+  ["official"] = {
+   [1] = "この男子, 石化に悩んでます.",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10732] = {
+  ["main"] = "Go! Go! Kadendanshi (2014)",
+  ["official"] = {
+   [1] = "Go!Go!家電男子 (2014)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10733] = {
+  ["main"] = "Gangsta.",
+  ["official"] = {
+   [1] = "GANGSTA.",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "ギャングスタ",
+   },
+  },
+ [10734] = {
+  ["main"] = "Kumo no Ito",
+  ["official"] = {
+   [1] = "蜘蛛の糸",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10735] = {
+  ["main"] = "Dangobee Torimono Jou Ake: Goma no Maki",
+  ["official"] = {
+   [1] = "団子兵衛捕物帖開け―ごまの巻",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10736] = {
+  ["main"] = "Kuusen Madoushi Kouhosei no Kyoukan",
+  ["official"] = {
+   [1] = "空戦魔導士候補生の教官",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10737] = {
+  ["main"] = "Eiga Doraemon: Nobita no Space Heroes",
+  ["official"] = {
+   [1] = "映画ドラえもん のび太の宇宙英雄記[スペースヒーローズ]",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10739] = {
+  ["main"] = "Dia no Ace (2014)",
+  ["official"] = {
+   [1] = "ダイヤのA (2014)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10741] = {
+  ["main"] = "Kyokugen Dasshutsu ADV: Zennin Shibou Death",
+  ["official"] = {
+   [1] = "極限脱出ADV 善人シボウデス",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10742] = {
+  ["main"] = "Dragon Ball Z: Fukkatsu no F",
+  ["official"] = {
+   [1] = "ドラゴンボールZ 復活の「F」",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10743] = {
+  ["main"] = "Moon Pride",
+  ["official"] = {
+   [1] = "M­OON PRIDE",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10744] = {
+  ["main"] = "Madan no Ou to Vanadis",
+  ["official"] = {
+   [1] = "Lord Marksman and Vanadis",
+   [2] = "魔弾の王と戦姫[ヴァナディース]",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10745] = {
+  ["main"] = "Absolute Duo",
+  ["official"] = {
+   [1] = "アブソリュート・デュオ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10746] = {
+  ["main"] = "Pocket Monsters XY: Koukoku no Princess Diancie",
+  ["official"] = {
+   [1] = "鉱国のプリンセス ディアンシー",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10747] = {
+  ["main"] = "Chain Chronicle: Short Animation",
+  ["official"] = {
+   [1] = "チェインクロニクル ~ショートアニメ~",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10748] = {
+  ["main"] = "Master of Torque Season 2",
+  ["official"] = {
+   [1] = "マスター・オブ・トルク Season 2",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10749] = {
+  ["main"] = "Magic Kaito 1412",
+  ["official"] = {
+   [1] = "まじっく快斗1412",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10750] = {
+  ["main"] = "Yuuki Yuuna wa Yuusha de Aru",
+  ["official"] = {
+   [1] = "Yuuki Yuna is a Hero",
+   [2] = "結城友奈は勇者である",
+   [3] = "结城友奈是勇者",
+   },
+  ["short"] = {
+   [1] = "yuyuyu",
+   },
+  ["syn"] = {
+   [1] = "Yuki Yuna wa Yusha de Aru",
+   },
+  },
+ [10751] = {
+  ["main"] = "Military!",
+  ["official"] = {
+   [1] = "みりたり!",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Miritari!",
+   },
+  },
+ [10755] = {
+  ["main"] = "Fate/Stay Night: Heaven`s Feel",
+  ["official"] = {
+   [1] = "Fate/stay night: Heaven`s Feel",
+   },
+  ["short"] = {
+   [1] = "FSN HF",
+   },
+  ["syn"] = {
+   },
+  },
+ [10756] = {
+  ["main"] = "Niku Mesu R30: Nikuyoku ni Ochita Mesu-tachi The Animation",
+  ["official"] = {
+   [1] = "肉牝R30 ~肉欲に堕ちた牝たち~ THE ANIMATION",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10757] = {
+  ["main"] = "Boy Meets Harem The Animation",
+  ["official"] = {
+   [1] = "ボーイ・ミーツ・ハーレム THE ANIMATION",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10758] = {
+  ["main"] = "Mugen Kouro",
+  ["official"] = {
+   [1] = "無限航路 Infinite Space",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10759] = {
+  ["main"] = "Junjou Romantica 3",
+  ["official"] = {
+   [1] = "純情ロマンチカ 3",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10760] = {
+  ["main"] = "Fate/Stay Night: Unlimited Blade Works (2015)",
+  ["official"] = {
+   [1] = "Fate/stay night [Unlimited Blade Works] (2015)",
+   },
+  ["short"] = {
+   [1] = "F/SN 2015",
+   [2] = "FSN 2015",
+   [3] = "FSN UBW 2015",
+   [4] = "[UBW] 2015",
+   },
+  ["syn"] = {
+   [1] = "Fate Stay Night 2015",
+   [2] = "UBWTV2",
+   [3] = "フェイト/ステイナイト (2015)",
+   },
+  },
+ [10761] = {
+  ["main"] = "Seitokai Yakuindomo * OAD",
+  ["official"] = {
+   [1] = "生徒会役員共＊ OAD",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "SYD* OAD",
+   },
+  },
+ [10762] = {
+  ["main"] = "Tensai Bakavon: Yomigaeru Flanders no Inu",
+  ["official"] = {
+   [1] = "天才バカヴォン ~蘇るフランダースの犬~",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10763] = {
+  ["main"] = "Kami-sama Hajimemashita 2",
+  ["official"] = {
+   [1] = "神様はじめました◎",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10764] = {
+  ["main"] = "Digimon Adventure Tri.",
+  ["official"] = {
+   [1] = "デジモンアドベンチャー tri.(トライ)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10765] = {
+  ["main"] = "Hyakka Ryouran: Samurai After",
+  ["official"] = {
+   [1] = "百花繚乱 サムライアフター",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10766] = {
+  ["main"] = "Cross Ange: Tenshi to Ryuu no Rondo",
+  ["official"] = {
+   [1] = "Cross Ange: Rondo of Angel and Dragon",
+   [2] = "クロスアンジュ 天使と竜の輪舞[ロンド]",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Cross Ange",
+   },
+  },
+ [10767] = {
+  ["main"] = "Tamayura: Sotsugyou Shashin",
+  ["official"] = {
+   [1] = "たまゆら~卒業写真~",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10768] = {
+  ["main"] = "Prison School",
+  ["official"] = {
+   [1] = "監獄学園[プリズンスクール]",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Kangoku Gakuen",
+   },
+  },
+ [10769] = {
+  ["main"] = "Yowamushi Pedal Re:Ride",
+  ["official"] = {
+   [1] = "弱虫ペダル Re:RIDE",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10770] = {
+  ["main"] = "Mahou Shoujo: Ore",
+  ["official"] = {
+   [1] = "魔法少女 俺",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10771] = {
+  ["main"] = "Sakura Capusule",
+  ["official"] = {
+   [1] = "サクラカプセル",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Sakura Capsule",
+   },
+  },
+ [10773] = {
+  ["main"] = "Shouwa Genroku Rakugo Shinjuu",
+  ["official"] = {
+   [1] = "昭和元禄落語心中",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10774] = {
+  ["main"] = "Shuukan Storyland",
+  ["official"] = {
+   [1] = "週刊ストーリーランド",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10775] = {
+  ["main"] = "Demonion: Gaiden",
+  ["official"] = {
+   [1] = "デモニオン ~外伝~",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10776] = {
+  ["main"] = "Kurumiwari Ningyou (2014)",
+  ["official"] = {
+   [1] = "くるみ割り人形 (2014)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10778] = {
+  ["main"] = "Zephyr",
+  ["official"] = {
+   [1] = "ZEPHYR",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10779] = {
+  ["main"] = "Shirobako",
+  ["official"] = {
+   [1] = "SHIROBAKO",
+   [2] = "Shirobako",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10780] = {
+  ["main"] = "Bonjour: Koiaji Patisserie",
+  ["official"] = {
+   [1] = "BONJOUR♪Sweet Love Patisserie",
+   [2] = "Bonjour Sweet Love Patisserie",
+   [3] = "Bonjour♪恋味パティスリー",
+   },
+  ["short"] = {
+   [1] = "bonkoi",
+   },
+  ["syn"] = {
+   },
+  },
+ [10781] = {
+  ["main"] = "Toukiden Kiwami",
+  ["official"] = {
+   [1] = "討鬼伝 極",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10782] = {
+  ["main"] = "Re-Kan!",
+  ["official"] = {
+   [1] = "レーカン!",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10783] = {
+  ["main"] = "Gekijouban PriPara: Minna Atsumare! Prism Tours",
+  ["official"] = {
+   [1] = "劇場版プリパラ みーんなあつまれ! プリズム☆ツアーズ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "劇場版プリパラ",
+   },
+  },
+ [10784] = {
+  ["main"] = "The Rolling Girls",
+  ["official"] = {
+   [1] = "THE ROLLING GIRLS",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "ローリング ガールズ",
+   [2] = "ローリング☆ガールズ",
+   },
+  },
+ [10785] = {
+  ["main"] = "Wake Up Girl Zoo!",
+  ["official"] = {
+   [1] = "うぇいくあっぷがーるZOO!",
+   },
+  ["short"] = {
+   [1] = "wug zoo",
+   },
+  ["syn"] = {
+   },
+  },
+ [10786] = {
+  ["main"] = "Ginga Jinpuu Jinraiger",
+  ["official"] = {
+   [1] = "銀河神風ジンライガー",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10787] = {
+  ["main"] = "Koori no Kuni no Misuke",
+  ["official"] = {
+   [1] = "氷の国のミースケ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10793] = {
+  ["main"] = "Oppai Gakuen Marching Band Bu!",
+  ["official"] = {
+   [1] = "おっぱい学園マーチングバンド部!",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Breast Academy Marching Band Club",
+   },
+  },
+ [10795] = {
+  ["main"] = "Mahou Shoujo Lyrical Nanoha Vivid",
+  ["official"] = {
+   [1] = "魔法少女リリカルなのはViVid",
+   },
+  ["short"] = {
+   [1] = "Nanoha ViVid",
+   },
+  ["syn"] = {
+   [1] = "Magical Girl Lyrical Nanoha Vivid",
+   [2] = "魔法少女リリカルなのは ViVid",
+   },
+  },
+ [10796] = {
+  ["main"] = "Young-sim",
+  ["official"] = {
+   [1] = "영심이",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10798] = {
+  ["main"] = "Minna Atsumare! Falcom Gakuen SC",
+  ["official"] = {
+   [1] = "みんな集まれ! ファルコム学園SC",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10799] = {
+  ["main"] = "Narara Superboard",
+  ["official"] = {
+   [1] = "날아라 슈퍼보드",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Flying Superboard",
+   },
+  },
+ [10800] = {
+  ["main"] = "Under the Dog",
+  ["official"] = {
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10803] = {
+  ["main"] = "Haiyore! Nyaruko-san F",
+  ["official"] = {
+   [1] = "這いよれ! ニャル子さんF",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10804] = {
+  ["main"] = "Fate/Kaleid Liner Prisma Illya Zwei! (2015)",
+  ["official"] = {
+   [1] = "Fate/kaleid liner プリズマ☆イリヤ 2wei! (2015)",
+   },
+  ["short"] = {
+   [1] = "F/K OVA2",
+   [2] = "fk OVA2",
+   },
+  ["syn"] = {
+   },
+  },
+ [10807] = {
+  ["main"] = "Samurai Hormone The Animation",
+  ["official"] = {
+   [1] = "サムライホルモン THE ANIMATION",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10808] = {
+  ["main"] = "Fuusen Inu Tinny",
+  ["official"] = {
+   [1] = "ふうせんいぬティニー",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10809] = {
+  ["main"] = "Brothers Conflict (2014)",
+  ["official"] = {
+   [1] = "BROTHERS CONFLICT (2014)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10810] = {
+  ["main"] = "Seitokai Yakuindomo * OVA",
+  ["official"] = {
+   [1] = "生徒会役員共＊ OVA",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "SYD* OVA",
+   },
+  },
+ [10811] = {
+  ["main"] = "Yuri Kuma Arashi",
+  ["official"] = {
+   [1] = "ユリ熊嵐",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Love Bullet - Yurikuma Arashi",
+   [2] = "Yurikuma Arashi",
+   },
+  },
+ [10812] = {
+  ["main"] = "Ikkitousen: Extravaganza Epoch",
+  ["official"] = {
+   [1] = "一騎当千 Extravaganza Epoch",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10813] = {
+  ["main"] = "Owari no Seraph",
+  ["official"] = {
+   [1] = "終わりのセラフ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Seraph of the End",
+   },
+  },
+ [10814] = {
+  ["main"] = "Tribe Cool Crew",
+  ["official"] = {
+   [1] = "Tribe Cool Crew",
+   [2] = "トライブクルクル",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10815] = {
+  ["main"] = "Nagato Yuki-chan no Shoushitsu",
+  ["official"] = {
+   [1] = "長門有希ちゃんの消失",
+   [2] = "나가토 유키짱의 소실",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Tha Vanishing of Nagato Yuki-chan",
+   },
+  },
+ [10816] = {
+  ["main"] = "Over Lord",
+  ["official"] = {
+   [1] = "オーバーロード",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10818] = {
+  ["main"] = "Triage X",
+  ["official"] = {
+   [1] = "トリアージX",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10819] = {
+  ["main"] = "Yakata: Kannou Kitan",
+  ["official"] = {
+   [1] = "館 ~官能奇譚~",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10820] = {
+  ["main"] = "Teekyuu (2015)",
+  ["official"] = {
+   [1] = "てーきゅう (2015)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10822] = {
+  ["main"] = "Shinkyoku no Grimoire The Animation",
+  ["official"] = {
+   [1] = "神曲のグリモワール THE ANIMATION",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10823] = {
+  ["main"] = "Kuni-chan no Ikka Ranran",
+  ["official"] = {
+   [1] = "邦ちゃんの一家ランラン",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10824] = {
+  ["main"] = "Koukaku Kidoutai (2015)",
+  ["official"] = {
+   [1] = "攻殻機動隊 (2015)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10825] = {
+  ["main"] = "Peeping Life: We Are the Hero",
+  ["official"] = {
+   [1] = "Peeping Life – WE ARE THE HERO –",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10828] = {
+  ["main"] = "War of the Worlds: Goliath",
+  ["official"] = {
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10829] = {
+  ["main"] = "Ganbare! Lulu Lolo (2014)",
+  ["official"] = {
+   [1] = "がんばれ! ルルロロ (2014)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10830] = {
+  ["main"] = "Show by Rock!!",
+  ["official"] = {
+   [1] = "SHOW BY ROCK!!",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10831] = {
+  ["main"] = "Narihero www",
+  ["official"] = {
+   [1] = "なりヒロwww",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10832] = {
+  ["main"] = "Karen Senki",
+  ["official"] = {
+   [1] = "夏恋戦機",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10833] = {
+  ["main"] = "Fate/Kaleid Liner Prisma Illya Zwei Herz!",
+  ["official"] = {
+   [1] = "Fate/kaleid liner プリズマ☆イリヤ 2wei Herz!",
+   },
+  ["short"] = {
+   [1] = "Prillya Zwei Herz",
+   },
+  ["syn"] = {
+   },
+  },
+ [10835] = {
+  ["main"] = "JoJo no Kimyou na Bouken: Stardust Crusaders - Egypt Hen",
+  ["official"] = {
+   [1] = "ジョジョの奇妙な冒険 スターダストクルセイダース エジプト編",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "JoJo`s Bizarre Adventure: Stardust Crusaders (2015)",
+   },
+  },
+ [10836] = {
+  ["main"] = "Konna Watashi-tachi ga Nariyuki de Heroine ni Natta Kekka www",
+  ["official"] = {
+   [1] = "こんな私たちがなりゆきでヒロインになった結果www",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10839] = {
+  ["main"] = "Jutaijima",
+  ["official"] = {
+   [1] = "受胎島",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10841] = {
+  ["main"] = "Tantei Kageki Milky Holmes TD",
+  ["official"] = {
+   [1] = "探偵歌劇ミルキィホームズTD",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10842] = {
+  ["main"] = "God Eater",
+  ["official"] = {
+   [1] = "GOD EATER",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Gods Eater",
+   },
+  },
+ [10843] = {
+  ["main"] = "Eiga Crayon Shin-chan: Ora no Hikkoshi Monogatari - Saboten Dai Shuugeki",
+  ["official"] = {
+   [1] = "映画 クレヨンしんちゃん オラの引越し物語 ~サボテン大襲撃~",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10846] = {
+  ["main"] = "Aldnoah.Zero (2015)",
+  ["official"] = {
+   [1] = "ALDNOAH.ZERO (2015)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "アルドノア・ゼロ (2015)",
+   },
+  },
+ [10847] = {
+  ["main"] = "Baby Steps (2015)",
+  ["official"] = {
+   [1] = "ベイビーステップ (2015)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10848] = {
+  ["main"] = "Oshiri Kajiri Mushi (2014)",
+  ["official"] = {
+   [1] = "おしりかじり虫 (2014)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Bottom Biting Bug 3",
+   [2] = "Butt Biting Bug 3",
+   },
+  },
+ [10849] = {
+  ["main"] = "Saki Biyori OAD",
+  ["official"] = {
+   [1] = "咲日和OAD",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10850] = {
+  ["main"] = "Jokei Kazoku III: Himitsu - The Anime",
+  ["official"] = {
+   [1] = "女系家族III~秘密HIMITSU卑蜜~ THE ANIME",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10853] = {
+  ["main"] = "Binan Koukou Chikyuu Bouei Bu Love!",
+  ["official"] = {
+   [1] = "Cute High Earth Defense Club LOVE!",
+   [2] = "美男高校地球防衛部LOVE!",
+   },
+  ["short"] = {
+   [1] = "boueibu",
+   },
+  ["syn"] = {
+   },
+  },
+ [10854] = {
+  ["main"] = "Plastic Memories",
+  ["official"] = {
+   [1] = "プラスティック･メモリーズ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10855] = {
+  ["main"] = "Shounen Hollywood: Holly Stage for 50",
+  ["official"] = {
+   [1] = "少年ハリウッド -HOLLY STAGE FOR 50-",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10856] = {
+  ["main"] = "Rance 01: Hikari o Motomete The Animation",
+  ["official"] = {
+   [1] = "ランス01 光をもとめて THE ANIMATION",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10857] = {
+  ["main"] = "Doamaiger D",
+  ["official"] = {
+   [1] = "ドアマイガーD",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10858] = {
+  ["main"] = "Sword Gai",
+  ["official"] = {
+   [1] = "ソードガイ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10859] = {
+  ["main"] = "Nisekoi:",
+  ["official"] = {
+   [1] = "ニセコイ:",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10860] = {
+  ["main"] = "Di Gi Charat Summer Special 2000",
+  ["official"] = {
+   [1] = "Di Gi Charat サマースペシャル2000",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10861] = {
+  ["main"] = "Kuiba III",
+  ["official"] = {
+   [1] = "魁拔III战神崛起",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10862] = {
+  ["main"] = "Mak Dau Dang Dang Ban wo Xin",
+  ["official"] = {
+   [1] = "麥兜噹噹伴我心",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "McDull: The Pork of Music",
+   },
+  },
+ [10863] = {
+  ["main"] = "Mak Dau wo He wo Mama",
+  ["official"] = {
+   [1] = "麥兜我和我媽媽",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "McDull: Me & My Mum",
+   },
+  },
+ [10864] = {
+  ["main"] = "Heavy Object",
+  ["official"] = {
+   [1] = "ヘヴィーオブジェクト",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10865] = {
+  ["main"] = "Nano Invaders",
+  ["official"] = {
+   [1] = "ナノ・インベーダーズ",
+   [2] = "纳米神兵",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Nano Magic",
+   },
+  },
+ [10866] = {
+  ["main"] = "Durarara!!x2 Ten",
+  ["official"] = {
+   [1] = "デュラララ!!x2 転",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10867] = {
+  ["main"] = "Durarara!!x2 Ketsu",
+  ["official"] = {
+   [1] = "デュラララ!!x2 結",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10869] = {
+  ["main"] = "Cardfight!! Vanguard G",
+  ["official"] = {
+   [1] = "CARDFIGHT!! ヴァンガードG",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "カードファイト!! ヴァンガードG",
+   },
+  },
+ [10871] = {
+  ["main"] = "Ana no Oku no Ii Tokoro",
+  ["official"] = {
+   [1] = "穴の奥のいい秘部[ところ]",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10872] = {
+  ["main"] = "Eromame",
+  ["official"] = {
+   [1] = "えろまめ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10873] = {
+  ["main"] = "Narara Superboard (1998)",
+  ["official"] = {
+   [1] = "날아라 슈퍼보드 (1998)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10874] = {
+  ["main"] = "Narara Superboard (2001)",
+  ["official"] = {
+   [1] = "날아라 슈퍼보드 (2001)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10875] = {
+  ["main"] = "Tokyo Ghoul A",
+  ["official"] = {
+   [1] = "√A توکیو غول",
+   [2] = "東京喰種√A",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "A توکیو غول ریشه",
+   [2] = "Tokyo Ghoul √A",
+   },
+  },
+ [10876] = {
+  ["main"] = "Otome Hime",
+  ["official"] = {
+   [1] = "オトメヒメ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10877] = {
+  ["main"] = "Anime de Wakaru Shinryounaika",
+  ["official"] = {
+   [1] = "アニメで分かる心療内科",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10878] = {
+  ["main"] = "Kogitsune no Okurimono",
+  ["official"] = {
+   [1] = "こぎつねのおくりもの",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10879] = {
+  ["main"] = "Urawa no Usagi-chan",
+  ["official"] = {
+   [1] = "浦和の調ちゃん",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10880] = {
+  ["main"] = "Hana no Kage",
+  ["official"] = {
+   [1] = "Shadow of the Cherry Blossoms",
+   [2] = "花の翳",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10881] = {
+  ["main"] = "It Girl",
+  ["official"] = {
+   [1] = "IT GIRL",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10882] = {
+  ["main"] = "Lupin Sansei (2015)",
+  ["official"] = {
+   [1] = "ルパン三世 (2015)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10885] = {
+  ["main"] = "Senran Kagura: Estival Versus - Mizugi Darake no Zen`yasai",
+  ["official"] = {
+   [1] = "閃乱カグラ ESTIVAL VERSUS -水着だらけの前夜祭-",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10886] = {
+  ["main"] = "Hana to Alice: Satsujin Jiken",
+  ["official"] = {
+   [1] = "花とアリス 殺人事件",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10887] = {
+  ["main"] = "Steins;Gate: Soumei Eichi no Cognitive Computing",
+  ["official"] = {
+   [1] = "Steins;Gate 聡明叡智のコグニティブコンピューティング",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10888] = {
+  ["main"] = "Shimoneta to Iu Gainen ga Sonzai Shinai Taikutsu na Sekai",
+  ["official"] = {
+   [1] = "下ネタという概念が存在しない退屈な世界",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10889] = {
+  ["main"] = "Hibike! Euphonium",
+  ["official"] = {
+   [1] = "響け! ユーフォニアム",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Sound! Euphonium",
+   },
+  },
+ [10890] = {
+  ["main"] = "Kaitou Tenshi Twin Angel: Kyun Kyun Tokimeki Paradise!! OVA",
+  ["official"] = {
+   [1] = "快盗天使ツインエンジェル キュンキュン☆ときめきパラダイス!! OVA",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10891] = {
+  ["main"] = "Tsukimonogatari: Yotsugi Doll",
+  ["official"] = {
+   [1] = "憑物語 よつぎドール",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10892] = {
+  ["main"] = "Shigatsu wa Kimi no Uso OAD",
+  ["official"] = {
+   [1] = "四月は君の嘘OAD",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10893] = {
+  ["main"] = "Sei Brunehilde Gakuen Shoujo Kishidan to Junpaku no Panty The Animation",
+  ["official"] = {
+   [1] = "聖ブリュンヒルデ学園 少女騎士団と純白のパンティ THE ANIMATION",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10894] = {
+  ["main"] = "Dungeon ni Deai o Motomeru no wa Machigatte Iru Darou ka",
+  ["official"] = {
+   [1] = "ダンジョンに出会いを求めるのは間違っているだろうか",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10896] = {
+  ["main"] = "Nihon Animator Mihon`ichi",
+  ["official"] = {
+   [1] = "日本アニメ（ーター）見本市",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Japan Animator Expo Short Films",
+   [2] = "Japan Animator`s Exhibition",
+   [3] = "Nihon Animator Mihonichi",
+   },
+  },
+ [10897] = {
+  ["main"] = "Yoru no Yatterman",
+  ["official"] = {
+   [1] = "夜ノヤッターマン",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10898] = {
+  ["main"] = "Kokoro no Chikara",
+  ["official"] = {
+   [1] = "心の力",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10899] = {
+  ["main"] = "Numa no Taishou",
+  ["official"] = {
+   [1] = "沼の大将",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10900] = {
+  ["main"] = "Buta no Gotoki Sanzoku ni Torawarete Shojo o Ubawareru Kyonyuu Himekishi & Onna Senshi: Zettai Chinpo Nanka ni Maketari Shinai!! The Animation",
+  ["official"] = {
+   [1] = "豚の如き山賊に捕らわれて処女を奪われる巨乳姫騎士&女戦士 ~絶対チ●ポなんかに負けたりしない!!~ THE ANIMATION",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10901] = {
+  ["main"] = "Shokugeki no Souma",
+  ["official"] = {
+   [1] = "Food Wars",
+   [2] = "食戟のソーマ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10902] = {
+  ["main"] = "Ketsuekigata-kun! 2",
+  ["official"] = {
+   [1] = "血液型くん! 2",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10903] = {
+  ["main"] = "Go! Princess Precure",
+  ["official"] = {
+   [1] = "Go! プリンセスプリキュア",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10904] = {
+  ["main"] = "Etotama: Eto Tamashii",
+  ["official"] = {
+   [1] = "えとたま 干支魂",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10905] = {
+  ["main"] = "Death Parade",
+  ["official"] = {
+   [1] = "デス・パレード",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Парад на смъртта",
+   },
+  },
+ [10906] = {
+  ["main"] = "Kekkai Sensen (2015)",
+  ["official"] = {
+   [1] = "血界戦線 (2015)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10907] = {
+  ["main"] = "Fastening Days",
+  ["official"] = {
+   [1] = "FASTENING DAYS",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10908] = {
+  ["main"] = "God Eater Promotion",
+  ["official"] = {
+   [1] = "GOD EATER プロモーション",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "God Eater: Prologue",
+   [2] = "Gods Eater: Prologue",
+   },
+  },
+ [10909] = {
+  ["main"] = "Pankis! 2 Jigen",
+  ["official"] = {
+   [1] = "ぱんきす! 2次元",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10910] = {
+  ["main"] = "Arslan Senki 2",
+  ["official"] = {
+   [1] = "アルスラーン戦記 THE HEROIC LEGEND OF ARSLAN",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10912] = {
+  ["main"] = "Kadeu Wang Mikseu Maseuteo",
+  ["official"] = {
+   [1] = "최강 합체 믹스마스터",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Mix Master Final Force",
+   },
+  },
+ [10913] = {
+  ["main"] = "Sengoku Musou",
+  ["official"] = {
+   [1] = "戦国無双",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10914] = {
+  ["main"] = "Trinity Seven (2015)",
+  ["official"] = {
+   [1] = "トリニティセブン (2015)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10915] = {
+  ["main"] = "Kanojo wa Dare to demo Sex Suru.",
+  ["official"] = {
+   [1] = "彼女は誰とでもセックスする.",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10916] = {
+  ["main"] = "Shimajirou to Ookinaki",
+  ["official"] = {
+   [1] = "しまじろうと おおきなき",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10917] = {
+  ["main"] = "Gintama (2014)",
+  ["official"] = {
+   [1] = "銀魂 (2014)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10918] = {
+  ["main"] = "Ore Monogatari!!",
+  ["official"] = {
+   [1] = "俺物語!!",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "My Love Story!!",
+   },
+  },
+ [10919] = {
+  ["main"] = "Ookami Shoujo to Kuro Ouji (2015)",
+  ["official"] = {
+   [1] = "オオカミ少女と黒王子 (2015)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10920] = {
+  ["main"] = "Oni Chichi 2: Harvest",
+  ["official"] = {
+   [1] = "鬼父2 -harvest-",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10922] = {
+  ["main"] = "Koi Maguwai",
+  ["official"] = {
+   [1] = "恋まぐわい",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10924] = {
+  ["main"] = "Ansatsu Kyoushitsu Episode 0: Deai no Jikan",
+  ["official"] = {
+   [1] = "暗殺教室 episode:0 出会いの時間",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10925] = {
+  ["main"] = "Tsukiuta.",
+  ["official"] = {
+   [1] = "ツキウタ。",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10926] = {
+  ["main"] = "Kana Kana Kazoku",
+  ["official"] = {
+   [1] = "かなかなかぞく",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10927] = {
+  ["main"] = "Kaseifu ga Ita.",
+  ["official"] = {
+   [1] = "カセイフがイタ.",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10928] = {
+  ["main"] = "Choujikuu Robo Meguru",
+  ["official"] = {
+   [1] = "超時空ロボ MEGURU",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10929] = {
+  ["main"] = "K (2015)",
+  ["official"] = {
+   [1] = "K (2015)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10930] = {
+  ["main"] = "My Melody no Ookami-san ni Ki o Tsukete",
+  ["official"] = {
+   [1] = "マイメロディのオオカミさんにきをつけて",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10931] = {
+  ["main"] = "Joukamachi no Dandelion",
+  ["official"] = {
+   [1] = "城下町のダンデライオン",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10932] = {
+  ["main"] = "Harmony",
+  ["official"] = {
+   [1] = "&lt;harmony/&gt;",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "ハーモニー",
+   },
+  },
+ [10934] = {
+  ["main"] = "Ao no Kanata no Four Rhythm",
+  ["official"] = {
+   [1] = "蒼の彼方のフォーリズム",
+   },
+  ["short"] = {
+   [1] = "aokana",
+   },
+  ["syn"] = {
+   },
+  },
+ [10935] = {
+  ["main"] = "Q Transformers: Kaette Kita Convoy no Nazo",
+  ["official"] = {
+   [1] = "キュートランスフォーマー 帰ってきたコンボイの謎",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10936] = {
+  ["main"] = "Kyoukai no Rinne",
+  ["official"] = {
+   [1] = "境界のRINNE",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10937] = {
+  ["main"] = "Koe no Katachi",
+  ["official"] = {
+   [1] = "聲の形",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10938] = {
+  ["main"] = "Rokka no Yuusha",
+  ["official"] = {
+   [1] = "六花の勇者",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10939] = {
+  ["main"] = "Gekijouban Sidonia no Kishi",
+  ["official"] = {
+   [1] = "劇場版 シドニアの騎士",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10941] = {
+  ["main"] = "Eiga Precure All Stars: Haru no Carnival",
+  ["official"] = {
+   [1] = "映画プリキュアオールスターズ 春のカーニバル♪",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10942] = {
+  ["main"] = "Ikenai Koto The Animation",
+  ["official"] = {
+   [1] = "イケナイコト THE ANIMATION",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10943] = {
+  ["main"] = "Nosewasure",
+  ["official"] = {
+   [1] = "のせわすれ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10944] = {
+  ["main"] = "Shingeki no Kyojin (2016)",
+  ["official"] = {
+   [1] = "進撃の巨人 (2016)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10946] = {
+  ["main"] = "Pac-World",
+  ["official"] = {
+   [1] = "Pac-Man and the Ghostly Adventures",
+   [2] = "パックワールド",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10947] = {
+  ["main"] = "Hetalia: The World Twinkle",
+  ["official"] = {
+   [1] = "ヘタリア The World Twinkle",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10948] = {
+  ["main"] = "Punchline",
+  ["official"] = {
+   [1] = "パンチライン",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10949] = {
+  ["main"] = "Ranpo Kitan: Game of Laplace",
+  ["official"] = {
+   [1] = "乱歩奇譚 Game of Laplace",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10950] = {
+  ["main"] = "Subete ga F ni Naru",
+  ["official"] = {
+   [1] = "すべてがFになる",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10951] = {
+  ["main"] = "Koutetsujou no Kabaneri",
+  ["official"] = {
+   [1] = "甲鉄城のカバネリ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10952] = {
+  ["main"] = "Shisha no Teikoku",
+  ["official"] = {
+   [1] = "屍者の帝国 The Empire of Corpses",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10953] = {
+  ["main"] = "Meitantei Conan: Gouka no Himawari",
+  ["official"] = {
+   [1] = "名探偵コナン・業火の向日葵",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Detective Conan Movie 19",
+   [2] = "Detective Conan: Sunflowers of Inferno",
+   },
+  },
+ [10954] = {
+  ["main"] = "Haikyuu!! (2015)",
+  ["official"] = {
+   [1] = "ハイキュー!! (2015)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10955] = {
+  ["main"] = "Yamada-kun to 7-nin no Majo (2015)",
+  ["official"] = {
+   [1] = "山田くんと7人の魔女 (2015)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10956] = {
+  ["main"] = "Kimi to Boku",
+  ["official"] = {
+   [1] = "Everlasting Heart",
+   [2] = "キミとボク",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10957] = {
+  ["main"] = "Isuca OAD",
+  ["official"] = {
+   [1] = "ISUCA OAD",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10958] = {
+  ["main"] = "Houkago no Pleiades (2015)",
+  ["official"] = {
+   [1] = "放課後のプレアデス (2015)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10959] = {
+  ["main"] = "Kokoro ga Sakebitagatterunda.",
+  ["official"] = {
+   [1] = "心が叫びたがってるんだ.",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10960] = {
+  ["main"] = "Shouwa Genroku Rakugo Shinjuu TV",
+  ["official"] = {
+   [1] = "昭和元禄落語心中 TV",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10961] = {
+  ["main"] = "Boruto: Naruto the Movie",
+  ["official"] = {
+   [1] = "BORUTO -NARUTO THE MOVIE-",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [10962] = {
+  ["main"] = "Ange Vierge",
+  ["official"] = {
+   [1] = "アンジュ・ヴィエルジュ",
    },
   ["short"] = {
    },
@@ -110394,6 +112826,9 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Fugitive: Mouri Kogorou",
+   [2] = "Happy New Year Mouri Kogoro",
+   [3] = "謹賀新年 毛利小五郎",
    },
   },
  [10977] = {
@@ -110654,6 +113089,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Flowers Will Bloom",
+   [2] = "Hana wa Saku - Flowers Will Bloom",
    },
   },
  [11007] = {
@@ -110680,6 +113117,26 @@ return {
   ["main"] = "Grisaia no Rakuen",
   ["official"] = {
    [1] = "グリザイアの楽園",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11011] = {
+  ["main"] = "Sore ga Seiyuu!",
+  ["official"] = {
+   [1] = "それが声優!",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11015] = {
+  ["main"] = "Boku wa Kuma",
+  ["official"] = {
+   [1] = "ぼくはくま",
    },
   ["short"] = {
    },

@@ -3,8 +3,6 @@ local simplehttp = util.simplehttp
 local trim = util.trim
 local iconv = require"iconv"
 local uri = require"handler.uri"
-
-local simplehttp = require'simplehttp'
 local html2unicode = require'html'
 local nixio = require'nixio'
 
@@ -263,6 +261,11 @@ local fetchInformation = function(queue)
 
 		function(data, _, response)
 			local message = handleData(response.headers, data)
+			if(#queue.url > 110 and message) then
+				ivar2.x0(queue.url, function(short)
+					queue:done(string.format('Downgraded URL: %s - %s', short, message))
+				end)
+			else
             queue:done(message)
 		end,
 		true,

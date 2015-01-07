@@ -10,7 +10,6 @@
 -- }
 
 local util = require'util'
-local x0 = require'x0'
 local simplehttp = util.simplehttp
 local json = util.json
 local urlEncode = util.urlEncode
@@ -31,7 +30,7 @@ local parseData = function(say, source, destination, data)
 			local url = match.unescapedUrl
 			if(#url >= 75) then
 				n = n + 1
-				x0.lookup(url, function(short)
+				ivar2.x0(url, function(short)
 					n = n - 1
 					arr[i] = outFormat:format(title, short or url)
 
