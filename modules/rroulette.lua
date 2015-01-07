@@ -40,8 +40,7 @@ return {
 				end
 
 				local src = 'Russian Roulette:' .. destination
-				local timer = self:Timer(src, 15*60, function(loop, timer, revents)
-					local n = rr['rr:'..destination]
+				self:Timer(src, 15*60, function(loop, timer, revents)
 					rr['rr:'..destination] = 60 + math.random(1,6)
 				end)
 

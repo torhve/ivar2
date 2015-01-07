@@ -1,10 +1,3 @@
-local ltrim = function(r, s)
-	if(not s) then
-		s, r = r, "%s+"
-	end
-	return (string.gsub(s, "^" .. r, ""))
-end
-
 return {
 	PRIVMSG = {
 		['^%proll (.+)$'] = function(self, source, destination, input)

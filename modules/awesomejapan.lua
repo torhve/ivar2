@@ -14,6 +14,7 @@ local getDiff = function()
 
 	local _MAX = {60,60,24,os.date('*t',os.time{year=_NOW.year,month=_NOW.month+1,day=0}).day,12}
 
+	local carry
 	local diff = {}
 	local order = {'sec','min','hour','day','month','year'}
 	for i, v in ipairs(order) do

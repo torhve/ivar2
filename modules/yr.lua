@@ -83,7 +83,6 @@ end
 
 local handleObservationOutput = function(self, source, destination, data)
 	local location = data:match("<location>(.-)</location>")
-	local name = location:match("<name>([^<]+)</name>"):lower():gsub("^%l", string.upper)
 
 	local tabular = data:match("<observations>(.*)</observations>")
 	for stno, sttype, name, distance, lat, lon, source, data in tabular:gmatch([[<weatherstation stno="([^"]+)" sttype="([^"]+)" name="([^"]+)" distance="([^"]+)" lat="([^"]+)" lon="([^"]+)" source="([^"]+)">(.-)</weatherstation]]) do
@@ -109,7 +108,7 @@ local handleObservationOutput = function(self, source, destination, data)
 	end
 end
 
-local handleOutput = function(source, destination, seven, data, city, try)
+local function handleOutput(source, destination, seven, data, city, try)
 	local location = data:match("<location>(.-)</location>")
 	if(not location and not try) then
 		ivar2.util.simplehttp(

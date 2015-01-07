@@ -17,7 +17,7 @@ return {
 
 
 				local timerName = 'autojoin'
-				local timer = self:Timer(timerName, 60, 60, function(loop, timer, revents)
+				self:Timer(timerName, 60, 60, function(loop, timer, revents)
 					for channel, data in next, self.config.channels do
 						if(not self.channels[channel]) then
 							self:Log('info', string.format('Automatically rejoining %s.', channel))

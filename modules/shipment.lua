@@ -51,7 +51,7 @@ local shipmentTrack = function(self, source, destination, message)
 		self.shipmentEvents[id] = -1
 	end
 
-	local timer = self:Timer('shipment', duration,
+	self:Timer('shipment', duration,
 		function(loop, timer, revents)
 			simplehttp(string.format(apiurl, pid, getCacheBust()), function(data) 
 				local info = json.decode(data)
@@ -108,7 +108,6 @@ local shipmentLocate = function(self, source, destination, pid)
 			return
 		end
 		local out = {}
-		local weight = cs["totalWeightInKgs"]
 		local ps = cs['packageSet'][1]
 		for i,event in pairs(ps['eventSet']) do
 			table.insert(out, eventHandler(event))

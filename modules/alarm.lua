@@ -16,7 +16,6 @@ local timeMatches = {
 			-- Seconds will always return a match.
 			if(s == '') then s = 0 end
 
-			local duration = 0
 			local now = os.time()
 			local date = os.date'*t'
 

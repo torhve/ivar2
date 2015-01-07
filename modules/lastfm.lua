@@ -14,7 +14,6 @@ local buildQuery = function(param)
 	return table.concat(url, '&')
 end
 
-local pattern = ('<td>[^<]+</td><td>([^<]+)</td>'):rep(3) .. '<td>([^<]+)</td>'
 local parseTopArtists = function(source, destination, data)
 	local response = json.decode(data)
 	if(response.error) then

@@ -1,8 +1,7 @@
-local simplehttp = require'simplehttp'
+local util = require'util'
 local zlib = require'zlib'
 local anidbSearch = require'anidbsearch'
 local html2unicode = require'html'
-require'logging.console'
 
 local catWhitelist = {
 	['Action'] = true,
@@ -39,7 +38,6 @@ local catWhitelist = {
 	['Vampires'] = true,
 }
 
-local log = logging.console()
 local anidb = ivar2.persist
 
 local trim = function(s)
@@ -60,7 +58,7 @@ end
 local handleXML = function(xml)
 	local error = xml:match('<error>([^<]+)</error>')
 	if(error) then
-		log:error(string.format('anidb: %s', error))
+		ivar2:Log('error', string.format('anidb: %s', error))
 		return string.format('Error: %s', error)
 	end
 
@@ -157,13 +155,13 @@ end
 local doLookup = function(say, source, aid)
 	-- Is it fresh and present in our cache?
 	if(anidb["anidb:" ..aid] and tonumber(anidb["anidb:" .. aid .. ':time']) > os.time()) then
-		log:debug(string.format('anidb: Fetching %d from cache.', aid))
+		ivar2:Log('debug', string.format('anidb: Fetching %d from cache.', aid))
 		say(anidb["anidb:" .. aid])
 		return
 	else
-		log:info(string.format('anidb: Requesting information on %d.', aid))
+		ivar2:Log('info', string.format('anidb: Requesting information on %d.', aid))
 
-		simplehttp(
+		util.simplehttp(
 			('http://api.anidb.net:9001/httpapi?request=anime&aid=%d&client=ivarto&clientver=0&protover=1'):format(aid),
 			function(data)
 				local xml = zlib.inflate() (data)

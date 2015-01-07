@@ -20,6 +20,21 @@ Build the Dockerfile:
     docker build -t torhve/ivar2 .
 
 
+Or install manually:
+
+::
+
+    sudo apt-get install luarocks libev-dev liblua5.1-iconv0 lua-cjson cmake
+    sudo luarocks install "https://github.com/brimworks/lua-ev/raw/master/rockspec/lua-ev-scm-1.rockspec"
+    sudo luarocks install "https://github.com/Neopallium/nixio/raw/master/nixio-scm-0.rockspec"
+    sudo luarocks install "https://github.com/Neopallium/lua-handlers/raw/master/lua-handler-scm-0.rockspec"
+    sudo luarocks install "https://github.com/brimworks/lua-http-parser/raw/master/lua-http-parser-scm-0.rockspec"
+    sudo luarocks install "https://github.com/Neopallium/lua-handlers/raw/master/lua-handler-http-scm-0.rockspec"
+    sudo luarocks install lsqlite3
+    sudo luarocks install luasocket
+    sudo luarocks install luabitop
+
+
 Uncompress the required data files in cache directory.
 
 Configuration File

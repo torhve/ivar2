@@ -9,16 +9,6 @@ local duration = 60
 -- Abuse the ivar2 global to store out ephemeral event data until we can get some persistant storage
 if(not ivar2.shipmentEvents) then ivar2.shipmentEvents = {} end
 
-local split = function(str, pattern)
-	local out = {}
-
-	str:gsub(pattern, function(match)
-		table.insert(out, match)
-	end)
-
-	return out
-end
-
 local function titlecase(str)
     local buf = {}
     for word in string.gfind(str, "%S+") do
@@ -57,7 +47,7 @@ local shipmentTrack = function(self, source, destination, pid, alias)
 		self.shipmentEvents[id] = -1
 	end
 
-	local timer = self:Timer('tollpost', duration,
+	self:Timer('tollpost', duration,
 		function(loop, timer, revents)
 			simplehttp(string.format(apiurl, pid), function(data)
 				local info = json.decode(data)

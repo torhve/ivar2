@@ -5,7 +5,6 @@ local urlEncode = util.urlEncode
 
 local parseData = function(source, destination, data)
 	data = json.decode(data)
-	local search = data.Search
 
 	if(data and not data.Error) then
 		local out = {}

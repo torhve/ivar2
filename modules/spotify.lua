@@ -78,7 +78,7 @@ do
 		local minute = tonumber(date:sub(21, 22))
 		local seconds = tonumber(date:sub(24, 25))
 		-- TODO: Handle EST and friends.
-		local tz = date:sub(27)
+		-- local tz = date:sub(27)
 
 		hour = hour + os.date('%H') - os.date('!%H')
 		minute = minute + os.date('%M') - os.date('!%M')

@@ -24,9 +24,9 @@ local ev = require'ev'
 local event = require 'event'
 local util = require 'util'
 local irc = require 'irc'
-require'logging.console'
+local lconsole = require'logging.console'
 
-local log = logging.console()
+local log = lconsole()
 
 local ivar2 = {
 	ignores = {},
@@ -191,8 +191,8 @@ local events = {
 			function(self, source, _, argument)
 				local chan, dir, modes = argument:match('([^ ]+) ([+%-])(.*)$')
 
-				local chanModes = self.channels[chan].modes
 				chan = chan:lower()
+				local chanModes = self.channels[chan].modes
 				for mode in modes:gmatch('[a-zA-Z]') do
 					table.insert(chanModes, mode)
 				end
@@ -509,8 +509,8 @@ function ivar2:ChannelCommandPattern(pattern, moduleName, destination)
 			npattern = channel.modulePatterns[moduleName] or npattern
 		end
 	end
-	local patt, n = pattern:gsub('%^%%p', '%^'..npattern)
-	return patt
+
+	return (pattern:gsub('%^%%p', '%^'..npattern))
 end
 
 function ivar2:Ignore(mask)
@@ -595,8 +595,8 @@ function ivar2:LoadModule(moduleName)
 		ivar2 = self,
 		package = package,
 	}
-	local proxy = setmetatable(env, {__index = _G })
-	setfenv(moduleFile, proxy)
+	setmetatable(env, {__index = _G })
+	setfenv(moduleFile, env)
 
 	local success, message = pcall(moduleFile, self)
 	if(not success) then
@@ -656,7 +656,8 @@ function ivar2:ModuleCall(func, source, destination, remainder, ...)
 			self:Reply(destination, source, str, ...)
 		end
 	}
-	local proxy = setmetatable(env, {__index = _G })
+
+	setmetatable(env, {__index = _G })
 	setfenv(func, env)
 
 	return pcall(func, self, source, destination, ...)
@@ -676,8 +677,8 @@ function ivar2:RegisterCommand(handlerName, pattern, handler, event)
 		ivar2 = self,
 		package = package,
 	}
-	local proxy = setmetatable(env, {__index = _G })
-	setfenv(handler, proxy)
+	setmetatable(env, {__index = _G })
+	setfenv(handler, env)
 	self:Log('info', 'Registering new pattern: %s, in command %s.', pattern, handlerName)
 
 	if(not events[event][handlerName]) then

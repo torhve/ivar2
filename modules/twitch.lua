@@ -34,7 +34,6 @@ local parseData = function(self, source, destination, data, search)
 
 	-- sort streams wrt viewer count
 	table.sort(streams, function(a,b) return a.viewers>b.viewers end)
-	local i = 0
 
 	local i = 0
 	for _, stream in pairs(streams) do
