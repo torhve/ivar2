@@ -266,7 +266,8 @@ local fetchInformation = function(queue)
 					queue:done(string.format('Downgraded URL: %s - %s', short, message))
 				end)
 			else
-            queue:done(message)
+				queue:done(message)
+			end
 		end,
 		true,
 		DL_LIMIT
