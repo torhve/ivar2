@@ -1,4 +1,5 @@
-local simplehttp = require'simplehttp'
+local util = require'util'
+local simplehttp = util.simplehttp
 local html2unicode = require'html'
 
 local cc = {

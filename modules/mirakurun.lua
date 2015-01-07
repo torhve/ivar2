@@ -28,7 +28,7 @@ local parseData = function(source, destination, data)
 		))
 	end
 
-	ivar2:Msg('privmsg', destination, source, table.concat(out, ' '))
+	say(table.concat(out, ' '))
 end
 
 local handler = function(self, source, destination)

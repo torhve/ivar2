@@ -1,26 +1,99 @@
 -- ivar2 IRC utilities and more
 -- vim: set noexpandtab:
+local util = {
+	json = require'cjson',
+	simplehttp = require'simplehttp',
+}
 
-local utf8 = {}
-utf8.pattern = "([%z\1-\127\194-\244][\128-\191]*)"
+local color = function(s, color)
+	return string.format("\03%02d%s%s", color, s, util.reset())
+end
+util.color = color
 
-local reset = function(s)
+function util.white(s)
+	return color(s, 0)
+end
+function util.black(s)
+	return color(s, 1)
+end
+
+function util.blue(s)
+	return color(s, 2)
+end
+
+function util.green(s)
+	return color(s, 3)
+end
+
+function util.red(s)
+	return color(s, 4)
+end
+
+function util.maroon(s)
+	return color(s, 5)
+end
+
+function util.purple(s)
+	return color(s, 6)
+end
+
+function util.orange(s)
+	return color(s, 7)
+end
+
+function util.yellow(s)
+	return color(s, 8)
+end
+
+function util.lightgreen(s)
+	return color(s, 9)
+end
+
+function util.teal(s)
+	return color(s, 10)
+end
+
+function util.cyan(s)
+	return color(s, 11)
+end
+
+function util.lightblue(s)
+	return color(s, 12)
+end
+
+function util.fuchsia(s)
+	return color(s, 13)
+end
+
+function util.gray(s)
+	return color(s, 14)
+end
+
+function util.lightgray(s)
+	return color(s, 15)
+end
+
+function util.reset()
 	return '\015'
 end
-local bold = function(s)
+
+function util.bold(s)
 	return string.format("\002%s\002", s)
 end
-local underline = function(s)
+
+function util.underline(s)
 	return string.format("\031%s\031", s)
 end
-local italic = function(s)
+
+function util.italic(s)
 	return string.format("\029%s\029", s)
 end
-local reverse = function(s)
+
+function util.reverse(s)
 	return string.format("\018%s\018", s)
 end
 
-local rot13 = function(s)
+function util.rot13(s)
 	local byte_a, byte_A = string.byte('a'), string.byte('A')
 	return (string.gsub((s or ''), "[%a]",
 	function (char)
@@ -32,11 +105,7 @@ local rot13 = function(s)
 	))
 end
 
-local color = function(s, color)
-	return string.format("\03%02d%s%s", color, s, reset())
-end
-
-local urlEncode = function(str)
+function util.urlEncode(str)
 	return str:gsub(
 		'([^%w ])',
 		function (c)
@@ -45,65 +114,34 @@ local urlEncode = function(str)
 	):gsub(' ', '+')
 end
 
-local trim = function(s)
+function util.trim(s)
 	return (string.gsub(s, "^%s*(.-)%s*$", "%1"))
 end
 
-local split = function(str, delim)
-  if str == "" or str == nil then
-    return { }
-  end
-  str = str .. delim
-  local _accum_0 = { }
-  local _len_0 = 1
-  for m in str:gmatch("(.-)" .. delim) do
-    _accum_0[_len_0] = m
-    _len_0 = _len_0 + 1
-  end
-  return _accum_0
+function util.split(str, delim)
+	if str == "" or str == nil then
+		return { }
+	end
+	str = str .. delim
+	local _accum_0 = { }
+	local _len_0 = 1
+	for m in str:gmatch("(.-)" .. delim) do
+		_accum_0[_len_0] = m
+		_len_0 = _len_0 + 1
+	end
+	return _accum_0
 end
 
-local translateWords = function(str, callback, fixCase, nickpat)
-	-- Usage: etc.translateWords(s ,callback) the callback can return new word, false to skip, or nil to keep the same word.
-	local str = assert(str)
-	local callback = assert(callback, "Callback expected")
-	local fixCase = fixCase == nil or fixCase == true
-	local nickpat = nickpat
+function util.translateWords(str, callback, nickpat)
+	local pat = "([%w'%-]+)"
+	if(nickpat) then
+		pat = "([%w_'%-%{%}%[%]`%^]+)"
+	end
 
-	local prev = 1
-	local result = ""
-	local pat = "()([%w'%-]+)()"
-	if nickpat then
-		pat = "()([%w_'%-%{%}%[%]`%^]+)()"
-	end
-	for wpos, w, wposEnd in str:gmatch(pat) do
-		local wnew = callback(w)
-		if wnew ~= false then
-			result = result .. str:sub(prev, wpos - 1)
-			if wnew then
-				if fixCase then
-					if w == w:lower() then
-					elseif w == w:upper() then
-						wnew = wnew:upper()
-					elseif w:sub(1, 1) == w:sub(1, 1):upper() then
-						wnew = wnew:sub(1, 1):upper() .. wnew:sub(2)
-					end
-				end
-				result = result .. wnew
-			else
-				result = result .. w
-			end
-			if not wnew then
-				wnew = w
-			end
-		end
-		prev = wposEnd
-	end
-	result = result .. str:sub(prev)
-	return result
+	return (str:gsub(pat, callback))
 end
 
-local nonickalert = function(nicklist, str)
+function util.nonickalert(nicklist, str)
 	-- U+200B, ZERO WIDTH SPACE: "\226\128\139"
 	local s = str or ''
 	local nl = nicklist -- nicklist
@@ -116,127 +154,70 @@ local nonickalert = function(nicklist, str)
 		nlkeys[nick:lower()] = true
 	end
 
-	return translateWords(s, function(x)
+	return util.translateWords(s, function(x)
 		if nlkeys[x:lower()] then
 			return x:sub(1, 1) .. zwsp .. x:sub(2)
 		end
-	end, nil, true)
-end
--- Return utf8 byte sequences
-utf8.chars = function(s)
-	return s:gmatch(utf8.pattern)
+	end, true)
 end
 
--- Return utf8 string length
-utf8.len = function(s)
-	-- count the number of non-continuing bytes
-	return select(2, s:gsub('[^\128-\193]', ''))
-end
-
-utf8.reverse = function(s)
-	-- reverse the individual greater-than-single-byte characters
-	s = s:gsub(utf8.pattern, function (c) return #c > 1 and c:reverse() end)
-	return s:reverse()
-end
-
-utf8.replace = function(s, map)
-	return s:gsub(utf8.pattern, map)
-end
-
--- Very silly function, but helps for norwegians
-utf8.lower = function(s)
-	local res, c = string.lower(s):gsub('Æ','æ'):gsub('Ø','ø'):gsub('Å','å')
-	return res
-end
--- Return utf8 byte sequences
-utf8.chars = function(s)
-	return s:gmatch(utf8.pattern)
-end
-
--- Return utf8 string length
-utf8.len = function(s)
-	-- count the number of non-continuing bytes
-	return select(2, s:gsub('[^\128-\193]', ''))
-end
-
-utf8.reverse = function(s)
-	-- reverse the individual greater-than-single-byte characters
-	s = s:gsub(utf8.pattern, function (c) return #c > 1 and c:reverse() end)
-	return s:reverse()
-end
-
-utf8.replace = function(s, map)
-	return s:gsub(utf8.pattern, map)
-end
-
--- Very silly function, but helps for norwegians
-utf8.lower = function(s)
-	local res, c = string.lower(s):gsub('Æ','æ'):gsub('Ø','ø'):gsub('Å','å')
-	return res
-end
-
-return {
-	bold=bold,
-	underline=underline,
-	italic=italic,
-	reverse=reverse,
-	color=color,
-	reset=reset,
-	urlEncode=urlEncode,
-	trim=trim,
-	split=split,
-	rot13=rot13,
-	json = require'cjson',
-	simplehttp = require'simplehttp',
-	white=function(s)
-		return color(s, 0)
-	end,
-	black=function(s)
-		return color(s, 1)
-	end,
-	blue=function(s)
-		return color(s, 2)
-	end,
-	green=function(s)
-		return color(s, 3)
-	end,
-	red=function(s)
-		return color(s, 4)
-	end,
-	maroon=function(s)
-		return color(s, 5)
-	end,
-	purple=function(s)
-		return color(s, 6)
-	end,
-	orange=function(s)
-		return color(s, 7)
-	end,
-	yellow=function(s)
-		return color(s, 8)
-	end,
-	lightgreen=function(s)
-		return color(s, 9)
-	end,
-	teal=function(s)
-		return color(s, 10)
-	end,
-	cyan=function(s)
-		return color(s, 11)
-	end,
-	lightblue=function(s)
-		return color(s, 12)
-	end,
-	fuchsia=function(s)
-		return color(s, 13)
-	end,
-	gray=function(s)
-		return color(s, 14)
-	end,
-	lightgray=function(s)
-		return color(s, 15)
-	end,
-	nonickalert=nonickalert,
-	translateWords=translateWords,
-	utf8=utf8,
+local utf8 = {
+	pattern = "([%z\1-\127\194-\244][\128-\191]*)",
 }
+
+-- Return utf8 byte sequences
+utf8.chars = function(s)
+	return s:gmatch(utf8.pattern)
+end
+
+-- Return utf8 string length
+utf8.len = function(s)
+	-- count the number of non-continuing bytes
+	return select(2, s:gsub('[^\128-\193]', ''))
+end
+
+utf8.reverse = function(s)
+	-- reverse the individual greater-than-single-byte characters
+	s = s:gsub(utf8.pattern, function (c) return #c > 1 and c:reverse() end)
+	return s:reverse()
+end
+
+utf8.replace = function(s, map)
+	return s:gsub(utf8.pattern, map)
+end
+
+-- Very silly function, but helps for norwegians
+utf8.lower = function(s)
+	local res, c = string.lower(s):gsub('Æ','æ'):gsub('Ø','ø'):gsub('Å','å')
+	return res
+end
+-- Return utf8 byte sequences
+utf8.chars = function(s)
+	return s:gmatch(utf8.pattern)
+end
+
+-- Return utf8 string length
+utf8.len = function(s)
+	-- count the number of non-continuing bytes
+	return select(2, s:gsub('[^\128-\193]', ''))
+end
+
+utf8.reverse = function(s)
+	-- reverse the individual greater-than-single-byte characters
+	s = s:gsub(utf8.pattern, function (c) return #c > 1 and c:reverse() end)
+	return s:reverse()
+end
+
+utf8.replace = function(s, map)
+	return s:gsub(utf8.pattern, map)
+end
+
+-- Very silly function, but helps for norwegians
+utf8.lower = function(s)
+	local res, c = string.lower(s):gsub('Æ','æ'):gsub('Ø','ø'):gsub('Å','å')
+	return res
+end
+
+util.utf8 = utf8
+
+return util

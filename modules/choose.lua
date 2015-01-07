@@ -4,7 +4,7 @@ local patterns = {
 	-- X://Y url
 	"^(https?://%S+)",
 	"%f[%S](https?://%S+)",
-	-- 			-- www.X.Y url
+	-- www.X.Y url
 	"^(www%.[%w_-%%]+%.%S+)",
 	"%f[%S](www%.[%w_-%%]+%.%S+)",
 }

@@ -19,7 +19,7 @@ local lookup = function(self, source, destination, id)
 
 		function(data)
 			if(data:find("Could not find this book.", 1, true)) then
-				return self:Msg('privmsg', destination, source, "Found no book with that id.")
+				return say("Found no book with that id.")
 			end
 
 			local id = data:match("<id>([^>]+)</id>")
@@ -75,7 +75,7 @@ local lookup = function(self, source, destination, id)
 				table.insert(out, string.format("| https://www.goodreads.com/book/show/%s", id))
 			end
 
-			self:Msg('privmsg', destination, source, table.concat(out, " "))
+			say(table.concat(out, " "))
 		end,
 		true,
 		2^16
@@ -111,12 +111,7 @@ local search = function(self, source, destination, title)
 				table.insert(out, string.format("\002[%s]\002 %s by %s", book.id, book.title, book.author))
 			end
 
-			self:Msg(
-				'privmsg', destination, source,
-				table.concat(self:LimitOutput(destination, out, 1), ' ')
-			)
-
-			return books
+			say(table.concat(self:LimitOutput(destination, out, 1), ' '))
 		end,
 		true,
 		2^16
@@ -129,7 +124,7 @@ return {
 			if(tonumber(input)) then
 				lookup(self, source, destination, input)
 			else
-				search(self, source, destination,input)
+				search(self, source, destination, input)
 			end
 		end,
 	},

@@ -1,9 +1,9 @@
 local colorize = function(score)
-    if tonumber(score) > 50 then
-        return ivar2.util.red(string.format("%s%%", score))
-    else
-        return ivar2.util.green(string.format("%s%%", score))
-    end
+	if tonumber(score) > 50 then
+		return ivar2.util.red(string.format("%s%%", score))
+	else
+		return ivar2.util.green(string.format("%s%%", score))
+	end
 end
 
 local parseData = function(source, destination, data, search)

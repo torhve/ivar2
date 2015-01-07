@@ -18,8 +18,7 @@ local handleOutput = function(self, source, destination)
 		local time = tonumber(note.time)
 		local from = note.from
 
-		self:Msg('privmsg', destination, source, "%s: %s left a note %s ago: %s", nick, from, date.relativeTimeShort(time), note.message)
-
+		say("%s: %s left a note %s ago: %s", nick, from, date.relativeTimeShort(time), note.message)
 	end
 
 	notes[key] = {}
@@ -28,8 +27,6 @@ local handleOutput = function(self, source, destination)
 	if(globalNumNotes) then
 		notes['global:' .. nick:lower()] = globalNumNotes - numNotes
 	end
-
-
 end
 
 return {
@@ -76,7 +73,6 @@ return {
 			notes[key] = nick_notes
 
 			notes['global:' .. recipient:lower()] = globalNumNotes + 1
-
 		end
 	}
 }
