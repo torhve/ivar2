@@ -144,13 +144,11 @@ end
 function util.nonickalert(nicklist, str)
 	-- U+200B, ZERO WIDTH SPACE: "\226\128\139"
 	local s = str or ''
-	local nl = nicklist -- nicklist
+	local nl = nicklist or {} -- nicklist
 	local zwsp = "\226\128\142" -- LTR
 
-	nl = nl or {}
-
 	local nlkeys = {}
-	for nick, t in pairs(nicklist) do
+	for nick, t in pairs(nl) do
 		nlkeys[nick:lower()] = true
 	end
 
