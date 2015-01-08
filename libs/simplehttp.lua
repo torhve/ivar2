@@ -26,11 +26,13 @@ end
 local function simplehttp(url, callback, stream, limit, visited)
 	local sinkSize = 0
 	local sink = {}
-	local visited = visited or {}
+	visited = visited or {}
 	local method = "GET"
 	local data = nil
 
 	local client = httpclient.new(ev.Loop.default)
+	-- Set header for non keepalive
+	client.headers['Connection'] = 'Close'
 	if(type(url) == "table") then
 		if(url.headers) then
 			for k, v in next, url.headers do
@@ -95,6 +97,8 @@ local function simplehttp(url, callback, stream, limit, visited)
 			end
 
 			callback(table.concat(sink), url, response)
+			-- We don't support any pipelining or keepalive
+			request:close()
 		end,
 	}
 end
