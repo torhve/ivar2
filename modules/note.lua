@@ -1,5 +1,4 @@
 local date = require'date'
-local ev = require'ev'
 local notes = ivar2.persist
 
 local handleOutput = function(self, source, destination)
