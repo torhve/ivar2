@@ -7,7 +7,7 @@ require'logging.console'
 local log = logging.console()
 
 -- Connect
-function connect(opt)
+local function connect(opt)
    -- Namespace:
    opt = opt or {}
    local url = opt.url or 'localhost'
@@ -21,13 +21,21 @@ function connect(opt)
    local verbose = opt.verbose or false
    local clear = opt.clear or false
    local cache = opt.cache or false
+   local client
 
-   -- Connect:
-   local ok,client = pcall(function() return redis.connect(url,port) end)
-   if not ok then
-      log:error('persist> error connecting to redis @ ' .. url .. ':' .. port)
-      log:error('persist> make sure you have a running redis server (redis-server)')
+   local conn = function()
+       -- Connect:
+       local ok, connection = pcall(function() return redis.connect(url,port) end)
+       if not ok then
+           log:error('persist> error connecting to redis @ ' .. url .. ':' .. port)
+           log:error('persist> make sure you have a running redis server (redis-server)')
+       else
+           client = connection
+       end
    end
+   conn()
+
+
 
    -- New persisting table:
    local persist = {}
@@ -36,7 +44,7 @@ function connect(opt)
       __newindex = function(self,k,v)
          if k=="_" then log:info('persist> _ is a reserved keyword') return end
          if cache then __cached[k] = v end
-         client = redis.connect(url,port)
+         if not client then conn() end
          if v then
             v = json.encode(v)
             client:set(namespace..k,v)
@@ -52,7 +60,7 @@ function connect(opt)
       end,
       __index = function(self,k)
          if k=="_" then return __cached end
-         client = redis.connect(url,port)
+         if not client then conn() end
          local v = client:get(namespace..k)
          v = v and json.decode(v)
          if verbose then
@@ -61,11 +69,13 @@ function connect(opt)
          return v
       end,
       __tostring = function(self)
+         if not client then conn() end
          local keys = client:keys(namespace..'*')
          local n = #keys
          return '<persisting table @ redis://'..namespace..'*, #keys='..n..'>'
       end,
       keys = function(self)
+         if not client then conn() end
          local keys = client:keys(namespace..'*')
          return keys
       end
