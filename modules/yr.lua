@@ -100,7 +100,7 @@ local handleObservationOutput = function(self, source, destination, data)
 			if tonumber(temperature.value) > 0 then
 				color = ivar2.util.red
 			else
-				color = ivar2.util.blue
+				color = ivar2.util.lightblue
 			end
 			-- Use the first result
 			return '%s °C (feels like %s °C), %s %s (%s, %s)', color(temperature.value), color(feelsLike(temperature.value, windSpeed)), windDirection, windSpeedname, name, time
