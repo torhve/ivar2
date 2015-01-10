@@ -840,8 +840,6 @@ function ivar2:ParseInput(data)
 			local command, argument, source, destination = irc.parse(line)
 			if(not self:IsIgnored(destination, source)) then
 				self:DispatchCommand(command, argument, source, destination)
-			else
-				self:DispatchCommand(command, argument, source, destination)
 			end
 
 		end
