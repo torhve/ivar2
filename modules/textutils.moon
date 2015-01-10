@@ -33,9 +33,7 @@ PRIVMSG:
     new, n = string.gsub(arg, pat, repl)
     say(new)
   '^%pnocolor (.*)$': (source, destination, arg) =>
-    new, n = string.gsub(arg, '\002', '')
-    new, n = string.gsub(new, '\003[0-9]+(,[0-9]+)?', '')
-    say(new)
+    say ivar2.util.stripformatting(arg)
   '^%pstutter (.*)$': (source, destination, arg) =>
     -- Stutter by anders from luabot
     s_senpai = 0.65
