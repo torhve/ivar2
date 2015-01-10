@@ -93,6 +93,24 @@ function util.reverse(s)
 	return string.format("\018%s\018", s)
 end
 
+function util.stripformatting(s)
+	-- thx rfw <3
+	if not s then
+		return ''
+	end
+	return (s
+	  :gsub("\02", "")
+	  :gsub("\03%d%d?,%d%d?", "")
+	  :gsub("\03%d%d?", "")
+	  :gsub("\03", "")
+	  :gsub("\15", "")
+	  :gsub("\17", "")
+	  :gsub("\18", "")
+	  :gsub("\22", "")
+	  :gsub("\29", "")
+	  :gsub("\31", ""))
+end
+
 function util.rot13(s)
 	local byte_a, byte_A = string.byte('a'), string.byte('A')
 	return (string.gsub((s or ''), "[%a]",
@@ -186,8 +204,7 @@ end
 
 -- Very silly function, but helps for norwegians
 utf8.lower = function(s)
-	local res, c = string.lower(s):gsub('Æ','æ'):gsub('Ø','ø'):gsub('Å','å')
-	return res
+	return (string.lower(s):gsub('Æ','æ'):gsub('Ø','ø'):gsub('Å','å'))
 end
 -- Return utf8 byte sequences
 utf8.chars = function(s)
