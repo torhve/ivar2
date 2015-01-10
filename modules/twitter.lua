@@ -267,7 +267,7 @@ getToken()
 
 local id = 'twitterUpdater'
 local duration = 60
-local runningTimer = ivar2:Timer(id, duration, duration, tPoll)
+ivar2:Timer(id, duration, duration, tPoll)
 
 return {
     PRIVMSG = {
