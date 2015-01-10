@@ -166,6 +166,6 @@ return {
 		['^%ptwitch (.*)$'] = gameHandler,
 		['^%ptwitchalert (%d+) (.*)$'] = regAlert,
 		['^%ptwitchalert list$'] = listAlert,
-		['^%ptwitchalert del$'] = delAlert,
+		['^%ptwitchalert del (.*)$'] = delAlert,
 	},
 }
