@@ -254,8 +254,21 @@ local getPlaceNorway = function(place)
 	local placeISO = utf2iso:iconv(place)
 	selectStmt:bind_values(place, placeISO)
 
-	local iter, vm = selectStmt:nrows()
-	local place = iter(vm)
+			local url = apiBase:format(place)
+			if(country) then
+				url = url .. '&country=' .. country
+			end
+
+			self.util.simplehttp(
+				url,
+				function(data)
+					local json = self.util.json.decode(data)
+					if(json.totalResultsCount == 0) then
+						return self:Msg('privmsg', destination, source, "Does that place even exist?")
+					end
+
+					local city = json.geonames[1]
+					if(city.adminName1 == "") then city.adminName1 = "Other" end
 
 	db:close()
 

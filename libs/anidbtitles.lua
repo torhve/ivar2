@@ -52175,7 +52175,7 @@ return {
   ["main"] = "Imouto",
   ["official"] = {
    [1] = "Sex Exchange",
-   [2] = "義妹 [いもうと]",
+   [2] = "義妹[いもうと]",
    },
   ["short"] = {
    },
@@ -101793,7 +101793,7 @@ return {
  [9664] = {
   ["main"] = "Pretty Rhythm: Rainbow Live",
   ["official"] = {
-   [1] = "プリティーリズムレインボーライブ",
+   [1] = "プリティーリズム レインボーライブ",
    },
   ["short"] = {
    },
@@ -103315,7 +103315,7 @@ return {
  [9848] = {
   ["main"] = "Koikishi Purely Kiss The Animation",
   ["official"] = {
-   [1] = "恋騎士Purely☆Kiss The Animation",
+   [1] = "恋騎士 Purely☆Kiss The Animation",
    },
   ["short"] = {
    },
