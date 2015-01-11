@@ -7200,9 +7200,10 @@ return {
   ["main"] = "One Piece (2000)",
   ["official"] = {
    [1] = "ONE PIECE (2000)",
-   [2] = "One Piece: Der Film",
-   [3] = "One Piece: Per tutto l`oro del mondo",
-   [4] = "One Piece: The Movie",
+   [2] = "One Piece : Le film",
+   [3] = "One Piece: Der Film",
+   [4] = "One Piece: Per tutto l`oro del mondo",
+   [5] = "One Piece: The Movie",
    },
   ["short"] = {
    [1] = "OP Movie 1",
@@ -9214,7 +9215,7 @@ return {
    },
   },
  [542] = {
-  ["main"] = "Haou Daikei Ryuu Knight",
+  ["main"] = "Haou Taikei Ryuu Knight",
   ["official"] = {
    [1] = "Adeos le chevalier vaillant",
    [2] = "覇王大系リューナイト",
@@ -9224,7 +9225,8 @@ return {
    [2] = "llrk",
    },
   ["syn"] = {
-   [1] = "Lord of Lords Ryu Knight TV",
+   [1] = "Lord of Lords Ryu Knight",
+   [2] = "Lord of Lords Ryu Knight TV",
    },
   },
  [543] = {
@@ -10314,11 +10316,10 @@ return {
    },
   },
  [616] = {
-  ["main"] = "Haou Daikei Ryuu Knight: Adeu Legend",
+  ["main"] = "Haou Taikei Ryuu Knight: Adeu Legend",
   ["official"] = {
    [1] = "Adeos le chevalier vaillant (OAV)",
-   [2] = "Lord of Lords Ryu Knight: Adeu`s Legend",
-   [3] = "覇王大系リューナイト アデュー・レジェンド",
+   [2] = "覇王大系リューナイト アデュー・レジェンド",
    },
   ["short"] = {
    },
@@ -10326,6 +10327,7 @@ return {
    [1] = "Adeus Legend OVA",
    [2] = "Lord of Lords Adeu`s Legend OVA",
    [3] = "Lord of Lords Ryu Knight OVA",
+   [4] = "Lord of Lords Ryu Knight: Adeu`s Legend",
    },
   },
  [617] = {
@@ -14278,8 +14280,9 @@ return {
   ["official"] = {
    [1] = "ONE PIECE ねじまき島の冒険",
    [2] = "One Piece - 2. Film: Abenteuer auf der Spiralinsel",
-   [3] = "One Piece: Adventure of Spiral Island",
-   [4] = "One Piece: Avventura all`Isola Spirale",
+   [3] = "One Piece : L’Aventure de l’île de l’horloge",
+   [4] = "One Piece: Adventure of Spiral Island",
+   [5] = "One Piece: Avventura all`Isola Spirale",
    },
   ["short"] = {
    [1] = "OP Movie 2",
@@ -19030,16 +19033,16 @@ return {
    },
   },
  [1235] = {
-  ["main"] = "Haou Daikei Ryuu Knight: Adeu Legend II",
+  ["main"] = "Haou Taikei Ryuu Knight: Adeu Legend II",
   ["official"] = {
-   [1] = "Lord of Lords Ryu Knight: Adeu`s Legend II",
-   [2] = "覇王大系リューナイト アデュー・レジェンドII",
+   [1] = "覇王大系リューナイト アデュー・レジェンドII",
    },
   ["short"] = {
    },
   ["syn"] = {
    [1] = "Adeus Legend OVA II",
    [2] = "Lord of Lords Ryu Knight OVA 2",
+   [3] = "Lord of Lords Ryu Knight: Adeu`s Legend II",
    },
   },
  [1236] = {
@@ -19237,9 +19240,9 @@ return {
   ["official"] = {
    [1] = "ONE PIECE 珍獣島のチョッパー王国",
    [2] = "One Piece - 3. Film: Chopper auf der Insel der seltsamen Tiere",
-   [3] = "One Piece: Chopper`s Kingdom in the Strange Animal Island",
-   [4] = "One Piece: Il Tesoro del Re",
-   [5] = "One Piece: Le royaume de Chopper l`étrange île des animaux",
+   [3] = "One Piece : Le Royaume de Chopper, l’étrange île des animaux",
+   [4] = "One Piece: Chopper`s Kingdom in the Strange Animal Island",
+   [5] = "One Piece: Il Tesoro del Re",
    },
   ["short"] = {
    [1] = "OP Movie 3",
@@ -19255,9 +19258,9 @@ return {
   ["official"] = {
    [1] = "ONE PIECE THE MOVIE デッドエンドの冒険",
    [2] = "One Piece - 4. Film: Das Dead End Rennen",
-   [3] = "One Piece The Movie: The Dead End Adventure",
-   [4] = "One Piece: Trappola mortale",
-   [5] = "One Piece: Une aventure sans issue",
+   [3] = "One Piece : Une aventure sans issue",
+   [4] = "One Piece The Movie: The Dead End Adventure",
+   [5] = "One Piece: Trappola mortale",
    },
   ["short"] = {
    [1] = "OP Movie 4",
@@ -29123,7 +29126,7 @@ return {
   ["official"] = {
    [1] = "ONE PIECE 呪われた聖剣",
    [2] = "One Piece - 5. Film: Der Fluch des heiligen Schwerts",
-   [3] = "One Piece: La Malédiction de l`épée sacrée",
+   [3] = "One Piece : La Malédiction de l’épée sacrée",
    [4] = "One Piece: La spada delle sette stelle",
    [5] = "One Piece: The Curse of the Sacred Sword",
    },
@@ -36977,14 +36980,14 @@ return {
    },
   },
  [2687] = {
-  ["main"] = "Haou Daikei Ryuu Knight: Adeu Legend Final",
+  ["main"] = "Haou Taikei Ryuu Knight: Adeu Legend Final",
   ["official"] = {
-   [1] = "Lord of Lords Ryu Knight: Adeu`s Legend Final",
-   [2] = "覇王大系リューナイト アデュー・レジェンド・ファイナル",
+   [1] = "覇王大系リューナイト アデュー・レジェンド・ファイナル",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Lord of Lords Ryu Knight: Adeu`s Legend Final",
    },
   },
  [2688] = {
@@ -37608,6 +37611,7 @@ return {
   ["main"] = "One Piece: Taose! Kaizoku Ganzack",
   ["official"] = {
    [1] = "ONE PIECE ~倒せ! 海賊ギャンザック~",
+   [2] = "One Piece : Vaincre Ganzack le pirate !",
    },
   ["short"] = {
    },
@@ -62359,7 +62363,8 @@ return {
  [5414] = {
   ["main"] = "Suteki Tantei Labyrinth",
   ["official"] = {
-   [1] = "素敵探偵☆ラビリンス",
+   [1] = "Fantastic Detective Labyrinth",
+   [2] = "素敵探偵☆ラビリンス",
    },
   ["short"] = {
    },
@@ -70017,6 +70022,7 @@ return {
    [4] = "Меланхолия Харухи Судзумии. Второй сезон",
    [5] = "凉宫春日的忧郁 (2009)",
    [6] = "涼宮ハルヒの憂鬱 (2009)",
+   [7] = "涼宮春日的憂鬱 (2009)",
    },
   ["short"] = {
    [1] = "Haruhi 2009",
@@ -72674,6 +72680,7 @@ return {
    [2] = "Дюрарара!!",
    [3] = "デュラララ!!",
    [4] = "无头骑士异闻录 DuRaRaRa!!",
+   [5] = "無頭騎士異聞錄 DuRaRaRa!!",
    },
   ["short"] = {
    },
@@ -72687,7 +72694,8 @@ return {
    [7] = "Dyurarara!!",
    [8] = "Дурарара!!",
    [9] = "无头骑士异闻录",
-   [10] = "듀라라라!!",
+   [10] = "無頭騎士異聞錄",
+   [11] = "듀라라라!!",
    },
   },
  [6672] = {
@@ -73840,6 +73848,7 @@ return {
    [1] = "f/sn ubw",
    [2] = "fsn ubw",
    [3] = "ubw",
+   [4] = "ubw movie",
    },
   ["syn"] = {
    [1] = "Fate/stay night Unlimited Blade Works",
@@ -76119,7 +76128,8 @@ return {
  [7013] = {
   ["main"] = "Tetsuwan Birdy Decode: The Cipher",
   ["official"] = {
-   [1] = "鉄腕バーディー DECODE -THE CIPHER-",
+   [1] = "Birdy the Mighty Decode: The Cipher",
+   [2] = "鉄腕バーディー DECODE -THE CIPHER-",
    },
   ["short"] = {
    },
@@ -85793,11 +85803,12 @@ return {
   ["official"] = {
    [1] = "Berserk - L`epoca d`oro",
    [2] = "Berserk - La Edad de Oro",
-   [3] = "Berserk: Das goldene Zeitalter",
-   [4] = "Berserk: The Golden Age Arc",
-   [5] = "Berserk: Zlatý věk",
-   [6] = "Берсерк: Золотой век",
-   [7] = "ベルセルク 黄金時代篇",
+   [3] = "Berserk : l`Âge d`or",
+   [4] = "Berserk: Das goldene Zeitalter",
+   [5] = "Berserk: The Golden Age Arc",
+   [6] = "Berserk: Zlatý věk",
+   [7] = "Берсерк: Золотой век",
+   [8] = "ベルセルク 黄金時代篇",
    },
   ["short"] = {
    },
@@ -88685,8 +88696,9 @@ return {
    [2] = "人退",
    },
   ["syn"] = {
-   [1] = "Mankind Has Fallen",
-   [2] = "Човечеството запада",
+   [1] = "El declive de la humanidad",
+   [2] = "Mankind Has Fallen",
+   [3] = "Човечеството запада",
    },
   },
  [8279] = {
@@ -96371,6 +96383,7 @@ return {
    },
   ["syn"] = {
    [1] = "Exiled From Paradise",
+   [2] = "Wygnani z raju",
    },
   },
  [9089] = {
@@ -104490,21 +104503,22 @@ return {
   ["official"] = {
    [1] = "(سرنوشت شب اقامت (نبرد بی‌ پایان شمشیرها",
    [2] = "Fate/stay night [Unlimited Blade Works]",
+   [3] = "Fate/stay night: Unlimited Blade Works",
    },
   ["short"] = {
    [1] = "F/SN 2014",
    [2] = "FSN 2014",
    [3] = "FSN UBW 2014",
-   [4] = "[UBW] 2014",
+   [4] = "UBWTV",
+   [5] = "[UBW] 2014",
    },
   ["syn"] = {
    [1] = "Fate Stay Night - Unlimited Blade Works",
    [2] = "Fate Stay Night 2014",
    [3] = "Fate/stay night 『Unlimited Blade Works』",
    [4] = "Fate/stay night: Unlimited Blade Works (2014)",
-   [5] = "UBWTV",
-   [6] = "Съдба/Под булото на нощта (2014)",
-   [7] = "フェイト/ステイナイト (2014)",
+   [5] = "Съдба/Под булото на нощта (2014)",
+   [6] = "フェイト/ステイナイト (2014)",
    },
   },
  [9979] = {
@@ -106614,14 +106628,15 @@ return {
    },
   },
  [10226] = {
-  ["main"] = "Gatchaman Crowds Second",
+  ["main"] = "Gatchaman Crowds Insight",
   ["official"] = {
-   [1] = "ガッチャマンクラウズ セカンド",
+   [1] = "GATCHAMAN CROWDS insight",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "ガッチャマンクラウズ2",
+   [1] = "ガッチャマンクラウズ インサイト",
+   [2] = "ガッチャマンクラウズ2",
    },
   },
  [10227] = {
@@ -108336,6 +108351,7 @@ return {
    },
   ["syn"] = {
    [1] = "Seiken Tsukai no Kinju Eishou",
+   [2] = "World Break: Aria of Curse for a Holy Swordsman",
    },
   },
  [10439] = {
@@ -108897,6 +108913,8 @@ return {
   ["main"] = "Durarara!!x2 Shou",
   ["official"] = {
    [1] = "デュラララ!!x2 承",
+   [2] = "无头骑士异闻录 DuRaRaRa!!×2 承",
+   [3] = "無頭騎士異聞錄 DuRaRaRa!!×2 承",
    },
   ["short"] = {
    [1] = "Drrr!!x2",
@@ -109069,7 +109087,8 @@ return {
    [2] = "冴えカノ",
    },
   ["syn"] = {
-   [1] = "Saekano: How to Raise a Boring Girlfriend",
+   [1] = "How to Train the Ordinary Girl to be a Heroine",
+   [2] = "Saekano: How to Raise a Boring Girlfriend",
    },
   },
  [10539] = {
@@ -109955,6 +109974,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Appleseed α",
+   [2] = "アップルシード アルファ",
    },
   },
  [10638] = {
@@ -110310,7 +110331,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Happy Cooking Graffiti",
+   [1] = "Gourmet Girl Graffiti",
+   [2] = "Happy Cooking Graffiti",
    },
   },
  [10685] = {
@@ -110707,6 +110729,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "This Boy Suffers From Crystallization",
    },
   },
  [10732] = {
@@ -110824,7 +110847,10 @@ return {
  [10745] = {
   ["main"] = "Absolute Duo",
   ["official"] = {
-   [1] = "アブソリュート・デュオ",
+   [1] = "Absolute Duo",
+   [2] = "アブソリュート・デュオ",
+   [3] = "絕對雙刃",
+   [4] = "绝对双刃",
    },
   ["short"] = {
    },
@@ -110893,7 +110919,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Miritari!",
+   [1] = "Military!",
+   [2] = "Miritari!",
    },
   },
  [10755] = {
@@ -110988,7 +111015,8 @@ return {
  [10763] = {
   ["main"] = "Kami-sama Hajimemashita 2",
   ["official"] = {
-   [1] = "神様はじめました◎",
+   [1] = "元氣少女緣結神◎",
+   [2] = "神様はじめました◎",
    },
   ["short"] = {
    },
@@ -111358,8 +111386,11 @@ return {
   ["main"] = "Yuri Kuma Arashi",
   ["official"] = {
    [1] = "ユリ熊嵐",
+   [2] = "百合熊風暴",
+   [3] = "百合熊风暴",
    },
   ["short"] = {
+   [1] = "yka",
    },
   ["syn"] = {
    [1] = "Love Bullet - Yurikuma Arashi",
@@ -111471,9 +111502,9 @@ return {
    },
   },
  [10824] = {
-  ["main"] = "Koukaku Kidoutai (2015)",
+  ["main"] = "Koukaku Kidoutai: Shin Gekijouban",
   ["official"] = {
-   [1] = "攻殻機動隊 (2015)",
+   [1] = "攻殻機動隊 新劇場版",
    },
   ["short"] = {
    },
@@ -111532,7 +111563,8 @@ return {
  [10832] = {
   ["main"] = "Karen Senki",
   ["official"] = {
-   [1] = "夏恋戦機",
+   [1] = "Karen Senki",
+   [2] = "夏恋戦機",
    },
   ["short"] = {
    },
@@ -111558,7 +111590,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "JoJo`s Bizarre Adventure: Stardust Crusaders (2015)",
+   [1] = "JoJo Part III: Stardust Crusaders (2015)",
+   [2] = "JoJo`s Bizarre Adventure: Stardust Crusaders (2015)",
    },
   },
  [10836] = {
@@ -111584,7 +111617,8 @@ return {
  [10841] = {
   ["main"] = "Tantei Kageki Milky Holmes TD",
   ["official"] = {
-   [1] = "探偵歌劇ミルキィホームズTD",
+   [1] = "偵探歌劇 少女福爾摩斯TD",
+   [2] = "探偵歌劇ミルキィホームズTD",
    },
   ["short"] = {
    },
@@ -111668,13 +111702,15 @@ return {
  [10853] = {
   ["main"] = "Binan Koukou Chikyuu Bouei Bu Love!",
   ["official"] = {
-   [1] = "Cute High Earth Defense Club LOVE!",
+   [1] = "Cute High Earth Defense Club Love!",
    [2] = "美男高校地球防衛部LOVE!",
    },
   ["short"] = {
    [1] = "boueibu",
    },
   ["syn"] = {
+   [1] = "Binan Koukou Chikyuu Bouei-bu Love!",
+   [2] = "Binan Koukou Chikyuu Boueibu Love!",
    },
   },
  [10854] = {
@@ -111882,7 +111918,8 @@ return {
    },
   ["syn"] = {
    [1] = "A توکیو غول ریشه",
-   [2] = "Tokyo Ghoul √A",
+   [2] = "Tokyo Ghoul Root A",
+   [3] = "Tokyo Ghoul √A",
    },
   },
  [10876] = {
@@ -112137,6 +112174,7 @@ return {
    [1] = "Go! プリンセスプリキュア",
    },
   ["short"] = {
+   [1] = "precure12",
    },
   ["syn"] = {
    },
@@ -112154,7 +112192,8 @@ return {
  [10905] = {
   ["main"] = "Death Parade",
   ["official"] = {
-   [1] = "デス・パレード",
+   [1] = "Death Parade",
+   [2] = "デス・パレード",
    },
   ["short"] = {
    },
@@ -112205,7 +112244,7 @@ return {
    },
   },
  [10910] = {
-  ["main"] = "Arslan Senki 2",
+  ["main"] = "Arslan Senki (2015)",
   ["official"] = {
    [1] = "アルスラーン戦記 THE HEROIC LEGEND OF ARSLAN",
    },
@@ -112330,16 +112369,6 @@ return {
   ["main"] = "Tsukiuta.",
   ["official"] = {
    [1] = "ツキウタ。",
-   },
-  ["short"] = {
-   },
-  ["syn"] = {
-   },
-  },
- [10926] = {
-  ["main"] = "Kana Kana Kazoku",
-  ["official"] = {
-   [1] = "かなかなかぞく",
    },
   ["short"] = {
    },
@@ -112882,9 +112911,9 @@ return {
    },
   },
  [10983] = {
-  ["main"] = "Katekano: Idol Sister",
+  ["main"] = "Idol Sister",
   ["official"] = {
-   [1] = "かてかの アイドル☆シスター",
+   [1] = "アイドル☆シスター",
    },
   ["short"] = {
    },
@@ -112950,13 +112979,14 @@ return {
    },
   },
  [10990] = {
-  ["main"] = "Submarine Bubble Bubble",
+  ["main"] = "Bogeul Bogeul Bomulseon",
   ["official"] = {
    [1] = "보글보글 보물선",
    },
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Submarine Bubble Bubble",
    },
   },
  [10991] = {
@@ -113137,6 +113167,95 @@ return {
   ["main"] = "Boku wa Kuma",
   ["official"] = {
    [1] = "ぼくはくま",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11016] = {
+  ["main"] = "Akazukin to Kenko",
+  ["official"] = {
+   [1] = "赤ずきんと健康",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11017] = {
+  ["main"] = "Genkaku Cool na Sensei ga Aheboteochi!",
+  ["official"] = {
+   [1] = "厳格クールな先生がアヘボテオチ!",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11018] = {
+  ["main"] = "Kaitou Joker (2015)",
+  ["official"] = {
+   [1] = "怪盗ジョーカー (2015)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11019] = {
+  ["main"] = "Hana wa Saku: Touhoku ni Saku",
+  ["official"] = {
+   [1] = "花は咲く 東北に咲く",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11020] = {
+  ["main"] = "Kurage no Shokudou",
+  ["official"] = {
+   [1] = "クラゲの食堂",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11021] = {
+  ["main"] = "Mankitsu Happening",
+  ["official"] = {
+   [1] = "漫喫ハプニング",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11022] = {
+  ["main"] = "Fukubiki! Triangle: Futaba More Futa?",
+  ["official"] = {
+   [1] = "ふくびき! トライアングル~双葉もあふた?~",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11023] = {
+  ["main"] = "Koukaku Kidoutai Arise (2015)",
+  ["official"] = {
+   [1] = "攻殻機動隊 ARISE (2015)",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11024] = {
+  ["main"] = "Around",
+  ["official"] = {
    },
   ["short"] = {
    },

@@ -17,10 +17,9 @@ local parseData = function(self, source, destination, data)
 	local streams = {}
 	for i=1, #data.streams do
 		local this = data.streams[i]
+		local lang = this.channel.broadcaster_language
 		--TODO configure filter languages ?
-		if this.channel.broadcaster_language
-			and (this.channel.broadcaster_language == 'en' or
-			     this.channel.broadcaster_language == 'no') then
+		if lang and (lang == 'en' or lang == 'no') then
 			table.insert(streams, this)
 		end
 	end
@@ -94,13 +93,13 @@ local checkStreams = function()
 		local alertsKey = gamesKey .. ':alerts'
 		local alerts = store[alertsKey] or {}
 		for name, game in pairs(games) do
-			-- Get more than we need because it might get filtered
-			local limit = 15
+			local limit = 5
 			simplehttp(
-				'https://api.twitch.tv/kraken/search/streams?limit='
-					..tostring(limit)..
-					'&offset=0&query='
-					..util.urlEncode(game.name),
+				string.format(
+					'https://api.twitch.tv/kraken/search/streams?limit=%s&offset=0&query=%s',
+					tostring(limit),
+					util.urlEncode(game.name)
+				),
 				function(data)
 					local streams = parseData(ivar2, nil, c, data, limit)
 					for _, stream in pairs(streams) do
