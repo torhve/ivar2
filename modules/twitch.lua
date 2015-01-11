@@ -94,7 +94,8 @@ local checkStreams = function()
 		local alertsKey = gamesKey .. ':alerts'
 		local alerts = store[alertsKey] or {}
 		for name, game in pairs(games) do
-			local limit = 5
+			-- Get more than we need because it might get filtered
+			local limit = 15
 			simplehttp(
 				'https://api.twitch.tv/kraken/search/streams?limit='
 					..tostring(limit)..
