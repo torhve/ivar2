@@ -3,7 +3,6 @@ local sql = require'lsqlite3'
 local iconv = require'iconv'
 
 local utf2iso = iconv.new('iso-8859-15', 'utf-8')
-local iso2utf = iconv.new('utf-8', 'iso-8859-15')
 
 local days = { "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" }
 
@@ -82,9 +81,6 @@ local handleData = function(type, line)
 end
 
 local handleObservationOutput = function(self, source, destination, data)
-	local location = data:match("<location>(.-)</location>")
-	local name = lower(location:match("<name>([^<]+)</name>")):gsub("^%l", string.upper)
-
 	local tabular = data:match("<observations>(.*)</observations>")
 	for stno, sttype, name, distance, lat, lon, source, data in tabular:gmatch([[<weatherstation stno="([^"]+)" sttype="([^"]+)" name="([^"]+)" distance="([^"]+)" lat="([^"]+)" lon="([^"]+)" source="([^"]+)">(.-)</weatherstation]]) do
 		local windDirection = handleData('windDirection', data)
@@ -194,7 +190,7 @@ local function handleOutput(source, destination, seven, data, city, try)
 			end
 		end
 
-		table.insert(out, string.format("\002%s\002 (%s): %s", name, country, formatPeriod(now)))
+		table.insert(out, string.format("Current weather in \002%s\002 (%s): %s", name, country, formatPeriod(now)))
 
 		if(later) then
 			table.insert(out, string.format("\002Tonight\002: %s", formatPeriod(later)))
@@ -233,13 +229,13 @@ local getUrl = function(self, source, destination, place)
 end
 
 local getPlace = function(self, source, destination, input)
-    if(not input or input == '') then
+	if(not input or input == '') then
 		local persist = self.persist['yr:place:'..source.nick]
 		if(not persist) then
-            local patt = self:ChannelCommandPattern('^%pset yr <location>', "yr", destination):sub(1)
-            self:Msg('privmsg', destination, source, 'Usage: '..patt)
-            return
-    end
+			local patt = self:ChannelCommandPattern('^%pset yr <location>', "yr", destination):sub(1)
+			self:Msg('privmsg', destination, source, 'Usage: '..patt)
+			return
+		end
 
 		input = persist
 	end
@@ -254,25 +250,12 @@ local getPlaceNorway = function(place)
 	local placeISO = utf2iso:iconv(place)
 	selectStmt:bind_values(place, placeISO)
 
-			local url = apiBase:format(place)
-			if(country) then
-				url = url .. '&country=' .. country
-			end
-
-			self.util.simplehttp(
-				url,
-				function(data)
-					local json = self.util.json.decode(data)
-					if(json.totalResultsCount == 0) then
-						return self:Msg('privmsg', destination, source, "Does that place even exist?")
-					end
-
-					local city = json.geonames[1]
-					if(city.adminName1 == "") then city.adminName1 = "Other" end
+	local iter, vm = selectStmt:nrows()
+	local data = iter(vm)
 
 	db:close()
 
-	return place
+	return data
 end
 
 local apiBase = 'http://api.geonames.org/searchJSON?name=%s&featureClass=P&username=haste'
@@ -299,27 +282,27 @@ return {
 
 			self.util.simplehttp(
 				url,
-					function(data)
+				function(data)
 					local json = self.util.json.decode(data)
 					if(json.totalResultsCount == 0) then
 						return self:Msg('privmsg', destination, source, "Does that place even exist?")
 					end
 
 					local city = json.geonames[1]
-						if(city.adminName1 == "") then city.adminName1 = "Other" end
+					if(city.adminName1 == "") then city.adminName1 = "Other" end
 
 					self.util.simplehttp(
-							("http://yr.no/place/%s/%s/%s/varsel.xml"):format(
+						("http://yr.no/place/%s/%s/%s/varsel.xml"):format(
 							yrUrlEncode(city.countryName),
 							yrUrlEncode(city.adminName1),
 							yrUrlEncode(city.toponymName)
-							),
-							function(data)
-								handleOutput(source, destination, seven == '7', data, city)
-							end
-						)
-					end
-				)
+						),
+						function(data)
+							handleOutput(source, destination, seven == '7', data, city)
+						end
+					)
+				end
+			)
 		end,
 
 		-- Currently only handles Norwegian cities.
