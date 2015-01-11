@@ -292,7 +292,7 @@ return {
 				return
 			end
 
-			local url = apiBase:format(place)
+			local url = apiBase:format(self.util.urlEncode(place))
 			if(country) then
 				url = url .. '&country=' .. country
 			end
