@@ -82,6 +82,37 @@ lookup = (source, destination, lookup) =>
   if i == 0
     reply 'Nope.'
 
+upper = (s) ->
+  (string.upper(s)\gsub('æ','Æ')\gsub('ø','Ø')\gsub('å','Å'))
+
+getWord = (wordclass) ->
+  stmt = dbh!\prepare [[
+    SELECT
+     *
+    FROM
+      clnono
+    WHERE
+      grammar = ?
+    AND
+      length(word) < 8
+    ORDER BY
+      random()
+    LIMIT 1
+  ]]
+  stmt\execute wordclass
+  out = {}
+  for row in stmt\rows(true) -- true for column names
+    table.insert(out, row)
+  return out
+
+bankid = (source, destination) =>
+
+  adj = getWord 'adj'
+  sub = getWord 's'
+
+  say "#{upper adj[1].word} #{upper sub[1].word}"
+
 PRIVMSG:
   '^%pclue (.+)$': lookup
+  '^%pbankid$': bankid
 
