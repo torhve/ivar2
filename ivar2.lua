@@ -802,15 +802,15 @@ function ivar2:Reload()
 
 		message:LoadModules()
 		message.updated = true
-		self.socket:sethandler(message)
 
 		self = message
+		self.timeout = self:Timer('_timeout', 60*6, 60*6, self.timeoutFunc(self))
+		self.socket:sethandler(message)
 
 		self.x0 = assert(loadfile('core/x0.lua'))(self)
 		self.control = assert(loadfile('core/control.lua'))(self)
 		self.control:start(self.Loop)
 
-		self.timeout = self:Timer('_timeout', 60*6, 60*6, self.timeoutFunc(self))
 
 		self:Log('info', 'Successfully update core.')
 	end
