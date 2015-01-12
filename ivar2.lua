@@ -636,29 +636,23 @@ end
 function ivar2:ModuleCall(func, source, destination, remainder, ...)
 	-- Construct a environment for each callback that provide some helper
 	-- functions and utilities for the modules
-
-	local env = {
-		ivar2 = self,
-		say = function(str, ...)
-			local output = safeFormat(str, ...)
-			if(not remainder) then
-				self:Say(destination, source, output)
-			else
-				local command, remainder = self:CommandSplitter(remainder)
-				local newline = command .. " " .. output
-				if remainder ~= '' then
-					newline = newline .. "|" .. remainder
-				end
-				self:DispatchCommand('PRIVMSG', newline, source, destination)
+	local env = getfenv(func)
+	env.say = function(str, ...)
+		local output = safeFormat(str, ...)
+		if(not remainder) then
+			self:Say(destination, source, output)
+		else
+			local command, remainder = self:CommandSplitter(remainder)
+			local newline = command .. " " .. output
+			if remainder ~= '' then
+				newline = newline .. "|" .. remainder
 			end
-		end,
-		reply = function(str, ...)
-			self:Reply(destination, source, str, ...)
+			self:DispatchCommand('PRIVMSG', newline, source, destination)
 		end
-	}
-
-	setmetatable(env, {__index = _G })
-	setfenv(func, env)
+	end
+	env.reply = function(str, ...)
+		self:Reply(destination, source, str, ...)
+	end
 
 	return pcall(func, self, source, destination, ...)
 end
