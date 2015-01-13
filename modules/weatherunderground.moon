@@ -3,6 +3,9 @@
 
 util = require'util'
 os = require'os'
+iconv = require'iconv'
+
+iso2utf = iconv.new('latin1', 'utf-8')
 
 key = ivar2.config.WeatherUndergroundKey
 unless key
@@ -80,7 +83,7 @@ lookupConditions = (source, destination, input, pws) =>
       current = json.current_observation
 
       location = current.observation_location
-      city = location.city
+      city = iso2utf\iconv location.city
 
       weather = current.weather
       temp = current.temp_c
