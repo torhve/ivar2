@@ -29,7 +29,7 @@ end
 local on_request = function(server, req, res)
     local found = false
     for pattern, handler in pairs(handlers) do
-        if pattern:match(req.url) then
+        if req.url:match(pattern) then
             log:info('webserver> request for pattern :%s', pattern)
             found = true
             req.on_finished = handler
