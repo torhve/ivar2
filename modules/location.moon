@@ -1,15 +1,4 @@
-json = require'json'
-simplehttp = require'simplehttp'
-httpserver = require'handler.http.server'
-ev = require'ev'
-
-loop = ev.Loop.default
-
-on_data = (req, resp, data) ->
-  --print('---- start request body')
-  --io.write(data) if data
-  --print('---- end request body')
-  return
+{:simplehttp, :json, :urlEncode} = require'util'
 
 on_finished = (req, resp) ->
   channel = req.url\match('channel=(.+)')
@@ -41,7 +30,7 @@ on_finished = (req, resp) ->
   body { height: 100%; margin: 0; padding: 0 }
   </style>
 
-  <script type="text/javascript" src="//maps.googleapis.com/maps/api/js?key=AIzaSyC2Jfvn8PUvx90DuVE9Ofwui2_3LTU4OPw&amp;sensor=false"></script>
+  <script type="text/javascript" src="//maps.googleapis.com/maps/api/js?key=]]..ivar2.config.youtubeAPIKey..[[&amp;sensor=false"></script>
   <script src="//google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclustererplus/src/markerclusterer_packed.js"></script>
   </head><body>
   <div id="map" style="width: 100%; height: 100%"></div>
@@ -77,22 +66,22 @@ on_finished = (req, resp) ->
   });
   var infoWindow = null;
   var markers = [];
-  
+
   function makeInfoWindow(info) {
     return new google.maps.InfoWindow({
       content: makeMarkerDiv(info)
     });
   }
-  
+
   function makeMarkerDiv(h) {
     return "<div style='line-height:1.35;overflow:hidden;white-space:nowrap'>" + h + "</div>";
   }
-  
+
   function makeMarkerInfo(m) {
     return "<strong>" + m.get("account") + " on " + m.get("channel") + "</strong> " +
       m.get("formattedAddress");
   }
-  
+
   function dismiss() {
     if (infoWindow !== null) {
       infoWindow.close();
@@ -127,7 +116,7 @@ on_finished = (req, resp) ->
   });
   google.maps.event.addListener(mc, "mouseout", dismiss);
   google.maps.event.addListener(mc, "click", dismiss);
-  
+
   </script>
   </body>
   </html>
@@ -139,59 +128,14 @@ on_finished = (req, resp) ->
   resp\set_body(html)
   resp\send()
 
-on_response_sent = (resp) ->
-  return
-
-on_request = (server, req, resp) ->
-  --print('---- start request headers: method =' .. req.method .. ', url = ' .. req.url)
-  --for k,v in pairs(req.headers)
-  --  print(k .. ": " .. v)
-  
-  --print('---- end request headers')
-  -- check for '/favicon.ico' requests.
-  if req.url\lower() == '/favicon.ico'
-    -- return 404 Not found error
-    resp\set_status(404)
-    resp\send()
-    return
-  -- add callbacks to request.
-  req.on_data = on_data
-  req.on_finished = on_finished
-  -- add response callbacks.
-  resp.on_response_sent = on_response_sent
-
-
--- Check for already running server
-if ivar2.webserver == nil
-  print '---- Starting webserver ---- '
-  ivar2.webserver = httpserver.new loop, { 
-    name: "ivar2-HTTPServer/0.0.1",
-    on_request: on_request,
-    request_head_timeout: 1.0,
-    request_body_timeout: 1.0,
-    write_timeout: 10.0,
-    keep_alive_timeout: 1.0,
-    max_keep_alive_requests: 10,
-  }
-
-  ivar2.webserver\listen_uri "tcp://0.0.0.0:#{ivar2.config.webserverport}/"
-else
-  -- Swap out the request handler with the reloaded one
-  ivar2.webserver.on_request = on_request
-
-urlEncode = (str, space) ->
-	space = space or '+'
-
-	str = str\gsub '([^%w ])', (c) ->
-        string.format  "%%%02X", string.byte(c) 
-	return str\gsub(' ', space)
+ivar2.webserver.regUrl "/location/(.*)$", on_finished
 
 lookup = (address, cb) ->
   API_URL = 'http://maps.googleapis.com/maps/api/geocode/json'
   url = API_URL .. '?address=' .. urlEncode(address) .. '&sensor=false' .. '&language=en-GB'
 
   simplehttp url, (data) ->
-      parsedData = json.decode data 
+      parsedData = json.decode data
       if parsedData.status ~= 'OK'
         return false, parsedData.status or 'unknown API error'
 
@@ -200,7 +144,7 @@ lookup = (address, cb) ->
 
       findComponent = (field, ...) ->
         n = select('#', ...)
-        for i=1, n 
+        for i=1, n
           searchType = select(i, ...)
           for _, component in ipairs(location.address_components)
             for _, type in ipairs(component.types)
@@ -232,4 +176,4 @@ PRIVMSG:
       say '%s %s', place, loc
   '^%plocation map$': (source, destination, arg) =>
     channel = destination\sub(2)
-    say "http://irc.lart.no:#{ivar2.config.webserverport}/?channel=#{channel}"
+    say "http://irc.lart.no:#{ivar2.config.webserverport}/location/?channel=#{channel}"
