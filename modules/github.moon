@@ -9,7 +9,7 @@ ivar2.webserver.regUrl '/github/(.*)', (req, res) ->
   branch = json.ref\gsub 'refs/heads/', ''
 
   for c in *json.commits
-    ivar2\Msg 'privmsg', destination, nil, "#{repo}: #{branch} #{c.author.username} #{c.message}"
+    ivar2\Msg 'privmsg', destination, nil, "#{repo}: #{branch}, #{c.author.username}: #{c.message} #{c.url}"
 
   res\set_status(200)
   res\set_header('Content-Type', 'text/plain')
