@@ -719,6 +719,11 @@ function ivar2:Connect(config)
 		self.x0 = assert(loadfile('core/x0.lua'))(ivar2)
 	end
 
+	if(not self.webserver) then
+		self.webserver = assert(loadfile('core/webserver.lua'))(ivar2)
+		self.webserver.start(self.config.webserverhost, self.config.webserverport)
+	end
+
 	if(self.timeout) then
 		self.timeout:stop(self.Loop)
 	end
@@ -764,8 +769,10 @@ function ivar2:Reload()
 	else
 		self.control:stop(self.Loop)
 		self.timeout:stop(self.Loop)
+		if self.webserver then
+			self.webserver:stop()
+		end
 
-		message.webserver = self.webserver
 		message.persist = self.persist
 		message.socket = self.socket
 		-- reload configuration file
@@ -794,6 +801,10 @@ function ivar2:Reload()
 		-- Reload irclib
 		package.loaded.irc = nil
 		irc = require'irc'
+		-- Reload webserver
+		message.webserver = assert(loadfile('core/webserver.lua'))(message)
+		message.webserver.start(message.config.webserverhost, message.config.webserverport)
+
 		message.network = self.network
 		message.hostmask = self.hostmask
 		message.maxNickLength = self.maxNickLength

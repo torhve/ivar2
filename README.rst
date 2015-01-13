@@ -55,6 +55,8 @@ Create a bot config sort of like this
         owners = {
             'nick!ident@my.host.name'
         },
+        webserverhost = '0.0.0.0',
+        webserverport = 9000,
         commandPattern = "!",
         modules = {
             'admin',
