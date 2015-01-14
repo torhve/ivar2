@@ -1891,7 +1891,7 @@ return {
    },
   ["short"] = {
    [1] = "CCS",
-   [2] = "CCSTV",
+   [2] = "CCS TV",
    [3] = "CCSTV",
    },
   ["syn"] = {
@@ -10837,13 +10837,12 @@ return {
   ["main"] = "Uchuu Senkan Yamato",
   ["official"] = {
    [1] = "Crucero Espacial Yamato",
-   [2] = "Kosmiczny pancernik Yamato",
-   [3] = "Patrulha Estelar",
-   [4] = "Star Blazers",
-   [5] = "Διαστημόπλοιο Αργώ",
-   [6] = "חלוצי החלל",
-   [7] = "أبطال الفضاء",
-   [8] = "宇宙戦艦ヤマト",
+   [2] = "Patrulha Estelar",
+   [3] = "Star Blazers",
+   [4] = "Διαστημόπλοιο Αργώ",
+   [5] = "חלוצי החלל",
+   [6] = "أبطال الفضاء",
+   [7] = "宇宙戦艦ヤマト",
    },
   ["short"] = {
    [1] = "yamato1",
@@ -15483,7 +15482,7 @@ return {
    [4] = "HagaRen",
    [5] = "HagaRen TV",
    [6] = "HnR",
-   [7] = "fmatv",
+   [7] = "fma tv",
    [8] = "fmatv",
    [9] = "פמ\"א",
    [10] = "ハガレン",
@@ -65331,6 +65330,7 @@ return {
    },
   ["syn"] = {
    [1] = "Hello Kitty`s Animation Theater 3b",
+   [2] = "My Melody`s Little Red Riding Hood",
    },
   },
  [5800] = {
@@ -84859,7 +84859,7 @@ return {
    [1] = "Pokemon Nero & Bianco",
    [2] = "Pokemon: Black & White",
    [3] = "Pokemon: Czerń i Biel",
-   [4] = "Pokémon Preto e Branco",
+   [4] = "Pokémon: Preto e Branco",
    [5] = "ポケットモンスター ベストウイッシュ",
    },
   ["short"] = {
@@ -98242,12 +98242,12 @@ return {
    [2] = "sm2014",
    },
   ["syn"] = {
-   [1] = "Pretty Guardian Sailor Moon Crystal",
-   [2] = "Pretty Guardian Sailor Moon: Crystal",
-   [3] = "Pretty Soldier Sailor Moon (2014)",
-   [4] = "Sailor Moon Crystal",
-   [5] = "Sailor Moon Remake",
-   [6] = "Красавица-воин Сейлор Мун: кристалл",
+   [1] = "Pretty Guardian Sailor Moon: Crystal",
+   [2] = "Pretty Soldier Sailor Moon (2014)",
+   [3] = "Sailor Moon Crystal",
+   [4] = "Sailor Moon Remake",
+   [5] = "Красавица-воин Сейлор Мун: Кристалл",
+   [6] = "Красивата пазителка Сейлър Муун: Кристал",
    [7] = "Прекрасная воительница Сейлор Мун: Кристалл",
    [8] = "美少女戦士セーラームーン クリスタル",
    },
@@ -98336,16 +98336,17 @@ return {
  [9314] = {
   ["main"] = "Dragon Ball Z: Kami to Kami",
   ["official"] = {
-   [1] = "Dragon Ball Z: A Batalha dos Deuses",
-   [2] = "Dragon Ball Z: Battle of Gods",
-   [3] = "Dragon Ball Z: La Batalla de los Dioses",
-   [4] = "ドラゴンボールZ 神と神 Battle of Gods",
+   [1] = "DRAGON BALL Z 神と神 BATTLE OF GODS",
+   [2] = "Dragon Ball Z: A Batalha dos Deuses",
+   [3] = "Dragon Ball Z: Battle of Gods",
+   [4] = "Dragon Ball Z: La Batalla de los Dioses",
    },
   ["short"] = {
    [1] = "DBZ Movie 14",
    },
   ["syn"] = {
    [1] = "Dragon Ball Z: God vs. God",
+   [2] = "ドラゴンボールZ 神と神",
    },
   },
  [9316] = {
@@ -101996,10 +101997,11 @@ return {
  [9687] = {
   ["main"] = "Space Pirate Captain Harlock",
   ["official"] = {
-   [1] = "Căpitanul Harlock: Pirat Spațial",
-   [2] = "Space Pirate Captain Harlock",
-   [3] = "Космический пират Харлок",
-   [4] = "キャプテンハーロック (2013)",
+   [1] = "Capitão Harlock: Pirata do Espaço",
+   [2] = "Căpitanul Harlock: Pirat Spațial",
+   [3] = "SPACE PIRATE CAPTAIN HARLOCK",
+   [4] = "Space Pirate Captain Harlock",
+   [5] = "Космический пират Харлок",
    },
   ["short"] = {
    },
@@ -104869,6 +104871,7 @@ return {
    },
   ["syn"] = {
    [1] = "GJ Club@",
+   [2] = "GJ部＠",
    },
   },
  [10020] = {
@@ -105612,7 +105615,7 @@ return {
  [10114] = {
   ["main"] = "Bayonetta: Bloody Fate",
   ["official"] = {
-   [1] = "BAYONETTA BLOODYFATE",
+   [1] = "BAYONETTA BLOODY FATE",
    [2] = "Bayonetta Bloody Fate",
    [3] = "Bayonetta: Bloody Fate",
    },
@@ -105784,7 +105787,7 @@ return {
    },
   },
  [10131] = {
-  ["main"] = "Wasureru monka!",
+  ["main"] = "Wasurerumonka!",
   ["official"] = {
    [1] = "わすれるもんか!",
    },
@@ -106449,8 +106452,7 @@ return {
   ["main"] = "JoJo no Kimyou na Bouken: Stardust Crusaders",
   ["official"] = {
    [1] = "JoJo`s Bizarre Adventure: Stardust Crusaders",
-   [2] = "JoJo`s Bizzare Adventure: Stardust Crusaders",
-   [3] = "ジョジョの奇妙な冒険 スターダストクルセイダース",
+   [2] = "ジョジョの奇妙な冒険 スターダストクルセイダース",
    },
   ["short"] = {
    [1] = "JJBA 2014",
@@ -106459,9 +106461,9 @@ return {
    [4] = "jojosc",
    },
   ["syn"] = {
-   [1] = "JOJO`S BIZARRE ADVENTURE: Stardust Crusaders",
-   [2] = "JoJo`s Bizarre Adventure Part 3",
-   [3] = "Невероятните приключения на Джо-Джо и звездните кръстоносци",
+   [1] = "JoJo`s Bizarre Adventure Part 3",
+   [2] = "Невероятните приключения на Джо-Джо и звездните кръстоносци",
+   [3] = "مغامرة جوجو الغريبة - ستاردست الصليبيين",
    },
   },
  [10207] = {
@@ -108304,7 +108306,7 @@ return {
    },
   ["syn"] = {
    [1] = "Blade and Soul",
-   [2] = "Душа и Острие",
+   [2] = "Душа и острие",
    [3] = "ブレイドアンドソウル",
    [4] = "ブレイド＆ソウル",
    },
@@ -108848,8 +108850,10 @@ return {
  [10514] = {
   ["main"] = "M3: Sono Kuroki Hagane",
   ["official"] = {
-   [1] = "M3 ~ソノ黒キ鋼~",
-   [2] = "M3～黑色钢铁～",
+   [1] = "M3 the dark metal",
+   [2] = "M3 ~ソノ黒キ鋼~",
+   [3] = "M3~黑色钢铁~",
+   [4] = "ام 3: فلز تیره",
    },
   ["short"] = {
    },
@@ -110177,9 +110181,9 @@ return {
    },
   },
  [10662] = {
-  ["main"] = "Kuroko no Baske 3",
+  ["main"] = "Kuroko no Baske (2015)",
   ["official"] = {
-   [1] = "黒子のバスケ 3",
+   [1] = "黒子のバスケ (2015)",
    },
   ["short"] = {
    },
@@ -110213,12 +110217,13 @@ return {
    [1] = "テイルズ オブ ゼスティリア ~導師の夜明け~",
    },
   ["short"] = {
+   [1] = "TOZ",
    },
   ["syn"] = {
    },
   },
  [10667] = {
-  ["main"] = "Hozuki no Reitetsu OAD",
+  ["main"] = "Hoozuki no Reitetsu OAD",
   ["official"] = {
    [1] = "鬼灯の冷徹 OAD",
    },
@@ -110230,20 +110235,13 @@ return {
  [10669] = {
   ["main"] = "Buddy Complex: Kanketsuhen - Ano Sora ni Kaeru Mirai de",
   ["official"] = {
-   [1] = "バディ・コンプレックス 完結編 -あの空に還る未来で-",
+   [1] = "Buddy Complex: Into the Skies of Tomorrow",
+   [2] = "バディ・コンプレックス 完結編 -あの空に還る未来で-",
    },
   ["short"] = {
    },
   ["syn"] = {
-   },
-  },
- [10671] = {
-  ["main"] = "School Days",
-  ["official"] = {
-   },
-  ["short"] = {
-   },
-  ["syn"] = {
+   [1] = "Buddy Complex Final Chapter",
    },
   },
  [10672] = {
@@ -110254,6 +110252,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "Nozomi x Kimio",
    },
   },
  [10673] = {
@@ -110277,7 +110276,7 @@ return {
    },
   },
  [10676] = {
-  ["main"] = "Danna ga Nani o Itteiru ka Wakaranai Ken",
+  ["main"] = "Danna ga Nani o Itteiruka Wakaranai Ken",
   ["official"] = {
    [1] = "Ik Begrijp Maar Niet Waar Mijn Man Het Over Heeft",
    [2] = "旦那が何を言っているかわからない件",
