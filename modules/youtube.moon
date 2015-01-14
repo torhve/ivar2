@@ -68,6 +68,8 @@ unsubscribe = (source, destination, name) =>
   else
     channels[name] = nil
     store[channelKey] = channels
+    lastKey = channelKey .. ':' .. name .. ':last'
+    store[lastKey] = nil
     reply "Ok. Stopped caring about #{bold name}"
 
 list = (source, destination) =>
