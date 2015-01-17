@@ -769,9 +769,7 @@ function ivar2:Reload()
 	else
 		self.control:stop(self.Loop)
 		self.timeout:stop(self.Loop)
-		if self.webserver then
-			self.webserver:stop()
-		end
+		self.webserver:stop()
 
 		message.persist = self.persist
 		message.socket = self.socket
