@@ -11,7 +11,8 @@ ivar2.webserver.regUrl '/github/(.*)', (req, res) ->
   for i, c in pairs(json.commits)
     if i > 3
       break
-    ivar2\Msg 'privmsg', destination, nil, "#{repo}: #{branch}, #{c.author.username}: #{c.message} #{c.url}"
+    message = c.message\gsub '\n.*', ''
+    ivar2\Msg 'privmsg', destination, nil, "#{repo}: #{branch}, #{c.author.username}: #{message} #{c.url}"
   if #json.commits > 3
     ivar2\Msg 'privmsg', destination, nil, "#{repo}: #{branch}, #{#json.commits-3} more commits not displayed."
 
