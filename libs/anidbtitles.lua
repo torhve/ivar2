@@ -7561,7 +7561,7 @@ return {
    },
   },
  [436] = {
-  ["main"] = "Tatakae!! Iczer-1",
+  ["main"] = "Tatakae!! Iczer 1",
   ["official"] = {
    [1] = "Fight! Iczer-One",
    [2] = "Iczer One",
@@ -7737,9 +7737,8 @@ return {
   ["main"] = ".hack//Tasogare no Udewa Densetsu",
   ["official"] = {
    [1] = ".hack//A Lenda do Bracelete do Crepúsculo",
-   [2] = ".hack//Bransoleta Zmierzchu",
-   [3] = ".hack//Legend of the Twilight",
-   [4] = ".hack//黄昏の腕輪伝説",
+   [2] = ".hack//Legend of the Twilight",
+   [3] = ".hack//黄昏の腕輪伝説",
    },
   ["short"] = {
    [1] = ".hack//Udeden",
@@ -7749,11 +7748,12 @@ return {
    [5] = "hackDUSK",
    },
   ["syn"] = {
-   [1] = ".hack//DUSK",
-   [2] = ".hack//Legend of the Twilight Bracelet",
-   [3] = ".хак//Легенда Сумеречного Браслета",
-   [4] = ".хак//Легенда о сумеречном браслете",
-   [5] = "dot hack dusk",
+   [1] = ".hack//Bransoleta Zmierzchu",
+   [2] = ".hack//DUSK",
+   [3] = ".hack//Legend of the Twilight Bracelet",
+   [4] = ".хак//Легенда Сумеречного Браслета",
+   [5] = ".хак//Легенда о сумеречном браслете",
+   [6] = "dot hack dusk",
    },
   },
  [448] = {
@@ -25653,8 +25653,9 @@ return {
  [1766] = {
   ["main"] = "Motto! Ojamajo Doremi",
   ["official"] = {
-   [1] = "Magical Dorémi (3e saison)",
-   [2] = "も~っと! おジャ魔女どれみ",
+   [1] = "Doremi 3",
+   [2] = "Magical Dorémi (3e saison)",
+   [3] = "も~っと! おジャ魔女どれみ",
    },
   ["short"] = {
    [1] = "DoremiS3",
@@ -49929,10 +49930,9 @@ return {
   ["official"] = {
    [1] = "Familiar of Zero",
    [2] = "Magia de Zero",
-   [3] = "Глей си работата!",
-   [4] = "อสูรรับใช้ของยาย 0 สนิท",
-   [5] = "ゼロの使い魔",
-   [6] = "제로의 사역마",
+   [3] = "อสูรรับใช้ของยาย 0 สนิท",
+   [4] = "ゼロの使い魔",
+   [5] = "제로의 사역마",
    },
   ["short"] = {
    [1] = "zero",
@@ -52768,9 +52768,9 @@ return {
    },
   },
  [4399] = {
-  ["main"] = "Nanmu Ichibyou Sokusai",
+  ["main"] = "Nanmu Ichibyousokusai",
   ["official"] = {
-   [1] = "Praise be to Small Ills",
+   [1] = "Praise Be to Small Ills",
    [2] = "南無一病息災",
    },
   ["short"] = {
@@ -58650,7 +58650,7 @@ return {
    },
   },
  [5002] = {
-  ["main"] = "Kachi Kachi Yama",
+  ["main"] = "Kenken Goku Fuufu Teikin",
   ["official"] = {
    [1] = "堅々獄夫婦庭訓",
    },
@@ -70979,7 +70979,8 @@ return {
  [6481] = {
   ["main"] = "Fight Ippatsu! Juuden-chan!!",
   ["official"] = {
-   [1] = "ファイト一発! 充電ちゃん!!",
+   [1] = "Juden-chan",
+   [2] = "ファイト一発! 充電ちゃん!!",
    },
   ["short"] = {
    [1] = "juuden",
@@ -80011,6 +80012,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "The Residents of Ashiaraiyashiki.",
    },
   },
  [7399] = {
@@ -88121,8 +88123,9 @@ return {
  [8226] = {
   ["main"] = "Danball Senki",
   ["official"] = {
-   [1] = "Little Battlers eXperience",
-   [2] = "ダンボール戦機",
+   [1] = "LBX",
+   [2] = "Little Battlers eXperience",
+   [3] = "ダンボール戦機",
    },
   ["short"] = {
    [1] = "LBX",
@@ -88704,8 +88707,9 @@ return {
  [8279] = {
   ["main"] = "Saint Seiya: Legend of Sanctuary",
   ["official"] = {
-   [1] = "Os Cavaleiros do Zodíaco: A Lenda do Santuário",
-   [2] = "聖闘士星矢 Legend of Sanctuary",
+   [1] = "I Cavalieri dello Zodiaco: La Leggenda del Grande Tempio",
+   [2] = "Os Cavaleiros do Zodíaco: A Lenda do Santuário",
+   [3] = "聖闘士星矢 Legend of Sanctuary",
    },
   ["short"] = {
    },
@@ -90234,7 +90238,8 @@ return {
  [8439] = {
   ["main"] = "Omake",
   ["official"] = {
-   [1] = "おまけ",
+   [1] = "Pieces",
+   [2] = "おまけ",
    },
   ["short"] = {
    },
@@ -92044,7 +92049,7 @@ return {
    },
   },
  [8635] = {
-  ["main"] = "Strait Jacket International ver.",
+  ["main"] = "Strait Jacket International Ver.",
   ["official"] = {
    [1] = "ストレイト・ジャケット International ver.",
    },
@@ -95620,7 +95625,7 @@ return {
    },
   },
  [9007] = {
-  ["main"] = "Satsujin Kyoujidai",
+  ["main"] = "Satsujinkyou Jidai",
   ["official"] = {
    [1] = "殺人狂時代",
    },
@@ -96693,7 +96698,8 @@ return {
  [9129] = {
   ["main"] = "Kore wa Zombie Desuka? Of the Dead (2012)",
   ["official"] = {
-   [1] = "これはゾンビですか? OF THE DEAD (2012)",
+   [1] = "Is This a Zombie? Of the Dead: Yes, This Suits Me Just Fine",
+   [2] = "これはゾンビですか? OF THE DEAD (2012)",
    },
   ["short"] = {
    },
@@ -97348,8 +97354,9 @@ return {
  [9206] = {
   ["main"] = "Boku wa Tomodachi ga Sukunai: Relay Shousetsu wa Ketsumatsu ga Hanpanai",
   ["official"] = {
-   [1] = "僕は友達が少ない リレー小説は結末が半端ないL(゜□゜)」",
-   [2] = "我的朋友很少 接力小说的结局才不寻常(゜□゜)",
+   [1] = "Haganai: A Round-Robin Story`s Ending is Way Extreme",
+   [2] = "僕は友達が少ない リレー小説は結末が半端ないL(゜□゜)」",
+   [3] = "我的朋友很少 接力小说的结局才不寻常(゜□゜)",
    },
   ["short"] = {
    [1] = "haganai ova 2",
@@ -100379,6 +100386,8 @@ return {
    [1] = "dd3",
    },
   ["syn"] = {
+   [1] = "Dog Days 3",
+   [2] = "Dog Days S3",
    },
   },
  [9518] = {
@@ -101550,6 +101559,7 @@ return {
   ["main"] = "Soukyuu no Fafner: Dead Aggressor - Exodus",
   ["official"] = {
    [1] = "蒼穹のファフナー Dead Aggressor EXODUS",
+   [2] = "蒼穹之法芙娜 EXODUS",
    },
   ["short"] = {
    },
@@ -106078,12 +106088,15 @@ return {
  [10161] = {
   ["main"] = "Kantai Collection: KanColle",
   ["official"] = {
-   [1] = "艦隊これくしょん -艦これ-",
+   [1] = "舰队Collection",
+   [2] = "艦隊Collection",
+   [3] = "艦隊これくしょん -艦これ-",
    },
   ["short"] = {
    [1] = "KanColle",
    },
   ["syn"] = {
+   [1] = "舰娘",
    },
   },
  [10162] = {
@@ -106202,12 +106215,13 @@ return {
  [10178] = {
   ["main"] = "Junketsu no Maria",
   ["official"] = {
-   [1] = "純潔のマリア",
+   [1] = "Maria the Virgin Witch",
+   [2] = "純潔のマリア",
+   [3] = "纯洁的玛利亚",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Maria the Virgin Witch",
    },
   },
  [10179] = {
@@ -107980,10 +107994,12 @@ return {
   ["official"] = {
    [1] = "甘城ブリリアントパーク",
    [2] = "甘城光辉游乐园",
+   [3] = "아마기 브릴리언트 파크",
    },
   ["short"] = {
    [1] = "amaburi",
    [2] = "甘ブリ",
+   [3] = "아마기",
    },
   ["syn"] = {
    },
@@ -108149,8 +108165,7 @@ return {
   ["syn"] = {
    [1] = "Free! 2",
    [2] = "Свобода! - Вечное лето",
-   [3] = "Свободен! Вечно гей лято",
-   [4] = "Свободен! Вечно лято",
+   [3] = "Свободен! Вечно лято",
    },
   },
  [10417] = {
@@ -108387,7 +108402,8 @@ return {
   ["main"] = "Trinity Seven",
   ["official"] = {
    [1] = "TRINITY SEVEN 魔道书7使者",
-   [2] = "トリニティセブン",
+   [2] = "Trinity Seven",
+   [3] = "トリニティセブン",
    },
   ["short"] = {
    },
@@ -108811,7 +108827,8 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "When Supernatural Battles Became Commonplace",
+   [1] = "Quand les batailles surnaturelles deviennent ordinaires",
+   [2] = "When Supernatural Battles Became Commonplace",
    },
   },
  [10510] = {
@@ -108978,6 +108995,7 @@ return {
   ["main"] = "Shinmai Maou no Testament",
   ["official"] = {
    [1] = "新妹魔王の契約者[テスタメント]",
+   [2] = "新妹魔王的契约者",
    },
   ["short"] = {
    },
@@ -109085,6 +109103,7 @@ return {
   ["main"] = "Saenai Heroine no Sodatekata",
   ["official"] = {
    [1] = "冴えない彼女の育てかた",
+   [2] = "路人女主的养成方法",
    },
   ["short"] = {
    [1] = "Saekano",
@@ -109361,8 +109380,9 @@ return {
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Мушиши 2 (2014)",
-   [2] = "Мушіші Наступні глави, ч. 2",
+   [1] = "Mushishi Zoku Shou 2",
+   [2] = "Мушиши 2 (2014)",
+   [3] = "Мушіші Наступні глави, ч. 2",
    },
   },
  [10572] = {
@@ -110220,6 +110240,7 @@ return {
    [1] = "TOZ",
    },
   ["syn"] = {
+   [1] = "Tales of Zestiria: The Shepherd`s Advetn",
    },
   },
  [10667] = {
@@ -110325,13 +110346,14 @@ return {
  [10684] = {
   ["main"] = "Koufuku Graffiti",
   ["official"] = {
-   [1] = "幸腹グラフィティ",
+   [1] = "Gourmet Girl Graffiti",
+   [2] = "幸腹グラフィティ",
+   [3] = "幸腹涂鸦",
    },
   ["short"] = {
    },
   ["syn"] = {
-   [1] = "Gourmet Girl Graffiti",
-   [2] = "Happy Cooking Graffiti",
+   [1] = "Happy Cooking Graffiti",
    },
   },
  [10685] = {
@@ -110461,7 +110483,8 @@ return {
  [10702] = {
   ["main"] = "Ansatsu Kyoushitsu (2015)",
   ["official"] = {
-   [1] = "暗殺教室 (2015)",
+   [1] = "暗殺教室",
+   [2] = "暗殺教室 (2015)",
    },
   ["short"] = {
    },
@@ -110538,6 +110561,7 @@ return {
   ["main"] = "Juuou Mujin no Fafnir",
   ["official"] = {
    [1] = "銃皇無尽のファフニール",
+   [2] = "铳皇无尽的法夫纳",
    },
   ["short"] = {
    },
@@ -111014,8 +111038,9 @@ return {
  [10763] = {
   ["main"] = "Kami-sama Hajimemashita 2",
   ["official"] = {
-   [1] = "元氣少女緣結神◎",
-   [2] = "神様はじめました◎",
+   [1] = "Kamisama Kiss 2",
+   [2] = "元氣少女緣結神◎",
+   [3] = "神様はじめました◎",
    },
   ["short"] = {
    },
@@ -111215,6 +111240,8 @@ return {
   ["main"] = "The Rolling Girls",
   ["official"] = {
    [1] = "THE ROLLING GIRLS",
+   [2] = "The Rolling Girls",
+   [3] = "旋转少女",
    },
   ["short"] = {
    },
@@ -111382,18 +111409,19 @@ return {
    },
   },
  [10811] = {
-  ["main"] = "Yuri Kuma Arashi",
+  ["main"] = "Yurikuma Arashi",
   ["official"] = {
-   [1] = "ユリ熊嵐",
-   [2] = "百合熊風暴",
-   [3] = "百合熊风暴",
+   [1] = "Yurikuma Arashi",
+   [2] = "ユリ熊嵐",
+   [3] = "百合熊風暴",
+   [4] = "百合熊风暴",
    },
   ["short"] = {
    [1] = "yka",
+   [2] = "yurikuma",
    },
   ["syn"] = {
    [1] = "Love Bullet - Yurikuma Arashi",
-   [2] = "Yurikuma Arashi",
    },
   },
  [10812] = {
@@ -111725,7 +111753,8 @@ return {
  [10855] = {
   ["main"] = "Shounen Hollywood: Holly Stage for 50",
   ["official"] = {
-   [1] = "少年ハリウッド -HOLLY STAGE FOR 50-",
+   [1] = "Shonen Hollywood: Holly Stage for 50",
+   [2] = "少年ハリウッド -HOLLY STAGE FOR 50-",
    },
   ["short"] = {
    },
@@ -112010,6 +112039,7 @@ return {
   ["short"] = {
    },
   ["syn"] = {
+   [1] = "花とアリス殺人事件",
    },
   },
  [10887] = {
@@ -112109,7 +112139,8 @@ return {
  [10897] = {
   ["main"] = "Yoru no Yatterman",
   ["official"] = {
-   [1] = "夜ノヤッターマン",
+   [1] = "Yatterman Night",
+   [2] = "夜ノヤッターマン",
    },
   ["short"] = {
    },
@@ -112193,6 +112224,7 @@ return {
   ["official"] = {
    [1] = "Death Parade",
    [2] = "デス・パレード",
+   [3] = "死亡游行",
    },
   ["short"] = {
    },
@@ -112266,7 +112298,8 @@ return {
  [10913] = {
   ["main"] = "Sengoku Musou",
   ["official"] = {
-   [1] = "戦国無双",
+   [1] = "战国无双",
+   [2] = "戦国無双",
    },
   ["short"] = {
    },
@@ -113255,6 +113288,70 @@ return {
  [11024] = {
   ["main"] = "Around",
   ["official"] = {
+   [1] = "around",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11025] = {
+  ["main"] = "Mugen Senshi Valis",
+  ["official"] = {
+   [1] = "夢幻戦士ヴァリス",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   [1] = "Valis: Legend of a Fantasm Soldier",
+   },
+  },
+ [11026] = {
+  ["main"] = "Battle Spirits: Burning Soul",
+  ["official"] = {
+   [1] = "バトルスピリッツ烈火魂[バーニングソウル]",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11027] = {
+  ["main"] = "Inazuma Eleven: Chou Jigen Dream Match",
+  ["official"] = {
+   [1] = "イナズマイレブン超次元ドリームマッチ",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11028] = {
+  ["main"] = "Denpa Kyoushi TV",
+  ["official"] = {
+   [1] = "電波教師 TV",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11029] = {
+  ["main"] = "Hana",
+  ["official"] = {
+   [1] = "Flower",
+   [2] = "花",
+   },
+  ["short"] = {
+   },
+  ["syn"] = {
+   },
+  },
+ [11031] = {
+  ["main"] = "Kyoufu Shinbun (2014)",
+  ["official"] = {
+   [1] = "Horror News",
+   [2] = "恐怖新聞 (2014)",
    },
   ["short"] = {
    },
