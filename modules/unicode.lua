@@ -1,4 +1,5 @@
 local sql = require'lsqlite3'
+local util = require'util'
 -- utf-8 functions (C) Rici Lake
 -- http://luaparse.luaforge.net/libquery.lua.html
 local function X(str) return tonumber(str, 16) end
@@ -92,7 +93,7 @@ local function handleLookup(self, source, destination, str)
     local out = {}
     for uchar in string.gmatch(str, "([%z\1-\127\194-\244][\128-\191]*)") do
         uchar = fromUtf8(uchar)
-        if uchar then 
+        if uchar then
             local cp = string.format('%04x', uchar)
             local selectStmt  = db:prepare('SELECT * FROM unicode WHERE LOWER(cp) LIKE LOWER(?)')
             selectStmt:bind_values(cp)
@@ -112,10 +113,45 @@ local function handleLookup(self, source, destination, str)
     end
 end
 
+local function genMojibake(self, source, destination, str)
+    local factor = 0.65
+    local db = sql.open("cache/unicode.sql")
+    local out = {}
+    for uchar in util.utf8.chars(str) do
+        local ucp = fromUtf8(uchar)
+        if ucp and math.random() >= factor then
+            local cp = string.format('%04x', ucp)
+            local stmt = db:prepare('SELECT name FROM unicode WHERE LOWER(cp) LIKE LOWER(?)')
+            stmt:bind_values(cp)
+            local code = stmt:step()
+            if code == sql.ROW then
+                local name = stmt:get_value(0)
+                name = string.format('%s with%%', name)
+                local stmt = db:prepare('SELECT * FROM unicode WHERE LOWER(name) LIKE LOWER(?) ORDER BY random() LIMIT 1')
+                stmt:bind_values(name)
+                local code = stmt:step()
+                if code == sql.ROW then
+                    local cp = stmt:get_value(0)
+                    table.insert(out, string.format('%s', toUtf8(cp)))
+                else
+                    table.insert(out, uchar)
+                end
+            else
+                table.insert(out, uchar)
+            end
+        else
+            table.insert(out, uchar)
+        end
+    end
+    db:close()
+    say(table.concat(out))
+end
+
 return {
     PRIVMSG = {
         ['^%pu (.*)$'] = handleSearch,
         ['^%pus (.*)$'] = handleSearchShort,
         ['^%pw (.*)$'] = handleLookup,
+        ['^%pmojibake (.*)$'] = genMojibake,
     }
 }
