@@ -761,7 +761,6 @@ function ivar2:Reload()
 		self.timeout:stop(self.Loop)
 		self.webserver:stop()
 
-		message.persist = self.persist
 		message.socket = self.socket
 		-- reload configuration file
 		local config, err = loadfile(configFile)
@@ -792,6 +791,14 @@ function ivar2:Reload()
 		-- Reload webserver
 		message.webserver = assert(loadfile('core/webserver.lua'))(message)
 		message.webserver.start(message.config.webserverhost, message.config.webserverport)
+		-- Reload persist
+		package.loaded[message.config.persistbackend or 'sqlpersist'] = nil
+		message.persist = require(message.config.persistbackend or 'sqlpersist')({
+				path = message.config.kvsqlpath or 'cache/keyvaluestore.sqlite3',
+				verbose = false,
+				namespace = 'ivar2',
+				clear = false
+		})
 
 		message.network = self.network
 		message.hostmask = self.hostmask
