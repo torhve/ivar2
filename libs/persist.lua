@@ -31,6 +31,7 @@ local function connect(opt)
            log:error('persist> make sure you have a running redis server (redis-server)')
        else
            client = connection
+           log:info('persist> successfully connected redis @ ' .. url .. ':' .. port)
        end
    end
    conn()
