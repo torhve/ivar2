@@ -60,8 +60,8 @@ end
 local events = {
 	['PING'] = {
 		core = {
-			function(self, source, destination, time)
-				self:Send(string.format('PONG %s', time))
+			function(self, source, destination, server)
+				self:Send('PONG %s', server)
 			end,
 		},
 	},
@@ -303,10 +303,10 @@ local client_mt = {
 	handle_connected = function(self)
 		if(not self.updated) then
 			if self.config.password then
-				self:Send(string.format('PASS %s', self.config.password))
+				self:Send('PASS %s', self.config.password)
 			end
 			self:Nick(self.config.nick)
-			self:Send(string.format('USER %s 0 * :%s', self.config.ident, self.config.realname))
+			self:Send('USER %s 0 * :%s', self.config.ident, self.config.realname)
 		else
 			self.updated = nil
 		end
