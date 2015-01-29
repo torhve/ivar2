@@ -216,7 +216,7 @@ data =
   "01.08":"Peder Petra"
   "02.08":"Karen Karin"
   "03.08":"Oline Oliver Olve"
-  "04.08":"Arnhild Arna Arnt"
+  "04.08":"Arnhild Arna Arne"
   "05.08":"Osvald Oskar"
   "06.08":"Gunnlaug Gunnleiv"
   "07.08":"Didrik Doris"
