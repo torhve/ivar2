@@ -378,3 +378,9 @@ PRIVMSG:
     now = day .. '.' .. month
     names = table.concat(util.split(data[now], ' '), ', ')
     say names
+  "^%pnavnedag (.*)$": (source, destination, input) =>
+    for key, val in pairs(data)
+      names = util.split(val, ' ')
+      for name in *names
+        if util.utf8.lower(name) == util.utf8.lower(input)
+          say "#{key}: #{table.concat(names, ', ')}"
