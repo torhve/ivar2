@@ -19,9 +19,12 @@ joke = (subreddit, cb) ->
         return cb joketext
 
 PRIVMSG:
-  '^%pjoke': (source, destination, arg) =>
+  '^%pjoke$': (source, destination, arg) =>
     joke 'jokes', (text) ->
       say text
-  '^%pdadjoke': (source, destination, arg) =>
+  '^%pdadjoke$': (source, destination, arg) =>
     joke 'dadjokes', (text) ->
+      say text
+  '^%pmeanjoke$': (source, destination, arg) =>
+    joke 'meanjokes', (text) ->
       say text
