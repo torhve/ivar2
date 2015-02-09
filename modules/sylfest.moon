@@ -10,7 +10,7 @@ maybe = (p) -> p^-1
 -- Match norwegian words
 word = R('az') + R('AZ') + S('æøåÆØÅ')
 -- With an '
-apo = P "'"
+apo = S "'`"
 -- With bad endings
 bend = P("ene") + P("en") + P("et") + P("ing") + P("ar") + P("ane") + P("er")
 -- Separated by or line end
@@ -25,7 +25,7 @@ fullpatt = Ct(anywhere(sylfestpatt)^1 - bstart)
 
 -- run our handler on any message that contains '
 PRIVMSG:
-  ".*'.*": (source, destination, line) =>
+  ".*['`].*": (source, destination, line) =>
     matches = fullpatt\match(line)
     if matches
       say "Sylfest likar ikkje: %s", concat(matches, ', ')
