@@ -41,7 +41,7 @@ customHosts['twitch%.tv'] = function(queue, info)
 				table.insert(out, (resp.status:gsub('\n', ' ')))
 			end
 
-			if(resp.game ~= json.util.null) then
+			if(resp.game ~= json.null) then
 				table.insert(out, string.format(" (Playing: %s)", resp.game))
 			end
 
