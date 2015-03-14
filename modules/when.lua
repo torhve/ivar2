@@ -17,8 +17,5 @@ return {
 		['^%pwhen (.*)$'] = function(self, source, destination, when)
 			say(handleWhen(self, source, destination, when))
 		end,
-		['^helg%??$'] = function(self, source, destination, when)
-			say(handleWhen(self, source, destination, 'next friday'))
-		end,
 	},
 }
