@@ -2,6 +2,10 @@
 -- original by Lokaltog
 -- github pls no delete
 
+util = require'util'
+html2unicode = require'html'
+simplehttp = util.simplehttp
+
 intro = {
   'burn in hell',
   'check your privilege',
@@ -189,8 +193,23 @@ generateArgument = ->
   }
   table.concat(buf)
 
+martinLutherInsult = (source, destination, arg) =>
+  simplehttp 'http://ergofabulous.org/luther/', (data) ->
+    insult = data\match '<p class="larger">(.-)</p>'
+    if insult
+      say arg..": "..insult
+
+shaker = (source, destination, arg) =>
+  simplehttp 'http://www.pangloss.com/seidel/Shaker/', (data) ->
+    insult = data\match '<font size="%+2">%s*(.-)</font>'
+    if insult
+      say arg..": "..insult
+
+
 PRIVMSG:
   '^%pinsult$': (source, destination) =>
     say generateArgument()
   '^%pinsult (.+)$': (source, destination, arg) =>
     say arg..": "..generateArgument()
+  '%pminsult (.+)$': martinLutherInsult
+  '%psinsult (.+)$': shaker
