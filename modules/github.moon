@@ -1,8 +1,15 @@
 util = require 'util'
 
+
+hex_to_char = (x) ->
+  string.char(tonumber(x, 16))
+
+unescape = (url) ->
+  url\gsub("%%(%x%x)", hex_to_char)
+
 ivar2.webserver.regUrl '/github/(.*)', (req, res) ->
   destination = req.url\match('/github/(.+)/?$')
-  destination = destination\gsub '%%23', '#'
+  destination = unescape(destination)
   json = util.json.decode(req.body)
 
   repo = json.repository.full_name
