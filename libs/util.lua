@@ -159,6 +159,11 @@ function util.translateWords(str, callback, nickpat)
 	return (str:gsub(pat, callback))
 end
 
+function util.nonickalertword(word)
+	local zwsp = "\226\128\142" -- LTR
+	return word:sub(1, 1) .. zwsp .. word:sub(2)
+end
+
 function util.nonickalert(nicklist, str)
 	-- U+200B, ZERO WIDTH SPACE: "\226\128\139"
 	local s = str or ''
@@ -176,6 +181,7 @@ function util.nonickalert(nicklist, str)
 		end
 	end, true)
 end
+
 
 local utf8 = {
 	pattern = "([%z\1-\127\194-\244][\128-\191]*)",
