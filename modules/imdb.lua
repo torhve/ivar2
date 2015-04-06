@@ -14,7 +14,7 @@ local parseData = function(source, destination, data)
 		end
 
 		if(data.Year) then
-			table.insert(out, string.format("(%d) -", data.Year))
+			table.insert(out, string.format("(%s) -", data.Year))
 		end
 
 		if(data.Runtime and data.Rated and data.Type) then

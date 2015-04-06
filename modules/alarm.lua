@@ -103,7 +103,7 @@ local alarm = function(self, source, destination, message)
 
 	local timer = self:Timer(id, duration, function(loop, timer, revents)
 		if(#message == 0) then message = 'Timer finished.' end
-		say('%s: %s', nick, message or 'Timer finished.')
+		self:Msg('privmsg', destination, source, '%s: %s', nick, message or 'Timer finished.')
 	end)
 
 	if(#message > 0) then timer.message = message end
