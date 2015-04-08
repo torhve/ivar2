@@ -387,6 +387,11 @@ function ivar2:Privmsg(destination, format, ...)
 	local message, extra = irc.split(ivar2.hostmask, destination, safeFormat(format, ...), ivar2.config.splitMarker)
 	-- Save the potential extra stuff from the split into the more container
 	ivar2.more[destination] = extra
+	-- Check if bot should use NOTICE instead of PRIVMSG
+	-- TODO: also check for channel configuration for this
+	if self.config.notice then
+		return self:Send('NOTICE %s :%s', destination, message)
+	end
 	return self:Send('PRIVMSG %s :%s', destination, message)
 end
 
