@@ -10,13 +10,11 @@ return function(url, callback)
 	end
 
 	util.simplehttp(
-		'http://api.x0.no/?' .. url,
+		'https://xt.gg/url?url=' .. url,
 		function(data, url)
-			if(data:sub(8,9) =='x0') then
-				x0["x0:" .. url] = data
-
-				return callback(data)
-			end
+			data = util.json.decode(data).url
+			x0["x0:" .. url] = data
+			return callback(data)
 		end
 	)
 end
