@@ -14,7 +14,9 @@ handlers = {
       if i > 3
         break
       message = c.message\gsub '\n.*', ''
-      ivar2\Msg 'privmsg', destination, nil, "[#{repo}]: #{branch}, #{util.nonickalertword c.author.username}: #{message} #{c.url}"
+      if i == 1
+        message = message .. ' ' .. json.compare
+      ivar2\Msg 'privmsg', destination, nil, "[#{repo}]: #{branch}, #{util.nonickalertword c.author.username}: #{message}"
     if #json.commits > 3
       ivar2\Msg 'privmsg', destination, nil, "[#{repo}]: #{branch}, #{#json.commits-3} more commits not displayed."
   watch: (repo, destination, json) ->
