@@ -2,12 +2,17 @@ local httpclient = require'handler.http.client'
 local uri = require"handler.uri"
 local idn = require'idn'
 local ev = require'ev'
+require'logging.console'
+local log = logging.console()
 
 local uri_parse = uri.parse
 
 local toIDN = function(url)
 	local info = uri_parse(url, nil, true)
-	info.host = idn.encode(info.host)
+	-- Support IPv6 [host]
+	if (info.host:sub(1, 1) ~= '[') then
+		info.host = idn.encode(info.host)
+	end
 
 	if(info.port) then
 		info.host = info.host .. ':' .. info.port
@@ -57,6 +62,7 @@ local function simplehttp(url, callback, stream, limit, visited)
 	-- Prevent infinite loops!
 	if(visited[url]) then return end
 	visited[url] = true
+	log:info('simplehttp> fetching url %s', url)
 
 	client:request{
 		url = url,
