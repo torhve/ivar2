@@ -388,8 +388,8 @@ function ivar2:Privmsg(destination, format, ...)
 	-- Save the potential extra stuff from the split into the more container
 	ivar2.more[destination] = extra
 	-- Check if bot should use NOTICE instead of PRIVMSG
-	-- TODO: also check for channel configuration for this
-	if self.config.notice then
+	local channel = self.config.channels[destination]
+	if self.config.notice or (channel and channel.notice) then
 		return self:Send('NOTICE %s :%s', destination, message)
 	end
 	return self:Send('PRIVMSG %s :%s', destination, message)
