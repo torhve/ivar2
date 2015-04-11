@@ -339,6 +339,7 @@ end
 
 function ivar2:Quit(message)
 	self.config.autoReconnect = nil
+	self:SimpleDispatch('QUIT_OUT', message)
 
 	if(message) then
 		return self:Send('QUIT :%s', message)
@@ -348,6 +349,7 @@ function ivar2:Quit(message)
 end
 
 function ivar2:Join(channel, password)
+	self:SimpleDispatch('JOIN_OUT', channel)
 	if(password) then
 		return self:Send('JOIN %s %s', channel, password)
 	else
@@ -356,10 +358,12 @@ function ivar2:Join(channel, password)
 end
 
 function ivar2:Part(channel)
+	self:SimpleDispatch('PART_OUT', channel)
 	return self:Send('PART %s', channel)
 end
 
 function ivar2:Topic(destination, topic)
+	self:SimpleDispatch('TOPIC_OUT', topic, {source=self.config.nick}, destination)
 	if(topic) then
 		return self:Send('TOPIC %s :%s', destination, topic)
 	else
@@ -368,10 +372,12 @@ function ivar2:Topic(destination, topic)
 end
 
 function ivar2:Mode(destination, mode)
+	self:SimpleDispatch('MODE_OUT', mode, {source=self.config.nick}, destination)
 	return self:Send('MODE %s %s', destination, mode)
 end
 
 function ivar2:Kick(destination, user, comment)
+	self:SimpleDispatch('KICK_OUT', user, {source=self.config.nick}, destination)
 	if(comment) then
 		return self:Send('KICK %s %s :%s', destination, user, comment)
 	else
@@ -380,7 +386,9 @@ function ivar2:Kick(destination, user, comment)
 end
 
 function ivar2:Notice(destination, format, ...)
-	return self:Send('NOTICE %s :%s', destination, safeFormat(format, ...))
+	local arg = safeFormat(format, ...)
+	self:SimpleDispatch('NOTICE_OUT', arg, {nick=self.config.nick}, destination)
+	return self:Send('NOTICE %s :%s', destination, arg)
 end
 
 function ivar2:Privmsg(destination, format, ...)
@@ -390,8 +398,9 @@ function ivar2:Privmsg(destination, format, ...)
 	-- Check if bot should use NOTICE instead of PRIVMSG
 	local channel = self.config.channels[destination]
 	if self.config.notice or (channel and channel.notice) then
-		return self:Send('NOTICE %s :%s', destination, message)
+		return self:Notice(destination, message)
 	end
+	self:SimpleDispatch('PRIVMSG_OUT', message, {nick=self.config.nick}, destination)
 	return self:Send('PRIVMSG %s :%s', destination, message)
 end
 
@@ -416,6 +425,7 @@ end
 
 function ivar2:Nick(nick)
 	self.config.nick = nick
+	self:SimpleDispatch('NICK_OUT', {nick=self.config.nick})
 	return self:Send('NICK %s', nick)
 end
 
@@ -447,6 +457,33 @@ function ivar2:LimitOutput(destination, output, sep, padding)
 	end
 
 	return out, limit
+end
+
+function ivar2:SimpleDispatch(command, argument, source, destination)
+	-- Function that dispatches commands in the events table without
+	-- splitting arguments and setting up function environment
+	if(not events[command]) then return end
+
+	if(source) then source = self:ParseMask(source) end
+
+	for moduleName, moduleTable in next, events[command] do
+		if(not self:IsModuleDisabled(moduleName, destination)) then
+			for pattern, callback in next, moduleTable do
+				local success, message
+				if(type(pattern) == 'number' and source) then
+					success, message = pcall(callback, self, source, destination, argument)
+				else
+					local channelPattern = self:ChannelCommandPattern(pattern, moduleName, destination)
+					if(argument:match(channelPattern)) then
+						success, message = pcall(callback, self, source, destination, argument)
+					end
+				end
+				if(not success and message) then
+					self:Log('error', 'Unable to execute handler %s from %s: %s', pattern, moduleName, message)
+				end
+			end
+		end
+	end
 end
 
 function ivar2:DispatchCommand(command, argument, source, destination)
@@ -642,6 +679,7 @@ function ivar2:ModuleCall(func, source, destination, remainder, ...)
 				newline = newline .. "|" .. remainder
 			end
 
+			-- TODO: Check that it's actually a privmsg
 			self:DispatchCommand('PRIVMSG', newline, source, destination)
 		end
 	end
