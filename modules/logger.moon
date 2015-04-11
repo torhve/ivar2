@@ -171,6 +171,14 @@ return {
     (s, d, a) =>
       dblog @, 'PRIVMSG', s, d, a
   }
+  PRIVMSG_OUT: {
+    (s, d, a) =>
+      dblog @, 'PRIVMSG', s, d, a
+  }
+  NOTICE_OUT: {
+    (s, d, a) =>
+      dblog @, 'NOTICE', s, d, a
+  }
   NOTICE: {
     (s, d, a) =>
       dblog @, 'NOTICE', s, d, a
