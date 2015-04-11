@@ -22,7 +22,7 @@ omdbfetch = (arg, cb) ->
     if js and not js.Error
       cb(js)
     else
-      say('(%d) %s', js.code, js.Error)
+      say('%s', js.Error)
 
 omdb = (source, destination, arg) =>
   omdbfetch arg, (js) ->
