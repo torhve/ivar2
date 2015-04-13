@@ -1,4 +1,4 @@
-local dbi = require 'DBI'
+local DBI = require 'DBI'
 local util = require'util'
 require'logging.console'
 local log = logging.console()
@@ -8,7 +8,7 @@ local conn = false
 
 
 -- Open connection to the postgresql database using DBI lib and ivar2 global config
-local connect = function() 
+local connect = function()
     local dbh, err = DBI.Connect('PostgreSQL', ivar2.config.dbname, ivar2.config.dbuser, ivar2.config.dbpass, ivar2.config.dbhost, ivar2.config.dbport)
     if not dbh then
         log:error("Unable to connect to DB: %s", err)
@@ -59,7 +59,7 @@ local function extract_youtube_id(str)
 end
 
 -- check for existing url
-local checkOlds = function(dbh, source, destination, url) 
+local checkOlds = function(dbh, source, destination, url)
 
     -- create a select handle
     local query = [[
@@ -78,10 +78,9 @@ local checkOlds = function(dbh, source, destination, url)
     -- Check for youtube ID
     local vid = extract_youtube_id(url)
     if vid ~= nil then
-        local pattern = 'youtu*be(.com)v='..vid;
         url = '%youtube.com%v='..vid..'%'
     end
-    local url = url_to_pattern(url)
+    url = url_to_pattern(url)
     local sth = assert(dbh:prepare(query))
 
     -- execute select with a url bound to variable
@@ -92,7 +91,6 @@ local checkOlds = function(dbh, source, destination, url)
 
     local count = 0
     local nick
-    local when
     local ago
 
     -- iterate over the returned data
@@ -103,10 +101,8 @@ local checkOlds = function(dbh, source, destination, url)
         -- passing it true returns a table indexed by
         -- column names
         if count == 1 then
-            when = row[1]
             ago = row[2]
             nick = row[3]
-            when = when .. ', ' .. ago .. ' ago'
             return nick, count, ago
         end
     end
@@ -128,15 +124,16 @@ local dbLogUrl = function(dbh, source, destination, url, msg)
     local insert = dbh:prepare('INSERT INTO urls(nick,channel,url,message) values(?,?,?,?)')
 
     -- execute the handle with bind parameters
-    local stmt, err = insert:execute(nick, destination, url, msg)
+    insert:execute(nick, destination, url, msg)
 
     -- commit the transaction
     dbh:commit()
-    
+
     --local ok = dbh:close()
 end
+
 do
-	return function(source, destination, queue, msg)
+    return function(source, destination, queue, msg)
         local dbh = openDb()
         local nick, count, ago = checkOlds(dbh, source, destination, queue.url)
         dbLogUrl(dbh, source, destination, queue.url, msg)
