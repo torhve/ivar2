@@ -1,4 +1,5 @@
 local dbi = require 'DBI'
+local util = require'util'
 require'logging.console'
 local log = logging.console()
 
@@ -146,6 +147,8 @@ do
         -- Check if this module is disabled and just stop here if it is
         if not ivar2:IsModuleDisabled('olds', destination) then
             local prepend
+            -- We don't need to highlight the first linker
+            nick = util.nonickalertword(nick)
             if(count > 1) then
                 prepend = string.format("Olds! %s times, first by %s %s", count, nick, ago)
             else
