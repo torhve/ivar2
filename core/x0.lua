@@ -10,7 +10,7 @@ return function(url, callback)
 	end
 
 	util.simplehttp(
-		'https://xt.gg/url?url=' .. url,
+		'https://xt.gg/url?url=' .. util.urlEncode(url),
 		function(data, url)
 			data = util.json.decode(data).url
 			x0["x0:" .. url] = data
