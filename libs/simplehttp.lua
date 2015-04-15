@@ -85,7 +85,7 @@ local function simplehttp(url, callback, stream, limit, visited)
 		end,
 
 		on_finished = function(request, response)
-			if(response.status_code == 301 or response.status_code == 302) then
+			if(response.status_code == 301 or response.status_code == 302 or response.status_code == 303) then
 				local location = response.headers.Location
 				if(location:sub(1, 4) ~= 'http') then
 					local info = uri_parse(url)
