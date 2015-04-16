@@ -397,7 +397,7 @@ function ivar2:Privmsg(destination, format, ...)
 	ivar2.more[destination] = extra
 	-- Check if bot should use NOTICE instead of PRIVMSG
 	local channel = self.config.channels[destination]
-	if self.config.notice or (channel and channel.notice) then
+	if self.config.notice or (type(channel) == "table" and channel.notice) then
 		return self:Notice(destination, message)
 	end
 	self:SimpleDispatch('PRIVMSG_OUT', message, {nick=self.config.nick}, destination)
