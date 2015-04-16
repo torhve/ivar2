@@ -827,6 +827,7 @@ function ivar2:Reload()
 		message.event = self.event
 		-- Reload utils
 		package.loaded.util = nil
+		package.loaded.simplehttp = nil
 		message.util = require'util'
 		-- Reload irclib
 		package.loaded.irc = nil
