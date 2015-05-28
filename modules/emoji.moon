@@ -1,3 +1,4 @@
+util = require 'util'
 emojis =
   emoticons:'😀😁😂😃😄😅😆😇😈😉😊😋😌😍😎😏
     😐😑😒😓😔😕😖😗😘😙😚😛😜😝😞😟
@@ -83,3 +84,10 @@ PRIVMSG:
     say table.concat(out, ', ')
   '^%pemoji (.+)$': (source, dest, cat) =>
     say emojis[cat]
+  '^%pem8ball(.+)$': (source, dest, arg) =>
+    out = {}
+    for cat, str in pairs emojis
+      for uchar in util.utf8.chars(str)
+        table.insert out, uchar
+    choice = math.random(1, #out)
+    say out[choice]
