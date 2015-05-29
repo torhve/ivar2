@@ -1,4 +1,4 @@
-local date = require'date'
+local date = require'idate'
 local os = require'os'
 local ndp = require'ndp' -- http://code.matthewwild.co.uk/ndp/
 

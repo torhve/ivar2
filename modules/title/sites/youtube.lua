@@ -1,7 +1,7 @@
 local util = require'util'
 local simplehttp = util.simplehttp
 local json = util.json
-local date = require'date'
+local date = require'idate'
 
 local parseDuration
 do

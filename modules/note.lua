@@ -1,4 +1,4 @@
-local date = require'date'
+local date = require'idate'
 local notes = ivar2.persist
 
 local handleOutput = function(self, source, destination)

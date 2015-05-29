@@ -2,7 +2,7 @@ local util = require'util'
 local simplehttp = util.simplehttp
 local urlEncode = util.urlEncode
 local html2unicode = require'html'
-local date = require'date'
+local date = require'idate'
 
 local monthName = {
 	Jan = '01',
