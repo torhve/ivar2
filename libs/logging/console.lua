@@ -10,6 +10,8 @@
 local logging = require"logging"
 
 function logging.console(logPattern)
+	-- Use line buffering
+	io.stdout:setvbuf("line") 
 	return logging.new( function(self, level, message)
 		io.stdout:write(logging.prepareLogMsg(logPattern, os.date(), level, message))
 		return true
