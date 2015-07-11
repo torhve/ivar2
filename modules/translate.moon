@@ -91,7 +91,7 @@ buildQueryStr = (tbl) ->
     table.insert out, k..'='..urlEncode(v)
   table.concat out, '&'
 
-translate = (origin, target, term, cb) ->
+google_translate = (origin, target, term, cb) ->
   origin = getCode(origin) or 'auto'
   target = getCode(target) or 'en'
   args =
@@ -109,8 +109,10 @@ translate = (origin, target, term, cb) ->
   simplehttp {
     url:"http://translate.google.com/translate_a/t?" .. buildQueryStr(args)
     headers: {
-      "User-Agent": "Mozilla/5.0"
+      "DNT": "1"
+      "User-Agent": "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:41.0) Gecko/20100101 Firefox/41.0"
       "Accept-Charset": "UTF-8"
+      "Accept-Language":"nn-NO,nn;q=0.9,no-NO;q=0.8,no;q=0.6,nb-NO;q=0.5,nb;q=0.4,en-US;q=0.3,en;q=0.1"
     }
   }, (data) ->
     if #data > 4
@@ -119,6 +121,19 @@ translate = (origin, target, term, cb) ->
       out = table.concat [k.trans for k in *parsed.sentences]
       if #out > 0
         cb(out)
+
+translate = (origin, target, term, cb) ->
+  origin = getCode(origin) or 'auto'
+  target = getCode(target) or 'en'
+  args =
+    q: term
+    langpair: "#{origin}|#{target}"
+  simplehttp {
+    url:"http://mymemory.translated.net/api/get?" .. buildQueryStr(args)
+  }, (data) ->
+    parsed = json.decode data
+    cb parsed.responseData.translatedText
+
 
 PRIVMSG:
   '^%ptranslate ([%w%-]+) ([%w%-]+) (.*)$': (source, destination, origin, target, term) =>
