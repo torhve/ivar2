@@ -54,6 +54,8 @@ remap = (map, s) ->
   table.concat [map[s\sub(i,i)] or s\sub(i,i) for i=1, #s], ''
 
 zalgo = (text, intensity=50) ->
+  -- Limit text to prevent DoS
+  text = text\sub(1,512)
   zalgo_chars = {}
   for i=0x0300, 0x036f
     zalgo_chars[i-0x2ff] = unichr(i)
