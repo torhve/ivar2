@@ -28,6 +28,8 @@ local util = require 'util'
 local lconsole = require'logging.console'
 local json = util.json
 
+local polling_interval = 30
+
 local log = lconsole()
 
 local safeFormat = function(format, ...)
@@ -144,7 +146,6 @@ function MatrixServer:Log(level, ...)
 end
 
 function MatrixServer:http(url, post, cb)
-    print( url)
     local homeserver_url = self.config.uri
     homeserver_url = homeserver_url .. "_matrix/client/api/v1"
     url = homeserver_url .. url
@@ -166,8 +167,6 @@ end
 
 function MatrixServer:http_cb(command)
     return function(data)
-        print(command)
-        print (data)
         -- Protected call in case of JSON errors
         local success, js = pcall(json.decode, data)
         if not success then
@@ -238,7 +237,7 @@ function MatrixServer:http_cb(command)
             self:poll()
             -- Timer used in cased of errors to restart the polling cycle
             -- During normal operation the polling should re-invoke itself
-            self.polltimer = self:Timer('_poll', 30, 30, function()
+            self.polltimer = self:Timer('_poll', polling_interval+5, polling_interval+5, function()
                 self:poll()
             end)
             self:LoadModules()
@@ -446,14 +445,16 @@ function MatrixServer:Timer(id, interval, repeat_interval, callback)
 end
 
 function MatrixServer:poll()
-    if self.connected == false or self.polling then
+	self:Log('info', 'Polling for events')
+    if (self.connected == false or self.polling)
+          and not ((os.time() - self.polltime) > (polling_interval+5)) then
         return
     end
     self.polling = true
-    self.polltime = os.clock()
+    self.polltime = os.time()
     local data = urllib.urlencode({
         access_token = self.access_token,
-        timeout = 1000*30,
+        timeout = 1000*polling_interval,
         from = self.end_token
     })
     self:http('/events?'..data, {}, self:http_cb'/events')
