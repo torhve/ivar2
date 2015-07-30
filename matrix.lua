@@ -237,8 +237,8 @@ function MatrixServer:http_cb(command)
             self:poll()
             -- Timer used in cased of errors to restart the polling cycle
             -- During normal operation the polling should re-invoke itself
-            self.polltimer = self:Timer('_poll', polling_interval+5, polling_interval+5, function()
-                self:poll()
+            self.polltimer = self:Timer('_poll', polling_interval+1, polling_interval+1, function()
+                self:pollcheck()
             end)
             self:LoadModules()
         elseif command:find'messages' then
@@ -444,12 +444,19 @@ function MatrixServer:Timer(id, interval, repeat_interval, callback)
     return timer
 end
 
+function MatrixServer:pollcheck()
+    -- Restarts the polling sequence in case it errored out somewhere
+    if ((os.time() - self.polltime) > (polling_interval)) then
+        self:Log('warning', 'Resetting polling status!')
+        self.polling = false
+    end
+end
+
 function MatrixServer:poll()
-	self:Log('info', 'Polling for events')
-    if (self.connected == false or self.polling)
-          and not ((os.time() - self.polltime) > (polling_interval+5)) then
+    if (self.connected == false or self.polling) then
         return
     end
+	self:Log('info', 'Polling for events with end token: %s', self.end_token)
     self.polling = true
     self.polltime = os.time()
     local data = urllib.urlencode({
