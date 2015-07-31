@@ -715,6 +715,7 @@ function MatrixServer:LoadModules()
 end
 
 function MatrixServer:DispatchCommand(command, argument, source, destination)
+    self:Log('info', '%s %s <%s> %s', command, destination, source.mask, argument)
     local events = self.events
     if(not events[command]) then return end
 
