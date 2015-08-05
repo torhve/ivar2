@@ -25,7 +25,7 @@ listPatterns = (source, destination, moduleName) =>
     table.insert out, patt
 
   if #out > 0
-    say "%s patterns: %s", moduleName, table.concat(out, ', ')
+    say "%s patterns:\n %s", moduleName, table.concat(out, ',\n ')
 
 PRIVMSG:
   '^%plist$': listModules
