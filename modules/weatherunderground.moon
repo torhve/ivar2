@@ -12,8 +12,7 @@ unless key
   return {}
 
 geoApiBase = 'http://api.geonames.org/searchJSON?name=%s&featureClass=P&username=haste'
-wugeolookupurl = 'http://api.wunderground.com/api/%s/geolookup/q/59.788,5.7218.json'
-language = 'NO'
+language = 'EN'
 
 tempColor = (v) ->
   v = tonumber(v)
@@ -97,7 +96,7 @@ lookupConditions = (source, destination, input, pws) =>
 
       time = os.date('%H:%M', tonumber(current.observation_epoch))
 
-      @Msg 'privmsg', destination, source, '%s, %s °C (følt %s °C), %s %s, %s mm, (%s, %s)', weather, tempColor(temp), tempColor(feelsLike), windDirection, windSpeedname, rain, city, time
+      @Msg 'privmsg', destination, source, '%s, %s °C (feels like %s °C), %s %s, %s mm, (%s, %s)', weather, tempColor(temp), tempColor(feelsLike), windDirection, windSpeedname, rain, city, time
 
 lookupConditionsPWS = (source, destination, input) =>
   lookupConditions(@, source, destination, input, true)
