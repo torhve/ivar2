@@ -198,7 +198,7 @@ function MatrixServer:http_cb(command)
             for _, chunk in pairs(js['messages']['chunk']) do
                 myroom:parseChunk(chunk, true, 'messages')
             end
-        elseif command:find'initialSync' then
+        elseif command:find'v1/initialSync' then
             -- Start with setting the global presence variable on the server
             -- so when the nicks get added to the room they can get added to
             -- the correct nicklist group according to if they have presence
@@ -243,7 +243,6 @@ function MatrixServer:http_cb(command)
             self:LoadModules()
             -- Auto join configured channels
             for channel, data in next, self.config.channels do
-                print('_*_', channel, self.channels[channel])
                 if not self.channels[channel] then
                     self:Join(channel)
                 end
@@ -393,7 +392,7 @@ function MatrixServer:initial_sync()
         access_token = self.access_token,
         limit = 0, -- dont want backlog
     })
-    self:http('/initialSync?'..data, {}, self:http_cb'/initialSync')
+    self:http('/initialSync?'..data, {}, self:http_cb'v1/initialSync')
 end
 
 function MatrixServer:getMessages(room_id)
@@ -415,7 +414,7 @@ function MatrixServer:Join(room)
 
     self:Log('info', 'Joining room %s', room)
     self:http('/join/' .. urllib.quote(room)..'?access_token='..self.access_token,
-      {}, self:http_cb'/join/')
+        {customrequest = 'POST'}, self:http_cb'/join/')
 end
 
 function MatrixServer:part(room)
@@ -734,26 +733,24 @@ function MatrixServer:SimpleDispatch(command, argument, source, destination)
     local events = self.events
 	if(not events[command]) then return end
 
-	if(source) then source = self:ParseMask(source) end
-
-	for moduleName, moduleTable in next, events[command] do
-		if(not self:IsModuleDisabled(moduleName, destination)) then
-			for pattern, callback in next, moduleTable do
-				local success, message
-				if(type(pattern) == 'number' and source) then
-					success, message = pcall(callback, self, source, destination, argument)
-				else
-					local channelPattern = self:ChannelCommandPattern(pattern, moduleName, destination)
-					if(argument:match(channelPattern)) then
-						success, message = pcall(callback, self, source, destination, argument)
-					end
-				end
-				if(not success and message) then
-					self:Log('error', 'Unable to execute handler %s from %s: %s', pattern, moduleName, message)
-				end
-			end
-		end
-	end
+    for moduleName, moduleTable in next, events[command] do
+        if(not self:IsModuleDisabled(moduleName, destination)) then
+            for pattern, callback in next, moduleTable do
+                local success, message
+                if(type(pattern) == 'number' and source) then
+                    success, message = pcall(callback, self, source, destination, argument)
+                else
+                    local channelPattern = self:ChannelCommandPattern(pattern, moduleName, destination)
+                    if(argument:match(channelPattern)) then
+                        success, message = pcall(callback, self, source, destination, argument)
+                    end
+                end
+                if(not success and message) then
+                    self:Log('error', 'Unable to execute handler %s from %s: %s', pattern, moduleName, message)
+                end
+            end
+        end
+    end
 end
 
 function MatrixServer:DispatchCommand(command, argument, source, destination)
@@ -1102,17 +1099,16 @@ function Room:parseChunk(chunk, backlog, chunktype)
         elseif chunk['content']['membership'] == 'invite' then
             if chunk.state_key == self.user_id and
                 (not backlog and chunktype=='messages') then
-                if w.config_get_plugin('autojoin_on_invite') == 'on' then
-                    self:Join(self.identifier)
-                    self:addNick(chunk.user_id)
-                    mprint(('%s invited you'):format(
-                    chunk.user_id))
+                if tableHasValue(self.config.owners, chunk.user_id) then
+                    self.conn:Join(self.identifier)
+                    print(('%s invited you'):format(
+                      chunk.user_id))
                 else
-                    mprint(('You have been invited to join room %s by %s.')
-                    :format(
-                    self.identifier,
-                    chunk.user_id,
-                    self.identifier))
+                    print(('You have been invited to join room %s by %s.')
+                      :format(
+                      self.identifier,
+                      chunk.user_id,
+                      self.identifier))
                 end
             end
         end
