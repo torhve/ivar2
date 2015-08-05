@@ -211,5 +211,5 @@ PRIVMSG:
     say generateArgument()
   '^%pinsult (.+)$': (source, destination, arg) =>
     say arg..": "..generateArgument()
-  '%pminsult (.+)$': martinLutherInsult
-  '%psinsult (.+)$': shaker
+  '^%pminsult (.+)$': martinLutherInsult
+  '^%psinsult (.+)$': shaker
