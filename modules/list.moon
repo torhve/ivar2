@@ -21,6 +21,7 @@ listPatterns = (source, destination, moduleName) =>
     -- Make them prettier
     patt = patt\gsub('%^%%p', '!')
     patt = patt\gsub('%$$', '')
+    patt = patt\gsub('^%^', '')
     table.insert out, patt
 
   if #out > 0
@@ -29,3 +30,5 @@ listPatterns = (source, destination, moduleName) =>
 PRIVMSG:
   '^%plist$': listModules
   '^%plist (%w+)$': listPatterns
+  '^%phelp$': listModules
+  '^%phelp (%w+)$': listPatterns
