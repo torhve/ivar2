@@ -241,6 +241,13 @@ function MatrixServer:http_cb(command)
                 self:pollcheck()
             end)
             self:LoadModules()
+            -- Auto join configured channels
+            for channel, data in next, self.config.channels do
+                print('_*_', channel, self.channels[channel])
+                if not self.channels[channel] then
+                    self:Join(channel)
+                end
+            end
         elseif command:find'messages' then
         elseif command:find'/join/' then
             -- We came from a join command, fecth some messages
@@ -400,16 +407,15 @@ function MatrixServer:getMessages(room_id)
         :format(urllib.quote(room_id), data), {}, self:http_cb'messages')
 end
 
-function MatrixServer:join(room)
+function MatrixServer:Join(room)
     if not self.connected then
         --XXX'''
         return
     end
 
     self:Log('info', 'Joining room %s', room)
-    room = urllib.quote(room)
-    self:http('/join/' .. room,
-        {postfields= "access_token="..self.access_token}, self:http_cb'/join/')
+    self:http('/join/' .. urllib.quote(room)..'?access_token='..self.access_token,
+      {}, self:http_cb'/join/')
 end
 
 function MatrixServer:part(room)
@@ -515,7 +521,9 @@ end
 
 function MatrixServer:Say(destination, source, ...)
     local room = self:findRoom(destination)
-    self:_msg(room.identifier, safeFormat(...))
+    local body = safeFormat(...)
+    self:SimpleDispatch('PRIVMSG_OUT', body, {nick=self.config.nick}, destination)
+    self:_msg(room.identifier, body)
 end
 
 function MatrixServer:Reply(destination, source, format, ...)
@@ -893,9 +901,16 @@ function Room:setName(name)
     if not name or name == '' or name == json.null then
         return
     end
+    if(not self.conn.channels[name]) then
+        self.conn:Log('info', 'Adding room <%s>', name)
+        self.conn.channels[name] = {
+            nicks = {},
+            modes = {},
+        }
+    end
 end
 
-function Room:topic(topic)
+function Room:Topic(topic)
     self.conn:state(self.identifier, 'm.room.topic', {topic=topic})
 end
 
@@ -1040,7 +1055,8 @@ function Room:parseChunk(chunk, backlog, chunktype)
     elseif chunk['type'] == 'm.room.name' then
         local name = chunk['content']['name']
         if name ~= '' or name ~= json.null then
-            self:setName(name)
+            self.conn:Log('warn', 'Ignoring chunk with room name: %s', name)
+            --self:setName(name)
         end
     elseif chunk['type'] == 'm.room.member' then
         if chunk['content']['membership'] == 'join' then
@@ -1084,12 +1100,20 @@ function Room:parseChunk(chunk, backlog, chunktype)
                 --w.print_date_tags(self.buffer, time_int, tags(), data)
             end
         elseif chunk['content']['membership'] == 'invite' then
-            if not is_self then -- Check if we were the one inviting
-                print(('You have been invited to join room %s by %s. Type /join %s to join.')
+            if chunk.state_key == self.user_id and
+                (not backlog and chunktype=='messages') then
+                if w.config_get_plugin('autojoin_on_invite') == 'on' then
+                    self:Join(self.identifier)
+                    self:addNick(chunk.user_id)
+                    mprint(('%s invited you'):format(
+                    chunk.user_id))
+                else
+                    mprint(('You have been invited to join room %s by %s.')
                     :format(
-                      self.identifier,
-                      chunk.content.creator,
-                      self.identifier))
+                    self.identifier,
+                    chunk.user_id,
+                    self.identifier))
+                end
             end
         end
     elseif chunk['type'] == 'm.room.create' then
@@ -1116,7 +1140,7 @@ function Room:parseChunk(chunk, backlog, chunktype)
         end
     elseif chunk['type'] == 'm.presence' then
     elseif chunk['type'] == 'm.room.aliases' then
-        -- Use first alias, weechat doesn't really support multiple  aliases
+        -- Use first alias
         self:setName(chunk.content.aliases[1])
     else
         print 'unknown chunk'
