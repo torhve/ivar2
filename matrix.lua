@@ -406,7 +406,7 @@ function MatrixServer:join(room)
         return
     end
 
-    print('\tJoining room '..room)
+    self:Log('info', 'Joining room %s', room)
     room = urllib.quote(room)
     self:http('/join/' .. room,
         {postfields= "access_token="..self.access_token}, self:http_cb'/join/')
@@ -447,7 +447,7 @@ end
 function MatrixServer:pollcheck()
     -- Restarts the polling sequence in case it errored out somewhere
     if ((os.time() - self.polltime) > (polling_interval)) then
-        self:Log('warning', 'Resetting polling status!')
+        self:Log('info', 'Resetting polling status!')
         self.polling = false
     end
 end
@@ -498,13 +498,18 @@ end
 
 function MatrixServer:Privmsg(destination, source, ...)
     local room = self:findRoom(destination)
-    self:_msg(room.identifier, safeFormat(...))
+    local body = safeFormat(...)
+    self:SimpleDispatch('PRIVMSG_OUT', body, {nick=self.config.nick}, destination)
+    self:_msg(room.identifier, body)
 end
 
 function MatrixServer:Msg(msgtype, destination, source, ...)
     local room = self:findRoom(destination)
     if(room) then
-        self:_msg(room.identifier, safeFormat(...))
+        local body = safeFormat(...)
+
+        self:SimpleDispatch('PRIVMSG_OUT', body, {nick=self.config.nick}, destination)
+        self:_msg(room.identifier, body)
     end
 end
 
@@ -554,6 +559,7 @@ function MatrixServer:send()
             data.postfields.format = 'org.matrix.custom.html'
             data.postfields.formatted_body = htmlbody
         end
+
 
         data.postfields = json.encode(data.postfields)
 
@@ -712,6 +718,34 @@ function MatrixServer:LoadModules()
             self:LoadModule(moduleName)
         end
     end
+end
+
+function MatrixServer:SimpleDispatch(command, argument, source, destination)
+	-- Function that dispatches commands in the events table without
+	-- splitting arguments and setting up function environment
+    local events = self.events
+	if(not events[command]) then return end
+
+	if(source) then source = self:ParseMask(source) end
+
+	for moduleName, moduleTable in next, events[command] do
+		if(not self:IsModuleDisabled(moduleName, destination)) then
+			for pattern, callback in next, moduleTable do
+				local success, message
+				if(type(pattern) == 'number' and source) then
+					success, message = pcall(callback, self, source, destination, argument)
+				else
+					local channelPattern = self:ChannelCommandPattern(pattern, moduleName, destination)
+					if(argument:match(channelPattern)) then
+						success, message = pcall(callback, self, source, destination, argument)
+					end
+				end
+				if(not success and message) then
+					self:Log('error', 'Unable to execute handler %s from %s: %s', pattern, moduleName, message)
+				end
+			end
+		end
+	end
 end
 
 function MatrixServer:DispatchCommand(command, argument, source, destination)
@@ -1152,6 +1186,11 @@ end
 
 function Room:invite(id)
     self.conn:invite(self.identifier, id)
+end
+
+if reload then
+    -- TODO implement conf/code reload
+    return ivar2
 end
 
 local config = assert(loadfile(configFile))()
