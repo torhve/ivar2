@@ -855,6 +855,37 @@ function MatrixServer:ChannelCommandPattern(pattern, moduleName, destination)
     return (pattern:gsub('%^%%p', '%^'..npattern))
 end
 
+-- Let modules register commands
+function MatrixServer:RegisterCommand(handlerName, pattern, handler, event)
+    local events = self.events
+    -- Default event is PRIVMSG
+    if(not event) then
+        event = 'PRIVMSG'
+    end
+    local env = {
+        ivar2 = self,
+        package = package,
+    }
+    setmetatable(env, {__index = _G })
+    setfenv(handler, env)
+    self:Log('info', 'Registering new pattern: %s, in command %s.', pattern, handlerName)
+
+    if(not events[event][handlerName]) then
+        events[event][handlerName] = {}
+    end
+    events[event][handlerName][pattern] = handler
+end
+
+function MatrixServer:UnregisterCommand(handlerName, pattern, event)
+    local events = self.events
+    -- Default event is PRIVMSG
+    if(not event) then
+        event = 'PRIVMSG'
+    end
+    events[event][handlerName][pattern] = nil
+    self:Log('info', 'Clearing command with pattern: %s, in module %s.', pattern, handlerName)
+end
+
 Room.create = function(obj, conn)
     local room = {}
     setmetatable(room, Room)
