@@ -31,7 +31,8 @@ local parseData = function(self, source, destination, data, search)
 				-- Check for search string in game or channel name
 				-- since twitch search API also does title search
 				if this.channel.display_name:lower():match(search:lower())
-					or this.game:lower():match(search:lower()) then
+					or (this.game ~= json.null
+					and this.game:lower():match(search:lower())) then
 					table.insert(streams, this)
 				end
 			else
