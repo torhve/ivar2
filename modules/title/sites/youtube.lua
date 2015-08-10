@@ -60,6 +60,10 @@ local fetchInformation = function(queue, vid)
 			local title = video.snippet.title
 			local uploader = video.snippet.channelTitle
 			local duration = date.relativeDuration(parseDuration(video.contentDetails.duration))
+			local live = video.snippet.liveBroadcastContent and video.snippet.liveBroadcastContent == 'live'
+			if live then -- Live videos doesn't have duration, so overload this field
+				duration = 'LIVE'
+			end
 			local views = siValue(video.statistics.viewCount)
 			local likeCount = siValue(video.statistics.likeCount)
 			local dislikeCount = siValue(video.statistics.dislikeCount)
