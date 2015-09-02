@@ -333,6 +333,7 @@ function ivar2:Send(format, ...)
 
 		self:Log('debug', message)
 
+		self.timeout:again(self.Loop)
 		self.socket:send(message .. '\r\n')
 	end
 end
