@@ -11,7 +11,7 @@ metacolor = (score) ->
   if not tonumber(score) then return score
   if tonumber(score) >= 60
     return util.green(string.format("%s%%", score))
-  elseif tonumber(score) => 40
+  elseif tonumber(score) >= 40
     return util.yellow(string.format("%s%%", score))
   else
     return util.red(string.format("%s%%", score))
