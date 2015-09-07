@@ -51,7 +51,7 @@ svada = {
   {"Under henvisning til","en trendsettende","purrerutine","synliggjøres","kompensasjonen","i forlengelsen av","konsekvensaspektet"},
   {"Under henvisning til","en effektbasert","avdelingskultur","realiseres","sluttilstanden","utenom","operasjonen"},
   {"På grunnlag av","en operativ","doktrine","omsettes","hensikten","i forlengelsen av","kommandonivået"},
-  {"Med bakrunn i","en fellesoperativ","kommando","implementeres","virkefeltet","innenfor","kampanjeplanen"},
+  {"Med bakgrunn i","en fellesoperativ","kommando","implementeres","virkefeltet","innenfor","kampanjeplanen"},
   {"Gitt","en militærstrategisk","operasjonsdimensjon","reflekteres","samvirket","i utnyttelsen av","profesjonen"},
   {"Avhengig av","en taktisk","manøver","utvikles","kommandokjeden","ut fra","forsvarsgrenen"},
   {"Sett i lys av","en stridsteknisk","samhandling","kjennetegnes","avskrekkingseffekten","ut over","våpengrenen"},
