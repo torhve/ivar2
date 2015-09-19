@@ -50,6 +50,7 @@ local entities = setmetatable(
 )
 
 return function(str)
+	if not str then return '' end
 	str = str:gsub("&#([x]?%x+);", function(n)
 		n = tonumber(n) or tonumber(n:sub(2), 16)
 
