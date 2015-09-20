@@ -35,6 +35,7 @@ local on_data = function(req, res, data)
 			req.fd = nixio.open(filename, 'a', 0400)
 		end
 		req.fd:write(data)
+		req.body = data
 	end
 end
 
@@ -44,6 +45,7 @@ local on_finish = function(req, handler)
 		fd:sync()
 		fd:close()
 	end
+	-- Check size of tmpfile, if it's small, read into memory
 	return handler
 end
 
