@@ -241,7 +241,7 @@ ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) ->
   <body>
   <div class="content">
   <h3>Share to IRC app - ]]..unescaped_channel..[[ edition</h3>
-    <p>Fill in your nick/name and optional text and then click on one of the two yellow buttons to attach image. It will appear instantly on IRC!</p
+    <p>Fill in your nick/name and optional text and then click on one of the two yellow buttons to attach image. It will appear instantly on IRC!</p>
     <form>
       <div class="group">
         <input id="sender" type="text" required>
@@ -334,6 +334,10 @@ ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) ->
     uploadedTransition(false);
   }
 
+  function javascript_is_nice(str) {
+    return unescape(encodeURIComponent(str));
+  }
+
   function sendMedia(el) {
     if(uploading) {
       alert('Already uploading, please wait.');
@@ -355,22 +359,35 @@ ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) ->
     var reader = new FileReader();
     reader.readAsArrayBuffer(file);
     xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
-    xhr.setRequestHeader("X-Filename", file.name);
-    xhr.setRequestHeader("X-Text", text);
-    xhr.setRequestHeader("X-Sender", sender);
+    xhr.setRequestHeader("X-Filename", javascript_is_nice(file.name));
+    xhr.setRequestHeader("X-Text", javascript_is_nice(text));
+    xhr.setRequestHeader("X-Sender", javascript_is_nice(sender));
     reader.onload = function(e) {
-      console.log(e);
       uploadsize = e.total;
       xhr.send(e.target.result);
     };
 
 
   }
+  function storeName(e) {
+    var target = e.target;
+    localStorage.setItem('sender', target.value);
+  }
   document.getElementById('capturei').addEventListener('change', sendMedia, false);
   document.getElementById('capturef').addEventListener('change', sendMedia, false);
   document.getElementById('capturev').addEventListener('change', sendMedia, false);
   // document.getElementById('capturea').addEventListener('change', sendMedia, false);
 
+
+  var name = document.getElementById('sender').value;
+  if(name == '') {
+    var stored = localStorage.getItem('sender');
+    if (stored != null) {
+      document.getElementById('sender').value = stored;
+    }
+  }
+
+  document.getElementById('sender').addEventListener('change', storeName, false);
   </script>
   </body>
   </html>
