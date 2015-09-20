@@ -20,9 +20,31 @@ local handlers = {
 local on_response_sent = function(res)
 end
 
+local on_error = function(req, res, err)
+	log:info('webserver> error: req %s, res %s, err %s', req, res, err)
+end
+
+-- Will be called for every chunk
 local on_data = function(req, res, data)
-	-- Save the body into the request
-	req.body = data or ''
+	if data then
+		-- Save the chunks into a temp file
+		if not req.fd then
+			local filename = os.tmpname()
+			-- Append mode, owner only
+			req.filename = filename
+			req.fd = nixio.open(filename, 'a', 0400)
+		end
+		req.fd:write(data)
+	end
+end
+
+local on_finish = function(req, handler)
+	-- If file upload has been in progress, close the tmpfile
+	if req.fd then
+		fd:sync()
+		fd:close()
+	end
+	return handler
 end
 
 local on_request = function(server, req, res)
@@ -31,8 +53,11 @@ local on_request = function(server, req, res)
 		if req.url:match(pattern) then
 			log:info('webserver> request for pattern :%s', pattern)
 			found = true
-			req.on_finished = handler
+			req.on_finished = on_finish(req, handler)
 			req.on_data = on_data
+			req.on_error = on_error
+			-- Stream incoming data
+			req.stream_response = true
 			break
 		end
 	end
@@ -54,8 +79,9 @@ webserver.start = function(host, port)
 	server = httpserver.new(loop, {
 		name = "ivar2-HTTPServer/0.0.1",
 		on_request = on_request,
+		--on_error = on_error,
 		request_head_timeout = 15.0,
-		request_body_timeout = 15.0,
+		request_body_timeout = 60.0, -- for file upload I guess
 		write_timeout = 15.0,
 		keep_alive_timeout = 15.0,
 		max_keep_alive_requests = 10,
