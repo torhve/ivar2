@@ -1,6 +1,7 @@
 {:simplehttp, :json, :urlEncode} = require'util'
 html2unicode = require 'html'
 nixio = require'nixio'
+fs = require'nixio.fs'
 ltn12 = require'ltn12'
 
 urlbase = '/image/'
@@ -262,9 +263,9 @@ ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) ->
     <div id="buttons">
       <label for="capturei" class="pictake" data-click="onClickTake('capturei')"><span class="icon">📷</span> Snap picture!</label> <input type="file" accept="image/*" id="capturei" capture="camera" style="visibility:hidden;">
       <label for="capturef" class="pictake" data-click="onClickTake('capturef')"><span class="icon">📂</span> Browse gallery!</label> <input type="file" accept="image/*" id="capturef" style="visibility:hidden;">
+      <label for="capturev" class="pictake" data-click="onClickTake('capturev')"><span class="icon">🎥</span> Capture video!</label> <input type="file" accept="video/*" capture="camcorder" id="capturev" style="visibility:hidden;">
     </div>
     <!--
-    <p>Share video: <input type="file" accept="video/*" id="capturev" capture="camcorder">
     <p>Share audio: <input type="file" accept="audio/*" id="capturea" capture="microphone">
     -->
     <div class="footer">
@@ -279,6 +280,8 @@ ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) ->
 
   // Global lock for uploading or not
   var uploading = false;
+  // Store file size of upload to compute progress;
+  var uploadsize = 0;
 
   function uploadingTransition() {
     uploading = true;
@@ -286,9 +289,11 @@ ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) ->
     document.getElementById('status').style.display = 'flex';
   }
 
-  function uploadedTransition() {
+  function uploadedTransition(success) {
     uploading = false;
-    document.getElementById('status').style.display = 'none';
+    if(success) {
+      document.getElementById('status').style.display = 'none';
+    }
     document.getElementById('buttons').style.display = 'flex';
   }
 
@@ -298,33 +303,35 @@ ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) ->
 
   // progress on transfers from the server to the client (downloads)
   function updateProgress (oEvent) {
+    console.log(oEvent, oEvent.loaded);
     if (oEvent.lengthComputable) {
       var percentComplete = oEvent.loaded / oEvent.total;
       document.getElementById('uploadprogress').textContent = "Uploading. Percent complete: " + percentComplete + ' %';
       // ...
     } else {
-      // Unable to compute progress information since the total size is unknown
+      var percentComplete = oEvent.loaded / uploadsize;
+      document.getElementById('uploadprogress').textContent = "Uploading. Percent complete: " + percentComplete + ' %';
     }
   }
 
   function transferComplete(evt) {
     console.log("The transfer is complete.");
     document.getElementById('uploadprogress').textContent = "Transfer complete!"
-    uploadedTransition();
+    uploadedTransition(true);
   }
 
   function transferFailed(evt) {
     var msg = "An error occurred while transferring the file."
     document.getElementById('uploadprogress').textContent = msg;
     console.log(msg);
-    uploadedTransition();
+    uploadedTransition(false);
   }
 
   function transferCanceled(evt) {
     var msg = "The transfer has been canceled by the user.";
     document.getElementById('uploadprogress').textContent = msg;
     console.log(msg);
-    uploadedTransition();
+    uploadedTransition(false);
   }
 
   function sendMedia(el) {
@@ -352,6 +359,8 @@ ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) ->
     xhr.setRequestHeader("X-Text", text);
     xhr.setRequestHeader("X-Sender", sender);
     reader.onload = function(e) {
+      console.log(e);
+      uploadsize = e.total;
       xhr.send(e.target.result);
     };
 
@@ -359,8 +368,7 @@ ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) ->
   }
   document.getElementById('capturei').addEventListener('change', sendMedia, false);
   document.getElementById('capturef').addEventListener('change', sendMedia, false);
-
-  // document.getElementById('capturev').addEventListener('change', sendMedia, false);
+  document.getElementById('capturev').addEventListener('change', sendMedia, false);
   // document.getElementById('capturea').addEventListener('change', sendMedia, false);
 
   </script>
@@ -371,16 +379,18 @@ ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) ->
     fn = req.headers['X-Filename']
     sender = req.headers['X-Sender'] or ''
     text = req.headers['X-Text'] or ''
-    file = req.body
+    file = req.filename
     ivar2\Log 'info', "imageupload: Recieved file name: <#{fn}> datalen: #{#file}, sender: <#{sender}> text: <#{text}>, channel: <#{unescaped_channel}>"
     if fn and file
       html = 'Ok'
       realfn = "#{os.time!}-#{safe fn}"
       save = ->
-        fd = nixio.open "cache/images/#{realfn}", 'w+', 0400
-        written = fd\write file
-        fd\sync!
-        fd\close!
+        --fd = nixio.open "cache/images/#{realfn}", 'w+', 0400
+        --written = fd\write file
+        --fd\sync!
+        --fd\close!
+        -- Move tempfile to real location
+        fs.move req.filename, "cache/images/#{realfn}"
         if sender ~= ''
           sender = "<#{sender}> "
         msg = "[IRCSNAP] #{sender}#{text\sub(1, 100)} http://irc.lart.no:#{ivar2.config.webserverport}#{urlbase}file/#{realfn}"
