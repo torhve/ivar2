@@ -18,6 +18,10 @@ local handlers = {
 }
 
 local on_response_sent = function(res)
+	if res.filename then
+		log:info('webserver> on_response_sent: deleting tmp file: %s', res.filename)
+		nixio.fs.unlink(res.filename)
+	end
 end
 
 local on_error = function(req, res, err)
@@ -30,8 +34,10 @@ local on_data = function(req, res, data)
 		-- Save the chunks into a temp file
 		if not req.fd then
 			local filename = os.tmpname()
-			-- Append mode, owner only
 			req.filename = filename
+			-- Save filename in request so it can be cleaned up in on_response_sent
+			res.filename = filename
+			-- Append mode, owner only
 			req.fd = nixio.open(filename, 'a', 0400)
 		end
 		req.fd:write(data)
@@ -60,6 +66,7 @@ local on_request = function(server, req, res)
 			req.on_error = on_error
 			-- Stream incoming data
 			req.stream_response = true
+			res.on_response_sent = on_response_sent
 			break
 		end
 	end
@@ -70,7 +77,6 @@ local on_request = function(server, req, res)
 			res:send()
 		end
 	end
-	res.on_response_sent = on_response_sent
 end
 
 webserver.start = function(host, port)
