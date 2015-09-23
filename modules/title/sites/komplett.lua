@@ -30,15 +30,15 @@ local handler = function(queue, info)
 				end
 
 				local out = {}
-				local name = data:match('<h1 class="main%-header" itemprop="name">([^<]+)</h1>')
-				local desc = data:match('<h3 class="secondary%-header" itemprop="description">([^<]+)</h3>')
-				local price = data:match('<span itemprop="price"[^>]+>([^<]+)</span>')
-				local storage = data:match('<span class="stock%-details">(.-)</span>')
-				local bomb = data:match('<div class="bomb">.-<div class="value">([^<]+)</div>')
+				local name = data:match('<h1 class="product%-main%-info%-webtext1" itemprop="name">([^<]+)</h1>')
+				local desc = data:match('<h2 class="product%-main%-info%-webtext2" itemprop="description">([^<]+)</h2>')
+				local price = data:match('<span class="product%-price%-now" itemprop=price content=.->([^<]+)</span>')
+				local storage = data:match('<span class="stockstatus%-stock%-details">([^<]+)</span>')
+				local bomb = data:match('<span.-class="prodpage-discount-label".->([^<]+)</span>')
 
-				ins(out, '\002%s\002: ', html2unicode(name))
+				ins(out, '\002%s\002: ', html2unicode(trim(name)))
 				if(desc) then
-					ins(out, '%s ,', html2unicode(desc))
+					ins(out, '%s ,', html2unicode(trim(desc)))
 				end
 
 				if(price) then
