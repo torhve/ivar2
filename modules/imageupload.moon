@@ -241,7 +241,7 @@ ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) ->
   <body>
   <div class="content">
   <h3>Share to IRC app - ]]..unescaped_channel..[[ edition</h3>
-    <p>Fill in your nick/name and optional text and then click on one of the two yellow buttons to attach image. It will appear instantly on IRC!</p>
+    <p>Fill in your nick/name and optional text and then click on one of the yellow buttons to attach image. It will appear instantly on IRC!</p>
     <form>
       <div class="group">
         <input id="sender" type="text" required>
@@ -264,6 +264,7 @@ ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) ->
       <label for="capturei" class="pictake" data-click="onClickTake('capturei')"><span class="icon">📷</span> Snap picture!</label> <input type="file" accept="image/*" id="capturei" capture="camera" style="visibility:hidden;">
       <label for="capturef" class="pictake" data-click="onClickTake('capturef')"><span class="icon">📂</span> Browse gallery!</label> <input type="file" accept="image/*" id="capturef" style="visibility:hidden;">
       <label for="capturev" class="pictake" data-click="onClickTake('capturev')"><span class="icon">🎥</span> Capture video!</label> <input type="file" accept="video/*" capture="camcorder" id="capturev" style="visibility:hidden;">
+      <label for="capturevf" class="pictake" data-click="onClickTake('capturevf')"><span class="icon">🎥</span> Upload video!</label> <input type="file" accept="video/*" id="capturevf" style="visibility:hidden;">
     </div>
     <!--
     <p>Share audio: <input type="file" accept="audio/*" id="capturea" capture="microphone">
@@ -376,6 +377,7 @@ ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) ->
   document.getElementById('capturei').addEventListener('change', sendMedia, false);
   document.getElementById('capturef').addEventListener('change', sendMedia, false);
   document.getElementById('capturev').addEventListener('change', sendMedia, false);
+  document.getElementById('capturevf').addEventListener('change', sendMedia, false);
   // document.getElementById('capturea').addEventListener('change', sendMedia, false);
 
 
