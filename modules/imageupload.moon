@@ -102,6 +102,7 @@ ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) ->
     margin: 0px auto;
     width: 100%;
     align-items: stretch;
+    margin-bottom: 30px;
   }
   h3 {
     background-color: #8f4099;
@@ -236,6 +237,17 @@ ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) ->
     .pictake .icon {
       font-size: 2em;
     }
+  #progress {
+    display: block;
+    height: 3px;
+    background-color: #b0d0ef;
+  }
+  #bar {
+    display: block;
+    height: 3px;
+    background-color: #3a81f0;
+    width: 0%;
+  }
 
   </style>
   <body>
@@ -259,6 +271,7 @@ ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) ->
 
     <div style="display: none;" id="status">
       <p id="uploadprogress">Uploading. Percent complete: 0 %</p>
+      <div id="progress"><div id="bar"></div></div>
     </div>
     <div id="buttons">
       <label for="capturei" class="pictake" data-click="onClickTake('capturei')"><span class="icon">📷</span> Snap picture!</label> <input type="file" accept="image/*" id="capturei" capture="camera" style="visibility:hidden;">
@@ -292,9 +305,10 @@ ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) ->
 
   function uploadedTransition(success) {
     uploading = false;
+    /*
     if(success) {
       document.getElementById('status').style.display = 'none';
-    }
+    }*/
     document.getElementById('buttons').style.display = 'flex';
   }
 
@@ -304,20 +318,20 @@ ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) ->
 
   // progress on transfers from the server to the client (downloads)
   function updateProgress (oEvent) {
-    console.log(oEvent, oEvent.loaded);
+    var percentComplete;
     if (oEvent.lengthComputable) {
-      var percentComplete = oEvent.loaded / oEvent.total;
-      document.getElementById('uploadprogress').textContent = "Uploading. Percent complete: " + percentComplete + ' %';
+      percentComplete = Math.floor(oEvent.loaded*100 / oEvent.total);
       // ...
     } else {
-      var percentComplete = oEvent.loaded / uploadsize;
-      document.getElementById('uploadprogress').textContent = "Uploading. Percent complete: " + percentComplete + ' %';
+      percentComplete = Math.floor(oEvent.loaded*100 / uploadsize);
     }
+    document.getElementById('bar').style.width = percentComplete + '%';
+    document.getElementById('uploadprogress').textContent = "Uploading. Percent complete: " + percentComplete + ' %';
   }
 
   function transferComplete(evt) {
     console.log("The transfer is complete.");
-    document.getElementById('uploadprogress').textContent = "Transfer complete!"
+    document.getElementById('uploadprogress').textContent = "Upload complete!"
     uploadedTransition(true);
   }
 
@@ -354,6 +368,7 @@ ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) ->
     xhr.addEventListener("load", transferComplete);
     xhr.addEventListener("error", transferFailed);
     xhr.addEventListener("abort", transferCanceled);
+    xhr.upload.onprogress = updateProgress;
     var text = document.getElementById('text').value;
     var sender = document.getElementById('sender').value;
     xhr.open('POST', '/image/upload/?channel=]]..channel..[[', true);
@@ -363,6 +378,7 @@ ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) ->
     xhr.setRequestHeader("X-Filename", javascript_is_nice(file.name));
     xhr.setRequestHeader("X-Text", javascript_is_nice(text));
     xhr.setRequestHeader("X-Sender", javascript_is_nice(sender));
+    xhr.setRequestHeader("Transfer-Encoding", "chunked");
     reader.onload = function(e) {
       uploadsize = e.total;
       xhr.send(e.target.result);
@@ -411,8 +427,10 @@ ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) ->
         -- Move tempfile to real location
         fs.move req.filename, "cache/images/#{realfn}"
         if sender ~= ''
-          sender = "<#{sender}> "
-        msg = "[IRCSNAP] #{sender}#{text\sub(1, 100)} http://irc.lart.no:#{ivar2.config.webserverport}#{urlbase}file/#{realfn}"
+          sender = "<#{sender\sub(1, 100)}> "
+        if text ~= ''
+          text = text\sub(1, 100) .. ' '
+        msg = "[IRCSNAP] #{sender}#{text}http://irc.lart.no:#{ivar2.config.webserverport}#{urlbase}file/#{realfn}"
         ivar2\Privmsg unescaped_channel, msg
       ok, err = pcall(save)
       unless ok
