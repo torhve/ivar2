@@ -536,7 +536,8 @@ function ivar2:ChannelCommandPattern(pattern, moduleName, destination)
 	-- First check for a global pattern
 	local npattern = self.config.commandPattern or default
 	-- If a channel specific pattern exist, use it instead of the default ^%p
-	local channel = self.config.channels[destination]
+	-- Need to lowercase both in case of inconsistancies between server and client
+	local channel = self.config.channels[destination:lower()]
 
 	if(type(channel) == 'table') then
 		npattern = channel.commandPattern or npattern
