@@ -252,6 +252,9 @@ local fetchInformation = function(queue)
 	local host = info.host:gsub('^www%.', '')
 	for pattern, customHandler in next, customHosts do
 		if(host:match(pattern) and customHandler(queue, info)) then
+			-- Let the queue know it's being customhandled
+			-- Can be used in postproc to make better decisions
+			queue.customHandler = true
 			return
 		end
 	end
