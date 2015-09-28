@@ -45,10 +45,13 @@ do
     return function(source, destination, queue)
     -- Check levenshtein_distance between URL and title. It's just spammy to print title when it is already in the URL itself.
         local cutoff = ivar2.config.titleLevenshteinDistanceRatio or 0.8
-        if not queue.output or queue.output == '' then
+        if not queue.output or queue.output == '' or queue.customHandler then
             return
         end
         local ratio = levratio(queue.url, queue.output)
+		for k, v in pairs(queue) do 
+			print(k,v)
+		end
         ivar2:Log('debug', 'title/post/levenshtein: %s', ratio)
         if (ratio < cutoff) then
             queue.output = false
