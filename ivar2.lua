@@ -532,6 +532,9 @@ function ivar2:IsModuleDisabled(moduleName, destination)
 end
 
 function ivar2:ChannelCommandPattern(pattern, moduleName, destination)
+	if not destination then
+		return pattern
+	end
 	local default = '%%p'
 	-- First check for a global pattern
 	local npattern = self.config.commandPattern or default
