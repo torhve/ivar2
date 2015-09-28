@@ -9,7 +9,7 @@ unescape = (url) ->
 PRIVMSG:
   '^%paunesand': (source, destination) =>
     rnd = math.random(1,3000)
-    ivar2.util.simplehttp 'http://p3.no/uv/aune-sands-poesigenerator/?cachebuster='..rnd, (html) ->
+    ivar2.util.simplehttp 'http://p3.no/uv/aune-sands-poesigenerator/index_new.php?cachebuster='..rnd, (html) ->
       match = html\match[[<a title="Del diktet på Facebook" href="(.*)"]]
       if match
         poem = match\match[[facebookdescription=(.-)-]]
