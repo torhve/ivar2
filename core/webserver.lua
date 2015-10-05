@@ -1,8 +1,8 @@
-local util = require'util'
 local httpserver = require'handler.http.server'
 local ev = require'ev'
-require'logging.console'
-local log = logging.console()
+local nixio = require'nixio'
+local lconsole = require'logging.console'
+local log = lconsole()
 local loop = ev.Loop.default
 
 local server
@@ -48,14 +48,14 @@ end
 local on_finish = function(req, handler)
 	-- If file upload has been in progress, close the tmpfile
 	if req.fd then
-		fd:sync()
-		fd:close()
+		req.fd:sync()
+		req.fd:close()
 	end
 	-- Check size of tmpfile, if it's small, read into memory
 	return handler
 end
 
-local on_request = function(server, req, res)
+local on_request = function(cur_server, req, res)
 	local found
 	for pattern, handler in pairs(handlers) do
 		if req.url:match(pattern) then
@@ -72,9 +72,9 @@ local on_request = function(server, req, res)
 	end
 	if not found then
 		log:info('webserver> returning 404 for request: %s', req.url)
-		req.on_finished = function(req, res)
-			res:set_status(404)
-			res:send()
+		req.on_finished = function(cur_req, cur_res)
+			cur_res:set_status(404)
+			cur_res:send()
 		end
 	end
 end
