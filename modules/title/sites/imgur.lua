@@ -1,6 +1,7 @@
 local util = require'util'
 local simplehttp = util.simplehttp
 local json = util.json
+local DL_LIMIT = 2^17
 
 local headers = {
 	['Authorization'] = string.format("Client-ID %s", ivar2.config.imgurClientID)
@@ -27,6 +28,10 @@ local generateTitle = function(gallery, withURL)
 		end
 
 		table.insert(out, gallery.title)
+	end
+
+	if(type(gallery.section) == "string") then
+		table.insert(out, '['..tostring(gallery.section)..']')
 	end
 
 	local tags = {}
