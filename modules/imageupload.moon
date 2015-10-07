@@ -50,7 +50,7 @@ ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) ->
 
     return
 
-  channel = req.url\match('channel=(.+)')
+  channel = req.url\match('channel=(.+)%s*')
   unless channel
     send 'Invalid channel', 404
     return
@@ -371,7 +371,7 @@ ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) ->
     xhr.upload.onprogress = updateProgress;
     var text = document.getElementById('text').value;
     var sender = document.getElementById('sender').value;
-    xhr.open('POST', '/image/upload/?channel=]]..channel..[[', true);
+    xhr.open('POST', 'upload/?channel=]]..channel..[[', true);
     var reader = new FileReader();
     reader.readAsArrayBuffer(file);
     xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
@@ -430,7 +430,7 @@ ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) ->
           sender = "<#{sender\sub(1, 100)}> "
         if text ~= ''
           text = text\sub(1, 100) .. ' '
-        msg = "[IRCSNAP] #{sender}#{text}http://irc.lart.no:#{ivar2.config.webserverport}#{urlbase}file/#{realfn}"
+        msg = "[IRCSNAP] #{sender}#{text}#{ivar2.config.webserverprefix}#{urlbase}file/#{realfn}"
         ivar2\Privmsg unescaped_channel, msg
       ok, err = pcall(save)
       unless ok
@@ -447,6 +447,6 @@ nixio.fs.mkdir('cache/images')
 PRIVMSG:
   '^%pircsnap$': (source, destination) =>
     channel = urlEncode destination
-    say "http://irc.lart.no:#{ivar2.config.webserverport}#{urlbase}?channel=#{channel}"
+    say "#{ivar2.config.webserverprefix}#{urlbase}?channel=#{channel}"
 
 
