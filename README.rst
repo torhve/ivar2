@@ -55,9 +55,11 @@ Create a bot config sort of like this
         owners = {
             'nick!ident@my.host.name'
         },
-        webserverhost = '0.0.0.0',
+        webserverhost = '*',
         webserverport = 9000,
+        webserverprefix = 'https://my.web.proxy/', -- optional URL if bot is behind proxy
         commandPattern = "!",
+        notice = false, -- Reply with PRIVMSG instead of NOTICE
         modules = {
             'admin',
             'autojoin',
