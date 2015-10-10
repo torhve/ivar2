@@ -1,9 +1,13 @@
+-- vim: set noexpandtab:
 local httpserver = require'handler.http.server'
 local ev = require'ev'
 local nixio = require'nixio'
 local lconsole = require'logging.console'
 local log = lconsole()
 local loop = ev.Loop.default
+
+-- Keep this amount in mem before handler has to read from tmpfile
+local BODY_BUFFER_SIZE = 2^17
 
 local server
 
@@ -41,7 +45,13 @@ local on_data = function(req, res, data)
 			req.fd = nixio.open(filename, 'a', 0400)
 		end
 		req.fd:write(data)
-		req.body = data
+		if not req.body then
+			req.body = data
+		else
+			if #req.body < BODY_BUFFER_SIZE then
+				req.body = req.body .. data
+			end
+		end
 	end
 end
 
