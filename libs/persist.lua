@@ -3,8 +3,9 @@
 
 local redis = require'redis' -- luarocks install lua-redis
 local json = require 'cjson'
-require'logging.console'
-local log = logging.console()
+local lconsole = require'logging.console'
+
+local log = lconsole()
 
 -- Connect
 local function connect(opt)
