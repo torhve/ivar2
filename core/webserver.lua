@@ -104,7 +104,7 @@ webserver.start = function(host, port)
 		keep_alive_timeout = 15.0,
 		max_keep_alive_requests = 10,
 	})
-	server:listen_uri("tcp://"..host..":"..tostring(port).."/")
+	server:listen_uri("tcp6://"..host..":"..tostring(port).."/")
 end
 
 webserver.stop = function()
