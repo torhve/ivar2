@@ -160,14 +160,14 @@ local function tPoll()
 
                     local destinations = {}
                     local stmt = openDb():prepare('SELECT destination FROM twitter WHERE screen_name=?')
-                    local code = stmt:bind_values(tweet.user.screen_name)
-                    for row in stmt:nrows() do
-                        table.insert(destinations, row.destination)
+                    stmt:bind_values(tweet.user.screen_name)
+                    for rrow in stmt:nrows() do
+                        table.insert(destinations, rrow.destination)
                     end
 
-                    for _,tweet in pairs(info) do
+                    for _, ttweet in pairs(info) do
                         for _, destination in pairs(destinations) do
-                            outputTweet(nil, nil, destination, tweet)
+                            outputTweet(nil, nil, destination, ttweet)
                         end
                     end
                 end
@@ -183,13 +183,13 @@ local function tFollow(self, source, destination, screen_name)
     end
     local db = openDb()
     local insStmt = db:prepare("INSERT INTO twitter (screen_name, destination) VALUES(?, ?)")
-    local code = insStmt:bind_values(screen_name, destination)
-    code = insStmt:step()
-    code = insStmt:finalize()
-    local insStmt = db:prepare("INSERT INTO last (screen_name, since_id) VALUES(?, ?)")
-    local code = insStmt:bind_values(screen_name, '0')
-    code = insStmt:step()
-    code = insStmt:finalize()
+    insStmt:bind_values(screen_name, destination)
+    insStmt:step()
+    insStmt:finalize()
+    db:prepare("INSERT INTO last (screen_name, since_id) VALUES(?, ?)")
+    insStmt:bind_values(screen_name, '0')
+    insStmt:step()
+    insStmt:finalize()
     db:close()
     self:Msg('privmsg', destination, source, 'Now following \002%s\002', screen_name)
 end
@@ -208,9 +208,9 @@ local function tunFollow(self, source, destination, screen_name)
     --]]
     local insStmt = db:prepare("DELETE FROM twitter WHERE screen_name = ? AND destination = ?")
     if insStmt then
-        local code = insStmt:bind_values(screen_name, destination)
-        code = insStmt:step()
-        code = insStmt:finalize()
+        insStmt:bind_values(screen_name, destination)
+        insStmt:step()
+        insStmt:finalize()
     end
     db:close()
     self:Msg('privmsg', destination, source, 'Stopped following \002%s\002', screen_name)
@@ -245,8 +245,8 @@ local function getToken()
                 ['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8',
                 ['Authorization'] = string.format( "Basic %s", base64.encode(
                             string.format( "%s:%s",
-                                ivar2.config.twitterApiKey,
-                                ivar2.config.twitterApiSecret
+                                key,
+                                secret
                             )
                         )
                     )
