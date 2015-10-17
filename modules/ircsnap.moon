@@ -4,12 +4,75 @@ nixio = require'nixio'
 fs = require'nixio.fs'
 ltn12 = require'ltn12'
 
+-- All URLs in this module is under this prefix
 urlbase = '/image/'
 
 safe = (fn) ->
   f, ext = fn\match'^(.*)%.(.-)$'
   f = f\gsub '[^%w%-]', ''
   return f..'.'..ext
+
+video_html = (video) ->
+  videourl = ivar2.config.webserverprefix..urlbase..'file/'..video
+  [[
+  <!DOCTYPE html>
+  <html>
+  <head>
+  <meta charset="utf-8">
+  <style type="text/css">
+    video {
+      width: 100%;
+      height: auto !important;
+    }
+    button {
+    padding: 20px;
+      box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+      border: medium none;
+      border-radius: 2px;
+      color: #000;
+      position: relative;
+      height: 36px;
+      min-width: 64px;
+      padding: 0px 8px;
+      display: block;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0px;
+      overflow: hidden;
+      will-change: box-shadow, transform;
+      transition: box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1) 0s, background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1) 0s, color 0.2s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+      outline: medium none;
+      margin: 5px;
+      cursor: pointer;
+      text-decoration: none;
+      text-align: center;
+      line-height: 36px;
+      vertical-align: middle;
+      border-collapse: collapse;
+      border-spacing: 0px;
+      background-color: #E6B85C;
+    }
+  </style>
+  <body>
+    <video id="v" src="]]..videourl..[[" controls autoplay loop>
+      Your browser does not support the <code>video</code> element.
+      Try the direct link to the video: <a href="]]..videourl..[[">video</a>
+    </video>
+    <script>
+    function rotate(deg) {
+      console.log(deg);
+      var prop = 'transform';
+      document.getElementById('v').style[prop]='rotate('+deg+'deg)';
+
+    }
+    </script>
+    <button onclick="rotate(90)">Rotate ⟳</button>
+    <button onclick="rotate(-90)">Rotate ⟲</button>
+
+  </body>
+  </html>
+  ]]
+
 
 ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) ->
   send = (body, code, content_type) ->
@@ -46,9 +109,12 @@ ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) ->
     res\set_body fd
     res\send!
     ivar2\Log 'error', 'imageupload: serving: %s', fn
-
-
     return
+
+  -- Serve video player page
+  video = req.url\match '/video/(.*)$'
+  if video then
+    return send video_html(video)
 
   channel = req.url\match('channel=(.+)%s*')
   unless channel
@@ -430,7 +496,10 @@ ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) ->
           sender = "<#{sender\sub(1, 100)}> "
         if text ~= ''
           text = text\sub(1, 100) .. ' '
-        msg = "[IRCSNAP] #{sender}#{text}#{ivar2.config.webserverprefix}#{urlbase}file/#{realfn}"
+        file_or_video = 'file'
+        if realfn\match '%.mp4$'
+          file_or_video = 'video'
+        msg = "[IRCSNAP] #{sender}#{text}#{ivar2.config.webserverprefix}#{urlbase}#{file_or_video}/#{realfn}"
         ivar2\Privmsg unescaped_channel, msg
       ok, err = pcall(save)
       unless ok
@@ -447,6 +516,6 @@ nixio.fs.mkdir('cache/images')
 PRIVMSG:
   '^%pircsnap$': (source, destination) =>
     channel = urlEncode destination
-    say "#{ivar2.config.webserverprefix}#{urlbase}?channel=#{channel}"
+    say "#{ivar2.config.webserverprefix}#{urlbase}?channel=#{channel} IRCSNAP - sharing is caring."
 
 
