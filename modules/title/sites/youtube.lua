@@ -65,8 +65,8 @@ local fetchInformation = function(queue, vid)
 				duration = 'LIVE'
 			end
 			local views = siValue(video.statistics.viewCount)
-			local likeCount = siValue(video.statistics.likeCount)
-			local dislikeCount = siValue(video.statistics.dislikeCount)
+			local likeCount = siValue(video.statistics.likeCount or 0)
+			local dislikeCount = siValue(video.statistics.dislikeCount or 0)
 
 			local output = string.format('%s (%s) by %s [+%s/-%s, %s views]', title, duration, uploader, likeCount, dislikeCount, views)
 			queue:done(output)
