@@ -1,14 +1,5 @@
+-- vim: set noexpandtab:
 local dateFormat = '%Y-%m-%d %X %Z'
-
-local split = function(str, pattern)
-	local out = {}
-
-	str:gsub(pattern, function(match)
-		table.insert(out, match)
-	end)
-
-	return out
-end
 
 local timeMatches = {
 	{
@@ -69,9 +60,13 @@ local parseTime = function(input)
 end
 
 local alarm = function(self, source, destination, message)
-	local duration, message = parseTime(split(message, '%S+'))
+	local duration
+	duration, message = parseTime(ivar2.util.split(message, ' '))
 	-- Couldn't figure out what the user wanted.
-	if(not duration) then return end
+	if(not duration) then
+		reply('Example: !alarm 5m drink a glass of water')
+		return
+	end
 
 	-- 60 days or more?
 	local nick = source.nick
@@ -79,21 +74,19 @@ local alarm = function(self, source, destination, message)
 		return say("%s: :'(", nick)
 	end
 
-	local id = 'Alarm: ' .. nick
+	local id = 'Alarm: ' .. nick .. ':' .. message:gsub('%W', '')
 	local runningTimer = self.timers[id]
 	if(runningTimer) then
 		-- Send a notification if we are overriding an old timer.
 		if(runningTimer.utimestamp > os.time()) then
 			if(runningTimer.message) then
-				self:Notice(
-					nick,
+				reply(
 					'Previously active timer set to trigger at %s with message "%s" has been removed.',
 					os.date(dateFormat, runningTimer.utimestamp),
 					runningTimer.message
 				)
 			else
-				self:Notice(
-					nick,
+				reply(
 					'Previously active timer set to trigger at %s has been removed.',
 					os.date(dateFormat, runningTimer.utimestamp)
 				)
@@ -102,14 +95,15 @@ local alarm = function(self, source, destination, message)
 	end
 
 	local timer = self:Timer(id, duration, function(loop, timer, revents)
+		self.timers[id] = nil
 		if(#message == 0) then message = 'Timer finished.' end
-		self:Msg('privmsg', destination, source, '%s: %s', nick, message or 'Timer finished.')
+		reply(message or 'Timer finished.')
 	end)
 
 	if(#message > 0) then timer.message = message end
 	timer.utimestamp = os.time() + duration
 
-	self:Notice(nick, "I'll poke you at %s.", os.date(dateFormat, timer.utimestamp))
+	reply("I'll poke you at %s.", os.date(dateFormat, timer.utimestamp))
 
 end
 
