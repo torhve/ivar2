@@ -80,13 +80,21 @@ local alarm = function(self, source, destination, message)
 		-- Send a notification if we are overriding an old timer.
 		if(runningTimer.utimestamp > os.time()) then
 			if(runningTimer.message) then
-				reply(
+				self:Msg(
+					'privmsg',
+					destination,
+					source,
+					nick .. ': '..
 					'Previously active timer set to trigger at %s with message "%s" has been removed.',
 					os.date(dateFormat, runningTimer.utimestamp),
 					runningTimer.message
 				)
 			else
-				reply(
+				self:Msg(
+					'privmsg',
+					destination,
+					source,
+					nick .. ': '..
 					'Previously active timer set to trigger at %s has been removed.',
 					os.date(dateFormat, runningTimer.utimestamp)
 				)
@@ -95,9 +103,8 @@ local alarm = function(self, source, destination, message)
 	end
 
 	local timer = self:Timer(id, duration, function(loop, timer, revents)
-		self.timers[id] = nil
 		if(#message == 0) then message = 'Timer finished.' end
-		reply(message or 'Timer finished.')
+		self:Msg('privmsg', destination, source, nick .. ': %s', message or 'Timer finished.')
 	end)
 
 	if(#message > 0) then timer.message = message end
