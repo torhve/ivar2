@@ -678,7 +678,8 @@ function ivar2:ModuleCall(func, source, destination, remainder, ...)
 		if(not remainder) then
 			self:Say(destination, source, output)
 		else
-			local command, remainder = self:CommandSplitter(remainder)
+			local command
+			command, remainder = self:CommandSplitter(remainder)
 			local newline = command .. " " .. output
 			if(remainder) then
 				newline = newline .. "|" .. remainder
@@ -734,7 +735,20 @@ function ivar2:Timer(id, interval, repeat_interval, callback)
 		callback = repeat_interval
 		repeat_interval = nil
 	end
-	local timer = ev.Timer.new(callback, interval, repeat_interval)
+	-- Construct callback
+	local callbackHandler = function(cb)
+		return function(...)
+			local success, message = pcall(cb, ...)
+			if(not success) then
+				self:Log('error', 'Error during timer callback %s: %s.', id, message)
+			end
+			-- Delete expired timer
+			if(not repeat_interval and self.timers[id]) then
+				self.timers[id] = nil
+			end
+		end
+	end
+	local timer = ev.Timer.new(callbackHandler(callback), interval, repeat_interval)
 	timer:start(self.Loop)
 	-- Only allow one timer per id
 	-- Cancel any running
