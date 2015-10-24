@@ -148,7 +148,7 @@ end
 local handleData = function(headers, data)
 	local charset = guessCharset(headers, data)
 	if(charset and charset ~= 'utf-8') then
-		local cd, err = iconv.new("utf-8", charset)
+		local cd, _ = iconv.new("utf-8", charset)
 		if(cd) then
 			data = cd:iconv(data)
 		end
@@ -287,7 +287,7 @@ return {
 	PRIVMSG = {
 		function(self, source, destination, argument)
 			-- We don't want to pick up URLs from commands.
-			if(argument:sub(1,1) == '!') then return end
+			if(argument:match'^%p') then return end
 
 			local tmp = {}
 			local tmpOrder = {}
