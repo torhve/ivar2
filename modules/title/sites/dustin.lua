@@ -33,25 +33,32 @@ local handler = function(queue, info)
 				end
 
 				local out = {}
-				local name = data:match('<span itemprop="name">([^<]+)</span>')
-				local desc = data:match('<span itemprop="description">([^<]+)</span>')
-				local price, off = data:match('<span.-itemprop="price">([^<]+)</span>.-class="pdPriceWithout"[^>]*>([^<]*)</span>')
-				local storage = data:match('<div style="padding%-top: 9px; margin%-left: 5px; float:left;">(.-)</b>')
+				local name = data:match('<meta itemprop="name" content="([^"]+)" />')
+				local desc = data:match('<h3 class="oneliner">(.-)</h3>')
+				local price = data:match('<meta itemprop="price" content="([^"]+)" />')
+				local priceOriginal = data:match('<span class="price original">([^<]+)</span>')
+				local storage = data:match('<li class="h4">Lagerstatus: (.-)</li>')
 
 				ins(out, '\002%s\002: ', clean(name))
 				ins(out, '%s', clean(desc))
 				ins(out, ', \002%s\002 ', clean(price))
 
 				local extra = {}
-				if(#off > 0) then
-					local price = clean(price):gsub("\194\160", ""):sub(1, -4)
-					local real = clean(off):gsub("\194\160", ""):sub(1, -4)
-					ins(extra, '%d off', 100 - (price / real) * 100)
+				if(priceOriginal) then
+					local price = clean(price:gsub('%s*', '')):sub(1, -4)
+					local real = clean(priceOriginal:gsub('%s*', '')):sub(1, -4)
+					ins(extra, '%d%% off', 100 - (price / real) * 100)
 				end
 
 				if(storage) then
-					storage = clean(storage:gsub('<%/?[%w:]+.-%/?>', ''))
-					ins(extra, '%s', storage:gsub("[!.]$", ""))
+					local message = storage:match("data%-original%-title='([^']+)'")
+					local stock = storage:match("<span class='small'>([^>]+)</span>")
+
+					if(stock) then
+						ins(extra, '%s', stock)
+					else
+						ins(extra, '%s', message:gsub('%s+', ' '))
+					end
 				end
 
 				if(#extra > 0) then

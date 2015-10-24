@@ -258,7 +258,7 @@ local getPlaceNorway = function(place)
 	return data
 end
 
-local apiBase = 'http://api.geonames.org/searchJSON?name=%s&featureClass=P&username=haste'
+local apiBase = 'http://api.geonames.org/searchJSON?name=%s&featureClass=P&featureClass=S&username=haste'
 return {
 	PRIVMSG = {
 		['^%pyr(7?)%s*(.*)$'] = function(self, source, destination, seven, input)
