@@ -17,7 +17,7 @@ handlers = {
       if i == 1
         message = message .. ' ' .. json.compare
       ivar2\Msg 'privmsg', destination, nil, "[#{repo}]: #{branch}, #{util.nonickalertword c.author.username}: #{message}"
-    if #json.commits > 3
+    if #json.commits >= 4
       ivar2\Msg 'privmsg', destination, nil, "[#{repo}]: #{branch}, #{#json.commits-3} more commits not displayed."
   watch: (repo, destination, json) ->
     action = json.action
