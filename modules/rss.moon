@@ -161,7 +161,7 @@ poll = ->
           --if guid == last
           --  break
           ins = sdb\prepare [[
-            INSERT OR IGNORE INTO
+            INSERT OR ABORT INTO
               item(feed_id, guid, title, author, url, pubDate, content, summary)
               VALUES (?, ?, ?, ?, ?, ?, ?, ?)
           ]]
