@@ -103,11 +103,13 @@ local alarm = function(self, source, destination, message)
 	end
 
 	local timer = self:Timer(id, duration, function(loop, timer, revents)
-		if(#message == 0) then message = 'Timer finished.' end
-		self:Msg('privmsg', destination, source, nick .. ': %s', message or 'Timer finished.')
+		self:Msg(
+			'privmsg', destination, source,
+			'%s: %s', nick, timer.message or 'Timer finished.'
+		)
 	end)
 
-	if(#message > 0) then timer.message = message end
+	if(message ~= '') then timer.message = message end
 	timer.utimestamp = os.time() + duration
 
 	reply("I'll poke you at %s.", os.date(dateFormat, timer.utimestamp))
