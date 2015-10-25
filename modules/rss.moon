@@ -92,7 +92,7 @@ announce = (id) ->
       with item
         if .item_id > highest
           highest = .item_id
-          table.insert out, "[#{bold .name}]: #{feedSpecific(.rssurl, .link, .title, .summary, .content)}"
+        table.insert out, "[#{bold .name}]: #{feedSpecific(.rssurl, .link, .title, .summary, .content)}"
     if #out > 0
       ivar2\Msg 'privmsg', destination, ivar2.nick, "RSS "..table.concat(out, ', ')
     -- Update last red
@@ -122,7 +122,7 @@ poll = ->
       headers['If-None-Match'] = etag
 
     simplehttp {url:rssurl,headers:headers}, (data, url, response) ->
-      -- Reopenn DB because of async
+      -- Reopen DB because of async
       sdb = get_db!
 
       lastModified = response.headers['Last-Modified']
@@ -130,13 +130,17 @@ poll = ->
         lastModified = response.headers['Date']
 
       -- Unmodified content
-      if response.status_code == 304
+      if response.status_code == 304 or not data
         -- return from the simplehttp callback
         return
 
-      feed, err = feedparser.parse data
+      ok, feed, err = pcall -> feedparser.parse data
+      if not ok
+        ivar2\Log 'error', "#{moduleName}: Error during parsing: <#{feed}> data for feed: <#{name}> with URL <#{url}>"
+        return
       if err
         ivar2\Log 'error', "#{moduleName}: Error during parsing: <#{err}> data for feed: <#{name}> with URL <#{url}>"
+        return
       else
         title = feed.title
         author = feed.author
@@ -158,8 +162,6 @@ poll = ->
             ivar2\Log 'error', "#{moduleName}: No GUID when parsing entry: <#{e}> data for feed: <#{name}> with URL <#{url}>"
             break
 
-          --if guid == last
-          --  break
           ins = sdb\prepare [[
             INSERT OR ABORT INTO
               item(feed_id, guid, title, author, url, pubDate, content, summary)
@@ -168,11 +170,15 @@ poll = ->
           if not ins then
             ivar2\Log 'error', "#{moduleName}: Error during inserting entry: <#{err}> feed: <#{name}> with URL <#{url}> and position: #{i}"
           else
+            ivar2\Log 'info', "#{moduleName}: Inserting entry: #{e.link}, #{e.title}"
             code = ins\bind_values id, guid, e.title, e.author, e.link, e.updated, e.content, e.summary
             code = ins\step!
             code = ins\finalize!
-        announce(id)
+            if code == sql.CONSTRAINT -- duplicate value
+              ivar2\Log 'info', "Reached duplicate link, breaking"
+              break
       sdb\close!
+      announce(id)
   db\close!
 
 
