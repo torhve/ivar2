@@ -145,7 +145,7 @@ ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) ->
   body {
     height: 100%;
     margin: 0;
-    font-family: "Roboto","Helvetica","Arial",sans-serif !important;
+    font-family: "Roboto","Segoe UI","Arial",sans-serif !important;
     background-color: #FAFAFA;
     font-size: 14px;
     font-weight: 400;
@@ -159,8 +159,6 @@ ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) ->
     max-width: 768px;
     padding-left: 5px;
     padding-right: 5px;
-  }
-  .content {
   }
   #buttons, #status, .content {
     display: flex;
@@ -272,9 +270,6 @@ ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) ->
 
   .pictake {
     padding: 20px;
-    /*
-      font-size: 2em;
-      */
     box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
     border: medium none;
     border-radius: 2px;
@@ -353,7 +348,7 @@ ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) ->
         <strong>What is this?</strong>
       </p>
       <p>Share to IRC is a simple web app for sharing media directly from your device to an IRC channel.</p>
-      <p>Click Tools -> Add to homescreen to create a convenient shortcut for easy and fast access to sharing</p>
+      <p>Click Tools -&gt;  Add to homescreen to create a convenient shortcut for easy and fast access to sharing</p>
     </div>
   </div>
   <script>
@@ -397,7 +392,7 @@ ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) ->
 
   function transferComplete(evt) {
     console.log("The transfer is complete.");
-    document.getElementById('uploadprogress').textContent = "Upload complete!"
+    document.getElementById('uploadprogress').textContent = "Upload complete, shared to IRC!"
     uploadedTransition(true);
   }
 
@@ -427,8 +422,6 @@ ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) ->
     uploadingTransition();
     var target = el.target;
     var file = target.files[0];
-    //var formData = new FormData();
-    //formData.append('file', file);
     var xhr = new XMLHttpRequest();
     xhr.addEventListener("progress", updateProgress);
     xhr.addEventListener("load", transferComplete);
@@ -449,7 +442,6 @@ ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) ->
       uploadsize = e.total;
       xhr.send(e.target.result);
     };
-
 
   }
   function storeName(e) {
