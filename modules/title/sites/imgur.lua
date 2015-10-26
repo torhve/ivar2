@@ -30,7 +30,7 @@ local generateTitle = function(gallery, withURL)
 		table.insert(out, gallery.title)
 	end
 
-	if(type(gallery.section) == "string") then
+	if(type(gallery.section) == "string" and gallery.section ~= '') then
 		table.insert(out, '['..tostring(gallery.section)..']')
 	end
 
