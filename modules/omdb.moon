@@ -26,7 +26,7 @@ omdbfetch = (arg, cb) ->
 
 omdb = (source, destination, arg) =>
   omdbfetch arg, (js) ->
-    say "[#{util.bold js.Title}] (#{js.Year}) #{js.Genre} Metacritic: [#{metacolor js.Metascore}] RT: [#{rtcolor js.tomatoMeter} / #{rtcolor js.tomatoRotten}] IMDB: [#{js.imdbRating}] http://www.imdb.com/title/#{js.imdbID} Actors: [#{js.Actors}] #{js.Plot}"
+    say "[#{util.bold js.Title}] (#{js.Year}) #{js.Genre} Metacritic: [#{metacolor js.Metascore}] RT: [#{rtcolor js.tomatoMeter} / #{rtcolor js.tomatoUserMeter}] IMDB: [#{js.imdbRating}] http://www.imdb.com/title/#{js.imdbID} Actors: [#{js.Actors}] #{js.Plot}"
 
 plot = (source, destination, arg) =>
   omdbfetch arg, (js) ->
