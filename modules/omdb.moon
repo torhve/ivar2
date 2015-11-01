@@ -2,7 +2,7 @@ util = require 'util'
 
 rtcolor = (score) ->
   if not tonumber(score) then return score
-  if tonumber(score) > 50
+  if tonumber(score) > 60
     return util.red(string.format("%s%%", score))
   else
     return util.green(string.format("%s%%", score))
