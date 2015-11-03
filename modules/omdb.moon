@@ -15,6 +15,15 @@ metacolor = (score) ->
     return util.yellow(string.format("%s%%", score))
   else
     return util.red(string.format("%s%%", score))
+    
+imdbcolor = (score) ->
+  if not tonumber(score) then return score
+  if tonumber(score) >= 7.5
+    return util.green(string.format("%.1f", score))
+  elseif tonumber(score) >= 5.0
+    return util.yellow(string.format("%.1f", score))
+  else
+    return util.red(string.format("%.1f", score))
 
 omdbfetch = (arg, cb) ->
   util.simplehttp "http://www.omdbapi.com/?t=#{util.urlEncode arg}&y=&plot=short&r=json&tomatoes=true", (data) ->
@@ -26,7 +35,7 @@ omdbfetch = (arg, cb) ->
 
 omdb = (source, destination, arg) =>
   omdbfetch arg, (js) ->
-    say "[#{util.bold js.Title}] (#{js.Year}) #{js.Genre} Metacritic: [#{metacolor js.Metascore}] RT: [#{rtcolor js.tomatoMeter} / #{rtcolor js.tomatoRotten}] IMDB: [#{js.imdbRating}] http://www.imdb.com/title/#{js.imdbID} Actors: [#{js.Actors}] #{js.Plot}"
+    say "[#{util.bold js.Title}] (#{js.Year}) #{js.Genre} Metacritic: [#{metacolor js.Metascore}] RT: [#{rtcolor js.tomatoMeter} / #{rtcolor js.tomatoRotten}] IMDB: [#{imdbcolor js.imdbRating}] http://www.imdb.com/title/#{js.imdbID} Actors: [#{js.Actors}] #{js.Plot}"
 
 plot = (source, destination, arg) =>
   omdbfetch arg, (js) ->
