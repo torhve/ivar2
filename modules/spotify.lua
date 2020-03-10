@@ -45,50 +45,50 @@ local getToken = function()
 end
 
 local handlers = {
-	track = function(json)
-		if(json.description) then return nil, json.description end
-		if(json.error) then return nil, json.error.message end
+	track = function(jsdata)
+		if(jsdata.description) then return nil, jsdata.description end
+		if(jsdata.error) then return nil, jsdata.error.message end
 
-		local title = json.name
-		local album = json.album.name
+		local title = jsdata.name
+		local album = jsdata.album.name
 
 		local artists = {}
-		for _, artist in ipairs(json.artists) do
+		for _, artist in ipairs(jsdata.artists) do
 			table.insert(artists, artist.name)
 		end
 
-		local popularity = json.popularity .. '%'
+		local popularity = jsdata.popularity .. '%'
 		local preview = ''
-		if json.preview_url ~= json.null then
-			preview = json.preview_url .. '.mp3'
+		if jsdata.preview_url ~= json.null then
+			preview = jsdata.preview_url .. '.mp3'
 		end
 
 		return true, string.format('%s - [%s] %s [%s] ➤ %s ♫♪', table.concat(artists, ', '), album, title, popularity, preview)
 	end,
 
-	album = function(json)
-		if(json.description) then return json.description end
-		if(json.error) then return nil, json.error.message end
+	album = function(jsdata)
+		if(jsdata.description) then return jsdata.description end
+		if(jsdata.error) then return nil, jsdata.error.message end
 
 		local artists = {}
-		for _, artist in ipairs(json.artists) do
+		for _, artist in ipairs(jsdata.artists) do
 			table.insert(artists, artist.name)
 		end
-		local album = json.name
+		local album = jsdata.name
 
 		return true, string.format('%s - %s', table.concat(artists, ', '), album)
 	end,
 
-	artist = function(json)
-		if(json.description) then return json.description end
-		if(json.error) then return nil, json.error.message end
+	artist = function(jsdata)
+		if(jsdata.description) then return jsdata.description end
+		if(jsdata.error) then return nil, jsdata.error.message end
 
-		return true, json.name
+		return true, jsdata.name
 	end,
 }
 
-local handleData = function(metadata, json)
-	local success, message = handlers[metadata.type](json)
+local handleData = function(metadata, jsdata)
+	local success, message = handlers[metadata.type](jsdata)
 	if(success) then
 		return message
 	else
