@@ -16,6 +16,10 @@ local runningserver
 local webserver = {}
 
 local respond = function(stream, res, body, code, headers)
+	-- don't try to write to idle stream
+	if stream.state == 'idle' then
+		return
+	end
 	if not code then code = '200' end
 	if not body then body = '' end
 	if not headers then headers = {} end
@@ -78,14 +82,16 @@ webserver.on_stream = function(myserver, stream)
 			end
 		end
 		local found
-		log:info('webserver> "%s %s HTTP/%g" "%s" "%s" "%s"\n',
-			headers:get(":method") or "",
-			headers:get(":path") or "",
-			stream.connection.version,
-			peer,
-			headers:get("referer") or "-",
-			headers:get("user-agent") or "-"
-		)
+		if headers then
+			log:info('webserver> "%s %s HTTP/%g" "%s" "%s" "%s"\n',
+				headers:get(":method") or "",
+				headers:get(":path") or "",
+				stream.connection.version,
+				peer,
+				headers:get("referer") or "-",
+				headers:get("user-agent") or "-"
+			)
+		end
 
 		for pattern, handler in pairs(handlers) do
 			if path:match(pattern) then
