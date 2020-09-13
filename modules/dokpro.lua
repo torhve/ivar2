@@ -75,8 +75,9 @@ local parseData = function(data)
 					add(w)
 				elseif type(w) == "table" then
 					if w['_attr'] and w['_attr'].class == 'oppsgramordklasse' then
-						local class = wordClass[w[1]:sub(1, 1)] or w[1]
-
+						-- replace with friendly version:
+						-- local class = wordClass[w[1]:sub(1, 1)] or w[1]
+						local class = w[1]
 						add(ivar2.util.underline(class))
 					elseif w['_attr'] and w['_attr'].class == 'oppslagsord b' then
 						local lookup = {}
@@ -118,17 +119,17 @@ local parseData = function(data)
 		-- Remove duplicate entries (such as word classes)
 		entry.meaning = removeDuplicates(entry.meaning)
 
-		for _,entry in pairs(words) do
-			entry.meaning = trim(table.concat(entry.meaning))
+		for _, e in pairs(words) do
+			e.meaning = trim(table.concat(e.meaning))
 		end
 	end
 
 	return words
 end
 
-local handleInput = function(self, source, destination, word, ordbok)
+local handleInput = function(self, source, destination, l_word, ordbok)
 	if not ordbok then ordbok = 'bokmaal' end
-	local query = ivar2.util.urlEncode(word)
+	local query = ivar2.util.urlEncode(l_word)
 	ivar2.util.simplehttp(
 		"http://ordbok.uib.no/perl/ordbok.cgi?ordbok="..ordbok.."&"..ordbok.."=+&OPP=" .. query,
 
