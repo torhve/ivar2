@@ -15,6 +15,9 @@ bs: [[𝓐𝓑𝓒𝓓𝓔𝓕𝓖𝓗𝓘𝓙𝓚𝓛𝓜𝓝𝓞𝓟𝓠𝓡�
 pt: [[⒜⒝⒞⒟⒠⒡⒢⒣⒤⒥⒦⒧⒨⒩⒪⒫⒬⒭⒮⒯⒰⒱⒲⒳⒴⒵⒜⒝⒞⒟⒠⒡⒢⒣⒤⒥⒦⒧⒨⒩⒪⒫⒬⒭⒮⒯⒰⒱⒲⒳⒴⒵0⑴⑵⑶⑷⑸⑹⑺⑻⑼]]
 tl: [[ค๒ς๔єŦﻮђเןкl๓ภ๏קợгรtยשฬץאzค๒ς๔єŦﻮђเןкl๓ภ๏קợгรtยשฬץאz0123456789,.؟!"'`()[]{}«»&_]]
 ru: [[ДЬCDЗFGHIJКLMИФPQЯSTЦVШЖУZдьcdзfghijкlmифpqяstцvшжуz0123456789,.?!"'`()[]{}<>&_]]
+ss: [[ₐBCDₑFGₕᵢⱼₖₗₘₙₒₚQᵣₛₜᵤᵥWₓYZₐᵦ𝒸𝒹ₑ𝒻𝓰ₕᵢⱼₖₗₘₙₒₚᵩᵣₛₜᵤᵥ𝓌ₓᵧ𝓏₀₁₂₃₄₅₆₇₈₉,.?!"'`₍₎[]{}<>&_]]
+su: [[ᴬᴮᶜᴰᴱᶠᴳᴴᴵᴶᴷᴸᴹᴺᴼᴾᵠᴿˢᵀᵁⱽᵂˣʸᶻᵃᵇᶜᵈᵉᶠᵍʰᶦʲᵏˡᵐⁿᵒᵖᵠʳˢᵗᵘᵛʷˣʸᶻ⁰¹²³⁴⁵⁶⁷⁸⁹,.ˀᵎ"'`⁽⁾[]{}<>&_]]
+
 }
 
 codepoints = (str) ->
@@ -192,6 +195,12 @@ PRIVMSG:
     say remap(maps.tl, arg)
   '^%prussian (.+)$': (source, destination, arg) =>
     say remap(maps.ru, arg)
+  '^%psuperscript (.+)$': (source, destination, arg) =>
+    say remap(maps.su, arg)
+  '^%psubscript (.+)$': (source, destination, arg) =>
+    say remap(maps.ss, arg)
+  '^%ptiny (.+)$': (source, destination, arg) =>
+    say remap(maps.ss, arg)
   '^%putfuk (.+)$': (source, destination, arg) =>
     keys = [x for x,_ in pairs(maps)]
     say table.concat([remap(maps[keys[math.random(#keys)]], letter) for letter in codepoints(arg)])
