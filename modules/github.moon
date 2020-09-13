@@ -75,8 +75,13 @@ handlers = {
     "[#{repo}]: PR ##{number} <#{util.nonickalertword json.sender.login}> #{body}"
   pull_request_review: (repo, destinatino, json) ->
     body = json.review.body or ''
+    if body == util.json.null
+      body = ''
     number = util.bold json.pull_request.number
     state = json.review.state\gsub('_', ' ')
+    if state == 'commented'
+      -- Displaying that a review is in state comment is just noise
+      return
     "[#{repo}]: PR ##{number} Review #{state} <#{util.nonickalertword json.sender.login}> #{body}"
   issues: (repo, destination, json) ->
     action = acolor json.action
