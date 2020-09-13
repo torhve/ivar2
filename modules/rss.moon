@@ -3,6 +3,7 @@ feedparser = require 'feedparser' -- http://feedparser.luaforge.net/
 {:simplehttp, :json, :urlEncode, :bold} = require'util'
 html2unicode = require 'html'
 sql = require'lsqlite3'
+cqueues = require 'cqueues'
 
 moduleName = 'rss'
 
@@ -97,12 +98,20 @@ announce = (db, id) ->
         if .item_id > highest
           highest = .item_id
         table.insert out, "[#{bold .name}]: #{feedSpecific(.rssurl, .link, .title, .summary, .content)}"
-    if #out > 0
-      ivar2\Msg 'privmsg', destination, ivar2.nick, "RSS "..table.concat(out, ', ')
+
     -- Update last read
     ins = prepare db, 'UPDATE subscription SET last=? WHERE feed_id = ? and destination = ?', highest, id, destination
     code, err = ins\step!
     code, err = ins\finalize!
+    if code != sql.OK
+      ivar2\Log 'error', "Error updating last : #{db\errmsg!}"
+      -- Return early if error updating so we dont spam repeated annonuce
+      return
+
+    if #out > 0
+      for _,v in ipairs(out)
+        ivar2\Msg 'privmsg', destination, ivar2.nick, "RSS "..v
+        cqueues.sleep(1)
 
 poll = ->
   db = get_db!
