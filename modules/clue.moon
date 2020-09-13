@@ -173,10 +173,21 @@ adjsub = (source, destination, count) =>
     table.insert(out, "#{adj[i].word} #{sub[i].word}")
   say table.concat(out, ', ')
 
+adj = (source, destination, count) =>
+  count = 30
+
+  word = getWord 'clnono', 'adj', count, 5
+
+  out = {}
+  for i=1, count
+    table.insert(out, "#{word[i].word}")
+  say table.concat(out, ', ')
+
 PRIVMSG:
   '^%pclue (.+)$': lookup
   '^%pbankid$': bankid
   '^%pbankid (%d+)$': bankidmany
+  '^%padj$': adj
   '^%padjsub$': adjsub
   '^%padjsub (%d+)$': adjsub
   '^%p?[Ff]lu+ffle (.+)$': (source, destination, arg) =>
