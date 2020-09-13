@@ -58,6 +58,10 @@ dblog = (type, source, destination, arg) =>
   unless arg
     arg = ''
 
+  unless nick
+    -- for example server mode lines only has source.mask
+    nick = ''
+
   if type == 'PRIVMSG'
     -- action
     if arg\sub(1,1) == '\001' and arg\sub(-1) == '\001'
@@ -70,11 +74,14 @@ dblog = (type, source, destination, arg) =>
   -- First try to insert statement directly
   -- if that doesn't work; convert it from iso to utf and try again
   stmt = insert!
+  unless stmt
+    @Log 'error', "logger: no stmtmt when inserting line"
+    return
   if stmt\status() ~= pgsql.PGRES_COMMAND_OK
     arg, err = toutf(arg)
     stmt = insert!
     if stmt\status() ~= pgsql.PGRES_COMMAND_OK
-      ivar2\Log('error', "logger: error when inserting line: \"%s\": %s", stmt\errorMessage())
+      @Log('error', "logger: error when inserting line: \"%s\": %s", stmt\errorMessage())
 
 history = (source, destination, nr) ->
   nr = tonumber(nr) or 1
