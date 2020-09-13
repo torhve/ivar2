@@ -65,6 +65,7 @@ local function handleKarma(self, source, destination, item, sign, change)
 
 	if(config and config.nicksOnly) then
 		if(not itemIsNick(item)) then
+			say("I cannot see any %s. :(", item)
 			return
 		elseif(source.nick == item) then
 			say("%s: Silly human, your karma must be decided by others!", source.nick)
