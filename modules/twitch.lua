@@ -7,7 +7,33 @@ local moduleName = 'twitch'
 local key = moduleName
 local store = ivar2.persist
 
-local formatViewers = function (viewers)
+local twitchAPICall = function(url, cb)
+	return simplehttp({
+		url='https://api.twitch.tv' .. url,
+		-- HTTP doesn't allow lowercase headers
+		version=1.1,
+		headers={
+			['Client-ID'] = ivar2.config.twitchApiKey,
+			['Accept'] = 'application/vnd.twitchtv.v5+json',
+		}
+	})
+end
+
+local usernameLookup = function(username)
+		local data = twitchAPICall(string.format('/helix/users?login=%s', channel))
+		data = json.decode(data)
+		local id = data['data'][1]['id']
+		return id
+end
+
+local gameLookup = function(id)
+		local data = twitchAPICall(string.format('/helix/games?id=%s', id))
+		data = json.decode(data)
+		local name = data['data'][1]['name']
+		return name
+end
+
+local formatViewers = function(viewers)
 	if viewers > 1000 then
 		return tostring(math.floor(viewers/1000)) .. 'k'
 	end
@@ -22,9 +48,10 @@ local parseData = function(self, source, destination, data, search)
 	end
 
 	local streams = {}
-	for i=1, #data.streams do
-		local this = data.streams[i]
-		local lang = this.channel.broadcaster_language
+
+	for i=1, #data.data do
+		local this = data.data[i]
+		local lang = this.language
 		--TODO configure filter languages ?
 		if lang and (lang == 'en' or lang == 'no') then
 			if search then
@@ -42,7 +69,7 @@ local parseData = function(self, source, destination, data, search)
 	end
 
 	-- sort streams wrt viewer count
-	table.sort(streams, function(a,b) return a.viewers>b.viewers end)
+	table.sort(streams, function(a,b) return a.viewer_count>b.viewer_count end)
 	return streams
 end
 
@@ -51,14 +78,11 @@ local formatData = function(self, source, destination, streams, limit)
 	local i = 0
 	local out = {}
 	for _, stream in pairs(streams) do
-		local viewers = formatViewers(stream.viewers)
-		local title = ''
-		if stream.channel and stream.channel.status then
-			title = ': '..stream.channel.status
-		end
+		local viewers = formatViewers(stream.viewer_count)
+		local title = ': '..stream.title
 		out[#out+1] = string.format(
 			"[%s] http://twitch.tv/%s %s %s",
-			util.bold(viewers), stream.channel.display_name, stream.game, title
+			util.bold(viewers), stream.user_name, gameLookup(stream.game_id), title
 		)
 		i=i+1
 		if i > limit then break end
@@ -66,27 +90,19 @@ local formatData = function(self, source, destination, streams, limit)
 	return out
 end
 
-local gameHandler= function(self, source, destination, input, limit)
+local gameHandler = function(self, source, destination, input, limit)
 	limit = limit or 5
-	--	'http://api.twitch.tv/kraken/streams?limit=20&offset=0&game='..util.urlEncode(input)..'&on_site=1',
-	simplehttp({
-		url='https://api.twitch.tv/kraken/search/streams?limit='..tostring(limit)..'&offset=0&query='..util.urlEncode(input),
-		headers={
-			['Client-ID'] = ivar2.config.twitchApiKey,
-		}},
-		function(data)
-			local streams = parseData(self, source, destination, data)
-			if #streams == 0 then
-				local out = 'No streams found'
-				self:Msg('privmsg', destination, source, out)
-			else
-				local out = formatData(self, source, destination, streams, limit)
-				for _,line in pairs(out) do
-					self:Msg('privmsg', destination, source, line)
-				end
-			end
+	local data = twitchAPICall('/helix/streams?limit='..tostring(limit)..'&offset=0&user_login='..util.urlEncode(input))
+	local streams = parseData(self, source, destination, data)
+	if #streams == 0 then
+		local out = 'No streams found'
+		self:Msg('privmsg', destination, source, out)
+	else
+		local out = formatData(self, source, destination, streams, limit)
+		for _,line in pairs(out) do
+			self:Msg('privmsg', destination, source, line)
 		end
-	)
+	end
 end
 
 local allHandler = function(self, source, destination)
@@ -128,8 +144,8 @@ local checkStreams = function()
 					for _, stream in pairs(streams) do
 						-- Use Created At to check for uniqueness
 						if alerts[stream.channel.name] ~= stream.created_at and
-						  -- Check if we meet viewer limit
-						  stream.viewers > game.limit then
+							-- Check if we meet viewer limit
+							stream.viewers > game.limit then
 							alerts[stream.channel.name] = stream.created_at
 							store[alertsKey] = alerts
 							ivar2:Msg('privmsg',
