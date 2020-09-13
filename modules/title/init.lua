@@ -6,7 +6,12 @@ local uri_parse = util.uri_parse
 local iconv = require"iconv"
 local html2unicode = require'html'
 local lfs = require'lfs'
-local DL_LIMIT = 2^17
+local exif = require'exif'
+local googlevision = require'googlevision' -- requires google vision cloud API key
+
+local DL_LIMIT = 2^24 -- 16 MiB
+
+local gvision_apikey = ivar2.config.cloudvisionAPIKey or 'AIzaSyBTLSPVnk6yUFTm8USlCOIxEqbkOpAauxQ'
 
 local patterns = {
 	-- X://Y url
@@ -109,9 +114,9 @@ local guessCharset = function(headers, data)
 	end
 
 	-- TODO: tell user if it's downloadable stuff, other mimetype, like PDF or whatever
-	
+
 	-- Header:
-	local contentType = headers['Content-Type']
+	local contentType = headers['content-type']
 	if(contentType and contentType:match'charset') then
 		charset = verify(contentType:match('charset=([^;]+)'))
 		if(charset) then return charset end
@@ -146,6 +151,60 @@ local limitOutput = function(str)
 	return str
 end
 
+local handleExif = function(data)
+	-- Try to get interesting exif information from a blob of data
+	--
+
+	local exif_tags = {}
+	local interesting_exif_tags = {'Make', 'Model','ISOSpeedRatings', 'ExposureTime', 'FNumber', 'FocalLength', 'DateTimeOriginal', }
+
+	local exif_data = exif.loadbuffer(data)
+	for i, ifd in pairs(exif_data:ifds()) do
+		for j, entry in pairs(ifd:entries()) do
+			for _, tag in pairs(interesting_exif_tags) do
+				print(entry.tag, entry.value)
+				if entry.tag == tag and entry.value then
+					local value = entry.value
+					if tag == 'ISOSpeedRatings' then
+						value = string.format('ISO %s', value)
+					end
+					exif_tags[#exif_tags+1] = value
+				end
+			end
+		end
+	end
+
+	local function toDecimal(d1, m1, s1, d2, m2, s2, ns, ew)
+		local sign = 1
+		if ns == 'S' then
+			sign = -1
+		end
+		local decDeg1 = sign*(d1 + m1/60 + s1/3600)
+		sign = 1
+		if ew == 'W' then
+			sign = -1
+		end
+		local decDeg2 = sign*(d2 + m2/60 + s2/3600)
+		return decDeg1, decDeg2
+	end
+
+	local lat_ref = exif_data:ifd("GPS"):entry('GPSLatitudeRef')
+	local lon_ref = exif_data:ifd("GPS"):entry('GPSLongitudeRef')
+	local lat = exif_data:ifd("GPS"):entry('GPSLatitude')
+	local lon = exif_data:ifd("GPS"):entry('GPSLongitude')
+	local lat_split = util.split(tostring(lat), ', ')
+	local lon_split = util.split(tostring(lon), ', ')
+	if #lat_split == 3 and #lon_split == 3 then
+		local lon_d, lat_d = toDecimal(lat_split[1], lat_split[2], lat_split[3],
+		lon_split[1], lon_split[2], lon_split[3], lat_ref, lon_ref)
+		local gmaps_link = string.format('https://maps.google.com/?q=%s,%s', lon_d, lat_d)
+		exif_tags[#exif_tags+1] = gmaps_link
+	end
+
+	return exif_tags
+
+end
+
 local handleData = function(headers, data)
 	local charset = guessCharset(headers, data)
 	if(charset and charset ~= 'utf-8') then
@@ -169,6 +228,37 @@ local handleData = function(headers, data)
 			return limitOutput(title)
 		end
 	end
+
+	-- No title found, return some possibly usefule info
+	local content_type = headers['content-type']
+	local content_length = headers['content-length']
+	if content_length then
+		content_length = math.floor(content_length/1024)
+	else
+		content_length = math.floor(#data/1024) -- will be limited to DL_LIMIT
+	end
+
+	local exif_tags = {}
+	local googlevision_tags = {}
+	if string.find(content_type, 'image/jp') then
+		exif_tags = handleExif(data)
+		if #data < 10485760 then -- max upload limit
+			googlevision_tags = googlevision.annotateData(gvision_apikey, data)
+		end
+	end
+
+	local message
+	message = string.format('[%s] %s kB', content_type, content_length)
+	if #exif_tags > 0 then
+		message = message .. ', ' .. table.concat(exif_tags, ', ')
+	end
+
+	if #googlevision_tags > 0 then
+		message = message .. ', ' .. table.concat(googlevision_tags, ', ')
+	end
+
+	return message
+
 end
 
 local handleOutput = function(metadata)
