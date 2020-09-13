@@ -12,7 +12,7 @@ listModules = (source, destination, arg) =>
     unless @IsModuleDisabled moduleName, destination
       table.insert out, moduleName
   if #out > 0
-    say "Modules: %s", table.concat(out, ' ')
+    say "Type !help name-of-module to list patterns for each module. Modules: %s", table.concat(out, ' ')
 
 listPatterns = (source, destination, moduleName) =>
   moduleTable = @Events!['PRIVMSG'][moduleName]
