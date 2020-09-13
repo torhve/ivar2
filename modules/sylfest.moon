@@ -36,7 +36,7 @@ PRIVMSG:
     matches = fullpatt\match(line)
     if matches
       say "Sylfest likar ikkje: %s", concat(matches, ', ')
-  'værst': dannedHandler
+  'værst[%.,%$]': dannedHandler
   'værre': dannedHandler
 
 
