@@ -16,17 +16,38 @@ quote = (s, d, a) =>
   if price.currencySymbol
     c = price.currencySymbol
   out[#out+1] = c
-  out[#out+1] = price.regularMarketPrice.fmt
-  per = price.regularMarketChangePercent.fmt
-  if price.regularMarketChangePercent.raw > 0
-    per = util.green per
+
+  current_price = price.regularMarketPrice.fmt
+  current_per = price.regularMarketChangePercent.fmt
+  current_raw_per = price.regularMarketChangePercent.raw
+  regularmarket = true
+  premarket = false
+  postmarket = false
+  if price.preMarketTime
+    if price.preMarketTime > price.regularMarketTime
+      current_price = price.preMarketPrice.fmt
+      current_per = price.preMarketChangePercent.fmt
+      current_raw_per = price.preMarketChangePercent.raw
+      premarket = true
+    elseif price.postMarketTime and price.postMarketTime > price.regularMarketTime
+      current_price = price.postMarketPrice.fmt
+      current_per = price.postMarketChangePercent.fmt
+      current_raw_per = price.postMarketChangePercent.raw
+      postmarket = true
+
+
+  out[#out+1] = current_price
+  if current_raw_per > 0
+    current_per = util.green current_per
   else
-    per = util.red per
-  out[#out+1] = "("..per ..")"
+    current_per = util.red current_per
+  out[#out+1] = "("..current_per ..")"
 
-  if price.postMarketPrice.fmt
-    out[#out+1] = "("..price.postMarketPrice.fmt..")"
+  --if price.preMarketPrice.fmt
+  --  out[#out+1] = "("..price.preMarketPrice.fmt..")"
 
+  --if price.postMarketPrice.fmt
+  --  out[#out+1] = "("..price.postMarketPrice.fmt..")"
 
   say table.concat(out, ' ')
 
