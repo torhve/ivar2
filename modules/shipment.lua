@@ -58,23 +58,25 @@ local shipmentTrack = function(self, source, destination, message)
 			if not cs[1] then return else cs = cs[1] end
 			local err = cs['error']
 			if err then
+				print('err', err, err['message'])
 				local errmsg = err['message']
 				if self.shipmentEvents[id] == -1 then
 					say('%s: \002%s\002 %s', nick, alias, errmsg)
 				end
-				self.shipmentEvents[id] = 0
 				return
+				-- self.shipmentEvents[id] = 0
 			end
 			local ps = cs['packageSet'][1]
 			local eventset = ps['eventSet']
 			local newEventCount = #eventset
 			local out = {}
-			--print('id:',id,'new:',newEventCount,'old:',self.shipmentEvents[id])
+			print('id:',id,'new:',newEventCount,'old:',self.shipmentEvents[id])
 			if newEventCount < self.shipmentEvents[id]
 				then newEventCount = self.shipmentEvents[id]
 			end
-			for i=self.shipmentEvents[id]+1,newEventCount do
-				--print('loop:',i)
+			-- start at the oldest event and go forward in time to index reaches 0
+			for i=#eventset-self.shipmentEvents[id]-1,0,-1 do
+				print('loop:',i)
 				local event = eventset[i]
 				if event then
 					table.insert(out, eventHandler(event))
