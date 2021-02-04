@@ -4,7 +4,7 @@ json = util.json
 urlEncode = util.urlEncode
 
 
-quote = (s, d, a) =>
+quote = (a) ->
   data = simplehttp "https://query1.finance.yahoo.com/v10/finance/quoteSummary/#{a}?modules=price"
   data = json.decode(data)
   res = data['quoteSummary']['result'][1]
@@ -49,9 +49,20 @@ quote = (s, d, a) =>
   --if price.postMarketPrice.fmt
   --  out[#out+1] = "("..price.postMarketPrice.fmt..")"
 
+  return table.concat(out, ' ')
+
+
+sayquote = (s, d, a) =>
+  say quote(a)
+
+meme = (s, d, a) =>
+  stonks = {'GME', 'AMC', 'BB', 'NOK'}
+  out = {}
+  for stonk in *stonks
+    out[#out+1] = stonk .. ' ' .. quote(stonk)
+
   say table.concat(out, ' ')
 
-
-
 PRIVMSG:
-  '^%pq (.*)$': quote
+  '^%pq (.*)$': sayquote
+  '^%pstonks': meme
