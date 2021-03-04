@@ -4,7 +4,9 @@ json = util.json
 urlEncode = util.urlEncode
 
 
-quote = (a) ->
+quote = (a, withname) ->
+  if not withname
+    withname = false
   data = simplehttp "https://query1.finance.yahoo.com/v10/finance/quoteSummary/#{a}?modules=price"
   data = json.decode(data)
   res = data['quoteSummary']['result'][1]
@@ -48,12 +50,23 @@ quote = (a) ->
 
   --if price.postMarketPrice.fmt
   --  out[#out+1] = "("..price.postMarketPrice.fmt..")"
+  --
+  --
+
+  if withname
+    if price.longName == json.null
+      out[#out+1] = price.shortName
+    else
+      out[#out+1] = price.longName
+
+    if premarket or postmarket
+      out[#out+1] = "🥱"
 
   return table.concat(out, ' ')
 
 
 sayquote = (s, d, a) =>
-  say quote(a)
+  say quote(a, true)
 
 meme = (s, d, a) =>
   stonks = {'GME', 'AMC', 'BB', 'NOK'}
