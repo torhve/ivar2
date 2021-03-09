@@ -4,10 +4,12 @@ json = util.json
 urlEncode = util.urlEncode
 
 
-quote = (a, withname) ->
+quote = (a, withname, withoutprice) ->
   if not withname
     withname = false
-  data = simplehttp "https://query1.finance.yahoo.com/v10/finance/quoteSummary/#{a}?modules=price"
+  if not withoutprice
+    withoutprice = false
+  data = simplehttp "https://query1.finance.yahoo.com/v10/finance/quoteSummary/#{urlEncode a}?modules=price"
   data = json.decode(data)
   res = data['quoteSummary']['result'][1]
   price = res.price
@@ -17,7 +19,8 @@ quote = (a, withname) ->
   c =  price.currency
   if price.currencySymbol
     c = price.currencySymbol
-  out[#out+1] = c
+  unless withoutprice
+    out[#out+1] = c
 
   current_price = price.regularMarketPrice.fmt
   current_per = price.regularMarketChangePercent.fmt
@@ -37,8 +40,8 @@ quote = (a, withname) ->
       current_raw_per = price.postMarketChangePercent.raw
       postmarket = true
 
-
-  out[#out+1] = current_price
+  unless withoutprice
+    out[#out+1] = current_price
   if current_raw_per > 0
     current_per = util.green current_per
   else
@@ -76,6 +79,16 @@ meme = (s, d, a) =>
 
   say table.concat(out, ' ')
 
+
+idx = (s, d, a) =>
+  stonks = {'OSEBX.OL', '^IXIC', '^GSPC', '^DJI', '^NYA', '^N225'}
+  out = {}
+  for stonk in *stonks
+    out[#out+1] = stonk .. ' ' .. quote(stonk, true, true)
+
+  say table.concat(out, ' ')
+
 PRIVMSG:
   '^%pq (.*)$': sayquote
   '^%pstonks': meme
+  '^%pidx$': idx
