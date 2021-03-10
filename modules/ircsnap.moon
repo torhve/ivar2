@@ -443,7 +443,7 @@ ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) =>
     <p>Share audio: <input type="file" accept="audio/*" id="capturea" capture="microphone">
     -->
     <section>
-      <h3>You can also drag and drop here</h3>
+      <h3>You can also drag and drop here, or paste clipboard data, but beware, it will not ask for confirmation before uploading!!!</h3>
       <form class="box" method="post" action="" enctype="multipart/form-data">
         <div class="box__input">
           <input id="box__dropi" class="box__file" type="file" name="files[]" id="file" data-multiple-caption="{count} files selected" multiple />
@@ -455,6 +455,7 @@ ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) =>
         <div class="box__uploading">Uploading&hellip;</div>
         <div class="box__success">Done!</div>
         <div class="box__error">Error! <span></span>.</div>
+        <img id="container"></img>
       </form>
     <section>
   </div>
@@ -637,6 +638,30 @@ ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) =>
     col.addEventListener('drop', handleDrop, false);
 
     document.getElementById('box__dropi').addEventListener('change', sendMedia, false);
+
+    // Handle paste
+    document.onpaste = function(pasteEvent) {
+      console.log('Got paste event');
+      // consider the first item (can be easily extended for multiple items)
+      var item = pasteEvent.clipboardData.items[0];
+      console.log(pasteEvent);
+
+      if (item.type.indexOf("image") === 0) {
+        var blob = item.getAsFile();
+	console.log
+
+	pasteEvent.target.files = [blob];
+        sendMedia(pasteEvent);
+
+        //var reader = new FileReader();
+	//reader.onload = function(event) {
+        //  //document.getElementById("container").src = event.target.result;
+        //  sendMedia(event);
+        //};
+
+        reader.readAsDataURL(blob);
+      }
+    }
 
 
     var form = document.querySelector('form.box');
