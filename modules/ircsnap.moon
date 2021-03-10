@@ -648,18 +648,9 @@ ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) =>
 
       if (item.type.indexOf("image") === 0) {
         var blob = item.getAsFile();
-	console.log
-
 	pasteEvent.target.files = [blob];
+
         sendMedia(pasteEvent);
-
-        //var reader = new FileReader();
-	//reader.onload = function(event) {
-        //  //document.getElementById("container").src = event.target.result;
-        //  sendMedia(event);
-        //};
-
-        reader.readAsDataURL(blob);
       }
     }
 
