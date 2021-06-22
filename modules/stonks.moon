@@ -12,9 +12,13 @@ quote = (a, withname, withoutprice) ->
   data = simplehttp "https://query1.finance.yahoo.com/v10/finance/quoteSummary/#{urlEncode a}?modules=price"
   data = json.decode(data)
   res = data['quoteSummary']['result'][1]
+  unless res return ''
   price = res.price
 
   out = {}
+
+  unless withname
+    out[#out+1] = price.symbol
 
   c =  price.currency
   if price.currencySymbol
@@ -46,7 +50,7 @@ quote = (a, withname, withoutprice) ->
     current_per = util.green current_per
   else
     current_per = util.red current_per
-  out[#out+1] = "("..current_per ..")"
+  out[#out+1] = " "..current_per .." "
 
   --if price.preMarketPrice.fmt
   --  out[#out+1] = "("..price.preMarketPrice.fmt..")"
@@ -67,28 +71,33 @@ quote = (a, withname, withoutprice) ->
 
   return table.concat(out, ' ')
 
+multiquote = (stonks) ->
+  out = {}
+  for stonk in *stonks
+    out[#out+1] = quote(stonk,  false, true)
+
+  return table.concat(out, ' | ')
 
 sayquote = (s, d, a) =>
-  say quote(a, true)
+  if string.find(a, ' ')
+    say multiquote(util.split(a, ' '))
+  else
+    say quote(a, true, false)
 
 meme = (s, d, a) =>
   stonks = {'GME', 'AMC', 'BTC-USD', 'TSLA'}
-  out = {}
-  for stonk in *stonks
-    out[#out+1] = stonk .. ' ' .. quote(stonk)
-
-  say table.concat(out, ' ')
-
+  say multiquote(stonks)
 
 idx = (s, d, a) =>
   stonks = {'OSEBX.OL', '^IXIC', '^GSPC', '^DJI', '^NYA', '^N225'}
-  out = {}
-  for stonk in *stonks
-    out[#out+1] = stonk .. ' ' .. quote(stonk, true, true)
+  say multiquote(stonks)
 
-  say table.concat(out, ' ')
+crypto = (s, d) =>
+  say multiquote {'BTC-USD', 'ETH-USD', 'XRP-USD', 'DOGE-USD'}
+
 
 PRIVMSG:
   '^%pq (.*)$': sayquote
   '^%pstonks': meme
   '^%pidx$': idx
+  '^%pcrypto$': crypto
