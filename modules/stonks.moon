@@ -72,7 +72,7 @@ sayquote = (s, d, a) =>
   say quote(a, true)
 
 meme = (s, d, a) =>
-  stonks = {'GME', 'AMC', 'BB', 'NOK'}
+  stonks = {'GME', 'AMC', 'BTC-USD', 'TSLA'}
   out = {}
   for stonk in *stonks
     out[#out+1] = stonk .. ' ' .. quote(stonk)
