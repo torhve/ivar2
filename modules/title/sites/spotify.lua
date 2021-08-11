@@ -9,10 +9,10 @@ customHosts['open.spotify.com'] = function(queue, info)
 			info.url,
 
 			function(data, url, response)
-				local title = html2unicode(data:match'<title>(.-) on Spotify</title>')
-				local uri = data:match('property="og:audio" content="([^"]+)"')
+				local title = html2unicode(data:match'<title>(.-)</title>')
+				--local uri = data:match('property="al:android:url" content="([^"]+)"')
 
-				queue:done(string.format('%s: %s | http://play.spotify.com%s', title, uri, info.path))
+				queue:done(string.format('%s | http://play.spotify.com%s', title, info.path))
 			end
 		)
 
@@ -28,10 +28,10 @@ customHosts['play.spotify.com'] = function(queue, info)
 			info.url:gsub("play%.spotify", "open.spotify"),
 
 			function(data, url, response)
-				local title = html2unicode(data:match'<title>(.-) on Spotify</title>')
+				local title = html2unicode(data:match'<title>(.-)/title>')
 				local uri = data:match('property="og:audio" content="([^"]+)"')
 
-				queue:done(string.format('%s: %s | http://open.spotify.com%s', title, uri, info.path))
+				queue:done(string.format('%s | http://open.spotify.com%s', title, info.path))
 			end
 		)
 
