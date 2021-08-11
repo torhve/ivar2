@@ -3,6 +3,15 @@ simplehttp = util.simplehttp
 json = util.json
 urlEncode = util.urlEncode
 
+siValue = (val) ->
+  val = val\gsub(',','')
+  val = tonumber val
+  if val >= 1e6
+    return ('%.1f')\format(val / 1e6)\gsub('%.', 'M')\gsub('M0', 'M')
+  elseif(val >= 1e4) then
+    return ("%.1f")\format(val / 1e3)\gsub('%.', 'k')\gsub('k0', 'k')
+  else
+   return val
 
 quote = (a, withname, withoutprice) ->
   if not withname
@@ -45,7 +54,7 @@ quote = (a, withname, withoutprice) ->
       postmarket = true
 
   unless withoutprice
-    out[#out+1] = current_price
+    out[#out+1] = siValue(current_price)
   if current_raw_per > 0
     current_per = util.green current_per
   else
@@ -74,7 +83,7 @@ quote = (a, withname, withoutprice) ->
 multiquote = (stonks) ->
   out = {}
   for stonk in *stonks
-    out[#out+1] = quote(stonk,  false, true)
+    out[#out+1] = quote(stonk,  false, false)
 
   return table.concat(out, ' | ')
 
