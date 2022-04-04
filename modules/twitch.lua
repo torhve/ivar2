@@ -19,13 +19,6 @@ local twitchAPICall = function(url, cb)
 	})
 end
 
-local usernameLookup = function(username)
-		local data = twitchAPICall(string.format('/helix/users?login=%s', channel))
-		data = json.decode(data)
-		local id = data['data'][1]['id']
-		return id
-end
-
 local gameLookup = function(id)
 		local data = twitchAPICall(string.format('/helix/games?id=%s', id))
 		data = json.decode(data)
