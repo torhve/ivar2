@@ -92,6 +92,8 @@ customHosts['youtube%.com'] = function(queue, info)
 			vid = path:match('#.*/%d+/([a-zA-Z0-9_-]+)')
 		elseif(path:match('/v/([a-zA-Z0-9_-]+)')) then
 			vid = path:match('/v/([a-zA-Z0-9_-]+)')
+		elseif(path:match('/shorts/([a-zA-Z0-9_-]+)')) then
+			vid = path:match('/shorts/([a-zA-Z0-9_-]+)')
 		end
 	end
 
