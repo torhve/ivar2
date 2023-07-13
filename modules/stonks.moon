@@ -18,7 +18,7 @@ quote = (a, withname, withoutprice) ->
     withname = false
   if not withoutprice
     withoutprice = false
-  data = simplehttp "https://query1.finance.yahoo.com/v10/finance/quoteSummary/#{urlEncode a}?modules=price"
+  data = simplehttp "https://query1.finance.yahoo.com/v6/finance/quoteSummary/#{urlEncode a}?modules=price"
   data = json.decode(data)
   res = data['quoteSummary']['result'][1]
   unless res return ''
@@ -102,7 +102,7 @@ idx = (s, d, a) =>
   say multiquote(stonks)
 
 crypto = (s, d) =>
-  say multiquote {'BTC-USD', 'ETH-USD', 'XRP-USD', 'DOGE-USD'}
+  say multiquote {'BTC-USD', 'ETH-USD', 'SOL-USD', 'XRP-USD', 'DOGE-USD'}
 
 
 PRIVMSG:
