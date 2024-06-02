@@ -24,9 +24,14 @@ video_html = (video) ->
   <head>
   <meta charset="utf-8">
   <style type="text/css">
+    body {
+      width: 100vw;
+      height: 100vh;
+    }
     video {
       width: 100%;
-      height: auto !important;
+      height: 100%;
+      object-fit: contain;
     }
     button {
       padding: 20px;
