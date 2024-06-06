@@ -4,8 +4,7 @@ local simplehttp = util.simplehttp
 local html2unicode = require'html'
 local trim = util.trim
 
--- luacheck: ignore
-customHosts['twitter%.com'] = function(queue, info)
+local titleHandler = function(queue, info)
 	-- local query = info.query
 	local path = info.path
 	local fragment = info.fragment
@@ -36,6 +35,15 @@ customHosts['twitter%.com'] = function(queue, info)
   title = title:gsub('<.->', ''):gsub('  ', ' ')
 
   title = html2unicode(title)
+  -- replace newline with single space
+  title = title:gsub('\n', ' ')
+  -- remove repeating whitespace
   title = trim(title:gsub('%s%s+', ' '))
   queue:done("<"..author_name.."> "..title)
 end
+
+-- luacheck: ignore
+customHosts['twitter%.com'] = titleHandler
+customHosts['x%.com'] = titleHandler
+
+
