@@ -28,19 +28,21 @@ chat = (source, destination, a) =>
   sys_instruct ..= "You can use IRC colors, IRC bold and underline to stylized the output."
   sys_instruct ..= "The query to the bot is by the IRC user #{source.nick}"
 
-  pdata= [[{
-  "contents": [{
-    "parts":[{"text": "]]..a..[["}]
-    }]
-  ,
-  "system_instruction":
-    {
-      "parts":
-        [
-          {"text": "]]..sys_instruct..[["}
-          ]
-    },
-  }]]
+  pdata =
+		contents:
+			{
+				parts:
+					{
+						text: a
+					}
+			}
+		system_instruction: {
+			parts:
+				{
+					text: sys_instruct
+				}
+			}
+  pdata = json.encode(pdata)
 
   url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=#{key}"
   data = simplehttp {url:url, method:'POST', data:pdata, headers:{['content-type']: "application/json"}}
