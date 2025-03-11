@@ -107,6 +107,8 @@ ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) =>
       content_type = 'image/svg'
     if file\lower!\match '.mp4'
       content_type = 'video/mp4'
+    if file\lower!\match '.mkv'
+      content_type = 'video/mkv'
     if file\lower!\match '.mov'
       content_type = 'video/quicktime'
     if file\lower!\match '.mp3'
@@ -711,6 +713,8 @@ ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) =>
           text = text\sub(1, 100) .. ' '
         file_or_video = 'file'
         if realfn\match '%.mp4$'
+          file_or_video = 'video'
+        if realfn\match '%.mov$'
           file_or_video = 'video'
         msg = "[IRCSNAP] #{sender}#{text}#{ivar2.config.webserverprefix}#{urlbase}#{file_or_video}/#{realfn}"
         ivar2\Privmsg unescaped_channel, msg
