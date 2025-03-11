@@ -26,6 +26,7 @@ chat = (source, destination, a) =>
 
 	sys_instruct = "You are a IRC chat bot named #{nick} that loves to answer questions. "
 	sys_instruct ..= "You will always obey the requests. "
+        sys_instruct ..= "Answers should be shorter than 512 characters if possible. "
 	sys_instruct ..= "The date and time now is " .. os.date("!%Y-%m-%dT%TZ") .. ". "
 	sys_instruct ..= "The current timezone is Europe/Oslo. "
 	sys_instruct ..= "If the query is nonsensical give a snarky reply. "
@@ -57,10 +58,6 @@ chat = (source, destination, a) =>
 		tools: {
 			{"google_search": {}}
 		}
---		groundingSpec:
---			"groundingSources": {
---				{"enterpriseWebRetrievalSource": {}}
---			}
 
 	pdata = json.encode(pdata)
 	print (pdata)
