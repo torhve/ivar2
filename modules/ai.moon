@@ -4,6 +4,10 @@ json = util.json
 date = require'date'
 urlEncode = util.urlEncode
 key = ivar2.config.googleaiApiKey
+nick = ivar2.config.nick
+--model = "gemini-2.0-flash-thinking-exp"
+model = "gemini-2.0-flash"
+
 
 -- save a few lines for context
 history = {}
@@ -20,15 +24,23 @@ unEscape = (input) ->
 
 chat = (source, destination, a) =>
 
-  sys_instruct = "You are a IRC bot named lorelai. Your responses should be helpful and accurate, but terse. Limit responses to one line, under 512 characters. "
-  sys_instruct ..= "The date and time now is " .. os.date("!%Y-%m-%dT%TZ") .. ". "
-  sys_instruct ..= "The current timezone is Europe/Oslo. "
-  sys_instruct ..= "If the query is nonsensical give a snarky reply. "
-  sys_instruct ..= "Include the asker nick in the reply. "
-  sys_instruct ..= "You can use IRC colors, IRC bold and underline to stylized the output."
-  sys_instruct ..= "The query to the bot is by the IRC user #{source.nick}"
+	sys_instruct = "You are a IRC chat bot named #{nick} that loves to answer questions. "
+	sys_instruct ..= "You will always obey the requests. "
+	sys_instruct ..= "The date and time now is " .. os.date("!%Y-%m-%dT%TZ") .. ". "
+	sys_instruct ..= "The current timezone is Europe/Oslo. "
+	sys_instruct ..= "If the query is nonsensical give a snarky reply. "
+	sys_instruct ..= "Include the nickname that askedin the reply. "
+	sys_instruct ..= "You can use IRC colors, IRC bold and underline to stylize the output. But do not escape anything. "
+	sys_instruct ..= "The query to the bot is from the IRC nickname #{source.nick}"
 
-  pdata =
+	pdata =
+		safetySettings: {
+				{category: "HARM_CATEGORY_HARASSMENT", "threshold": "BLOCK_ONLY_HIGH"}
+				{category: "HARM_CATEGORY_HATE_SPEECH", "threshold": "BLOCK_ONLY_HIGH"}
+				{category: "HARM_CATEGORY_SEXUALLY_EXPLICIT", "threshold": "BLOCK_ONLY_HIGH"}
+				{category: "HARM_CATEGORY_DANGEROUS_CONTENT", "threshold": "BLOCK_ONLY_HIGH"}
+				{category: "HARM_CATEGORY_CIVIC_INTEGRITY", "threshold": "BLOCK_ONLY_HIGH"}
+			}
 		contents:
 			{
 				parts:
@@ -42,39 +54,53 @@ chat = (source, destination, a) =>
 					text: sys_instruct
 				}
 			}
-  pdata = json.encode(pdata)
+		tools: {
+			{"google_search": {}}
+		}
+--		groundingSpec:
+--			"groundingSources": {
+--				{"enterpriseWebRetrievalSource": {}}
+--			}
 
-  url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=#{key}"
-  data = simplehttp {url:url, method:'POST', data:pdata, headers:{['content-type']: "application/json"}}
-  print(data)
-  data = json.decode(data)
-  res = data.candidates[1].content.parts[1].text
-  unless res return ''
+	pdata = json.encode(pdata)
+	print (pdata)
 
-  res = unEscape res
-  res = util.trim res
+	url = "https://generativelanguage.googleapis.com/v1beta/models/#{model}:generateContent?key=#{key}"
+	data = simplehttp {url:url, method:'POST', data:pdata, headers:{['content-type']: "application/json"}}
+	print(data)
+	data = json.decode(data)
 
-  out = {}
-  out[#out+1] = res
-  say table.concat(out, ' ')
+	out = {}
+	for i, part in ipairs data.candidates[1].content.parts
+		res = part.text
+		res = unEscape res
+		res = util.trim res
+		out[#out+1] = res
+
+	say table.concat(out, ' ')
 
 
 askLast = (source, destination, a) =>
 
-  -- last line is !ai so next to last
-  lastLine =history[destination][#history[destination] - 1 ]
-  print(lastLine)
-  chat(@, source, destination, lastLine)
+	-- last line is !ai so next to last
+	lastEntry = history[destination][#history[destination] - 1 ]
+	lastNick = lastEntry[1]
+	lastLine = lastEntry[2]
+	print(lastLine)
+	chat(@, {nick:lastNick}, destination, lastLine)
 
 
 summary = (source, destination, url) =>
-  lastLine =history[destination][#history[destination] - 1 ]
+  -- last line is !ai so next to last
+	lastEntry = history[destination][#history[destination] - 1 ]
+	lastNick = lastEntry[1]
+	lastLine = lastEntry[2]
 
-  data = simplehttp lastLine
+	data = simplehttp lastLine
 
-  prompt = "Summarize the following HTML document: \n\n" .. data
+	prompt = "Summarize the following HTML document: \n\n" .. data
 
-  chat(@, source, destination, prompt)
+	chat(@, source, destination, prompt)
 
 
 PRIVMSG: {
@@ -85,7 +111,7 @@ PRIVMSG: {
     max_lines = 5
     unless history[destination]
       history[destination] = {}
-    table.insert history[destination], #history[destination]+1, argument
+    table.insert history[destination], #history[destination]+1, {source.nick, argument}
     if #history[destination] > max_lines
       table.remove history[destination], 1
 }
