@@ -8,7 +8,6 @@ nick = ivar2.config.nick
 --model = "gemini-2.0-flash-thinking-exp"
 model = "gemini-2.0-flash"
 
-
 -- save a few lines for context
 history = {}
 
@@ -22,11 +21,11 @@ unEscape = (input) ->
   )
   return luaString
 
-chat = (source, destination, a) =>
+chat = (source, destination, a, google_search=true) =>
 
 	sys_instruct = "You are a IRC chat bot named #{nick} that loves to answer questions. "
 	sys_instruct ..= "You will always obey the requests. "
-        sys_instruct ..= "Answers should be shorter than 512 characters if possible. "
+	sys_instruct ..= "Answers should be shorter than 512 characters if possible. "
 	sys_instruct ..= "The date and time now is " .. os.date("!%Y-%m-%dT%TZ") .. ". "
 	sys_instruct ..= "The current timezone is Europe/Oslo. "
 	sys_instruct ..= "If the query is nonsensical give a snarky reply. "
@@ -36,12 +35,12 @@ chat = (source, destination, a) =>
 
 	pdata =
 		safetySettings: {
-				{category: "HARM_CATEGORY_HARASSMENT", "threshold": "BLOCK_ONLY_HIGH"}
+			{category: "HARM_CATEGORY_HARASSMENT", "threshold": "BLOCK_ONLY_HIGH"}
 				{category: "HARM_CATEGORY_HATE_SPEECH", "threshold": "BLOCK_ONLY_HIGH"}
 				{category: "HARM_CATEGORY_SEXUALLY_EXPLICIT", "threshold": "BLOCK_ONLY_HIGH"}
 				{category: "HARM_CATEGORY_DANGEROUS_CONTENT", "threshold": "BLOCK_ONLY_HIGH"}
 				{category: "HARM_CATEGORY_CIVIC_INTEGRITY", "threshold": "BLOCK_ONLY_HIGH"}
-			}
+		}
 		contents:
 			{
 				parts:
@@ -54,8 +53,10 @@ chat = (source, destination, a) =>
 				{
 					text: sys_instruct
 				}
-			}
-		tools: {
+		}
+
+	if google_search
+		pdata.tools = {
 			{"google_search": {}}
 		}
 
@@ -63,18 +64,26 @@ chat = (source, destination, a) =>
 	print (pdata)
 
 	url = "https://generativelanguage.googleapis.com/v1beta/models/#{model}:generateContent?key=#{key}"
-	data = simplehttp {url:url, method:'POST', data:pdata, headers:{['content-type']: "application/json"}}
-	print(data)
-	data = json.decode(data)
 
-	out = {}
-	for i, part in ipairs data.candidates[1].content.parts
-		res = part.text
-		res = unEscape res
-		res = util.trim res
-		out[#out+1] = res
+	-- track if the API answers, sometimes we just timeout. Ask again without google search
+	got_reply = false
+	ivar2\Timer "ai", 7, false, ->
+		unless got_reply
+			ivar2\Log('debug', 'No reply from API, poking again without google search')
+			chat(@, source, destination, a, false)
+	simplehttp {url:url, method:'POST', data:pdata, headers:{['content-type']: "application/json"}}, (data) ->
+		got_reply = true
+		ivar2\Log('debug', data)
+		data = json.decode(data)
 
-	say table.concat(out, ' ')
+		out = {}
+		for i, part in ipairs data.candidates[1].content.parts
+			res = part.text
+			res = unEscape res
+			res = util.trim res
+			out[#out+1] = res
+
+		say table.concat(out, ' ')
 
 
 askLast = (source, destination, a) =>
