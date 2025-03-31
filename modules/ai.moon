@@ -19,17 +19,20 @@ unEscape = (input) ->
     byte = tonumber(hex, 16)
     return string.char(byte)
   )
+  luaString = luaString\gsub("\\u(%x%x%x%x)", (hex) ->
+    byte = tonumber(hex, 16)
+    return string.char(byte)
+  )
   return luaString
 
 chat = (source, destination, a, google_search=true) =>
 
 	sys_instruct = "You are a IRC chat bot named #{nick} that loves to answer questions. "
-	sys_instruct ..= "You will always obey the requests. "
-	sys_instruct ..= "Answers should be shorter than 512 characters if possible. "
+	sys_instruct ..= "Prefer shorter responses. "
+--	sys_instruct ..= "Answers should be shorter than 512 characters if possible. "
 	sys_instruct ..= "The date and time now is " .. os.date("!%Y-%m-%dT%TZ") .. ". "
 	sys_instruct ..= "The current timezone is Europe/Oslo. "
 	sys_instruct ..= "If the query is nonsensical give a snarky reply. "
-	sys_instruct ..= "Include the nickname that askedin the reply. "
 	sys_instruct ..= "You can use IRC colors, IRC bold and underline to stylize the output. But do not escape anything. "
 	sys_instruct ..= "The query to the bot is from the IRC nickname #{source.nick}"
 
@@ -67,10 +70,11 @@ chat = (source, destination, a, google_search=true) =>
 
 	-- track if the API answers, sometimes we just timeout. Ask again without google search
 	got_reply = false
-	ivar2\Timer "ai", 7, false, ->
-		unless got_reply
-			ivar2\Log('debug', 'No reply from API, poking again without google search')
-			chat(@, source, destination, a, false)
+	unless google_search
+		ivar2\Timer "ai#{os.time!}", 7, false, ->
+			unless got_reply
+				ivar2\Log('debug', 'No reply from API, poking again without google search')
+				chat(@, source, destination, a, false)
 	simplehttp {url:url, method:'POST', data:pdata, headers:{['content-type']: "application/json"}}, (data) ->
 		got_reply = true
 		ivar2\Log('debug', data)
@@ -83,7 +87,7 @@ chat = (source, destination, a, google_search=true) =>
 			res = util.trim res
 			out[#out+1] = res
 
-		say table.concat(out, ' ')
+		reply table.concat(out, ' ')
 
 
 askLast = (source, destination, a) =>
