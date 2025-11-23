@@ -149,7 +149,7 @@ getRoutes = (source, destination, arg) =>
   graphql = graphql\gsub '\n', ''
   post_data = '{"query":"'..graphql..'","variables":null}'
   print post_data
-  data, uri, response = simplehttp {url:'https://api.entur.io/journey-planner/v2/graphql', method:'POST', data:post_data , headers:{['Et-Client-Name']: client_name, ['Content-Type']:'application/json'}}
+  data, uri, response = simplehttp {url:'https://api.entur.io/journey-planner/v3/graphql', method:'POST', data:post_data , headers:{['Et-Client-Name']: client_name, ['Content-Type']:'application/json'}}
   if response.status_code != 200
     say data
   else
