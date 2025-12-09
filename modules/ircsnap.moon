@@ -103,6 +103,8 @@ ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) =>
     content_type = 'image/jpeg'
     if file\lower!\match '.png'
       content_type = 'image/png'
+    if file\lower!\match '.heif'
+      content_type = 'image/heif'
     if file\lower!\match '.svg'
       content_type = 'image/svg'
     if file\lower!\match '.mp4'
@@ -442,7 +444,7 @@ ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) =>
     </div>
     <div id="buttons">
       <label for="capturei" class="pictake" data-click="onClickTake('capturei')"><span class="icon">📷</span> Snap picture!</label> <input type="file" accept="image/*" id="capturei" capture="camera" style="visibility:hidden;">
-      <label for="capturef" class="pictake" data-click="onClickTake('capturef')"><span class="icon">📂</span> Browse gallery!</label> <input type="file" accept="image/*" id="capturef" style="visibility:hidden;">
+      <label for="capturef" class="pictake" data-click="onClickTake('capturef')"><span class="icon">📂</span> Browse gallery!</label> <input type="file" accept="image/*, image/heif, image/heic" id="capturef" style="visibility:hidden;">
       <label for="capturev" class="pictake" data-click="onClickTake('capturev')"><span class="icon">🎥</span> Capture video!</label> <input type="file" accept="video/*" capture="camcorder" id="capturev" style="visibility:hidden;">
       <label for="capturevf" class="pictake" data-click="onClickTake('capturevf')"><span class="icon">🎥</span> Upload video!</label> <input type="file" accept="video/*" id="capturevf" style="visibility:hidden;">
     </div>
@@ -734,5 +736,4 @@ PRIVMSG:
   '^%pircsnap$': (source, destination) =>
     channel = urlEncode destination
     say "#{ivar2.config.webserverprefix}#{urlbase}?channel=#{channel} IRCSNAP - sharing is caring."
-
 
