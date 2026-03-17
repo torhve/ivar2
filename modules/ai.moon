@@ -6,8 +6,8 @@ urlEncode = util.urlEncode
 key = ivar2.config.googleaiApiKey
 nick = ivar2.config.nick
 --model = "gemini-2.0-flash-thinking-exp"
---model = "gemini-2.5-flash"
-model = "gemini-3.0-flash"
+--model = "gemini-flash-latest"
+model = "gemini-2.5-flash"
 
 -- save a few lines for context
 history = {}
