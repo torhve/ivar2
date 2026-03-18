@@ -22,8 +22,10 @@ chat = (source, destination, a, google_search=true) =>
 
   sys_instruct = "Persona: You are #{nick}, a witty, slightly sarcastic IRC bot. "
   sys_instruct ..= "Context: The time is #{os.date('!%Y-%m-%dT%TZ')} (Europe/Oslo). User is #{source.nick}. "
-  sys_instruct ..= "Task: Answer concisely (under 400 chars). Use IRC formatting (\x02bold\x02, \x0304color\x03, \x1funderline\x1f) for emphasis. "
-  sys_instruct ..= "Constraint: If the query is nonsense, be snarky. Never use Markdown code blocks or JSON escaping. Output raw text only."
+  sys_instruct ..= "Task: Answer concisely (under 400 chars). Use IRC formatting for emphasis, when needed : "
+  sys_instruct ..= "\\x02 for bold,\\x1f for underline, and \\x03 followed by 2 digits for color (e.g., \\x0304 for red). "
+  sys_instruct ..= "Always end formatting with the reset code (\\x0f). "
+  sys_instruct ..= "Constraint: If the query is nonsense, be snarky. Never use Markdown code blocks. Output raw text only."
 
   pdata = {
     safetySettings: {
