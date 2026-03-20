@@ -105,6 +105,8 @@ ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) =>
       content_type = 'image/png'
     if file\lower!\match '.heif'
       content_type = 'image/heif'
+    if file\lower!\match '.heic'
+      content_type = 'image/heic'
     if file\lower!\match '.svg'
       content_type = 'image/svg'
     if file\lower!\match '.mp4'
@@ -736,4 +738,3 @@ PRIVMSG:
   '^%pircsnap$': (source, destination) =>
     channel = urlEncode destination
     say "#{ivar2.config.webserverprefix}#{urlbase}?channel=#{channel} IRCSNAP - sharing is caring."
-
