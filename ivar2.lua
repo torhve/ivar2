@@ -28,6 +28,8 @@ local signal = require'cqueues.signal'
 local socket = require'cqueues.socket'
 local queue = cqueues.new()
 
+local module_envs = setmetatable({}, { __mode = 'k' })
+
 math.randomseed(os.time())
 
 local log = lconsole()
@@ -504,9 +506,16 @@ function ivar2:CommandSplitter(command)
 end
 
 function ivar2:ModuleCall(command, func, source, destination, remainder, ...)
-	-- Construct a environment for each callback that provide some helper
-	-- functions and utilities for the modules
-	local env = getfenv(func)
+	-- Create a per-call environment so that concurrent async operations
+	-- (e.g., simplehttp) cannot overwrite each other's say/reply closures.
+	-- The original module env is remembered once (weak table) and each call
+	-- gets a fresh env that indexes into it via __index.
+	local origEnv = module_envs[func]
+	if not origEnv then
+		origEnv = getfenv(func)
+		module_envs[func] = origEnv
+	end
+	local env = setmetatable({}, { __index = origEnv })
 	env.say = function(str, ...)
 		local output = safeFormat(str, ...)
 		if(not remainder) then
@@ -525,7 +534,7 @@ function ivar2:ModuleCall(command, func, source, destination, remainder, ...)
 	env.reply = function(str, ...)
 		self:Reply(destination, source, str, ...)
 	end
-
+	setfenv(func, env)
 	return pcall(func, self, source, destination, ...)
 end
 
