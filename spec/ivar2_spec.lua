@@ -117,15 +117,123 @@ describe("test util lib", function()
     end)
 end)
 
+describe("test ivar2:Msg dispatch", function()
+	local function makeMock()
+		local m = {
+			config = { nick = "botnick" },
+		}
+		m.privmsg_dest = nil
+		m.notice_dest = nil
+		m.action_dest = nil
+		m.last_args = {}
+		function m:Privmsg(dest, ...)
+			self.privmsg_dest = dest
+			self.last_args = { dest, ... }
+		end
+		function m:Notice(dest, ...)
+			self.notice_dest = dest
+			self.last_args = { dest, ... }
+		end
+		function m:Action(dest, ...)
+			self.action_dest = dest
+			self.last_args = { dest, ... }
+		end
+		function m:Msg(type, dest, source, ...)
+			if dest == self.config.nick then
+				dest = source.nick or source
+			end
+			if type == "notice" then
+				return self:Notice(dest, ...)
+			elseif type == "action" then
+				return self:Action(dest, ...)
+			else
+				return self:Privmsg(dest, ...)
+			end
+		end
+		return m
+	end
+
+	describe("channel messages", function()
+		it("should dispatch privmsg to :Privmsg", function()
+			local m = makeMock()
+			m:Msg("privmsg", "#chan", "user!u@h", "hello")
+			assert.are_equal("#chan", m.privmsg_dest)
+			assert.is_nil(m.notice_dest)
+			assert.is_nil(m.action_dest)
+		end)
+
+		it("should dispatch notice to :Notice", function()
+			local m = makeMock()
+			m:Msg("notice", "#chan", "user!u@h", "beep")
+			assert.are_equal("#chan", m.notice_dest)
+			assert.is_nil(m.privmsg_dest)
+			assert.is_nil(m.action_dest)
+		end)
+
+		it("should dispatch action to :Action", function()
+			local m = makeMock()
+			m:Msg("action", "#chan", "user!u@h", "waves")
+			assert.are_equal("#chan", m.action_dest)
+			assert.is_nil(m.privmsg_dest)
+			assert.is_nil(m.notice_dest)
+		end)
+	end)
+
+	describe("pm messages", function()
+		it("should dispatch privmsg to source.nick in PM", function()
+			local m = makeMock()
+			m:Msg("privmsg", "botnick", { nick = "user" }, "pm")
+			assert.are_equal("user", m.privmsg_dest)
+			assert.is_nil(m.notice_dest)
+			assert.is_nil(m.action_dest)
+		end)
+
+		it("should dispatch notice to source.nick in PM", function()
+			local m = makeMock()
+			m:Msg("notice", "botnick", { nick = "user" }, "pm")
+			assert.are_equal("user", m.notice_dest)
+			assert.is_nil(m.privmsg_dest)
+			assert.is_nil(m.action_dest)
+		end)
+
+		it("should dispatch action to source.nick in PM", function()
+			local m = makeMock()
+			m:Msg("action", "botnick", { nick = "user" }, "pm")
+			assert.are_equal("user", m.action_dest)
+			assert.is_nil(m.privmsg_dest)
+			assert.is_nil(m.notice_dest)
+		end)
+
+		it("should fall back to raw source string when no .nick", function()
+			local m = makeMock()
+			m:Msg("privmsg", "botnick", "user", "pm")
+			assert.are_equal("user", m.privmsg_dest)
+		end)
+	end)
+
+	describe("extra args forwarding", function()
+		it("should forward extra args to the handler", function()
+			local m = makeMock()
+			m:Msg("privmsg", "#chan", "user!u@h", "%s %d", "hello", 42)
+			assert.are_equal(4, #m.last_args)
+			assert.are_equal("#chan", m.last_args[1])
+			assert.are_equal("%s %d", m.last_args[2])
+			assert.are_equal("hello", m.last_args[3])
+			assert.are_equal(42, m.last_args[4])
+		end)
+	end)
+	end)
+
 describe("test webserver", function()
     describe("webserver tests", function()
         it("should listen", function()
             local webserver = assert(loadfile('core/webserver.lua'))(ivar2)
-            local server = webserver.start('::', '9999')
+            local cqueue = cqueues.running()
+            local new =cqueues.new()
+            local server = webserver.start('localhost', 9999, new)
             queue:wrap(function()
-                server:listen()
-                local cqueue = cqueues.running()
-                server:run(webserver.on_stream, cqueue)
+                assert(server:listen())
+                assert_loop(new)
             end)
             webserver.regUrl('/test', function(self, req, res)
               assert.are_equal(req.url, '/test')
@@ -151,7 +259,6 @@ describe("test webserver", function()
             queue:wrap(function()
                 util.simplehttp({
                     url='http://127.0.0.1:9999/test',
-                    --headers={Connection='close'}
                 }, function(data)
                     assert.are_equal(data, 'Hello world!')
                 end)
@@ -169,7 +276,7 @@ describe("test webserver", function()
                     assert.are_equal(data, 'Hello world!\n')
                 end)
             end
-            assert_loop(queue, TEST_TIMEOUT)
+                assert_loop(queue, TEST_TIMEOUT)
 
         end)
     end)

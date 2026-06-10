@@ -207,13 +207,15 @@ function ivar2:Action(destination, format, ...)
 end
 
 function ivar2:Msg(type, destination, source, ...)
-	local handler = type == 'notice' and 'Notice' or 'Privmsg' or 'Action'
 	if(destination == self.config.nick) then
-		-- Send the respons as a PM.
-		return self[handler](self, source.nick or source, ...)
+		destination = source.nick or source
+	end
+	if type == 'notice' then
+		return self:Notice(destination, ...)
+	elseif type == 'action' then
+		return self:Action(destination, ...)
 	else
-		-- Send it to the channel.
-		return self[handler](self, destination, ...)
+		return self:Privmsg(destination, ...)
 	end
 end
 
