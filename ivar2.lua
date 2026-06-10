@@ -55,7 +55,7 @@ local ivar2 = {
 				self:Reconnect()
 			end)
 		else
-			queue:cancel() -- TODO: check if this works
+			os.exit(1) -- no autoReconnect configured; shut down
 		end
 	end,
 
