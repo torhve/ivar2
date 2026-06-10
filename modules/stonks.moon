@@ -2,6 +2,7 @@ util = require'util'
 simplehttp = util.simplehttp
 json = util.json
 urlEncode = util.urlEncode
+key = ivar2.config.yfinanceApiKey
 
 siValue = (val) ->
   val = val\gsub(',','')
@@ -18,7 +19,8 @@ quote = (a, withname, withoutprice) ->
     withname = false
   if not withoutprice
     withoutprice = false
-  data = simplehttp "https://query1.finance.yahoo.com/v6/finance/quoteSummary/#{urlEncode a}?modules=price"
+  url = "https://yfapi.net/v11/finance/quoteSummary/#{urlEncode a}?modules=price"
+  data = simplehttp {url:url, method:'GET', headers:{['x-api-key']:key}}
   data = json.decode(data)
   res = data['quoteSummary']['result'][1]
   unless res return ''
@@ -41,16 +43,18 @@ quote = (a, withname, withoutprice) ->
   regularmarket = true
   premarket = false
   postmarket = false
+  aftermarket_per = nil
+  aftermarket_raw_per = nil
   if price.preMarketTime
     if price.preMarketTime > price.regularMarketTime
       current_price = price.preMarketPrice.fmt
-      current_per = price.preMarketChangePercent.fmt
-      current_raw_per = price.preMarketChangePercent.raw
+      aftermarket_per = price.preMarketChangePercent.fmt
+      aftermarket_raw_per = price.preMarketChangePercent.raw
       premarket = true
     elseif price.postMarketTime and price.postMarketTime > price.regularMarketTime
       current_price = price.postMarketPrice.fmt
-      current_per = price.postMarketChangePercent.fmt
-      current_raw_per = price.postMarketChangePercent.raw
+      aftermarket_per = price.postMarketChangePercent.fmt
+      aftermarket_raw_per = price.postMarketChangePercent.raw
       postmarket = true
 
   unless withoutprice
@@ -60,6 +64,9 @@ quote = (a, withname, withoutprice) ->
   else
     current_per = util.red current_per
   out[#out+1] = " "..current_per .." "
+  if aftermarket_per
+    colored_after = if aftermarket_raw_per > 0 then util.green(aftermarket_per) else util.red(aftermarket_per)
+    out[#out+1] = " ("..colored_after..")"
 
   --if price.preMarketPrice.fmt
   --  out[#out+1] = "("..price.preMarketPrice.fmt..")"
