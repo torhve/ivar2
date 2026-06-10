@@ -587,7 +587,7 @@ function ivar2:Connect(config)
 	self.config = config
 	if(not self.config.password) then
 		self:Log('error', 'No password/token defined in config, aborting.')
-		return
+		return false
 	end
 
 	--if(not self.control) then
@@ -622,9 +622,12 @@ function ivar2:Connect(config)
 	self:LoadModules()
 
 	queue:wrap(function()
-	  local connect, msg = zulip:Connect(config.uri, config.ident, config.password)
-		if not connect then
-			self:Log('error', 'Error connecting :%s', connect, msg)
+		while true do
+			local connect, msg = zulip:Connect(config.uri, config.ident, config.password)
+			if not connect then
+				self:Log('error', 'Error connecting :%s', connect, msg)
+				return false
+			end
 		end
 	end)
 
