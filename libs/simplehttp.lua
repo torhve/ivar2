@@ -7,10 +7,11 @@ local lconsole = require'logging.console'
 local log = lconsole()
 
 -- Change to DEBUG if you want to see full URL fetch log
-log:setLevel('INFO')
+--log:setLevel('INFO')
+log:setLevel('DEBUG')
 
 local function simplehttp(url, callback, unused, limit)
-	local req_timeout = 60
+	local req_timeout = 500
 
 	local uri
 	if(type(url) == "table") then
@@ -51,6 +52,10 @@ local function simplehttp(url, callback, unused, limit)
 	if(type(url) == "table") then
 		if(url.headers) then
 			for k, v in next, url.headers do
+				if not client.version or client.version and client.version >= 2 then
+					-- HTTP2 needs lowercase
+					k = string.lower(k)
+				end
 				-- Overwrite any existing
 				client.headers:upsert(k, v)
 			end
