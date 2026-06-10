@@ -30,6 +30,7 @@ Instructions for containing Lua and all deps inside a single directory, almost l
     bin/luarocks install lua-iconv
     bin/luarocks install luafilesystem
     bin/luarocks install lsqlite3
+    bin/luarocks install luaexif # Requires libexif-dev
     # Optional
     bin/luarocks install --server=http://luarocks.org/dev cqueues-pgsql  PQ_INCDIR=/usr/include/postgresql # requires libpq-dev system package
 
@@ -46,12 +47,13 @@ Alternate instructions for install Lua(JIT) + deps, trying to use some system pa
 
 ::
 
-    sudo apt-get install luarocks liblua5.1-iconv0 lua-zlib lua-cjson cmake libsqlite3-dev git libssl-dev m4
+    sudo apt-get install luarocks liblua5.1-iconv0 lua-zlib lua-cjson cmake libsqlite3-dev git libssl-dev m4 libexif-dev
     sudo luarocks install lsqlite3
     sudo luarocks install luabitop
     sudo luarocks install luarocks #newer version of luarocks to support git+https
     sudo luarocks install http
     sudo luarocks install luafilesystem
+    sudo luarocks install feedparser
     # if you want to use LuaJIT instead of Lua
     sudo apt-get install luajit
     # if you want postgresql support
@@ -208,8 +210,92 @@ Example of module that is responding to HTTP:
      end)
 
      ivar2.webserver.regUrl('/test/plain/(.*)', function(self, req, res)
-       self:Log('error', 'testtestest')
-       return 'ok', 200, {
-         ['Content-Type'] = 'text/plain'
-       }
-     end)
+        self:Log('error', 'testtestest')
+        return 'ok', 200, {
+          ['Content-Type'] = 'text/plain'
+        }
+      end)
+
+Testing
+-------
+
+ivar2 provides a testing framework for unit-testing modules without running
+the full bot. Two approaches are available: a CLI tool for quick ad-hoc
+testing, and busted integration for repeatable test suites.
+
+CLI Quick Test
+~~~~~~~~~~~~~~
+
+Test a module interactively by passing an IRC-like message string::
+
+    # Sync module
+    lua tools/test_module.lua ping '!ping'
+
+    # Async module (requires --timeout for cqueues event loop)
+    lua tools/test_module.lua stonks '!q NVDA' --timeout 5
+
+    # List all patterns a module responds to
+    lua tools/test_module.lua stonks --list
+
+Options:
+
+    --config <path>   Config file (default: config/ivartest.lua)
+    --timeout <sec>   cqueues loop timeout for async modules (default: 0)
+    --dest <channel>  Destination channel (default: #test)
+    --nick <nick>     Source nick (default: tester)
+    --list            List module patterns without invoking
+
+Module Test Files
+~~~~~~~~~~~~~~~~~
+
+Write repeatable tests in ``spec/modules/<name>.lua`` (one file per module,
+no ``_spec`` suffix). Use ``helper.setup()`` to create a context, then
+``ctx:invoke()`` to fire handlers and capture output::
+
+    local busted = require 'busted'
+    local describe = busted.describe
+    local it = busted.it
+    local helper = require 'module_helper'
+
+    describe('my module', function()
+        local ctx = helper.setup('mymodule', 'config/ivartest.lua')
+
+        it('responds to !cmd', function()
+            local captures = ctx:invoke('!cmd arg')
+            assert.is_true(#captures.say > 0)
+        end)
+
+        it('async handler with timeout', function()
+            local captures = ctx:invoke('!async', { timeout = 5 })
+            assert.is_true(#captures.say > 0)
+        end)
+    end)
+
+Helper Reference
+~~~~~~~~~~~~~~~~
+
+Functions available in ``spec/module_helper.lua``:
+
+    helper.setup(module_name, config_path)  -- returns context object
+    ctx:invoke(message, opts)               -- invokes matching handlers
+    helper.capture_env(mock)                -- low-level say/reply capture
+    helper.irc_to_ansi(s)                   -- converts IRC codes to ANSI 256-color
+
+The context object exposes:
+
+    ctx.mock        -- the ivar2 mock object
+    ctx.mod         -- loaded module table
+    ctx.queue       -- cqueues event loop
+
+The ``invoke()`` function returns a captures table with ``say[]`` and
+``reply[]`` arrays. For async modules, pass ``{ timeout = N }`` to wait
+for pending operations.
+
+Running Tests
+~~~~~~~~~~~~~
+
+    # Full test suite
+    busted
+
+    # Single module test
+    busted spec/modules/stonks.lua
