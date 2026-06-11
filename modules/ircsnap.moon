@@ -8,6 +8,13 @@ hex_to_char = (x) ->
 unescape = (url) ->
   url\gsub("%%(%x%x)", hex_to_char)
 
+html_escape = (s) ->
+  s = s\gsub('&', '&amp;')
+  s = s\gsub('<', '&lt;')
+  s = s\gsub('>', '&gt;')
+  s = s\gsub('"', '&quot;')
+  return s
+
 -- All URLs in this module is under this prefix
 urlbase = '/image/'
 
@@ -16,71 +23,73 @@ safe = (fn) ->
   f = f\gsub '[^%w%-]', ''
   return f..'.'..ext
 
-video_html = (video) ->
+video_html = (video, ch) ->
   videourl = ivar2.config.webserverprefix..urlbase..'file/'..video
+  escaped_ch = html_escape ch
   [[
-  <!DOCTYPE html>
-  <html>
-  <head>
-  <meta charset="utf-8">
-  <style type="text/css">
-    body {
-      width: 100vw;
-      height: 100vh;
-    }
-    video {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-    button {
-      padding: 20px;
-      box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
-      border: medium none;
-      border-radius: 2px;
-      color: #000;
-      position: relative;
-      height: 36px;
-      min-width: 64px;
-      padding: 0px 8px;
-      display: block;
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 0px;
-      overflow: hidden;
-      will-change: box-shadow, transform;
-      transition: box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1) 0s, background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1) 0s, color 0.2s cubic-bezier(0.4, 0, 0.2, 1) 0s;
-      outline: medium none;
-      margin: 5px;
-      cursor: pointer;
-      text-decoration: none;
-      text-align: center;
-      line-height: 36px;
-      vertical-align: middle;
-      border-collapse: collapse;
-      border-spacing: 0px;
-      background-color: #E6B85C;
-    }
-  </style>
-  <body>
-    <video id="v" src="]]..videourl..[[" controls autoplay loop>
-      Your browser does not support the <code>video</code> element.
-      Try the direct link to the video: <a href="]]..videourl..[[">video</a>
-    </video>
-    <script>
-    function rotate(deg) {
-      console.log(deg);
-      var prop = 'transform';
-      document.getElementById('v').style[prop]='rotate('+deg+'deg)';
-
-    }
-    </script>
-    <button onclick="rotate(90)">Rotate ⟳</button>
-    <button onclick="rotate(-90)">Rotate ⟲</button>
-
-  </body>
-  </html>
-  ]]
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Video - ]]..escaped_ch..[[</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: #141010;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+video {
+  width: 100%;
+  max-height: calc(100vh - 60px);
+  object-fit: contain;
+  background: #000;
+}
+.controls {
+  display: flex;
+  gap: 8px;
+  padding: 12px;
+  width: 100%;
+  justify-content: center;
+}
+.controls button {
+  background: #680747;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.controls button:hover {
+  background: #c3195d;
+}
+</style>
+</head>
+<body>
+<video id="v" src="]]..videourl..[[" controls autoplay loop>
+Your browser does not support the video element.
+<a href="]]..videourl..[[">Download video</a>
+</video>
+<div class="controls">
+<button onclick="rotate(90)">⟳ Rotate CW</button>
+<button onclick="rotate(-90)">⟲ Rotate CCW</button>
+</div>
+<script>
+var deg = 0;
+function rotate(d) {
+  deg += d;
+  document.getElementById('v').style.transform = 'rotate(' + deg + 'deg)';
+}
+</script>
+</body>
+</html>
+]]
 
 
 ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) =>
@@ -93,13 +102,12 @@ ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) =>
     res\append 'Content-Length', tostring(#body)
     req\write_headers(res, false, 30)
     req\write_body_from_string(body, 30)
-    return -- empty return
+    return
 
   file = url\match '/file/(.*)$'
   if file
     fn = "cache/images/#{safe file}"
     size = lfs.attributes(fn).size
-    --body = fd\read '*a'
     content_type = 'image/jpeg'
     if file\lower!\match '.png'
       content_type = 'image/png'
@@ -108,15 +116,15 @@ ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) =>
     if file\lower!\match '.heic'
       content_type = 'image/heic'
     if file\lower!\match '.svg'
-      content_type = 'image/svg'
+      content_type = 'image/svg+xml'
     if file\lower!\match '.mp4'
       content_type = 'video/mp4'
     if file\lower!\match '.mkv'
-      content_type = 'video/mkv'
+      content_type = 'video/x-matroska'
     if file\lower!\match '.mov'
       content_type = 'video/quicktime'
     if file\lower!\match '.mp3'
-      content_type = 'audio/mp3'
+      content_type = 'audio/mpeg'
 
     res\append ':status', '200'
     res\append 'Content-Type', content_type
@@ -130,7 +138,8 @@ ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) =>
   -- Serve video player page
   video = url\match '/video/(.*)$'
   if video then
-    send video_html(video)
+    channel_raw = url\match('channel=(.+)%s*') or ''
+    send video_html(video, channel_raw)
     return
 
   channel = url\match('channel=(.+)%s*')
@@ -140,565 +149,439 @@ ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) =>
 
   channel = html2unicode channel
   unescaped_channel = unescape channel
+  escaped_channel = html_escape unescaped_channel
 
   html = [[
-  <!DOCTYPE html>
-  <html>
-  <head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="IRCSNAP ]]..escaped_channel..[[">
+<meta name="theme-color" content="#680747">
+<title>IRCSNAP ]]..escaped_channel..[[</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  <!-- ivar2 photo uploader -->
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="IRCSNAP ]]..unescaped_channel..[[">
-  <meta name="theme-color" content="#8f4099">
+:root {
+  --pink: #f70776;
+  --magenta: #c3195d;
+  --purple: #680747;
+  --dark: #141010;
+  --bg: #1a1515;
+  --card: #221c1c;
+  --text: #e8e0e0;
+  --muted: #9a8e8e;
+  --border: #3a3232;
+}
 
-  <title>IRCSNAP ]]..unescaped_channel..[[</title>
+html { height: 100%; }
 
-  <style type="text/css">
-  html {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-  }
-  body {
-    font-family: "Roboto","Segoe UI","Arial",sans-serif !important;
-    padding: 0;
-    margin: 0;
-  }
-  .content {
-    height: 100%;
-    margin: auto;
-    background-color: #FAFAFA;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 20px;
-    color: rgba(0, 0, 0, 0.87);
-    display: flex;
-    flex-direction: column;
-    overflow-y: auto;
-    overflow-x: hidden;
-    position: relative;
-    max-width: 768px;
-    padding: 0;
-    padding-left: 5px;
-    padding-right: 5px;
-  }
-  form {
-    display: inline;
-    margin: 0;
-    padding: 0;
-  }
-  .footer {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    width: 100%;
-    background-color: rgb(66, 66, 66);
-    color: rgb(158, 158, 158);
-  }
-    .footer p {
-      padding: 5px;
-      max-width: 768px;
-      margin: auto;
-    }
-    .footer a {
-      color: white;
-    }
-  #buttons, #status, .content {
-    display: flex;
-    flex-flow: column wrap;
-    align-items: stretch;
-  }
-  header {
-    width: 100%;
-    background-color: #8f4099;
-    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
-    color: white;
-  }
-  header h3 {
-    max-width: 768px;
-    margin-top: 0;
-    margin: auto;
-    padding: 20px;
-  }
-  .group            {
-    position:relative;
-    margin-bottom:45px;
-  }
-  .group input               {
-    font-size:18px;
-    padding:10px 10px 10px 5px;
-    display:block;
-    width:99%;
-    border:none;
-    border-bottom:1px solid #757575;
-  }
-  input:focus         { outline:none; }
+body {
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
 
-  /* LABEL ======================================= */
-  .group label {
-    color:#999;
-    font-size:18px;
-    font-weight:normal;
-    position:absolute;
-    pointer-events:none;
-    left:5px;
-    top:10px;
-    transition:0.2s ease all;
-    -moz-transition:0.2s ease all;
-    -webkit-transition:0.2s ease all;
-  }
+header {
+  background: var(--purple);
+  padding: 16px 20px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+header h1 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
 
-  /* active state */
-  .group input:focus ~ label, .group input:valid ~ label        {
-    top:-20px;
-    font-size:14px;
-    color:#5264AE;
-  }
+.main {
+  flex: 1;
+  max-width: 520px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px 16px;
+}
 
-  /* BOTTOM BARS ================================= */
-  .bar    { position:relative; display:block; width:99%; }
-  .bar:before, .bar:after     {
-    content:'';
-    height:2px;
-    width:0;
-    bottom:1px;
-    position:absolute;
-    background:#5264AE;
-    transition:0.2s ease all;
-    -moz-transition:0.2s ease all;
-    -webkit-transition:0.2s ease all;
-  }
-  .bar:before {
-    left:50%;
-  }
-  .bar:after {
-    right:50%;
-  }
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 18px;
+  margin-bottom: 16px;
+}
 
-  /* active state */
-  input:focus ~ .bar:before, input:focus ~ .bar:after {
-    width:50%;
-  }
+.card h2 {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
 
-  /* HIGHLIGHTER ================================== */
-  .highlight {
-    position:absolute;
-    height:60%;
-    width:100%;
-    top:25%;
-    left:0;
-    pointer-events:none;
-    opacity:0.5;
-  }
+label.field {
+  display: block;
+  margin-bottom: 12px;
+}
+label.field span {
+  display: block;
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+label.field input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--dark);
+  color: var(--text);
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+label.field input:focus {
+  border-color: var(--pink);
+}
 
-  /* active state */
-  input:focus ~ .highlight {
-    -webkit-animation:inputHighlighter 0.3s ease;
-    -moz-animation:inputHighlighter 0.3s ease;
-    animation:inputHighlighter 0.3s ease;
-  }
+.btn-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
 
-  /* ANIMATIONS ================ */
-  @-webkit-keyframes inputHighlighter {
-      from { background:#5264AE; }
-    to    { width:0; background:transparent; }
-  }
-  @-moz-keyframes inputHighlighter {
-      from { background:#5264AE; }
-    to    { width:0; background:transparent; }
-  }
-  @keyframes inputHighlighter {
-      from { background:#5264AE; }
-    to    { width:0; background:transparent; }
-  }
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 12px 10px;
+  border: none;
+  border-radius: 8px;
+  background: var(--pink);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  text-decoration: none;
+}
+.btn:hover { background: var(--magenta); }
+.btn:active { transform: scale(0.97); }
+.btn .icon { font-size: 20px; }
 
-  .pictake {
-    padding: 20px;
-    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
-    border: medium none;
-    border-radius: 2px;
-    color: #000;
-    position: relative;
-    height: 36px;
-    min-width: 64px;
-    padding: 0px 8px;
-    display: inline-block;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0px;
-    overflow: hidden;
-    will-change: box-shadow, transform;
-    transition: box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1) 0s, background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1) 0s, color 0.2s cubic-bezier(0.4, 0, 0.2, 1) 0s;
-    outline: medium none;
-    cursor: pointer;
-    text-decoration: none;
-    text-align: center;
-    line-height: 36px;
-    vertical-align: middle;
-    border-collapse: collapse;
-    border-spacing: 0px;
-    background-color: #E6B85C;
-  }
-    .pictake .icon {
-      font-size: 28px;
-    }
-  #progress {
-    display: block;
-    height: 3px;
-    background-color: #b0d0ef;
-  }
-  #bar {
-    display: block;
-    height: 3px;
-    background-color: #3a81f0;
-    width: 0%;
-  }
-  #drop-layer {
-    position: fixed;
-    height: auto;
-    bottom: 0;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 10000;
-    display: none;
+#preview-area {
+  display: none;
+  text-align: center;
+}
+#preview-area img, #preview-area video {
+  max-width: 100%;
+  max-height: 240px;
+  border-radius: 8px;
+  margin: 10px 0;
+}
+#preview-name {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+#confirm-btn {
+  display: inline-block;
+  margin-top: 6px;
+  padding: 10px 24px;
+}
+#cancel-btn {
+  display: inline-block;
+  margin-top: 6px;
+  margin-left: 8px;
+  background: var(--border);
+}
+#cancel-btn:hover { background: #4a4242; }
 
-  }
-  .modal {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translateY(-50%) translateX(-50%);
-    border-radius: 5px;
-    background-color: #45484f;
-    box-shadow: 0 5px 15px 0 rgba(0,0,0,.5);
-  }
-  .droplabel {
-    position: relative;
-    top: 100px;
-    margin-left: 40%;
-  }
-  .over {
-    border: 2px dashed #990000 !important;
-  }
-  .box {
-    width: 300px;
-    min-height: 300px;
-    display: block;
-    width: 100%;
-  }
-  .box__dragndrop,
-    .box__uploading,
-    .box__success,
-    .box__error {
-      display: none;
-  }
-  .box {
-    background-color: white;
-    outline: 2px dashed black;
-    outline-offset: -10px;
-  }
-  .box. .box__dragndrop {
-    display: inline;
-  }
-  .box.is-dragover {
-    background-color: grey;
-  }
-  .box.is-uploading .box__input {
-    visibility: none;
-  }
-  .box.is-uploading .box__uploading {
-    display: block;
-	}
-  .box .box__file {
-    display: none;
-  }
+#status {
+  display: none;
+  text-align: center;
+  padding: 12px 0;
+}
+#status p { font-size: 14px; margin-bottom: 6px; }
+.progress-track {
+  height: 4px;
+  background: var(--border);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  background: var(--pink);
+  transition: width 0.15s;
+}
 
-  </style>
-  <body>
-  <div id="drop-layer"></div>
-  <header>
-    <h3>Share to IRC app - ]]..unescaped_channel..[[ edition</h3>
-  </header>
-  <div class="content">
-    <p>Fill in your nick/name and optional text and then click on one of the yellow buttons to attach image. It will appear instantly on IRC!</p>
-    <form>
-      <div class="group">
-        <input id="sender" type="text" required>
-        <span class="highlight"></span>
-        <span class="bar"></span>
-        <label>Your nickname</label>
-      </div>
-      <div class="group">
-        <input id="text" type="text" required>
-        <span class="highlight"></span>
-        <span class="bar"></span>
-        <label>Attach text, if you want</label>
-      </div>
-    </form>
+.dropzone {
+  border: 2px dashed var(--border);
+  border-radius: 10px;
+  padding: 28px 16px;
+  text-align: center;
+  transition: border-color 0.2s, background 0.2s;
+  cursor: pointer;
+}
+.dropzone.dragover {
+  border-color: var(--pink);
+  background: rgba(247, 7, 118, 0.06);
+}
+.dropzone p {
+  color: var(--muted);
+  font-size: 14px;
+}
+.dropzone .dz-icon {
+  font-size: 32px;
+  margin-bottom: 6px;
+}
 
-    <div style="display: none;" id="status">
-      <p id="uploadprogress">Uploading. Percent complete: 0 %</p>
-      <div id="progress"><div id="bar"></div></div>
-    </div>
-    <div id="buttons">
-      <label for="capturei" class="pictake" data-click="onClickTake('capturei')"><span class="icon">📷</span> Snap picture!</label> <input type="file" accept="image/*" id="capturei" capture="camera" style="visibility:hidden;">
-      <label for="capturef" class="pictake" data-click="onClickTake('capturef')"><span class="icon">📂</span> Browse gallery!</label> <input type="file" accept="image/*, image/heif, image/heic" id="capturef" style="visibility:hidden;">
-      <label for="capturev" class="pictake" data-click="onClickTake('capturev')"><span class="icon">🎥</span> Capture video!</label> <input type="file" accept="video/*" capture="camcorder" id="capturev" style="visibility:hidden;">
-      <label for="capturevf" class="pictake" data-click="onClickTake('capturevf')"><span class="icon">🎥</span> Upload video!</label> <input type="file" accept="video/*" id="capturevf" style="visibility:hidden;">
-    </div>
-    <!--
-    <p>Share audio: <input type="file" accept="audio/*" id="capturea" capture="microphone">
-    -->
-    <section>
-      <h3>You can also drag and drop here, or paste clipboard data, but beware, it will not ask for confirmation before uploading!!!</h3>
-      <form class="box" method="post" action="" enctype="multipart/form-data">
-        <div class="box__input">
-          <input id="box__dropi" class="box__file" type="file" name="files[]" id="file" data-multiple-caption="{count} files selected" multiple />
-          <label class="droplabel" for="file"><span class="box__dragndrop">Drag a file here</span>.</label>
-          <!--
-          <button class="box__button" type="submit">Upload</button>
-          -->
-        </div>
-        <div class="box__uploading">Uploading&hellip;</div>
-        <div class="box__success">Done!</div>
-        <div class="box__error">Error! <span></span>.</div>
-        <img id="container"></img>
-      </form>
-    <section>
+footer {
+  background: var(--dark);
+  border-top: 1px solid var(--border);
+  padding: 20px 16px;
+  text-align: center;
+}
+footer p {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 4px 0;
+}
+footer a { color: var(--pink); text-decoration: none; }
+footer a:hover { text-decoration: underline; }
+footer strong { color: var(--text); }
+
+.hidden { display: none !important; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Share to IRC — ]]..escaped_channel..[[</h1>
+</header>
+
+<div class="main">
+
+  <div class="card">
+    <label class="field">
+      <span>Nickname</span>
+      <input id="sender" type="text" placeholder="Your nick">
+    </label>
+    <label class="field">
+      <span>Message (optional)</span>
+      <input id="text" type="text" placeholder="Say something...">
+    </label>
   </div>
-  <div class="footer">
-    <p>
-      <strong>What is this?</strong>
-    </p>
-    <p><i>Share to IRC</i> is a simple web app for sharing media directly from your device to an IRC channel.</p>
-    <p>Click Tools -&gt;  Add to homescreen to create a convenient shortcut for easy and fast access to sharing</p>
-    <p>Made by <a href="//github.com/torhve/">xt</a></p>
+
+  <div class="card" id="upload-card">
+    <h2>Choose media</h2>
+    <div class="btn-grid" id="buttons">
+      <label for="capturei" class="btn"><span class="icon">&#128247;</span> Snap photo</label>
+      <input type="file" accept="image/*" id="capturei" capture="camera" class="hidden">
+
+      <label for="capturef" class="btn"><span class="icon">&#128193;</span> Browse files</label>
+      <input type="file" accept="image/*,image/heif,image/heic" id="capturef" class="hidden">
+
+      <label for="capturev" class="btn"><span class="icon">&#127909;</span> Record video</label>
+      <input type="file" accept="video/*" id="capturev" capture="camcorder" class="hidden">
+
+      <label for="capturevf" class="btn"><span class="icon">&#128192;</span> Upload video</label>
+      <input type="file" accept="video/*" id="capturevf" class="hidden">
+    </div>
+
+    <div id="preview-area">
+      <p id="preview-name"></p>
+      <div id="preview-media"></div>
+      <button id="confirm-btn" class="btn">Upload</button>
+      <button id="cancel-btn" class="btn">Cancel</button>
+    </div>
+
+    <div id="status">
+      <p id="uploadprogress">Uploading...</p>
+      <div class="progress-track"><div id="bar" class="progress-bar"></div></div>
+    </div>
   </div>
-  <script>
 
-  // Global lock for uploading or not
-  var uploading = false;
-  // Store file size of upload to compute progress;
-  var uploadsize = 0;
+  <div class="card">
+    <h2>Drag &amp; drop / paste</h2>
+    <div class="dropzone" id="dropzone">
+      <div class="dz-icon">&#128219;</div>
+      <p>Drop files here or paste an image</p>
+      <input type="file" id="box__dropi" class="hidden" multiple>
+    </div>
+  </div>
 
-  function uploadingTransition() {
-    uploading = true;
-    document.getElementById('buttons').style.display = 'none';
-    document.getElementById('status').style.display = 'flex';
-  }
+</div>
 
-  function uploadedTransition(success) {
-    uploading = false;
-    /*
-    if(success) {
-      document.getElementById('status').style.display = 'none';
-    }*/
-    document.getElementById('buttons').style.display = 'flex';
-  }
+<footer>
+  <p><strong>What is this?</strong></p>
+  <p>Share to IRC is a simple web app for sharing media directly from your device to an IRC channel.</p>
+  <p>Use your browser menu to add this to your home screen for quick access.</p>
+  <p>Made by <a href="//github.com/torhve/">xt</a></p>
+</footer>
 
-  function onClickTake(id) {
-    document.getElementById(id).click();
-  }
+<script>
+var uploading = false;
+var pendingFile = null;
+var uploadSize = 0;
 
-  // progress on transfers from the server to the client (downloads)
-  function updateProgress (oEvent) {
-    var percentComplete;
-    if (oEvent.lengthComputable) {
-      percentComplete = Math.floor(oEvent.loaded*100 / oEvent.total);
-      // ...
-    } else {
-      percentComplete = Math.floor(oEvent.loaded*100 / uploadsize);
-    }
-    document.getElementById('bar').style.width = percentComplete + '%';
-    document.getElementById('uploadprogress').textContent = "Uploading. Percent complete: " + percentComplete + ' %';
-  }
+function encode(str) {
+  return decodeURIComponent(encodeURIComponent(str));
+}
 
-  function transferComplete(evt) {
-    console.log("The transfer is complete.");
-    document.getElementById('uploadprogress').textContent = "Upload complete, shared to IRC!"
-    uploadedTransition(true);
-  }
-
-  function transferFailed(evt) {
-    var msg = "An error occurred while transferring the file."
-    document.getElementById('uploadprogress').textContent = msg;
-    console.log(msg);
-    uploadedTransition(false);
-  }
-
-  function transferCanceled(evt) {
-    var msg = "The transfer has been canceled by the user.";
-    document.getElementById('uploadprogress').textContent = msg;
-    console.log(msg);
-    uploadedTransition(false);
-  }
-
-  function javascript_is_nice(str) {
-    return unescape(encodeURIComponent(str));
-  }
-
-  function sendMedia(el) {
-    if(uploading) {
-      alert('Already uploading, please wait.');
-      return;
-    }
-    uploadingTransition();
-    var target = el.target;
-    var file = target.files[0];
-    var xhr = new XMLHttpRequest();
-    xhr.addEventListener("progress", updateProgress);
-    xhr.addEventListener("load", transferComplete);
-    xhr.addEventListener("error", transferFailed);
-    xhr.addEventListener("abort", transferCanceled);
-    xhr.upload.onprogress = updateProgress;
-    var text = document.getElementById('text').value;
-    var sender = document.getElementById('sender').value;
-    xhr.open('POST', 'upload/?channel=]]..channel..[[', true);
+function showPreview(file) {
+  pendingFile = file;
+  document.getElementById('buttons').style.display = 'none';
+  document.getElementById('preview-area').style.display = 'block';
+  document.getElementById('preview-name').textContent = file.name + ' (' + (file.size / 1024).toFixed(1) + ' KB)';
+  var container = document.getElementById('preview-media');
+  container.innerHTML = '';
+  if (file.type.indexOf('image') === 0) {
+    var img = document.createElement('img');
     var reader = new FileReader();
-    reader.readAsArrayBuffer(file);
-    xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
-    xhr.setRequestHeader("X-Filename", javascript_is_nice(file.name));
-    xhr.setRequestHeader("X-Text", javascript_is_nice(text));
-    xhr.setRequestHeader("X-Sender", javascript_is_nice(sender));
-    xhr.setRequestHeader("Transfer-Encoding", "chunked");
-    reader.onload = function(e) {
-      uploadsize = e.total;
-      xhr.send(e.target.result);
-    };
-
+    reader.onload = function(e) { img.src = e.target.result; };
+    reader.readAsDataURL(file);
+    container.appendChild(img);
+  } else if (file.type.indexOf('video') === 0) {
+    var vid = document.createElement('video');
+    vid.src = URL.createObjectURL(file);
+    vid.controls = true;
+    vid.style.maxHeight = '240px';
+    container.appendChild(vid);
   }
-  function storeName(e) {
-    var target = e.target;
-    localStorage.setItem('sender', target.value);
+}
+
+function hidePreview() {
+  pendingFile = null;
+  document.getElementById('preview-area').style.display = 'none';
+  document.getElementById('preview-media').innerHTML = '';
+  document.getElementById('buttons').style.display = 'grid';
+}
+
+function startUpload(file) {
+  if (uploading) {
+    alert('Already uploading, please wait.');
+    return;
   }
-  document.getElementById('capturei').addEventListener('change', sendMedia, false);
-  document.getElementById('capturef').addEventListener('change', sendMedia, false);
-  document.getElementById('capturev').addEventListener('change', sendMedia, false);
-  document.getElementById('capturevf').addEventListener('change', sendMedia, false);
-  // document.getElementById('capturea').addEventListener('change', sendMedia, false);
+  if (!file) file = pendingFile;
+  if (!file) return;
+  uploading = true;
+  hidePreview();
+  document.getElementById('buttons').style.display = 'none';
+  document.getElementById('status').style.display = 'block';
 
+  var xhr = new XMLHttpRequest();
+  xhr.upload.onprogress = function(e) {
+    var pct = e.lengthComputable
+      ? Math.floor(e.loaded * 100 / e.total)
+      : Math.floor(e.loaded * 100 / uploadSize);
+    document.getElementById('bar').style.width = pct + '%';
+    document.getElementById('uploadprogress').textContent = 'Uploading... ' + pct + '%';
+  };
+  xhr.onload = function() {
+    document.getElementById('uploadprogress').textContent = 'Upload complete, shared to IRC!';
+    uploading = false;
+    document.getElementById('buttons').style.display = 'grid';
+    document.getElementById('status').style.display = 'none';
+  };
+  xhr.onerror = function() {
+    document.getElementById('uploadprogress').textContent = 'Upload failed.';
+    uploading = false;
+    document.getElementById('buttons').style.display = 'grid';
+    document.getElementById('status').style.display = 'none';
+  };
+  xhr.onabort = function() {
+    document.getElementById('uploadprogress').textContent = 'Upload canceled.';
+    uploading = false;
+    document.getElementById('buttons').style.display = 'grid';
+    document.getElementById('status').style.display = 'none';
+  };
 
-  var name = document.getElementById('sender').value;
-  if(name == '') {
-    var stored = localStorage.getItem('sender');
-    if (stored != null) {
-      document.getElementById('sender').value = stored;
-    }
+  xhr.open('POST', 'upload/?channel=]]..channel..[[', true);
+  var reader = new FileReader();
+  reader.readAsArrayBuffer(file);
+  xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+  xhr.setRequestHeader('X-Filename', encode(file.name));
+  xhr.setRequestHeader('X-Text', encode(document.getElementById('text').value));
+  xhr.setRequestHeader('X-Sender', encode(document.getElementById('sender').value));
+  reader.onload = function(e) {
+    uploadSize = e.total;
+    xhr.send(e.target.result);
+  };
+}
+
+// Button file inputs
+['capturei', 'capturef', 'capturev', 'capturevf'].forEach(function(id) {
+  document.getElementById(id).addEventListener('change', function(e) {
+    var file = e.target.files[0];
+    if (file) showPreview(file);
+  });
+});
+
+// Confirm / cancel
+document.getElementById('confirm-btn').addEventListener('click', function() {
+  startUpload(pendingFile);
+});
+document.getElementById('cancel-btn').addEventListener('click', function() {
+  hidePreview();
+});
+
+// Nick persistence
+(function() {
+  var stored = localStorage.getItem('sender');
+  if (stored) document.getElementById('sender').value = stored;
+  document.getElementById('sender').addEventListener('change', function(e) {
+    localStorage.setItem('sender', e.target.value);
+  });
+})();
+
+// Drag & drop
+(function() {
+  var dz = document.getElementById('dropzone');
+  dz.addEventListener('dragover', function(e) {
+    e.preventDefault();
+    dz.classList.add('dragover');
+  });
+  dz.addEventListener('dragleave', function() {
+    dz.classList.remove('dragover');
+  });
+  dz.addEventListener('drop', function(e) {
+    e.preventDefault();
+    dz.classList.remove('dragover');
+    var file = e.dataTransfer.files[0];
+    if (file) showPreview(file);
+  });
+  dz.addEventListener('click', function() {
+    document.getElementById('box__dropi').click();
+  });
+  document.getElementById('box__dropi').addEventListener('change', function(e) {
+    var file = e.target.files[0];
+    if (file) showPreview(file);
+  });
+})();
+
+// Paste
+document.addEventListener('paste', function(e) {
+  var item = e.clipboardData.items[0];
+  if (item && item.type.indexOf('image') === 0) {
+    var blob = item.getAsFile();
+    if (blob) showPreview(blob);
   }
+});
+</script>
 
-  document.getElementById('sender').addEventListener('change', storeName, false);
-  </script>
-
-  <script>
-    // Script for drag and drop
-    var droppedFiles = false;
-
-    function handleDragStart(e) {
-      this.style.opacity = '0.4';  // this / e.target is the source node.
-    }
-
-    function handleDragOver(e) {
-      if (e.preventDefault) {
-        e.preventDefault(); // Necessary. Allows us to drop.
-      }
-
-      e.dataTransfer.dropEffect = 'move';  // See the section on the DataTransfer object.
-
-      this.classList.add('is-dragover');
-      this.classList.add('over');
-
-      console.log('dragOver');
-      return false;
-    }
-
-    function handleDragEnter(e) {
-      // this / e.target is the current hover target.
-      this.classList.add('over');
-      this.classList.add('is-dragover');
-      console.log('dragEnter');
-    }
-
-    function handleDragLeave(e) {
-      this.classList.remove('over');  // this / e.target is previous target element.
-      this.classList.remove('is-dragover');  // this / e.target is previous target element.
-      console.log('dragLeave');
-    }
-
-    function handleDrop(e) {
-      console.log('drop');
-      if (e.preventDefault) {
-        e.preventDefault(); // Necessary. Allows us to drop.
-      }
-      droppedFiles = e.dataTransfer.files;
-      //form.submit();
-      e.target.files = droppedFiles;
-      sendMedia(e);
-    }
-
-    var cols = document.querySelectorAll('#drop-layer');
-    var col = document.querySelector('form.box');
-    col.addEventListener('dragstart', handleDragStart, false);
-    col.addEventListener('dragenter', handleDragEnter, false);
-    col.addEventListener('dragover', handleDragOver, false);
-    col.addEventListener('dragleave', handleDragLeave, false);
-    col.addEventListener('dragend', handleDragLeave, false);
-    col.addEventListener('drop', handleDrop, false);
-
-    document.getElementById('box__dropi').addEventListener('change', sendMedia, false);
-
-    // Handle paste
-    document.onpaste = function(pasteEvent) {
-      console.log('Got paste event');
-      // consider the first item (can be easily extended for multiple items)
-      var item = pasteEvent.clipboardData.items[0];
-      console.log(pasteEvent);
-
-      if (item.type.indexOf("image") === 0) {
-        var blob = item.getAsFile();
-	pasteEvent.target.files = [blob];
-
-        sendMedia(pasteEvent);
-      }
-    }
-
-
-    var form = document.querySelector('form.box');
-    var input = form.children[0].children[0];
-
-    function handleSubmit(e) {
-      console.log('submit');
-      if (e.preventDefault) {
-        e.preventDefault(); // Necessary. Allows us to drop.
-      }
-      /*
-      if (!form.classList.contains('is-dragover')) {
-        return;
-      }
-      */
-
-      var ajaxData = new FormData(form.get(0));
-      form.each(function(i, file) {
-        console.log(i, file);
-        ajaxData.append( input.attr('name'), file );
-      });
-      console.log(e);
-      //cheadur
-      e.target.files = droppedFiles;
-      sendMedia(e);
-      return true;
-    }
-    form.addEventListener('submit', handleSubmit, false);
-
-
-
-  </script>
-  </body>
-  </html>
-  ]]
+</body>
+</html>
+]]
   if req.method == 'POST'
     fn = req.headers['x-filename']
     sender = req.headers['x-sender'] or ''
@@ -709,7 +592,6 @@ ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) =>
       html = 'Ok'
       realfn = "#{os.time!}-#{safe fn}"
       save = ->
-        -- Move tempfile to real location
         os.rename req.filename, "cache/images/#{realfn}"
         if sender ~= ''
           sender = "<#{sender\sub(1, 100)}> "
@@ -731,7 +613,6 @@ ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) =>
   send html
 
 
--- Attempt to create the cache folder.
 lfs.mkdir('cache/images')
 
 PRIVMSG:
