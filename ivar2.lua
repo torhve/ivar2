@@ -34,6 +34,9 @@ math.randomseed(os.time())
 
 local log = lconsole()
 
+-- Flag checked by the main loop so it can exit cleanly after SIGTERM/SIGINT
+local shutting_down = false
+
 local ivar2 = {
 	ignores = {},
 	events = require'core/ircevents',
@@ -806,12 +809,14 @@ function ivar2:SignalHandle()
 	local INT = signal.SIGINT
 	local HUP = signal.SIGHUP
 
-	while true do
-		-- NOTE: Delivered signals cannot be caught by Linux signalfd or
-		-- Solaris sigtimedwait. Works without blocking on *BSD and OS X.
-		signal.block(TERM, INT, HUP)
+	-- Block signals so they're delivered via signalfd, not as async interrupts
+	signal.block(TERM, INT, HUP)
+	-- Create the listener once; recreating it each iteration causes the signalfd
+	-- to be closed and reopened, corrupting cqueues' epoll state
+	local listener = assert(signal.listen(TERM, INT, HUP))
 
-		local signo = assert(assert(signal.listen(TERM, INT, HUP)):wait())
+	while true do
+		local signo = assert(listener:wait())
 
 		if signo == HUP then
 			self:Log('info', 'Got SIGHUP, reloading.')
@@ -819,7 +824,8 @@ function ivar2:SignalHandle()
 		else
 			self:Quit('Ouch. Someone handed me the '..signal[signo]..'. RIP!')
 			io.stderr:write("exiting on signal ", signal[signo], "\n")
-			os.exit(0)
+			shutting_down = true
+			return
 		end
 	end
 end
@@ -850,7 +856,7 @@ if configFile then
 		ivar2:SignalHandle()
 	end)
 	-- Run the cqueues main loop through a stepping function to catch errors
-	while true do
+	while not shutting_down do
 		-- luacheck: ignore obj fd
 		local stepok, err, ctx, ecode, thread, obj, fd = queue:step()
 		if(not stepok) then
@@ -858,6 +864,7 @@ if configFile then
 			ivar2:Log('debug', 'Traceback: %s', debug.traceback(thread, tostring(err)))
 		end
 	end
+	os.exit(0)
 else
 	ivar2:Log('error', 'No config file specified')
 end
