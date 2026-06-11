@@ -1,7 +1,7 @@
 local ivar2 = ...
 
-local nixio = require'nixio'
-local ev = require'ev'
+local P = require'posix'
+local cqueues = require'cqueues'
 
 
 local stripExtension = function(path)
@@ -10,8 +10,7 @@ local stripExtension = function(path)
 	return path
 end
 
--- Use the config file name as a base
-local fileName = stripExtension(nixio.fs.basename(ivar2.config.configFile))
+local fileName = stripExtension(P.basename(ivar2.config.configFile))
 
 local commands = {
 	['>'] = function(lua)
@@ -24,7 +23,7 @@ local commands = {
 			local proxy = setmetatable(env, {__index = _G })
 			setfenv(func, proxy)
 
-			pcall(func, self)
+			pcall(func)
 		end
 	end,
 
@@ -77,27 +76,52 @@ local commands = {
 		ivar2:DisableModule(module)
 	end,
 
+	reloadmodule = function(module)
+		ivar2:DisableModule(module)
+		ivar2:LoadModule(module)
+	end,
+
 	reload = function()
 		ivar2:Reload()
 	end
 }
 
--- Might fail, but mkfifo doesn't care if the pipe already exists.
-nixio.fs.unlink(fileName)
+local function createFifo()
+	P.unlink(fileName)
+	P.mkfifo(fileName)
+	P.chmod(fileName, "0666")
+end
 
-local watcher = ev.Stat.new(function(loop, stat, revents)
-	for line in io.lines() do
-		local command, argument  = line:match('^(%S+) ?(.*)$')
-		if(commands[command]) then
-			pcall(commands[command], argument)
+local function openFifo()
+	return P.open(fileName, P.O_RDONLY + P.O_NONBLOCK)
+end
+
+createFifo()
+local fifoFd = openFifo()
+
+local controller = cqueues.running()
+controller:wrap(function()
+	while true do
+		cqueues.poll(fifoFd)
+		while true do
+			local line = P.read(fifoFd, 4096)
+			if line == '' then
+				break
+			end
+			for l in line:gmatch('[^\r\n]+') do
+				local command, argument = l:match('^(%S+) ?(.*)$')
+				if(commands[command]) then
+					pcall(commands[command], argument)
+				end
+			end
 		end
+		P.close(fifoFd)
+		fifoFd = openFifo()
 	end
-end, fileName)
+end)
 
-nixio.fs.mkfifo(fileName, 600)
-
--- Calling io.input() on a fifo will lock us until the first event happens.
-os.execute(string.format('sleep .1 && touch %q &', fileName))
-io.input(fileName)
-
-return watcher
+return {
+	close = function()
+		P.close(fifoFd)
+	end
+}
