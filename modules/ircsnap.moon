@@ -19,9 +19,13 @@ html_escape = (s) ->
 urlbase = '/image/'
 
 safe = (fn) ->
-  f, ext = fn\match'^(.*)%.(.-)$'
-  f = f\gsub '[^%w%-]', ''
-  return f..'.'..ext
+  m = fn\match'^(.*)%.(.-)$'
+  if m
+    f, ext = fn\match'^(.*)%.(.-)$'
+    f = f\gsub '[^%w%-]', ''
+    return f..'.'..ext
+  else
+    return fn\gsub '[^%w%-]', ''
 
 video_html = (video, ch) ->
   videourl = ivar2.config.webserverprefix..urlbase..'file/'..video
@@ -107,23 +111,27 @@ ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) =>
   file = url\match '/file/(.*)$'
   if file
     fn = "cache/images/#{safe file}"
-    size = lfs.attributes(fn).size
+    attrs = lfs.attributes(fn)
+    unless attrs
+      send 'File not found', 404
+      return
+    size = attrs.size
     content_type = 'image/jpeg'
-    if file\lower!\match '.png'
+    if file\lower!\match '%.png$'
       content_type = 'image/png'
-    if file\lower!\match '.heif'
+    if file\lower!\match '%.heif$'
       content_type = 'image/heif'
-    if file\lower!\match '.heic'
+    if file\lower!\match '%.heic$'
       content_type = 'image/heic'
-    if file\lower!\match '.svg'
+    if file\lower!\match '%.svg$'
       content_type = 'image/svg+xml'
-    if file\lower!\match '.mp4'
+    if file\lower!\match '%.mp4$'
       content_type = 'video/mp4'
-    if file\lower!\match '.mkv'
+    if file\lower!\match '%.mkv$'
       content_type = 'video/x-matroska'
-    if file\lower!\match '.mov'
+    if file\lower!\match '%.mov$'
       content_type = 'video/quicktime'
-    if file\lower!\match '.mp3'
+    if file\lower!\match '%.mp3$'
       content_type = 'audio/mpeg'
 
     res\append ':status', '200'
@@ -138,11 +146,11 @@ ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) =>
   -- Serve video player page
   video = url\match '/video/(.*)$'
   if video then
-    channel_raw = url\match('channel=(.+)%s*') or ''
+    channel_raw = url\match('channel=([^&%s]+)') or ''
     send video_html(video, channel_raw)
     return
 
-  channel = url\match('channel=(.+)%s*')
+  channel = url\match('channel=([^&%s]+)')
   unless channel
     send 'Invalid channel', 404
     return
@@ -386,7 +394,7 @@ footer strong { color: var(--text); }
     <h2>Choose media</h2>
     <div class="btn-grid" id="buttons">
       <label for="capturei" class="btn"><span class="icon">&#128247;</span> Snap photo</label>
-      <input type="file" accept="image/*" id="capturei" capture="camera" class="hidden">
+      <input type="file" accept="image/*,image/heif,image/heic" id="capturei" capture="camera" class="hidden">
 
       <label for="capturef" class="btn"><span class="icon">&#128193;</span> Browse files</label>
       <input type="file" accept="image/*,image/heif,image/heic" id="capturef" class="hidden">
