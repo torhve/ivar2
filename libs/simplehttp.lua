@@ -44,11 +44,6 @@ local function simplehttp(url, callback, unused, limit)
 		client.version = url.version
 	end
 
-	-- Allow client to overide request timeout, note that this isn't super precise because we reuse the same timeout for reading headers and such
-	if client.timeout then
-		req_timeout = client.timeout
-	end
-
 	if(type(url) == "table") then
 		if(url.headers) then
 			for k, v in next, url.headers do
@@ -68,6 +63,15 @@ local function simplehttp(url, callback, unused, limit)
 		if(url.data) then
 			client:set_body(url.data)
 		end
+
+		if(url.timeout) then
+			client.timeout = url.timeout
+		end
+	end
+
+	-- Allow client to overide request timeout, note that this isn't super precise because we reuse the same timeout for reading headers and such
+	if client.timeout then
+		req_timeout = client.timeout
 	end
 
 	local data
@@ -104,9 +108,12 @@ local function simplehttp(url, callback, unused, limit)
 		end
 	end
 
+	local elapsed = monotime() - before
+	log:debug('simplehttp> response <%s> status=%d time=%.3fs', uri, status_code, elapsed)
+
 	local response = {
 		headers = simple_headers,
-		version = stream.connection.version,
+		version = stream and stream.connection.version,
 		status_code = status_code -- for compability with old simplehttp API
 	}
 	-- Old style callback
