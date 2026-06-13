@@ -641,10 +641,9 @@ function ivar2:Connect(config)
 		return
 	end
 
-	--if(not self.control) then
-	--	self.control = assert(loadfile('core/control.lua'))(ivar2)
-	--	self.control:start(self.Loop)
-	--end
+	if(not self.control) then
+		self.control = assert(loadfile('core/control.lua'))(ivar2)
+	end
 
 	if(not self.x0) then
 		self.x0 = assert(loadfile('core/x0.lua'))(ivar2)
@@ -714,8 +713,9 @@ function ivar2:Reload()
 	if(not success) then
 		return self:Log('error', 'Unable to execute new core: %s.', message)
 	else
-		--self.control:stop(self.Loop)
-		--self.timeout:stop(self.Loop)
+		if(self.control) then
+			self.control.close()
+		end
 		pcall(function()
 			self.webserver.stop()
 		end)
@@ -784,8 +784,7 @@ function ivar2:Reload()
 		self.timeout = self:Timer('_timeout', 60*10, 60*10, self.timeoutFunc(self))
 
 		self.x0 = assert(loadfile('core/x0.lua'))(self)
-		--self.control = assert(loadfile('core/control.lua'))(self)
-		--self.control:start(self.Loop)
+		self.control = assert(loadfile('core/control.lua'))(self)
 
 		self:Log('info', 'Successfully update core.')
 	end
