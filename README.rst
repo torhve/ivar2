@@ -248,8 +248,7 @@ Options:
 Module Test Files
 ~~~~~~~~~~~~~~~~~
 
-Write repeatable tests in ``spec/modules/<name>.lua`` (one file per module,
-no ``_spec`` suffix). Use ``helper.setup()`` to create a context, then
+Write repeatable tests in ``spec/modules/<name>_spec.lua`` (one file per module). Use ``helper.setup()`` to create a context, then
 ``ctx:invoke()`` to fire handlers and capture output::
 
     local busted = require 'busted'
@@ -298,4 +297,4 @@ Running Tests
     busted
 
     # Single module test
-    busted spec/modules/stonks.lua
+    busted spec/modules/stonks_spec.lua
