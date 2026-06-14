@@ -76,10 +76,17 @@ local function simplehttp(url, callback, unused, limit)
 
 	local data
 	local status_code
+	local headers, stream
 
 	local before = monotime()
-	local headers, stream = client:go(req_timeout)
+	local ok
+	ok, headers, stream = pcall(client.go, client, req_timeout)
 	local after = monotime()
+
+	if not ok then
+		log:error('simplehttp> request <%s>, exception: %s. After %s', uri, headers, (after-before))
+		return nil, headers
+	end
 
 	if not headers then
 		log:error('simplehttp> request %s, error :%s. After %s', uri, stream, (after-before))
@@ -96,24 +103,39 @@ local function simplehttp(url, callback, unused, limit)
 	end
 
 	if stream then
-		if(limit) then
-			data = stream:get_body_chars(limit, req_timeout)
-		else
-			data = stream:get_body_as_string(req_timeout)
+		ok, data = pcall(function()
+			local body
+			if(limit) then
+				body = stream:get_body_chars(limit, req_timeout)
+			else
+				body = stream:get_body_as_string(req_timeout)
+			end
+			-- Stream shutdown lets luahttp reuse I'm told
+			stream:shutdown()
+			return body
+		end)
+		if not ok then
+			log:error('simplehttp> request <%s>, body read exception: %s', uri, data)
+			pcall(stream.shutdown, stream)
+			return nil, data
 		end
-		-- Stream shutdown lets luahttp reuse I'm told
-		stream:shutdown()
 		if simple_headers['content-encoding'] == 'gzip' then
-			data = zlib.inflate()(data)
+			local inflate = zlib.inflate()
+			ok, data = pcall(inflate, data)
+			if not ok then
+				log:error('simplehttp> request <%s>, decompression error: %s', uri, data)
+				return nil, data
+			end
 		end
 	end
 
 	local elapsed = monotime() - before
 	log:debug('simplehttp> response <%s> status=%d time=%.3fs', uri, status_code, elapsed)
 
+	local conn_version = stream and stream.connection and stream.connection.version
 	local response = {
 		headers = simple_headers,
-		version = stream and stream.connection.version,
+		version = conn_version,
 		status_code = status_code -- for compability with old simplehttp API
 	}
 	-- Old style callback
