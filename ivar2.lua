@@ -131,6 +131,7 @@ function ivar2:Send(format, ...)
 		self:Log('debug', message)
 
 		if(self.socket) then
+			self.socket:clearerr()
 			self.socket:write(message .. '\r\n')
 		end
 	end
