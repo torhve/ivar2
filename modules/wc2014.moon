@@ -27,11 +27,12 @@ http_get = (url, callback) ->
   ivar2.util.simplehttp opts, (data, uri, response) ->
     if response and response.status_code == 304
       return
-    if response and response.headers
-      lm = response.headers["last-modified"]
-      if lm
-        last_modified[url] = lm
-    callback data
+    if response and response.status_code >= 200 and response.status_code < 300
+      if response and response.headers
+        lm = response.headers["last-modified"]
+        if lm
+          last_modified[url] = lm
+      callback data
 
 pad2 = (n) ->
   string.format('%02d', n)
@@ -71,11 +72,22 @@ convert_timezone = (local_date_str, stadium_id, target_timezone = "Oslo") ->
 
   -- Get timezone offset
   offset = 0
+  stadium_region = nil
   if stadiums_cache
     for s in *stadiums_cache
       if tonumber(s.id) == tonumber(stadium_id)
         offset = TIMEZONE_CONFIG.region_offsets[s.region] or 0
+        stadium_region = s.region
         break
+
+  -- Adjust for DST during June World Cup (US/Canada observe DST, Qatar/Mexico do not)
+  if m >= 3 and m <= 11 and stadium_region
+    if stadium_region == "Eastern"
+      offset = offset - 1
+    elseif stadium_region == "Central"
+      offset = offset - 1
+    elseif stadium_region == "Western"
+      offset = offset - 1
 
   -- Apply offset to hours
   h = h + offset
