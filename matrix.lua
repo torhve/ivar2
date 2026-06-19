@@ -448,9 +448,13 @@ function MatrixServer:connect(config)
             end)
         end
 
-        if(not self.x0) then
-            self.x0 = assert(loadfile('core/x0.lua'))(self)
-        end
+if(not self.x0) then
+		self.x0 = assert(loadfile('core/x0.lua'))(self)
+	end
+
+	if(not self.control) then
+		self.control = assert(loadfile('core/control.lua'))(self)
+	end
 
         self:http('/login', self:_getPost(post), ('login'))
 
@@ -1556,7 +1560,9 @@ function Room:ParseChunk(chunk, backlog, chunktype)
     elseif chunk['type'] == 'm.room.aliases' then
         -- Use first alias, weechat doesn't really support multiple  aliases
         self.aliases = chunk.content.aliases
-        self:SetName(chunk.content.aliases[1])
+        if chunk.content.aliases then
+            self:SetName(chunk.content.aliases[1])
+        end
     elseif chunk['type'] == 'm.room.canonical_alias' then
         self.canonical_alias = chunk.content.alias
         self:SetName(self.canonical_alias)
