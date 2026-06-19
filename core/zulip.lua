@@ -111,7 +111,11 @@ function zulip:Connect(server, email, token)
 		if not edata then
 			return nil, 'No data returned'
 		end
-		edata = json.decode(edata)
+
+		local success, edata = pcall(json.decode, edata)
+		if(not success) then
+			return nil, edata
+		end
 		if not edata then
 			return nil, 'Invalid json'
 		end
