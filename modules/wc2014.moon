@@ -212,6 +212,8 @@ show_matches = (date_str, callback) ->
     for g in *data.games
       if tonumber(g.home_team_id) == 0
         continue
+      if g.finished == "TRUE"
+        continue
       date, _ = convert_timezone(g.local_date, g.stadium_id)
       if date == date_str
         out[#out + 1] = format_match(g)
