@@ -5,6 +5,85 @@ apiBase = 'http://www.yr.no'
 -- default
 default_lang = 'en'
 
+weatherEmoji = {
+  clear_day: '☀️', clear_night: '🌙',
+  clearsky_day: '☀️', clearsky_night: '🌙',
+  fair_day: '🌤️', fair_night: '🌙',
+  partlycloudy_day: '⛅', partlycloudy_night: '⛅',
+  cloudy: '☁️', overcast: '🌥️',
+  fog: '🌫️',
+  rain_shower_day: '🌦️', rain_shower_night: '🌦️',
+  snow_shower_day: '🌨️', snow_shower_night: '🌨️',
+  sleet_shower_day: '🌨️', sleet_shower_night: '🌨️',
+  rain_light_day: '🌧️', rain_light_night: '🌧️',
+  rain_moderate_day: '🌧️', rain_moderate_night: '🌧️',
+  rain_heavy_day: '🌧️', rain_heavy_night: '🌧️',
+  snow_light_day: '❄️', snow_light_night: '❄️',
+  snow_moderate_day: '❄️', snow_moderate_night: '❄️',
+  snow_heavy_day: '❄️', snow_heavy_night: '❄️',
+  rainandshowers_light_day: '🌧️', rainandshowers_light_night: '🌧️',
+  rainandshowers_moderate_day: '🌧️', rainandshowers_moderate_night: '🌧️',
+  rainandshowers_heavy_day: '🌧️', rainandshowers_heavy_night: '🌧️',
+  snowandshowers_light_day: '🌨️', snowandshowers_light_night: '🌨️',
+  snowandshowers_moderate_day: '🌨️', snowandshowers_moderate_night: '🌨️',
+  snowandshowers_heavy_day: '🌨️', snowandshowers_heavy_night: '🌨️',
+  sleet_light_day: '🌨️', sleet_light_night: '🌨️',
+  sleet_moderate_day: '🌨️', sleet_moderate_night: '🌨️',
+  sleet_heavy_day: '🌨️', sleet_heavy_night: '🌨️',
+  rainandsnow_light_day: '🌧️', rainandsnow_light_night: '🌧️',
+  rainandsnow_moderate_day: '🌧️', rainandsnow_moderate_night: '🌧️',
+  rainandsnow_heavy_day: '🌧️', rainandsnow_heavy_night: '🌧️',
+  rainandsnowshower_day: '🌧️', rainandsnowshower_night: '🌧️',
+  sleetandsnow_day: '🌨️', sleetandsnow_night: '🌨️',
+  sleetandrain_day: '🌧️', sleetandrain_night: '🌧️',
+  thunderstorm_day: '⛈️', thunderstorm_night: '⛈️',
+  -- yr.no v0 API codes (no _day/_night suffix)
+  lightrainshowersandthunder_day: '⛈️',
+  rainandthunder: '⛈️',
+  heavyrain: '🌧️',
+  heavyrainshowers_day: '🌧️',
+  lightrain: '🌧️',
+  lightrainshowers_day: '🌦️',
+  rain: '🌧️',
+  rainshowers_day: '🌦️',
+  lightsnow: '❄️',
+  moderatesnow: '❄️',
+  heavysnow: '❄️',
+  snow: '❄️',
+  snowshowers: '🌨️',
+  lightsleet: '🌨️',
+  moderatesleet: '🌨️',
+  heavysleet: '🌨️',
+  sleet: '🌨️',
+  rainandsnow: '🌧️'
+}
+
+cloudEmoji = {
+  '10': '☀️',
+  '30': '🌤️',
+  '60': '⛅',
+  '80': '🌥️',
+  '100': '☁️'
+}
+
+getWeatherEmoji = (now) ->
+  unless now.symbolCode and now.symbolCode.next1Hour
+    return '☁️'
+  symCode = now.symbolCode.next1Hour
+  -- Try exact match first (for codes without _day/_night suffix)
+  emoji = weatherEmoji[symCode]
+  return emoji if emoji
+  suffix = if now.symbol and now.symbol.sunup then '_day' else '_night'
+  key = symCode .. suffix
+  weatherEmoji[key] or '☁️'
+
+getCloudEmoji = (value) ->
+  unless value
+    return '☁️'
+  for threshold, emoji in pairs cloudEmoji
+    return emoji if value <= tonumber(threshold)
+  '☁️'
+
 windSpeedToName = (ws, lang) ->
   windtext = ''
   n = (lang\match '^n')
@@ -153,6 +232,7 @@ handleTempLookup = (source, destination, arg) =>
 
   _, now = next forecast.shortIntervals
 
+  wemoji = getWeatherEmoji now
   temp = now.temperature.value
   feelsLike = ''
   if now.feelsLike and now.feelsLike.value
@@ -160,22 +240,37 @@ handleTempLookup = (source, destination, arg) =>
     feels_word = 'feels like'
     if lang\match '^n'
       feels_word = 'følt'
-    feelsLike = "(#{feels_word} #{color(the_feels)(the_feels)} °C) "
+    feelsLike = ", (#{feels_word} #{color(the_feels)(the_feels)} °C)"
 
-  windDirection = now.wind.direction
-  windDirectionarrow = arrow deg2name windDirection
-  windSpeed = now.wind.speed
+  windDirection = now.wind and now.wind.direction
+  windDirectionarrow = if windDirection then arrow deg2name windDirection else ''
+  windSpeed = now.wind and now.wind.speed
   windSpeedname = windSpeedToName windSpeed, lang
 
-  cloudCover = now.cloudCover.value
-  cloudCovername = 'cloud cover'
-  if lang\match '^n'
-    cloudCovername = 'skydekke'
+  humidity = now.humidity and now.humidity.value
+  humidityname = '💧'
 
-  say '%s °C, %s%s%% %s, %s %s (%s m/s) (%s)', color(temp)(temp), feelsLike, cloudCover, cloudCovername, windDirectionarrow, windSpeedname, windSpeed, whereabouts
+  cloudCover = now.cloudCover and now.cloudCover.value
+
+  popText = ''
+  popValue = if now.precipitation then now.precipitation.pop or now.precipitation.probability else nil
+  if popValue and popValue > 0
+    pop_word = 'chance of rain'
+    if lang\match '^n'
+      pop_word = 'sannsyn for nedbør'
+    popText = ", #{popValue}% #{pop_word}"
+
+  humidPart = ''
+  if humidity
+    humidPart = ", #{humidity}% #{humidityname}"
+  cloudPart = ''
+  if cloudCover
+    cloudPart = ", #{getCloudEmoji(cloudCover)} #{cloudCover}%"
+  say "#{wemoji} #{color(temp)(temp)} °C#{humidPart}#{feelsLike}#{cloudPart}#{popText}, #{windDirectionarrow} #{windSpeedname} (#{windSpeed} m/s) (#{whereabouts})"
 
 
 PRIVMSG:
   '^%pbtemp%s*(.*)$': handleTempLookup
+  '^%ptemp%s*(.*)$': handleTempLookup
   '^%pdeg (.*)$': (s, d, a) =>
     say deg2name(tonumber(a))
