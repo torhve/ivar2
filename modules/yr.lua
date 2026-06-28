@@ -155,36 +155,7 @@ local handleData = function(type, line)
 	return out
 end
 
-local handleObservationOutput = function(self, source, destination, data)
-	local tabular = data:match("<observations>(.*)</observations>")
-	for stno, sttype, name, distance, lat, lon, source, data in tabular:gmatch([[<weatherstation stno="([^"]+)" sttype="([^"]+)" name="([^"]+)" distance="([^"]+)" lat="([^"]+)" lon="([^"]+)" source="([^"]+)">(.-)</weatherstation]]) do
-		local windDirection = handleData('windDirection', data)
-		local windSpeed = handleData("windSpeed", data)
-		local windSpeedname = ''
-		local windDirectionarrow = ''
-		if windSpeed then windSpeedname = windSpeed.name end
-		if windSpeed then windSpeed = windSpeed.mps else windSpeed = '' end
-		local temperature = handleData('temperature', data)
-		-- Continue to next observation if no temperature
-		if temperature then
-			local time = temperature.time:match('T([0-9][0-9]:[0-9][0-9])')
-			if windDirection then
-				windDirectionarrow = arrow(windDirection.code:sub(-2, -1)) .. ' '
-			end
-			if windDirection then windDirection = windDirection.name else windDirection = '' end
-			local color
-			if tonumber(temperature.value) > 0 then
-				color = self.util.red
-			else
-				color = self.util.lightblue
-			end
-			-- Use the first result
-			return '%s °C (%s %s °C), %s%s %s (%s, %s)', color(temperature.value), _('feels like'), color(feelsLike(temperature.value, windSpeed)), windDirectionarrow, windDirection, windSpeedname, name, time
-		end
-	end
-end
-
-local function handleOutput(source, destination, seven, data, city, try)
+local function handleOutput(self, source, destination, seven, data, city, try)
 	local location = data:match("<location>(.-)</location>")
 	if(not location and not try) then
 		local curl = {url=("http://yr.no/place/%s/%s/%s~%s/varsel.xml"):format(
@@ -195,7 +166,7 @@ local function handleOutput(source, destination, seven, data, city, try)
 		)}
 		ivar2.util.simplehttp(
 			getUrl(self, source, destination, curl), function(data)
-				handleOutput(source, destination, seven, data, city, true)
+				handleOutput(self, source, destination, seven, data, city, true)
 			end
 		)
 	end
@@ -366,7 +337,7 @@ return {
 				self.util.simplehttp(
 					getUrl(self, source, destination, result),
 					function(data)
-						handleOutput(source, destination, seven == '7', data)
+						handleOutput(self, source, destination, seven == '7', data)
 					end
 				)
 				return
@@ -395,26 +366,11 @@ return {
 
 					self.util.simplehttp(
 						getUrl(self, source, destination, curl), function(data)
-							handleOutput(source, destination, seven == '7', data, city)
+							handleOutput(self, source, destination, seven == '7', data, city)
 						end
 					)
 				end
 			)
-		end,
-
-		-- Currently only handles Norwegian cities.
-		['^%ptemp%s*(.*)$'] = function(self, source, destination, input)
-			local place = getPlace(self, source, destination, input)
-			local result = getPlaceNorway(place)
-
-			if(result) then
-				self.util.simplehttp(
-					getUrl(self, source, destination, result),
-					function(data)
-						say(handleObservationOutput(self, source, destination, data))
-					end
-				)
-			end
 		end,
 
 		['^%pset yr (.+)$'] = function(self, source, destination, location)
