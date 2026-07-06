@@ -13,6 +13,9 @@ phrases = {
   'I\'m seeing'
 }
 
+errHandle = (arg) ->
+  if arg.statusCode and arg.statusCode != 200
+    return arg.message
 
 PRIVMSG:
   '^%panalyze (.+)$': (source, destination, arg) =>
@@ -21,6 +24,11 @@ PRIVMSG:
   '^%pocr (.+)$': (source, destination, arg) =>
     simplehttp {url:_api..'ocr?', data:json.encode({url:arg}), method:'POST', headers:{['Ocp-Apim-Subscription-Key']:key2}}, (res) ->
       d = json.decode res
+      err = errHandle(d)
+      if err
+        say err
+        return
+
       out = {}
 
       if not res or not d
@@ -39,7 +47,12 @@ PRIVMSG:
 
   '^%pcaption (.+)$': (source, destination, arg) =>
     simplehttp {url:_api..'analyze?visualFeatures=Categories,Tags,Description,Faces,ImageType,Color&details=Celebrities', data:json.encode({url:arg}), method:'POST', headers:{['Ocp-Apim-Subscription-Key']:key2}}, (res) ->
+      print(res)
       d = json.decode res
+      err = errHandle(d)
+      if err
+        say err
+        return
       out = {}
 
       description = d.description
