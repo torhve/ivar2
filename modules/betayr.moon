@@ -240,7 +240,7 @@ handleTempLookup = (source, destination, arg) =>
     feels_word = 'feels like'
     if lang\match '^n'
       feels_word = 'følt'
-    feelsLike = ", (#{feels_word} #{color(the_feels)(the_feels)} °C)"
+    feelsLike = " (#{feels_word} #{color(the_feels)(the_feels)} °C)"
 
   windDirection = now.wind and now.wind.direction
   windDirectionarrow = if windDirection then arrow deg2name windDirection else ''
@@ -266,7 +266,7 @@ handleTempLookup = (source, destination, arg) =>
   cloudPart = ''
   if cloudCover
     cloudPart = ", #{getCloudEmoji(cloudCover)} #{cloudCover}%"
-  say "#{wemoji} #{color(temp)(temp)} °C#{humidPart}#{feelsLike}#{cloudPart}#{popText}, #{windDirectionarrow} #{windSpeedname} (#{windSpeed} m/s) (#{whereabouts})"
+  say "#{wemoji} #{color(temp)(temp)} °C#{feelsLike}#{cloudPart}#{popText} #{humidPart}, #{windDirectionarrow} #{windSpeedname} (#{windSpeed} m/s) (#{whereabouts})"
 
 
 PRIVMSG:
