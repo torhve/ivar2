@@ -1,5 +1,5 @@
 -- yr.no API consumer, using the new unofficial API
-import urlEncode, simplehttp, json, red, lightblue, utf8 from require'util'
+import urlEncode, simplehttp, json, red, lightblue, utf8, split, trim from require'util'
 
 apiBase = 'http://www.yr.no'
 -- default
@@ -268,9 +268,35 @@ handleTempLookup = (source, destination, arg) =>
     cloudPart = ", #{getCloudEmoji(cloudCover)} #{cloudCover}%"
   say "#{wemoji} #{color(temp)(temp)} °C#{feelsLike}#{cloudPart}#{popText} #{humidPart}, #{windDirectionarrow} #{windSpeedname} (#{windSpeed} m/s) (#{whereabouts})"
 
+handleMultiTemp = (source, destination, arg) =>
+  unless arg
+    return
+  lang = getLang(@, source, destination)
+  results = {}
+  for city in *split arg, ','
+    city = trim(city)
+    unless city
+      continue
+    location = getLocation city, lang
+    unless location
+      table.insert results, "#{city}: not found"
+      continue
+    f_link = apiBase .. location._links.forecast.href
+    f_data = simplehttp f_link
+    forecast = json.decode f_data
+    _, now = next forecast.shortIntervals
+    temp = now.temperature.value
+    table.insert results, "#{location.name}: #{color(temp)(temp)} °C"
+  table.concat results, ', '
+
+handleTemp = (source, destination, arg) =>
+  if arg and arg\find ','
+    return say handleMultiTemp(@, source, destination, arg)
+  handleTempLookup @, source, destination, arg
+
 
 PRIVMSG:
-  '^%pbtemp%s*(.*)$': handleTempLookup
-  '^%ptemp%s*(.*)$': handleTempLookup
+  '^%pbtemp%s*(.*)$': handleTemp
+  '^%ptemp%s*(.*)$': handleTemp
   '^%pdeg (.*)$': (s, d, a) =>
     say deg2name(tonumber(a))
