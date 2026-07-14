@@ -206,10 +206,33 @@ getPlace = (self, source, destination, input) ->
 
   return input
 
+handleMultiTemp = (source, destination, arg) =>
+  unless arg
+    return
+  lang = getLang(@, source, destination)
+  results = {}
+  for city in *split arg, ','
+    city = trim(city)
+    unless city
+      continue
+    location = getLocation city, lang
+    unless location
+      table.insert results, "#{city}: not found"
+      continue
+    f_link = apiBase .. location._links.forecast.href
+    f_data = simplehttp f_link
+    forecast = json.decode f_data
+    _, now = next forecast.shortIntervals
+    temp = now.temperature.value
+    table.insert results, "#{location.name}: #{color(temp)(temp)} °C"
+  table.concat results, ', '
+
 handleTempLookup = (source, destination, arg) =>
   place = getPlace @, source, destination, arg
   unless place
     return
+  if arg and arg\find ','
+    return say handleMultiTemp(@, source, destination, arg)
   lang = getLang(@, source, destination)
   location = getLocation place, lang
   unless location
@@ -268,35 +291,8 @@ handleTempLookup = (source, destination, arg) =>
     cloudPart = ", #{getCloudEmoji(cloudCover)} #{cloudCover}%"
   say "#{wemoji} #{color(temp)(temp)} °C#{feelsLike}#{cloudPart}#{popText} #{humidPart}, #{windDirectionarrow} #{windSpeedname} (#{windSpeed} m/s) (#{whereabouts})"
 
-handleMultiTemp = (source, destination, arg) =>
-  unless arg
-    return
-  lang = getLang(@, source, destination)
-  results = {}
-  for city in *split arg, ','
-    city = trim(city)
-    unless city
-      continue
-    location = getLocation city, lang
-    unless location
-      table.insert results, "#{city}: not found"
-      continue
-    f_link = apiBase .. location._links.forecast.href
-    f_data = simplehttp f_link
-    forecast = json.decode f_data
-    _, now = next forecast.shortIntervals
-    temp = now.temperature.value
-    table.insert results, "#{location.name}: #{color(temp)(temp)} °C"
-  table.concat results, ', '
-
-handleTemp = (source, destination, arg) =>
-  if arg and arg\find ','
-    return say handleMultiTemp(@, source, destination, arg)
-  handleTempLookup @, source, destination, arg
-
-
 PRIVMSG:
-  '^%pbtemp%s*(.*)$': handleTemp
-  '^%ptemp%s*(.*)$': handleTemp
+  '^%pbtemp%s*(.*)$': handleTempLookup
+  '^%ptemp%s*(.*)$': handleTempLookup
   '^%pdeg (.*)$': (s, d, a) =>
     say deg2name(tonumber(a))
