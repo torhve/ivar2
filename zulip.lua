@@ -19,6 +19,11 @@ local configFile, reload = ...
 local moonstatus, moonscript = pcall(require, 'moonscript')
 moonscript = moonstatus and moonscript
 
+local moonlines
+if moonscript then
+    moonlines = require 'moonlines'
+end
+
 local event = require 'event'
 local util = require 'util'
 local irc = require 'irc'
@@ -409,8 +414,8 @@ function ivar2:LoadModule(moduleName)
 		if(access) then
 			if(fileName:match('.lua')) then
 				moduleFile, moduleError = loadfile(fileName)
-			elseif(fileName:match('.moon') and moonscript) then
-				moduleFile, moduleError = moonscript.loadfile(fileName)
+			elseif(fileName:match('.moon') and moonlines) then
+				moduleFile, moduleError = moonlines.loadfile(moonscript, fileName)
 			end
 			if(not moduleFile) then
 				-- If multiple file matches exist and the first match has an error we still
@@ -432,7 +437,12 @@ function ivar2:LoadModule(moduleName)
 	setmetatable(env, {__index = _G })
 	setfenv(moduleFile, env)
 
-	local success, message = pcall(moduleFile, self)
+	local success, message
+	if moonlines then
+		success, message = moonlines.pcall(moduleFile, self)
+	else
+		success, message = pcall(moduleFile, self)
+	end
 	if(not success) then
 		self:Log('error', 'Unable to execute module %s: %s.', moduleName, message)
 	else
@@ -492,6 +502,9 @@ function ivar2:ModuleCall(command, func, source, destination, remainder, ...)
 		self:Reply(destination, source, str, ...)
 	end
 	setfenv(func, env)
+	if moonlines then
+		return moonlines.pcall(func, self, source, destination, ...)
+	end
 	return pcall(func, self, source, destination, ...)
 end
 
