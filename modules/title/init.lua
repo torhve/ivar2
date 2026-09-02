@@ -348,7 +348,8 @@ local fetchInformation = function(queue, lang)
 	simplehttp({
 		url = parseAJAX(queue.url),
 		headers = {
-			['Accept-Language'] = lang
+			['Accept-Language'] = lang,
+			['User-Agent'] = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36', -- some sites e.g. threads.net only work with fake user agent
 		}},
 		function(data, _, response)
 			local message = handleData(response.headers, data)
