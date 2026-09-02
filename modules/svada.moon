@@ -116,17 +116,77 @@ svada = {
   {"Med grunnlag i","en frittliggende","rammetillatelse","vurderes","terrenginngrepet","i overensstemmelse med","tvingende sikkerhetshensyn"},
 }
 
+ai = {
+  {"Gitt","en kvantisert","vektmatrise","synliggjøres","tokeniseringen","innenfor rammen av","kontekstvinduets kapasitet"},
+  {"Under hensyntagen til","en deterministisk","samplingstrategi","iverksettes","temperaturjusteringen","for så vidt gjelder","decoding-pipelines stabilitet"},
+  {"I lys av","en emergent","kapasitet","identifiseres","hallusinasjonsfaktoren","med henblikk på","evalueringsbatteriets utvalg"},
+  {"Vedrørende","en autoregressiv","tokenstrøm","initieres","spekulative dekodingen","i forhold til","mestringsgraden for utkastmodellen"},
+  {"Grunnet","en sparsom","ekspertgating","initieres","lastbalanseringen","i forhold til","rutingstabellens oppdatering"},
+  {"I betraktning av","en overparametrisert","mellomlag","lokaliseres","taptlandskapets sadelpunkt","hva angår","konvergensfarten"},
+  {"Forutsatt","en økt","kontekstlengde","kommuniseres","KV-cachens utnyttelse","parallellt med","PagedAttention-strategien"},
+  {"Med utgangspunkt i","en vesentlig","læregrad","styrkes","gradientklippen","i relasjon til","numeriek stabilitet"},
+  {"I forhold til","en ikke ubetydelig","tokensats","realiseres","distillasjonen","i tilknytning til","lærermodellens vekt"},
+  {"Sett hen til","en kostnadseffektiv","inferens","effektueres","batchsamlingen","på bakgrunn av","latensbudsjettet"},
+  {"I henhold til","en avtagende","entropi","forankres","softmax-normaliseringen","avhengig av","logitfordelingens bredd"},
+  {"Med tanke på","en vedvarende","beregningssats","maksimeres","tensorkjernens utnyttelse","hva gjelder","aritmisk intensitet"},
+  {"Uavhengig av","en tiltagende","datatoksikasjon","konkretiseres","modellkollapsen","eller sagt på en annen måte:","generaliseringsgapet"},
+  {"Sett på bakgrunn av","en gjeldende","finstemming","tilgjengeliggjøres","vektfusionen","på samme måte som","lora-rangens valg"},
+  {"Sammenholdt med","en helhetlig","pipeline","utvides","hybridhenting","i motsetning til","tett vektorindeks"},
+  {"På grunn av","en manglende","kontekstpruning","dokumenteres","promptekspansjonen","innenfor","mellomvinduets grense"},
+  {"Med hensyn til","en særlig","belønningsmodell","spores","RLHF-syklusen","i tillegg til","preferansedataets kvalitet"},
+  {"Under forutsetning av","en løpende","evalueringskjøring","innhentes","benchmark-resultatene","gjennom","holdout-sets utvalg"},
+  {"Etter en totalvurdering av","en langsiktig","skalingslov","revitaliseres","compute-optimaliteten","ut fra","Chinchilla-foreningen"},
+  {"Uten hensyn til","en bærekraftig","beregningssats","stabiliseres","mikrobatches gjennomstrømning","med sikte på","halelatensens profil"},
+  {"Avhengig av","en resultatorientert","finstemming","genereres","systemprompten","på tvers av","instruksjonshierarkiet"},
+  {"På grunnlag av","en tverrfaglig","multimodalitet","stimuleres","oppmerksomhetsyvet","på linje med","posisjonsekodingens rekkevidde"},
+  {"I og med","en kommunikativ","agentarkitektur","balanseres","verktøykallet","utenom","hallusineringsrisikoen"},
+  {"Under henvisning til","en inkluderende","ontologi","ivaretas","entitetstrekkingen","i forlengelsen av","kunnskapsgrafen tetthet"},
+  {"Gitt","en plutselig","promptinjeksjon","omfattes","guardrailet","innenfor rammen av","rødteamingens omfang"},
+  {"Under hensyntagen til","en uforutsett","tokeneksplosjon","utstedes","cacheinvalidasjonen","som en følge av","semanticke cacheens alder"},
+  {"I lys av","en deterministisk","seed","iverksettes","reproduserbarhetskravet","under forutsetning av","stokastisitetens avskjæring"},
+  {"Vedrørende","en kollektiv","all-reduce","anvendes","bandbreddeoptimeringen","med henblikk på","ringtopologiens hopper"},
+  {"Grunnet","en indirekte","prompt-lekkasje","utstedes","varselet","i forhold til","systempromptens konfidensialitet"},
+  {"I betraktning av","en skadevoldende","overpassering","Innebæres","generaliseringsgapet","hva angår","valideringskurvens form"},
+  {"Forutsatt","en særskilt","kvantiseringskartlegging","fastsettes","nøyaktighetsgevinsten","parallellt med","GPTQ-kartleggingens omfang"},
+  {"Med utgangspunkt i","en ansvarsbegrensende","innholdspolicy","styrkes","guardrailet","i relasjon til","rødteamingens frekvens"},
+  {"I forhold til","en inntruffet","jailbreak","realiseres","filtreringskravet","i tilknytning til","kjernevirksomhetens toksisitetstoleranse"},
+  {"Sett hen til","en forholdsmessig","profanitetsterskel","baseres","filtreringskjeden","på bakgrunn av","visjonens innholdsstandard"},
+  {"I henhold til","en avvikende","sikkerhetsvurdering","forankres","dataekstraksjonssperren","avhengig av","satsingsområdets risikonivå"},
+  {"Med tanke på","en prosentvis","samtykkegrad","optimaliseres","anonymiseringsnivået","hva gjelder","porteføljen persondata"},
+  {"Uavhengig av","en juridisk","openvekterlisens","konkretiseres","distribusjonsvilkåret","eller sagt på en annen måte:","lønnsomhetsmodellens Apache-klausul"},
+  {"Sett på bakgrunn av","en årlig","berekningssats","meldes","throughputmålet","på samme måte som","distribusjonskanalens dimensjon"},
+  {"Sammenholdt med","en ervervsmessig","GPU-pool","utvides","tensorparallelliteten","i motsetning til","avkortningens HBM-budget"},
+  {"På grunn av","en bindende","latenskontrakt","dokumenteres","SLO-sjiktet","innenfor","takstmannens p99-grense"},
+  {"Med hensyn til","en prosessorientert","spottinstans","utredes","forutsetningene","i tillegg til","kjerneverdienes forutsetning"},
+  {"Under forutsetning av","en systemmessig","kontinuerlig batch","innhentes","throughputresultatene","gjennom","halelatensens profil"},
+  {"Etter en totalvurdering av","en skriftlig","SLA","ivaretas","failover-grunnlaget","ut fra","tilleggsdekningens regionvalg"},
+  {"Uten hensyn til","en tilpasningsdyktig","autoskalering","utløses","replicasamlingen","med sikte på","bransjestandardens kapasitet"},
+  {"Avhengig av","en sesongvariert","tokenspiss","stabiliseres","lastnivået","på tvers av","løsningssporas belastning"},
+  {"På grunnlag av","en gjennomsnittlig","TTFT","påvirkes","strømmeverdiforeholdet","på linje med","latensparametrene"},
+  {"I og med","en skademessig","nodefeil","avtales","gjenopptakelsestrategien","utenom","markedsandelens utlevering"},
+  {"Under henvisning til","en trendsettende","kernel-fusing","synliggjøres","kompensasjonsgevinsten","i forlengelsen av","konsekvensaspektets kjerneoverhead"},
+  {"Med bakgrunn i","en overordnet","tenkekjede","påvirkes","tenkestegens dypde","med basis i","selfkonsistensens utvalg"},
+  {"Under analysen av","en få-eksemplarisk","in-kontekst læring","tilpasses","demonstrasjonsutvalget","med hensyn til","generaliseringsmargenen"},
+  {"I kontrollen av","en tverrsektoriell","verktøykalling","operasjonaliseres","funksjonsskjemaet","gjennom","skemavalideringen"},
+  {"I arbeidet med","en nødvendig","minnekomprimering","identifiseres","sammanfattningsvinduet","til støtte for","agentens arbeidsminne"},
+  {"Sammenholdt med","en offensiv","multiagent-koreografi","organiseres","oppgaveutfordelingen","ved bruk av","orkestratormønsteret"},
+  {"Sett hen til","en defensiv","systemprompt","fastsettes","evnen","på linje med","verktøytilgjengelighetens profil"},
+  {"Etter etablering av","en desentralisert","ekspertarkitektur","styrkes","rutingskapasiteten","parallellt med","langtidsplanens kapasitetsmål"},
+  {"Grunnet","en oppdragsbasert","belønningssignal","koordineres","forsterkningsløkka","i relasjon til","sikkerhetspolicyens premiss"}
+}
+
+build_svada = (pick) ->
+  words = {}
+  for i=1,7 do
+    table.insert words, pick()[i]
+  table.concat words, ' '
 
 PRIVMSG:
   '^%psvada$': (s, d, a) =>
-    words = {}
-    wordN = 1
-    for i=1,7 do
-      line = svada[math.random(1, #svada)]
-      word = line[wordN]
-      table.insert(words, word)
-      wordN = wordN + 1
+    say build_svada -> svada[math.random 1, #svada]
 
-
-    say table.concat(words, ' ')
+  '^%paisvada$': (s, d, a) =>
+    say build_svada ->
+      t = if math.random() < 0.5 then ai else svada
+      t[math.random 1, #t]
 
