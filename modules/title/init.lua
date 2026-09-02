@@ -7,11 +7,8 @@ local iconv = require"iconv"
 local html2unicode = require'html'
 local lfs = require'lfs'
 local exif = require'exif'
-local googlevision = require'googlevision' -- requires google vision cloud API key
 
 local DL_LIMIT = 2^24 -- 16 MiB
-
-local gvision_apikey = ivar2.config.cloudvisionAPIKey or 'AIzaSyBTLSPVnk6yUFTm8USlCOIxEqbkOpAauxQ'
 
 local patterns = {
 	-- X://Y url
@@ -239,22 +236,14 @@ local handleData = function(headers, data)
 	end
 
 	local exif_tags = {}
-	local googlevision_tags = {}
 	if string.find(content_type, 'image/jp') then
 		exif_tags = handleExif(data)
-		if #data < 10485760 then -- max upload limit
-			googlevision_tags = googlevision.annotateData(gvision_apikey, data)
-		end
 	end
 
 	local message
 	message = string.format('[%s] %s kB', content_type, content_length)
 	if #exif_tags > 0 then
 		message = message .. ', ' .. table.concat(exif_tags, ', ')
-	end
-
-	if #googlevision_tags > 0 then
-		message = message .. ', ' .. table.concat(googlevision_tags, ', ')
 	end
 
 	return message
