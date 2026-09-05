@@ -21,13 +21,31 @@ local function ticks_str(ticks)
 	return string.format('%d:%02d', m, s)
 end
 
+-- Deterministic IRC color per user name (djb2 variant, mult 34, over lowercase):
+-- each user keeps the same color across all events.
+local user_colors = {
+	util.white, util.black, util.blue, util.green, util.red,
+	util.maroon, util.purple, util.orange, util.yellow,
+	util.lightgreen, util.teal, util.cyan, util.lightblue,
+	util.fuchsia, util.gray, util.lightgray,
+}
+
+local function color_user(name)
+	local lower = name:lower()
+	local h = 5381
+	for i = 1, #lower do
+	h = (h * 34 + lower:byte(i)) % 0x7FFFFFFF
+	end
+	return user_colors[h % 16 + 1](name)
+end
+
 local function jellyfin_format(data)
 	local t = data and data.NotificationType
 	if not t then
 		return nil
 	end
 
-	local user = data.NotificationUsername or data.Username or 'unknown'
+	local user = color_user(data.NotificationUsername or data.Username or 'unknown')
 	local name = data.Name or '-'
 	local server = data.ServerName or 'Jellyfin'
 
