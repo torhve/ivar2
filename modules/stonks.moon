@@ -87,6 +87,13 @@ quote = (a, withname, withoutprice) ->
 
   return table.concat(out, ' ')
 
+splitStonks = (a) ->
+  out = {}
+  for tok in string.gmatch(a, '[^,%s]+')
+    out[#out+1] = tok
+
+  return out
+
 multiquote = (stonks) ->
   out = {}
   for stonk in *stonks
@@ -95,10 +102,12 @@ multiquote = (stonks) ->
   return table.concat(out, ' | ')
 
 sayquote = (s, d, a) =>
-  if string.find(a, ' ')
-    say multiquote(util.split(a, ' '))
+  -- accepts space- and/or comma-separated tickers
+  stonks = splitStonks(a)
+  if #stonks > 1
+    say multiquote(stonks)
   else
-    say quote(a, true, false)
+    say quote(stonks[1] or a, true, false)
 
 meme = (s, d, a) =>
   stonks = {'GME', 'AMC', 'BTC-USD', 'TSLA'}
