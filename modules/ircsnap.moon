@@ -99,11 +99,11 @@ function rotate(d) {
 ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) =>
   url = req.url
   send = (body, code, content_type) ->
-    if not code then code = "200"
+    code = tostring(code or "200")
     if not content_type then content_type = 'text/html'
     res\append ':status', code
-    res\append 'Content-Type', content_type
-    res\append 'Content-Length', tostring(#body)
+    res\append 'content-type', content_type
+    res\append 'content-length', tostring(#body)
     req\write_headers(res, false, 30)
     req\write_body_from_string(body, 30)
     return
@@ -113,6 +113,7 @@ ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) =>
     fn = "cache/images/#{safe file}"
     attrs = lfs.attributes(fn)
     unless attrs
+      ivar2\Log 'debug', "imageupload: file not found: %{s}", fn
       send 'File not found', 404
       return
     size = attrs.size
@@ -135,8 +136,8 @@ ivar2.webserver.regUrl "#{urlbase}(.*)$", (req, res) =>
       content_type = 'audio/mpeg'
 
     res\append ':status', '200'
-    res\append 'Content-Type', content_type
-    res\append 'Content-Length', tostring(size)
+    res\append 'content-type', content_type
+    res\append 'content-length', tostring(size)
     req\write_headers(res, false, 30)
     fd = io.open(fn, 'rb')
     req\write_body_from_file(fd, 5*60)
@@ -594,27 +595,37 @@ document.addEventListener('paste', function(e) {
     fn = req.headers['x-filename']
     sender = req.headers['x-sender'] or ''
     text = req.headers['x-text'] or ''
-    file = req.filename
-    ivar2\Log 'info', "imageupload: Recieved file name: <#{fn}> datalen: #{#file}, sender: <#{sender}> text: <#{text}>, channel: <#{unescaped_channel}>"
-    if fn and file
+    tmpfile = req.filename
+    tmpsize = lfs.attributes(tmpfile).size or 0
+    ivar2\Log 'info', "imageupload: Recieved file name: <#{fn}> datalen: #{tmpsize}, sender: <#{sender}> text: <#{text}>, channel: <#{unescaped_channel}>"
+    if fn and tmpfile
       html = 'Ok'
       realfn = "#{os.time!}-#{safe fn}"
-      save = ->
-        os.rename req.filename, "cache/images/#{realfn}"
-        if sender ~= ''
-          sender = "<#{sender\sub(1, 100)}> "
-        if text ~= ''
-          text = text\sub(1, 100) .. ' '
-        file_or_video = 'file'
-        if realfn\match '%.mp4$'
-          file_or_video = 'video'
-        if realfn\match '%.mov$'
-          file_or_video = 'video'
-        msg = "[IRCSNAP] #{sender}#{text}#{ivar2.config.webserverprefix}#{urlbase}#{file_or_video}/#{realfn}"
-        ivar2\Privmsg unescaped_channel, msg
-      ok, err = pcall(save)
-      unless ok
-        ivar2\Log 'error', "imageupload: Error during saving upload: %s", err
+      dest = "cache/images/#{realfn}"
+      ivar2\Log 'debug', "imageupload: copying %{s} (%{s} bytes) -> %{s}", tmpfile, tmpsize, dest
+      src = io.open tmpfile, 'rb'
+      if src
+        dst = io.open dest, 'wb'
+        if dst
+          dst\write src\read('*a')
+          dst\close!
+          ivar2\Log 'debug', "imageupload: saved %{s} OK (%{s} bytes)", dest, lfs.attributes(dest).size or 0
+        else
+          ivar2\Log 'error', "imageupload: failed to open dest: %{s}", dest
+        src\close!
+      else
+        ivar2\Log 'error', "imageupload: failed to open tmpfile: %{s}", tmpfile
+      if sender ~= ''
+        sender = "<#{sender\sub(1, 100)}> "
+      if text ~= ''
+        text = text\sub(1, 100) .. ' '
+      file_or_video = 'file'
+      if realfn\match '%.mp4$'
+        file_or_video = 'video'
+      if realfn\match '%.mov$'
+        file_or_video = 'video'
+      msg = "[IRCSNAP] #{sender}#{text}#{ivar2.config.webserverprefix}#{urlbase}#{file_or_video}/#{realfn}"
+      ivar2\Privmsg unescaped_channel, msg
     else
       html = 'Not OK'
 
