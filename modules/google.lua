@@ -30,7 +30,7 @@ local parseData = function(say, source, destination, data)
 			local url = match.unescapedUrl
 			if(#url >= 75) then
 				n = n + 1
-				ivar2.x0(url, function(short)
+				(ivar2.shorten or ivar2.x0)(url, function(short)
 					n = n - 1
 					arr[i] = outFormat:format(title, short or url)
 

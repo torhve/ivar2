@@ -354,7 +354,7 @@ local fetchInformation = function(queue, lang)
 		function(data, _, response)
 			local message = handleData(response.headers, data)
 			if(#queue.url > 80) then
-				ivar2.x0(queue.url, function(short)
+				(ivar2.shorten or ivar2.x0)(queue.url, function(short)
 					if message then
 						queue:done(string.format('Short URL: %s - %s', short, message))
 					else

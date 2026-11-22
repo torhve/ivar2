@@ -1,5 +1,6 @@
 local handler = function(self, source, destination, input)
-	self.x0(input, function(url)
+	local shorten = self.shorten or self.x0
+	shorten(input, function(url)
 		self:Msg('privmsg', destination, source, '%s: %s', source.nick, url)
 	end)
 end
