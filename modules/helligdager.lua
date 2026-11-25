@@ -137,6 +137,7 @@ local getConsecutiveHolidays = function(date)
 
   local consecutiveHolidays = {}
   local nextHoliday = getNextHoliday(date)
+  if not nextHoliday then return {} end
 
   -- Blargh. Inject the weekend if we have to.
   if (nextHoliday.date.wday == 2) then
@@ -184,23 +185,25 @@ local shouldAnnounce = function()
 
   local consecutiveHolidays = getConsecutiveHolidays(date)
   local tomorrow = addDay(date, 1)
-  if (consecutiveHolidays[1].timestamp == os.time(tomorrow)) then
+  local tomorrowTs = os.time({year = tomorrow.year, month = tomorrow.month, day = tomorrow.day, hour = 0})
+  if (consecutiveHolidays[1].timestamp == tomorrowTs) then
     return true
   end
 
   return false
 end
 
+-- Calculate seconds until the next 08:00 daily check.
+-- If it's already past 08:00, target tomorrow at 08:00.
 local timeUntilNextCheck = function()
   local now = _date()
 
   local day = now.day
-  if (now.hour >= 9) then
+  if (now.hour >= 8) then
     day = now.day + 1
   end
 
-  local tomorrow = _date({year = now.year, month = now.month, day = day, hour = 9})
-  return os.time(tomorrow) - os.time(now)
+  return os.time({year = now.year, month = now.month, day = day, hour = 8}) - os.time(now)
 end
 
 local formatHolidays = function(holidays)
@@ -220,11 +223,13 @@ local sendMessage = function(message)
   end
 end
 
--- TODO: Make the timer set itself to announce the day before the next holiday
--- instead of checking every day...
+-- Set up a recurring daily timer that fires at 08:00.
+-- Each time it fires, it reschedules itself for the next day,
+-- then calls shouldAnnounce() to decide whether to send a holiday
+-- announcement. Announcements are only sent on the day before a
+-- holiday, and only on weekdays (not weekends).
 local function startTime()
   ivar2:Timer("helligdager-" .. os.time(), timeUntilNextCheck(), function()
-    -- Start a new timer.
     startTime()
 
     if (not shouldAnnounce()) then return end
@@ -254,6 +259,20 @@ local function startTime()
       sendMessage(string.format("%s! Enjoy your extra long weekend", formatHolidays(holidays)))
     end
   end)
+end
+
+if test_mode then -- luacheck: ignore
+  return {
+    shouldAnnounce = shouldAnnounce,
+    timeUntilNextCheck = timeUntilNextCheck,
+    getConsecutiveHolidays = getConsecutiveHolidays,
+    getNextHoliday = getNextHoliday,
+    isHoliday = isHoliday,
+    isWeekend = isWeekend,
+    addDay = addDay,
+    _date = _date,
+    holidays = holidays,
+  }
 end
 
 startTime()
