@@ -5,5 +5,6 @@ return {
     --lpath = "spec/?.lua";
     ["auto-insulate"] = false;
     helper = "spec/helper.lua";
+    lua = "luajit";      -- re-exec under LuaJIT
   };
 }
