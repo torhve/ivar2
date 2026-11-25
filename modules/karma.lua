@@ -1,7 +1,7 @@
 local sql = require'lsqlite3'
 
 local function openDB()
-	local dbfilename = string.format("cache/karma.%s.sql", ivar2.network)
+	local dbfilename = string.format("cache/karma.%s.sql", string.lower(ivar2.network))
 	local db = sql.open(dbfilename)
 
 	db:exec([[
@@ -75,7 +75,7 @@ local function handleKarma(self, source, destination, item, sign, change)
 
 	local db = openDB()
 	local insStmt = db:prepare("INSERT INTO karma (item, change, nick) VALUES(?, ?, ?)")
-	local code = insStmt:bind_values(item, value, source.nick)
+	local code = insStmt:bind_values(string.lower(item), value, source.nick)
 	code = insStmt:step()
 	code = insStmt:finalize()
 
@@ -89,7 +89,9 @@ local getKarma = function(self, source, destination, dir, text)
 
 	local out = {}
 
-	for row in db:nrows('SELECT item, SUM(change) AS sum FROM karma GROUP BY item ORDER BY sum '..dir..' limit 5') do
+	for row in db:nrows(
+			'SELECT LOWER(item) AS item, SUM(change) AS sum FROM karma ' ..
+			'GROUP BY LOWER(item) ORDER BY sum ' .. dir .. ' limit 5') do
 		table.insert(out, string.format('\002%s\002:%s', row.item, row.sum))
 	end
 
