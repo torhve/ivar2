@@ -1,6 +1,8 @@
 local util = require'util'
 local simplehttp = util.simplehttp
-local html2unicode = require'html'
+local json = util.json
+local urlEncode = util.urlEncode
+local key = ivar2.config.yfinanceApiKey
 
 local cc = {
 	["AED"] = "United Arab Emirates Dirham (AED)",
@@ -194,34 +196,47 @@ local function run(untrusted_code)
 	return pcall(untrusted_function)
 end
 
-local parseData = function(data)
-	data = data:match'<div id=currency_converter_result>(.-)</span>'
-	if(not data) then
-		return 'Some currency died? No exchange rates returned.'
-	end
-
-	return html2unicode(data:gsub('<.->', '')):gsub('  ', ' '):gsub('%w+', cc)
+-- fetch the current price for a symbol (works for =X currency pairs and
+-- hyphenated tickers like BTC-USD) via the same endpoint stonks uses
+local function fetchPrice(symbol)
+	local url = "https://yfapi.net/v11/finance/quoteSummary/" .. urlEncode(symbol) .. "?modules=price"
+	local data = simplehttp({ url = url, method = 'GET', headers = { ['x-api-key'] = key } })
+	if(not data) then return nil end
+	local ok, res = pcall(json.decode, data)
+	if(not ok) then return nil end
+	local results = res.quoteSummary and res.quoteSummary.result
+	if(not results or results == json.null) then return nil end
+	if(type(results) ~= 'table') then return nil end
+	local summary = results[1]
+	local price = summary and summary.price
+	if(not price) then return nil end
+	local raw = price.regularMarketPrice and tonumber(price.regularMarketPrice.raw)
+	if(not raw) then return nil end
+	return raw
 end
 
-local parseHistData = function(data)
-	if not data then return end
-	local i = 0
-	local out = {}
-	for line in data:gmatch'(.-)\n' do
-		-- interesting data starts on line 8
-		if i > 7 then
-			-- luacheck: ignore day
-			local day, value = line:match('^(.-),(.*)$')
-			if(tonumber(value)) then
-				out[#out+1] = tonumber(value)*100
-			end
-		end
-		i = i + 1
+-- rate for FROM → TO, in TO per FROM (nil if not available)
+local function exchangeRate(from, to)
+	local raw = fetchPrice(from .. to .. '=X')
+	if(raw) then return raw end
+	-- inverse pair, e.g. PLNNOK=X is not covered but NOKPLN=X is
+	raw = fetchPrice(to .. from .. '=X')
+	if(raw and raw ~= 0) then return 1 / raw end
+	-- BTC has no =X pair; quote it as a ticker
+	if(from == 'BTC') then
+		raw = fetchPrice('BTC-' .. to)
+		if(raw) then return raw end
 	end
-	return out
+	return nil
 end
 
-local checkInput = function(value, from, to)
+local function normalize(code)
+	local lower = code:lower()
+	lower = conv[lower] or lower
+	return lower:upper()
+end
+
+local function checkInput(value, from, to)
 	if(not (cc[from] and cc[to])) then
 		return nil, string.format('Invalid currency: %s.', (not cc[from] and from) or (not cc[to] and to))
 	end
@@ -229,73 +244,75 @@ local checkInput = function(value, from, to)
 	-- Control the input.
 	value = value:gsub(',', '.')
 	-- luacheck: ignore success
-	local success, err
-	success, value, err = run('return ' .. value)
-	if(err) then
-		return nil, string.format('Parsing of input failed: %s', err)
+	local success, result = run('return ' .. value)
+	if(not success) then
+		return nil, string.format('Parsing of input failed: %s', tostring(result))
 	end
+	value = result
 
 	-- Number validation, serious business!
 	if(type(value) ~= 'number' or value <= 0 or value == math.huge or value ~= value) then
-		return nil, string.format('Invalid number provided: %s', tonumber(value))
+		return nil, string.format('Invalid number provided: %s', tostring(value))
 	end
 
 	return true, value
 end
 
-local handleExchange = function(self, source, destination, value, from, to)
-	-- Strip away to/in and spaces.
-	to = to:lower():gsub('[toin ]+ ', '')
-	from = from:lower()
-
-	-- Default to NOK.
-	if(to == '') then to = 'NOK' end
-
-	from = (conv[from] or from):upper()
-	to = (conv[to] or to):upper()
+local function handleExchange(self, say, source, destination, value, from, to)
+	from = normalize(from)
+	to = normalize(to)
 
 	if(from == to) then
 		return say( 'wat ar u dewn... %s! STAHP!', source.nick)
 	end
 
-	local success
-	success, value = checkInput(value, from, to)
-	local numbers
+	local success, result = checkInput(value, from, to)
 	if(not success) then
-		say( '%s: %s', source.nick, value)
-	else
-		local data = simplehttp(
-			('http://finance.google.com/finance/converter?a=%s&from=%s&to=%s'):format(value, from, to))
-		local message = parseData(data)
-		local timestamp = os.time() -- 86400*7
-		data = simplehttp(('http://finance.google.com/finance/getprices?q=%s%s&x=CURRENCY&i=86400&p=1M&f=d,c&df=cpct&auto=1&ts=%s'):format(from, to, timestamp))
-		if(value == 1) then -- no hist for non-1-amounts
-			numbers = parseHistData(data)
-		end
-		if(message) then
-			if(numbers) then
-				message = message ..  ', 30d trend ' .. util.spark.sparkline(numbers)
-			end
-			say( '%s: %s', source.nick, message)
-		end
+		return say( '%s: %s', source.nick, result)
 	end
+	value = result
+
+	local rate = exchangeRate(from, to)
+	if(not rate) then
+		return say( '%s: no exchange rate for %s to %s.', source.nick, from, to)
+	end
+
+	local converted = value * rate
+	say( '%s: %s %s = %s %s', source.nick, value, from, string.format('%.2f', converted), to)
+end
+
+-- !xe/!cur take a single capture and split it: "<value> <from> [to]"
+local function handleXe(self, say, source, destination, arg)
+	local value, from, to = arg:match('^(%S+)%s+(%S+)%s*(.*)$')
+	if(not value) then
+		return say( '%s: usage: !xe <value> <from> [to]', source.nick)
+	end
+	to = (to ~= '' and to) or 'NOK'
+	return handleExchange(self, say, source, destination, value, from, to)
 end
 
 return {
 	PRIVMSG = {
-		['^%pxe (%S+) (%S+) ?(.*)$'] = handleExchange,
-		['^%pcur (%S+) (%S+) ?(.*)$'] = handleExchange,
+		['^%pxe (.+)$'] = function(self, source, destination, arg)
+			return handleXe(self, say, source, destination, arg)
+		end,
+		['^%pcur (.+)$'] = function(self, source, destination, arg)
+			return handleXe(self, say, source, destination, arg)
+		end,
 		['^%pusd$'] = function(self, source, destination)
-			handleExchange(self, source, destination, '1', 'USD', 'NOK')
+			return handleExchange(self, say, source, destination, '1', 'USD', 'NOK')
 		end,
 		['^%peur$'] = function(self, source, destination)
-			handleExchange(self, source, destination, '1', 'EUR', 'NOK')
+			return handleExchange(self, say, source, destination, '1', 'EUR', 'NOK')
 		end,
 		['^%pjpy$'] = function(self, source, destination)
-			handleExchange(self, source, destination, '100', 'JPY', 'NOK')
+			return handleExchange(self, say, source, destination, '100', 'JPY', 'NOK')
+		end,
+		['^%pzloty$'] = function(self, source, destination)
+			return handleExchange(self, say, source, destination, '1', 'PLN', 'NOK')
 		end,
 		['^%p฿$'] = function(self, source, destination)
-			handleExchange(self, source, destination, '1', 'BTC', 'USD')
+			return handleExchange(self, say, source, destination, '1', 'BTC', 'USD')
 		end,
 	},
 }
