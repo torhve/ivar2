@@ -1,3 +1,9 @@
 bot-*.lua
 cache/*
 config/*
+dict/
+core.*
+modules/minecraft.lua
+modules/rcon.lua
+tools/weechatlogparser.py
+spec/postgresql_spec.lua
