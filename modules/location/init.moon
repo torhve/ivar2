@@ -18,8 +18,8 @@ ivar2.webserver.regUrl "/location/(.*)$", (req, res) =>
     if not code then code = "200"
     if not content_type then content_type = 'text/html'
     res\append ':status', code
-    res\append 'Content-Type', content_type
-    res\append 'Content-Length', tostring(#body)
+    res\append 'content-type', content_type
+    res\append 'content-length', tostring(#body)
     req\write_headers(res, false, 30)
     req\write_body_from_string(body, 30)
 
@@ -31,8 +31,8 @@ ivar2.webserver.regUrl "/location/(.*)$", (req, res) =>
       return false
     size = att.size
     res\append ':status', '200'
-    --res\append 'Content-Type', content_type
-    res\append 'Content-Length', tostring(size)
+    --res\append 'content-type', content_type
+    res\append 'content-length', tostring(size)
     req\write_headers(res, false, 30)
     fd = io.open(fn, 'rb')
     req\write_body_from_file(fd, 5*60)
