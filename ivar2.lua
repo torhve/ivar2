@@ -33,7 +33,12 @@ local signal = require'cqueues.signal'
 local socket = require'cqueues.socket'
 local queue = cqueues.new()
 
-local module_envs = setmetatable({}, { __mode = 'k' })
+-- Per-call say/reply contexts, keyed by the dispatch coroutine. Each
+-- incoming message is dispatched in its own coroutine; a handler may suspend
+-- for an async operation and resume later. Storing the call context on the
+-- coroutine (not in the shared handler's environment) means concurrent
+-- invocations of the same handler never overwrite each other's say closures.
+local call_contexts = setmetatable({}, { __mode = 'k' })
 
 math.randomseed(os.time())
 
@@ -111,6 +116,41 @@ local safeFormat = function(format, ...)
 	else
 		return format
 	end
+end
+
+local function callContextSay(self, str, ...)
+	-- Look up the call context for the coroutine currently running the
+	-- handler. The stack entry survives the handler's async suspension,
+	-- so a late say/reply closure still routes to its own call.
+	local stack = call_contexts[coroutine.running()]
+	local ctx = stack and stack[#stack]
+	if(not ctx) then
+		error('say() called outside of a dispatch context', 2)
+	end
+	local output = safeFormat(str, ...)
+	if(not ctx.remainder) then
+		self:Say(ctx.destination, ctx.source, output)
+		return
+	end
+	-- Pipeline: each say routes its output through the next pipeline
+	-- segment, and advances the remainder cursor so a handler saying more
+	-- than once consumes the next stage.
+	local newcommand, newRemainder = self:CommandSplitter(ctx.remainder)
+	ctx.remainder = newRemainder
+	local newline = newcommand .. ' ' .. output
+	if(newRemainder) then
+		newline = newline .. '|' .. newRemainder
+	end
+	self:DispatchCommand(ctx.command, newline, ctx.source, ctx.destination)
+end
+
+local function callContextReply(self, str, ...)
+	local stack = call_contexts[coroutine.running()]
+	local ctx = stack and stack[#stack]
+	if(not ctx) then
+		error('reply() called outside of a dispatch context', 2)
+	end
+	self:Reply(ctx.destination, ctx.source, str, ...)
 end
 
 local tableHasValue = function(table, value)
@@ -426,6 +466,23 @@ function ivar2:EnableModule(moduleName, moduleTable)
 	for command, handlers in next, moduleTable do
 		if(not self.events[command]) then self.events[command] = {} end
 		self.events[command][moduleName] = handlers
+		-- Inject a stable say/reply environment into the handlers. These
+		-- closures are created once and live for the lifetime of the module;
+		-- per-call context lives on the dispatch coroutine instead, so
+		-- concurrent invocations of the same handler cannot overwrite
+		-- each other's say/reply closures.
+		for pattern, handler in next, handlers do
+			if(type(handler) == 'function') then
+				local env = {
+					ivar2 = self,
+					package = package,
+					say = function(str, ...) return callContextSay(self, str, ...) end,
+					reply = function(str, ...) return callContextReply(self, str, ...) end,
+				}
+				setmetatable(env, {__index = _G})
+				setfenv(handler, env)
+			end
+		end
 	end
 end
 
@@ -482,6 +539,8 @@ function ivar2:LoadModule(moduleName)
 	local env = {
 		ivar2 = self,
 		package = package,
+		say = function(str, ...) return callContextSay(self, str, ...) end,
+		reply = function(str, ...) return callContextReply(self, str, ...) end,
 	}
 	setmetatable(env, {__index = _G })
 	setfenv(moduleFile, env)
@@ -522,39 +581,36 @@ function ivar2:CommandSplitter(command)
 end
 
 function ivar2:ModuleCall(command, func, source, destination, remainder, ...)
-	-- Create a per-call environment so that concurrent async operations
-	-- (e.g., simplehttp) cannot overwrite each other's say/reply closures.
-	-- The original module env is remembered once (weak table) and each call
-	-- gets a fresh env that indexes into it via __index.
-	local origEnv = module_envs[func]
-	if not origEnv then
-		origEnv = getfenv(func)
-		module_envs[func] = origEnv
+	-- Push a per-call context onto the dispatch coroutine. The say/reply
+	-- closures in the handler read this stack (see callContextSay/Reply), so
+	-- the call's destination/source/pipeline survive the handler's async
+	-- suspension and concurrent invocations of the same handler never
+	-- overwrite each other.
+	--
+	-- The yield inside the handler propagates through the pcall, so the
+	-- stack entry stays on the coroutine across suspension and is popped
+	-- when the handler eventually completes.
+	local co = coroutine.running()
+	local stack = call_contexts[co]
+	if(not stack) then
+		stack = {}
+		call_contexts[co] = stack
 	end
-	local env = setmetatable({}, { __index = origEnv })
-	env.say = function(str, ...)
-		local output = safeFormat(str, ...)
-		if(not remainder) then
-			self:Say(destination, source, output)
-		else
-			local newcommand
-			newcommand, remainder = self:CommandSplitter(remainder)
-			local newline = newcommand .. " " .. output
-			if(remainder) then
-				newline = newline .. "|" .. remainder
-			end
+	table.insert(stack, {
+		command = command,
+		destination = destination,
+		source = source,
+		remainder = remainder,
+	})
 
-			self:DispatchCommand(command, newline, source, destination)
-		end
-	end
-	env.reply = function(str, ...)
-		self:Reply(destination, source, str, ...)
-	end
-	setfenv(func, env)
+	local success, message
 	if moonlines then
-		return moonlines.pcall(func, self, source, destination, ...)
+		success, message = moonlines.pcall(func, self, source, destination, ...)
+	else
+		success, message = pcall(func, self, source, destination, ...)
 	end
-	return pcall(func, self, source, destination, ...)
+	table.remove(stack)
+	return success, message
 end
 
 function ivar2:Events()
@@ -570,6 +626,8 @@ function ivar2:RegisterCommand(handlerName, pattern, handler, verb)
 	local env = {
 		ivar2 = self,
 		package = package,
+		say = function(str, ...) return callContextSay(self, str, ...) end,
+		reply = function(str, ...) return callContextReply(self, str, ...) end,
 	}
 	setmetatable(env, {__index = _G })
 	setfenv(handler, env)

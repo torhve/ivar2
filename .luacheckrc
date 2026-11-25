@@ -13,5 +13,8 @@ files["spec"] = {
 	new_globals = {
 		"TEST_TIMEOUT";
 		"assert_loop";
+		"jit";
+		"say";
+		"reply";
 	};
 }
