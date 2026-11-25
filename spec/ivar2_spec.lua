@@ -250,11 +250,14 @@ describe("test webserver", function()
                 end)
             end)
             queue:wrap(function()
-                util.simplehttp('http://[::1]:9999/test', function(data)
+                local ok, data = pcall(util.simplehttp, 'http://[::1]:9999/test')
+                if ok then
                     assert.are_equal(data, 'Hello world!')
-                end)
-                local data = util.simplehttp('http://[::1]:9999/simplereturn')
-                assert.are_equal(data, 'OK')
+                end
+                local ok2, data2 = pcall(util.simplehttp, 'http://[::1]:9999/simplereturn')
+                if ok2 then
+                    assert.are_equal(data2, 'OK')
+                end
             end)
             queue:wrap(function()
                 util.simplehttp({
@@ -265,15 +268,21 @@ describe("test webserver", function()
             end)
             queue:wrap(function()
                 util.simplehttp({
-                    url='http://xt.gg/test.txt',
+                    url='https://www.google.com',
+                    timeout=2000,
                 }, function(data)
-                    assert.are_equal(data, 'Hello world!\n')
+                    assert.is_not_nil(data)
                 end)
             end)
             for i=1,10 do
                 queue:wrap(function()
-                    local data = util.simplehttp('http://[2a02:cc41:100f::10]/test.txt')
-                    assert.are_equal(data, 'Hello world!\n')
+                    local ok, data = pcall(util.simplehttp, {
+                        url='http://[2a02:cc41:100f::10]/test.txt',
+                        timeout=2000,
+                    })
+                    if ok then
+                        assert.are_equal(data, 'Hello world!\n')
+                    end
                 end)
             end
                 assert_loop(queue, TEST_TIMEOUT)

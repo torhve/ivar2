@@ -20,22 +20,31 @@ function M.irc_to_ansi(s)
             buf = {}
             local digit = ''
             i = i + 1
-            while i <= #s and s:byte(i) >= 48 and s:byte(i) <= 57 do
+            while i <= #s and s:byte(i) >= 48 and s:byte(i) <= 57 and #digit < 2 do
                 digit = digit .. s:sub(i, i)
                 i = i + 1
             end
-            local fg = tonumber(digit) or 0
-            if s:sub(i, i) == ',' then
+            if digit == '' then
+                table.insert(out, '\27[0m')
                 i = i + 1
-                local bgd = ''
-                while i <= #s and s:byte(i) >= 48 and s:byte(i) <= 57 do
-                    bgd = bgd .. s:sub(i, i)
-                    i = i + 1
-                end
-                local bg = tonumber(bgd) or 0
-                table.insert(out, string.format('\27[38;5;%d;48;5;%dm', irc_to_ansi_fg[fg + 1], irc_to_ansi_bg[bg + 1]))
             else
-                table.insert(out, string.format('\27[38;5;%dm', irc_to_ansi_fg[fg + 1]))
+                local fg = tonumber(digit) or 0
+                if fg < 0 then fg = 0 end
+                if fg > 15 then fg = 0 end
+                if s:sub(i, i) == ',' then
+                    i = i + 1
+                    local bgd = ''
+                    while i <= #s and s:byte(i) >= 48 and s:byte(i) <= 57 and #bgd < 2 do
+                        bgd = bgd .. s:sub(i, i)
+                        i = i + 1
+                    end
+                    local bg = tonumber(bgd) or 0
+                    if bg < 0 then bg = 0 end
+                    if bg > 15 then bg = 0 end
+                    table.insert(out, string.format('\27[38;5;%d;48;5;%dm', irc_to_ansi_fg[fg + 1], irc_to_ansi_bg[bg + 1]))
+                else
+                    table.insert(out, string.format('\27[38;5;%dm', irc_to_ansi_fg[fg + 1]))
+                end
             end
         elseif c == 2 then
             table.insert(out, table.concat(buf))
@@ -91,6 +100,12 @@ function M.mock_ivar2(opts)
         Msg = function() end,
         Say = function() end,
         Reply = function() end,
+        Log = function() end,
+        DestinationLocale = function() return 'nn' end,
+        Timer = function(self, name, initial, repeat_, cb)
+            self._timer_cb = cb
+            return { stop = function() end }
+        end,
     }
     for k, v in pairs(opts) do
         if type(v) == 'table' and type(mock[k]) == 'table' then
@@ -134,11 +149,25 @@ function M.capture_env(mock)
     local captures = { say = {}, reply = {}, network = {} }
     local env = setmetatable({}, { __index = _G })
     env.ivar2 = mock
+    if mock.os then
+        env.os = mock.os
+    end
     env.say = function(str, ...)
         table.insert(captures.say, select('#', ...) > 0 and string.format(str, ...) or str)
     end
     env.reply = function(str, ...)
         table.insert(captures.reply, select('#', ...) > 0 and string.format(str, ...) or str)
+    end
+    -- Wrap existing mock.Say/Reply to also capture output (for modules using ivar2\Say/Reply directly)
+    local orig_say = mock.Say
+    local orig_reply = mock.Reply
+    mock.Say = function(self, destination, str)
+        table.insert(captures.say, str or '')
+        orig_say(self, destination, str)
+    end
+    mock.Reply = function(self, destination, source, str)
+        table.insert(captures.reply, str or '')
+        orig_reply(self, destination, source, str)
     end
     captures.env = env
     return captures
@@ -168,6 +197,11 @@ function M.context(module_name, mock)
         mock = mock,
         mod = mod,
         queue = cq,
+        reload = function(self)
+            self.mod = M.load_module(module_name, self.mock)
+            self.queue:close()
+            self.queue = cqueues.new()
+        end,
         invoke = function(self, message, opts)
             opts = opts or {}
             local prefix = self.mock.config.prefix or '!'
@@ -176,7 +210,10 @@ function M.context(module_name, mock)
 
             local handlers = self.mod.PRIVMSG or {}
             local matched = 0
-            for pattern, handler in pairs(handlers) do
+            local function try_match(pattern, handler)
+                if type(pattern) ~= 'string' then
+                    return
+                end
                 local key = pattern:gsub('%%p', prefix)
                 if message:match(key) then
                     local callEnv = setmetatable({}, { __index = captures.env })
@@ -190,6 +227,9 @@ function M.context(module_name, mock)
                         captured or '')
                     matched = matched + 1
                 end
+            end
+            for pattern, handler in pairs(handlers) do
+                try_match(pattern, handler)
             end
 
             if opts.timeout then

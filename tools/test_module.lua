@@ -78,8 +78,12 @@ if opts.list then
     print('Event: PRIVMSG')
     print('Patterns:')
     for pattern, _ in pairs(handlers) do
+        if type(pattern) ~= 'string' then
+            goto skip
+        end
         local key = pattern:gsub('%%p', prefix)
         print('  ' .. key)
+        ::skip::
     end
     os.exit(0)
 end
@@ -94,6 +98,9 @@ local captures = helper.capture_env(mock)
 local matched = 0
 
 for pattern, handler in pairs(handlers) do
+    if type(pattern) ~= 'string' then
+        goto skip2
+    end
     local key = pattern:gsub('%%p', prefix)
     if message:match(key) then
         local callEnv = setmetatable({}, { __index = captures.env })
@@ -110,6 +117,7 @@ for pattern, handler in pairs(handlers) do
             captured or '')
         matched = matched + 1
     end
+    ::skip2::
 end
 
 if matched == 0 then

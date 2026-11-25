@@ -14,7 +14,7 @@ package.cpath = table.concat({
 
 
 
-TEST_TIMEOUT = 60
+TEST_TIMEOUT = 5
 
 function assert_loop(cq, timeout)
   local ok, err, _, thd = cq:loop(timeout)

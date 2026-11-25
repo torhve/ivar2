@@ -135,4 +135,18 @@ describe('stonks module (mocked)', function()
         assert.is_not_nil(output:match('%+1.23%%'))
         assert.is_nil(output:match('%('))
     end)
+
+    it('splits comma-separated tickers into multiple quotes', function()
+        local json_data = { quoteSummary = { result = { { price = make_price_data({}) } } } }
+        local mock_ivar2, mod, cleanup = setup_mocked(json_data)
+        local captures = helper.capture_env(mock_ivar2)
+        invoke_handler(mod, mock_ivar2, captures, 'AAPL, MSFT,NVDA')
+        cleanup()
+
+        assert.is_true(#captures.say > 0)
+        local output = captures.say[1]
+        local pipes = 0
+        for _ in output:gmatch('|') do pipes = pipes + 1 end
+        assert.is_equal(2, pipes)
+    end)
 end)
