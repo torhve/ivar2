@@ -8,7 +8,7 @@ local conn = false
 local connect = function()
     conn = pgsql.connectdb("dbname=" .. tostring(ivar2.config.dbname) .. " user=" .. tostring(ivar2.config.dbuser) .. " password=" .. tostring(ivar2.config.dbpass) .. " host=" .. tostring(ivar2.config.dbhost) .. " port=" .. tostring(ivar2.config.dbport))
     if conn:status() ~= pgsql.CONNECTION_OK then
-        ivar2:Log('error', "Unable to connect to DB: %s", conn:errorMessage())
+        ivar2:Log('error', "pgolds: Unable to connect to DB: %s", conn:errorMessage())
         return
     end
 end
@@ -108,7 +108,7 @@ end
 local dbLogUrl = function(dbh, source, destination, url, msg)
     local nick = source.nick
 
-    ivar2:Log('info', string.format('pgolds: Inserting URL: <%s>', url))
+    ivar2:Log('info', string.format('pgolds: Inserting URL: <%s>, %s, %s, %s', url, nick, destination, msg))
 
     -- create a handle for an insert
     local res = dbh:execParams('INSERT INTO urls(nick,channel,url,message) values($1,$2,$3,$4)', nick, destination, url, msg)
