@@ -167,7 +167,8 @@ function util.translateWords(str, callback, nickpat)
 end
 
 function util.nonickalertword(word)
-	local zwsp = "\226\128\142" -- LTR
+	-- local zwsp = "\226\128\142" -- LTR
+	local zwsp = "\226\128\139" -- zwspace
 	return word:sub(1, 1) .. zwsp .. word:sub(2)
 end
 
