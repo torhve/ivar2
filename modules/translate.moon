@@ -76,51 +76,12 @@ getCode = (language) ->
     else if language\lower! == code\lower!
       return code
 
-urlEncode = (str, space) ->
-  space = space or '+'
-  str = tostring(str)
-
-  str = str\gsub '([^%w ])', (c) ->
-    string.format  "%%%02X", string.byte(c)
-  return str\gsub(' ', space)
-
-
 buildQueryStr = (tbl) ->
   out = {}
   for k,v in pairs tbl
-    table.insert out, k..'='..urlEncode(v)
+    table.insert out, k..'='..util.urlEncode(v)
   table.concat out, '&'
 
-google_translate = (origin, target, term, cb) ->
-  origin = getCode(origin) or 'auto'
-  target = getCode(target) or 'en'
-  args =
-    client: 'p'
-    hl: 'en'
-    multires: 1
-    sc: 1
-    sl: origin
-    ssel: 0
-    tl: target
-    tsel: 0
-    uptl: "en"
-    text: term
-
-  simplehttp {
-    url:"http://translate.google.com/translate_a/t?" .. buildQueryStr(args)
-    headers: {
-      "DNT": "1"
-      "User-Agent": "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:41.0) Gecko/20100101 Firefox/41.0"
-      "Accept-Charset": "UTF-8"
-      "Accept-Language":"nn-NO,nn;q=0.9,no-NO;q=0.8,no;q=0.6,nb-NO;q=0.5,nb;q=0.4,en-US;q=0.3,en;q=0.1"
-    }
-  }, (data) ->
-    if #data > 4
-      parsed = json.decode data
-      language = parsed.src
-      out = table.concat [k.trans for k in *parsed.sentences]
-      if #out > 0
-        cb(out)
 
 translate = (origin, target, term, cb) ->
   origin = getCode(origin) or 'auto'
@@ -147,7 +108,7 @@ PRIVMSG:
       translate 'zh-TW', 'no', text, (text) ->
         say text
   '^%ptlol (.*)$': (source, destination, text) =>
-    translate 'auto', 'zh-CN', text, (text) ->
+    translate 'en', 'zh-CN', text, (text) ->
       translate 'zh-CN', 'no', text, (text) ->
         translate 'no', 'ja', text, (text) ->
           translate 'ja', 'en', text, (text) ->
