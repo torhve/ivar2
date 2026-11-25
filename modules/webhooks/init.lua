@@ -82,7 +82,7 @@ ivar2.webserver.regUrl('/webhooks/([^/]+)/(.+)$', function(self, req, res)
             ivar2:Log('error', 'webhooks> %s webhook with invalid/missing secret from %s', system,
                 req.headers['x-real-ip'] or 'unknown')
             res:append(':status', '403')
-            res:append('Content-Type', 'text/plain')
+            res:append('content-type', 'text/plain')
             req:write_headers(res, false, 30)
             req:write_body_from_string('invalid secret', 30)
             return
@@ -93,7 +93,7 @@ ivar2.webserver.regUrl('/webhooks/([^/]+)/(.+)$', function(self, req, res)
     if not handler then
         ivar2:Log('error', 'webhooks> unknown system: %s', system)
         res:append(':status', '404')
-        res:append('Content-Type', 'text/plain')
+        res:append('content-type', 'text/plain')
         req:write_headers(res, false, 30)
         req:write_body_from_string('unknown system', 30)
         return
@@ -112,7 +112,7 @@ ivar2.webserver.regUrl('/webhooks/([^/]+)/(.+)$', function(self, req, res)
     if not body or body == '' then
         ivar2:Log('error', 'webhooks> empty body for system: %s', system)
         res:append(':status', '400')
-        res:append('Content-Type', 'text/plain')
+        res:append('content-type', 'text/plain')
         req:write_headers(res, false, 30)
         req:write_body_from_string('empty body', 30)
         return
@@ -135,7 +135,7 @@ ivar2.webserver.regUrl('/webhooks/([^/]+)/(.+)$', function(self, req, res)
     end
 
     res:append(':status', '200')
-    res:append('Content-Type', 'text/plain')
+    res:append('content-type', 'text/plain')
     req:write_headers(res, false, 30)
     req:write_body_from_string('ok', 30)
 end)
