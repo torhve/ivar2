@@ -186,7 +186,7 @@ Query = (host, types='AAAA,A', timeout=15) ->
         say "#{field} : #{value or 'Header not found'}"
     '^%pwhereis (.*)$': (source, destination, arg) =>
       -- Download from http://dev.maxmind.com/geoip/geoip2/geolite2/
-      geodb = (require "mmdb").open("GeoLite2-City.mmdb")
+      geodb = (require "mmdb").open("cache/GeoLite2-City.mmdb")
       -- if space, use first
       if arg\match'(.-) .*'
         arg = arg\match'(.-) .*'
