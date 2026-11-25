@@ -92,25 +92,38 @@ upper = (s) ->
   (string.upper(s)\gsub('æ','Æ')\gsub('ø','Ø')\gsub('å','Å'))
 
 getWord = (lang, wordclass, count, maxlen, startswith) ->
-  unless startswith
-    startswith = ''
+  if startswith
+    sql = [[
+      SELECT
+       *
+      FROM
+        ]]..lang..[[
+      WHERE
+        grammar = $1
+      AND
+        length(word) < $2
+      AND
+        LEFT(word, 1) = $3
+      ORDER BY
+        random()
+      LIMIT $4
+    ]]
+    res2rows dbh!\execParams(sql, wordclass, maxlen, startswith, count)
   else
-    startswith = "AND left(word,1) = '#{startswith}'"
-  sql = [[
-    SELECT
-     *
-    FROM
-      ]]..lang..[[
-    WHERE
-      grammar = $1
-    AND
-      length(word) < $2
-    ]]..startswith..[[
-    ORDER BY
-      random()
-    LIMIT $3
-  ]]
-  res2rows dbh!\execParams(sql, wordclass, maxlen, count)
+    sql = [[
+      SELECT
+       *
+      FROM
+        ]]..lang..[[
+      WHERE
+        grammar = $1
+      AND
+        length(word) < $2
+      ORDER BY
+        random()
+      LIMIT $3
+    ]]
+    res2rows dbh!\execParams(sql, wordclass, maxlen, count)
 
 bankid = (source, destination) =>
 
@@ -173,13 +186,13 @@ adjsub = (source, destination, count) =>
     table.insert(out, "#{adj[i].word} #{sub[i].word}")
   say table.concat(out, ', ')
 
-adj = (source, destination, count) =>
-  count = 30
+adj = (source, destination, count, startswith) =>
+  count = tonumber(count) or 30
 
-  word = getWord 'clnono', 'adj', count, 5
+  word = getWord 'clnono', 'adj', count, 7, startswith
 
   out = {}
-  for i=1, count
+  for i=1, #word
     table.insert(out, "#{word[i].word}")
   say table.concat(out, ', ')
 
@@ -187,6 +200,8 @@ PRIVMSG:
   '^%pclue (.+)$': lookup
   '^%pbankid$': bankid
   '^%pbankid (%d+)$': bankidmany
+  '^%padjektiv (.+)$': (source, destination, arg) =>
+    adj @, source, destination, 5, arg
   '^%padj$': adj
   '^%padjsub$': adjsub
   '^%padjsub (%d+)$': adjsub
