@@ -24,9 +24,10 @@ listPatterns = (source, destination, moduleName) =>
 
   out = {}
   for pattern, callback in next, moduleTable
-    patt = @ChannelCommandPattern(pattern, moduleName, destination)
-    patt = Prettyfi patt
-    table.insert out, patt
+    if type(pattern) == 'string'
+      patt = @ChannelCommandPattern(pattern, moduleName, destination)
+      patt = Prettyfi patt
+      table.insert out, patt
 
   if #out > 0
     say "%s patterns:\n %s", moduleName, table.concat(out, ',\n ')
