@@ -250,14 +250,12 @@ describe("test webserver", function()
                 end)
             end)
             queue:wrap(function()
-                local ok, data = pcall(util.simplehttp, 'http://[::1]:9999/test')
-                if ok then
+                util.simplehttp('http://[::1]:9999/test', function(data)
                     assert.are_equal(data, 'Hello world!')
-                end
-                local ok2, data2 = pcall(util.simplehttp, 'http://[::1]:9999/simplereturn')
-                if ok2 then
+                end)
+                util.simplehttp('http://[::1]:9999/simplereturn', function(data2)
                     assert.are_equal(data2, 'OK')
-                end
+                end)
             end)
             queue:wrap(function()
                 util.simplehttp({
@@ -267,22 +265,27 @@ describe("test webserver", function()
                 end)
             end)
             queue:wrap(function()
+                -- External: tolerate offline
                 util.simplehttp({
                     url='https://www.google.com',
                     timeout=2000,
                 }, function(data)
-                    assert.is_not_nil(data)
+                    if data then
+                        assert.is_not_nil(data)
+                    end
                 end)
             end)
             for i=1,10 do
                 queue:wrap(function()
-                    local ok, data = pcall(util.simplehttp, {
+                    -- External address: tolerate offline (callback only fires on success)
+                    util.simplehttp({
                         url='http://[2a02:cc41:100f::10]/test.txt',
                         timeout=2000,
-                    })
-                    if ok then
-                        assert.are_equal(data, 'Hello world!\n')
-                    end
+                    }, function(data)
+                        if data then
+                            assert.are_equal(data, 'Hello world!\n')
+                        end
+                    end)
                 end)
             end
                 assert_loop(queue, TEST_TIMEOUT)
