@@ -127,7 +127,7 @@ ivar2.webserver.regUrl '/github/(.*)', (req, res) =>
     if tostring(mysum) != tostring(secret)
       ivar2\Log('error', 'github event with invalid signature for destination: %s', destination)
       res\append ':status', "403"
-      res\append 'Content-Type', 'text/plain'
+      res\append 'content-type', 'text/plain'
       req\write_headers(res, false, 30)
       req\write_body_from_string('invalid secret', 30)
       return
@@ -141,6 +141,6 @@ ivar2.webserver.regUrl '/github/(.*)', (req, res) =>
     ivar2\Log('error', 'Unknown github event: %s', event)
 
   res\append ':status', "200"
-  res\append 'Content-Type', 'text/plain'
+  res\append 'content-type', 'text/plain'
   req\write_headers(res, false, 30)
   req\write_body_from_string('ok', 30)
